@@ -1,0 +1,24 @@
+<svg width="56" height="42" viewBox="0 0 56 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="logo_vinesia 7" clip-path="url(#clip0_715_7852)">
+<path id="Vector" d="M20.327 2.86659C19.27 1.09362 17.3158 0.00195312 15.201 0.00195312H0L9.30608 15.6053L18.6186 31.2086L20.9442 35.1081C24.0461 40.3097 31.8034 40.3097 34.9047 35.1081C36.3446 32.6951 36.3446 29.7221 34.9047 27.3091L20.327 2.86659Z" fill="#BD936B"/>
+<path id="Vector_2" d="M35.6379 2.8666C36.6951 1.09362 38.6492 0.00195312 40.7641 0.00195312H55.9649L46.6589 15.6053L37.3463 31.2086L35.0209 35.1081C31.919 40.3098 24.1617 40.3098 21.0603 35.1081C19.6205 32.6951 19.6205 29.7221 21.0603 27.3091L35.6379 2.8666Z" fill="#BD936B"/>
+<g id="Group" filter="url(#filter0_d_715_7852)">
+<path id="Vector_3" opacity="0.02" d="M20.905 27.2635C19.4446 29.648 19.4401 32.6098 20.894 35.0344C24.0266 40.2575 31.8723 40.3674 35.0176 35.2321L35.0189 35.2299C36.4788 32.8463 36.482 29.884 35.0282 27.4593L27.9827 15.707L20.905 27.2635Z" fill="#BD936B"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_715_7852" x="19.8066" y="11.207" width="25.3086" height="32.3115" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="4.5"/>
+<feGaussianBlur stdDeviation="2.25"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_715_7852"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_715_7852" result="shape"/>
+</filter>
+<clipPath id="clip0_715_7852">
+<rect width="56" height="41.9442" fill="white"/>
+</clipPath>
+</defs>
+</svg>
