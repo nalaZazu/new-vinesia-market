@@ -15,10 +15,20 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+body {
+  background-color: #f5d5d5;
+}
+
 .custom-bg-image {
   background-image: url("../assets/images/herobanner.png");
   height: 818px;
   background-size: cover;
   background-position: center;
 }
-  
+
+.card_bg_shape {
+  background-image: url("../assets/images/shape.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
