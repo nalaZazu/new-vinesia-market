@@ -3,7 +3,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import france from "../../assets/images/france.png";
 import germany from "../../assets/images/germany.png";
-import switiland from "../../assets/images/Switzerland.png";
+import switzerland from "../../assets/images/Switzerland.png";
 import italy from "../../assets/images/italy.png";
 import usa from "../../assets/images/usa.png";
 import arrow from "../../assets/icons/Long arrow Down.svg";
@@ -31,16 +31,17 @@ const ExploreRegion = () => {
         <div className=" grid lg:grid-cols-6 gap-4">
           {/* column one */}
           <div
-            className="border border-[#7c7b83] h-[21rem] items-end justify-left p-3 cursor-pointer"
+            className="items-end justify-left  cursor-pointer"
             onClick={handleOpen}
           >
-            <div className="flex items-end justify-center h-1/2 ">
+            <div>
               <Image src={france} alt="play-button" />
             </div>
-            <div className=" flex items-end justify-left h-1/2">
+            <div className=" flex items-end justify-left gap-28 mt-4">
               <h1 className=" text-black text-xxl font-semibold tracking-tight">
                 France
               </h1>
+              <Image src={arrow} alt="arrow" />
             </div>
           </div>
 
@@ -69,29 +70,31 @@ const ExploreRegion = () => {
           {/* column two */}
           <div className="col-span-2 flex flex-col gap-4">
             <div
-              className="border  border-[#7c7b83] h-40 items-end justify-left p-3 cursor-pointer"
+              className=" h-40 items-end justify-left  cursor-pointer"
               onClick={handleOpen}
             >
-              <div className="flex items-end justify-center h-1/2">
+              <div className=" ">
                 <Image src={germany} alt="play-button" />
               </div>
-              <div className=" flex items-end justify-left h-1/2">
-                <h1 className="text-black text-xxl font-semibold  tracking-tight ">
-                  Germany
-                </h1>
-              </div>
+            </div>
+            <div className=" flex items-end justify-left  gap-[19rem] mt-4">
+              <h1 className="text-black text-xxl font-semibold  tracking-tight ">
+                Germany
+              </h1>
+              <Image src={arrow} alt="arrow" />
             </div>
             <div
-              className="border  border-[#7c7b83] h-40 items-end justify-left p-3 cursor-pointer"
+              className=" h-40 items-end justify-left  cursor-pointer"
               onClick={handleOpen}
             >
-              <div className="flex items-end justify-center h-1/2">
-                <Image src={switiland} alt="play-button" />
+              <div className=" ">
+                <Image src={switzerland} alt="play-button" />
               </div>
-              <div className=" flex items-end justify-left h-1/2">
+              <div className=" flex items-end justify-left  gap-72 mt-4">
                 <h1 className="text-black text-xxl font-semibold  tracking-tight ">
                   Switzerland
                 </h1>
+                <Image src={arrow} alt="arrow" />
               </div>
             </div>
           </div>
@@ -99,32 +102,33 @@ const ExploreRegion = () => {
           {/* column two */}
           <div className="flex flex-col gap-4 ">
             <div
-              className="border  border-[#7c7b83] h-40 items-end justify-left p-3 cursor-pointer"
+              className=" h-40 items-end justify-left cursor-pointer"
               onClick={handleOpen}
             >
-              <div className="flex items-end justify-center h-1/2">
+              <div>
                 <Image src={italy} alt="play-button" />
               </div>
-              <div className=" flex items-end justify-left h-1/2">
-                <h1 className="text-black text-xxl font-semibold  tracking-tight ">
-                  Italy
-                </h1>
-              </div>
             </div>
-
+            <div className=" flex items-end justify-left gap-32 ">
+              <h1 className="text-black text-xxl font-semibold  tracking-tight mt-4">
+                Italy
+              </h1>
+              <Image src={arrow} alt="arrow" />
+            </div>
             {/* next div */}
             <div
-              className="border  border-[#7c7b83] h-40 items-end justify-left p-3 cursor-pointer "
+              className=" h-40 items-end justify-left cursor-pointer"
               onClick={handleOpen}
             >
-              <div className="flex items-end justify-center h-1/2">
+              <div className="">
                 <Image src={usa} alt="play-button" />
               </div>
-              <div className=" flex items-end justify-left h-1/2">
-                <h1 className="text-black text-xxl font-semibold  tracking-tight ">
-                  USA
-                </h1>
-              </div>
+            </div>
+            <div className=" flex items-end justify-left gap-32 ">
+              <h1 className="text-black text-xxl font-semibold  tracking-tight ">
+                USA
+              </h1>
+              <Image src={arrow} alt="arrow" />
             </div>
           </div>
           {/* link colum */}
@@ -149,7 +153,7 @@ const ExploreRegion = () => {
             </div>
 
             {/* next div */}
-            <div className=" h-40 items-end justify-left p-3  ">
+            <div className=" h-40 items-end justify-left p-3  mt-8">
               <ul className="text-secondary text-sm font-normal  leading-[49px] tracking-tight">
                 {regionUs?.map((us) => {
                   const { id, name, href } = us;
