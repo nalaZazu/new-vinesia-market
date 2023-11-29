@@ -4,6 +4,7 @@ import ProductCards from "../components/productCard/pages";
 import Subscription from "../components/subscription/page";
 import VideoBanner from "../components/videoBanner/page";
 import WineArt from "../components/wineArt/page";
+import HeritageCarousel from "../components/heritageCarousel/page";
 
 export default function Home() {
   return (
@@ -19,15 +20,16 @@ export default function Home() {
         </div>
       </div>
       <Subscription />
-      <div className=" pt-40 container mx-auto">
+      <div className=" pt-40 pb-44 container mx-auto">
         <h1 className="text-primary font-semibold text-3xl leading-10">
           Critics selection
         </h1>
         {/* <Critics /> */}
       </div>
-      <div className=" py-36 bg-red-900">
+      <div className=" pt-40 pb-44 bg-red-900 relative">
         <WineArt />
       </div>
+      <HeritageCarousel />
     </>
   );
 }
