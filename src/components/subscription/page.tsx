@@ -1,8 +1,50 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import threewinebotel from "../../assets/images/three-Wine-Bottles.png";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { NextIcon2, PrevIcon2 } from "../../assets/icons/Icons";
 
 export default function Subscription() {
+  const sliderSettings = {
+    // customPaging: function (i) {
+    //   return (
+    //     <div className="image.dots z-10 w-5 h-5 rounded-full  flx-img-border">
+    //      <p></p>
+    //     </div>
+    //   );
+    // },
+    dots: true,
+    // dotsClass: "slick-dots slick-thumb",
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: false,
+    arrows: false,
+    autoplaySpeed: 3000,
+    centerPadding: "100px",
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          // dots: true,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          // slidesToScroll: 1,
+        },
+      },
+    ],
+  };
   return (
     <div className="bg-zinc-800">
       <div className=" grid grid-cols-1 md:grid-cols-2 max-w-[1400px] mx-auto">
@@ -28,7 +70,7 @@ export default function Subscription() {
                   <div className="justify-start items-start gap-1.5 flex" />
                 </div>
               </div>
-              <div className="self-stretch px-8 py-[22px] bg-orange-700 rounded-[48px] justify-center items-center gap-3 inline-flex">
+              <button className="self-stretch px-8 py-[22px] bg-orange-700 rounded-[48px] justify-center items-center gap-3 inline-flex">
                 <p className="text-center text-white text-xs font-normal font-['Albert Sans'] uppercase leading-3 tracking-tight">
                   SUBSCRIBE
                 </p>
@@ -46,7 +88,7 @@ export default function Subscription() {
                     d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
                   />
                 </svg>
-              </div>
+              </button>
             </div>
 
             <div className="w-[283px] mx-auto text-center">
@@ -60,11 +102,19 @@ export default function Subscription() {
           </div>
         </div>
         <div className=" col-span-1">
-          <Image
-            src={threewinebotel}
-            alt="Picture of the author"
-            className="h-[705px]"
-          />
+          <Slider {...sliderSettings} className="subcribe_soon_slider z-0">
+            {[1, 2, 3]?.map((item: any, i: any) => {
+              return (
+                <div key={i} className="">
+                  <Image
+                    src={threewinebotel}
+                    alt="Picture of the author"
+                    className="h-[705px]"
+                  />
+                </div>
+              );
+            })}
+          </Slider>
         </div>
       </div>
     </div>
