@@ -11,7 +11,9 @@ const config: Config = {
       colors:{
         critcstext:"#2F222B",
         critcscount:"#A6836C",
-        critparacolor:"#594E55"
+        critparacolor: "#594E55",
+        bgred: "#7D302E",
+        Primarybutton:"#BF4D20",
       }
     },
   },

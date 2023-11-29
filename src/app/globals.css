@@ -8,8 +8,6 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-
-
 .custom-bg-image {
   background-image: url("../assets/images/herobanner.png");
   height: 818px;
@@ -28,6 +26,13 @@
   background-image: url("../assets/images/Bgslider.png");
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.newsletter_banner {
+  background-image: url("../assets/images/newsletter.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .slick-arrow {
