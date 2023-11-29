@@ -22,7 +22,7 @@ export default function UserDropDown() {
   //     dispatch(handleAllModals({ loginModal: { isVisible: true } }));
   //   };
   return (
-    <div>
+    <div className=" flex justify-center">
       {/* {isAuthenticted ? ( */}
       <Menu as="div" className="relative inline-block text-left items-center">
         {/* <div>

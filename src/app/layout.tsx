@@ -3,13 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "../components/header/page";
 // pages/_app.js or pages/_app.tsx
-import { createFont } from "@next/font/google";
-
-const roboto = createFont({
-  family: "Roboto",
-  weights: ["400", "700"], // Choose the weights you need
-});
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {

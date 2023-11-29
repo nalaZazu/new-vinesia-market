@@ -8,6 +8,83 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+body {
+  background-color: #f5d5d5;
+}
+
+.custom-bg-image {
+  background-image: url("../assets/images/herobanner.png");
+  height: 818px;
+  background-size: cover;
+  background-position: center;
+}
+
+.card_bg_shape {
+  background-image: url("../assets/images/shape.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.card_shape_slider {
+  background-image: url("../assets/images/Bgslider.png");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.slick-arrow {
+  z-index: 10;
+}
+
+.slick-next:before {
+  content: none;
+}
+/* .slick-arrow {
+  margin-top: 16px;
+} */
+
+.slick-track {
+  display: flex !important;
+}
+
+.slick-prev::before,
+.slick-next::before {
+  content: " ";
+  display: none;
+  font-size: 20px;
+  line-height: 1;
+  opacity: 0.75;
+  color: rgb(122, 119, 119);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* .slick-arrow {
+  margin-top: 16px;
+} */
+
+/* Styles for buttons at large screens */
+@media screen and (max-width: 768px) {
+  .product_slider ul {
+    display: flex !important;
+    justify-content: center;
+    width: 360px;
+    margin-left: 52px;
+    height: 91px;
+    padding: 10px 0px;
+    background-color: white;
+    border-radius: 10px;
+    z-index: 0;
+  }
+}
+
+/* Styles for buttons at medium screens */
+@media screen and (max-width: 768px) {
+  .productcarousel {
+    display: none;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -15,10 +92,3 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-.custom-bg-image {
-  background-image: url("../assets/images/herobanner.png");
-  height: 818px;
-  background-size: cover;
-  background-position: center;
-}
-  
