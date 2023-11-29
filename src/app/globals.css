@@ -8,9 +8,7 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-body {
-  background-color: #f5d5d5;
-}
+
 
 .custom-bg-image {
   background-image: url("../assets/images/herobanner.png");

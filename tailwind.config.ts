@@ -8,8 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      color:{
-        backgroundColor:'#f3e7cf',
+      colors:{
+        critcstext:"#2F222B",
+        critcscount:"#A6836C",
+        critparacolor:"#594E55"
       }
     },
   },
