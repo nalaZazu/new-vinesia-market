@@ -57,11 +57,9 @@ export default function ProductCards() {
               </div>
             </div>
             <div className="flex-col justify-start items-center gap-4 flex absolute left-0 right-0 bottom-10">
-              <div className="px-8 py-5 bg-orange-700 rounded-full justify-center items-center gap-3 inline-flex">
-                <div className="text-center text-white text-xs font-normal uppercase leading-3 tracking-tight">
-                  SEE OVERVIEW
-                </div>
-              </div>
+              <button className="px-8 py-5 bg-orange-700 rounded-full justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal uppercase leading-3 tracking-tight">
+                SEE OVERVIEW
+              </button>
               <div className="text-center">
                 <span className="text-neutral-600 text-base font-normal leading-snug">
                   50 Bottles

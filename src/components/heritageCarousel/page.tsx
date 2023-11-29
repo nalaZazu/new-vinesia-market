@@ -46,7 +46,7 @@ export default function HeritageCarousel() {
     ],
     prevArrow: (
       <div className=" productcarousel z-50">
-        <div className=" text-black rounded-lg w-8 h-8 text-center flex items-center absolute">
+        <div className="text-black w-16 h-12 text-center flex items-center absolute rounded-full border border-orange-700 justify-center gap-2.5 right-0">
           <div className="">
             <PrevIcon2 />
           </div>
@@ -55,7 +55,7 @@ export default function HeritageCarousel() {
     ),
     nextArrow: (
       <div className="productcarousel  z-50">
-        <div className=" text-black rounded-lg w-8 h-8 text-center flex items-center absolute ">
+        <div className=" text-black w-16 h-12 text-center flex items-center absolute  px-6 py-2.5 rounded-full border border-orange-700 justify-center gap-2.5">
           <div className="">
             <NextIcon2 />
           </div>
@@ -128,11 +128,9 @@ export default function HeritageCarousel() {
                     </div>
                   </div>
                   <div className="flex-col justify-start items-center gap-4 flex absolute left-0 right-0 bottom-10">
-                    <div className="px-8 py-5 bg-orange-700 rounded-full justify-center items-center gap-3 inline-flex">
-                      <div className="text-center text-white text-xs font-normal uppercase leading-3 tracking-tight">
-                        SEE OVERVIEW
-                      </div>
-                    </div>
+                    <button className="px-8 py-5 bg-orange-700 rounded-full justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal uppercase leading-3 tracking-tight">
+                      SEE OVERVIEW
+                    </button>
                     <div className="text-center">
                       <span className="text-neutral-600 text-base font-normal leading-snug">
                         50 Bottles
