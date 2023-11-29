@@ -6,6 +6,8 @@ import VideoBanner from "../components/videoBanner/page";
 import WineArt from "../components/wineArt/page";
 import HeritageCarousel from "../components/heritageCarousel/page";
 import ExploreRegion from "../components/exploreRegion/page";
+import Newsletter from "../components/newsletter/page";
+import Footer from "../components/footer/page";
 
 export default function Home() {
   return (
@@ -33,6 +35,8 @@ export default function Home() {
         </div>
         <HeritageCarousel />
         <ExploreRegion />
+        <Newsletter />
+        <Footer />
       </div>
     </>
   );
