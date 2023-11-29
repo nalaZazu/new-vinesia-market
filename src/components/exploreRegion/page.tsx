@@ -7,6 +7,7 @@ import switzerland from "../../assets/images/Switzerland.png";
 import italy from "../../assets/images/italy.png";
 import usa from "../../assets/images/usa.png";
 import arrow from "../../assets/icons/Long arrow Down.svg";
+import arrowbtn from "../../assets/icons/Button Arrow.svg";
 import Link from "next/link";
 import Popup from "../popup/page";
 import {
@@ -172,9 +173,26 @@ const ExploreRegion = () => {
             </div>
           </div>
         </div>
-        <div className="text-center ">
-          <button className=" text-white text-base font-medium  tracking-tight px-4 py-2.5 justify-center items-center gap-2 inline-flex bg-bgsecondary rounded-lg mt-9">
+        <div className="text-center  ">
+          <button className="  bg-orange-700 rounded-full   tracking-tight px-4 py-5 justify-center items-center gap-2 inline-flex bg-bgsecondary  my-24 text-center text-white text-xs font-normal font-['Albert Sans'] uppercase leading-3 tracking-tight">
             Start Exploring
+            <span>
+              <Image src={arrowbtn} alt="right-arrow" />
+              {/* <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                />
+              </svg> */}
+            </span>
           </button>
         </div>
       </section>
