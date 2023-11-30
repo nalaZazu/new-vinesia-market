@@ -34,7 +34,7 @@ const DropDown = () => {
 
   return (
     <>
-      <div>
+      <div className="flex flex-wrap	 gap-4">
         {filtersList?.map((filterItem: any, filterItemId: any) => {
           const { name, options, type } = filterItem;
           return (
