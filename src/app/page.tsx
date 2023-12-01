@@ -11,6 +11,7 @@ import Newsletter from "../components/newsletter/page";
 import Footer from "../components/footer/page";
 import CriticsMobile from "../components/critics/mobileView";
 import ExploreRegionMobile from "../components/exploreRegion/mobileview";
+import NewsletterMobile from "../components/newsletter/MobileView";
 
 export default function Home() {
   return (
@@ -52,6 +53,21 @@ export default function Home() {
           <Newsletter />
           <Footer />
         </div>
+        <div className=" py-20 md:py-40 bg-red-900 relative">
+          <WineArt />
+        </div>
+        <HeritageCarousel />
+        {/* desktop view */}
+        <ExploreRegion />
+        {/* mobileView */}
+        <ExploreRegionMobile />
+        {/* desktop Newsletter*/}
+        <div className="hidden md:block">
+          <Newsletter />
+        </div>
+        {/* mobile Newsletter */}
+        <NewsletterMobile />
+        <Footer />
       </div>
     </>
   );
