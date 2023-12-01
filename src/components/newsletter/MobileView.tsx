@@ -5,7 +5,7 @@ import graps from "../../assets/images/newslettergraps.png";
 
 export default function NewsletterMobile() {
   return (
-    <div className=" bg-red-900 backdrop-blur-[20px] w-80 h-[571.75px] flex justify-center items-center">
+    <div className=" bg-red-900 backdrop-blur-[20px] h-[571.75px] flex justify-center items-center">
       <div className="px-4 md:px-0">
         <div className="flex justify-center">
           <Image src={graps} alt="" className="w-16 h-[103.44px] " />

@@ -42,16 +42,16 @@ export default function Home() {
               <CriticsMobile />
             </div>
           </div>
-          <div className=" py-20 md:py-40 bg-red-900 relative">
+          {/* <div className=" py-20 md:py-40 bg-red-900 relative">
             <WineArt />
-          </div>
-          <HeritageCarousel />
+          </div> */}
+          {/* <HeritageCarousel /> */}
           {/* desktop view */}
-          <ExploreRegion />
+          {/* <ExploreRegion /> */}
           {/* mobileView */}
-          <ExploreRegionMobile />
+          {/* <ExploreRegionMobile />
           <Newsletter />
-          <Footer />
+          <Footer /> */}
         </div>
         <div className=" py-20 md:py-40 bg-red-900 relative">
           <WineArt />
@@ -62,11 +62,13 @@ export default function Home() {
         {/* mobileView */}
         <ExploreRegionMobile />
         {/* desktop Newsletter*/}
-        <div className="hidden md:block">
+        <div className="hidden sm:block">
           <Newsletter />
         </div>
         {/* mobile Newsletter */}
-        <NewsletterMobile />
+        <div className="block sm:hidden">
+          <NewsletterMobile />
+        </div>
         <Footer />
       </div>
     </>

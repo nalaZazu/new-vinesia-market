@@ -10,6 +10,7 @@ import Dropdown from "@/common/DropDown/page";
 import MobileFilter from "./moibleview/page";
 import Newsletter from "@/components/newsletter/page";
 import Footer from "@/components/footer/page";
+import NewsletterMobile from "@/components/newsletter/MobileView";
 
 const Invest = () => {
   return (
@@ -39,7 +40,7 @@ const Invest = () => {
           <MobileFilter />
         </div>
         {/* product list  */}
-        <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 mt-16">
+        <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:gap-x-8 mt-16">
           {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, i: any) => {
             return (
               <div
@@ -121,7 +122,7 @@ const Invest = () => {
         </div>
         {/* next product list  */}
 
-        <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 mt-16">
+        <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:gap-x-8 mt-16">
           {[1, 2, 3, 4]?.map((item: any, i: any) => {
             return (
               <div
@@ -197,7 +198,14 @@ const Invest = () => {
           })}
         </div>
       </div>
-      <Newsletter />
+      {/* desktop Newsletter*/}
+      <div className="hidden sm:block">
+        <Newsletter />
+      </div>
+      {/* mobile Newsletter */}
+      <div className="block sm:hidden">
+        <NewsletterMobile />
+      </div>
       <Footer />
     </div>
   );
