@@ -12,9 +12,9 @@ import Footer from "../components/footer/page";
 export default function Home() {
   return (
     <>
-      <div className="bg-orange-50">
+      <div className="bg-orange-50 absolute top-0 -z-10 left-0 right-0">
         <Banner />
-        <div className=" pt-40 container mx-auto ">
+        {/* <div className=" pt-40 container mx-auto ">
           <h2 className="text-center text-zinc-800 text-7xl font-normal leading-[80px] pb-16 font-['Canela']">
             Invest in heritage and excellence
           </h2>
@@ -36,7 +36,7 @@ export default function Home() {
         <HeritageCarousel />
         <ExploreRegion />
         <Newsletter />
-        <Footer />
+        <Footer /> */}
       </div>
     </>
   );

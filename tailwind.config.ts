@@ -8,6 +8,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'hero': "url('/src/assets/images/herobanner.png')",
+        // 'hero-mobile': "url('/src/assets/images/herobanner.png')",
+      },
+      backgroundColor:{
+
+      },
       colors:{
         critcstext:"#2F222B",
         critcscount:"#A6836C",
