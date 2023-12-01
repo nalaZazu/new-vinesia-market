@@ -21,30 +21,29 @@ const DropDown = () => {
       setTempSelected(tempArr);
     }
   };
-  // const handleApply = (close: any) => {
-  //   setSelectedFilters(tempSelected);
-  //   dispatch(handleSelected(tempSelected));
-  //   close();
-  // };
-  // const handleClear = (close: any) => {
-  //   setSearchTerm("");
-  //   // setSelectedFilters([]);
-  //   close();
-  // };
+  const handleApply = (close: any) => {
+    setSelectedFilters(tempSelected);
+    close();
+  };
+  const handleClear = (close: any) => {
+    setSearchTerm("");
+    // setSelectedFilters([]);
+    close();
+  };
 
   return (
     <>
-      <div className="flex flex-wrap	 gap-4">
+      <div className="flex flex-wrap gap-2">
         {filtersList?.map((filterItem: any, filterItemId: any) => {
           const { name, options, type } = filterItem;
           return (
             <Menu
               as="div"
-              className="relative inline-block text-left"
+              className="relative inline-block text-left "
               key={filterItemId}
             >
               <div>
-                <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 pl-4 pr-3 py-4 rounded-full   px-3   text-sm font-semibold text-priamry shadow-sm   bg-orange-700 bg-opacity-10">
+                <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 pl-4 pr-3 py-4 rounded-full  px-3  text-xs font-normal text-priamry shadow-sm bg-orange-700 bg-opacity-10  uppercase ">
                   {name}
                   <ChevronDownIcon
                     className="-mr-1 h-5 w-5 text-primary"
@@ -62,26 +61,26 @@ const DropDown = () => {
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
               >
-                <Menu.Items className="absolute left-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-orange-50 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                  <form>
-                    <label
-                      htmlFor="default-search"
-                      className="text-zinc-800 text-xs font-normal  tracking-wide"
-                    >
-                      Search
-                    </label>
-                    <div className="relative">
-                      <input
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                        type="search"
-                        id="default-search"
-                        autoComplete="off"
-                        className="block w-full p-2 pl-4    border border-gray-300 rounded-lg bg-gray-50 text-neutral-400   text-sm font-normal   leading-tight  focus:ring-gry-300 focus:border-gray-300"
-                      />
-                    </div>
-                  </form>
-                  <div className="py-1">
+                <Menu.Items className="absolute left-0 z-10 mt-2 w-52 origin-top-right rounded-md bg-orange-50 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none ">
+                  <div className="p-3">
+                    <form>
+                      <label
+                        htmlFor="default-search"
+                        className="text-primary text-xs font-normal  tracking-wide"
+                      >
+                        Search
+                      </label>
+                      <div className="relative">
+                        <input
+                          value={searchTerm}
+                          onChange={(e) => setSearchTerm(e.target.value)}
+                          type="search"
+                          id="default-search"
+                          autoComplete="off"
+                          className="block w-full p-2 pl-4  border border-orange-700 rounded-lg bg-orange-50 text-primary   text-sm font-normal   leading-tight   focus:border-orange-700 "
+                        />
+                      </div>
+                    </form>
                     {options?.map((item: any, itemId: any) => {
                       return (
                         <div>
@@ -114,6 +113,21 @@ const DropDown = () => {
                         </div>
                       );
                     })}
+                    <div className=" pt-4 pb-4  border-t-2 justify-center items-center gap-3 inline-flex cursor-pointer pl-1">
+                      <button
+                        className="text-center text-zinc-400 text-xs font-normal  tracking-wide    px-8 py-3 rounded-full border border-zinc-400 "
+                        onClick={() => handleClear(close)}
+                      >
+                        Clear
+                      </button>
+
+                      <button
+                        className="text-center text-white text-xs font-normal tracking-wide   px-8 py-3 bg-zinc-800 rounded-full"
+                        onClick={() => handleApply(close)}
+                      >
+                        Apply
+                      </button>
+                    </div>
                   </div>
                 </Menu.Items>
               </Transition>
@@ -126,5 +140,3 @@ const DropDown = () => {
 };
 
 export default DropDown;
- 
- 
