@@ -10,6 +10,7 @@ const Dropdown = () => {
           <DropDown />
         </div>
         {/* second div */}
+        
         <div className="flex  justify-end gap-2 pe-2  pt-2 md:pt-0">
           <p className="text-primary text-xs font-normal  tracking-wide pt-4">
             Sort by

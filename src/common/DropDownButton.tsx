@@ -10,13 +10,13 @@ function classNames(...classes: any) {
 export default function DropDownButton() {
   return (
     <>
-      <div className=" ">
+      
         <Menu as="div" className="relative inline-block text-left">
           <div>
             <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 pl-4 pr-3 py-4 rounded-full   px-3  text-xs font-normal text-priamry shadow-sm   bg-orange-700 bg-opacity-10 ">
               Recommended
               <ChevronDownIcon
-                className="-mr-1 h-5 w-5 text-primary"
+                className="-mr-1 h-5 w-5 text-secondary"
                 aria-hidden="true"
               />
             </Menu.Button>
@@ -76,7 +76,7 @@ export default function DropDownButton() {
             </Menu.Items>
           </Transition>
         </Menu>
-      </div>
+       
     </>
   );
 }
