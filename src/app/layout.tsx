@@ -4,6 +4,7 @@ import local from "next/font/local";
 import "./globals.css";
 import Newsletter from "../components/newsletter/page";
 import Footer from "../components/footer/page";
+import Header from "@/components/header/page";
 // pages/_app.js or pages/_app.tsx
 const albert = Albert_Sans({
   variable: "--font-albert",
@@ -22,7 +23,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={albert.className}>
+      <body className={`${albert.className} bg-orange-50 `}>
+        <Header />
+
         {children}
         <Newsletter />
         <Footer />

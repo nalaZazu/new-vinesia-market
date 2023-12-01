@@ -15,11 +15,10 @@ import ExploreRegionMobile from "../components/exploreRegion/mobileview";
 export default function Home() {
   return (
     <>
-      <div className="bg-orange-50">
-        <Header/>
+      <div className="bg-orange-50 absolute top-0 -z-10 left-0 right-0">
         <Banner />
-        <div className=" pt-20 md:pt-40 container mx-auto ">
-          <h2 className="text-center text-zinc-800 text-4xl w-72 md:w-full md:text-7xl font-normal leading-[40px] md:leading-[80px] pb-20 md:pb-28 font-['Canela'] mx-auto">
+        {/* <div className=" pt-40 container mx-auto ">
+          <h2 className="text-center text-zinc-800 text-7xl font-normal leading-[80px] pb-16 font-['Canela']">
             Invest in heritage and excellence
           </h2>
           <ProductCards />
@@ -50,7 +49,7 @@ export default function Home() {
         {/* mobileView */}
         <ExploreRegionMobile />
         <Newsletter />
-        <Footer />
+        <Footer /> */}
       </div>
     </>
   );

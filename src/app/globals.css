@@ -13,7 +13,7 @@
   background-image: url("../assets/images/herobanner.png");
   height: 818px;
   background-size: cover;
-  background-position: center;
+  /* background-position: center; */
 }
 
 .card_bg_shape {

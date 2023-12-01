@@ -3,6 +3,8 @@ import React from "react";
 import Image from "next/image";
 import { Menu, Transition } from "@headlessui/react";
 import Account from "../assets/icons/account.svg";
+import { usePathname } from "next/navigation";
+import { UserIcon } from "@/assets/icons/Icons";
 // import { Fragment, useEffect, useRef, useState } from "react";
 // import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
@@ -13,6 +15,10 @@ import Account from "../assets/icons/account.svg";
 // import { handleAllModals } from "@/redux/modalVisibility";
 
 export default function UserDropDown() {
+  const pathName = usePathname();
+
+  console.log("pathName ", pathName);
+
   //   const dispatch = useDispatch();
   //   const isAuthenticted = useSelector<any>(
   //     (state) => state?.account?.isAuthenticated
@@ -68,12 +74,12 @@ export default function UserDropDown() {
       </Menu>
       {/* ) : ( */}
       <div className="flex gap-2">
-        <button className="w-10 h-10 rounded-full border border-white border-opacity-20 justify-center items-center gap-2.5 inline-flex">
-          <Image
-            src={Account}
-            className="md:mx-auto"
-            alt="Picture of the author"
-          />
+        <button
+          className={`w-10 h-10 rounded-full border border-opacity-20 justify-center items-center gap-2.5 inline-flex  ${
+            pathName == "/" ? "border-white" : "border-stone-800 text-"
+          }`}
+        >
+          <UserIcon fill={pathName == "/" ? "white" : "#3a2824"} />
         </button>
       </div>
       {/* )} */}

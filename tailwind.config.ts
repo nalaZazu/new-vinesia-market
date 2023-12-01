@@ -6,6 +6,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'hero': "url('/src/assets/images/herobanner.png')",
+        // 'hero-mobile': "url('/src/assets/images/herobanner.png')",
+      },
+      backgroundColor:{
+
+      },
       colors: {
         primary: "#2F222B",
         "primary-dark": "#61423D",
