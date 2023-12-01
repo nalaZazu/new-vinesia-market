@@ -7,24 +7,35 @@ import xmark from "../../assets/icons/x-mark.svg";
 import React from "react";
 import Image from "next/image";
 import Dropdown from "@/common/DropDown/pagecomponents/Layout";
+import MobileFilter from "./moibleview/page";
 
 const Invest = () => {
   return (
     <div className="bg-orange-50">
       <Headersecond />
-      <div className=" pt-40 container mx-auto">
+      <div className=" pt-40 container mx-auto px-3">
         <InvestBread />
 
-        <div className=" mt-9">
-          <h2 className=" text-zinc-800 text-[144px] font-normal font-['Canela']">
+        <div className=" mt-9 hidden md:block">
+          <h2 className=" text-primary text-[144px] font-normal font-['Canela']">
+            Invest
+          </h2>
+        </div>
+        {/* for mobileView */}
+        <div className=" mt-9 md:hidden block">
+          <h2 className=" text-primary text-6xl font-normal font-['Canela'] leading-[68px]">
             Invest
           </h2>
         </div>
 
         {/* dropdown */}
-        <Dropdown />
-        <div className="border border-secondary mt-12"></div>
-
+        <div className="hidden md:block">
+          <Dropdown />
+          <div className="border border-secondary mt-12"></div>
+        </div>
+        <div className="md:hidden block">
+          <MobileFilter />
+        </div>
         {/* product list  */}
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 mt-16">
           {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, i: any) => {
