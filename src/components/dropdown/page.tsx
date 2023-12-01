@@ -7,7 +7,13 @@ import { filtersList } from "@/constants/invesdropdowncomponents/Layout";
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
-const DropDown = () => {
+const DropDown = ({
+  selectedFilters,
+  setSelectedFilters,
+}: {
+  selectedFilters?: any;
+  setSelectedFilters?: any;
+}) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [tempSelected, setTempSelected] = useState<any>([]);
 
@@ -83,8 +89,8 @@ const DropDown = () => {
                     </form>
                     {options?.map((item: any, itemId: any) => {
                       return (
-                        <div>
-                          <Menu.Item key={itemId}>
+                        <div key={itemId}>
+                          <Menu.Item>
                             {({ active }) => (
                               <p className="p-2 cursor-pointer hover:bg-secondary-dark   text-secondary text-xxs font-normal  tracking-wide flex gap-2 items-center">
                                 <input

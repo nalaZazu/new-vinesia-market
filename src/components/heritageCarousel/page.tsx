@@ -100,7 +100,7 @@ export default function HeritageCarousel() {
                       </div>
                       <div className="flex-col items-center gap-4 flex">
                         <h3 className="w-[243px] text-center text-zinc-800 text-xl font-light font-['Canela'] leading-[29px] tracking-wide">
-                          Brunello di Montalcino "Piaggione" | Winery name |
+                          Brunello di Montalcino {`"Piaggione"`} | Winery name |
                           2019
                         </h3>
                         <p className="text-neutral-600 text-base font-normal font-['Albert Sans'] leading-snug">

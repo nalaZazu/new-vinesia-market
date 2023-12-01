@@ -8,7 +8,10 @@ export default function ProductCards() {
     <div className=" grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 max-w-[1046px] mx-auto gap-8 px-4">
       {[1, 2]?.map((item: any, i: any) => {
         return (
-          <div className="card_bg_shape relative flex justify-end mx-auto w-full">
+          <div
+            key={i}
+            className="card_bg_shape relative flex justify-end mx-auto w-full"
+          >
             <div className="max-w-[501px] md:h-[758px] h-[674px] left-0 mx-auto">
               <div className="flex justify-center max-w-[501px] -mt-6 md:-mt-14">
                 <Image
@@ -34,7 +37,7 @@ export default function ProductCards() {
                 </div>
                 <div className="flex-col items-center gap-6 flex">
                   <h3 className="md:max-w-[371px] max-w-[243px] text-center text-zinc-800 md:text-4xl text-xl font-light font-['Canela']">
-                    Brunello di Montalcino "Piaggione" | Winery name | 2019
+                    Brunello di Montalcino {`"Piaggione"`} | Winery name | 2019
                   </h3>
                   <p className="text-neutral-600 text-base font-normal leading-snug">
                     3 single bottles Signature collection
