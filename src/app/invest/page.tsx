@@ -1,18 +1,20 @@
-import InvestBread from "@/common/InvestBreadcomponents/Layout";
-import Headersecond from "@/components/headersecond/pagecomponents/Layout";
+import InvestBread from "@/common/InvestBread";
+import Headersecond from "@/components/headersecond/page";
 import winebotel from "../../assets/images/winebotel1.png";
 import Art from "../../assets/images/arat.png";
 import xmark from "../../assets/icons/x-mark.svg";
 
 import React from "react";
 import Image from "next/image";
-import Dropdown from "@/common/DropDown/pagecomponents/Layout";
+import Dropdown from "@/common/DropDown/page";
 import MobileFilter from "./moibleview/page";
+import Newsletter from "@/components/newsletter/page";
+import Footer from "@/components/footer/page";
 
 const Invest = () => {
   return (
     <div className="bg-orange-50">
-      <Headersecond />
+      {/* <Headersecond /> */}
       <div className=" pt-40 container mx-auto px-3">
         <InvestBread />
 
@@ -195,6 +197,8 @@ const Invest = () => {
           })}
         </div>
       </div>
+      <Newsletter />
+      <Footer />
     </div>
   );
 };

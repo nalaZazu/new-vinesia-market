@@ -14,7 +14,7 @@ import {
   regionUs,
   regionexplor,
 } from "../../constants/regionexplor";
-import TabButton from "@/common/TabButtoncomponents/Layout";
+import TabButton from "@/common/TabButton";
 const ExploreRegionMobile = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => {

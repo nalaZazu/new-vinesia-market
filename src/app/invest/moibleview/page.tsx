@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { filtersList } from "@/constants/invesdropdowncomponents/Layout";
+import { filtersList } from "@/constants/invesdropdown";
 import Link from "next/link";
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
@@ -65,7 +65,7 @@ function MobileFilter() {
           >
             {/* here is defined the new dropdown */}
 
-            {filtersList?.map((filterItem, filterItemId: any) => {
+            {filtersList?.map((filterItem:any, filterItemId: any) => {
               const { name, options, type } = filterItem;
 
               return (

@@ -25,10 +25,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${albert.className} bg-orange-50 `}>
         <Header />
-
         {children}
-        <Newsletter />
-        <Footer />
+        {/* <Newsletter />
+          <Footer /> */}
       </body>
     </html>
   );

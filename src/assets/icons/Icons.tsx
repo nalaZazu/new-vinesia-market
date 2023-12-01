@@ -101,7 +101,19 @@ export function InfoIcon() {
   );
 }
 
-export const TextIcon = ({ label, width, letter, startOffset, fontSize }) => {
+export const TextIcon = ({
+  label,
+  width,
+  letter,
+  startOffset,
+  fontSize,
+}: {
+  label?: any;
+  width?: any;
+  letter?: any;
+  startOffset?: any;
+  fontSize?: any;
+}) => {
   return (
     <>
       <svg
@@ -125,7 +137,7 @@ export const TextIcon = ({ label, width, letter, startOffset, fontSize }) => {
         >
           <textPath
             href="#SunCatcherStudio"
-            side="left"
+            // side="left"
             startOffset={startOffset}
           >
             {/* Secure Ownership */} {label}
@@ -145,7 +157,7 @@ export const Xmark = () => {
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="w-7 h-7"
+        className="w-7 h-7"
       >
         <path
           stroke-linecap="round"
@@ -165,7 +177,7 @@ export function NextIcon2() {
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
-      class="w-6 h-6"
+      className="w-6 h-6"
     >
       <path
         stroke-linecap="round"
@@ -184,7 +196,7 @@ export function PrevIcon2() {
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
-      class="w-6 h-6"
+      className="w-6 h-6"
     >
       <path
         stroke-linecap="round"

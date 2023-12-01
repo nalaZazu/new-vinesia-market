@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { filtersList } from "@/constants/invesdropdowncomponents/Layout";
+import { filtersList } from "@/constants/invesdropdown";
 import Badges from "../badage/page";
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
