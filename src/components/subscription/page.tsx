@@ -47,14 +47,14 @@ export default function Subscription() {
   };
   return (
     <div className="bg-zinc-800">
-      <div className=" grid grid-cols-1 md:grid-cols-2 max-w-[1400px] mx-auto">
-        <div className=" col-span-1 bg-zinc-800 h-[705px] flex justify-center items-center">
-          <div>
+      <div className=" grid grid-cols-1 md:grid-cols-2 max-w-[1400px] mx-auto ">
+        <div className=" col-span-1 bg-zinc-800 md:h-[705px] h-[457px] flex justify-center items-center order-2 md:order-1">
+          <div className="px-4 md:px-0">
             <div className="flex-col gap-2 flex text-center pb-8">
               <h3 className="text-center text-white text-4xl font-light font-['Canela'] leading-[44px]">
                 Available soon
               </h3>
-              <p className="w-[411px] mx-auto text-center text-zinc-500 text-base font-normal font-['Albert Sans'] leading-snug">
+              <p className="max-w-[411px] mx-auto text-center text-zinc-500 text-base font-normal font-['Albert Sans'] leading-snug">
                 Soon you will be able to invest in new wines. Sign up for the
                 waiting list to get notified.
               </p>
@@ -91,7 +91,7 @@ export default function Subscription() {
               </button>
             </div>
 
-            <div className="w-[283px] mx-auto text-center">
+            <div className="max-w-[283px] mx-auto text-center">
               <span className="text-zinc-500 text-base font-normal font-['Albert Sans']">
                 By submitting your email address you agree to our{" "}
               </span>
@@ -101,7 +101,7 @@ export default function Subscription() {
             </div>
           </div>
         </div>
-        <div className=" col-span-1">
+        <div className=" col-span-1 md:order-2 order-1 ">
           <Slider {...sliderSettings} className="subcribe_soon_slider z-0">
             {[1, 2, 3]?.map((item: any, i: any) => {
               return (
@@ -109,7 +109,7 @@ export default function Subscription() {
                   <Image
                     src={threewinebotel}
                     alt="Picture of the author"
-                    className="h-[705px]"
+                    className=""
                   />
                 </div>
               );

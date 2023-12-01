@@ -36,9 +36,9 @@ export default function Banner() {
   };
   return (
     <div>
-      <section className="grid grid-cols-1 custom-bg-image">
-        <div className=" container mx-auto flex items-end text-white">
-          <div className="">
+      <section className="custom-bg-image">
+        <div className=" container mx-auto text-white">
+          <div className="flex items-end h-[818px] pb-14">
             <div>
               <p className="text-stone-400 text-xs font-normal uppercase leading-3 tracking-tight pb-7">
                 appreciating your wine, guarding its emotions
@@ -66,10 +66,8 @@ export default function Banner() {
                     d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
                   />
                 </svg>
-              </button>
-            </div>
-            <div className=" pt-28 pb-14">
-              <p className=" text-orange-100 text-lg font-semibold leading-relaxed">
+              </button>{" "}
+              <p className=" text-orange-100 text-lg font-semibold leading-relaxed pt-28 ">
                 Peace of Mind pledge
               </p>
               <div className="pt-4">
@@ -171,6 +169,7 @@ export default function Banner() {
                 </ul>
               </div>
             </div>
+            {/* <div className=" pt-28 pb-14"></div> */}
           </div>
         </div>
       </section>
