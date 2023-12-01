@@ -41,10 +41,7 @@
 
 .slick-next:before {
   content: none;
-}
-/* .slick-arrow {
-  margin-top: 16px;
-} */
+} 
 
 .slick-track {
   display: flex !important;

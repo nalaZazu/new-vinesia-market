@@ -6,13 +6,13 @@ import VideoBanner from "../components/videoBanner/page";
 import WineArt from "../components/wineArt/page";
 import HeritageCarousel from "../components/heritageCarousel/page";
 import ExploreRegion from "../components/exploreRegion/page";
-import Newsletter from "../components/newsletter/page";
-import Footer from "../components/footer/page";
+import Header from "../components/header/page";
 
 export default function Home() {
   return (
     <>
       <div className="bg-orange-50">
+        <Header/>
         <Banner />
         <div className=" pt-40 container mx-auto ">
           <h2 className="text-center text-zinc-800 text-7xl font-normal leading-[80px] pb-16 font-['Canela']">
@@ -35,8 +35,6 @@ export default function Home() {
         </div>
         <HeritageCarousel />
         <ExploreRegion />
-        <Newsletter />
-        <Footer />
       </div>
     </>
   );
