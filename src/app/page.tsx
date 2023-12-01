@@ -11,12 +11,13 @@ import Newsletter from "../components/newsletter/page";
 import Footer from "../components/footer/page";
 import CriticsMobile from "../components/critics/mobileView";
 import ExploreRegionMobile from "../components/exploreRegion/mobileview";
+import NewsletterMobile from "../components/newsletter/MobileView";
 
 export default function Home() {
   return (
     <>
       <div className="bg-orange-50">
-        <Header/>
+        <Header />
         <Banner />
         <div className=" pt-20 md:pt-40 container mx-auto ">
           <h2 className="text-center text-zinc-800 text-4xl w-72 md:w-full md:text-7xl font-normal leading-[40px] md:leading-[80px] pb-20 md:pb-28 font-['Canela'] mx-auto">
@@ -49,7 +50,12 @@ export default function Home() {
         <ExploreRegion />
         {/* mobileView */}
         <ExploreRegionMobile />
-        <Newsletter />
+        {/* desktop Newsletter*/}
+        <div className="hidden md:block">
+          <Newsletter />
+        </div>
+        {/* mobile Newsletter */}
+        <NewsletterMobile />
         <Footer />
       </div>
     </>
