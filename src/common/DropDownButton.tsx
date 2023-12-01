@@ -31,7 +31,7 @@ export default function DropDownButton() {
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
           >
-            <Menu.Items className="absolute left-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-orange-50 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none p-2">
+            <Menu.Items className="absolute left-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-orange-50 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none p-2">
               <div className="py-1">
                 <Menu.Item>
                   {({ active }) => (
@@ -55,7 +55,7 @@ export default function DropDownButton() {
                         "block px-4 py-2 text-sm"
                       )}
                     >
-                      Account settings
+                        License
                     </Link>
                   )}
                 </Menu.Item>
@@ -68,7 +68,7 @@ export default function DropDownButton() {
                         "block px-4 py-2 text-sm"
                       )}
                     >
-                      Account settings
+                      Support
                     </Link>
                   )}
                 </Menu.Item>
