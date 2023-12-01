@@ -21,7 +21,7 @@ const ExploreRegion = () => {
     setOpen(!open);
   };
   return (
-    <div className="bg-[#F7EFDF]">
+    <div className="bg-[#F7EFDF] hidden md:block">
       <Popup open={open} setOpen={handleOpen} />
       <section className="container mx-auto">
         <div className="py-10">

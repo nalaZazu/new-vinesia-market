@@ -10,6 +10,7 @@ import Header from "../components/header/page";
 import Newsletter from "../components/newsletter/page";
 import Footer from "../components/footer/page";
 import CriticsMobile from "../components/critics/mobileView";
+import ExploreRegionMobile from "../components/exploreRegion/mobileview";
 
 export default function Home() {
   return (
@@ -44,7 +45,12 @@ export default function Home() {
           <WineArt />
         </div>
         <HeritageCarousel />
+        {/* desktop view */}
         <ExploreRegion />
+        {/* mobileView */}
+        <ExploreRegionMobile />
+        <Newsletter />
+        <Footer />
       </div>
     </>
   );

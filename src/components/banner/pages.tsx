@@ -66,7 +66,7 @@ export default function Banner() {
                     d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
                   />
                 </svg>
-              </button>{" "}
+              </button>
               <p className=" text-orange-100 text-lg font-semibold leading-relaxed pt-28 ">
                 Peace of Mind pledge
               </p>

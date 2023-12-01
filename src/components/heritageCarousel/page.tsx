@@ -64,9 +64,9 @@ export default function HeritageCarousel() {
     ),
   };
   return (
-    <div className="py-40 relative">
+    <div className="md:py-40 py-20 relative">
       <div className="pb-14">
-        <h1 className="text-zinc-800 text-7xl font-normal font-['Canela'] text-center">
+        <h1 className="text-zinc-800 md:text-7xl text-4xl font-normal font-['Canela'] text-center">
           Invest in heritage
         </h1>
       </div>
