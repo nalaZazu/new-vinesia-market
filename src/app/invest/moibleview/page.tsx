@@ -11,19 +11,19 @@ function classNames(...classes: any) {
 
 function MobileFilter() {
   const [firstDropdownOpen, setFirstDropdownOpen] = useState(false);
-  const [activeState, setActiveState] = useState({});
+  const [activeState, setActiveState] = useState<any>();
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
 
   const handleChange = (e: any) => {
-    let index = selectedItems?.findIndex((d: any) => d === e);
-    if (index === -1) {
-      setSelectedItems([...selectedItems, e]);
-    } else {
-      let tempArr = [...selectedItems];
-      tempArr.splice(index, 1);
-      setSelectedItems(tempArr);
-    }
+    // let index = selectedItems?.findIndex((d: any) => d === e);
+    // if (index === -1) {
+    //   setSelectedItems([...selectedItems, e]);
+    // } else {
+    //   let tempArr = [...selectedItems];
+    //   tempArr.splice(index, 1);
+    //   setSelectedItems(tempArr);
+    // }
   };
   const handleApply = (close: any) => {
     // setSelectedFilters(tempSelected);
@@ -65,7 +65,7 @@ function MobileFilter() {
           >
             {/* here is defined the new dropdown */}
 
-            {filtersList?.map((filterItem: any, filterItemId: any) => {
+            {filtersList?.map((filterItem, filterItemId: any) => {
               const { name, options, type } = filterItem;
 
               return (
@@ -89,7 +89,7 @@ function MobileFilter() {
 
                   <Transition
                     as={"div"}
-                    show={activeState[name]}
+                    show={activeState && activeState[name]}
                     enter="transition ease-out duration-100"
                     enterFrom="transform opacity-0 scale-95"
                     enterTo="transform opacity-100 scale-100"
@@ -103,16 +103,16 @@ function MobileFilter() {
                           {({ active }: any) => (
                             <p className="p-2 cursor-pointer hover:bg-secondary-dark   text-secondary text-xxs font-normal  tracking-wide flex gap-2 items-center">
                               <input
-                                id={`${filterItem}-${filterItemId}`}
+                                id={`${name}-${filterItemId}`}
                                 name="checkbox"
                                 type="checkbox"
                                 className="h-3 w-3 form-checkbox rounded-full"
                                 onChange={(e) =>
-                                  handleChange(filterItem?.toLowerCase())
+                                  handleChange(name?.toLowerCase())
                                 }
                               />
                               <label
-                                htmlFor={`${filterItem}-${filterItemId}`}
+                                htmlFor={`${name}-${filterItemId}`}
                                 className={classNames(
                                   active
                                     ? " text-primary"
