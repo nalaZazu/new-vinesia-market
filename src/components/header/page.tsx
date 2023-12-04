@@ -24,7 +24,7 @@ export default function Header() {
           --canela-font: ${canela.style.fontFamily};
         }
       `}</style>
-      <div className=" bg-transparent absolute right-0 left-0 z-10">
+      <div className=" bg-transparent z-10">
         <nav className="px-6">
           <div className="grid grid-cols-12 justify-between items-center">
             {/* topbar start */}
