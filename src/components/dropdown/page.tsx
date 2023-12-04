@@ -55,7 +55,7 @@ const DropDown = ({
                 <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 pl-4 pr-3 py-4 rounded-full  px-3 items-center text-xs font-normal text-priamry shadow-sm bg-orange-700 bg-opacity-10  uppercase ">
                   {name}
                   <ChevronDownIcon
-                    className="-mr-1 h-5 w-5 text-primary"
+                    className="-mr-1 h-5 w-5 text-zinc-800"
                     aria-hidden="true"
                   />
                 </Menu.Button>
@@ -86,7 +86,7 @@ const DropDown = ({
                           type="search"
                           id="default-search"
                           autoComplete="off"
-                          className="block w-full p-2 pl-4  border border-orange-700 rounded-lg bg-orange-50 text-primary   text-sm font-normal   leading-tight   focus:border-orange-700 focus-visible:border-orange-700 outline-none"
+                          className="block w-full p-2 pl-4  border border-orange-700 rounded-lg bg-orange-50 text-primary   text-sm font-normal   leading-tight  focus:border-orange-700 focus-visible:border-orange-700 outline-none"
                         />
                       </div>
                     </form>
