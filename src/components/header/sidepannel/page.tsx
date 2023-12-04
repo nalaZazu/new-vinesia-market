@@ -5,6 +5,7 @@ import Link from "next/link";
 import logo from "../../../assets/icons/logo1.svg";
 import xmark from "../../../assets/icons/x-mark.svg";
 import React, { useState } from "react";
+import { usePathname } from "next/navigation";
 
 const SidePannel = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState<any>(false);

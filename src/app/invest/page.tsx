@@ -1,11 +1,8 @@
 import InvestBread from "@/common/InvestBread";
- import winebotel from "../../assets/images/winebotel1.png";
+import winebotel from "../../assets/images/winebotel1.png";
 import Art from "../../assets/images/arat.png";
 
-import xmark from "../../assets/icons/xmark.svg"
-
 import xmark from "../../assets/icons/x-mark-anim.svg";
-
 
 import React from "react";
 import Image from "next/image";
