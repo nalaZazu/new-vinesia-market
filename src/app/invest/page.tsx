@@ -16,7 +16,7 @@ const Invest = () => {
   return (
     <div className="bg-orange-50">
       {/* <Headersecond /> */}
-      <div className=" pt-40 container mx-auto px-3">
+      <div className=" pt-6 container mx-auto px-3">
         <InvestBread />
 
         <div className=" mt-9 hidden md:block">
