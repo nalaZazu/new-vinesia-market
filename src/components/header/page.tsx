@@ -5,7 +5,7 @@ import Image from "next/image";
 import logo from "../../assets/icons/logo1.svg";
 import UserDropDown from "../../common/UserDropDown";
 import { menuBar } from "../../constants/navigate";
-import { useParams, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { CartIcon, SearchIcon } from "@/assets/icons/Icons";
 import local from "next/font/local";
 
@@ -15,7 +15,6 @@ const canela = local({
 });
 export default function Header() {
   const pathName = usePathname();
-  console.log("pathName ", pathName);
 
   return (
     <>
