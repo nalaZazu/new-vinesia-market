@@ -1,9 +1,7 @@
 import InvestBread from "@/common/InvestBread";
-import Headersecond from "@/components/headersecond/page";
-import winebotel from "../../assets/images/winebotel1.png";
+ import winebotel from "../../assets/images/winebotel1.png";
 import Art from "../../assets/images/arat.png";
-import xmark from "../../assets/icons/x-mark.svg";
-
+import xmark from "../../assets/icons/xmark.svg"
 import React from "react";
 import Image from "next/image";
 import Dropdown from "@/common/DropDown/page";
@@ -99,7 +97,7 @@ const Invest = () => {
                   <button className="px-8 py-5 bg-orange-700 rounded-full justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal uppercase leading-3 tracking-tight">
                     SEE OVERVIEW
                   </button>
-                  <div className="text-center">
+                  <div className="text-center flex gap-1">
                     <span className="text-neutral-600 text-base font-normal leading-snug">
                       50 Bottles
                     </span>
@@ -181,7 +179,7 @@ const Invest = () => {
                   <button className="px-8 py-5 bg-orange-700 rounded-full justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal uppercase leading-3 tracking-tight">
                     SEE OVERVIEW
                   </button>
-                  <div className="text-center">
+                  <div className="text-center flex gap-1">
                     <span className="text-neutral-600 text-base font-normal leading-snug">
                       50 Bottles
                     </span>

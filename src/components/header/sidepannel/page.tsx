@@ -9,13 +9,10 @@ import { usePathname } from "next/navigation";
 
 const SidePannel = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState<any>(false);
-
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
   const pathname = usePathname();
-  console.log(pathname, "router");
-
   return (
     <div>
       <button

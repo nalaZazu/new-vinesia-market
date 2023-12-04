@@ -26,7 +26,7 @@ export default function Header() {
       `}</style>
       <div className=" bg-transparent z-10">
         <nav className="px-6">
-          <div className="grid grid-cols-12 justify-between items-center">
+          <div className="grid grid-cols-3 md:grid-cols-12 justify-between items-center">
             {/* topbar start */}
             <div className="md:flex  hidden items-center space-x-4 lg:space-x-8 md:col-span-5">
               <Link href="#">
@@ -48,14 +48,15 @@ export default function Header() {
                 </span>
               </Link>
             </div>
+            {/* Mobile Navbar (Hidden on Desktop)  */}
 
-            <div className=" text-2xl lg:text-4xl font-bold col-span-2 md:text-center py-5">
-              <div className="lg:hidden">
-                <div className="block lg:hidden">
-                  {" "}
-                  <SidePannel />
-                </div>
+            <div className="md:hidden">
+              <div className="block md:hidden">
+               
+                <SidePannel />
               </div>
+            </div>
+            <div className=" text-2xl lg:text-4xl font-bold lg:col-span-2 text-center py-5 ps-4">
               <Link href="/">
                 <Image
                   src={logo}
@@ -64,9 +65,7 @@ export default function Header() {
                 />
               </Link>
             </div>
-
-            <div className="flex items-center gap-5 md:col-span-5 col-span-10 ms-auto">
-              {/* Mobile Navbar (Hidden on Desktop)  */}
+            <div className="flex items-center gap-5 md:col-span-5 ms-auto">
               <div className="hidden md:block">
                 <div
                   className={`w-10 h-10 rounded-full border  border-opacity-20 justify-center items-center gap-2.5 inline-flex   ${
@@ -88,12 +87,11 @@ export default function Header() {
                 <CartIcon fill={pathName == "/" ? "white" : "#3a2824"} />
               </div>
             </div>
-            
           </div>
         </nav>
         <hr
-          className={`${
-            pathName == "/" ? "opacity-20" : "border-stone-400 hidden md:block"
+          className={` hidden md:block ${
+            pathName == "/" ? "opacity-20" : "border-stone-400"
           }`}
         />
         {/* Navbar */}
@@ -121,19 +119,49 @@ export default function Header() {
                 );
               })}
             </ul>
-
-            {/* Mobile Navbar (Hidden on Desktop)  */}
-            {/* <div className="lg:hidden">
-              <div className="block lg:hidden">
-                {" "}
-                <SidePannel />
-              </div>
-            </div> */}
           </div>
         </nav>
+       
+        {
+          pathName === "/" ? (
+            <div className="md:hidden block py-4 px-6">
+            <form>
+              <div className="relative">
+                <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                  <SearchIcon fill={pathName == "/" ? "white" : "#3a2824"} />
+                </div>
+  
+                <input
+                  type="search"
+                  id="default-search"
+                  className="block w-full p-4 ps-10 text-sm  outline-none  rounded-full border border-white bg-transparent !text-stone-400"
+                  placeholder="Search"
+                />
+              </div>
+            </form>
+          </div>
+          ):(
+            <div className="md:hidden block py-4 px-6">
+            <form>
+              <div className="relative">
+                <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                  <SearchIcon fill={pathName == "/" ? "white" : "#3a2824"} />
+                </div>
+  
+                <input
+                  type="search"
+                  id="default-search"
+                  className="block w-full p-4 ps-10 text-sm  outline-none bg-orange-50 focus:ring-stone-500 focus:border-stone-500   text-stone-500    rounded-full border border-stone-800"
+                  placeholder="Search "
+                />
+              </div>
+            </form>
+          </div>
+          )
+        }
         <hr
-          className={`${
-            pathName == "/" ? "opacity-20" : "border-stone-400 hidden md:block"
+          className={` ${
+            pathName == "/" ? "opacity-20" : "border-stone-400 "
           }`}
         />
       </div>

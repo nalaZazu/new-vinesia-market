@@ -103,32 +103,12 @@ function MobileFilter() {
                       {name === "Color" ? (
                         <Menu.Item>
                           {({ active }) => (
-                            <p className="p-2 cursor-pointer hover:bg-secondary-dark   text-secondary text-xxs font-normal  tracking-wide flex gap-2 items-center">
-                              <input
-                                id={`${name}-${filterItemId}`}
-                                name="checkbox"
-                                type="checkbox"
-                                className="h-3 w-3 form-checkbox rounded-full"
-                                onChange={(e) =>
-                                  handleChange(name?.toLowerCase())
-                                }
-                              />
-                              <label
-                                htmlFor={`${name}-${filterItemId}`}
-                                className={classNames(
-                                  active
-                                    ? " text-primary"
-                                    : "text-primary-dark ",
-                                  " text-sm"
-                                )}
-                              >
-                                {name}
-                              </label>
-
-                              <p className="p-2 cursor-pointer hover:bg-secondary-dark   text-secondary text-sm font-normal  tracking-wide">
+                            <div className="p-2 cursor-pointer hover:bg-secondary-dark   text-secondary text-xxs font-normal  tracking-wide flex gap-2 items-center">
+                              
+                              <p className="p-2 cursor-pointer hover:bg-secondary-dark text-secondary text-sm font-normal  tracking-wide">
                                 {options?.map(
                                   (itemName: any, itemNameId: any) => {
-                                    <div key={itemNameId}>
+                                 return   <div key={itemNameId}>
                                       <input
                                         id={`${itemName}-${itemNameId}`}
                                         name="checkbox"
@@ -149,11 +129,11 @@ function MobileFilter() {
                                       >
                                         {itemName}
                                       </label>
-                                    </div>;
+                                    </div>
                                   }
                                 )}
                               </p>
-                            </p>
+                            </div>
                           )}
                         </Menu.Item>
                       ) : (
