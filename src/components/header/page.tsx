@@ -18,54 +18,7 @@ export default function Header() {
   const pathName = usePathname();
 
   return (
-    
-    <style jsx global>{`
-      :root {
-        --canela-font: ${canela.style.fontFamily};
-      }
-    `}</style>
-    <div className=" bg-transparent  z-10">
-      <nav className="px-6">
-        <div className="grid grid-cols-12 justify-between items-center">
-          {/* topbar start */}
-          <div className="md:flex  hidden items-center space-x-4 lg:space-x-8 md:col-span-5">
-            <Link href="#">
-              <span
-                className={`hidden md:block py-7 ${
-                  pathName === "/" ? "text-orange-100" : "text-stone-600"
-                } text-base  tracking-tight font-semibold  border-b-orange-700 border-0 border-b-2`}
-              >
-                Vinesia Story
-              </span>
-            </Link>
-            <Link href="/">
-              <span
-                className={` hidden md:block py-7 text-orange-100 text-base font-normal tracking-tight  ${
-                  pathName === "/" ? "text-orange-100" : "text-stone-600"
-                } `}
-              >
-                Vinesia Marketplace
-              </span>
-            </Link>
-          </div>
-
-          <div className=" text-2xl lg:text-4xl font-bold col-span-2 md:text-center py-5">
-            <Link href="/">
-              <Image
-                src={logo}
-                className="md:mx-auto"
-                alt="Picture of the author"
-              />
-            </Link>
-          </div>
-
-          <div className="flex items-center gap-5 md:col-span-5 col-span-10 ms-auto">
-            <div
-              className={`w-10 h-10 rounded-full border  border-opacity-20 justify-center items-center gap-2.5 inline-flex ${
-                pathName == "/" ? "border-white" : "border-stone-800"
-              } `}
-            >
-              <SearchIcon fill={pathName == "/" ? "white" : "#3a2824"} 
+    <>
       <style jsx global>{`
         :root {
           --canela-font: ${canela.style.fontFamily};
@@ -94,7 +47,6 @@ export default function Header() {
                   Vinesia Marketplace
                 </span>
               </Link>
-
             </div>
 
             <div className=" text-2xl lg:text-4xl font-bold col-span-2 md:text-center py-5   ">
