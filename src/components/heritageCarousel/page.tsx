@@ -46,8 +46,8 @@ export default function HeritageCarousel() {
     ],
     prevArrow: (
       <div className=" productcarousel z-50">
-        <div className="text-black w-16 h-12 text-center flex items-center absolute rounded-full border border-orange-700 justify-center gap-2.5 right-0">
-          <div className="">
+        <div className="text-black w-16 h-12 flex items-center rounded-full border border-orange-700 justify-center">
+          <div>
             <PrevIcon2 />
           </div>
         </div>
@@ -55,8 +55,8 @@ export default function HeritageCarousel() {
     ),
     nextArrow: (
       <div className="productcarousel  z-50">
-        <div className=" text-black w-16 h-12 text-center flex items-center absolute  px-6 py-2.5 rounded-full border border-orange-700 justify-center gap-2.5">
-          <div className="">
+        <div className=" text-black w-16 h-12 flex items-center rounded-full border border-orange-700 justify-center">
+          <div>
             <NextIcon2 />
           </div>
         </div>
@@ -72,7 +72,7 @@ export default function HeritageCarousel() {
       </div>
       <div>
         <div className=" container mx-auto max-w-[928px]">
-          <Slider {...sliderSettings} className="product_slider z-0">
+          <Slider {...sliderSettings} className="invest_carousel z-0">
             {[1, 2, 3, 4, 5]?.map((item: any, i: any) => {
               return (
                 <div
