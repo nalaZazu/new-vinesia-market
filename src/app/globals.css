@@ -173,7 +173,7 @@ h1, h2,h3,h4,h5,h6{
   }
   .custom-bg-image {
     background-image: url("../assets/images/Mobile-banner.webp");
-    height: 868px;
+    height: 1000px;
     background-size: cover;
     /* background-position: center; */
   }
