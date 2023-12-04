@@ -38,7 +38,7 @@ const CriticsMobile = () => {
     ],
     prevArrow: (
       <div className="mobile_view_slider z-50">
-        <div className="text-black w-16 h-12 flex items-center rounded-full border border-orange-700 justify-center absolute left-4">
+        <div className="text-black h-full w-full flex items-center justify-center rounded-full border border-orange-700">
           <div>
             <PrevIcon2 />
           </div>
@@ -46,8 +46,8 @@ const CriticsMobile = () => {
       </div>
     ),
     nextArrow: (
-      <div className="mobile_view_slider  z-50">
-        <div className=" text-black w-16 h-12 flex items-center rounded-full border border-orange-700 justify-center absolute right-[15px]">
+      <div className="mobile_view_slider  z-50 ">
+        <div className=" text-black h-full w-full flex items-center rounded-full border border-orange-700 justify-center">
           <div>
             <NextIcon2 />
           </div>
@@ -61,7 +61,7 @@ const CriticsMobile = () => {
         Chateau La Mission Haut Brion Cru Classe 2009
       </h2>
       <div className=" container mx-auto max-w-[928px]">
-        <Slider {...sliderSettings} className="product_slider z-0">
+        <Slider {...sliderSettings} className="critics_carousel z-0">
           {[1, 2, 3, 4, 5]?.map((item: any, i: any) => {
             return (
               <div key={i}>
