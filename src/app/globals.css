@@ -2,11 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: canela;
+  src:url("../assets/fonts/Canela\ Text\ Family/CanelaText-Medium-Trial.otf");
+}
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   /* font-family: (--); */
+}
+
+h1, h2,h3,h4,h5,h6{
+  font-family: 'canela';
 }
 
 .custom-bg-image {
@@ -127,6 +135,12 @@
     background-color: white;
     border-radius: 10px;
     z-index: 0;
+  }
+  .custom-bg-image {
+    background-image: url("../assets/images/Mobile-banner.webp");
+    height: 868px;
+    background-size: cover;
+    /* background-position: center; */
   }
 }
 
