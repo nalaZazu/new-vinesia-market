@@ -8,10 +8,12 @@ import React, { useState } from "react";
 
 const SidePannel = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState<any>(false);
-
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
+
+  const pathname = usePathname();
+
   return (
     <>
       <div className="flex">

@@ -122,7 +122,7 @@ const DropDown = ({
                         </div>
                       );
                     })}
-                    <div className=" pt-4 pb-4 border-secondary border-t-2 justify-center items-center gap-3 inline-flex cursor-pointer px-1">
+                    <div className=" pt-4 pb-4 border-secondary border-t-2 justify-center items-center gap-2 inline-flex cursor-pointer px-1">
                       <button
                         className="text-center text-primary text-xs font-normal  tracking-wide    px-8 py-3 rounded-full border border-secondary "
                         onClick={() => handleClear(close)}
