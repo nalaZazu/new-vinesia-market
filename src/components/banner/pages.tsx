@@ -2,6 +2,8 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import alert from "../../assets/icons/alert-circle.svg";
+import BreadCrumb from "@/common/BreadCrumb";
+import bgImg from "@/assets/images/herobanner.png";
 export default function Banner() {
   const [tooltipExtraVisible, setTooltipExtraVisible] = useState(false);
   const [tooltipVisible, setTooltipVisible] = useState(false);
@@ -35,18 +37,18 @@ export default function Banner() {
     setOpen(!open);
   };
   return (
-    <div>
-      <section className="grid grid-cols-1 custom-bg-image">
-        <div className=" container mx-auto flex items-end text-white">
+    <div className="z-0">
+      <section className="grid grid-cols-1 custom-bg-image md:pt-0 pt-40 bg-[#4e261a] object-cover bg-[50rem_center] md:bg-center h-[818px] bg-top-[5rem]')]">
+        <div className=" container mx-auto flex flex-col justify-end text-white md:px-0 px-4">
           <div className="">
             <div>
-              <p className="text-stone-400 text-xs font-normal uppercase leading-3 tracking-tight pb-7">
+              <p className="text-stone-400 text-xs font-normal uppercase leading-3 tracking-tight pb-7 max-w-[200px] md:max-w-full">
                 appreciating your wine, guarding its emotions
               </p>
-              <p className="text-white text-9xl font-normal font-['Canela'] ">
+              <p className="text-white md:text-9xl text-6xl font-normal font-['Canela'] ">
                 Marketplace
               </p>
-              <p className="text-stone-400 text-base font-normal leading-snug pt-4 pb-10 w-[470px]">
+              <p className="text-stone-400 text-base font-normal leading-snug pt-4 pb-10 max-w-[470px]">
                 Something about technology, advantage of wine investments,
                 unique buying and reselling experience
               </p>
@@ -68,109 +70,114 @@ export default function Banner() {
                 </svg>
               </button>
             </div>
-            <div className=" pt-28 pb-14">
-              <p className=" text-orange-100 text-lg font-semibold leading-relaxed">
-                Peace of Mind pledge
-              </p>
-              <div className="pt-4">
-                <ul className="flex gap-5 font-normal text-xs text-black">
-                  <li className="flex relative font-normal gap-2 text-stone-400 text-base leading-snug items-center">
-                    Proof of Authenticity
-                    <span
-                      onMouseEnter={showTooltipExtra}
-                      onMouseLeave={hideTooltipExtra}
+          </div>
+          <div className=" pt-28 md:pb-14 pb-5">
+            <p className=" text-orange-100 text-lg font-semibold leading-relaxed">
+              Peace of Mind pledge
+            </p>
+            <div className="pt-4 flex flex-wrap md:flex-row flex-col justify-between gap-40 md:gap-20 lg:gap-0">
+              <ul className="flex flex-col md:flex-row gap-5 font-normal text-xs text-black">
+                <li className="flex relative font-normal gap-2 text-stone-400 text-base leading-snug items-center">
+                  Proof of Authenticity
+                  <span
+                    onMouseEnter={showTooltipExtra}
+                    onMouseLeave={hideTooltipExtra}
+                  >
+                    <Image
+                      src={alert}
+                      alt="Picture of the author"
+                      width={16}
+                      height={16}
+                      quality={75}
+                      style={{ objectFit: "contain" }}
+                    />
+                    <div
+                      className={`relative ${
+                        tooltipExtraVisible ? "block" : "hidden"
+                      }`}
                     >
-                      <Image
-                        src={alert}
-                        alt="Picture of the author"
-                        width={16}
-                        height={16}
-                        quality={75}
-                        style={{ objectFit: "contain" }}
-                      />
-                      <div
-                        className={`relative ${
-                          tooltipExtraVisible ? "block" : "hidden"
-                        }`}
-                      >
-                        <div className="absolute inline-block w-40 px-4 py-3 mb-10 -ml-32 text-white bg-[#959596] rounded-lg z-10 top-[-125px] left-12">
-                          <span className="inline-block text-xs text-center font-normal leading-tight text-[#141619]  tracking-wide ">
-                            A quick explanation of the technology used here and
-                            how it differs from the {`"old word"`}. RFID
-                            explanation.
-                          </span>
-                          <span
-                            className="absolute bottom-0 right-0 w-2 h-2 -mb-1 transform rotate-45 bg-[#959596] z-0"
-                            style={{ left: "50%" }}
-                          ></span>
-                        </div>
+                      <div className="absolute inline-block w-40 px-4 py-3 mb-10 -ml-32 text-white bg-[#959596] rounded-lg z-10 top-[-125px] left-12">
+                        <span className="inline-block text-xs text-center font-normal leading-tight text-[#141619]  tracking-wide ">
+                          A quick explanation of the technology used here and
+                          how it differs from the {`"old word"`}. RFID
+                          explanation.
+                        </span>
+                        <span
+                          className="absolute bottom-0 right-0 w-2 h-2 -mb-1 transform rotate-45 bg-[#959596] z-0"
+                          style={{ left: "50%" }}
+                        ></span>
                       </div>
-                    </span>
-                  </li>
-                  <li className="flex relative items-center font-normal gap-2 text-stone-400 text-base  leading-snug">
-                    Proof of Ownership
-                    <span onMouseEnter={showTooltip} onMouseLeave={hideTooltip}>
-                      <Image
-                        src={alert}
-                        alt="Picture of the author"
-                        width={16}
-                        height={16}
-                        quality={75}
-                        style={{ objectFit: "contain" }}
-                      />
+                    </div>
+                  </span>
+                </li>
+                <li className="flex relative items-center font-normal gap-2 text-stone-400 text-base  leading-snug">
+                  Proof of Ownership
+                  <span onMouseEnter={showTooltip} onMouseLeave={hideTooltip}>
+                    <Image
+                      src={alert}
+                      alt="Picture of the author"
+                      width={16}
+                      height={16}
+                      quality={75}
+                      style={{ objectFit: "contain" }}
+                    />
 
-                      <div
-                        className={`relative ${
-                          tooltipVisible ? "block" : "hidden"
-                        }`}
-                      >
-                        <div className="absolute inline-block w-40 px-4 py-3 -ml-32 text-white bg-[#959596] rounded-lg z-10 top-[-125px] left-12">
-                          <span className="inline-block text-xs text-center font-normal leading-tight text-[#141619]  tracking-wide ">
-                            A quick explanation of the technology used here and
-                            how it differs from the {`"old word"`}. RFID
-                            explanation.
-                          </span>
-                          <span
-                            className="absolute bottom-0 right-0 w-2 h-2 -mb-1 transform rotate-45 bg-[#959596] z-0"
-                            style={{ left: "50%" }}
-                          ></span>
-                        </div>
-                      </div>
-                    </span>
-                  </li>
-                  <li className="flex relative gap-2 items-center  font-normal text-stone-400 text-base leading-snug">
-                    Proof of Storage conditions
-                    <span
-                    // onMouseEnter={handleMouseEnter}
-                    // onMouseLeave={handleMouseLeave}
+                    <div
+                      className={`relative ${
+                        tooltipVisible ? "block" : "hidden"
+                      }`}
                     >
-                      <Image
-                        src={alert}
-                        alt="Picture of the author"
-                        width={16}
-                        height={16}
-                        quality={75}
-                        style={{ objectFit: "contain" }}
-                      />
-                      <div
-                        className={`relative ${isHovered ? "block" : "hidden"}`}
-                      >
-                        <div className="absolute inline-block w-40 px-4 py-3 -ml-32 text-white bg-[#959596] rounded-lg z-10 top-[14px] left-[68px]">
-                          <span className="inline-block text-xs text-center font-normal leading-tight text-[#141619]  ">
-                            Rating comes from world recognized critics like by
-                            either Robert Parker, Jeb Dunnuck or Suckling.
-                          </span>
-                          <span
-                            className="absolute w-2 h-2 -mb-1 transform rotate-45 bg-[#959596] z-30"
-                            style={{ left: "40%", top: "-4%" }}
-                          ></span>
-                        </div>
+                      <div className="absolute inline-block w-40 px-4 py-3 -ml-32 text-white bg-[#959596] rounded-lg z-10 top-[-125px] left-12">
+                        <span className="inline-block text-xs text-center font-normal leading-tight text-[#141619]  tracking-wide ">
+                          A quick explanation of the technology used here and
+                          how it differs from the {`"old word"`}. RFID
+                          explanation.
+                        </span>
+                        <span
+                          className="absolute bottom-0 right-0 w-2 h-2 -mb-1 transform rotate-45 bg-[#959596] z-0"
+                          style={{ left: "50%" }}
+                        ></span>
                       </div>
-                    </span>
-                  </li>
-                </ul>
+                    </div>
+                  </span>
+                </li>
+                <li className="flex relative gap-2 items-center  font-normal text-stone-400 text-base leading-snug">
+                  Proof of Storage conditions
+                  <span
+                  // onMouseEnter={handleMouseEnter}
+                  // onMouseLeave={handleMouseLeave}
+                  >
+                    <Image
+                      src={alert}
+                      alt="Picture of the author"
+                      width={16}
+                      height={16}
+                      quality={75}
+                      style={{ objectFit: "contain" }}
+                    />
+                    <div
+                      className={`relative ${isHovered ? "block" : "hidden"}`}
+                    >
+                      <div className="absolute inline-block w-40 px-4 py-3 -ml-32 text-white bg-[#959596] rounded-lg z-10 top-[14px] left-[68px]">
+                        <span className="inline-block text-xs text-center font-normal leading-tight text-[#141619]  ">
+                          Rating comes from world recognized critics like by
+                          either Robert Parker, Jeb Dunnuck or Suckling.
+                        </span>
+                        <span
+                          className="absolute w-2 h-2 -mb-1 transform rotate-45 bg-[#959596] z-30"
+                          style={{ left: "40%", top: "-4%" }}
+                        ></span>
+                      </div>
+                    </div>
+                  </span>
+                </li>
+              </ul>
+
+              <div>
+                <BreadCrumb />
               </div>
             </div>
+            {/* <div className=" pt-28 pb-14"></div> */}
           </div>
         </div>
       </section>

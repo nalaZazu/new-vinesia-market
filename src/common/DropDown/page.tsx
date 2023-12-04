@@ -1,4 +1,4 @@
-import DropDown from "@/components/dropdown/pagecomponents/Layout";
+import DropDown from "@/components/dropdown/page";
 import React from "react";
 import DropDownButton from "../DropDownButton";
 
