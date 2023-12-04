@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
-import { Jost } from "next/font/google";
-import "./globals.css"; 
+import { Albert_Sans } from "next/font/google";
+import local from "next/font/local";
+import "./globals.css";
 import Newsletter from "../components/newsletter/page";
 import Footer from "../components/footer/page";
+import Header from "@/components/header/page";
 // pages/_app.js or pages/_app.tsx
-const inter = Jost({ subsets: ["latin"] });
+const albert = Albert_Sans({
+  variable: "--font-albert",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Vinesia Market",
@@ -18,11 +23,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-       
+      <body className={`${albert.className} bg-orange-50 `}>
+        <Header />
         {children}
-        <Newsletter />
-        <Footer />
+        {/* <Newsletter />
+          <Footer /> */}
       </body>
     </html>
   );

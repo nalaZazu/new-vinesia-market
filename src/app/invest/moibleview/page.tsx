@@ -3,9 +3,7 @@ import React, { useState } from "react";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { filtersList } from "@/constants/invesdropdowncomponents/Layout";
-import xDelete from "../../../assets/icons/X-delete.svg";
-import Image from "next/image";
+import { filtersList } from "@/constants/invesdropdown";
 import Link from "next/link";
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
@@ -13,7 +11,7 @@ function classNames(...classes: any) {
 
 function MobileFilter() {
   const [firstDropdownOpen, setFirstDropdownOpen] = useState(false);
-  const [activeState, setActiveState] = useState<any>({});
+  const [activeState, setActiveState] = useState<any>();
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
 
@@ -27,13 +25,16 @@ function MobileFilter() {
       setSelectedItems(tempArr);
     }
   };
+  const handleApply = (close: any) => {
+    // setSelectedFilters(tempSelected);
+    console.log("selectedItems", selectedItems);
 
-  const handleRemoved = (itemToRemove: string) => {
-    const updatedItems = selectedItems.filter(
-      (item: any) => item !== itemToRemove
-    );
-    setSelectedItems(updatedItems);
-    console.log("item");
+    // close();
+  };
+  const handleClear = (close: any) => {
+    setSearchTerm("");
+    // setSelectedFilters([]);
+    close();
   };
   return (
     <>
@@ -64,7 +65,7 @@ function MobileFilter() {
           >
             {/* here is defined the new dropdown */}
 
-            {filtersList?.map((filterItem: any, filterItemId: any) => {
+            {filtersList?.map((filterItem:any, filterItemId: any) => {
               const { name, options, type } = filterItem;
 
               return (
@@ -88,7 +89,7 @@ function MobileFilter() {
 
                   <Transition
                     as={"div"}
-                    show={activeState[name]}
+                    show={activeState && activeState[name]}
                     enter="transition ease-out duration-100"
                     enterFrom="transform opacity-0 scale-95"
                     enterTo="transform opacity-100 scale-100"
@@ -100,35 +101,27 @@ function MobileFilter() {
                       {name == "Color" ? (
                         <Menu.Item>
                           {({ active }: any) => (
-                            <p className="p-2 cursor-pointer hover:bg-secondary-dark   text-secondary text-sm font-normal  tracking-wide">
-                              {options?.map(
-                                (itemName: any, itemNameId: any) => {
-                                  return (
-                                    <div key={itemNameId}>
-                                      <input
-                                        id={`${itemName}-${itemNameId}`}
-                                        name="checkbox"
-                                        type="checkbox"
-                                        className="h-3 w-3 form-checkbox rounded-full"
-                                        onChange={(e) =>
-                                          handleChange(itemName?.toLowerCase())
-                                        }
-                                      />
-                                      <label
-                                        htmlFor={`${itemName}-${itemNameId}`}
-                                        className={classNames(
-                                          active
-                                            ? " text-primary"
-                                            : "text-primary-dark ",
-                                          "text-base font-normal tracking-tight pl-3"
-                                        )}
-                                      >
-                                        {itemName}
-                                      </label>
-                                    </div>
-                                  );
+                            <p className="p-2 cursor-pointer hover:bg-secondary-dark   text-secondary text-xxs font-normal  tracking-wide flex gap-2 items-center">
+                              <input
+                                id={`${filterItem}-${filterItemId}`}
+                                name="checkbox"
+                                type="checkbox"
+                                className="h-3 w-3 form-checkbox rounded-full"
+                                onChange={(e) =>
+                                  handleChange(filterItem?.toLowerCase())
                                 }
-                              )}
+                              />
+                              <label
+                                htmlFor={`${filterItem}-${filterItemId}`}
+                                className={classNames(
+                                  active
+                                    ? " text-primary"
+                                    : "text-primary-dark ",
+                                  " text-sm"
+                                )}
+                              >
+                                {name}
+                              </label>
                             </p>
                           )}
                         </Menu.Item>

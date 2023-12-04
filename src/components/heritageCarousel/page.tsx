@@ -46,8 +46,8 @@ export default function HeritageCarousel() {
     ],
     prevArrow: (
       <div className=" productcarousel z-50">
-        <div className="text-black w-16 h-12 text-center flex items-center absolute rounded-full border border-orange-700 justify-center gap-2.5 right-0">
-          <div className="">
+        <div className="text-black w-16 h-12 flex items-center rounded-full border border-orange-700 justify-center absolute lg:top-0 top-80 lg:-left-10 md:left-56 left-20">
+          <div>
             <PrevIcon2 />
           </div>
         </div>
@@ -55,8 +55,8 @@ export default function HeritageCarousel() {
     ),
     nextArrow: (
       <div className="productcarousel  z-50">
-        <div className=" text-black w-16 h-12 text-center flex items-center absolute  px-6 py-2.5 rounded-full border border-orange-700 justify-center gap-2.5">
-          <div className="">
+        <div className=" text-black w-16 h-12 flex items-center rounded-full border border-orange-700 justify-center absolute lg:top-0 top-80 md:right-56 lg:-right-10 right-20">
+          <div>
             <NextIcon2 />
           </div>
         </div>
@@ -64,9 +64,9 @@ export default function HeritageCarousel() {
     ),
   };
   return (
-    <div className="py-40">
+    <div className="md:py-40 py-20 relative">
       <div className="pb-14">
-        <h1 className="text-zinc-800 text-7xl font-normal font-['Canela'] text-center">
+        <h1 className="text-zinc-800 md:text-7xl text-4xl font-normal font-['Canela'] text-center">
           Invest in heritage
         </h1>
       </div>
@@ -100,7 +100,7 @@ export default function HeritageCarousel() {
                       </div>
                       <div className="flex-col items-center gap-4 flex">
                         <h3 className="w-[243px] text-center text-zinc-800 text-xl font-light font-['Canela'] leading-[29px] tracking-wide">
-                          Brunello di Montalcino "Piaggione" | Winery name |
+                          Brunello di Montalcino {`"Piaggione"`} | Winery name |
                           2019
                         </h3>
                         <p className="text-neutral-600 text-base font-normal font-['Albert Sans'] leading-snug">

@@ -1,18 +1,21 @@
-import InvestBread from "@/common/InvestBreadcomponents/Layout";
-import Headersecond from "@/components/headersecond/pagecomponents/Layout";
+import InvestBread from "@/common/InvestBread";
+import Headersecond from "@/components/headersecond/page";
 import winebotel from "../../assets/images/winebotel1.png";
 import Art from "../../assets/images/arat.png";
 import xmark from "../../assets/icons/x-mark.svg";
 
 import React from "react";
 import Image from "next/image";
-import Dropdown from "@/common/DropDown/pagecomponents/Layout";
+import Dropdown from "@/common/DropDown/page";
 import MobileFilter from "./moibleview/page";
+import Newsletter from "@/components/newsletter/page";
+import Footer from "@/components/footer/page";
+import NewsletterMobile from "@/components/newsletter/MobileView";
 
 const Invest = () => {
   return (
     <div className="bg-orange-50">
-      <Headersecond />
+      {/* <Headersecond /> */}
       <div className=" pt-40 container mx-auto px-3">
         <InvestBread />
 
@@ -37,10 +40,13 @@ const Invest = () => {
           <MobileFilter />
         </div>
         {/* product list  */}
-        <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 mt-16">
+        <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:gap-x-8 mt-16">
           {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, i: any) => {
             return (
-              <div className="card_shape_slider relative  mx-auto w-full">
+              <div
+                key={i}
+                className="card_shape_slider relative  mx-auto w-full"
+              >
                 <div className="max-w-[288px] h-[674px] mx-auto ">
                   <div className="flex justify-center max-w-[182px] mx-auto ">
                     <Image src={winebotel} alt="Picture of the author" />
@@ -62,7 +68,8 @@ const Invest = () => {
                     </div>
                     <div className="flex-col items-center gap-6 flex">
                       <h3 className="max-w-[243px] text-center text-zinc-800 text-[21px] font-light font-['Canela'] leading-[29px] tracking-wide">
-                        Brunello di Montalcino "Piaggione" | Winery name | 2019
+                        Brunello di Montalcino {`"Piaggione"`} | Winery name |
+                        2019
                       </h3>
                       <p className="text-neutral-600 text-base font-normal leading-snug">
                         3 single bottles Signature collection
@@ -115,10 +122,13 @@ const Invest = () => {
         </div>
         {/* next product list  */}
 
-        <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 mt-16">
+        <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:gap-x-8 mt-16">
           {[1, 2, 3, 4]?.map((item: any, i: any) => {
             return (
-              <div className="card_shape_slider relative  mx-auto w-full">
+              <div
+                key={i}
+                className="card_shape_slider relative  mx-auto w-full"
+              >
                 <div className="max-w-[288px] h-[674px] mx-auto ">
                   <div className="flex justify-center max-w-[182px] mx-auto ">
                     <Image src={winebotel} alt="Picture of the author" />
@@ -140,7 +150,8 @@ const Invest = () => {
                     </div>
                     <div className="flex-col items-center gap-6 flex">
                       <h3 className="max-w-[243px] text-center text-zinc-800 text-[21px] font-light font-['Canela'] leading-[29px] tracking-wide">
-                        Brunello di Montalcino "Piaggione" | Winery name | 2019
+                        Brunello di Montalcino {`"Piaggione"`} | Winery name |
+                        2019
                       </h3>
                       <p className="text-neutral-600 text-base font-normal leading-snug">
                         3 single bottles Signature collection
@@ -187,6 +198,15 @@ const Invest = () => {
           })}
         </div>
       </div>
+      {/* desktop Newsletter*/}
+      <div className="hidden sm:block">
+        <Newsletter />
+      </div>
+      {/* mobile Newsletter */}
+      <div className="block sm:hidden">
+        <NewsletterMobile />
+      </div>
+      <Footer />
     </div>
   );
 };
