@@ -1,7 +1,12 @@
 import InvestBread from "@/common/InvestBread";
  import winebotel from "../../assets/images/winebotel1.png";
 import Art from "../../assets/images/arat.png";
+
 import xmark from "../../assets/icons/xmark.svg"
+
+import xmark from "../../assets/icons/x-mark-anim.svg";
+
+
 import React from "react";
 import Image from "next/image";
 import Dropdown from "@/common/DropDown/page";
@@ -116,7 +121,7 @@ const Invest = () => {
 
         {/* animation  component  */}
         <div className="p-16 flex justify-center mx-auto ">
-          <Image src={xmark} alt="xmark" className="w-40 h-40" />
+          <Image src={xmark} alt="xmark" className="" />
         </div>
         {/* next product list  */}
 
