@@ -13,7 +13,7 @@ function classNames(...classes: any) {
 
 function MobileFilter() {
   const [firstDropdownOpen, setFirstDropdownOpen] = useState(false);
-  const [activeState, setActiveState] = useState({});
+  const [activeState, setActiveState] = useState<any>({});
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
 
@@ -141,12 +141,12 @@ function MobileFilter() {
                                   <p className="text-primary text-sm font-normal tracking-wide capitalize">
                                     {item}
                                   </p>
-                                  <Image
+                                  {/* <Image
                                     src={xDelete}
                                     alt="x-delete"
                                     onClick={() => handleRemoved(item)}
                                     className=" cursor-pointer"
-                                  />
+                                  /> */}
                                 </span>
                               </div>
                             </div>
@@ -163,13 +163,16 @@ function MobileFilter() {
       </div>
 
       {/* second dropdown */}
-      <div className="">
+      <div className="grid grid-cols-5">
         <p className="text-primary text-xs font-normal  tracking-wide pt-4">
           Sort by
         </p>
-        <Menu as="div" className="relative inline-block text-left  ">
-          <div className="w-full ">
-            <Menu.Button className="flex justify-center gap-x-1.5 pl-4 pr-3 py-4 rounded-full   px-3  text-xs font-normal text-priamry shadow-sm   bg-orange-700 bg-opacity-10 ">
+        <Menu
+          as="div"
+          className="relative inline-block text-left w-full col-span-2"
+        >
+          <div>
+            <Menu.Button className="flex justify-center gap-x-1.5 pl-4 pr-3 py-4 rounded-full   px-3  text-xs font-normal text-priamry shadow-sm  bg-orange-700 bg-opacity-10 ">
               Recommended
               <ChevronDownIcon
                 className="-mr-1 h-5 w-5 text-secondary"
@@ -177,7 +180,6 @@ function MobileFilter() {
               />
             </Menu.Button>
           </div>
-
           <Transition
             as={Fragment}
             enter="transition ease-out duration-100"
@@ -187,7 +189,7 @@ function MobileFilter() {
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
           >
-            <Menu.Items className="absolute left-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-orange-50 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none p-2">
+            <Menu.Items className="absolute left-0 z-10 mt-2 w-full origin-top-right rounded-md bg-orange-50 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none p-2">
               <div className="py-1">
                 <Menu.Item>
                   {({ active }) => (
