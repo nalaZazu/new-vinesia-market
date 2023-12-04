@@ -49,7 +49,7 @@ export default function Header() {
               </Link>
             </div>
 
-            <div className=" text-2xl lg:text-4xl font-bold col-span-2 md:text-center py-5   ">
+            <div className=" text-2xl lg:text-4xl font-bold col-span-2 md:text-center py-5">
               <div className="lg:hidden">
                 <div className="block lg:hidden">
                   {" "}
@@ -88,6 +88,7 @@ export default function Header() {
                 <CartIcon fill={pathName == "/" ? "white" : "#3a2824"} />
               </div>
             </div>
+            
           </div>
         </nav>
         <hr
