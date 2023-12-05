@@ -148,20 +148,6 @@ h6 {
 /* .slick-arrow {
   margin-top: 16px;
 } */
-@media screen and (min-width: 1040px) {
-  .invest_carousel .slick-next,
-  .invest_carousel .slick-prev {
-    position: absolute;
-    width: 64px;
-    height: 48px;
-  }
-  .invest_carousel .slick-next {
-    right: -95px;
-  }
-  .invest_carousel .slick-prev {
-    left: -95px;
-  }
-}
 @media screen and (min-width: 768px) {
   .invest_carousel .slick-next,
   .invest_carousel .slick-prev {
@@ -176,6 +162,21 @@ h6 {
     left: -60px;
   }
 }
+@media screen and (min-width: 1040px) {
+  .invest_carousel .slick-next,
+  .invest_carousel .slick-prev {
+    position: absolute;
+    width: 64px;
+    height: 48px;
+  }
+  .invest_carousel .slick-next {
+    right: -96px;
+  }
+  .invest_carousel .slick-prev {
+    left: -96px;
+  }
+}
+
 
 
 .critics_carousel .slick-next,

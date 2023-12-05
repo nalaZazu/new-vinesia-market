@@ -25,7 +25,7 @@ export default function HeritageCarousel() {
     slidesToScroll: 1,
     autoplay: false,
     autoplaySpeed: 3000,
-    centerPadding: "100px",
+    centerPadding: "20px",
     responsive: [
       {
         breakpoint: 1024,
@@ -65,7 +65,7 @@ export default function HeritageCarousel() {
   };
   return (
     <div>
-      <div className=" container mx-auto max-w-[928px]">
+      <div className=" container mx-auto lg:max-w-[928px] md:max-w-[600px]">
         <Slider {...sliderSettings} className="invest_carousel z-0">
           {[1, 2, 3, 4, 5]?.map((item: any, i: any) => {
             return (
