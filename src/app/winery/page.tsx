@@ -9,7 +9,7 @@ import Footer from "@/components/footer/page";
 import Newsletter from "@/components/newsletter/page";
 export default function page() {
   return (
-    <div className="py-20">
+    <div>
       <div className="w-full md:h-[600px] h-[620px] bg-no-repeat bg-cover bg-center bg-[url('https://i.ibb.co/hLLYBjr/winery-bg.png')]">
         <div className="flex justify-center items-center h-[600px]">
           <h1 className="text-center text-zinc-800 md:text-[144px] text-6xl font-normal">
