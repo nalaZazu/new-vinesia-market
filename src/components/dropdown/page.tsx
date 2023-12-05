@@ -72,8 +72,8 @@ const DropDown = ({
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
               >
-                <Menu.Items className="absolute left-0 z-10 mt-2 w-52 origin-top-right rounded-md bg-orange-50 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none ">
-                  <div className="py-1">
+                <Menu.Items className="absolute left-0 z-10 mt-2 w-[355px] origin-top-right rounded-md bg-orange-50 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                  <div className="py-1 ">
                     <form>
                       <div className="relative px-4 py-6 w-full ">
                         <div className="absolute left-5 inset-y-0 start-0 flex items-center ps-3 w-7  pointer-events-none">
@@ -88,7 +88,7 @@ const DropDown = ({
                           id="default-search"
                           autoComplete="off"
                           placeholder="search"
-                          className="block w-full p-2 pl-4 bg-orange-50 text-primary ps-8 text-sm font-normal  leading-tight   outline-none  rounded-full border border-stone-400    "
+                          className="block w-full p-4 bg-orange-50 text-primary ps-8 text-sm font-normal  leading-tight   outline-none  rounded-full border border-stone-400  "
                         />
                       </div>
                     </form>
@@ -97,12 +97,12 @@ const DropDown = ({
                         <div key={itemId}>
                           <Menu.Item>
                             {({ active }) => (
-                              <p className="p-4 cursor-pointer hover:bg-secondary-dark text-secondary text-xxs font-normal  tracking-wide flex gap-2 items-center">
+                              <p className="px-4 py-4 cursor-pointer hover:bg-secondary-dark text-secondary text-xxs font-normal  tracking-wide flex gap-2 items-center border border-orange-100">
                                 <input
                                   id={`${item}-${itemId}`}
                                   name="checkbox"
                                   type="checkbox"
-                                  className="h-3 w-3 form-checkbox rounded-full"
+                                  className="h-3 w-3 form-checkbox    bg-orange-50 rounded-md border border-zinc-800"
                                   onChange={(e) =>
                                     handleChange(item?.toLowerCase())
                                   }
@@ -111,7 +111,7 @@ const DropDown = ({
                                   htmlFor={`${item}-${itemId}`}
                                   className={classNames(
                                     active
-                                      ? "   text-zinc-800 leading-relaxed"
+                                      ? "  text-zinc-800 leading-relaxed"
                                       : "text-primary-dark ",
                                     "text-lg font-semibold  "
                                   )}
@@ -124,9 +124,9 @@ const DropDown = ({
                         </div>
                       );
                     })}
-                    <div className=" pt-4 pb-4 border-secondary border-t-2 justify-center items-center gap-2 inline-flex cursor-pointer px-1">
+                    <div className=" cursor-pointer p-6  justify-end items-start gap-4 flex">
                       <button
-                        className="text-center text-primary text-xs font-normal  tracking-wide    px-8 py-3 rounded-full border border-secondary "
+                        className="text-center text-secondary text-xs font-normal  tracking-wide   px-8 py-3 rounded-full border border-secondary "
                         onClick={() => handleClear(close)}
                       >
                         Clear
