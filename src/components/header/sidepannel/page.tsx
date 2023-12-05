@@ -57,12 +57,12 @@ const SidePannel = () => {
                 <Image
                   src={xmark}
                   alt="Picture of the author"
-                  width={10}
-                  height={10}
+                  width={15}
+                  height={15}
                   onClick={toggleSidebar}
                 />
               </li>
-              <hr className="my-4  mx-2 text-secondary opacity-5 font-bold h-px border border-bg-secondary-700 " />
+              <hr className="my-4  mx-2 text-secondary  font-bold h-px border border-bg-secondary-700 " />
               {menuBar?.map((item: any) => {
                 const { id, name, href } = item;
                 return (
@@ -70,9 +70,9 @@ const SidePannel = () => {
                     <li
                       className={`${
                         name == "Start"
-                          ? "text-primary-dark  font-semibold border-b-orange-700 border-0 border-b-2 "
+                          ? "text-primary-dark font-semibold border-b-orange-50  border-0 border-b-2 w-16"
                           : ""
-                      } py-4  mx-2 text-primary`}
+                      } py-4 mx-2 text-primary`}
                     >
                       {name}
                     </li>

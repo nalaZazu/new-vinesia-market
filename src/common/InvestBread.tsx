@@ -10,12 +10,12 @@ const InvestBread = () => {
             <li className="inline-flex items-center">
               <Link
                 href="#"
-                className="text-primary-dark text-base font-normal leading-snug"
+                className="text-stone-500 text-base font-normal   leading-snug"
               >
                 vinesia marketplace
               </Link>
             </li>
-            <li className="hidden md:block lg:block  text-secondary text-opacity-20 text-base font-normal  leading-snug">
+            <li className="hidden md:block lg:block  text-secondary text-opacity-20 text-base font-normal leading-snug">
               /
             </li>
             <li>
@@ -28,12 +28,12 @@ const InvestBread = () => {
                 </Link>
               </div>
             </li>
-            <li className="hidden md:block lg:block text-secondary text-opacity-20 text-base font-normal  leading-snug">
+            <li className="hidden md:block lg:block text-secondary text-opacity-20 text-base font-normal leading-snug">
               /
             </li>
             <li aria-current="page">
               <div className="flex items-center">
-                <span className=" text-zinc-800 text-base font-normal  leading-snug">
+                <span className=" text-primary text-base font-normal  leading-snug">
                   winery
                 </span>
               </div>
@@ -50,18 +50,18 @@ const InvestBread = () => {
               <div className="flex items-center">
                 <Link
                   href="#"
-                  className=" text-secondary text-base font-normal  leading-snug"
+                  className=" text-base font-normal text-stone-500  leading-snug"
                 >
                   home
                 </Link>
               </div>
             </li>
-            <li className=" text-secondary text-opacity-20 text-base font-normal  leading-snug">
+            <li className="text-opacity-20  leading-snug text-orange-700  text-base font-normal  ">
               /
             </li>
             <li aria-current="page">
               <div className="flex items-center">
-                <span className=" text-zinc-800 text-base font-normal  leading-snug">
+                <span className=" text-zinc-800 text-base font-normal  leading-snug   ">
                   winery
                 </span>
               </div>
