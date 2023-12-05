@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: canela;
-  src: url("../assets/fonts/Canela\ Text\ Family/CanelaText-Medium-Trial.otf");
+  src: url("../assets/fonts/Canela\ Text\ Family/CanelaText-Regular-Trial.otf");
 }
 @font-face {
   font-family: "Bon Vivant";
@@ -110,13 +110,25 @@ h6 {
   border-radius: 9999px;
   border: 1px solid #f3e8cf;
   padding: 3px !important;
+  bottom: 38px !important;
 }
 
 .slick-dots li.slick-active button::before {
   opacity: 0 !important;
+ width: 1px !important;
+ height: 1px !important;
 }
 .slick-dots li button::before {
   opacity: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0px !important;
+}
+.slick-dots li button {
+  opacity: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0px !important;
 }
 
 .slick-dots {
@@ -164,6 +176,14 @@ h6 {
     left: -60px;
   }
 }
+
+
+.critics_carousel .slick-next,
+  .critics_carousel .slick-prev {
+    position: absolute;
+    width: 64px;
+    height: 48px;
+  }
 /* Styles for buttons at large screens */
 @media screen and (max-width: 768px) {
   /* .product_slider ul {
@@ -178,28 +198,15 @@ h6 {
     z-index: 0;
   } */
 
-  .critics_carousel .slick-next,
-  .critics_carousel .slick-prev {
-    position: absolute;
-    width: 64px;
-    height: 48px;
-  }
+ 
   .custom-bg-image {
     background-image: url("../assets/images/Mobile-banner.webp");
     height: 1000px;
     background-size: cover;
     /* background-position: center; */
   }
-}
-
-.critics_carousel .slick-next {
-  right: 16px;
-}
-.critics_carousel .slick-prev {
-  left: 16px;
-}
-
-.invest_carousel .slick-prev,
+  
+  .invest_carousel .slick-prev,
 .invest_carousel .slick-next {
   position: absolute;
   width: 64px;
@@ -213,6 +220,16 @@ h6 {
 .invest_carousel .slick-prev {
   left: 95px;
 }
+}
+
+.critics_carousel .slick-next {
+  right: 16px;
+}
+.critics_carousel .slick-prev {
+  left: 16px;
+}
+
+
 
 /* .invest_carousel */
 /* }  */

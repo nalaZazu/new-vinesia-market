@@ -30,7 +30,7 @@ const SidePannel = () => {
             className="h-6 w-6"
             fill="none"
             viewBox="0 0 24 24"
-            stroke="#BF4D20"
+            stroke={`${pathname == "/" ? "white" : "#BF4D20"}`}
           >
             <path
               strokeLinecap="round"

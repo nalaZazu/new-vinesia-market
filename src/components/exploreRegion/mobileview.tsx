@@ -43,7 +43,7 @@ const ExploreRegionMobile = () => {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               ></iframe>
             </div>
-            <div className=" flex items-end justify-between gap-28 mt-4">
+            <div className=" flex items-end justify-between mt-4">
               <h1 className=" text-zinc-800 text-4xl font-light  leading-[44px]">
                 France
               </h1>

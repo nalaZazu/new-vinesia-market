@@ -20,15 +20,18 @@ export default function NewsletterMobile() {
           </p>
         </div>
         <div className="flex-col gap-2 flex pb-7">
-          <div className="h-14 grow shrink basis-0 px-6 py-[22px] rounded-[80px] border border-neutral-600 justify-start items-center flex">
-            <input
+          <input
+            className="h-14 grow shrink basis-0 px-6 py-[22px] rounded-[80px] border border-neutral-600 justify-start items-center flex"
+            placeholder="Enter your email"
+          >
+            {/* <input
               type="text"
               id="first_name"
               className=" bg-transparent text-white text-opacity-40 text-base font-normal  leading-snug"
               placeholder="Enter your email"
               required
-            />
-          </div>
+            /> */}
+          </input>
           <button className="self-stretch px-8 py-[22px] bg-orange-700 rounded-[48px] justify-center items-center gap-3 inline-flex">
             <p className="text-center text-white text-xs font-normal  uppercase leading-3 tracking-tight">
               SUBSCRIBE

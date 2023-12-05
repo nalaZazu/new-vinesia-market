@@ -13,7 +13,7 @@ export default function BreadCrumb() {
             France
           </Link>
         </li>
-        <li className="hidden md:block lg:block  text-xs font-normal">/</li>
+        <li className="text-xs font-normal">/</li>
         <li>
           <div className="flex items-center">
             <Link
@@ -24,7 +24,7 @@ export default function BreadCrumb() {
             </Link>
           </div>
         </li>
-        <li className="hidden md:block lg:block text-xs font-normal">/</li>
+        <li className=" text-xs font-normal">/</li>
         <li aria-current="page">
           <div className="flex items-center">
             <span className=" text-yellow-50 text-xs font-normal uppercase leading-3 tracking-tight">
@@ -36,5 +36,3 @@ export default function BreadCrumb() {
     </nav>
   );
 }
-
-

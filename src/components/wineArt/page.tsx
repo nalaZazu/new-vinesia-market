@@ -19,20 +19,19 @@ export default function WineArt() {
                 className="absolute -top-20 -left-14 z-0"
               />
             </div>
-            <div className="flex ps-10 md:ps-0">
+            <div className="flex ps-10 md:ps-0 relative">
               <Image
                 src={wineart}
                 alt="image"
-                className="shadow z-10 relative w-[186.86px] md:w-[404px]"
+                className="shadow z-10 relative w-2/3 md:w-[404px]"
               />
-            </div>
-            <div>
               <Image
                 src={art1}
                 alt="image"
                 className="absolute md:-bottom-10 -bottom-7 right-14 z-20 max-w-[98.52px] md:max-w-[213px]"
               />
             </div>
+            <div></div>
           </div>
           <div className="col-span-1 relative">
             <Image

@@ -10,10 +10,10 @@ const Critics = () => {
   return (
     <div className="pt-16 pb-5 sm:py-8">
       {/* critics-section */}
-      <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-2 ">
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:gap-[60px] md:gap-[30px] gap-4">
         <div className="flex">
-          <ul className=" text-secondary text-lg font-semibold  tracking-tight w-4/5">
-            <li className=" mt-4 flex gap-8 align-top items-center cursor-pointer">
+          <ul className=" text-secondary text-lg font-semibold  tracking-tight">
+            <li className=" mt-4 flex gap-[63px] align-top items-center cursor-pointer">
               <span className=" text-xxl font-semibold  tracking-tight  text-critcscount">
                 01
               </span>
@@ -24,7 +24,7 @@ const Critics = () => {
                 </div>
               </div>
             </li>
-            <li className=" mt-4 flex gap-8 align-top items-center cursor-pointer">
+            <li className=" mt-4 flex gap-[63px] align-top items-center cursor-pointer">
               <span className=" text-xxl font-semibold  tracking-tight text-critcscount">
                 02
               </span>
@@ -34,7 +34,7 @@ const Critics = () => {
                 </div>
               </div>
             </li>
-            <li className=" mt-4 flex gap-8 align-top items-center cursor-pointer">
+            <li className=" mt-4 flex gap-[63px] align-top items-center cursor-pointer">
               <span className=" text-xxl font-semibold  tracking-tight  text-critcscount">
                 03
               </span>

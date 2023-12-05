@@ -25,7 +25,7 @@ const ExploreRegion = () => {
       <Popup open={open} setOpen={handleOpen} />
       <section className="container mx-auto">
         <div className="py-10">
-          <h1 className="text-zinc-800 text-7xl font-normal  leading-[80px]">
+          <h1 className="text-zinc-800 text-4xl font-light  leading-[44px]">
             Explore by region
           </h1>
         </div>
@@ -39,9 +39,9 @@ const ExploreRegion = () => {
               <Image src={france} alt="play-button" />
             </div>
             <div className=" flex items-end justify-left gap-28 mt-4">
-              <h1 className=" text-black text-xxl font-semibold tracking-tight">
+              <p className=" text-black text-lg font-semibold tracking-tight">
                 France
-              </h1>
+              </p>
               <Image src={arrow} alt="arrow" />
             </div>
           </div>
@@ -50,7 +50,7 @@ const ExploreRegion = () => {
 
           <div className=" h-[21rem] items-end justify-left p-3">
             <div>
-              <ul className="text-secondary text-sm font-normal   leading-[49px] tracking-tight">
+              <ul className=" text-sm font-normal   leading-[49px] tracking-tight">
                 {regionexplor?.map((reg) => {
                   const { id, name, href } = reg;
                   return (
@@ -79,9 +79,9 @@ const ExploreRegion = () => {
               </div>
             </div>
             <div className=" flex items-end justify-left  gap-[19rem] mt-4">
-              <h1 className="text-black text-xxl font-semibold  tracking-tight ">
+              <p className="text-black text-lg font-semibold  tracking-tight ">
                 Germany
-              </h1>
+              </p>
               <Image src={arrow} alt="arrow" />
             </div>
             <div
@@ -92,9 +92,9 @@ const ExploreRegion = () => {
                 <Image src={switzerland} alt="play-button" />
               </div>
               <div className=" flex items-end justify-left  gap-72 mt-4">
-                <h1 className="text-black text-xxl font-semibold  tracking-tight ">
+                <p className="text-black text-lg font-semibold  tracking-tight ">
                   Switzerland
-                </h1>
+                </p>
                 <Image src={arrow} alt="arrow" />
               </div>
             </div>
@@ -111,9 +111,9 @@ const ExploreRegion = () => {
               </div>
             </div>
             <div className=" flex items-end justify-left gap-32 ">
-              <h1 className="text-black text-xxl font-semibold  tracking-tight mt-4">
+              <p className="text-black text-lg font-semibold  tracking-tight mt-4">
                 Italy
-              </h1>
+              </p>
               <Image src={arrow} alt="arrow" />
             </div>
             {/* next div */}
@@ -126,9 +126,9 @@ const ExploreRegion = () => {
               </div>
             </div>
             <div className=" flex items-end justify-left gap-32 ">
-              <h1 className="text-black text-xxl font-semibold  tracking-tight ">
+              <p className="text-black text-lg font-semibold  tracking-tight ">
                 USA
-              </h1>
+              </p>
               <Image src={arrow} alt="arrow" />
             </div>
           </div>
@@ -136,7 +136,7 @@ const ExploreRegion = () => {
 
           <div className="flex flex-col gap-4">
             <div className=" h-40 items-end justify-left p-3  ">
-              <ul className="text-secondary text-sm font-normal   leading-[49px] tracking-tight">
+              <ul className=" text-sm font-normal   leading-[49px] tracking-tight">
                 {regionItaly?.map((itly) => {
                   const { id, name, href } = itly;
                   return (
@@ -155,7 +155,7 @@ const ExploreRegion = () => {
 
             {/* next div */}
             <div className=" h-40 items-end justify-left p-3  mt-8">
-              <ul className="text-secondary text-sm font-normal  leading-[49px] tracking-tight">
+              <ul className=" text-sm font-normal  leading-[49px] tracking-tight">
                 {regionUs?.map((us) => {
                   const { id, name, href } = us;
                   return (

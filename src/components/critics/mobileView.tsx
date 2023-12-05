@@ -22,20 +22,11 @@ const CriticsMobile = () => {
     // dotsClass: "slick-dots slick-thumb",
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: false,
     autoplaySpeed: 3000,
     centerPadding: "100px",
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
     prevArrow: (
       <div className="mobile_view_slider z-50">
         <div className="text-black h-full w-full flex items-center justify-center rounded-full border border-orange-700">
@@ -57,7 +48,7 @@ const CriticsMobile = () => {
   };
   return (
     <div className="">
-      <h2 className="text-critcstext w-72 first-letter text-xl font-light  leading-[29px] py-8">
+      <h2 className="text-critcstext first-letter text-[21px] font-light  leading-[29px] py-8">
         Chateau La Mission Haut Brion Cru Classe 2009
       </h2>
       <div className=" container mx-auto max-w-[928px]">
@@ -70,7 +61,7 @@ const CriticsMobile = () => {
                     <Image
                       src={wine}
                       alt="image"
-                      className="w-[147.81px] h-[204.88px]"
+                      className="w-[147.81px] h-[204.88px] md:w-96 md:h-auto"
                     />
                   </div>
                 </div>
