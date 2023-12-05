@@ -18,7 +18,7 @@ const Critics = () => {
                 01
               </span>
               <div className=" col-span-4 pe-3">
-                <div className="text-critcstext">
+                <div className="text-primary">
                   {" "}
                   Chateau La Mission Haut Brion Cru Classe 2009
                 </div>
@@ -30,7 +30,6 @@ const Critics = () => {
               </span>
               <div className=" col-span-4 pe-3">
                 <div className="text-critcscount">
-                  {" "}
                   Chateau La Mission Haut Brion Cru Classe 2009
                 </div>
               </div>
@@ -41,7 +40,6 @@ const Critics = () => {
               </span>
               <div className=" col-span-4 pe-3">
                 <div className="text-critcscount">
-                  {" "}
                   Chateau La Mission Haut Brion Cru Classe 2009
                 </div>
               </div>
@@ -57,7 +55,6 @@ const Critics = () => {
               </div>
               <ul className=" md:w-1/2 px-4  text-base font-medium   tracking-tight flex flex-col justify-between text-critparacolor">
                 <li>
-                  {" "}
                   “This wine blushes in the glass like a tender, rosy dawn,
                   inviting the drinker to embrace its delicate hue. The play of
                   soft pinks and hints of coral dances under the light, hinting
@@ -84,8 +81,8 @@ const Critics = () => {
         <div className=" ">
           <div>
             <div>
-              <h2 className="  flex text-secondary text-sm font-normal  tracking-tight">
-                Score
+              <h2 className="  flex items-center text-stone-500 text-xs font-normal  percase leading-3 tracking-tight">
+                Vinesia Score
                 <Image
                   src={alert}
                   alt="Picture of the author"
@@ -97,20 +94,20 @@ const Critics = () => {
                 />
               </h2>
               <div className="flex flex-col ">
-                <span className="  tracking-tight   text-zinc-800 text-7xl font-normal font-['Canela'] ">
+                <span className="  tracking-tight   text-zinc-800 text-7xl font-normal  ">
                   5/5
                 </span>
-                <span className="   text-stone-500 text-xs font-normal font-['Albert Sans'] uppercase leading-3 tracking-tight">
+                <span className=" mt-8  text-stone-500 text-xs font-normal  uppercase leading-3 tracking-tight">
                   Critiqued By
                 </span>
-                <span className=" text-zinc-800 text-lg font-semibold font-['Albert Sans'] leading-relaxed">
+                <span className="text-zinc-800 text-lg font-semibold  leading-relaxed">
                   Robert Parker
                 </span>
               </div>
               <span>
                 <Image src={signature} alt="signature" />
               </span>
-              <button className="w-[156px] h-10 px-4 py-2.5 rounded-[48px] border border-orange-700 justify-center items-center gap-2 inline-flex text-center text-orange-700 text-xs font-normal font-['Albert Sans'] uppercase leading-3 tracking-tight cursor-pointer">
+              <button className="w-[156px] h-10 px-4 py-2.5 rounded-[48px] border border-orange-700 justify-center items-center gap-2 inline-flex text-center text-orange-700 text-xs font-normal  uppercase leading-3 tracking-tight cursor-pointer">
                 Invest now
                 <span>
                   {/* <Image src={arrow} alt="right-arrow"/> */}

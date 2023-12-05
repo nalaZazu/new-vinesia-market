@@ -20,7 +20,7 @@ export default function Home() {
         <div className="relative">
           <Banner />
           <div className=" pt-40 container mx-auto ">
-            <h2 className="text-center text-zinc-800 md:text-7xl text-4xl font-normal leading-[80px] pb-16 font-['Canela']">
+            <h2 className="text-center text-zinc-800 md:text-7xl text-4xl font-normal leading-[80px] pb-16 ">
               Invest in heritage and excellence
             </h2>
             <ProductCards />

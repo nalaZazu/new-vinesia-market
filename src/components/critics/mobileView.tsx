@@ -57,7 +57,7 @@ const CriticsMobile = () => {
   };
   return (
     <div className="">
-      <h2 className="text-critcstext w-72 first-letter text-xl font-light font-['Canela'] leading-[29px] py-8">
+      <h2 className="text-critcstext w-72 first-letter text-xl font-light  leading-[29px] py-8">
         Chateau La Mission Haut Brion Cru Classe 2009
       </h2>
       <div className=" container mx-auto max-w-[928px]">
@@ -82,7 +82,7 @@ const CriticsMobile = () => {
 
       <div className="pt-6 ">
         <div className=" flex justify-between items-center py-6 border-y-2 border-stone-400">
-          <h2 className=" flex items-center gap-2 text-stone-500 text-xs font-normal font-['Albert Sans'] uppercase leading-3 tracking-tight">
+          <h2 className=" flex items-center gap-2 text-stone-500 text-xs font-normal  uppercase leading-3 tracking-tight">
             Vinesia Score
             <span>
               <Image
@@ -94,17 +94,17 @@ const CriticsMobile = () => {
               />
             </span>
           </h2>
-          <span className="text-zinc-800 text-4xl font-normal font-['Canela'] leading-[42px] ">
+          <span className="text-zinc-800 text-4xl font-normal  leading-[42px] ">
             5/5
           </span>
         </div>
 
         <div className="flex justify-between items-center py-6 border-b-2 border-stone-400">
           <div>
-            <p className="text-stone-500 text-xs font-normal font-['Albert Sans'] uppercase leading-3 tracking-tight">
+            <p className="text-stone-500 text-xs font-normal  uppercase leading-3 tracking-tight">
               Critiqued By
             </p>
-            <p className="self-stretch text-zinc-800 text-base font-semibold font-['Albert Sans'] leading-snug">
+            <p className="self-stretch text-zinc-800 text-base font-semibold  leading-snug">
               Robert Parker
             </p>
           </div>
@@ -114,13 +114,13 @@ const CriticsMobile = () => {
             </span>
           </div>
         </div>
-        <div className="w-[273px] text-neutral-600 text-base font-normal font-['Albert Sans'] leading-snug pt-6">
+        <div className="w-[273px] text-neutral-600 text-base font-normal  leading-snug pt-6">
           <p>
             “This wine blushes in the glass like a tender, rosy dawn, inviting
             the drinker to embrace its delicate hue.
           </p>
         </div>
-        <button className="flex items-center pt-4 gap-3 text-orange-700 text-xs font-normal font-['Albert Sans'] uppercase leading-3 tracking-tight">
+        <button className="flex items-center pt-4 gap-3 text-orange-700 text-xs font-normal  uppercase leading-3 tracking-tight">
           READ MORE
           <span>
             <svg
@@ -140,7 +140,7 @@ const CriticsMobile = () => {
           </span>
         </button>
         <div className="pt-6">
-          <button className=" text-orange-700 text-xs font-normal w-full font-['Albert Sans'] uppercase leading-3 tracking-tight px-8 py-4 rounded-full border border-orange-700 border-opacity-20 items-center gap-3 flex justify-center">
+          <button className=" text-orange-700 text-xs font-normal w-full  uppercase leading-3 tracking-tight px-8 py-4 rounded-full border border-orange-700 border-opacity-20 items-center gap-3 flex justify-center">
             INVEST NOW
             <svg
               xmlns="http://www.w3.org/2000/svg"

@@ -46,7 +46,7 @@ export default function Banner() {
               <p className="text-stone-400 text-xs font-normal uppercase leading-3 tracking-tight pb-7 max-w-[200px] md:max-w-full">
                 appreciating your wine, guarding its emotions
               </p>
-              <p className="text-white md:text-9xl text-6xl font-normal font-['Canela'] ">
+              <p className="text-white md:text-9xl text-6xl font-normal  ">
                 Marketplace
               </p>
               <p className="text-stone-400 text-base font-normal leading-snug pt-4 pb-10 max-w-[470px]">

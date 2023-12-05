@@ -20,13 +20,13 @@ const Invest = () => {
         <InvestBread />
 
         <div className=" mt-9 hidden md:block">
-          <h2 className=" text-primary text-[144px] font-normal font-['Canela']">
+          <h2 className=" text-primary text-[144px] font-normal ">
             Invest
           </h2>
         </div>
         {/* for mobileView */}
         <div className="mt-9 md:hidden block">
-          <h2 className="text-primary text-6xl font-normal font-['Canela'] leading-[68px]">
+          <h2 className="text-primary text-6xl font-normal  leading-[68px]">
             Invest
           </h2>
         </div>
@@ -67,7 +67,7 @@ const Invest = () => {
                       </div>
                     </div>
                     <div className="flex-col items-center gap-6 flex">
-                      <h3 className="max-w-[243px] text-center text-zinc-800 text-[21px] font-light font-['Canela'] leading-[29px] tracking-wide">
+                      <h3 className="max-w-[243px] text-center text-zinc-800 text-[21px] font-light  leading-[29px] tracking-wide">
                         Brunello di Montalcino {`"Piaggione"`} | Winery name |
                         2019
                       </h3>
@@ -81,7 +81,7 @@ const Invest = () => {
                       <div className="text-center text-stone-500 text-xs font-normal uppercase leading-3 tracking-tight">
                         EST. PRICE
                       </div>
-                      <div className="text-zinc-800 text-[21px] font-light font-['Canela'] leading-[29px] tracking-wide">
+                      <div className="text-zinc-800 text-[21px] font-light  leading-[29px] tracking-wide">
                         €3,600
                       </div>
                     </div>
@@ -89,7 +89,7 @@ const Invest = () => {
                       <div className="text-center text-stone-500 text-xs font-normal uppercase leading-3 tracking-tight">
                         EST. PRICE
                       </div>
-                      <div className="text-zinc-800 text-[21px] font-light font-['Canela'] leading-[29px] tracking-wide">
+                      <div className="text-zinc-800 text-[21px] font-light  leading-[29px] tracking-wide">
                         €3,600
                       </div>
                     </div>
@@ -149,7 +149,7 @@ const Invest = () => {
                       </div>
                     </div>
                     <div className="flex-col items-center gap-6 flex">
-                      <h3 className="max-w-[243px] text-center text-zinc-800 text-[21px] font-light font-['Canela'] leading-[29px] tracking-wide">
+                      <h3 className="max-w-[243px] text-center text-zinc-800 text-[21px] font-light  leading-[29px] tracking-wide">
                         Brunello di Montalcino {`"Piaggione"`} | Winery name |
                         2019
                       </h3>
@@ -163,7 +163,7 @@ const Invest = () => {
                       <div className="text-center text-stone-500 text-xs font-normal uppercase leading-3 tracking-tight">
                         EST. PRICE
                       </div>
-                      <div className="text-zinc-800 text-[21px] font-light font-['Canela'] leading-[29px] tracking-wide">
+                      <div className="text-zinc-800 text-[21px] font-light  leading-[29px] tracking-wide">
                         €3,600
                       </div>
                     </div>
@@ -171,7 +171,7 @@ const Invest = () => {
                       <div className="text-center text-stone-500 text-xs font-normal uppercase leading-3 tracking-tight">
                         EST. PRICE
                       </div>
-                      <div className="text-zinc-800 text-[21px] font-light font-['Canela'] leading-[29px] tracking-wide">
+                      <div className="text-zinc-800 text-[21px] font-light  leading-[29px] tracking-wide">
                         €3,600
                       </div>
                     </div>

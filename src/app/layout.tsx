@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Albert_Sans } from "next/font/google";
 import local from "next/font/local";
-import "./globals.css";
-import Newsletter from "../components/newsletter/page";
-import Footer from "../components/footer/page";
+import "./globals.css"; 
 import Header from "@/components/header/page";
 // pages/_app.js or pages/_app.tsx
 const albert = Albert_Sans({
@@ -25,9 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${albert.className} bg-orange-50 `}>
         <Header />
-        {children}
-        {/* <Newsletter />
-          <Footer /> */}
+        {children} 
       </body>
     </html>
   );

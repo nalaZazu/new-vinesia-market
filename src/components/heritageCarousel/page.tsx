@@ -66,7 +66,7 @@ export default function HeritageCarousel() {
   return (
     <div className="md:py-40 py-20 relative">
       <div className="pb-14">
-        <h1 className="text-zinc-800 md:text-7xl text-4xl font-normal font-['Canela'] text-center">
+        <h1 className="text-zinc-800 md:text-7xl text-4xl font-normal  text-center">
           Invest in heritage
         </h1>
       </div>
@@ -99,29 +99,29 @@ export default function HeritageCarousel() {
                         </div>
                       </div>
                       <div className="flex-col items-center gap-4 flex">
-                        <h3 className="w-[243px] text-center text-zinc-800 text-xl font-light font-['Canela'] leading-[29px] tracking-wide">
+                        <h3 className="w-[243px] text-center text-zinc-800 text-xl font-light  leading-[29px] tracking-wide">
                           Brunello di Montalcino {`"Piaggione"`} | Winery name |
                           2019
                         </h3>
-                        <p className="text-neutral-600 text-base font-normal font-['Albert Sans'] leading-snug">
+                        <p className="text-neutral-600 text-base font-normal  leading-snug">
                           OWC 6 x 0,75 cl + Artwork
                         </p>
                       </div>
                     </div>
                     <div className="w-60 mx-auto flex justify-between items-center pt-8">
                       <div className="flex-col justify-center items-center gap-2 inline-flex">
-                        <div className="text-stone-500 text-xs font-normal font-['Albert Sans'] uppercase leading-3 tracking-tight">
+                        <div className="text-stone-500 text-xs font-normal  uppercase leading-3 tracking-tight">
                           EST. PRICE
                         </div>
-                        <div className="text-zinc-800 text-xl font-light font-['Canela'] leading-[29px] tracking-wide">
+                        <div className="text-zinc-800 text-xl font-light  leading-[29px] tracking-wide">
                           €38,600
                         </div>
                       </div>
                       <div className="flex-col justify-center items-center gap-2 inline-flex">
-                        <div className="text-center text-stone-500 text-xs font-normal font-['Albert Sans'] uppercase leading-3 tracking-tight">
+                        <div className="text-center text-stone-500 text-xs font-normal  uppercase leading-3 tracking-tight">
                           FLoor PRICE
                         </div>
-                        <div className="text-zinc-800 text-xl font-light font-['Canela'] leading-[29px] tracking-wide">
+                        <div className="text-zinc-800 text-xl font-light  leading-[29px] tracking-wide">
                           ---
                         </div>
                       </div>

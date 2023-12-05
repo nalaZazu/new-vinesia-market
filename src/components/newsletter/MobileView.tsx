@@ -11,10 +11,10 @@ export default function NewsletterMobile() {
           <Image src={graps} alt="" className="w-16 h-[103.44px] " />
         </div>
         <div className="flex-col gap-2 flex text-center pb-8">
-          <h3 className="text-center text-white text-xl font-light font-['Canela'] leading-[29px]">
+          <h3 className="text-center text-white text-xl font-light  leading-[29px]">
             Be the first to know
           </h3>
-          <p className="text-center text-white text-base font-normal font-['Albert Sans'] leading-snug">
+          <p className="text-center text-white text-base font-normal  leading-snug">
             Soon you will be able to invest in new wines. Sign up for the
             waiting list to get notified.
           </p>
@@ -24,23 +24,23 @@ export default function NewsletterMobile() {
             <input
               type="text"
               id="first_name"
-              className=" bg-transparent text-white text-opacity-40 text-base font-normal font-['Albert Sans'] leading-snug"
+              className=" bg-transparent text-white text-opacity-40 text-base font-normal  leading-snug"
               placeholder="Enter your email"
               required
             />
           </div>
           <button className="self-stretch px-8 py-[22px] bg-orange-700 rounded-[48px] justify-center items-center gap-3 inline-flex">
-            <p className="text-center text-white text-xs font-normal font-['Albert Sans'] uppercase leading-3 tracking-tight">
+            <p className="text-center text-white text-xs font-normal  uppercase leading-3 tracking-tight">
               SUBSCRIBE
             </p>
           </button>
         </div>
 
         <div className="max-w-[283px] mx-auto text-center">
-          <span className="text-center text-red-400 text-base font-normal font-['Albert Sans'] leading-snug">
+          <span className="text-center text-red-400 text-base font-normal  leading-snug">
             By submitting your email address you agree to our{" "}
           </span>
-          <span className="text-center text-red-400 text-base font-normal font-['Albert Sans'] leading-snug">
+          <span className="text-center text-red-400 text-base font-normal  leading-snug">
             terms & conditions
           </span>
         </div>

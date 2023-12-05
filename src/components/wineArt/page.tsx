@@ -41,23 +41,23 @@ export default function WineArt() {
               className="absolute -top-20 right-20 z-20 hidden md:block"
             />
             <div className="px-4 md:px-0 md:pt-16 pt-16">
-              <h1 className="flex md:justify-center ps-5 md:left-0 md:top-[60px] top-[130px] md:right-0 absolute opacity-10 text-white md:text-[500px] text-[278.07px] font-bold font-['Canela'] md:leading-[144px] leading-[68px]">
+              <h1 className="flex md:justify-center ps-5 md:left-0 md:top-[60px] top-[130px] md:right-0 absolute opacity-10 text-white md:text-[500px] text-[278.07px] font-bold  md:leading-[144px] leading-[68px]">
                 &
               </h1>
-              <h1 className="flex justify-center pt-12 md:pt-0 pr-16 md:pr-0 text-white md:text-9xl text-6xl font-normal font-['Canela'] leading-none">
+              <h1 className="flex justify-center pt-12 md:pt-0 pr-16 md:pr-0 text-white md:text-9xl text-6xl font-normal  leading-none">
                 Wine
               </h1>
               <div className="relative">
-                <h1 className="text-white md:text-9xl text-6xl font-normal font-['Canela'] text-center lg:ps-56 ps-20">
+                <h1 className="text-white md:text-9xl text-6xl font-normal   text-center lg:ps-56 ps-20">
                   Art
-                  <span className=" origin-top-left rotate-[-12.28deg] absolute md:right-12 right-0 md:top-0 -top-5 text-white text-2xl font-normal font-['Bon Vivant'] leading-normal">
+                  <span className=" origin-top-left rotate-[-12.28deg] absolute md:right-12 right-0 md:top-0 -top-5 text-white text-2xl font-normal  leading-normal collection">
                     Collections
                   </span>
                 </h1>
               </div>
 
               <div className=" md:pt-8 pt-14 flex justify-center">
-                <p className=" max-w-[396px] text-stone-400 text-base font-normal font-['Albert Sans'] leading-snug pb-4">
+                <p className=" max-w-[396px] text-stone-400 text-base font-normal  leading-snug pb-4">
                   Collections are carefully curated around specific themes,
                   featuring exceptional wines from prestigious wineries
                   worldwide. Each collection is a celebration of the finest
@@ -65,7 +65,7 @@ export default function WineArt() {
                 </p>
               </div>
               <div className=" flex justify-center">
-                <p className="max-w-[396px] text-stone-400 text-base font-normal font-['Albert Sans'] leading-snug">
+                <p className="max-w-[396px] text-stone-400 text-base font-normal  leading-snug">
                   Some of our collections also include captivating artwork from
                   the renowned artist Reso, adding an artistic touch to the wine
                   collections you invest in.
