@@ -1,6 +1,6 @@
 import Banner from "../components/banner/pages";
 import Critics from "../components/critics/page";
-import ProductCards from "../components/productCard/pages";
+import ProductCards from "../components/productCard/page";
 import Subscription from "../components/subscription/page";
 import VideoBanner from "../components/videoBanner/page";
 import WineArt from "../components/wineArt/page";
