@@ -56,11 +56,11 @@ export default function Header() {
                 <SidePannel />
               </div>
             </div>
-            <div className=" text-2xl lg:text-4xl font-bold lg:col-span-2 text-center py-5 ps-4">
+            <div className=" text-2xl lg:text-4xl font-bold lg:col-span-2 text-center py-5">
               <Link href="/">
                 <Image
                   src={logo}
-                  className="md:mx-auto"
+                  className="mx-auto"
                   alt="Picture of the author"
                 />
               </Link>
@@ -151,7 +151,7 @@ export default function Header() {
                 <input
                   type="search"
                   id="default-search"
-                  className="block w-full p-4 ps-10 text-sm  outline-none bg-orange-50 focus:ring-stone-500 focus:border-stone-500   text-stone-500    rounded-full border border-stone-800"
+                  className="block w-full p-4 ps-10 text-sm  outline-none bg-orange-50 focus:ring-stone-500 focus:border-stone-500   text-stone-500    rounded-full border border-stone-800 "
                   placeholder="Search "
                 />
               </div>

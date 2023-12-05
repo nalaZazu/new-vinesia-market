@@ -26,7 +26,7 @@ const Invest = () => {
         </div>
         {/* for mobileView */}
         <div className="mt-9 md:hidden block">
-          <h2 className="text-primary text-6xl font-normal  leading-[68px]">
+          <h2 className=" text-6xl font-normal leading-[68px] text-primary">
             Invest
           </h2>
         </div>

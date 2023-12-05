@@ -29,14 +29,14 @@ const DropDown = ({
     }
   };
   const handleApply = (close: any) => {
-    // setSelectedFilters(tempSelected);
+    // setSelectedFilters(selectedItems);
     console.log("selectedItems", selectedItems);
 
     // close();
   };
   const handleClear = (close: any) => {
     setSearchTerm("");
-    // setSelectedFilters([]);
+    // setSelectedItems([]);
     close();
   };
 
@@ -52,7 +52,7 @@ const DropDown = ({
               key={filterItemId}
             >
               <div>
-                <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 pl-4 pr-3 py-4 rounded-full  px-3 items-center text-xs font-normal text-priamry shadow-sm bg-orange-700 bg-opacity-10  uppercase ">
+                <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 pl-4 pr-3 py-4 rounded-full  px-3 items-center text-xs font-normal text-priamry shadow-sm bg-orange-700 bg-opacity-10  uppercase  leading-3 tracking-tight">
                   {name}
                   <ChevronDownIcon
                     className="-mr-1 h-5 w-5 text-zinc-800"
