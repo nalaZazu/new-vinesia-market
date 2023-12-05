@@ -71,17 +71,17 @@ const Invest = () => {
                         Brunello di Montalcino {`"Piaggione"`} | Winery name |
                         2019
                       </h3>
-                      <p className="text-neutral-600 text-base font-normal leading-snug">
-                        3 single bottles Signature collection
+                      <p className="text-neutral-600 text-base font-normal leading-snug ">
+                      OWC 6 x 0,75 cl + Artwork
                       </p>
                     </div>
                   </div>
                   <div className=" flex justify-around items-center pt-8">
                     <div className="flex-col justify-center items-center gap-2 inline-flex">
-                      <div className="text-center text-stone-500 text-xs font-normal uppercase leading-3 tracking-tight">
+                      <div className="text-center text-stone-500 text-xs font-normal uppercase leading-3 tracking-tight ">
                         EST. PRICE
                       </div>
-                      <div className="text-zinc-800 text-[21px] font-light  leading-[29px] tracking-wide">
+                      <div className="text-zinc-800 text-[21px] font-light  leading-[29px] tracking-wide ">
                         €3,600
                       </div>
                     </div>
@@ -100,7 +100,7 @@ const Invest = () => {
                     SEE OVERVIEW
                   </button>
                   <div className="text-center flex gap-1">
-                    <span className="text-neutral-600 text-base font-normal leading-snug">
+                    <span className="text-neutral-600 text-base font-normal leading-snug ">
                       50 Bottles
                     </span>
                     <span className="text-stone-300 text-base font-normal leading-snug">
@@ -154,7 +154,7 @@ const Invest = () => {
                         2019
                       </h3>
                       <p className="text-neutral-600 text-base font-normal leading-snug">
-                        3 single bottles Signature collection
+                      OWC 6 x 0,75 cl + Artwork
                       </p>
                     </div>
                   </div>
