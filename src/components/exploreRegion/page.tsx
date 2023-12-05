@@ -25,7 +25,7 @@ const ExploreRegion = () => {
       <Popup open={open} setOpen={handleOpen} />
       <section className="container mx-auto">
         <div className="py-10">
-          <h1 className="text-zinc-800 text-7xl font-normal font-['Canela'] leading-[80px]">
+          <h1 className="text-zinc-800 text-7xl font-normal  leading-[80px]">
             Explore by region
           </h1>
         </div>
@@ -174,7 +174,7 @@ const ExploreRegion = () => {
           </div>
         </div>
         <div className="text-center  ">
-          <button className="  bg-orange-700 rounded-full   tracking-tight px-4 py-5 justify-center items-center gap-2 inline-flex bg-bgsecondary  my-24 text-center text-white text-xs font-normal font-['Albert Sans'] uppercase leading-3 tracking-tight">
+          <button className="  bg-orange-700 rounded-full   tracking-tight px-4 py-5 justify-center items-center gap-2 inline-flex bg-bgsecondary  my-24 text-center text-white text-xs font-normal  uppercase leading-3 tracking-tight">
             Start Exploring
             <span>
               <Image src={arrowbtn} alt="right-arrow" />

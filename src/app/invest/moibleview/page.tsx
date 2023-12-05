@@ -163,13 +163,13 @@ function MobileFilter() {
       {/* second dropdown */}
       <div className="flex flex-row">
         <div className="basis-1/4">
-          <p className="text-primary tracking-wide pt-4 text-base font-normal font-['Albert Sans'] leading-snug">
+          <p className="text-primary tracking-wide pt-4 text-base font-normal  leading-snug">
             Sort by
           </p>
         </div>
         <Menu as="div" className="relative inline-block text-left basis-3/4">
           <div>
-            <Menu.Button className="w-full flex gap-x-1.5 pl-4 pr-3 py-4 rounded-full   px-3 text-stone-500 text-base font-normal font-['Albert Sans'] leading-snug text-priamry border border-stone-500 justify-between ">
+            <Menu.Button className="w-full flex gap-x-1.5 pl-4 pr-3 py-4 rounded-full   px-3 text-stone-500 text-base font-normal  leading-snug text-priamry border border-stone-500 justify-between ">
               Recommended
               <ChevronDownIcon
                 className="-mr-1 h-5 w-5 text-stone-500"

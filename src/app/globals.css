@@ -4,7 +4,13 @@
 
 @font-face {
   font-family: canela;
-  src:url("../assets/fonts/Canela\ Text\ Family/CanelaText-Medium-Trial.otf");
+  src: url("../assets/fonts/Canela\ Text\ Family/CanelaText-Medium-Trial.otf");
+}
+@font-face {
+  font-family: "Bon Vivant";
+  src: url("../assets/fonts/BonVivant-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
 }
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -13,10 +19,18 @@
   /* font-family: (--); */
 }
 
-h1, h2,h3,h4,h5,h6{
-  font-family: 'canela';
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "canela";
 }
 
+.collection {
+  font-family: "Bon Vivant";
+}
 .custom-bg-image {
   background-image: url("../assets/images/herobanner.png");
   height: 818px;
@@ -50,7 +64,7 @@ h1, h2,h3,h4,h5,h6{
 
 .slick-next:before {
   content: none;
-} 
+}
 
 .slick-track {
   display: flex !important;
@@ -122,38 +136,36 @@ h1, h2,h3,h4,h5,h6{
 /* .slick-arrow {
   margin-top: 16px;
 } */
-@media screen and (min-width: 1040px) { 
-
-
-  .invest_carousel .slick-next, .invest_carousel .slick-prev {
+@media screen and (min-width: 1040px) {
+  .invest_carousel .slick-next,
+  .invest_carousel .slick-prev {
     position: absolute;
-  width: 64px;
-  height: 48px;
+    width: 64px;
+    height: 48px;
+  }
+  .invest_carousel .slick-next {
+    right: -95px;
+  }
+  .invest_carousel .slick-prev {
+    left: -95px;
+  }
 }
-.invest_carousel .slick-next{
-  right: -95px;
-}
-.invest_carousel .slick-prev{
-  left: -95px;
-}
-}
-@media screen and (min-width: 768px) { 
-
-
-  .invest_carousel .slick-next, .invest_carousel .slick-prev {
+@media screen and (min-width: 768px) {
+  .invest_carousel .slick-next,
+  .invest_carousel .slick-prev {
     position: absolute;
-  width: 64px;
-  height: 48px;
-}
-.invest_carousel .slick-next{
-  right: -60px;
-}
-.invest_carousel .slick-prev{
-  left: -60px;
-}
+    width: 64px;
+    height: 48px;
+  }
+  .invest_carousel .slick-next {
+    right: -60px;
+  }
+  .invest_carousel .slick-prev {
+    left: -60px;
+  }
 }
 /* Styles for buttons at large screens */
- @media screen and (max-width: 768px) { 
+@media screen and (max-width: 768px) {
   /* .product_slider ul {
     display: flex !important;
     justify-content: center;
@@ -166,7 +178,8 @@ h1, h2,h3,h4,h5,h6{
     z-index: 0;
   } */
 
-  .critics_carousel .slick-next, .critics_carousel .slick-prev {
+  .critics_carousel .slick-next,
+  .critics_carousel .slick-prev {
     position: absolute;
     width: 64px;
     height: 48px;
@@ -179,29 +192,29 @@ h1, h2,h3,h4,h5,h6{
   }
 }
 
-  .critics_carousel .slick-next{
-    right: 16px;
-  }
-  .critics_carousel .slick-prev{
-    left: 16px;
-  }
+.critics_carousel .slick-next {
+  right: 16px;
+}
+.critics_carousel .slick-prev {
+  left: 16px;
+}
 
-  .invest_carousel .slick-prev , .invest_carousel .slick-next {
-    position: absolute;
-    width: 64px;
-    height: 48px;
-    top: 105%;
-  }
+.invest_carousel .slick-prev,
+.invest_carousel .slick-next {
+  position: absolute;
+  width: 64px;
+  height: 48px;
+  top: 105%;
+}
 
-  .invest_carousel .slick-next{
-    right: 95px;
-  }
-  .invest_carousel .slick-prev{
-    left: 95px;
-  }
+.invest_carousel .slick-next {
+  right: 95px;
+}
+.invest_carousel .slick-prev {
+  left: 95px;
+}
 
-
-  /* .invest_carousel */
+/* .invest_carousel */
 /* }  */
 
 /* Styles for buttons at medium screens */

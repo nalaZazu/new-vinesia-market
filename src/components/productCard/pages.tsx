@@ -36,7 +36,7 @@ export default function ProductCards() {
                   </div>
                 </div>
                 <div className="flex-col items-center gap-6 flex">
-                  <h3 className="md:max-w-[371px] max-w-[243px] text-center text-zinc-800 md:text-xl text-xl font-light font-['Canela']">
+                  <h3 className="md:max-w-[371px] max-w-[243px] text-center text-zinc-800 md:text-xl text-xl font-light ">
                     Brunello di Montalcino {`"Piaggione"`} | Winery name | 2019
                   </h3>
                   <p className="text-neutral-600 text-base font-normal leading-snug">
@@ -49,7 +49,7 @@ export default function ProductCards() {
                   <div className="text-center text-stone-500 text-xs font-normal uppercase leading-3 tracking-tight">
                     EST. PRICE
                   </div>
-                  <div className="text-zinc-800 md:text-xl text-xl font-light font-['Canela'] leading-[44px]">
+                  <div className="text-zinc-800 md:text-xl text-xl font-light  leading-[44px]">
                     €3,600
                   </div>
                 </div>
@@ -57,7 +57,7 @@ export default function ProductCards() {
                   <div className="text-center text-stone-500 text-xs font-normal uppercase leading-3 tracking-tight">
                     EST. PRICE
                   </div>
-                  <div className="text-zinc-800 md:text-xl text-xl font-light font-['Canela'] leading-[44px]">
+                  <div className="text-zinc-800 md:text-xl text-xl font-light  leading-[44px]">
                     €3,600
                   </div>
                 </div>

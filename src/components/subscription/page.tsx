@@ -51,10 +51,10 @@ export default function Subscription() {
         <div className=" col-span-1 bg-zinc-800 md:h-[705px] h-[457px] flex justify-center items-center order-2 md:order-1">
           <div className="px-4 md:px-0">
             <div className="flex-col gap-2 flex text-center pb-8">
-              <h3 className="text-center text-white text-4xl font-light font-['Canela'] leading-[44px]">
+              <h3 className="text-center text-white text-4xl font-light  leading-[44px]">
                 Available soon
               </h3>
-              <p className="max-w-[411px] mx-auto text-center text-zinc-500 text-base font-normal font-['Albert Sans'] leading-snug">
+              <p className="max-w-[411px] mx-auto text-center text-zinc-500 text-base font-normal  leading-snug">
                 Soon you will be able to invest in new wines. Sign up for the
                 waiting list to get notified.
               </p>
@@ -63,7 +63,7 @@ export default function Subscription() {
               <div className="self-stretch h-14 flex-col justify-start items-start gap-1 flex">
                 <div className="self-stretch grow shrink basis-0 px-6 py-3 rounded-[80px] border border-neutral-600 justify-start items-center inline-flex">
                   <div className="grow shrink basis-0 h-[22px] justify-start items-center gap-1.5 flex">
-                    <div className="grow shrink basis-0 text-neutral-600 text-base font-normal font-['Albert Sans'] leading-snug">
+                    <div className="grow shrink basis-0 text-neutral-600 text-base font-normal  leading-snug">
                       Enter your email address
                     </div>
                   </div>
@@ -71,7 +71,7 @@ export default function Subscription() {
                 </div>
               </div>
               <button className="self-stretch px-8 py-[22px] bg-orange-700 rounded-[48px] justify-center items-center gap-3 inline-flex">
-                <p className="text-center text-white text-xs font-normal font-['Albert Sans'] uppercase leading-3 tracking-tight">
+                <p className="text-center text-white text-xs font-normal  uppercase leading-3 tracking-tight">
                   SUBSCRIBE
                 </p>
                 <svg
@@ -92,10 +92,10 @@ export default function Subscription() {
             </div>
 
             <div className="max-w-[283px] mx-auto text-center">
-              <span className="text-zinc-500 text-base font-normal font-['Albert Sans']">
+              <span className="text-zinc-500 text-base font-normal ">
                 By submitting your email address you agree to our{" "}
               </span>
-              <span className="text-white text-base font-normal font-['Albert Sans']">
+              <span className="text-white text-base font-normal ">
                 terms & conditions
               </span>
             </div>
