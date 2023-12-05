@@ -174,7 +174,7 @@ const ExploreRegion = () => {
           </div>
         </div>
         <div className="text-center  ">
-          <button className="  bg-orange-700 rounded-full   tracking-tight px-4 py-5 justify-center items-center gap-2 inline-flex bg-bgsecondary  my-24 text-center text-white text-xs font-normal  uppercase leading-3 tracking-tight">
+          <button className="  bg-orange-700 rounded-full   tracking-tight px-4 py-5 justify-center items-center gap-2 inline-flex bg-bgsecondary  my-24 text-center text-white text-xs font-normal  uppercase leading-3">
             Start Exploring
             <span>
               <Image src={arrowbtn} alt="right-arrow" />
