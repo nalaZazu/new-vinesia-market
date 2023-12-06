@@ -20,19 +20,19 @@ export const menuBar = [
   {
     id: 3,
     name: "Wine and art",
-    href: "/",
+    href: "/winery",
     icon: soonicon,
   },
   {
     id: 4,
     name: "Security",
-    href: "/region",
+    href: "/france",
     icon: regionicon
   },
   {
     id: 5,
     name: "Asset performance",
-    href: "/wine&artcollections",
+    href: "/reso",
     icon:wineicon
   },
   {

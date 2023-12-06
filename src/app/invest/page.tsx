@@ -31,6 +31,7 @@ const Invest = () => {
           <Dropdown />
           <div className="border border-secondary mt-12"></div>
         </div>
+        {/* Mobile view */}
         <div className="md:hidden block">
           <MobileFilter />
         </div>
@@ -39,7 +40,7 @@ const Invest = () => {
 
         {/* animation  component  */}
         <div className="p-16 flex justify-center mx-auto ">
-          <Image src={xmark} alt="xmark" className="" />
+          <Image src={xmark} alt="xmark" />
         </div>
         {/* next product list  */}
 

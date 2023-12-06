@@ -7,7 +7,7 @@ import { ArrowUpRightIcon } from "@heroicons/react/20/solid";
 import ProductCards from "@/components/productCard/page";
 import Footer from "@/components/footer/page";
 import Newsletter from "@/components/newsletter/page";
-export default function page() {
+export default function Winary() {
   return (
     <div>
       <div className="w-full md:h-[600px] h-[620px] bg-no-repeat bg-cover bg-center bg-[url('https://i.ibb.co/hLLYBjr/winery-bg.png')]">
