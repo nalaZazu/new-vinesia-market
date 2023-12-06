@@ -75,8 +75,8 @@ const DropDown = ({
                 <Menu.Items className="absolute left-0 z-10 mt-2 w-[355px] origin-top-right rounded-md bg-orange-50 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                   <div className="py-1 ">
                     <form>
-                      <div className="relative px-4 py-6 w-full ">
-                        <div className="absolute left-5 inset-y-0 start-0 flex items-center ps-3 w-7  pointer-events-none">
+                      <div className="relative px-4 py-6 w-full">
+                        <div className="absolute left-5 inset-y-0 flex items-center w-7  pointer-events-none ps-2">
                           <SearchIcon
                             fill={pathName == "/" ? "white" : "#3a2824"}
                           />
@@ -92,38 +92,43 @@ const DropDown = ({
                         />
                       </div>
                     </form>
-                    {options?.map((item: any, itemId: any) => {
-                      return (
-                        <div key={itemId}>
-                          <Menu.Item>
-                            {({ active }) => (
-                              <p className="px-4 py-4 cursor-pointer hover:bg-secondary-dark text-secondary text-xxs font-normal  tracking-wide flex gap-2 items-center border border-orange-100">
-                                <input
-                                  id={`${item}-${itemId}`}
-                                  name="checkbox"
-                                  type="checkbox"
-                                  className="h-3 w-3 form-checkbox    bg-orange-50 rounded-md border border-zinc-800"
-                                  onChange={(e) =>
-                                    handleChange(item?.toLowerCase())
-                                  }
-                                />
-                                <label
-                                  htmlFor={`${item}-${itemId}`}
-                                  className={classNames(
-                                    active
-                                      ? "  text-zinc-800 leading-relaxed"
-                                      : "text-primary-dark ",
-                                    "text-lg font-semibold  "
-                                  )}
-                                >
-                                  {item}
-                                </label>
-                              </p>
-                            )}
-                          </Menu.Item>
-                        </div>
-                      );
-                    })}
+                    <div className=" dropdownstyle">
+                      {" "}
+                      {/* here add the webkit classs  */}
+                      {options?.map((item: any, itemId: any) => {
+                        return (
+                          <div key={itemId}>
+                            <Menu.Item>
+                              {({ active }) => (
+                                <p className="px-4 py-4 cursor-pointer text-secondary text-xxs font-normal  tracking-wide flex gap-2 items-center border border-orange-100 ">
+                                  <input
+                                    id={`${item}-${itemId}`}
+                                    name="checkbox"
+                                    type="checkbox"
+                                    className="h-3 w-3 form-checkbox    bg-orange-50 rounded-md border border-zinc-800"
+                                    onChange={(e) =>
+                                      handleChange(item?.toLowerCase())
+                                    }
+                                  />
+                                  <label
+                                    htmlFor={`${item}-${itemId}`}
+                                    className={classNames(
+                                      active
+                                        ? "  text-zinc-800 "
+                                        : "text-primary-dark ",
+                                      "text-lg font-semibold  leading-relaxed"
+                                    )}
+                                  >
+                                    {item}
+                                  </label>
+                                </p>
+                              )}
+                            </Menu.Item>
+                          </div>
+                        );
+                      })}
+                    </div>
+
                     <div className=" cursor-pointer p-6  justify-end items-start gap-4 flex">
                       <button
                         className="text-center text-secondary text-xs font-normal  tracking-wide   px-8 py-3 rounded-full border border-secondary "

@@ -16,14 +16,23 @@ export const filtersList = [
     name: "Rating from Critics",
     options: ["Robert Parker", "James Suckling"],
   },
-  {
-    name: "Regions",
-    options: ["France", "Germany"],
-  },
-  {
-    name: "Winery",
-    options: ["Some winery 1", "Some winery 2"],
-  },
+  // {
+  //   name: "Regions",
+  //   options: [
+  //     {
+  //       name: "France",
+  //       nestedOptions: ["value", "Burgundy (10)", "Champagen (10)"],
+  //     },
+  //     {
+  //       name: "Germany",
+  //       nestedOptions: ["value", "Burgundy (10)", "Champagen (10)"],
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: "Winery",
+  //   options: ["Some winery 1", "Some winery 2"],
+  // },
   {
     name: "Appelation",
     options: [
