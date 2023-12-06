@@ -26,7 +26,7 @@ const ExploreRegionMobile = () => {
       <Popup open={open} setOpen={handleOpen} />
       <section className="container mx-auto">
         <div className="pb-4">
-          <h1 className="text-zinc-800 text-4xl font-light font-['Canela'] leading-[44px]">
+          <h1 className="text-zinc-800 text-4xl font-light  leading-[44px]">
             Explore by region
           </h1>
         </div>
@@ -43,8 +43,8 @@ const ExploreRegionMobile = () => {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               ></iframe>
             </div>
-            <div className=" flex items-end justify-between gap-28 mt-4">
-              <h1 className=" text-zinc-800 text-4xl font-light font-['Canela'] leading-[44px]">
+            <div className=" flex items-end justify-between mt-4">
+              <h1 className=" text-zinc-800 text-4xl font-light  leading-[44px]">
                 France
               </h1>
               <div className="w-[37px] h-[37px] bg-orange-700 rounded-full flex justify-center items-center text-white">
@@ -66,7 +66,7 @@ const ExploreRegionMobile = () => {
             </div>
           </div>
         </div>
-        <p className="py-6 text-zinc-800 text-lg font-semibold font-['Albert Sans'] leading-relaxed">
+        <p className="py-6 text-zinc-800 text-lg font-semibold  leading-relaxed">
           Sub Regions
         </p>
         <div className="">

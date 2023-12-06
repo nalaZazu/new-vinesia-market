@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React  from "react";
+import React from "react";
 import xDelete from "../../assets/icons/X-delete.svg";
 const Badges = ({
   selectedItems,
@@ -7,7 +7,7 @@ const Badges = ({
 }: {
   selectedItems: any;
   setSelectedItems: any;
-}) => { 
+}) => {
   const handleRemoved = (itemToRemove: string) => {
     const updatedItems = selectedItems.filter(
       (item: any) => item !== itemToRemove
@@ -24,8 +24,8 @@ const Badges = ({
           selectedItems?.map((item: any, i: any) => {
             return (
               <div key={i}>
-                <span className=" px-3 py-2 bg-orange-700 bg-opacity-10 rounded-[100px]  justify-center items-center gap-1 inline-flex">
-                  <p className="text-primary text-xxs font-normal tracking-wide capitalize">
+                <span className="pl-4 pr-2 py-2 border-orange-700 border-opacity-20 rounded-[100px]  border justify-center items-center gap-1 inline-flex">
+                  <p className=" text-zinc-800 text-xs font-normal  uppercase leading-3 tracking-tight">
                     {item}
                   </p>
                   <Image
@@ -40,10 +40,10 @@ const Badges = ({
           })}
         {selectedItems && selectedItems.length > 0 && (
           <button
-            className="text-center text-primary text-sm font-medium  tracking-wide"
+            className="text-center text-orange-700 text-xs font-normal  uppercase leading-3 tracking-tight"
             onClick={handleClear}
           >
-            Clear filters
+            Clear all
           </button>
         )}
       </div>

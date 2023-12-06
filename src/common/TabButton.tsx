@@ -11,7 +11,7 @@ export default function TabButton() {
           className={` border-orange-700 ${selectedTab == 0 && "border-b-2"} `}
         >
           <button
-            className="text-zinc-800 text-base font-normal font-['Albert Sans'] leading-snug px-4 py-3"
+            className="text-zinc-800 text-base font-normal  leading-snug px-4 py-3"
             onClick={() => setSelectedTab(0)}
           >
             France
@@ -21,7 +21,7 @@ export default function TabButton() {
           className={`border-orange-700 ${selectedTab == 1 && "border-b-2"} `}
         >
           <button
-            className="text-zinc-800 text-base font-normal font-['Albert Sans'] leading-snug px-4 py-3"
+            className="text-zinc-800 text-base font-normal  leading-snug px-4 py-3"
             onClick={() => setSelectedTab(1)}
           >
             Germany
@@ -31,7 +31,7 @@ export default function TabButton() {
           className={`  border-orange-700 ${selectedTab == 2 && "border-b-2"} `}
         >
           <button
-            className="text-zinc-800 text-base font-normal font-['Albert Sans'] leading-snug px-4 py-3"
+            className="text-zinc-800 text-base font-normal  leading-snug px-4 py-3"
             onClick={() => setSelectedTab(2)}
           >
             Switzerland

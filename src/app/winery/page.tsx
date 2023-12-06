@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Disclosure } from "@headlessui/react";
 import WineryTag from "../../assets/images/Winery-tag.svg";
 import { ArrowUpRightIcon } from "@heroicons/react/20/solid";
-import ProductCards from "@/components/productCard/pages";
+import ProductCards from "@/components/productCard/page";
 import Footer from "@/components/footer/page";
 import Newsletter from "@/components/newsletter/page";
 export default function page() {
@@ -36,7 +36,7 @@ export default function page() {
               elegant, nuanced, and often complex flavors, highly sought after
               by wine connoisseurs. Champagne, located in northeastern France,
               is synonymous with sparkling wine. Using the traditional méthode
-              champenoise, this region crafts the world's most celebrated
+              champenoise, this region crafts the {`world's`} most celebrated
               bubbly.
             </p>
           </div>

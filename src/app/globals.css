@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: canela;
+  src: url("../assets/fonts/Canela\ Text\ Family/CanelaText-Regular-Trial.otf");
+}
+@font-face {
+  font-family: "Bon Vivant";
+  src: url("../assets/fonts/BonVivant-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -9,6 +19,18 @@
   /* font-family: (--); */
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "canela";
+}
+
+.collection {
+  font-family: "Bon Vivant";
+}
 .custom-bg-image {
   background-image: url("../assets/images/herobanner.png");
   height: 818px;
@@ -42,7 +64,7 @@
 
 .slick-next:before {
   content: none;
-} 
+}
 
 .slick-track {
   display: flex !important;
@@ -88,13 +110,25 @@
   border-radius: 9999px;
   border: 1px solid #f3e8cf;
   padding: 3px !important;
+  bottom: 38px !important;
 }
 
 .slick-dots li.slick-active button::before {
   opacity: 0 !important;
+ width: 1px !important;
+ height: 1px !important;
 }
 .slick-dots li button::before {
   opacity: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0px !important;
+}
+.slick-dots li button {
+  opacity: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0px !important;
 }
 
 .slick-dots {
@@ -114,10 +148,46 @@
 /* .slick-arrow {
   margin-top: 16px;
 } */
+@media screen and (min-width: 768px) {
+  .invest_carousel .slick-next,
+  .invest_carousel .slick-prev {
+    position: absolute;
+    width: 64px;
+    height: 48px;
+  }
+  .invest_carousel .slick-next {
+    right: -60px;
+  }
+  .invest_carousel .slick-prev {
+    left: -60px;
+  }
+}
+@media screen and (min-width: 1040px) {
+  .invest_carousel .slick-next,
+  .invest_carousel .slick-prev {
+    position: absolute;
+    width: 64px;
+    height: 48px;
+  }
+  .invest_carousel .slick-next {
+    right: -96px;
+  }
+  .invest_carousel .slick-prev {
+    left: -96px;
+  }
+}
 
+
+
+.critics_carousel .slick-next,
+  .critics_carousel .slick-prev {
+    position: absolute;
+    width: 64px;
+    height: 48px;
+  }
 /* Styles for buttons at large screens */
 @media screen and (max-width: 768px) {
-  .product_slider ul {
+  /* .product_slider ul {
     display: flex !important;
     justify-content: center;
     width: 360px;
@@ -127,8 +197,43 @@
     background-color: white;
     border-radius: 10px;
     z-index: 0;
+  } */
+
+ 
+  .custom-bg-image {
+    background-image: url("../assets/images/Mobile-banner.webp");
+    height: 1000px;
+    background-size: cover;
+    /* background-position: center; */
   }
+  
+  .invest_carousel .slick-prev,
+.invest_carousel .slick-next {
+  position: absolute;
+  width: 64px;
+  height: 48px;
+  top: 105%;
 }
+
+.invest_carousel .slick-next {
+  right: 95px;
+}
+.invest_carousel .slick-prev {
+  left: 95px;
+}
+}
+
+.critics_carousel .slick-next {
+  right: 16px;
+}
+.critics_carousel .slick-prev {
+  left: 16px;
+}
+
+
+
+/* .invest_carousel */
+/* }  */
 
 /* Styles for buttons at medium screens */
 @media screen and (max-width: 768px) {
