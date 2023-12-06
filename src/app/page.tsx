@@ -6,7 +6,6 @@ import VideoBanner from "../components/videoBanner/page";
 import WineArt from "../components/wineArt/page";
 import HeritageCarousel from "../components/heritageCarousel/page";
 import ExploreRegion from "../components/exploreRegion/page";
-import Header from "../components/header/page";
 import Newsletter from "../components/newsletter/page";
 import Footer from "../components/footer/page";
 import CriticsMobile from "../components/critics/mobileView";
