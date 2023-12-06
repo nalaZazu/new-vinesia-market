@@ -19,6 +19,10 @@
   /* font-family: (--); */
 }
 
+body {
+  overflow-x: hidden;
+}
+
 h1,
 h2,
 h3,
@@ -115,8 +119,8 @@ h6 {
 
 .slick-dots li.slick-active button::before {
   opacity: 0 !important;
- width: 1px !important;
- height: 1px !important;
+  width: 1px !important;
+  height: 1px !important;
 }
 .slick-dots li button::before {
   opacity: 0 !important;
@@ -177,14 +181,12 @@ h6 {
   }
 }
 
-
-
 .critics_carousel .slick-next,
-  .critics_carousel .slick-prev {
-    position: absolute;
-    width: 64px;
-    height: 48px;
-  }
+.critics_carousel .slick-prev {
+  position: absolute;
+  width: 64px;
+  height: 48px;
+}
 /* Styles for buttons at large screens */
 @media screen and (max-width: 768px) {
   /* .product_slider ul {
@@ -199,28 +201,27 @@ h6 {
     z-index: 0;
   } */
 
- 
   .custom-bg-image {
     background-image: url("../assets/images/Mobile-banner.webp");
     height: 1000px;
     background-size: cover;
     /* background-position: center; */
   }
-  
-  .invest_carousel .slick-prev,
-.invest_carousel .slick-next {
-  position: absolute;
-  width: 64px;
-  height: 48px;
-  top: 105%;
-}
 
-.invest_carousel .slick-next {
-  right: 95px;
-}
-.invest_carousel .slick-prev {
-  left: 95px;
-}
+  .invest_carousel .slick-prev,
+  .invest_carousel .slick-next {
+    position: absolute;
+    width: 64px;
+    height: 48px;
+    top: 105%;
+  }
+
+  .invest_carousel .slick-next {
+    right: 95px;
+  }
+  .invest_carousel .slick-prev {
+    left: 95px;
+  }
 }
 
 .critics_carousel .slick-next {
@@ -229,8 +230,6 @@ h6 {
 .critics_carousel .slick-prev {
   left: 16px;
 }
-
-
 
 /* .invest_carousel */
 /* }  */
