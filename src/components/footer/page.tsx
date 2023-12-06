@@ -13,7 +13,7 @@ import { CaradRegion } from "../../constants/cardregion";
 export default function Footer() {
   return (
     <div>
-      <footer className=" mt-14 text-center text-neutral-600 dark:bg-neutral-600 dark:text-neutral-200 lg:text-left">
+      <footer className=" mt-14 text-center text-neutral-600     lg:text-left">
         {/* <!-- Main container div: holds the entire content of the footer, including four sections (TW elements, Products, Useful links, and Contact), with responsive styling and appropriate padding/margins. --> */}
         <div className="container mx-auto">
           <div className="mx-6 py-10 text-center md:text-left">
@@ -100,7 +100,7 @@ export default function Footer() {
 
           {/* <!--Copyright section--> */}
         </div>
-        <div className="flex items-center justify-center bg-gray-700 text-white p-2 lg:justify-between">
+        <div className="flex items-center justify-center bg-[#bd936b] text-white p-2 lg:justify-between">
           <div className=" container mx-auto flex justify-between">
             <div className="mr-12 hidden lg:block">
               <span>© 2023 Copyright: Vinesia Marketplace</span>

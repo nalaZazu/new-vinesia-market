@@ -32,7 +32,7 @@ export default function Header() {
               <Link href="#">
                 <span
                   className={`hidden md:block py-7 ${
-                    pathName === "/" ? "text-orange-100" : "text-stone-600"
+                    pathName === "/" || pathName === "/signup" ? "text-orange-100" : "text-stone-600"
                   } text-base  tracking-tight font-semibold  border-b-orange-700 border-0 border-b-2`}
                 >
                   Vinesia Story
@@ -41,7 +41,7 @@ export default function Header() {
               <Link href="/">
                 <span
                   className={` hidden md:block py-7 text-orange-100 text-base font-normal tracking-tight  ${
-                    pathName === "/" ? "text-orange-100" : "text-stone-600"
+                    pathName === "/" || pathName === "/signup" ? "text-orange-100" : "text-stone-600"
                   } `}
                 >
                   Vinesia Marketplace
@@ -52,7 +52,6 @@ export default function Header() {
 
             <div className="md:hidden">
               <div className="block md:hidden">
-               
                 <SidePannel />
               </div>
             </div>
@@ -69,10 +68,12 @@ export default function Header() {
               <div className="hidden md:block">
                 <div
                   className={`w-10 h-10 rounded-full border  border-opacity-20 justify-center items-center gap-2.5 inline-flex   ${
-                    pathName == "/" ? "border-white" : "border-stone-800"
+                    pathName == "/" || pathName == "/signup"
+                      ? "border-white"
+                      : "border-stone-800"
                   } `}
                 >
-                  <SearchIcon fill={pathName == "/" ? "white" : "#3a2824"} />
+                  <SearchIcon fill={pathName == "/" || pathName == "/signup" ? "white" : "#3a2824"} />
                 </div>
               </div>
               <div>
@@ -81,23 +82,27 @@ export default function Header() {
 
               <div
                 className={`w-10 h-10 rounded-full border border-opacity-20 justify-center items-center gap-2.5 inline-flex  ${
-                  pathName == "/" ? "border-white" : "border-stone-800 text-"
+                  pathName == "/" || pathName == "/signup"
+                    ? "border-white"
+                    : "border-stone-800 text-"
                 }`}
               >
-                <CartIcon fill={pathName == "/" ? "white" : "#3a2824"} />
+                <CartIcon fill={pathName == "/" || pathName == "/signup" ? "white" : "#3a2824"} />
               </div>
             </div>
           </div>
         </nav>
         <hr
           className={` hidden md:block ${
-            pathName == "/" ? "opacity-20" : "border-stone-400"
+            pathName == "/" || pathName == "/signup"
+              ? "opacity-20"
+              : "border-stone-400"
           }`}
         />
         {/* Navbar */}
         <nav
           className={`text-orange-100 text-base font-normal tracking-tight ${
-            pathName == "/" ? "text-orange-100" : "text-stone-600"
+            pathName == "/" || pathName == "/signup" ? "text-orange-100" : "text-stone-600"
           } `}
         >
           <div className="container mx-auto flex justify-center items-center px-4">
@@ -121,16 +126,15 @@ export default function Header() {
             </ul>
           </div>
         </nav>
-       
-        {
-          pathName === "/" ? (
-            <div className="md:hidden block py-4 px-6">
+
+        {pathName === "/" ? (
+          <div className="md:hidden block py-4 px-6">
             <form>
               <div className="relative">
                 <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                   <SearchIcon fill={pathName == "/" ? "white" : "#3a2824"} />
                 </div>
-  
+
                 <input
                   type="search"
                   id="default-search"
@@ -140,14 +144,14 @@ export default function Header() {
               </div>
             </form>
           </div>
-          ):(
-            <div className="md:hidden block py-4 px-6">
+        ) : (
+          <div className="md:hidden block py-4 px-6">
             <form>
               <div className="relative">
                 <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                   <SearchIcon fill={pathName == "/" ? "white" : "#3a2824"} />
                 </div>
-  
+
                 <input
                   type="search"
                   id="default-search"
@@ -157,12 +161,9 @@ export default function Header() {
               </div>
             </form>
           </div>
-          )
-        }
+        )}
         <hr
-          className={` ${
-            pathName == "/" ? "opacity-20" : "border-stone-400 "
-          }`}
+          className={` ${pathName == "/" ? "opacity-20" : "border-stone-400 "}`}
         />
       </div>
     </>
