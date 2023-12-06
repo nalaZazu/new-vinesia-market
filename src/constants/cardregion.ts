@@ -1,8 +1,8 @@
-import france from "../assets/images/france.jpeg";
-import germany from "../assets/images/germany.jpg";
-import italy from "../assets/images/italy.jpeg";
-import usa from "../assets/images/usa.jpg";
-import switzerland from "../assets/images/Switzerland.png";
+import france from "../assets/images/franceregions.png";
+import germany from "../assets/images//germanyregions.png";
+import italy from "../assets/images/italyregions.png";
+import usa from "../assets/images/usaregions.png";
+import switzerland from "../assets/images/switzerlandregions.png";
 
 export const CaradRegion = [
   { id: 1, name: "France", image: france, href: "/region/france" },
