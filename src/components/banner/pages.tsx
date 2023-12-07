@@ -46,9 +46,9 @@ export default function Banner() {
               <p className="text-stone-400 text-xs font-normal uppercase leading-3 tracking-tight pb-7 max-w-[200px] md:max-w-full">
                 appreciating your wine, guarding its emotions
               </p>
-              <p className="text-white md:text-9xl sm:text-6xl text-5xl font-normal  ">
+              <h1 className="text-white md:text-9xl sm:text-6xl text-5xl font-normal  ">
                 Marketplace
-              </p>
+              </h1>
               <p className="text-stone-400 text-base font-normal leading-snug pt-4 pb-10 max-w-[470px]">
                 Something about technology, advantage of wine investments,
                 unique buying and reselling experience

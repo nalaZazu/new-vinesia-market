@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 
 import Dropdown from "@/common/DropDown/page";
@@ -7,7 +6,10 @@ import Footer from "@/components/footer/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
 import Product from "@/components/products/page";
 import MobileFilter from "../invest/moibleview/page";
-import xmark from "../../assets/icons/x-mark-anim.svg";
+
+// import xmark from "../../assets/icons/x-mark-anim.svg";
+import xmark from "@/assets/icons/x-mark-anim.svg";
+import Image from "next/image";
 import Card from "@/components/card/page";
 import lineregion from "@/assets/icons/lineregion.svg";
 
@@ -19,7 +21,7 @@ export default function Regions() {
           Regions
         </h1>
         <div className="underline decoration-wavy py-8">
-          <Image src={lineregion} />
+          <Image src={lineregion} alt="image" />
         </div>
         <Card />
 

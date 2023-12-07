@@ -15,7 +15,7 @@ import NewsletterMobile from "../components/newsletter/MobileView";
 export default function Home() {
   return (
     <>
-      <div className="bg-orange-50 absolute top-0 -z-10 left-0 right-0">
+      <div className="absolute top-0 -z-10 left-0 right-0">
         <div className="relative">
           <Banner />
           <div className=" pt-40 container mx-auto ">

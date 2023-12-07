@@ -45,7 +45,7 @@ function MobileFilter() {
         <Menu as="div" className="relative inline-block text-left w-full">
           <div>
             <Menu.Button
-              className="flex items-center w-full justify-between gap-x-1.5 rounded-full  px-4 py-4 text-xs font-normal text-primary shadow-sm  bg-orange-700 bg-opacity-10 uppercase"
+              className="flex items-center w-full justify-between gap-x-1.5 rounded-full   text-xs font-normal   shadow-sm  bg-orange-700   pl-4 pr-3 py-4   bg-opacity-10   text-zinc-800   uppercase leading-3 tracking-tight"
               onClick={() => setFirstDropdownOpen(!firstDropdownOpen)}
             >
               Filter
@@ -79,7 +79,7 @@ function MobileFilter() {
                     <div>
                       <Menu.Button
                         className="inline-flex w-full justify-between gap-x-1.5 rounded-md  px-3   text-primary 
-                        divide-y  text-base font-normal  leading-snug"
+                        divide-y divide-gray-800  text-base font-normal  leading-snug"
                         onClick={() => setActiveState({ [name]: true })}
                       >
                         {name}

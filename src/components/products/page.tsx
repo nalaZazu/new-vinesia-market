@@ -30,7 +30,7 @@ const Product = () => {
                     </div>
                   </div>
                   <div className="flex-col items-center gap-6 flex">
-                    <h3 className="max-w-[243px] text-center text-zinc-800 text-[21px] font-light  leading-[29px] tracking-wide">
+                    <h3 className="max-w-[243px] text-center text-zinc-800 text-[21px] font-light  leading-[29px] tracking-wide ">
                       Brunello di Montalcino {`"Piaggione"`} | Winery name |
                       2019
                     </h3>

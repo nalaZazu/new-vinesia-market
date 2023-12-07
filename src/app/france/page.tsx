@@ -32,7 +32,7 @@ function France() {
             southwest, is celebrated for its robust reds, notably blends of
             Merlot, Cabernet Sauvignon, and Cabernet Franc. Burgundy, in the
             east, is famed for its Pinot Noir and Chardonnay, reflecting the
-            region's terroir with elegance and finesse.
+            {`region's`} terroir with elegance and finesse.
           </p>
         </div>
         <div>

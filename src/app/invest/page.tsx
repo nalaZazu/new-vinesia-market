@@ -11,7 +11,7 @@ import Product from "@/components/products/page";
 
 const Invest = () => {
   return (
-    <div className="bg-orange-50">
+    <div >
       {/* <Headersecond /> */}
       <div className=" pt-6 container mx-auto px-3">
         <InvestBread />
@@ -21,7 +21,7 @@ const Invest = () => {
         </div>
         {/* for mobileView */}
         <div className="mt-9 md:hidden block">
-          <h2 className=" text-6xl font-normal leading-[68px] text-primary">
+          <h2 className=" text-zinc-800 text-6xl font-normal   leading-[68px]">
             Invest
           </h2>
         </div>
