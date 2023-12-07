@@ -2,15 +2,15 @@ import VerticalBreadCrumb from "@/common/verticalBreadcrumb/page";
 import React from "react";
 import { AlertIcons, Arrows, BgRectangle } from "@/assets/icons/Icons";
 import Image from "next/image";
-import rectangle from "../../assets/images/rectangle.png";
 import TabSection from "@/components/tabsection/page";
 import MindPledge from "@/components/mindpledge/page";
 import HeritageCarousel from "@/components/heritageCarousel/page";
+import winevideo from "@/assets/images/winevideo.jpeg"
 const Product = () => {
   return (
     <React.Fragment>
       <div className="relative">
-        <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 px-4">
+        <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 px-4 absolute top-0">
           <div className="mx-auto w-[929px] text-center">
             <h1 className="text-zinc-800  md:text-7xl md:leading-[84px] text-4xl font-normal leading-[42px]">
               Chateau La Mission Haut Brion Cru Classe | 2009
@@ -21,9 +21,9 @@ const Product = () => {
         <div className="flex">
           <div className="basis-24">{/* <VerticalBreadCrumb /> */}</div>
           <div className=" basis-5/6">
-            <div className="grid grid-cols-3">
-              <div className="pt-10  ">
-                <div className="pb-6 ">
+            <div className="grid grid-cols-3 md:h-[968px]">
+              <div className="pb-10  flex items-end">
+                <div className="pb-6 w-full">
                   <div className="space-y-4 flex gap-4 items-center   text-stone-500 text-base font-normal   leading-snug">
                     <p>First release date</p>
                     <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
@@ -127,13 +127,13 @@ const Product = () => {
               </div>
               {/* here is middle section with slider */}
               <div className=" ">
-                <div className="-z-10 pe-3 absolute top-0 right-0 left-0 max-w-[370px]">
+                <div className="-z-10 pe-3 ">
                   <BgRectangle />
                   {/* <Image src={rectangle} alt="reactangle" /> */}
                 </div>
               </div>
               {/* here is last section  */}
-              <div className="pt-10  ">
+              <div className="pb-10 flex items-end  ">
                 <TabSection />
               </div>
             </div>
@@ -142,20 +142,21 @@ const Product = () => {
           <div className="basis-24"></div>
         </div>
         {/* here is mind pledge section */}
-        <div className="absolute w-full">
+        <div className="w-full -z-10">
           <MindPledge />
         </div>
-
-        {/* here is carsoul section */}
-        <div className="">
-          <div className="pb-14">
-            <h1 className="text-zinc-800 text-4xl font-normal  text-center">
-              Invest in heritage
-            </h1>
-          </div>
-          <HeritageCarousel/>
+      </div>
+      {/* here is carsoul section */}
+      <div className="md:py-40 py-20">
+        <div className="pb-14">
+          <h1 className="text-zinc-800 text-4xl font-light  text-center  leading-[44px]">
+            Other editions{" "}
+          </h1>
         </div>
-
+        <HeritageCarousel />
+      </div>
+      <div className="">
+{/* <Image src={winevideo} alt"wine"/> */}
       </div>
     </React.Fragment>
   );

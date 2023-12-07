@@ -54,10 +54,10 @@ const DropDown = ({
               key={filterItemId}
             >
               <div>
-                <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 pl-4 pr-3 py-4 rounded-full  px-3 items-center text-xs font-normal text-priamry shadow-sm bg-orange-700 bg-opacity-10  uppercase  leading-3 tracking-tight">
+                <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 pl-4 pr-3 py-4    px-3 items-center text-xs font-normal text-priamry shadow-sm     leading-3 tracking-tight     bg-orange-700 bg-opacity-10 rounded-full ">
                   {name}
                   <ChevronDownIcon
-                    className="-mr-1 h-5 w-5 text-zinc-800"
+                    className="-mr-1 h-5 w-5 text-zinc-800     text-xs font-normal  uppercase leading-3 tracking-tight"
                     aria-hidden="true"
                   />
                 </Menu.Button>

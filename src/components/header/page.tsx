@@ -36,7 +36,7 @@ export default function Header() {
                     pathName === "/" || pathName === "/signup" || pathName === "/wine&art" 
                       ? "text-orange-100"
                       : "text-stone-600"
-                  } text-base  tracking-tight font-semibold  border-b-orange-700 border-0 border-b-2`}
+                  } text-base  tracking-tight font-semibold  border-b-red-400 border-0 border-b-2`}
                 >
                   Vinesia Story
                 </span>
@@ -145,7 +145,7 @@ export default function Header() {
                     <li
                       className={`${
                         name == "Start"
-                          ? "text-orange-700 font-semibold border-b-orange-700 border-0 border-b-2"
+                          ? "  font-semibold border-b-red-400 border-0 border-b-2  text-base   tracking-tight"
                           : ""
                       } py-4`}
                     >
