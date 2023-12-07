@@ -5,12 +5,12 @@ import Link from "next/link";
 const Card = () => {
   return (
     <>
-      <div className=" flex  md:grid  gap-x-4 gap-y-4 md:grid-cols-2 lg:grid-cols-5  pt-7 pb-7 overflow-x-auto">
+      <div className=" flex  md:grid  gap-x-4 gap-y-4 md:grid-cols-2 lg:grid-cols-5  pt-7 pb-7 overflow-x-auto ">
         {CaradRegion?.map((reg: any) => {
           const { id, name, image, href } = reg;
           return (
             <div
-              className="md:min-w-sm min-w-[80%] rounded overflow-hidden shadow-lg"
+              className="md:min-w-sm min-w-[80%] rounded overflow-hidden shadow-lg  bg-white"
               key={id}
             >
               <Link href={`${href}`}>

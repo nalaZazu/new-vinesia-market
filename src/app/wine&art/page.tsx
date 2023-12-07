@@ -3,6 +3,11 @@ import React from "react";
 import Image from "next/image";
 import Newsletter from "@/components/newsletter/page";
 import Footer from "@/components/footer/page";
+import Dropdown from "@/common/DropDown/page";
+import MobileFilter from "../invest/moibleview/page";
+import Product from "@/components/products/page";
+import NewsletterMobile from "@/components/newsletter/MobileView";
+import xmark from "../../assets/icons/x-mark-anim.svg";
 
 export default function WineryArt() {
   return (
@@ -70,6 +75,45 @@ export default function WineryArt() {
           </div>
         </div>
       </div>
+
+      {/* Destop View */}
+      <div className="max-w-[1038px] mx-auto ">
+        <hr className="border border-orange-700 border-opacity-20" />
+        <div className="hidden md:block my-20 ">
+          <Dropdown/>
+        </div>
+        {/* Mobile view */}
+        <div className="md:hidden block px-6">
+          <MobileFilter/>
+        </div>
+        {/* product list */}
+        <Product/>
+        {/* product list  */}
+        <Product />
+
+        {/* animation  component  */}
+        <div className="p-16 flex justify-center mx-auto ">
+          <Image src={xmark} alt="xmark" />
+        </div>
+        {/* next product list  */}
+
+        <Product />
+        {/* animation  component  */}
+        <div className="p-16 flex justify-center mx-auto ">
+          <Image src={xmark} alt="xmark" />
+        </div>
+      </div>
+      {/* desktop Newsletter*/}
+      <div className="hidden sm:block">
+        <Newsletter />
+      </div>
+      {/* mobile Newsletter */}
+      <div className="block sm:hidden">
+        <NewsletterMobile/>
+      </div>
+
+
+
 
       <Newsletter />
       <Footer />
