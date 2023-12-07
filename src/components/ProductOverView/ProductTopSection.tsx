@@ -11,7 +11,7 @@ const ProductTopSection = ({}) => {
   return (
     <div>
       <section className="md:mx-0 mx-4">
-        <div className="grid pb-16 lg:grid-cols-2 md:grid-cols-2 grid-cols-1 max-w-6xl">
+        <div className="grid pb-16 lg:grid-cols-2 md:grid-cols-2 grid-cols-1">
           {/* slider start */}
           <div className="">
             <ProductCarousel />
