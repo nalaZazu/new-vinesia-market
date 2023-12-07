@@ -10,8 +10,8 @@ export default function ProductCarousel() {
   const sliderSettings = {
     customPaging: function () {
       return (
-        <div className="image.dots z-0 flx-img-border">
-          <Image src={big} alt="" width={56} height={74} />
+        <div className="imagedots z-0 flx-img-border absolute top-0 buttom-0">
+          <Image src={big} alt="" />
         </div>
       );
     },
@@ -39,12 +39,14 @@ export default function ProductCarousel() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          dots: false,
+          arrows: false,
         },
       },
     ],
     prevArrow: (
       <div className=" productcarousel z-50">
-        <div className=" text-black rounded-lg w-8 h-8 text-center flex items-center absolute lg:top-[290px] lg:left-[90px] md:top-[290px] md:left-[90px] top-[250px] left-[90px] ">
+        <div className=" bg-rose-200 h-20 text-secondary w-6 text-center flex items-center absolute lg:top-[251px] lg:left-[100px] md:top-[215px] md:left-[0px] top-[0px] left-[0px] ">
           <div className="">
             <PrevIcon2 />
           </div>
@@ -52,8 +54,8 @@ export default function ProductCarousel() {
       </div>
     ),
     nextArrow: (
-      <div className="productcarousel  z-50">
-        <div className=" text-black rounded-lg w-8 h-8 text-center flex items-center absolute lg:top-[290px] lg:right-[150px] md:top-[290px] md:right-[345px] top-[250px] right-[70px]">
+      <div className="productcarousel  z-50 ">
+        <div className="text-secondary h-20 w-6 text-center flex items-center absolute lg:top-[254px] lg:right-[100px] md:top-[215px] md:right-[345px] top-[0px] right-[0px]">
           <div className="">
             <NextIcon2 />
           </div>
@@ -67,7 +69,7 @@ export default function ProductCarousel() {
         {[1, 2, 3, 4]?.map((item: any, i: any) => {
           return (
             <div key={i}>
-              <div key={i} className=" justify-center items-center">
+              <div key={i} className="flex justify-center items-center pb-20">
                 <div className="relative">
                   <Image
                     src={big1}
