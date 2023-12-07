@@ -10,8 +10,8 @@ export default function ProductCarousel() {
   const sliderSettings = {
     customPaging: function () {
       return (
-        <div className="image.dots z-0 flx-img-border">
-          <Image src={big} alt="" width={56} height={74} />
+        <div className="imagedots z-0 flx-img-border absolute top-0 buttom-0">
+          <Image src={big} alt="" />
         </div>
       );
     },
@@ -44,7 +44,7 @@ export default function ProductCarousel() {
     ],
     prevArrow: (
       <div className=" productcarousel z-50">
-        <div className=" text-black rounded-lg w-8 h-8 text-center flex items-center absolute lg:top-[290px] lg:left-[90px] md:top-[290px] md:left-[90px] top-[250px] left-[90px] ">
+        <div className=" bg-rose-200 h-20 text-secondary w-6 text-center flex items-center absolute lg:top-[215px] lg:left-[-10px] md:top-[215px] md:left-[0px] top-[250px] left-[90px] ">
           <div className="">
             <PrevIcon2 />
           </div>
@@ -52,8 +52,8 @@ export default function ProductCarousel() {
       </div>
     ),
     nextArrow: (
-      <div className="productcarousel  z-50">
-        <div className=" text-black rounded-lg w-8 h-8 text-center flex items-center absolute lg:top-[290px] lg:right-[150px] md:top-[290px] md:right-[345px] top-[250px] right-[70px]">
+      <div className="productcarousel  z-50 ">
+        <div className="text-secondary h-20 w-6 text-center flex items-center absolute lg:top-[215px] lg:right-[190px] md:top-[215px] md:right-[345px] top-[250px] right-[70px]">
           <div className="">
             <NextIcon2 />
           </div>
