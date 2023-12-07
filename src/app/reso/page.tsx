@@ -15,7 +15,7 @@ function Reso() {
     <React.Fragment>
       <div className="w-full md:h-[744px] h-[620px] bg-no-repeat bg-cover bg-center bg-[url('https://i.ibb.co/QfzgMwN/image-137-1.png')] relative">
         {/* BreadCrumb start */}
-        <VerticalBreadCrumb/>
+        <VerticalBreadCrumb />
         {/* BreadCrumb end */}
         <div className="flex items-end container mx-auto h-[644px] md:ps-40 ps-0">
           <div>
@@ -42,7 +42,7 @@ function Reso() {
             southwest, is celebrated for its robust reds, notably blends of
             Merlot, Cabernet Sauvignon, and Cabernet Franc. Burgundy, in the
             east, is famed for its Pinot Noir and Chardonnay, reflecting the
-            region's terroir with elegance and finesse.
+            {`region's`} terroir with elegance and finesse.
           </p>
         </div>
         <div>
