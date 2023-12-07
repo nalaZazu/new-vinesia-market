@@ -359,6 +359,16 @@ export function Arrows({ storke }: { storke: any }) {
   );
 }
 
+export function BgRectangle() {
+  return (
+    <svg
+      width="100%"
+      height="1037"
+      // viewBox="0 0 394 1037"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M0 0H394V967L197 1037L0 967V0Z" fill="#f7f0e0" />
 export const Xmark_old = () => {
   return (
     <>
