@@ -6,7 +6,7 @@ import xsoical from "../../assets/icons/Social Icons.svg";
 import apple from "../../assets/icons/Apple Logo.svg";
 import wallet from "../../assets/icons/Wallet.svg";
 import magic from "../../assets/images/magic.png";
-import alert from "../../assets/icons/alert-circle.svg"
+import alert from "../../assets/icons/alert-circle.svg";
 const SignUp = () => {
   return (
     <React.Fragment>
