@@ -41,7 +41,7 @@ function MobileFilter() {
   // };
   return (
     <>
-      <div className=" pt-6  pb-14">
+      <div className=" pt-6  pb-4">
         <Menu as="div" className="relative inline-block text-left w-full">
           <div>
             <Menu.Button

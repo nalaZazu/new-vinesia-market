@@ -6,7 +6,7 @@ const InvestBread = () => {
     <>
       <div className="conatiner mx-auto hidden md:block">
         <nav className="flex" aria-label="Breadcrumb">
-          <ol className="container mx-auto flex flex-wrap gap-3 px-4 items-center">
+          <ol className="container mx-auto flex flex-wrap gap-3 px-2 items-center">
             <li className="inline-flex items-center">
               <Link
                 href="#"

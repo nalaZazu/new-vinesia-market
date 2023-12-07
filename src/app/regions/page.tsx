@@ -10,7 +10,6 @@ import MobileFilter from "../invest/moibleview/page";
 // import xmark from "../../assets/icons/x-mark-anim.svg";
 import xmark from "@/assets/icons/x-mark-anim.svg";
 import Image from "next/image";
-
 import Card from "@/components/card/page";
 import lineregion from "@/assets/icons/lineregion.svg";
 
