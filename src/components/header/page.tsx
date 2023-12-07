@@ -9,6 +9,7 @@ import { usePathname } from "next/navigation";
 import { CartIcon, SearchIcon } from "@/assets/icons/Icons";
 import local from "next/font/local";
 import SidePannel from "./sidepannel/page";
+import { UserIcon } from "@/assets/icons/Icons";
 
 const canela = local({
   src: "../../../public/fonts/canelatext-black.woff2",
@@ -32,7 +33,9 @@ export default function Header() {
               <Link href="#">
                 <span
                   className={`hidden md:block py-7 ${
-                    pathName === "/" || pathName === "/signup" ? "text-orange-100" : "text-stone-600"
+                    pathName === "/" || pathName === "/signup" || pathName === "/wine&art" 
+                      ? "text-orange-100"
+                      : "text-stone-600"
                   } text-base  tracking-tight font-semibold  border-b-orange-700 border-0 border-b-2`}
                 >
                   Vinesia Story
@@ -41,7 +44,9 @@ export default function Header() {
               <Link href="/">
                 <span
                   className={` hidden md:block py-7 text-orange-100 text-base font-normal tracking-tight  ${
-                    pathName === "/" || pathName === "/signup" ? "text-orange-100" : "text-stone-600"
+                    pathName === "/" || pathName === "/signup" || pathName === "/wine&art" 
+                      ? "text-orange-100"
+                      : "text-stone-600"
                   } `}
                 >
                   Vinesia Marketplace
@@ -68,33 +73,57 @@ export default function Header() {
               <div className="hidden md:block">
                 <div
                   className={`w-10 h-10 rounded-full border  border-opacity-20 justify-center items-center gap-2.5 inline-flex   ${
-                    pathName == "/" || pathName == "/signup"
+                    pathName == "/" || pathName == "/signup" || pathName === "/wine&art" 
                       ? "border-white"
                       : "border-stone-800"
                   } `}
                 >
-                  <SearchIcon fill={pathName == "/" || pathName == "/signup" ? "white" : "#3a2824"} />
+                  <SearchIcon
+                    fill={
+                      pathName == "/" || pathName == "/signup"
+                        ? "white"
+                        : "#3a2824"
+                    }
+                  />
                 </div>
               </div>
-              <div>
-                <UserDropDown />
+              <div
+                className={`w-10 h-10 rounded-full border  border-opacity-20 justify-center items-center gap-2.5 inline-flex   ${
+                  pathName == "/" || pathName == "/signup"  || pathName === "/wine&art" 
+                    ? "border-white"
+                    : "border-stone-800"
+                } `}
+              >
+                <UserIcon
+                  fill={
+                    pathName == "/" || pathName == "/signup" || pathName === "/wine&art" 
+                      ? "white"
+                      : "#3a2824"
+                  }
+                />
               </div>
 
               <div
                 className={`w-10 h-10 rounded-full border border-opacity-20 justify-center items-center gap-2.5 inline-flex  ${
-                  pathName == "/" || pathName == "/signup"
+                  pathName == "/" || pathName == "/signup"  || pathName === "/wine&art" 
                     ? "border-white"
                     : "border-stone-800 text-"
                 }`}
               >
-                <CartIcon fill={pathName == "/" || pathName == "/signup" ? "white" : "#3a2824"} />
+                <CartIcon
+                  fill={
+                    pathName == "/" || pathName == "/signup" || pathName === "/wine&art" 
+                      ? "white"
+                      : "#3a2824"
+                  }
+                />
               </div>
             </div>
           </div>
         </nav>
         <hr
           className={` hidden md:block ${
-            pathName == "/" || pathName == "/signup"
+            pathName == "/" || pathName == "/signup" || pathName === "/wine&art" 
               ? "opacity-20"
               : "border-stone-400"
           }`}
@@ -102,7 +131,9 @@ export default function Header() {
         {/* Navbar */}
         <nav
           className={`text-orange-100 text-base font-normal tracking-tight ${
-            pathName == "/" || pathName == "/signup" ? "text-orange-100" : "text-stone-600"
+            pathName == "/" || pathName == "/signup" || pathName === "/wine&art" 
+              ? "text-orange-100"
+              : "text-stone-600"
           } `}
         >
           <div className="container mx-auto flex justify-center items-center px-4">

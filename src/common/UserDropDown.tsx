@@ -17,7 +17,6 @@ import { UserIcon } from "@/assets/icons/Icons";
 export default function UserDropDown() {
   const pathName = usePathname();
 
-  console.log("pathName ", pathName);
 
   //   const dispatch = useDispatch();
   //   const isAuthenticted = useSelector<any>(
