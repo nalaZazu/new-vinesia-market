@@ -12,7 +12,7 @@ export default function DropDownButton() {
     <>
       <Menu as="div" className="relative inline-block text-left">
         <div>
-          <Menu.Button className="bg-orange-700 bg-opacity-10 justify-center gap-1 flex items-center w-full gap-x-1.5 pl-4 pr-3 py-4 rounded-full  px-3  text-zinc-800 text-xs font-normal font-['Albert Sans'] uppercase leading-3 tracking-tight ">
+          <Menu.Button className="border border-stone-400   justify-center gap-1 flex items-center w-full gap-x-1.5 pl-4 pr-3 py-4 rounded-full  px-3  text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight ">
             Recommended
             <ChevronDownIcon
               className="-mr-1 h-5 w-5 text-stone-500"

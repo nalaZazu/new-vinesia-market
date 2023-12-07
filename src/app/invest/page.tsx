@@ -29,19 +29,22 @@ const Invest = () => {
         {/* dropdown */}
         <div className="hidden md:block">
           <Dropdown />
-          <div className="border border-secondary mt-12"></div>
+          <div className=" border-red-700 border-[0.5px]  mt-12"></div>
         </div>
         {/* Mobile view */}
         <div className="md:hidden block">
           <MobileFilter />
         </div>
         {/* product list  */}
+        <div className="md:block hidden">
         <Product />
-
-        {/* animation  component  */}
+  {/* animation  component  */}
         <div className="p-16 flex justify-center mx-auto ">
           <Image src={xmark} alt="xmark" />
         </div>
+        </div>
+
+      
         {/* next product list  */}
 
         <Product />
