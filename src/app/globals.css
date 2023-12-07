@@ -33,21 +33,19 @@ h6 {
 }
 /* webkit class */
 .dropdownstyle::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px hsl(17, 55%, 89%);;
+  -webkit-box-shadow: inset 0 0 6px hsl(17, 55%, 89%);
   background-color: hsl(17, 55%, 89%);
   border-radius: 10px;
-
 }
 
 .dropdownstyle::-webkit-scrollbar {
   width: 6px;
-  background-color: #F2DBD2;
+  background-color: #f2dbd2;
 }
 
 .dropdownstyle::-webkit-scrollbar-thumb {
-  background-color: #BF4D20;
+  background-color: #bf4d20;
   border-radius: 10px;
-
 }
 /* end webkit */
 .collection {
@@ -56,6 +54,14 @@ h6 {
 .custom-bg-image {
   background-image: url("../assets/images/herobanner.png");
   height: 818px;
+  background-size: cover;
+  /* background-position: center; */
+}
+
+/* signUp-page */
+.customsign-bg-image {
+  background-image: url("../assets/images/signup.png");
+  
   background-size: cover;
   /* background-position: center; */
 }
