@@ -55,7 +55,7 @@ export default function WineryOwner() {
             at Domaine Alain Burguet in Gevrey-Chambertin.
           </p>
         </div>
-      </div> 
+      </div>
 
       {/* Destop View */}
       <div className="max-w-[1038px] mx-auto ">
@@ -65,17 +65,14 @@ export default function WineryOwner() {
         </div>
         {/* Mobile view */}
         <div className="md:hidden block px-6">
-          <MobileFilter/>
+          <MobileFilter />
         </div>
-        {/* animation  component  */}
-        <div className="p-16 flex justify-center mx-auto ">
-          <Image src={xmark} alt="xmark" />
-        </div>
+
         {/* next product list  */}
 
         <Product />
-         {/* animation  component  */}
-         <div className="p-16 flex justify-center mx-auto ">
+        {/* animation  component  */}
+        <div className="p-16 flex justify-center mx-auto ">
           <Image src={xmark} alt="xmark" />
         </div>
       </div>
