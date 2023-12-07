@@ -36,7 +36,7 @@ export default function WineCard() {
                 Red, 14% Alc
               </p>
             </div>
-            <div className="md:flex gap-4 items-center text-stone-500 text-base font-normal leading-snug">
+            <div className="md:flex gap-4 items-center text-stone-500 text-base font-normal leading-snug space-y-1">
               <p>Origin </p>
               <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20 mb:block hidden"></div>
               <p className="text-zinc-800 text-base font-normal leading-snug">
@@ -44,17 +44,17 @@ export default function WineCard() {
               </p>
               <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20 mb:block hidden"></div>
               <p>Château Le Pin </p>
-              <div className="opacity-20 text-orange-700">/</div>
+              <div className="opacity-20 text-orange-700 mb:block hidden">
+                /
+              </div>
               <p className="text-zinc-800 text-base font-normal leading-snug">
                 France, Region, Appellation
               </p>
             </div>
           </div>
-          <div>
-            <hr className=" border-t-2" />
-          </div>
+          <div></div>
         </div>
-        <div className="my-8 max-w-[608px] h-[0px] border border-orange-700 border-opacity-20 hidden md:block"></div>
+        <div className="my-8 max-w-[608px] h-[0px] border border-orange-700 border-opacity-20"></div>
         <div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[1, 2, 3, 4]?.map((item: any, i: any) => {

@@ -6,12 +6,12 @@ export default function TabButton() {
   const [selectedTab, setSelectedTab] = useState(0);
   return (
     <div className="pb-5">
-      <div className="flex justify-between border-b-2 border-orange-200">
+      <div className="flex justify-between border-b-2 border-orange-700 border-opacity-20">
         <div
           className={` border-orange-700 ${selectedTab == 0 && "border-b-2"} `}
         >
           <button
-            className="text-zinc-800 text-base font-normal  leading-snug px-4 py-3"
+            className="text-orange-700 text-xs font-normal uppercase tracking-tight px-4 py-4"
             onClick={() => setSelectedTab(0)}
           >
             France
@@ -21,7 +21,7 @@ export default function TabButton() {
           className={`border-orange-700 ${selectedTab == 1 && "border-b-2"} `}
         >
           <button
-            className="text-zinc-800 text-base font-normal  leading-snug px-4 py-3"
+            className="text-orange-700 text-xs font-normal uppercase tracking-tight px-4 py-4"
             onClick={() => setSelectedTab(1)}
           >
             Germany
@@ -31,7 +31,7 @@ export default function TabButton() {
           className={`  border-orange-700 ${selectedTab == 2 && "border-b-2"} `}
         >
           <button
-            className="text-zinc-800 text-base font-normal  leading-snug px-4 py-3"
+            className="text-orange-700 text-xs font-normal uppercase tracking-tight px-4 py-4"
             onClick={() => setSelectedTab(2)}
           >
             Switzerland

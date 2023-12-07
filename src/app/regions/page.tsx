@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
- 
+
 import Dropdown from "@/common/DropDown/page";
 import Newsletter from "@/components/newsletter/page";
 import Footer from "@/components/footer/page";
@@ -8,12 +8,9 @@ import NewsletterMobile from "@/components/newsletter/MobileView";
 import Product from "@/components/products/page";
 import MobileFilter from "../invest/moibleview/page";
 import xmark from "../../assets/icons/x-mark-anim.svg";
-import Image from "next/image";
- 
 import Card from "@/components/card/page";
 import lineregion from "@/assets/icons/lineregion.svg";
 
- 
 export default function Regions() {
   return (
     <React.Fragment>
@@ -26,20 +23,18 @@ export default function Regions() {
         </div>
         <Card />
 
- {/* here is next list */}
-      {/* dropdown */}
-      <div className="hidden md:block">
-        <Dropdown />
-        <div className="border border-secondary mt-12"></div>
-      </div>
-      {/* Mobile view */}
-      <div className="md:hidden block">
-        <MobileFilter />
+        {/* here is next list */}
+        {/* dropdown */}
+        <div className="hidden md:block">
+          <Dropdown />
+          <div className="border border-secondary mt-12"></div>
+        </div>
+        {/* Mobile view */}
+        <div className="md:hidden block">
+          <MobileFilter />
+        </div>
       </div>
 
-
-      </div>
-     
       {/* product list  */}
       <Product />
       {/* animation  component  */}

@@ -10,16 +10,18 @@ const ProductTopSection = ({}) => {
   const [selectedTab, setSelectedTab] = useState(0);
   return (
     <div>
-      <section className="bg-themegray mt-5 px-4 pb-20">
-        <div className="grid px-4 pb-16 lg:grid-cols-2 md:grid-cols-1 grid-cols-1">
+      <section className="md:mx-0 mx-4">
+        <div className="grid pb-16 lg:grid-cols-2 md:grid-cols-2 grid-cols-1 max-w-6xl">
           {/* slider start */}
-          <ProductCarousel />
+          <div className="">
+            <ProductCarousel />
+          </div>
           <div className="md:hidden block">
             <ShareCard />
           </div>
           {/* slider end */}
           {/* first section start */}
-          <div className=" md:col-span-2 lg:col-span-1 md:pb-0 pb-5">
+          <div className="grid grid-cols-1 md:pb-0 pb-5">
             <div className="flex gap-5 border-b border-orange-700 border-opacity-20">
               <div className="border-b border-orange-950 border-opacity-20 pb-5">
                 <button

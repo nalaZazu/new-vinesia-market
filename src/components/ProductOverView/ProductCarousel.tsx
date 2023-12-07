@@ -46,7 +46,7 @@ export default function ProductCarousel() {
     ],
     prevArrow: (
       <div className=" productcarousel z-50">
-        <div className=" bg-rose-200 h-20 text-secondary w-6 text-center flex items-center absolute lg:top-[254px] lg:left-[-10px] md:top-[215px] md:left-[0px] top-[0px] left-[0px] ">
+        <div className=" bg-rose-200 h-20 text-secondary w-6 text-center flex items-center absolute lg:top-[251px] lg:left-[100px] md:top-[215px] md:left-[0px] top-[0px] left-[0px] ">
           <div className="">
             <PrevIcon2 />
           </div>
@@ -55,7 +55,7 @@ export default function ProductCarousel() {
     ),
     nextArrow: (
       <div className="productcarousel  z-50 ">
-        <div className="text-secondary h-20 w-6 text-center flex items-center absolute lg:top-[254px] lg:right-[190px] md:top-[215px] md:right-[345px] top-[0px] right-[0px]">
+        <div className="text-secondary h-20 w-6 text-center flex items-center absolute lg:top-[254px] lg:right-[100px] md:top-[215px] md:right-[345px] top-[0px] right-[0px]">
           <div className="">
             <NextIcon2 />
           </div>
@@ -69,7 +69,7 @@ export default function ProductCarousel() {
         {[1, 2, 3, 4]?.map((item: any, i: any) => {
           return (
             <div key={i}>
-              <div key={i} className=" justify-center items-center pb-20">
+              <div key={i} className="flex justify-center items-center pb-20">
                 <div className="relative">
                   <Image
                     src={big1}

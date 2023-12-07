@@ -3,15 +3,15 @@ import React from "react";
 export default function ShareCard() {
   return (
     <div>
-      <div className="flex justify-between items-center gap-6 md:pe-8 pe-0">
-        <div className="flex gap-2 items-center">
+      <div className="flex justify-between items-center gap-3 md:gap-4 md:pe-8 pe-0">
+        <div className="md:flex gap-2 items-center md:space-y-0 space-y-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            className="w-6 h-6"
+            className="w-6 h-6 mx-auto"
           >
             <path
               stroke-linecap="round"
@@ -24,14 +24,14 @@ export default function ShareCard() {
             Favorite
           </p>
         </div>
-        <div className="flex gap-2 items-center">
+        <div className="md:flex gap-2 items-center md:space-y-0 space-y-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth="1.5"
             stroke="currentColor"
-            className="w-6 h-6"
+            className="w-6 h-6 mx-auto"
           >
             <path
               strokeLinecap="round"
@@ -43,14 +43,14 @@ export default function ShareCard() {
             Share
           </p>
         </div>
-        <div className="flex gap-2 items-center">
+        <div className="md:flex gap-2 items-center md:space-y-0 space-y-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth="1.5"
             stroke="currentColor"
-            className="w-6 h-6"
+            className="w-6 h-6 mx-auto"
           >
             <path
               strokeLinecap="round"
@@ -67,14 +67,14 @@ export default function ShareCard() {
             999
           </p>
         </div>
-        <div className="flex gap-2 items-center">
+        <div className="md:flex gap-2 items-center md:space-y-0 space-y-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth="1.5"
             stroke="currentColor"
-            className="w-6 h-6"
+            className="w-6 h-6 mx-auto"
           >
             <path
               strokeLinecap="round"
@@ -86,30 +86,32 @@ export default function ShareCard() {
             999
           </p>
         </div>
-        <button
-          type="button"
-          className="hidden md:block text-center text-orange-700 text-xs font-normal font-['Albert Sans'] uppercase leading-3 tracking-tight flex gap-2 items-center focus:ring-0 focus:outline-none focus:ring-gray-100"
-        >
-          See More
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            className="w-4 h-4"
+        <div className="hidden md:block">
+          <button
+            type="button"
+            className="flex text-end text-orange-700 text-xs font-normal font-['Albert Sans'] uppercase leading-3 tracking-tight flex gap-2 items-center focus:ring-0 focus:outline-none focus:ring-gray-100"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-            />
-          </svg>
-        </button>
+            See More
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              className="w-4 h-4 mx-auto"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
       <div className="my-8 max-w-[608px] h-[0px] border border-orange-700 border-opacity-20"></div>
       <div className="md:flex md:justify-between md:items-center">
-        <div className=" uppercase items-center flex gap-3">
+        <div className=" uppercase items-center flex gap-3 md:pb-0 pb-4">
           <p className="text-right text-stone-500 text-xs font-normal font-['Albert Sans'] uppercase leading-3 tracking-tight">
             Floor PRICE
           </p>
@@ -140,7 +142,7 @@ export default function ShareCard() {
             Invest now
           </button>
         </div>
-        <div className="my-8 max-w-[608px] h-[0px] border border-orange-700 border-opacity-20"></div>
+        <div className="my-8 max-w-[608px] h-[0px] border border-orange-700 border-opacity-20 md:hidden block"></div>
       </div>
     </div>
   );
