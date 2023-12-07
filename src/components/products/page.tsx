@@ -6,7 +6,7 @@ import Image from "next/image";
 const Product = () => {
   return (
     <React.Fragment>
-      <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:gap-x-8 mt-16">
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 mt-16">
         {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, i: any) => {
           return (
             <div key={i} className="card_shape_slider relative  mx-auto w-full">

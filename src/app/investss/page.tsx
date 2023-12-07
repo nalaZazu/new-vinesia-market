@@ -11,7 +11,7 @@ import Product from "@/components/products/page";
 
 const Invest = () => {
   return (
-    <div className="bg-orange-50">
+    <div>
       {/* <Headersecond /> */}
       <div className=" pt-6 container mx-auto px-3">
         <InvestBread />

@@ -6,11 +6,11 @@ import xsoical from "../../assets/icons/Social Icons.svg";
 import apple from "../../assets/icons/Apple Logo.svg";
 import wallet from "../../assets/icons/Wallet.svg";
 import magic from "../../assets/images/magic.png";
-import alert from "../../assets/icons/alert-circle.svg"
+import alert from "../../assets/icons/alert-circle.svg";
 const SignUp = () => {
   return (
     <React.Fragment>
-      <div className="bg-orange-50 absolute top-0 -z-10 left-0 right-0">
+      <div className=" absolute top-0 -z-10 left-0 right-0">
         <div className="relative">
           <div className="customsign-bg-image md:pt-0  object-cover bg-center h-[1158px] bg-top-[5rem]')]">
             <div className="flex justify-center items-center h-[1158px]">

@@ -182,7 +182,7 @@ export function NextIcon2() {
       <path
         stroke-linecap="round"
         stroke-linejoin="round"
-        d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+        d="M8.25 4.5l7.5 7.5-7.5 7.5"
       />
     </svg>
   );
@@ -201,7 +201,7 @@ export function PrevIcon2() {
       <path
         stroke-linecap="round"
         stroke-linejoin="round"
-        d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18"
+        d="M15.75 19.5L8.25 12l7.5-7.5"
       />
     </svg>
   );
@@ -369,6 +369,64 @@ export function BgRectangle() {
       xmlns="http://www.w3.org/2000/svg"
     >
       <path d="M0 0H394V967L197 1037L0 967V0Z" fill="#f7f0e0" />
+    </svg>
+  );
+}
+export const Xmark_old = () => {
+  return (
+    <>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth="1.5"
+        stroke="currentColor"
+        className="w-7 h-7"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M6 18L18 6M6 6l12 12"
+        />
+      </svg>
+    </>
+  );
+};
+
+export function NextIcon2_old() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth="1.5"
+      stroke="currentColor"
+      className="w-6 h-6"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M8.25 4.5l7.5 7.5-7.5 7.5"
+      />
+    </svg>
+  );
+}
+
+export function PrevIcon2_old() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth="1.5"
+      stroke="currentColor"
+      className="w-6 h-6"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M15.75 19.5L8.25 12l7.5-7.5"
+      />
     </svg>
   );
 }
