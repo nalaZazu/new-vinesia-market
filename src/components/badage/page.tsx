@@ -19,7 +19,7 @@ const Badges = ({
   };
   return (
     <React.Fragment>
-      <div className="pt-4  md:pt-0 pb-8 flex gap-2 flex-wrap">
+      <div className="pt-6   pb-8 flex gap-2 flex-wrap">
         {selectedItems &&
           selectedItems?.map((item: any, i: any) => {
             return (

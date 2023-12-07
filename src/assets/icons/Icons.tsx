@@ -209,20 +209,11 @@ export function PrevIcon2() {
 
 export function SearchIcon({ fill }: { fill?: any }) {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke-width="1.5"
-      stroke={fill}
-      className="w-6 h-6 text-white"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-      />
-    </svg>
+    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="11.5586" cy="11.059" r="7.06194" stroke={fill} stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M20.5033 20.0034L16.5516 16.0518" stroke={fill} stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
   );
 }
 export function UserIcon({ fill }: { fill?: any }) {
