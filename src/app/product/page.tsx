@@ -9,7 +9,7 @@ const Product = () => {
   return (
     <React.Fragment>
       <div className="relative">
-        <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 px-4">
+        <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 px-4 absolute top-0">
           <div className="mx-auto w-[929px] text-center">
             <h1 className="text-zinc-800  md:text-7xl md:leading-[84px] text-4xl font-normal leading-[42px]">
               Chateau La Mission Haut Brion Cru Classe | 2009
@@ -20,9 +20,9 @@ const Product = () => {
         <div className="flex">
           <div className="basis-24">{/* <VerticalBreadCrumb /> */}</div>
           <div className=" basis-5/6">
-            <div className="grid grid-cols-3">
-              <div className="pt-10  ">
-                <div className="pb-6 ">
+            <div className="grid grid-cols-3 md:h-[968px]">
+              <div className="pb-10  flex items-end">
+                <div className="pb-6 w-full">
                   <div className="space-y-4 flex gap-4 items-center   text-stone-500 text-base font-normal   leading-snug">
                     <p>First release date</p>
                     <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
@@ -126,15 +126,13 @@ const Product = () => {
               </div>
               {/* here is middle section with slider */}
               <div className=" ">
-                <div className="-z-10 pe-3 absolute top-0 right-0 left-0 max-w-[370px]">
+                <div className="-z-10 pe-3 ">
                   <BgRectangle />
                   {/* <Image src={rectangle} alt="reactangle" /> */}
                 </div>
-
-
               </div>
               {/* here is last section  */}
-              <div className="pt-10  ">
+              <div className="pb-10 flex items-end  ">
                 <TabSection />
               </div>
             </div>
@@ -142,16 +140,11 @@ const Product = () => {
           {/* padding section  */}
           <div className="basis-24"></div>
         </div>
- {/* here is mind pledge section */}
- <div className="absolute w-full">
-  <MindPledge /> 
- </div>
-
-
-
+        {/* here is mind pledge section */}
+        <div className="absolute w-full">
+          <MindPledge />
+        </div>
       </div>
-
-     
     </React.Fragment>
   );
 };
