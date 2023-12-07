@@ -26,6 +26,19 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function({ addComponents }:{addComponents:any}) {
+      const containerMax = {
+        '.containerMax': {
+          maxWidth: '1400px', // Set your desired max-width
+          padding: '1rem',   // Set your desired padding
+          marginLeft: 'auto',
+          marginRight: 'auto',
+        },
+      }
+
+      addComponents(containerMax)
+    }
+  ],
 };
 export default config;
