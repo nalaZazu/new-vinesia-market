@@ -33,7 +33,9 @@ export default function Header() {
               <Link href="#">
                 <span
                   className={`hidden md:block py-7 ${
-                    pathName === "/" || pathName === "/signup" || pathName === "/wine&art" 
+                    pathName === "/" ||
+                    pathName === "/signup" ||
+                    pathName === "/wine&art"
                       ? "text-orange-100"
                       : "text-stone-600"
                   } text-base  tracking-tight font-semibold  border-b-red-400 border-0 border-b-2`}
@@ -44,7 +46,9 @@ export default function Header() {
               <Link href="/">
                 <span
                   className={` hidden md:block py-7 text-orange-100 text-base font-normal tracking-tight  ${
-                    pathName === "/" || pathName === "/signup" || pathName === "/wine&art" 
+                    pathName === "/" ||
+                    pathName === "/signup" ||
+                    pathName === "/wine&art"
                       ? "text-orange-100"
                       : "text-stone-600"
                   } `}
@@ -73,7 +77,9 @@ export default function Header() {
               <div className="hidden md:block">
                 <div
                   className={`w-10 h-10 rounded-full border  border-opacity-20 justify-center items-center gap-2.5 inline-flex   ${
-                    pathName == "/" || pathName == "/signup" || pathName === "/wine&art" 
+                    pathName == "/" ||
+                    pathName == "/signup" ||
+                    pathName === "/wine&art"
                       ? "border-white"
                       : "border-stone-800"
                   } `}
@@ -89,14 +95,18 @@ export default function Header() {
               </div>
               <div
                 className={`w-10 h-10 rounded-full border  border-opacity-20 justify-center items-center gap-2.5 inline-flex   ${
-                  pathName == "/" || pathName == "/signup"  || pathName === "/wine&art" 
+                  pathName == "/" ||
+                  pathName == "/signup" ||
+                  pathName === "/wine&art"
                     ? "border-white"
                     : "border-stone-800"
                 } `}
               >
                 <UserIcon
                   fill={
-                    pathName == "/" || pathName == "/signup" || pathName === "/wine&art" 
+                    pathName == "/" ||
+                    pathName == "/signup" ||
+                    pathName === "/wine&art"
                       ? "white"
                       : "#3a2824"
                   }
@@ -105,14 +115,18 @@ export default function Header() {
 
               <div
                 className={`w-10 h-10 rounded-full border border-opacity-20 justify-center items-center gap-2.5 inline-flex  ${
-                  pathName == "/" || pathName == "/signup"  || pathName === "/wine&art" 
+                  pathName == "/" ||
+                  pathName == "/signup" ||
+                  pathName === "/wine&art"
                     ? "border-white"
                     : "border-stone-800 text-"
                 }`}
               >
                 <CartIcon
                   fill={
-                    pathName == "/" || pathName == "/signup" || pathName === "/wine&art" 
+                    pathName == "/" ||
+                    pathName == "/signup" ||
+                    pathName === "/wine&art"
                       ? "white"
                       : "#3a2824"
                   }
@@ -123,7 +137,7 @@ export default function Header() {
         </nav>
         <hr
           className={` hidden md:block ${
-            pathName == "/" || pathName == "/signup" || pathName === "/wine&art" 
+            pathName == "/" || pathName == "/signup" || pathName === "/wine&art"
               ? "opacity-20"
               : "border-stone-400"
           }`}
@@ -131,7 +145,7 @@ export default function Header() {
         {/* Navbar */}
         <nav
           className={`text-orange-100 text-base font-normal tracking-tight ${
-            pathName == "/" || pathName == "/signup" || pathName === "/wine&art" 
+            pathName == "/" || pathName == "/signup" || pathName === "/wine&art"
               ? "text-orange-100"
               : "text-stone-600"
           } `}
@@ -142,15 +156,30 @@ export default function Header() {
                 const { id, name, href } = item;
                 return (
                   <Link href={href} key={id}>
-                    <li
-                      className={`${
-                        name == "Start"
-                          ? "  font-semibold border-b-red-400 border-0 border-b-2  text-base   tracking-tight"
-                          : ""
-                      } py-4`}
-                    >
-                      {name}
-                    </li>
+                    {pathName == "/" ||
+                    pathName == "/signup" ||
+                    pathName === "/wine&art" ? (
+                      <li
+                        className={`${
+                          name == "Start"
+                            ? "  font-semibold border-b-red-400 border-0 border-b-2  text-base   tracking-tight"
+                            : ""
+                        } py-4`}
+                      >
+                        {name}
+                      </li>
+                    ) : (
+                      <li
+                        className={`${
+                          name == "Start"
+                            ? "  font-semibold text-orange-700 border-b-orange-700 border-0 border-b-2  text-base   tracking-tight"
+                            : ""
+                        } py-4`}
+                      >
+                        {" "}
+                        {name}
+                      </li>
+                    )}
                   </Link>
                 );
               })}
