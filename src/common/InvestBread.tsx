@@ -6,11 +6,11 @@ const InvestBread = () => {
     <>
       <div className="conatiner mx-auto hidden md:block">
         <nav className="flex" aria-label="Breadcrumb">
-          <ol className="container mx-auto flex flex-wrap gap-3 px-2 items-center">
+          <ol className="container mx-auto flex flex-wrap gap-2 px-2 items-center">
             <li className="inline-flex items-center">
               <Link
                 href="#"
-                className="text-stone-500 text-base font-normal   leading-snug     "
+                className="text-stone-500 text-base font-normal  leading-snug "
               >
                 vinesia marketplace
               </Link>
