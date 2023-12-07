@@ -5,6 +5,7 @@ import alert from "../../assets/icons/alert-circle.svg";
 // import arrow from "../../assets/icons/arrow-right2.svg";
 import wine from "../../assets/images/critcsimage.png";
 import signature from "../../assets/images/signature.png";
+import { Arrows } from "@/assets/icons/Icons";
 
 const Critics = () => {
   return (
@@ -110,21 +111,7 @@ const Critics = () => {
               <button className="w-[156px] h-10 px-4 py-2.5 rounded-[48px] border border-orange-700 justify-center items-center gap-2 inline-flex text-center text-orange-700 text-xs font-normal  uppercase leading-3 tracking-tight cursor-pointer">
                 Invest now
                 <span>
-                  {/* <Image src={arrow} alt="right-arrow"/> */}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                    />
-                  </svg>
+                  <Arrows storke="#BF4D20" />
                 </span>
               </button>
             </div>
