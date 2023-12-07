@@ -5,6 +5,7 @@ import Image from "next/image";
 import rectangle from "../../assets/images/rectangle.png";
 import TabSection from "@/components/tabsection/page";
 import MindPledge from "@/components/mindpledge/page";
+import HeritageCarousel from "@/components/heritageCarousel/page";
 const Product = () => {
   return (
     <React.Fragment>
@@ -130,8 +131,6 @@ const Product = () => {
                   <BgRectangle />
                   {/* <Image src={rectangle} alt="reactangle" /> */}
                 </div>
-
-
               </div>
               {/* here is last section  */}
               <div className="pt-10  ">
@@ -142,16 +141,22 @@ const Product = () => {
           {/* padding section  */}
           <div className="basis-24"></div>
         </div>
- {/* here is mind pledge section */}
- <div className="absolute w-full">
-  <MindPledge /> 
- </div>
+        {/* here is mind pledge section */}
+        <div className="absolute w-full">
+          <MindPledge />
+        </div>
 
-
+        {/* here is carsoul section */}
+        <div className="">
+          <div className="pb-14">
+            <h1 className="text-zinc-800 text-4xl font-normal  text-center">
+              Invest in heritage
+            </h1>
+          </div>
+          <HeritageCarousel/>
+        </div>
 
       </div>
-
-     
     </React.Fragment>
   );
 };
