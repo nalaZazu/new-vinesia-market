@@ -10,6 +10,8 @@ import WineVideoBanner from "@/components/ProductOverView/WineVideoBanner";
 import AboutMission from "@/components/ProductOverView/AboutMission";
 import AboutArtWork from "@/components/ProductOverView/AboutArtWork";
 import AboutWinerySection from "@/components/ProductOverView/AboutWinerySection";
+import Newsletter from "@/components/newsletter/page";
+import Footer from "@/components/footer/page";
 
 export default function ProductsOverview() {
   return (
@@ -23,7 +25,6 @@ export default function ProductsOverview() {
             With Art of Lola Designer Fun
           </p>
         </div>
-
         <div className="flex relative">
           <div className="basis-1/12 hidden md:block">
             {/* <div>
@@ -180,6 +181,9 @@ export default function ProductsOverview() {
       {/* About Winery Château Le Pin start */}
       <AboutWinerySection />
       {/* About Winery Château Le Pin end */}
+
+      <Newsletter />
+      <Footer />
     </div>
   );
 }
