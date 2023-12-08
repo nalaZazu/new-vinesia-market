@@ -13,7 +13,7 @@ const SignUp = () => {
     <React.Fragment>
       <div className=" md:absolute top-0 -z-10 left-0 right-0 px-4 md:px-0">
         <div className="relative">
-          <div className="customsign-bg-image md:pt-0  object-cover bg-center h-[1158px] bg-top-[5rem]')]">
+          <div className="customsign-bg-image md:pt-0  object-cover bg-center md:h-[1158px] bg-top-[5rem]')]">
             <div className="flex justify-center md:items-center md:h-[1158px]">
               <div className="max-w-[608px]  mx-auto md:p-20 px-4 py-10 opacity-95 bg-orange-100 rounded-lg md:mt-40">
                 <h1 className="max-w-[448px] text-center text-zinc-800 md:text-4xl text-[21px]  font-light  md:leading-[44px] leading-[29px] mb-8">
@@ -63,7 +63,7 @@ const SignUp = () => {
                         E-MAIL or PHONE
                       </label>
                       <span>
-                      <AlertCircle storke="#BF4D20" />
+                        <AlertCircle storke="#BF4D20" />
                       </span>
                     </div>
 
@@ -112,12 +112,15 @@ const SignUp = () => {
                       <span className="text-zinc-800 text-xs font-normal  leading-3 ">
                         I read and accept
                       </span>
+                      &nbsp;
                       <span className="text-orange-700 text-xs font-normal leading-3">
                         Terms of service
-                      </span>
+                      </span>{" "}
+                      &nbsp;
                       <span className="text-zinc-800 text-xs font-normal  leading-3">
                         and
-                      </span>
+                      </span>{" "}
+                      &nbsp;
                       <span className="text-orange-700 text-xs font-normal leading-3">
                         Privacy Policy
                       </span>
