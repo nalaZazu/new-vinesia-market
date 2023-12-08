@@ -10,6 +10,9 @@ import WineVideoBanner from "@/components/ProductOverView/WineVideoBanner";
 import AboutMission from "@/components/ProductOverView/AboutMission";
 import AboutArtWork from "@/components/ProductOverView/AboutArtWork";
 import AboutWinerySection from "@/components/ProductOverView/AboutWinerySection";
+import Newsletter from "@/components/newsletter/page";
+import Footer from "@/components/footer/page";
+import NewsletterMobile from "@/components/newsletter/MobileView";
 
 export default function ProductsOverview() {
   return (
@@ -18,8 +21,8 @@ export default function ProductsOverview() {
         <div className="container mx-auto pt-10 pb-7">
           <div className="flex">
             <div className="basis-1/12 hidden md:block"></div>
-            <div className="md:basis-11/12 basis-full max-w-[907px]">
-              <h1 className=" text-zinc-800 md:text-7xl md:leading-[84px] text-4xl font-normal leading-[42px] tracking-[-1.44px]">
+            <div className="md:basis-11/12 basis-full max-w-[990px]">
+              <h1 className="text-zinc-800 md:text-7xl md:leading-[84px] text-4xl font-normal leading-[42px] tracking-[-1.44px]">
                 Chateau La Mission Haut Brion Cru Classe | 2009
               </h1>
               <p className="text-zinc-800 text-base font-normal leading-snug pt-2 ">
@@ -184,8 +187,19 @@ export default function ProductsOverview() {
       </div>
       {/* About artwork end */}
       {/* About Winery Château Le Pin start */}
-      <AboutWinerySection />
+      <div className="md:block hidden">
+        <AboutWinerySection />
+      </div>
+
       {/* About Winery Château Le Pin end */}
+      <div className="md:block hidden">
+        <Newsletter />
+      </div>
+      <div className="md:hidden block">
+        <NewsletterMobile />
+      </div>
+
+      <Footer />
     </div>
   );
 }
