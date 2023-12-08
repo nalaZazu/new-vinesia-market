@@ -75,7 +75,7 @@ export default function ProductsOverview() {
           </div> */}
           </div>
           <div className="md:basis-11/12 basis-full ">
-            <div className="bg-orange-200 pt-10 pb-20 ">
+            <div className="bg-[#F7EFDF] pt-10 pb-20 ">
               <div className="md:max-w-[1350px] mx-auto">
                 <ProductTopSection />
               </div>
