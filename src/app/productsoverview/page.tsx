@@ -16,17 +16,22 @@ export default function ProductsOverview() {
     <div>
       <div className="md:mx-0 mx-4">
         <div className="container mx-auto pt-10 pb-7">
-          <h1 className="text-zinc-800 md:text-7xl md:leading-[84px] text-4xl font-normal leading-[42px]">
-            Chateau La Mission Haut Brion Cru Classe | 2009
-          </h1>
-          <p className="text-zinc-800 text-base font-normal leading-snug pt-2 ">
-            With Art of Lola Designer Fun
-          </p>
+          <div className="flex">
+            <div className="basis-1/12 hidden md:block"></div>
+            <div className="md:basis-11/12 basis-full max-w-[907px]">
+              <h1 className="max-w-5xl text-zinc-800 md:text-7xl md:leading-[84px] text-4xl font-normal leading-[42px] tracking-[-1.44px]">
+                Chateau La Mission Haut Brion Cru Classe | 2009
+              </h1>
+              <p className="text-zinc-800 text-base font-normal leading-snug pt-2 ">
+                With Art of Lola Designer Fun
+              </p>
+            </div>
+          </div>{" "}
         </div>
-
-        <div className="flex relative">
-          <div className="basis-1/12 hidden md:block">
-            {/* <div>
+        <div className="2xl:container mx-auto">
+          <div className="flex relative">
+            <div className="basis-1/12 hidden md:block">
+              {/* <div>
             <nav
               className="flex absolute top-0 bottom-0 -rotate-90 left-48"
               aria-label="Breadcrumb"
@@ -73,11 +78,12 @@ export default function ProductsOverview() {
               </ol>
             </nav>
           </div> */}
-          </div>
-          <div className="md:basis-11/12 basis-full ">
-            <div className="bg-[#F7EFDF] pt-10 pb-20 ">
-              <div className="md:max-w-[1350px] mx-auto">
-                <ProductTopSection />
+            </div>
+            <div className="md:basis-11/12 basis-full ">
+              <div className="bg-[#F7EFDF] pt-10 pb-20 ">
+                <div className="md:max-w-[1350px] mx-auto">
+                  <ProductTopSection />
+                </div>
               </div>
             </div>
           </div>
@@ -89,7 +95,7 @@ export default function ProductsOverview() {
       {/*Release details start  */}
       <section className="container mx-auto md:py-40">
         <div className="md:flex justify-between items-center">
-          <div className="flex justify-between md:pb-6 pb-6  md:py-0 py-6 md:bg-transparent bg-[#F7EFDF] px-4 md:px-0">
+          <div className="flex justify-between md:pb-6 pb-6  md:py-0 py-6 md:bg-transparent bg-[#F7EFDF] px-4 md:px-0 items-center">
             <h2 className="text-zinc-800 md:text-7xl md:font-normal md:leading-[84px] text-base font-semibold leading-snug">
               Release details
             </h2>
@@ -111,7 +117,7 @@ export default function ProductsOverview() {
             </span>
           </div>
           <div className="flex flex-wrap gap-4 md:px-0 px-4 pt-8 md:pt-0">
-            <p className="flex gap-4">
+            <p className="flex gap-4 items-center">
               <span className="text-zinc-800 text-base font-normal leading-snug">
                 On the market are
               </span>
@@ -119,7 +125,7 @@ export default function ProductsOverview() {
                 24
               </span>
             </p>
-            <p className="flex gap-4">
+            <p className="flex gap-4 items-center">
               <span className="text-zinc-800 text-base font-normal leading-snug">
                 editions of this product
               </span>
