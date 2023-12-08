@@ -80,7 +80,7 @@ export default function Header() {
                     pathName == "/" ||
                     pathName == "/signup" ||
                     pathName === "/wine&art"
-                      ? "border-white"
+                      ? "border-white   "
                       : "border-stone-800"
                   } `}
                 >
@@ -198,7 +198,7 @@ export default function Header() {
                 <input
                   type="search"
                   id="default-search"
-                  className="block w-full p-4 ps-10 text-sm  outline-none  rounded-full border border-white bg-transparent !text-stone-400"
+                  className="block w-full p-4 ps-10 text-sm  outline-none  rounded-full border border-white bg-orange-100 bg-transparent "
                   placeholder="Search"
                 />
               </div>
@@ -215,7 +215,7 @@ export default function Header() {
                 <input
                   type="search"
                   id="default-search"
-                  className="block w-full p-4 ps-10 text-sm  outline-none bg-orange-50 focus:ring-stone-500 focus:border-stone-500   text-stone-500    rounded-full border border-stone-800 "
+                  className="block w-full p-4 ps-10 text-sm  outline-none bg-orange-100  focus:ring-stone-500 focus:border-stone-500   text-stone-500    rounded-full border border-[#BCA291] "
                   placeholder="Search "
                 />
               </div>

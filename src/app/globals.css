@@ -60,7 +60,7 @@ h6 {
 
 /* signUp-page */
 .customsign-bg-image {
-  background-image: url("../assets/images/signup.png");
+  background-image: none;
 
   background-size: cover;
   /* background-position: center; */
@@ -78,7 +78,6 @@ h6 {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-
 }
 
 .newsletter_banner {
@@ -146,6 +145,13 @@ h6 {
   }
   .invest_carousel .slick-prev {
     left: -60px;
+  }
+
+  .customsign-bg-image {
+    background-image: url("../assets/images/signup.png");
+  
+    background-size: cover;
+    /* background-position: center; */
   }
 }
 @media screen and (min-width: 1040px) {

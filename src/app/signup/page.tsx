@@ -7,15 +7,16 @@ import apple from "../../assets/icons/Apple Logo.svg";
 import wallet from "../../assets/icons/Wallet.svg";
 import magic from "../../assets/images/magic.png";
 import alert from "../../assets/icons/alert-circle.svg";
+import { AlertCircle } from "@/assets/icons/Icons";
 const SignUp = () => {
   return (
     <React.Fragment>
-      <div className=" absolute top-0 -z-10 left-0 right-0">
+      <div className=" md:absolute top-0 -z-10 left-0 right-0 px-4 md:px-0">
         <div className="relative">
           <div className="customsign-bg-image md:pt-0  object-cover bg-center h-[1158px] bg-top-[5rem]')]">
-            <div className="flex justify-center items-center h-[1158px]">
-              <div className="w-[608px]  mx-auto p-20 opacity-95 bg-orange-100 rounded-lg mt-40">
-                <h1 className="w-[448px] text-center text-zinc-800 text-4xl font-light  leading-[44px] mb-8">
+            <div className="flex justify-center md:items-center md:h-[1158px]">
+              <div className="max-w-[608px]  mx-auto md:p-20 px-4 py-10 opacity-95 bg-orange-100 rounded-lg md:mt-40">
+                <h1 className="max-w-[448px] text-center text-zinc-800 md:text-4xl text-[21px]  font-light  md:leading-[44px] leading-[29px] mb-8">
                   Sign-up to your Vinesia account and start investing in wine
                 </h1>
                 <div className="text-center">
@@ -46,7 +47,7 @@ const SignUp = () => {
                       We do not store any data related to your social logins
                     </h6>
                   </div>
-                  <div className="text-stone-400 text-base font-normal  mt-6 mb-6 leading-snug">
+                  <div className="text-stone-400 text-base font-normal  md:my-6 my-8 leading-snug">
                     or
                   </div>
                 </div>
@@ -62,7 +63,7 @@ const SignUp = () => {
                         E-MAIL or PHONE
                       </label>
                       <span>
-                        <Image src={alert} alt="alert" />
+                      <AlertCircle storke="#BF4D20" />
                       </span>
                     </div>
 
@@ -72,7 +73,7 @@ const SignUp = () => {
                         name="email"
                         type="email"
                         placeholder="Eg. +(00)123456 / example@mail.com"
-                        className=" pl-6 pr-5 py-2 rounded-[100px] border bg-orange-100 outline-none border-orange-700 border-opacity-40 justify-between items-center inline-flex  w-full  "
+                        className=" pl-6 pr-5 py-5 rounded-[100px] border bg-orange-100 outline-none border-orange-700 border-opacity-40 justify-between items-center inline-flex  w-full  "
                       />
                     </div>
                   </div>

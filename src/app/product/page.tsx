@@ -1,11 +1,11 @@
 import VerticalBreadCrumb from "@/common/verticalBreadcrumb/page";
 import React from "react";
 import { AlertIcons, Arrows, BgRectangle } from "@/assets/icons/Icons";
-import Image from "next/image";
 import TabSection from "@/components/tabsection/page";
 import MindPledge from "@/components/mindpledge/page";
 import HeritageCarousel from "@/components/heritageCarousel/page";
-import winevideo from "@/assets/images/winevideo.jpeg"
+import AssetDetails from "@/components/wineassets/page";
+import YouMayAlso from "@/components/YouMayAlso/page";
 const Product = () => {
   return (
     <React.Fragment>
@@ -146,6 +146,44 @@ const Product = () => {
           <MindPledge />
         </div>
       </div>
+
+      {/* wines about section */}
+      <div className="md:block hidden ">
+        <div className=" flex  pt-40 ">
+          <div className="basis-1/12 hidden md:block"></div>
+
+          {/* container mx-auto pl-24  pt-40  */}
+          <div className="container max-w-6xl">
+            <div className="md:basis-11/12 basis-full">
+              {/* <div className="basis-1/4"></div> */}
+
+              <p className="text-stone-500 text-xs font-normal uppercase leading-3 tracking-tight">
+                ABOUT
+              </p>
+
+              <div className="flex justify-between items-end">
+                <h1 className="text-zinc-800 text-7xl font-normal   leading-[84px]">
+                  Wine asset details
+                </h1>
+                <button className="text-center text-orange-700 text-xs font-normal uppercase leading-3 tracking-tight px-8 py-[22px] rounded-[48px] border border-orange-700 border-opacity-20 justify-center items-center gap-3 inline-flex">
+                  SEE PRODUCT OVERVIEW
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* here is component call */}
+
+        <div className="flex relative ">
+          <div className="basis-1/12 hidden md:block"></div>
+          <div className="md:basis-11/12 basis-full">
+            <div className="bg-orange-100 pt-10">
+              <AssetDetails />
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* here is carsoul section */}
       <div className="md:py-40 py-20">
         <div className="pb-14">
@@ -155,8 +193,18 @@ const Product = () => {
         </div>
         <HeritageCarousel />
       </div>
-      <div className="">
-{/* <Image src={winevideo} alt"wine"/> */}
+
+      {/* here is might section */}
+
+      <div className="md:py-40 md:px-24 py-20">
+        <div>
+          <h3 className="text-center text-zinc-800 text-4xl font-light  leading-[44px]">
+            You may also like
+          </h3>
+          <div>
+            <YouMayAlso/>
+          </div>
+        </div>
       </div>
     </React.Fragment>
   );
