@@ -6,7 +6,7 @@ import Image from "next/image";
 const Product = () => {
   return (
     <React.Fragment>
-      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 mt-16">
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 mt-16 gap-x-6 gap-y-10">
         {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, i: any) => {
           return (
             <div key={i} className="card_shape_slider relative  mx-auto w-full">
@@ -30,7 +30,7 @@ const Product = () => {
                     </div>
                   </div>
                   <div className="flex-col items-center gap-6 flex">
-                    <h3 className="max-w-[243px] text-center text-zinc-800 text-[21px] font-light  leading-[29px] tracking-wide ">
+                    <h3 className="text-center text-zinc-800 text-[21px] font-light  leading-[29px] tracking-wide ">
                       Brunello di Montalcino {`"Piaggione"`} | Winery name |
                       2019
                     </h3>

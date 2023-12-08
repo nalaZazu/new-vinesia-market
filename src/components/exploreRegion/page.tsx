@@ -23,7 +23,7 @@ const ExploreRegion = () => {
   return (
     <div className="bg-[#F7EFDF] hidden md:block">
       <Popup open={open} setOpen={handleOpen} />
-      <section className="container mx-auto">
+      <section className="container mx-auto max-w-[1247px]">
         <div className="py-10">
           <h1 className="text-zinc-800 text-4xl font-light  leading-[44px]">
             Explore by region

@@ -47,7 +47,7 @@ function France() {
       </div>
 
       {/* Destop View */}
-      <div className="max-w-[1038px] mx-auto ">
+      <div className="container mx-auto ">
         <hr className="border border-orange-700 border-opacity-20" />
         <div className="hidden md:block my-20 ">
           <Dropdown />
