@@ -10,7 +10,7 @@ const InvestBread = () => {
             <li className="inline-flex items-center">
               <Link
                 href="#"
-                className="text-stone-500 text-base font-normal  leading-snug "
+                className="text-[#975958] text-base font-normal  leading-snug "
               >
                 vinesia marketplace
               </Link>
@@ -22,7 +22,7 @@ const InvestBread = () => {
               <div className="flex items-center">
                 <Link
                   href="#"
-                  className=" text-stone-500 text-base font-normal  leading-snug"
+                  className=" text-[#975958] text-base font-normal  leading-snug"
                 >
                   home
                 </Link>

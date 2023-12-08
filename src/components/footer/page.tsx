@@ -47,10 +47,7 @@ export default function Footer() {
                   const { id, name, href } = item;
                   return (
                     <p className="mb-4" key={id}>
-                      <Link
-                        href={href}
-                        className="text-neutral-600 dark:text-neutral-200"
-                      >
+                      <Link href={href} className="text-neutral-600 ">
                         {name}
                       </Link>
                     </p>
@@ -66,10 +63,7 @@ export default function Footer() {
                   const { id, name, href } = reg;
                   return (
                     <p className="mb-4" key={id}>
-                      <Link
-                        href={href}
-                        className="text-neutral-600 dark:text-neutral-200"
-                      >
+                      <Link href={href} className="text-neutral-600 ">
                         {name}
                       </Link>
                     </p>
@@ -85,10 +79,7 @@ export default function Footer() {
                   const { id, name, href } = item;
                   return (
                     <p className="mb-4" key={id}>
-                      <Link
-                        href={href}
-                        className="text-neutral-600 dark:text-neutral-200"
-                      >
+                      <Link href={href} className="text-neutral-600 ">
                         {name}
                       </Link>
                     </p>

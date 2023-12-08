@@ -73,7 +73,7 @@ export default function AllEditions({
             </div>
           </div>
 
-          <div className=" grid grid-cols-1 lg:grid-cols-4 md:grid-cols-1 gap-8">
+          <div className=" grid grid-cols-1 lg:grid-cols-4 md:grid-cols-1 gap-8  md:px-0 px-4">
             {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, i: any) => {
               return (
                 <div key={i}>
