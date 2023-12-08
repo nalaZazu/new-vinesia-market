@@ -4,7 +4,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { NextIcon2, PrevIcon2 } from "../../assets/icons/Icons";
+import { NextIcon2, PrevIcon } from "../../assets/icons/Icons";
 import winebotel1 from "../../assets/images/winebotel1.png";
 import Art from "../../assets/images/arat.png";
 import ProductCards from "../productCard/page";
@@ -49,7 +49,7 @@ export default function HeritageCarousel() {
       <div className=" productcarousel z-50">
         <div className="text-black w-16 h-12 flex items-center rounded-full border border-orange-700 justify-center">
           <div>
-            <PrevIcon2 />
+            <PrevIcon />
           </div>
         </div>
       </div>
