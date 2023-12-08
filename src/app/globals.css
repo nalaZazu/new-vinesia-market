@@ -16,7 +16,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  /* font-family: (--); */
+  font-family: albert;
 }
 
 body {
@@ -218,6 +218,24 @@ h6 {
 .critics_carousel .slick-prev {
   left: 16px;
 }
+.subcribe_soon_slider {
+  position: relative !important;
+}
+.subcribe_soon_slider .slick-active {
+ background-color: white !important;
+}
+.subcribe_soon_slider .slick-dots li {
+  width: 7px !important;
+  height: 7px !important;
+  border-radius: 20px;
+  border: 1px solid white;
+}
+.subcribe_soon_slider .slick-dots {
+ bottom: 38px !important;
+ height: 7px !important;
+ position: absolute !important;
+}
+
 
 /* .invest_carousel */
 /* }  */

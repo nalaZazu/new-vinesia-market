@@ -26,7 +26,7 @@ export default function Header() {
         }
       `}</style>
       <div className=" bg-transparent z-10">
-        <nav className="px-6">
+        <nav className="px-6 container mx-auto">
           <div className="grid grid-cols-3 md:grid-cols-12 justify-between items-center">
             {/* topbar start */}
             <div className="md:flex  hidden items-center space-x-4 lg:space-x-8 md:col-span-5">
@@ -36,9 +36,9 @@ export default function Header() {
                     pathName === "/" ||
                     pathName === "/signup" ||
                     pathName === "/wine&art"
-                      ? "text-orange-100"
-                      : "text-stone-600"
-                  } text-base  tracking-tight font-semibold  border-b-red-400 border-0 border-b-2`}
+                      ? "text-orange-100 border-b-[#CC714D] "
+                      : "text-stone-600 border-b-[#BF4D20]"
+                  } text-base  tracking-tight font-semibold  border-0 border-b-2`}
                 >
                   Vinesia Story
                 </span>
@@ -162,7 +162,7 @@ export default function Header() {
                       <li
                         className={`${
                           name == "Start"
-                            ? "  font-semibold border-b-red-400 border-0 border-b-2  text-base   tracking-tight"
+                            ? "  font-semibold border-b-[#CC714D] border-0 border-b-2  text-base   tracking-tight"
                             : ""
                         } py-4`}
                       >
