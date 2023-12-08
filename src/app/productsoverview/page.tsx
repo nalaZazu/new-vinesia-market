@@ -70,20 +70,22 @@ export default function ProductsOverview() {
             </nav>
           </div> */}
           </div>
-          <div className="md:basis-11/12 basis-full">
-            <div className="bg-orange-100 pt-10 ">
-              <ProductTopSection />
+          <div className="md:basis-11/12 basis-full ">
+            <div className="bg-orange-200 pt-10 pb-20 ">
+              <div className="md:max-w-[1350px] mx-auto">
+                <ProductTopSection />
+              </div>
             </div>
           </div>
         </div>
       </div>
       {/* MindPledge start*/}
-      <MindPledge />
+      <MindPledge btnTitle='Read More' />
       {/* MindPledge end */}
       {/*Release details start  */}
-      <section className="container mx-auto md:py-40 px-4">
-        <div className="">
-          <div className="flex justify-between md:py-0 py-6">
+      <section className="container mx-auto md:py-40">
+        <div className="md:flex justify-between items-center">
+          <div className="flex justify-between md:pb-6 pb-6  md:py-0 py-6 md:bg-transparent bg-[#F7EFDF] px-4 md:px-0">
             <h2 className="text-zinc-800 md:text-7xl md:font-normal md:leading-[84px] text-base font-semibold leading-snug">
               Release details
             </h2>
@@ -94,7 +96,7 @@ export default function ProductsOverview() {
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                className="w-6 h-6"
+                className="w-4 h-4 text-secondary"
               >
                 <path
                   stroke-linecap="round"
@@ -104,17 +106,20 @@ export default function ProductsOverview() {
               </svg>
             </span>
           </div>
-          <div className="flex flex-wrap">
-            <p className="flex gap-4 items-end">
+          <div className="flex flex-wrap gap-4 md:px-0 px-4 pt-8 md:pt-0">
+            <p className="flex gap-4">
               <span className="text-zinc-800 text-base font-normal leading-snug">
                 On the market are
               </span>
               <span className=" text-zinc-800 text-lg font-semibold leading-relaxed">
                 24
               </span>
+            </p>
+            <p className="flex gap-4">
               <span className="text-zinc-800 text-base font-normal leading-snug">
                 editions of this product
               </span>
+
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -134,7 +139,7 @@ export default function ProductsOverview() {
             </p>
           </div>
         </div>
-        <div className="mt-7 bg-orange-100">
+        <div className="mt-8 md:bg-[#FAF5EA] bg-transparent md:p-6 px-4 pb-14">
           <div className="grid gap-5 lg:grid-cols-2 md:grid-cols-2 grid-cols-1">
             <div>
               <PricingDetail />

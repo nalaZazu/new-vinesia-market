@@ -5,20 +5,25 @@ import temp from "@/assets/icons/Temprature.svg";
 import play from "@/assets/icons/Play.svg";
 import Image from "next/image";
 import { Arrows } from "@/assets/icons/Icons";
-const MindPledge = () => {
+const MindPledge = ({
+  btnTitle = "SEE ALL CERTIFICATES",
+}: {
+  btnTitle?: any;
+}) => {
   return (
     <React.Fragment>
       <div className=" bg-red-900">
         <div className="md:py-[198px] mx-auto max-w-[816px] text-white">
           <div className="">
             {/* desktop */}
-            <div className="flex md:justify-center justify-between relative py-6 md:px-0 px-4">
+            <div className="flex md:justify-center justify-between relative py-6 md:px-0 px-4 md:bg-transparent bg-[#642625]">
               <span className="collection text-center text-2xl font-normal leading-[72px] absolute left-0 md:top-[-37px] right-[270px] hidden md:block">
                 Our
               </span>
-              <h1 className="text-center md:text-4xl md:font-light md:leading-[44px] text-white text-base font-semibold leading-snug">
-                Peace of Mind Pledge
-              </h1>
+              <p className=" flex text-center md:text-4xl md:font-light md:leading-[44px] text-white text-base font-semibold leading-snug">
+                <span className="md:hidden block"> Our &nbsp;</span> Peace of
+                Mind Pledge
+              </p>
               <span className="block md:hidden">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +31,7 @@ const MindPledge = () => {
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  className="w-6 h-6"
+                  className="w-4 h-4"
                 >
                   <path
                     stroke-linecap="round"
@@ -72,8 +77,8 @@ const MindPledge = () => {
           </div>
           {/* here is button  */}
           <div className="flex justify-center md:pb-0 pb-14">
-            <button className="py-[22px] px-8 rounded-[48px] border border-white border-opacity-40 justify-center items-center gap-3 inline-flex">
-              SEE ALL CERTIFICATES
+            <button className="py-[22px] uppercase px-8 rounded-[48px] border border-white border-opacity-40 justify-center items-center gap-3 inline-flex">
+              {btnTitle}
               <span>
                 <Arrows storke="#FFFFFF" />
               </span>
