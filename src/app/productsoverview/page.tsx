@@ -6,6 +6,10 @@ import PricingDetail from "@/components/ProductOverView/PricingDetails";
 import Appactivity from "@/components/charts/page";
 import AllEditions from "@/components/ProductOverView/AllEditions";
 import MindPledge from "@/components/mindpledge/page";
+import WineVideoBanner from "@/components/ProductOverView/WineVideoBanner";
+import AboutMission from "@/components/ProductOverView/AboutMission";
+import AboutArtWork from "@/components/ProductOverView/AboutArtWork";
+import AboutWinerySection from "@/components/ProductOverView/AboutWinerySection";
 
 export default function ProductsOverview() {
   return (
@@ -80,7 +84,7 @@ export default function ProductsOverview() {
         </div>
       </div>
       {/* MindPledge start*/}
-      <MindPledge btnTitle='Read More' />
+      <MindPledge btnTitle="Read More" />
       {/* MindPledge end */}
       {/*Release details start  */}
       <section className="container mx-auto md:py-40">
@@ -158,6 +162,24 @@ export default function ProductsOverview() {
       {/* All editions start */}
       <AllEditions />
       {/* All editions end */}
+      {/* How to invest in wine start*/}
+      <div className="md:block hidden">
+        <WineVideoBanner />
+      </div>
+      {/* How to invest in wine end*/}
+      {/* About Chateau La Mission Haut Brion Cru Classe | 2009 start */}
+      <div className="md:block hidden">
+        <AboutMission />
+      </div>
+      {/* About Chateau La Mission Haut Brion Cru Classe | 2009 end */}
+      {/* About artwork start */}
+      <div className="md:block hidden">
+        <AboutArtWork />
+      </div>
+      {/* About artwork end */}
+      {/* About Winery Château Le Pin start */}
+      <AboutWinerySection />
+      {/* About Winery Château Le Pin end */}
     </div>
   );
 }
