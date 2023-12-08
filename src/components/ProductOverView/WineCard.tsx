@@ -6,7 +6,7 @@ export default function WineCard() {
   return (
     <div>
       <div>
-        <div className="pt-8 flex">
+        <div className="md:pt-8 flex">
           <div className="space-y-4">
             <div className="md:flex gap-4 items-center text-stone-500 text-base font-normal leading-snug">
               <p>First Release Date</p>
