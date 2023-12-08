@@ -19,7 +19,7 @@ export default function ProductsOverview() {
           <div className="flex">
             <div className="basis-1/12 hidden md:block"></div>
             <div className="md:basis-11/12 basis-full max-w-[907px]">
-              <h1 className="max-w-5xl text-zinc-800 md:text-7xl md:leading-[84px] text-4xl font-normal leading-[42px] tracking-[-1.44px]">
+              <h1 className=" text-zinc-800 md:text-7xl md:leading-[84px] text-4xl font-normal leading-[42px] tracking-[-1.44px]">
                 Chateau La Mission Haut Brion Cru Classe | 2009
               </h1>
               <p className="text-zinc-800 text-base font-normal leading-snug pt-2 ">
