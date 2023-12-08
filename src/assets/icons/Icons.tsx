@@ -209,11 +209,28 @@ export function PrevIcon2() {
 
 export function SearchIcon({ fill }: { fill?: any }) {
   return (
-    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="11.5586" cy="11.059" r="7.06194" stroke={fill} stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M20.5033 20.0034L16.5516 16.0518" stroke={fill} stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-
+    <svg
+      width="25"
+      height="24"
+      viewBox="0 0 25 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="11.5586"
+        cy="11.059"
+        r="7.06194"
+        stroke={fill}
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M20.5033 20.0034L16.5516 16.0518"
+        stroke={fill}
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
   );
 }
 export function UserIcon({ fill }: { fill?: any }) {
@@ -417,6 +434,39 @@ export function PrevIcon2_old() {
         strokeLinecap="round"
         strokeLinejoin="round"
         d="M15.75 19.5L8.25 12l7.5-7.5"
+      />
+    </svg>
+  );
+}
+
+export function AlertCircle({ storke }: { storke: any }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="25"
+      viewBox="0 0 24 25"
+      fill="none"
+    >
+      <path
+        d="M11.999 8.5C11.861 8.5 11.749 8.612 11.75 8.75C11.75 8.888 11.862 9 12 9C12.138 9 12.25 8.888 12.25 8.75C12.25 8.612 12.138 8.5 11.999 8.5"
+        stroke={storke}
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M12 21.5V21.5C7.029 21.5 3 17.471 3 12.5V12.5C3 7.529 7.029 3.5 12 3.5V3.5C16.971 3.5 21 7.529 21 12.5V12.5C21 17.471 16.971 21.5 12 21.5Z"
+        stroke={storke}
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M12 12.5V17.5"
+        stroke={storke}
+        stroke-linecap="round"
+        stroke-linejoin="round"
       />
     </svg>
   );
