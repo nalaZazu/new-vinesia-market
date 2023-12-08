@@ -10,7 +10,7 @@ function classNames(...classes: any) {
 export default function DropDownButton() {
   return (
     <>
-      <Menu as="div" className="relative inline-block text-left">
+      <Menu as="div" className="w-full relative inline-block text-left">
         <div>
           <Menu.Button className="border border-stone-400   justify-center gap-1 flex items-center w-full gap-x-1.5 pl-4 pr-3 py-4 rounded-full  px-3  text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight ">
             Recommended

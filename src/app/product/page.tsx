@@ -143,7 +143,7 @@ const Product = () => {
         </div>
         {/* here is mind pledge section */}
         <div className="w-full -z-10">
-          <MindPledge />
+          <MindPledge /> 
         </div>
       </div>
       {/* here is carsoul section */}
