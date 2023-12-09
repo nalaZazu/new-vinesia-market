@@ -13,7 +13,7 @@ export default function PricingDetail() {
       <div>
         {/* first box */}
         <div className=" grid gap-0 lg:grid-cols-2 md:grid-cols-1 grid-cols-1 pt-6">
-          <div className="gap-10 p-5 rounded-tl border-l border-t border-orange-700 border-opacity-20 flex-col justify-between items-start inline-flex">
+          <div className="gap-10 p-5 rounded-tl border-l border-t md:border-r-0 border-r border-orange-700 border-opacity-20 flex-col justify-between items-start inline-flex">
             <div className="flex items-center gap-3 text-stone-500 text-xs font-normal uppercase leading-3 tracking-tight">
               <p>Release Price </p>
               <Image
@@ -42,7 +42,7 @@ export default function PricingDetail() {
         </div>
         {/* second box */}
         <div className=" grid gap-0 lg:grid-cols-2 md:grid-cols-1 grid-cols-1">
-          <div className=" gap-10 rounded-bl border-l border-t border-b border-orange-700 border-opacity-20 flex-col justify-between items-start flex p-5">
+          <div className=" gap-10 rounded-bl border-l border-t border-b md:border-r-0 border-r border-orange-700 border-opacity-20 flex-col justify-between items-start flex p-5">
             <div>
               <p className=" text-stone-500 text-xs font-normal uppercase leading-3 tracking-tight">
                 Highest Price

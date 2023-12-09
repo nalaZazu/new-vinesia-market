@@ -20,10 +20,10 @@ const MindPledge = ({
               <span className="collection text-center text-2xl font-normal leading-[72px] absolute left-0 md:top-[-37px] right-[270px] hidden md:block">
                 Our
               </span>
-              <p className=" flex text-center md:text-4xl md:font-light md:leading-[44px] text-white text-base font-semibold leading-snug">
+              <h3 className=" flex text-center md:text-4xl md:font-light md:leading-[44px] text-white text-base font-semibold leading-snug">
                 <span className="md:hidden block"> Our &nbsp;</span> Peace of
                 Mind Pledge
-              </p>
+              </h3>
               <span className="block md:hidden">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
