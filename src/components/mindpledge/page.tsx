@@ -68,7 +68,7 @@ const MindPledge = ({
                 Proof of storage conditions
               </p>
             </div>
-            <div className="p-6 rounded-3xl border bg-pink-950 border-white border-opacity-20 flex-col justify-between items-start inline-flex">
+            <div className="p-6 rounded-3xl border bg-[#5F2020] border-white border-opacity-20 flex-col justify-between items-start inline-flex">
               <Image src={play} alt="barcode" />
               <p className="text-white md:text-lg font-semibold  md:leading-relaxed pt-6 text-base  leading-snug">
                 See our video

@@ -6,6 +6,10 @@ import MindPledge from "@/components/mindpledge/page";
 import HeritageCarousel from "@/components/heritageCarousel/page";
 import AssetDetails from "@/components/wineassets/page";
 import YouMayAlso from "@/components/YouMayAlso/page";
+import WineVideoBanner from "@/components/ProductOverView/WineVideoBanner";
+import Newsletter from "@/components/newsletter/page";
+import NewsletterMobile from "@/components/newsletter/MobileView";
+import Footer from "@/components/footer/page";
 const Product = () => {
   return (
     <React.Fragment>
@@ -15,13 +19,22 @@ const Product = () => {
             <h1 className="text-zinc-800  md:text-7xl md:leading-[84px] text-4xl font-normal leading-[42px]">
               Chateau La Mission Haut Brion Cru Classe | 2009
             </h1>
+            <span className="pt-2  text-zinc-800 text-base font-normal  leading-snug">
+              With Art of Lola Designer Fun
+            </span>
           </div>
         </div>
 
         <div className="flex">
-          <div className="basis-24">{/* <VerticalBreadCrumb /> */}</div>
+          
+          <div className="basis-24"> 
+          {/* <VerticalBreadCrumb /> */}
+          </div>
           <div className=" basis-5/6">
+
             <div className="grid grid-cols-3 md:h-[968px]">
+              {/* h-[968] */}
+              {/* here is first section */}
               <div className="pb-10  flex items-end">
                 <div className="pb-6 w-full">
                   <div className="space-y-4 flex gap-4 items-center   text-stone-500 text-base font-normal   leading-snug">
@@ -63,7 +76,7 @@ const Product = () => {
                   </div>
                   {/* end of section */}
                   {/* price section */}
-                  <div className="max-w-[428px] h-[324px] p-8 bg-slate-700">
+                  <div className=" p-8 bg-slate-700">
                     <div className="flex justify-between">
                       <div className="flex items-center gap-2">
                         <p className="  text-gray-300 text-xs font-normal   uppercase leading-3 tracking-tight">
@@ -125,8 +138,9 @@ const Product = () => {
                   </div>
                 </div>
               </div>
+
               {/* here is middle section with slider */}
-              <div className=" ">
+              <div className="">
                 <div className="-z-10 pe-3 ">
                   <BgRectangle />
                   {/* <Image src={rectangle} alt="reactangle" /> */}
@@ -143,7 +157,7 @@ const Product = () => {
         </div>
         {/* here is mind pledge section */}
         <div className="w-full -z-10">
-          <MindPledge /> 
+          <MindPledge />
         </div>
       </div>
 
@@ -185,7 +199,7 @@ const Product = () => {
       </div>
 
       {/* here is carsoul section */}
-      <div className="md:py-40 py-20">
+      <div className="md:py-40 py-20 md:block hidden">
         <div className="pb-14">
           <h1 className="text-zinc-800 text-4xl font-light  text-center  leading-[44px]">
             Other editions{" "}
@@ -193,19 +207,44 @@ const Product = () => {
         </div>
         <HeritageCarousel />
       </div>
+      {/* here is video banner */}
+      <div className="md:block hidden">
+        <WineVideoBanner />
+      </div>
 
       {/* here is might section */}
 
-      <div className="md:py-40 md:px-24 py-20">
+      <div className="md:py-40 md:px-24 py-20 hidden md:block">
         <div>
           <h3 className="text-center text-zinc-800 text-4xl font-light  leading-[44px]">
             You may also like
           </h3>
           <div>
-            <YouMayAlso/>
+            <YouMayAlso />
           </div>
         </div>
       </div>
+
+      {/* here is mobile view of like might section */}
+      <div className="py-20 md:hidden block">
+        <div>
+          <h3 className="text-center text-zinc-800 text-[21px] font-light   leading-[29px] pb-12">
+            You may also like
+          </h3>
+          {/* here is video silder */}
+          <HeritageCarousel />
+        </div>
+      </div>
+
+      {/* desktop Newsletter*/}
+      <div className="hidden sm:block">
+        <Newsletter />
+      </div>
+      {/* mobile Newsletter */}
+      <div className="block sm:hidden pt-4">
+        <NewsletterMobile />
+      </div>
+      <Footer />
     </React.Fragment>
   );
 };

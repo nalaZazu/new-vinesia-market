@@ -8,7 +8,7 @@ const TabSection = () => {
   const [selectedTab, setSelectedTab] = useState(0);
   return (
     <div>
-      <section className=" pb-20">
+      <section className="pb-8">
         <div className="container max-w-[395px]">
           {/* first section start */}
           <div className=" md:col-span-2 lg:col-span-1 md:pb-0 pb-5">
