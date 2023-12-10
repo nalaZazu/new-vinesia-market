@@ -44,7 +44,7 @@ export const menuBar = [
   {
     id: 7,
     name: "About us",
-    href: "/wineries",
+    href: "/about",
     icon: winericon
   },
   {
