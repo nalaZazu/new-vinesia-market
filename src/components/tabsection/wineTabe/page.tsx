@@ -5,33 +5,33 @@ export default function WineTabe() {
     <div>
       <div className="pt-8 flex">
         <div className="space-y-4">
-          <div className="flex gap-4 items-center text-stone-500 text-base font-normal leading-snug">
+          <div className="flex gap-3 items-center text-stone-500 text-base font-normal leading-snug">
             <p>This wine is sourced</p>
             <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
             <p className="text-zinc-800 text-base font-normal leading-snug">
               directly from the winery
             </p>
           </div>
-          <div className="flex gap-4 items-center text-stone-500 text-base font-normal leading-snug">
+          <div className="flex gap-3 items-center text-stone-500 text-base font-normal leading-snug">
             <p>Case & bottle size</p>
             <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
             <p className="text-zinc-800 text-base font-normal leading-snug">
               99 bottle case, Double Magnum (1,5l)
             </p>
           </div>
-          <div className="flex gap-4 items-center text-stone-500 text-base font-normal leading-snug">
+          <div className="flex gap-3 items-center text-stone-500 text-base font-normal leading-snug">
             <p>Type </p>
             <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
             <p className="text-zinc-800 text-base font-normal leading-snug">
               Red, 14% Alc
             </p>
           </div>
-          <div className="flex gap-4 items-center text-stone-500 text-base font-normal leading-snug">
+          <div className="flex gap-3 items-center text-stone-500 text-base font-normal leading-snug">
             <p>Origin </p>
             <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
             <p className="text-zinc-800 text-base font-normal leading-snug mt-4">
               France, Region, Appellation
-              <div className="flex gap-4 items-center text-stone-500 text-base font-normal leading-snug">
+              <div className="flex gap-3 items-center text-stone-500 text-base font-normal leading-snug">
                 <p>Winery </p>
                 <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
                 <p className="  text-base font-normal leading-snug text-orange-700">
@@ -67,7 +67,7 @@ export default function WineTabe() {
           })}
         </div>
       </div>
-     
+
       <div className="mb-8 w-[395px] h-[0px] border border-orange-700 border-opacity-20"></div>
 
       {/* here is icon section */}
