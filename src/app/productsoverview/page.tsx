@@ -112,7 +112,7 @@ export default function ProductsOverview() {
                 className="w-4 h-4 text-secondary"
               >
                 <path
-                  stroke-linecap="round"
+                  strokeLinecap="round"
                   stroke-linejoin="round"
                   d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
                 />

@@ -90,7 +90,7 @@ export default function Winary() {
                               className="w-3 h-3 text-orange-700"
                             >
                               <path
-                                stroke-linecap="round"
+                                strokeLinecap="round"
                                 stroke-linejoin="round"
                                 d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
                               />

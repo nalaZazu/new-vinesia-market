@@ -43,11 +43,11 @@ export default function Footer() {
                 <h6 className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
                   Products
                 </h6>
-                {menuBar?.map((item: any) => {
+                {menuBar?.map((item) => {
                   const { id, name, href } = item;
                   return (
                     <p className="mb-4" key={id}>
-                      <Link href={href} className="text-neutral-600 ">
+                      <Link href={href ?? ''} className="text-neutral-600 ">
                         {name}
                       </Link>
                     </p>
