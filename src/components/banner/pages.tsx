@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import alert from "../../assets/icons/alert-circle.svg";
 import BreadCrumb from "@/common/BreadCrumb";
 import bgImg from "@/assets/images/herobanner.png";
-export default function Banner() {
+export default function Banner({ breadCrumbData }: { breadCrumbData?: any }) {
   const [tooltipExtraVisible, setTooltipExtraVisible] = useState(false);
   const [tooltipVisible, setTooltipVisible] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -175,7 +175,7 @@ export default function Banner() {
               </ul>
 
               <div>
-                <BreadCrumb />
+                <BreadCrumb breadCrumbData={breadCrumbData} />
               </div>
             </div>
             {/* <div className=" pt-28 pb-14"></div> */}
