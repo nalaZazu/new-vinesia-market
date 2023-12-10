@@ -254,3 +254,11 @@ h6 {
     --background-end-rgb: 0, 0, 0;
   }
 }
+
+
+@media screen and (min-width: 1440px) {
+
+  .custom-bg-image {
+    height: 1000px;
+  }
+}
