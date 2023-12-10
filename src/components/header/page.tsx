@@ -93,8 +93,10 @@ export default function Header() {
                   />
                 </div>
               </div>
+
+              {/* user Icon */}
               <div
-                className={`w-10 h-10 rounded-full border  border-opacity-20 justify-center items-center gap-2.5 inline-flex   ${
+                className={`w-10 h-10 rounded-full border  border-opacity-20 justify-center items-center gap-2.5 inline-flex    ${
                   pathName == "/" ||
                   pathName == "/signup" ||
                   pathName === "/wine&art"
@@ -112,7 +114,7 @@ export default function Header() {
                   }
                 />
               </div>
-
+              {/* Cart Icon */}
               <div
                 className={`w-10 h-10 rounded-full border border-opacity-20 justify-center items-center gap-2.5 inline-flex  ${
                   pathName == "/" ||

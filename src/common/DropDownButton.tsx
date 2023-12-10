@@ -12,7 +12,7 @@ export default function DropDownButton() {
     <>
       <Menu as="div" className="w-full relative inline-block text-left">
         <div>
-          <Menu.Button className="justify-between border border-stone-400 gap-1 flex items-center w-full gap-x-1.5 pl-4 pr-3 py-4 rounded-full  px-3  text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight ">
+          <Menu.Button className="justify-between    gap-1 flex items-center w-full gap-x-1.5 pl-4 pr-3 py-4 rounded-full  px-3  text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight bg-orange-700 bg-opacity-10">
             Recommended
             <ChevronDownIcon
               className="-mr-1 h-5 w-5 text-stone-500"
@@ -30,7 +30,7 @@ export default function DropDownButton() {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
-          <Menu.Items className="absolute left-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-orange-50 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none p-2">
+          <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-orange-50 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none p-2">
             <div className="py-1">
               <Menu.Item>
                 {({ active }) => (
