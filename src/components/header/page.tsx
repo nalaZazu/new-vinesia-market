@@ -74,7 +74,7 @@ export default function Header() {
               </Link>
             </div>
             <div className="flex items-center gap-5 md:col-span-5 ms-auto">
-              <div className="hidden md:block">
+              <div className="hidden md:block md:order-1">
                 <div
                   className={`w-10 h-10 rounded-full border  border-opacity-20 justify-center items-center gap-2.5 inline-flex   ${
                     pathName == "/" ||
@@ -96,7 +96,7 @@ export default function Header() {
 
               {/* user Icon */}
               <div
-                className={`w-10 h-10 rounded-full border  border-opacity-20 justify-center items-center gap-2.5 inline-flex    ${
+                className={`w-10 h-10 rounded-full border md:order-2 order-2  border-opacity-20 justify-center items-center gap-2.5 inline-flex    ${
                   pathName == "/" ||
                   pathName == "/signup" ||
                   pathName === "/wine&art"
@@ -116,7 +116,7 @@ export default function Header() {
               </div>
               {/* Cart Icon */}
               <div
-                className={`w-10 h-10 rounded-full border border-opacity-20 justify-center items-center gap-2.5 inline-flex  ${
+                className={`w-10 h-10 md:order-3 order-1 rounded-full border border-opacity-20 justify-center items-center gap-2.5 inline-flex  ${
                   pathName == "/" ||
                   pathName == "/signup" ||
                   pathName === "/wine&art"
