@@ -72,21 +72,41 @@ export default function AllEditions({
               </div>
             </div>
           </div>
+          {/* desktop */}
+          <div className="hidden md:block ">
+            <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-1 gap-8 px-4">
+              {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, i: any) => {
+                return (
+                  <div key={i}>
+                    <ProductCard />
+                  </div>
+                );
+              })}
 
-          <div className=" grid grid-cols-1 lg:grid-cols-4 md:grid-cols-1 gap-8  md:px-0 px-4">
-            {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, i: any) => {
-              return (
-                <div key={i}>
-                  <ProductCard />
-                </div>
-              );
-            })}
-
-            {/* <div className="flex justify-center mt-8">
+              {/* <div className="flex justify-center mt-8">
               <button className="py-2.5 px-4 bg-bgsecondary text-white rounded-lg text-center">
                 Explore
               </button>
             </div> */}
+            </div>
+          </div>
+          {/* mobile */}
+          <div className="block md:hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-1 gap-8">
+              {[1, 2]?.map((item: any, i: any) => {
+                return (
+                  <div key={i} className="pb-6">
+                    <ProductCard />
+                  </div>
+                );
+              })}
+
+              {/* <div className="flex justify-center mt-8">
+              <button className="py-2.5 px-4 bg-bgsecondary text-white rounded-lg text-center">
+                Explore
+              </button>
+            </div> */}
+            </div>
           </div>
         </div>
       </div>

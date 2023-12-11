@@ -15,6 +15,7 @@ import Footer from "@/components/footer/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
 import HeritageCarousel from "@/components/heritageCarousel/page";
 import YouMayAlso from "@/components/YouMayAlso/page";
+import AboutDisclosure from "@/components/aboutdisclosure/page";
 
 export default function ProductsOverview() {
   return (
@@ -173,6 +174,7 @@ export default function ProductsOverview() {
       {/* All editions start */}
       <AllEditions />
       {/* All editions end */}
+      {/* desktop start */}
       {/* How to invest in wine start*/}
       <div className="md:block hidden">
         <WineVideoBanner />
@@ -192,21 +194,34 @@ export default function ProductsOverview() {
       <div className="md:block hidden">
         <AboutWinerySection />
       </div>
+      {/* About Winery Château Le Pin end */}
+      {/* desktop end */}
+      {/* mobile start */}
+      {/* Mobile View */}
+      <div className="block md:hidden">
+        <AboutDisclosure />
+      </div>
+      {/* mobile end */}
+      {/*YouMayAlso start  */}
       <div className="md:block hidden bg-[#F7EFDF] py-40">
         <YouMayAlso />
       </div>
-      <div className="md:hidden block">
-        <HeritageCarousel />
+      <div className="py-20 md:hidden block bg-[#F7EFDF]">
+        <div>
+          <h3 className="text-center text-zinc-800 text-[21px] font-light leading-[29px] pb-12">
+            You may also like
+          </h3>
+          {/* here is video silder */}
+          <HeritageCarousel />
+        </div>
       </div>
-
-      {/* About Winery Château Le Pin end */}
+      {/*YouMayAlso end  */}
       <div className="md:block hidden">
         <Newsletter />
       </div>
       <div className="md:hidden block">
         <NewsletterMobile />
       </div>
-
       <Footer />
     </div>
   );
