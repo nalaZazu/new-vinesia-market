@@ -9,6 +9,9 @@ import investment from "@/assets/images/investment.png";
 import videoImage from "@/assets/images/video (1080p) 2.png";
 import { Arrows } from "@/assets/icons/Icons";
 import { AboutSection } from "@/constants/aboutSection";
+import wineBottle from "@/assets/images/bolltewine.png";
+import lineregion from "@/assets/icons/lineregion.svg";
+import AccordionWine from "@/components/accordion/page";
 
 const About = () => {
   return (
@@ -34,7 +37,6 @@ const About = () => {
               Sourced exclusively from winemakers
             </p>
           </div>
-          <div className="col-span-1"></div>
           <div className="col-span-2">
             <h4 className=" text-zinc-800 md:text-4xl md:leading-[44px]  md:py-0 py-6  text-[21px] font-light  leading-[29px]">
               We are the first marketplace that protects your investment in a
@@ -178,6 +180,42 @@ const About = () => {
         {/* here is image defined */}
         <div className="flex justify-center md:pt-[92px] pt-12">
           <Image src={investment} alt="image" />
+        </div>
+      </div>
+
+      {/* here is invest in wine section */}
+
+      <div className="flex  bg-[#7D302E]  h-[800px] ">
+        <div className=" basis-5/12">
+          <Image src={wineBottle} className="w-full h-full" alt="winebottle" />
+          
+        </div>
+        <div className="  basis-7/12 h-[800px] pt-[110px]">
+          <div className=" ps-[139px] w-full h-full">
+            <div className=" flex flex-col justify-between max-w-[501px] w-full h-full">
+              <div>
+                <div className=" ">
+                  <h3 className="text-white text-4xl font-light  leading-[44px]">
+                    Why to invest in wine?
+                  </h3>
+
+                  <div className="underline decoration-wavy pt-10">
+                    <Image src={lineregion} alt="image" />
+                  </div>
+                </div>
+                <AccordionWine />
+              </div>
+              {/* here is button  */}
+              <div className=" pb-[70px]">
+                <button className="w-full  px-8 py-[22px] rounded-full border border-white border-opacity-20 justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal  uppercase leading-3 tracking-tight">
+                  START INVESTING NOW{" "}
+                  <span>
+                    <Arrows storke="#FFFFFF" />
+                  </span>
+                </button>
+              </div>{" "}
+            </div>
+          </div>
         </div>
       </div>
     </React.Fragment>
