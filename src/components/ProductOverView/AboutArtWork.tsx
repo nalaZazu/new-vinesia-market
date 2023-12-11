@@ -6,7 +6,7 @@ export default function AboutArtWork() {
   return (
     <div>
       <section className="py-40 bg-red-900 text-white">
-        <div className="container mx-auto">
+        <div className="container max-w-[1248px] mx-auto">
           <div className="grid grid-col-1  md:grid-cols-5 mx-auto">
             <div className="md:col-span-3 col-span-1 ">
               <p className=" text-stone-400 text-xs font-normal uppercase leading-3 tracking-tight pb-4">

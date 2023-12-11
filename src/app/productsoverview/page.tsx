@@ -99,7 +99,7 @@ export default function ProductsOverview() {
       <MindPledge btnTitle="Read More" />
       {/* MindPledge end */}
       {/*Release details start  */}
-      <section className="container mx-auto md:py-40">
+      <section className="container mx-auto md:py-40 max-w-[1248px]">
         <div className="md:flex justify-between items-center">
           <div className="flex justify-between md:pb-6 pb-6  md:py-0 py-6 md:bg-transparent bg-[#F7EFDF] px-4 md:px-0 items-center">
             <h2 className="text-zinc-800 md:text-7xl md:font-normal md:leading-[84px] text-base font-semibold leading-snug">
@@ -172,7 +172,11 @@ export default function ProductsOverview() {
       </section>
       {/*Release details end  */}
       {/* All editions start */}
-      <AllEditions />
+      <div className="bg-orange-700 bg-opacity-10 px-4">
+        <div className="container max-w-[1248px] mx-auto">
+          <AllEditions />
+        </div>
+      </div>
       {/* All editions end */}
       {/* desktop start */}
       {/* How to invest in wine start*/}

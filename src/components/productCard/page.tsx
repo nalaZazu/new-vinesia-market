@@ -64,7 +64,7 @@ export default function ProductCards() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col items-center gap-4 absolute lg:bottom-12 md:bottom-6 bottom-4 left-0 right-0">
+          <div className="flex flex-col items-center gap-4 absolute lg:bottom-12 md:bottom-6 bottom-12 left-0 right-0">
             <button className="px-8 py-5 bg-orange-700 rounded-full text-center text-white text-xs font-normal uppercase leading-3 tracking-tight">
               SEE OVERVIEW
             </button>
