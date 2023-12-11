@@ -12,6 +12,7 @@ import Newsletter from "@/components/newsletter/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
 import Footer from "@/components/footer/page";
 import ProductCarousel from "@/components/ProductOverView/ProductCarousel";
+import WineArtDisclosure from "@/components/ProductOverView/WineArtDisclosure";
 const Product = () => {
   return (
     <React.Fragment>
@@ -26,51 +27,56 @@ const Product = () => {
             </span>
           </div>
         </div>
-        <div className="hidden md:block">
+
+        <div className="">
           <div className="flex container mx-auto">
-            <div className="basis-24">{/* <VerticalBreadCrumb /> */}</div>
-            <div className=" basis-5/6">
-              <div className="grid grid-cols-3 md:h-[898px]">
+            <div className="basis-24 hidden md:block">
+              {/* <VerticalBreadCrumb /> */}
+            </div>
+            <div className=" md:basis-5/6">
+              <div className="grid md:grid-cols-3 grid-cols-1 md:h-[898px]">
                 {/* h-[968] */}
                 {/* here is first section */}
-                <div className="  flex items-end">
+                <div className="  flex items-end  order-2 md:order-1">
                   <div className=" w-full space-y-4">
-                    <div className=" flex gap-3 items-center   text-stone-500 text-base font-normal   leading-snug">
-                      <p>First release date</p>
-                      <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
-                      <p className="text-zinc-800 text-base font-normal leading-snug">
-                        Sep 29, 2023
-                      </p>
-                    </div>
-                    <div className="  flex gap-3 items-center text-stone-500 text-base font-normal leading-snug">
-                      <p>Owner</p>
-                      <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
-                      <p className="text-zinc-800 text-base font-normal leading-snug">
-                        Vinesia
-                      </p>
-                    </div>
-                    <div className=" flex gap-3 items-center text-stone-500 text-base font-normal leading-snug">
-                      <p>Edition</p>
-                      <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
-                      <p className="text-zinc-800 text-base font-normal leading-snug">
-                        #1 from 24
-                      </p>
-                    </div>
-                    <div className=" flex gap-3 items-center text-stone-500 text-base font-normal leading-snug">
-                      <p>Wine asset ID</p>
-                      <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
-                      <p className="text-zinc-800 text-base font-normal leading-snug">
-                        123_1234_1345678
-                      </p>
-                    </div>
-                    {/* here is next section */}
-                    <div className="flex gap-2 items-center mt-12 mb-4 ">
-                      <span className=" text-center text-orange-700 text-xs font-normal  uppercase leading-3 tracking-tight">
-                        Product integrity certificates
-                      </span>
-                      <span>
-                        <Arrows storke="#BF4D20" />
-                      </span>
+                    <div className="hidden md:block">
+                      <div className=" flex gap-3 items-center   text-stone-500 text-base font-normal   leading-snug">
+                        <p>First release date</p>
+                        <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
+                        <p className="text-zinc-800 text-base font-normal leading-snug">
+                          Sep 29, 2023
+                        </p>
+                      </div>
+                      <div className="  flex gap-3 items-center text-stone-500 text-base font-normal leading-snug">
+                        <p>Owner</p>
+                        <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
+                        <p className="text-zinc-800 text-base font-normal leading-snug">
+                          Vinesia
+                        </p>
+                      </div>
+                      <div className=" flex gap-3 items-center text-stone-500 text-base font-normal leading-snug">
+                        <p>Edition</p>
+                        <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
+                        <p className="text-zinc-800 text-base font-normal leading-snug">
+                          #1 from 24
+                        </p>
+                      </div>
+                      <div className=" flex gap-3 items-center text-stone-500 text-base font-normal leading-snug">
+                        <p>Wine asset ID</p>
+                        <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
+                        <p className="text-zinc-800 text-base font-normal leading-snug">
+                          123_1234_1345678
+                        </p>
+                      </div>
+                      {/* here is next section */}
+                      <div className="flex gap-2 items-center mt-12 mb-4 ">
+                        <span className=" text-center text-orange-700 text-xs font-normal  uppercase leading-3 tracking-tight">
+                          Product integrity certificates
+                        </span>
+                        <span>
+                          <Arrows storke="#BF4D20" />
+                        </span>
+                      </div>
                     </div>
                     {/* end of section */}
                     {/* price section */}
@@ -138,25 +144,32 @@ const Product = () => {
                 </div>
 
                 {/* here is middle section with slider */}
-                <div className="">
+                <div className=" order-1 md:order-2">
                   <div className=" bg-[#F7EFDF] h-full relative flex items-end">
                     <div className="w-full  mx-auto pb-28">
                       <ProductCarousel />
                     </div>
-                    <div className="absolute top-full z-20 w-full">
+                    <div className="md:absolute top-full z-20 w-full hidden">
                       <BgRectangle />
                     </div>
                     {/* <Image src={rectangle} alt="reactangle" /> */}
                   </div>
                 </div>
                 {/* here is last section  */}
-                <div className="flex items-end  px-3">
-                  <TabSection />
+                <div className="md:flex items-end  px-3 md:order-3 hidden">
+                  <div className="max-w-[395px]">
+                    <TabSection />
+                  </div>
+                </div>
+
+                {/* Mobile View */}
+                <div className="block md:hidden order-3">
+                  <WineArtDisclosure />
                 </div>
               </div>
             </div>
             {/* padding section  */}
-            <div className="basis-24"></div>
+            <div className="md:basis-24 hidden"></div>
           </div>
         </div>
         {/* here is mind pledge section */}
