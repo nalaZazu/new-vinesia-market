@@ -77,7 +77,7 @@ const ExploreRegionMobile = () => {
                 return (
                   <Link href={href} key={id}>
                     <li className="flex items-center justify-between">
-                      <span>{name}</span>
+                      <span className="text-[#61423D]">{name}</span>
                       <span>
                         <Image src={arrow} alt="arrow" />
                       </span>

@@ -35,7 +35,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  font-family: albert;
+  font-family: albert, 'sans-serif';
 }
 
 body {
@@ -100,8 +100,8 @@ h6 {
 }
 
 .newsletter_banner {
-  background-image: url("../assets/images/newsletter.png");
-  background-position: center;
+  background-image: url("../assets/images/subscription_bg.png");
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
 }
