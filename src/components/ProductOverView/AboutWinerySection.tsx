@@ -12,7 +12,7 @@ export default function AboutWinerySection() {
               <span className=" text-stone-500 text-xs font-normal uppercase leading-3 tracking-tight">
                 About
               </span>
-              <h2 className="max-w-[535px] text-7xl text-zinc-800  font-normal font-['Canela'] leading-[84px] pb-12">
+              <h2 className="max-w-[535px] text-7xl text-zinc-800  font-normal  leading-[84px] pb-12">
                 Winery Château Le Pin
               </h2>
               <p>

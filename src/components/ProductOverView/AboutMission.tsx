@@ -12,7 +12,7 @@ export default function AboutMission() {
           <p className=" text-stone-500 text-xs font-normal uppercase leading-3 tracking-tight">
             About
           </p>
-          <h2 className=" text-zinc-800 text-7xl font-normal font-['Canela'] leading-[84px]   ">
+          <h2 className=" text-zinc-800 text-7xl font-normal  leading-[84px]   ">
             Chateau La Mission Haut Brion Cru Classe | 2009
           </h2>
 

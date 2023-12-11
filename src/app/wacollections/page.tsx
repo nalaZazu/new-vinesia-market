@@ -16,7 +16,7 @@ const LimitedCollection = () => {
           <VerticalBreadCrumb />
           {/* BreadCrumb end */}
 
-          <div className=" container mx-auto flex flex-col md:justify-end justify-between text-white md:px-0 px-4 pt-10 md:pt-0">
+          <div className=" container max-w-[1030px] mx-auto flex flex-col  justify-between text-white md:px-0 px-4 pt-10 md:pt-0">
             <div>
               <p className="text-stone-400 text-xs font-normal uppercase leading-3 tracking-tight pb-7 max-w-[200px] md:max-w-full">
                 appreciating your wine, guarding its emotions

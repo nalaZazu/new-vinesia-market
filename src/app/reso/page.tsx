@@ -20,9 +20,9 @@ function Reso() {
         <div className="flex items-end container mx-auto h-[644px] md:ps-40 ps-0">
           <div>
             <div className="pb-3">
-              <h3 className="  text-white text-xs font-normal  uppercase leading-3 tracking-tight">
+              <p className="  text-white text-xs font-normal  uppercase leading-3 tracking-tight">
                 Meet the Artist
-              </h3>
+              </p>
             </div>
             <div>
               <h1 className="text-white md:text-[144px] font-normal text-6xl ">

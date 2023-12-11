@@ -33,7 +33,7 @@ export default function AllEditions({
             {/* desktop DropDownButton*/}
             <div className=" md:block hidden">
               <div className="flex gap-2 items-center">
-                <p className="basis-1/2 text-stone-600 text-base font-normal font-['Albert Sans'] leading-snug">
+                <p className="basis-1/2 text-stone-600 text-base font-normal  leading-snug">
                   Sort by
                 </p>
                 <DropDownButton />
@@ -47,7 +47,7 @@ export default function AllEditions({
               {/* mobile DropDownButton*/}
               <div className=" md:hidden block">
                 <div className="flex gap-2 items-center justify-between">
-                  <p className="basis-1/4 text-stone-600 text-base font-normal font-['Albert Sans'] leading-snug">
+                  <p className="basis-1/4 text-stone-600 text-base font-normal  leading-snug">
                     Sort by
                   </p>
                   <div className=" basis-3/4">

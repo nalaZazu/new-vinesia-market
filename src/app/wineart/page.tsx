@@ -61,12 +61,12 @@ export default function WineryArt() {
             <div className="flex justify-center items-center container mx-auto h-[742px]">
               <div>
                 <div>
-                  <h1 className="text-white text-4xl font-light font-['Canela'] leading-[44px]">
+                  <h1 className="text-white text-4xl font-light  leading-[44px]">
                     Reso
                   </h1>
                 </div>
                 <div className="pt-3">
-                  <h3 className="text-white text-xs font-normal font-['Albert Sans'] uppercase leading-3 tracking-tight">
+                  <h3 className="text-white text-xs font-normal  uppercase leading-3 tracking-tight">
                     ARTIST
                   </h3>
                 </div>
@@ -80,14 +80,14 @@ export default function WineryArt() {
       <div className="max-w-[1038px] mx-auto ">
         <hr className="border border-orange-700 border-opacity-20" />
         <div className="hidden md:block my-20 ">
-          <Dropdown/>
+          <Dropdown />
         </div>
         {/* Mobile view */}
         <div className="md:hidden block px-6">
-          <MobileFilter/>
+          <MobileFilter />
         </div>
         {/* product list */}
-        <Product/>
+        <Product />
         {/* product list  */}
         <Product />
 
@@ -109,11 +109,8 @@ export default function WineryArt() {
       </div>
       {/* mobile Newsletter */}
       <div className="block sm:hidden">
-        <NewsletterMobile/>
+        <NewsletterMobile />
       </div>
-
-
-
 
       <Newsletter />
       <Footer />
