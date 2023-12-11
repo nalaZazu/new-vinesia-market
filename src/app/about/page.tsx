@@ -28,11 +28,11 @@ const About = () => {
         </h1>
       </div> */}
       {/* here is video section */}
-      {/* <div> */}
-        <Image src={videoImage} alt="video" />
-      {/* </div> */}
+      <div className="w-full">
+      <Image src={videoImage} alt="video" />
+      </div>
       {/* here is next section */}
-      <div className="md:py-40 md:px-24  py-12 px-4">
+      <div className="md:py-40 md:px-0 container mx-auto  py-12 px-4">
         <div className="grid md:grid-cols-3 grid-cols-1">
           <div className="col-span-1">
             <p className="md:max-w-[214px] text-zinc-800 text-base font-normal  leading-snug">
@@ -77,58 +77,9 @@ const About = () => {
       </div>
 
       {/* here is logo img */}
-
-      <div className=" ">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          {/* <ul className="flex justify-evenly">
-            <li>
-              <h6 className="text-center text-stone-600 text-xs font-normal uppercase leading-3 tracking-tight">
-                Featured in
-              </h6>
-            </li>
-            <li>
-              <Image
-                className="col-span-2  max-w-[74.24px] max-h-[19.20px] object-contain lg:col-span-1"
-                src={bubble}
-                alt="Transistor"
-              />
-            </li>
-            <li>
-              {" "}
-              <Image
-                className="col-span-2  max-w-[74.24px] max-h-[19.20px] object-contain lg:col-span-1"
-                src={bubble}
-                alt="Transistor"
-              />
-            </li>
-            <li>
-              {" "}
-              <Image
-                className="col-span-2  max-w-[74.24px] max-h-[19.20px] object-contain lg:col-span-1"
-                src={bubble}
-                alt="Transistor"
-              />
-            </li>
-            <li>
-              {" "}
-              <Image
-                className="col-span-2  max-w-[74.24px] max-h-[19.20px] object-contain lg:col-span-1"
-                src={bubble}
-                alt="Transistor"
-              />
-            </li>
-            <li>
-              {" "}
-              <Image
-                className="col-span-2  max-w-[74.24px] max-h-[19.20px] object-contain lg:col-span-1"
-                src={bubble}
-                alt="Transistor"
-              />
-            </li>
-          </ul> */}
-
+      <div className="md:block hidden">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 container">
           <div className="flex flex-wrap justify-between  gap-10 items-center">
-            {/* mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5 */}
             <h6 className="text-center text-stone-600 text-xs font-normal uppercase leading-3 tracking-tight">
               Featured in
             </h6>
@@ -161,11 +112,48 @@ const About = () => {
         </div>
       </div>
 
+      {/* Here is mobile responsive view */}
+      <div className="block md:hidden">
+        <div className="mx-auto max-w-7xl  py-20  px-4  container">
+          <h6 className="text-center text-stone-600 text-xs font-normal uppercase leading-3 tracking-tight pb-8">
+            Featured in
+          </h6>
+          <div className="mx-auto grid max-w-lg grid-cols-4 items-center gap-x-6 gap-y-8 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5 ">
+            {/* sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5 */}
+            <Image
+              className="col-span-2  max-w-[74.24px] max-h-[19.20px] w-full lg:col-span-1"
+              src={bubble}
+              alt="Transistor"
+            />
+            <Image
+              className="col-span-2  max-w-[74.24px] max-h-[19.20px] w-full lg:col-span-1"
+              src={amer}
+              alt="Transistor"
+            />
+            <Image
+              className="col-span-2  max-w-[74.24px] max-h-[19.20px] w-full lg:col-span-1"
+              src={enhance}
+              alt="Transistor"
+            />
+            <Image
+              className="col-span-2  max-w-[74.24px] max-h-[19.20px] w-full lg:col-span-1"
+              src={webpack}
+              alt="Transistor"
+            />
+            <Image
+              className="col-span-2  max-w-[74.24px] max-h-[19.20px] w-full lg:col-span-1"
+              src={mediator}
+              alt="Transistor"
+            />
+          </div>
+        </div>
+      </div>
+
       {/* here is a investment section */}
 
       <div className="py-20  px-4 md:py-40 md:px-24">
         <div className="text-center">
-          <h2 className="text-zinc-800 md:text-7xl font-normal md:leading-[84px]   text-center text-4xl   leading-[42px]">
+          <h2 className="max-w-[769px] text-zinc-800 md:text-7xl font-normal md:leading-[84px] mx-auto   text-center text-4xl   leading-[42px]">
             Wine investments without the worries
           </h2>
           <p className=" py-6 text-neutral-600 text-base font-normal leading-snug">
@@ -310,27 +298,25 @@ const About = () => {
             </button>
           </div>
           {/* here is card defined  */}
-        <div className=" max-w-[820px] conatiner mx-auto flex gap-8 md:overflow-x-hidden overflow-x-auto">
-        {/*  */}
-          {CardAbout?.map((item: any, index: any) => {
-                const { id, text, image } = item;
-                return (
-                  <div className="pt-[52px] md:min-w-[29%] min-w-[80%] md:overflow-hidden  overflow-hidden">
-                    {/*  */}
+          <div className=" max-w-[820px] conatiner mx-auto flex gap-8 md:overflow-x-hidden overflow-x-auto">
+            {/*  */}
+            {CardAbout?.map((item: any, index: any) => {
+              const { id, text, image } = item;
+              return (
+                <div className="pt-[52px] md:min-w-[29%] min-w-[80%] md:overflow-hidden  overflow-hidden">
+                  {/*  */}
                   <div className=" md:p-4 p-[13px] bg-white">
-                  <div className=" " key="index">
-                    <Image src={image} alt="image" className=" h-[347px]" />
-                    <p className="text-zinc-800 text-lg font-semibold tracking-[-0.36px]  leading-relaxed">
-                      {text}
-                    </p>
+                    <div className=" " key="index">
+                      <Image src={image} alt="image" className=" h-[347px]" />
+                      <p className="text-zinc-800 text-lg font-semibold tracking-[-0.36px]  leading-relaxed">
+                        {text}
+                      </p>
+                    </div>
                   </div>
-                  </div>
-                  </div>
-                );
-              })}
-        </div>
-              
-           
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </React.Fragment>
