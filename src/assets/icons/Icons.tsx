@@ -1,58 +1,46 @@
 import React from "react";
 
-export function NextIcon() {
+export function NextIcon({ fill = "#BF4D20" }: { fill?: any }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
+      width="21"
+      height="10"
+      viewBox="0 0 21 10"
       fill="none"
     >
       <path
-        d="M4.16699 10H15.8337"
-        stroke="#212529"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        d="M15.3711 9.67383C15.6286 8.11608 17.0088 5.00057 20.4692 5.00057"
+        stroke={fill}
       />
       <path
-        d="M10 4.16663L15.8333 9.99996L10 15.8333"
-        stroke="#212529"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        d="M15.3711 0.326172C15.6286 1.88392 17.0088 4.99943 20.4692 4.99943"
+        stroke={fill}
       />
+      <path d="M0 5L19 5" stroke={fill} />
     </svg>
   );
 }
 
-export function PrevIcon() {
+export function PrevIcon({ fill = "#BF4D20" }: { fill?: any }) {
   return (
     <div className="">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 20 20"
+        width="21"
+        height="10"
+        viewBox="0 0 21 10"
         fill="none"
-        version="1.1"
-        transform="matrix(-1,1.2246467991473532e-16,-1.2246467991473532e-16,-1,0,0)"
       >
         <path
-          d="M4.16699 10H15.8337"
-          stroke="#212529"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
+          d="M5.62891 9.67383C5.37139 8.11608 3.99124 5.00057 0.530768 5.00057"
+          stroke={fill}
+        />
         <path
-          d="M10 4.16663L15.8333 9.99996L10 15.8333"
-          stroke="#212529"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
+          d="M5.62891 0.326172C5.37139 1.88392 3.99124 4.99943 0.530767 4.99943"
+          stroke={fill}
+        />
+        <path d="M21 5L2 5" stroke={fill} />
       </svg>
     </div>
   );
@@ -371,12 +359,12 @@ export function BgRectangle() {
   return (
     <svg
       width="100%"
-      height="1037"
-      viewBox="0 0 394 1037"
+      // height="70"
+      viewBox="0 0 394 80"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path d="M0 0H394V967L197 1037L0 967V0Z" fill="#F7EFDF" />
+      <path d="M0 0H394V0L197 70L0 0V0Z" fill="#F7EFDF" />
     </svg>
   );
 }

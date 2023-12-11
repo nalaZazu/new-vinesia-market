@@ -11,8 +11,7 @@ export default function YouMayAlso() {
           <div className="md:basis-3/5 lg:basis-3/5 basis-full z-0 pt-10">
             <div className="container grid mx-auto gap-6 lg:grid-cols-4 md:grid-cols-2 grid-cols-2">
               <div className="flex text-center items-center md:items-center lg:items-end lg:text-center h-[640px] bg-no-repeat bg-contain bg-center bg-[url('https://i.ibb.co/093w7Mf/imageplayer.png')] max-w-[289px] relative bottom-16">
-               
-                <div >
+                <div>
                   <div className="absolute top-32 left-20 ">
                     {/* 130 , 68 */}
                     <Image src={playvideo} alt="image" />
@@ -37,7 +36,11 @@ export default function YouMayAlso() {
               </div>
 
               {[1, 2, 3]?.map((item: any, index: any) => {
-                return <ProductCards />;
+                return (
+                  <div key={index}>
+                    <ProductCards />
+                  </div>
+                );
               })}
             </div>
           </div>

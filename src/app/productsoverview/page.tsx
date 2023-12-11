@@ -13,6 +13,8 @@ import AboutWinerySection from "@/components/ProductOverView/AboutWinerySection"
 import Newsletter from "@/components/newsletter/page";
 import Footer from "@/components/footer/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
+import HeritageCarousel from "@/components/heritageCarousel/page";
+import YouMayAlso from "@/components/YouMayAlso/page";
 
 export default function ProductsOverview() {
   return (
@@ -189,6 +191,12 @@ export default function ProductsOverview() {
       {/* About Winery Château Le Pin start */}
       <div className="md:block hidden">
         <AboutWinerySection />
+      </div>
+      <div className="md:block hidden bg-[#F7EFDF] py-40">
+        <YouMayAlso />
+      </div>
+      <div className="md:hidden block">
+        <HeritageCarousel />
       </div>
 
       {/* About Winery Château Le Pin end */}

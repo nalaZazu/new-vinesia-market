@@ -3,8 +3,24 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: canela;
-  src: url("../assets/fonts/Canela\ Text\ Family/CanelaText-Regular-Trial.otf");
+  font-family: 'canela';
+  src: url("../assets/fonts/Canela Text Family/CanelaText-Regular-Trial.otf") format('opentype');
+  font-weight: normal; /* 400 */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'canela';
+  src: url("../assets/fonts/Canela Text Family/CanelaText-Light-Trial.otf") format('opentype');
+  font-weight: 300; /* Light */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'canela';
+  src: url("../assets/fonts/Canela Text Family/CanelaText-Bold-Trial.otf") format('opentype');
+  font-weight: bold; /* 700 */
+  font-style: normal;
 }
 @font-face {
   font-family: "Bon Vivant";
@@ -252,5 +268,13 @@ h6 {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+  }
+}
+
+
+@media screen and (min-width: 1440px) {
+
+  .custom-bg-image {
+    height: 1000px;
   }
 }

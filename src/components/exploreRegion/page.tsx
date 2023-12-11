@@ -39,7 +39,7 @@ const ExploreRegion = () => {
               <Image src={france} alt="play-button" />
             </div>
             <div className=" flex items-end justify-left gap-28 mt-4">
-              <p className=" text-black text-lg font-semibold tracking-tight">
+              <p className=" text-black text-lg  tracking-tight">
                 France
               </p>
               <Image src={arrow} alt="arrow" />
@@ -79,7 +79,7 @@ const ExploreRegion = () => {
               </div>
             </div>
             <div className=" flex items-end justify-left  gap-[19rem] mt-4">
-              <p className="text-black text-lg font-semibold  tracking-tight ">
+              <p className="text-black text-lg   tracking-tight ">
                 Germany
               </p>
               <Image src={arrow} alt="arrow" />
@@ -92,7 +92,7 @@ const ExploreRegion = () => {
                 <Image src={switzerland} alt="play-button" />
               </div>
               <div className=" flex items-end justify-left  gap-72 mt-4">
-                <p className="text-black text-lg font-semibold  tracking-tight ">
+                <p className="text-black text-lg  tracking-tight ">
                   Switzerland
                 </p>
                 <Image src={arrow} alt="arrow" />
@@ -111,7 +111,7 @@ const ExploreRegion = () => {
               </div>
             </div>
             <div className=" flex items-end justify-left gap-32 ">
-              <p className="text-black text-lg font-semibold  tracking-tight mt-4">
+              <p className="text-black text-lg  tracking-tight mt-4">
                 Italy
               </p>
               <Image src={arrow} alt="arrow" />
@@ -126,7 +126,7 @@ const ExploreRegion = () => {
               </div>
             </div>
             <div className=" flex items-end justify-left gap-32 ">
-              <p className="text-black text-lg font-semibold  tracking-tight ">
+              <p className="text-black text-lg  tracking-tight ">
                 USA
               </p>
               <Image src={arrow} alt="arrow" />
