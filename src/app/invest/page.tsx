@@ -37,16 +37,15 @@ const Invest = () => {
         </div>
         {/* product list  */}
         <div className="md:block hidden">
-        <Product />
-  {/* animation  component  */}
-        <div className="p-16 flex justify-center mx-auto ">
-          <Image src={xmark} alt="xmark" />
-        </div>
+          <Product />
+          {/* animation  component  */}
+          <div className="p-16 flex justify-center mx-auto ">
+            <Image src={xmark} alt="xmark" />
+          </div>
         </div>
 
-      
+
         {/* next product list  */}
-
         <Product />
       </div>
       {/* desktop Newsletter*/}
