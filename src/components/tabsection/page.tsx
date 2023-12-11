@@ -3,6 +3,7 @@ import React, { useState } from "react";
 // import { Wine, releaseDetails, rating } from "@/propTypes/page";
 
 import WineTabe from "./wineTabe/page";
+import ArtCard from "../ProductOverView/ArtCard";
 
 const TabSection = () => {
   const [selectedTab, setSelectedTab] = useState(0);
@@ -13,7 +14,11 @@ const TabSection = () => {
           {/* first section start */}
           <div className=" md:col-span-2 lg:col-span-1 md:pb-0 pb-5">
             <div className="flex gap-5 border-b border-orange-700 border-opacity-20">
-              <div className="border-b-2 border-[#BF4D20] pb-5 min-w-[180px]">
+              <div
+                className={`${
+                  selectedTab == 0 && "border-b-2 border-[#BF4D20]"
+                } pb-5 min-w-[180px]`}
+              >
                 <button
                   className="text-zinc-800 text-lg font-semibold leading-relaxed"
                   onClick={() => setSelectedTab(0)}
@@ -24,7 +29,11 @@ const TabSection = () => {
                   LWIN: 123456
                 </p>
               </div>
-              <div className="min-w-[180px]">
+              <div
+                className={`${
+                  selectedTab == 1 && "border-b-2 border-[#BF4D20]"
+                } pb-5 min-w-[180px]`}
+              >
                 <button
                   className="text-black text-lg font-semibold leading-relaxed"
                   onClick={() => setSelectedTab(1)}
@@ -43,7 +52,7 @@ const TabSection = () => {
               </>
             ) : (
               <>
-                <WineTabe />{" "}
+                <ArtCard />{" "}
               </>
             )}
           </div>
