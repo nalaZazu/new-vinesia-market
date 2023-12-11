@@ -13,8 +13,30 @@ import AboutWinerySection from "@/components/ProductOverView/AboutWinerySection"
 import Newsletter from "@/components/newsletter/page";
 import Footer from "@/components/footer/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
+import useSWR from "swr";
 
-export default function ProductsOverview() {
+
+const fetcher = (arg: string) => fetch(arg).then((res) => res.json())
+
+
+export default function ProductsOverview({ params }: { params: { id: string } }) {
+
+  const { data, error, isLoading } = useSWR(`https://apitest.vinesia.com/products/overview/${params.id}`, fetcher)
+
+  if (isLoading) {
+    return (
+      <div>
+        <div className="md:mx-0 mx-4">
+          <div className="container mx-auto pt-10 pb-7">
+            <div className="flex">
+              Loading ...
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div>
       <div className="md:mx-0 mx-4">
@@ -23,11 +45,12 @@ export default function ProductsOverview() {
             <div className="basis-1/12 hidden md:block"></div>
             <div className="md:basis-11/12 basis-full max-w-[990px]">
               <h1 className="text-zinc-800 md:text-7xl md:leading-[84px] text-4xl font-normal leading-[42px] tracking-[-1.44px]">
-                Chateau La Mission Haut Brion Cru Classe | 2009
+                {data.wine.name} | {data.wine.vintage}
               </h1>
-              <p className="text-zinc-800 text-base font-normal leading-snug pt-2 ">
-                With Art of Lola Designer Fun
-              </p>
+              {data.art.name !== undefined ?
+                <p className="text-zinc-800 text-base font-normal leading-snug pt-2 ">
+                  With Art of Lola Designer Fun
+                </p> : <></>}
             </div>
           </div>{" "}
         </div>
@@ -85,7 +108,7 @@ export default function ProductsOverview() {
             <div className="md:basis-11/12 basis-full ">
               <div className="bg-[#F7EFDF] pt-10 pb-20 ">
                 <div className="md:max-w-[1350px] mx-auto">
-                  <ProductTopSection />
+                  <ProductTopSection data={data.wine} />
                 </div>
               </div>
             </div>
@@ -107,13 +130,13 @@ export default function ProductsOverview() {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
                 className="w-4 h-4 text-secondary"
               >
                 <path
                   strokeLinecap="round"
-                  stroke-linejoin="round"
+                  strokeLinejoin="round"
                   d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
                 />
               </svg>

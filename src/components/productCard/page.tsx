@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import winebotel from "../../assets/images/winebotel.png";
 import Art from "../../assets/images/arat.png";
+import Link from "next/link";
 
 export default function ProductCards() {
   return (
@@ -58,9 +59,11 @@ export default function ProductCards() {
             </div>
           </div>
           <div className="flex-col justify-start items-center gap-4 flex pt-6">
-            <button className="px-8 py-5 bg-orange-700 rounded-full justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal uppercase leading-3 tracking-tight">
+            <Link 
+            href="/product/1"
+            className="px-8 py-5 bg-orange-700 rounded-full justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal uppercase leading-3 tracking-tight">
               SEE OVERVIEW
-            </button>
+            </Link>
             <div className="text-center">
               <span className="text-neutral-600 text-base font-normal leading-snug">
                 50 Bottles

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../../assets/icons/logo1.svg";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { CartIcon, SearchIcon } from "@/assets/icons/Icons";
 import local from "next/font/local";
 import SidePannel from "./sidepannel/page";
@@ -21,12 +21,16 @@ const themes = {
     textClass: "text-stone-600",
     underlineClass: "border-b-[#BF4D20]",
     selectedClass: "border-b-2 font-semibold border-b-[#BF4D20]",
+    iconFill: "#3a2824",
+    iconBorder: "border-stone-800",
     hr: "border-stone-400"
   },
   Dark: {
     textClass: "text-orange-100",
     underlineClass: "border-b-[#CC714D]",
     selectedClass: "border-b-2 font-semibold border-b-[#CC714D]",
+    iconFill: "white",
+    iconBorder: "border-white",
     hr: "opacity-20"
   }
 }
@@ -63,6 +67,7 @@ const getTheme = (pathName: string) => isDark(pathName) ? themes.Dark : themes.L
 
 export default function Header() {
   const pathName = usePathname();
+  const router = useRouter();
 
   const [topSelected, setTopSelected] = useState(getTopMenuItem(pathName))
   const [selected, setSelected] = useState(getMenuItem(pathName))
@@ -81,6 +86,10 @@ export default function Header() {
     // setMenuItems(item.items)
   }
 
+  function navUser() {
+    router.push('/signup', { scroll: false })
+  }
+
   const Hr = () => <hr className={`hidden md:block ${theme.hr}`} />
 
   return (
@@ -95,7 +104,7 @@ export default function Header() {
           <div className="grid grid-cols-3 md:grid-cols-12 justify-between items-center">
             {/* topbar start */}
             <div className="md:flex  hidden items-center space-x-4 lg:space-x-8 md:col-span-5">
-              {menuItems.map((x) => <div key={x.id} onClick={() => select(x)}>
+              {menuItems.map((x) => <div className="cursor-pointer" key={x.id} onClick={() => select(x)}>
                 <span
                   className={`hidden md:block py-7 text-base tracking-tight border-0 ${theme.textClass} ${x.id === topSelected.id ? theme.selectedClass : ''}`}
                 >
@@ -120,62 +129,29 @@ export default function Header() {
                 />
               </Link>
             </div>
+
+            {/* Menu Icons, Search, User, Cart  */}
             <div className="flex items-center gap-5 md:col-span-5 ms-auto">
               <div className="hidden md:block">
                 <div
-                  className={`w-10 h-10 rounded-full border  border-opacity-20 justify-center items-center gap-2.5 inline-flex   ${pathName == "/" ||
-                    pathName == "/signup" ||
-                    pathName === "/wine&art"
-                    ? "border-white   "
-                    : "border-stone-800"
-                    } `}
+                  className={`w-10 h-10 rounded-full border border-opacity-20 justify-center items-center gap-2.5 inline-flex ${theme.iconBorder}`}
                 >
-                  <SearchIcon
-                    fill={
-                      pathName == "/" || pathName == "/signup"
-                        ? "white"
-                        : "#3a2824"
-                    }
-                  />
+                  <SearchIcon fill={theme.iconFill} />
                 </div>
               </div>
               <div
-                className={`w-10 h-10 rounded-full border  border-opacity-20 justify-center items-center gap-2.5 inline-flex   ${pathName == "/" ||
-                  pathName == "/signup" ||
-                  pathName === "/wine&art"
-                  ? "border-white"
-                  : "border-stone-800"
-                  } `}
+                className={`cursor-pointer w-10 h-10 rounded-full border border-opacity-20 justify-center items-center gap-2.5 inline-flex ${theme.iconBorder}`}
+                onClick={navUser}
               >
-                <UserIcon
-                  fill={
-                    pathName == "/" ||
-                      pathName == "/signup" ||
-                      pathName === "/wine&art"
-                      ? "white"
-                      : "#3a2824"
-                  }
-                />
+                <UserIcon fill={theme.iconFill} />
               </div>
 
-              <div
-                className={`w-10 h-10 rounded-full border border-opacity-20 justify-center items-center gap-2.5 inline-flex  ${pathName == "/" ||
-                  pathName == "/signup" ||
-                  pathName === "/wine&art"
-                  ? "border-white"
-                  : "border-stone-800 text-"
-                  }`}
+              <Link
+              href="/cart"
+                className={`w-10 h-10 rounded-full border border-opacity-20 justify-center items-center gap-2.5 inline-flex ${theme.iconBorder}`}
               >
-                <CartIcon
-                  fill={
-                    pathName == "/" ||
-                      pathName == "/signup" ||
-                      pathName === "/wine&art"
-                      ? "white"
-                      : "#3a2824"
-                  }
-                />
-              </div>
+                <CartIcon fill={theme.iconFill} />
+              </Link>
             </div>
           </div>
         </nav>

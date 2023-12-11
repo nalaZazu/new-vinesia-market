@@ -8,7 +8,7 @@ import ShareCard from "@/common/ShareCard";
 import { Disclosure } from "@headlessui/react";
 import { ArrowUpRightIcon } from "@heroicons/react/20/solid";
 
-const ProductTopSection = ({}) => {
+const ProductTopSection = ({data}:{data:any}) => {
   const [selectedTab, setSelectedTab] = useState(0);
   return (
     <div>
@@ -33,7 +33,7 @@ const ProductTopSection = ({}) => {
                   Wine
                 </button>
                 <p className=" text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight">
-                  LWIN: 123456
+                  LWIN: {data.lwinNumber}
                 </p>
               </div>
               <div>
