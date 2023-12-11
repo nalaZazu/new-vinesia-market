@@ -10,12 +10,12 @@ export default function AccordionWine() {
       {AccordionAbout?.map((item: any, index: any) => {
         const { title, text } = item;
         return (
-          <div className="w-full pt-10">
-            <div className="  w-full  rounded-2xl  px-2" key={index}>
+          <div className="w-full md:pt-10 pt-8">
+            <div className="  w-full  rounded-2xl  md:px-2" key={index}>
               <Disclosure>
                 {({ open }) => (
                   <>
-                    <Disclosure.Button className="flex w-full justify-between rounded-lg  text-white text-lg font-semibold   leading-relaxed ">
+                    <Disclosure.Button className="flex md:gap-0 gap-10 w-full justify-between rounded-lg   md:text-lg    md:leading-relaxed  text-white text-base font-semibold  leading-snug">
                       <span>{title}</span>
                       <RoundArrow />
                     </Disclosure.Button>

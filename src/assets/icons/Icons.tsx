@@ -492,3 +492,18 @@ export function RoundArrow() {
     </svg>
   );
 }
+
+export function LineDot({ storke }: { storke: any }) {
+  return (
+    <svg
+      width="35"
+      height="11"
+      viewBox="0 0 35 11"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="18" cy="5.36523" r="4.5" fill={storke} stroke={storke} />
+      <path d="M0 5.36523H35" stroke={storke} />
+    </svg>
+  );
+}
