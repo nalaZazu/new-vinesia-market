@@ -149,7 +149,7 @@ const Product = () => {
                     <div className="w-full  mx-auto pb-28">
                       <ProductCarousel />
                     </div>
-                    <div className="md:absolute top-full z-20 w-full hidden">
+                    <div className="md:absolute top-full z-20 w-full md:block hidden">
                       <BgRectangle />
                     </div>
                     {/* <Image src={rectangle} alt="reactangle" /> */}
