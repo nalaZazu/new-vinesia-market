@@ -1,8 +1,13 @@
+type ChildItems = {
+  id: number
+  name: string
+  href?: string
+}
 export interface MenuItem {
   id: number
   name: string
   href?: string
-  items?: MenuItem[]
+  items: ChildItems[]
 }
 
 export const menuBar: MenuItem[] = [

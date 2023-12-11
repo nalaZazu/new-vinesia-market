@@ -52,7 +52,7 @@ const getMenuItem = (pathName: string) => {
     }
   }
 
-  return menuItems[0].items[0]
+  return menuItems[0].items[0];
 }
 
 const isDark = (pathName: string) => pathName === "/" ||
