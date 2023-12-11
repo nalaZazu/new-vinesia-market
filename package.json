@@ -19,7 +19,8 @@
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18",
     "react-slick": "^0.29.0",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "swr": "^2.2.4"
   },
   "devDependencies": {
     "@types/node": "^20",

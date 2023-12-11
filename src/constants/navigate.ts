@@ -1,56 +1,90 @@
-import homeicon from "../assets/icons/Home.svg";
-import investicon from "../assets/icons/money.svg";
-import soonicon from "../assets/icons/speaker.svg";
-import regionicon from "../assets/icons/region.svg";
-import wineicon from "../assets/icons/wine-bottle.svg";
-import winericon from "../assets/icons/redwine.svg";
-export const menuBar = [
+export interface MenuItem {
+  id: number
+  name: string
+  href?: string
+  items?: MenuItem[]
+}
+
+export const menuBar: MenuItem[] = [
   {
-    id: 1,
-    name: "Start",
-    href: "/",
-    icon: homeicon,
+    id: 1, name: 'Vinesia Story', items: [{
+      id: 1,
+      name: "Start",
+      href: "/start",
+    },
+    {
+      id: 2,
+      name: "How Vinesia works",
+      href: "/vinesia",
+    },
+    {
+      id: 3,
+      name: "Wine and art",
+      href: "/wineart",
+    },
+    {
+      id: 4,
+      name: "Security",
+      href: "/security",
+    },
+    {
+      id: 5,
+      name: "Asset performance",
+      href: "/performance",
+    },
+    {
+      id: 6,
+      name: "Stories",
+      href: "/stories",
+    },
+    {
+      id: 7,
+      name: "About us",
+      href: "/aboutus",
+    },
+    {
+      id: 8,
+      name: "Gifts",
+      href: "/gifts",
+    },]
   },
   {
-    id: 2,
-    name: "How Vinesia works",
-    href: "/invest",
-    icon: investicon,
+    id: 2, name: 'Vinesia Marketplace', items: [
+      {
+        id: 1,
+        name: "Marketplace",
+        href: "/",
+      },
+      {
+        id: 2,
+        name: "Invest",
+        href: "/invest",
+      },
+      {
+        id: 3,
+        name: "Available soon",
+        href: "/soon",
+      },
+      {
+        id: 4,
+        name: "Regions",
+        href: "/regions",
+      },
+      {
+        id: 5,
+        name: "Wine & Art Collections",
+        href: "/wacollections",
+      },
+      {
+        id: 6,
+        name: "Limited collections",
+        href: "/collections",
+      },
+      {
+        id: 7,
+        name: "Wineries",
+        href: "/wineries",
+      },
+    ]
   },
-  {
-    id: 3,
-    name: "Wine and art",
-    href: "/winery",
-    icon: soonicon,
-  },
-  {
-    id: 4,
-    name: "Security",
-    href: "/france",
-    icon: regionicon
-  },
-  {
-    id: 5,
-    name: "Asset performance",
-    href: "/reso",
-    icon:wineicon
-  },
-  {
-    id: 6,
-    name: "Stories",
-    href: "/limitedcollections",
-    icon: winericon
-  },
-  {
-    id: 7,
-    name: "About us",
-    href: "/about",
-    icon: winericon
-  },
-  {
-    id: 7,
-    name: "Gifts",
-    href: "/wineries",
-    icon: winericon
-  },
-];
+]
