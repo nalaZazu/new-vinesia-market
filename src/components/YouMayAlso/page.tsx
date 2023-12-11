@@ -36,7 +36,11 @@ export default function YouMayAlso() {
               </div>
 
               {[1, 2, 3]?.map((item: any, index: any) => {
-                return <ProductCards />;
+                return (
+                  <div key={index}>
+                    <ProductCards />
+                  </div>
+                );
               })}
             </div>
           </div>
