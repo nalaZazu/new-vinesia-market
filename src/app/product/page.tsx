@@ -28,7 +28,7 @@ const Product = () => {
           </div>
         </div>
 
-        <div className="">
+
           <div className="flex container mx-auto">
             <div className="basis-24 hidden md:block">
               {/* <VerticalBreadCrumb /> */}
@@ -39,7 +39,7 @@ const Product = () => {
                 {/* here is first section */}
                 <div className="  flex items-end  order-2 md:order-1">
                   <div className=" w-full space-y-4">
-                    <div className="hidden md:block">
+                    <div className="hidden md:block space-y-4">
                       <div className=" flex gap-3 items-center   text-stone-500 text-base font-normal   leading-snug">
                         <p>First release date</p>
                         <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
@@ -69,7 +69,7 @@ const Product = () => {
                         </p>
                       </div>
                       {/* here is next section */}
-                      <div className="flex gap-2 items-center mt-12 mb-4 ">
+                      <div className="flex gap-2 items-center pb-8">
                         <span className=" text-center text-orange-700 text-xs font-normal  uppercase leading-3 tracking-tight">
                           Product integrity certificates
                         </span>
@@ -156,7 +156,7 @@ const Product = () => {
                   </div>
                 </div>
                 {/* here is last section  */}
-                <div className="md:flex items-end  px-3 md:order-3 hidden">
+                <div className="md:flex items-end  ps-8 md:order-3 hidden">
                   <div className="max-w-[395px]">
                     <TabSection />
                   </div>
@@ -171,7 +171,7 @@ const Product = () => {
             {/* padding section  */}
             <div className="md:basis-24 hidden"></div>
           </div>
-        </div>
+
         {/* here is mind pledge section */}
         <div className="w-full -z-10">
           <MindPledge />

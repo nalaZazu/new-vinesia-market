@@ -66,7 +66,7 @@ export default function ProductCarousel() {
   return (
     <div>
       <Slider {...sliderSettings} className="product_slider z-0">
-        {[1, 2]?.map((item: any, i: any) => {
+        {[1, 2, 3]?.map((item: any, i: any) => {
           return (
             <div key={i}>
               <div key={i} className="flex justify-center items-center pb-20">

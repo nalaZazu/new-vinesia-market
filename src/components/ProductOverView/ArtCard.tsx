@@ -53,7 +53,7 @@ export default function ArtCard() {
               <hr className=" border-t-2" />
             </div>
           </div>
-          <div className="my-8 w-[608px] h-[0px] border border-orange-700 border-opacity-20"></div>
+          <div className="my-8 max-w-[608px] h-[0px] border border-orange-700 border-opacity-20"></div>
           <div>
             <div className="grid grid-cols-4 gap-4">
               {[1, 2, 3, 4]?.map((item: any, i: any) => {
@@ -75,7 +75,7 @@ export default function ArtCard() {
               })}
             </div>
           </div>
-          <div className="my-8 w-[608px] h-[0px] border border-orange-700 border-opacity-20"></div>
+          <div className="my-8 max-w-[608px] h-[0px] border border-orange-700 border-opacity-20"></div>
           <div className="flex justify-between items-center gap-6 pe-8">
             <div className="flex gap-2 items-center">
               <svg
@@ -180,7 +180,7 @@ export default function ArtCard() {
               </svg>
             </button>
           </div>
-          <div className="my-8 w-[608px] h-[0px] border border-orange-700 border-opacity-20"></div>
+          <div className="my-8 max-w-[608px] h-[0px] border border-orange-700 border-opacity-20"></div>
           <div className="flex justify-between items-center">
             <div className=" uppercase items-center flex gap-3">
               <p className="text-right text-stone-500 text-xs font-normal font-['Albert Sans'] uppercase leading-3 tracking-tight">
