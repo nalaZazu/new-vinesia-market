@@ -6,7 +6,7 @@ export default function AboutWinerySection() {
   return (
     <div className="py-40">
       <section className="pb-32">
-        <div className="container mx-auto">
+        <div className="container mx-auto  max-w-[1248px]">
           <div className="items-center grid grid-col-1  md:grid-cols-5 lg:grid-cols-5 mx-auto">
             <div className=" col-span-3">
               <span className=" text-stone-500 text-xs font-normal uppercase leading-3 tracking-tight">
@@ -46,7 +46,7 @@ export default function AboutWinerySection() {
         </div>
       </section>
       <section className="pt-10">
-        <div className="container mx-auto">
+        <div className="container mx-auto max-w-[1248px]">
           <div className="gap-10 items-center grid grid-col-1  md:grid-cols-5 lg:grid-cols-5 mx-auto py-8">
             <div className=" col-span-3">
               <Image
