@@ -15,73 +15,76 @@ const canela = local({
   variable: "--font-canela",
 });
 
-
 const themes = {
   Light: {
     textClass: "text-stone-600",
     underlineClass: "border-b-[#BF4D20]",
     selectedClass: "border-b-2 font-semibold border-b-[#BF4D20]",
-    hr: "border-stone-400"
+    hr: "border-stone-400",
+    border: "border-stone-800",
   },
   Dark: {
     textClass: "text-orange-100",
     underlineClass: "border-b-[#CC714D]",
     selectedClass: "border-b-2 font-semibold border-b-[#CC714D]",
-    hr: "opacity-20"
-  }
-}
+    hr: "opacity-20",
+    border: "border-white",
+  },
+};
 
 const getTopMenuItem = (pathName: string) => {
   for (let item of menuItems) {
     for (let subItem of item.items ?? []) {
       if (subItem.href === pathName) {
-        return item
+        return item;
       }
     }
   }
 
-  return menuItems[0]
-}
+  return menuItems[0];
+};
 
 const getMenuItem = (pathName: string) => {
   for (let item of menuItems) {
     for (let subItem of item.items ?? []) {
       if (subItem.href === pathName) {
-        return subItem
+        return subItem;
       }
     }
   }
 
   return menuItems[0].items[0];
-}
+};
 
-const isDark = (pathName: string) => pathName === "/" ||
+const isDark = (pathName: string) =>
+  pathName === "/" ||
   pathName === "/signup" ||
-  pathName === "/wine&art"
-
-const getTheme = (pathName: string) => isDark(pathName) ? themes.Dark : themes.Light
+  pathName === "/wineart" ||
+  pathName === "/reso" ||
+  pathName === "/wacollections";
+const getTheme = (pathName: string) =>
+  isDark(pathName) ? themes.Dark : themes.Light;
 
 export default function Header() {
   const pathName = usePathname();
 
-  const [topSelected, setTopSelected] = useState(getTopMenuItem(pathName))
-  const [selected, setSelected] = useState(getMenuItem(pathName))
+  const [topSelected, setTopSelected] = useState(getTopMenuItem(pathName));
+  const [selected, setSelected] = useState(getMenuItem(pathName));
 
-  const [theme, setTheme] = useState(getTheme(pathName))
+  const [theme, setTheme] = useState(getTheme(pathName));
 
   useEffect(() => {
-    setTheme(getTheme(pathName))
-    setTopSelected(getTopMenuItem(pathName))
-    setSelected(getMenuItem(pathName))
-
+    setTheme(getTheme(pathName));
+    setTopSelected(getTopMenuItem(pathName));
+    setSelected(getMenuItem(pathName));
   }, [pathName]);
 
   function select(item: MenuItem) {
-    setTopSelected(item)
+    setTopSelected(item);
     // setMenuItems(item.items)
   }
 
-  const Hr = () => <hr className={`hidden md:block ${theme.hr}`} />
+  const Hr = () => <hr className={`hidden md:block ${theme.hr}`} />;
 
   return (
     <>
@@ -95,20 +98,23 @@ export default function Header() {
           <div className="grid grid-cols-3 md:grid-cols-12 justify-between items-center">
             {/* topbar start */}
             <div className="md:flex  hidden items-center space-x-4 lg:space-x-8 md:col-span-5">
-              {menuItems.map((x) => <div key={x.id} onClick={() => select(x)}>
-                <span
-                  className={`hidden md:block py-7 text-base tracking-tight border-0 ${theme.textClass} ${x.id === topSelected.id ? theme.selectedClass : ''}`}
-                >
-                  {x.name}
-                </span>
-              </div>
-              )}
+              {menuItems.map((x) => (
+                <div key={x.id} onClick={() => select(x)}>
+                  <span
+                    className={`hidden md:block py-7 text-base tracking-tight border-0 ${
+                      theme.textClass
+                    } ${x.id === topSelected.id ? theme.selectedClass : ""}`}
+                  >
+                    {x.name}
+                  </span>
+                </div>
+              ))}
             </div>
             {/* Mobile Navbar (Hidden on Desktop)  */}
 
             <div className="md:hidden">
               <div className="block md:hidden">
-                <SidePannel />
+                <SidePannel isDark={isDark(pathName)} />
               </div>
             </div>
             <div className=" text-2xl lg:text-4xl font-bold lg:col-span-2 text-center py-5">
@@ -123,62 +129,23 @@ export default function Header() {
             <div className="flex items-center gap-5 md:col-span-5 ms-auto">
               <div className="hidden md:block md:order-1">
                 <div
-                  className={`w-10 h-10 rounded-full border  border-opacity-20 justify-center items-center gap-2.5 inline-flex   ${pathName == "/" ||
-                    pathName == "/signup" ||
-                    pathName === "/wine&art"
-                    ? "border-white   "
-                    : "border-stone-800"
-                    } `}
+                  className={`w-10 h-10 rounded-full border  border-opacity-20 justify-center items-center gap-2.5 inline-flex   ${theme.border} `}
                 >
-                  <SearchIcon
-                    fill={
-                      pathName == "/" || pathName == "/signup"
-                        ? "white"
-                        : "#3a2824"
-                    }
-                  />
+                  <SearchIcon fill={isDark(pathName) ? "white" : "#3a2824"} />
                 </div>
               </div>
 
               {/* user Icon */}
               <div
-                className={`w-10 h-10 rounded-full border md:order-2 order-2  border-opacity-20 justify-center items-center gap-2.5 inline-flex    ${
-                  pathName == "/" ||
-                  pathName == "/signup" ||
-                  pathName === "/wine&art"
-                  ? "border-white"
-                  : "border-stone-800"
-                  } `}
+                className={`w-10 h-10 rounded-full border md:order-2 order-2  border-opacity-20 justify-center items-center gap-2.5 inline-flex    ${theme?.border} `}
               >
-                <UserIcon
-                  fill={
-                    pathName == "/" ||
-                      pathName == "/signup" ||
-                      pathName === "/wine&art"
-                      ? "white"
-                      : "#3a2824"
-                  }
-                />
+                <UserIcon fill={isDark(pathName) ? "white" : "#3a2824"} />
               </div>
               {/* Cart Icon */}
               <div
-                className={`w-10 h-10 md:order-3 order-1 rounded-full border border-opacity-20 justify-center items-center gap-2.5 inline-flex  ${
-                  pathName == "/" ||
-                  pathName == "/signup" ||
-                  pathName === "/wine&art"
-                  ? "border-white"
-                  : "border-stone-800 text-"
-                  }`}
+                className={`w-10 h-10 md:order-3 order-1 rounded-full border border-opacity-20 justify-center items-center gap-2.5 inline-flex  ${theme?.border}`}
               >
-                <CartIcon
-                  fill={
-                    pathName == "/" ||
-                      pathName == "/signup" ||
-                      pathName === "/wine&art"
-                      ? "white"
-                      : "#3a2824"
-                  }
-                />
+                <CartIcon fill={isDark(pathName) ? "white" : "#3a2824"} />
               </div>
             </div>
           </div>
@@ -195,7 +162,13 @@ export default function Header() {
                 const { id, name, href } = item;
                 return (
                   <Link href={href} key={id}>
-                    <li className={`py-4 ${selected === item ? theme.selectedClass : ''}`}>{name}</li>
+                    <li
+                      className={`py-4 ${
+                        selected === item ? theme.selectedClass : ""
+                      }`}
+                    >
+                      {name}
+                    </li>
                   </Link>
                 );
               })}
@@ -208,13 +181,13 @@ export default function Header() {
             <form>
               <div className="relative">
                 <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                  <SearchIcon fill={pathName == "/" ? "white" : "#3a2824"} />
+                  <SearchIcon fill={isDark(pathName) ? "white" : "#3a2824"} />
                 </div>
 
                 <input
                   type="search"
                   id="default-search"
-                  className="block w-full p-4 ps-10 text-sm  outline-none  rounded-full border border-white bg-orange-100 bg-transparent "
+                  className={`block w-full p-4 ps-10 text-sm  outline-none  rounded-full border border-opacity-20 bg-transparent ${theme?.border} `}
                   placeholder="Search"
                 />
               </div>
@@ -225,13 +198,13 @@ export default function Header() {
             <form>
               <div className="relative">
                 <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                  <SearchIcon fill={pathName == "/" ? "white" : "#3a2824"} />
+                  <SearchIcon fill={isDark(pathName) ? "white" : "#3a2824"} />
                 </div>
 
                 <input
                   type="search"
                   id="default-search"
-                  className="block w-full p-4 ps-10 text-sm  outline-none bg-orange-100  focus:ring-stone-500 focus:border-stone-500   text-stone-500    rounded-full border border-[#BCA291] "
+                  className={`block w-full p-4 ps-10 text-sm  outline-none   focus:ring-stone-500 focus:border-stone-500   text-stone-500    rounded-full border  bg-transparent border-opacity-20 ${theme?.border} `}
                   placeholder="Search "
                 />
               </div>
@@ -239,6 +212,7 @@ export default function Header() {
           </div>
         )}
         <Hr />
+        <hr className={`block md:hidden border-opacity-20 ${theme.border}`} />
       </div>
     </>
   );
