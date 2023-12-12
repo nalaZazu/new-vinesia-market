@@ -80,8 +80,8 @@ function France() {
         <div className="block sm:hidden">
           <NewsletterMobile />
         </div>{" "}
+        <Footer />
       </div>
-      <Footer />
     </React.Fragment>
   );
 }
