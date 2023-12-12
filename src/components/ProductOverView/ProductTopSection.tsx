@@ -3,7 +3,7 @@ import React, { useState } from "react";
 // import { Wine, releaseDetails, rating } from "@/propTypes/page";
 import WineCard from "./WineCard";
 import ArtCard from "./ArtCard";
-import ProductCarousel from "../ProductOverView/ProductCarousel";
+import ProductCarousel from "./ProductOverviewCarousel";
 import ShareCard from "@/common/ShareCard";
 import { Disclosure } from "@headlessui/react";
 import { ArrowUpRightIcon } from "@heroicons/react/20/solid";

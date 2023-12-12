@@ -11,8 +11,10 @@ import WineVideoBanner from "@/components/ProductOverView/WineVideoBanner";
 import Newsletter from "@/components/newsletter/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
 import Footer from "@/components/footer/page";
-import ProductCarousel from "@/components/ProductOverView/ProductCarousel";
 import WineArtDisclosure from "@/components/ProductOverView/WineArtDisclosure";
+import Social from "@/common/Social";
+import ProductCarousel from "@/components/ProductOverView/ProductCarousel";
+import InvestDisclosure from "@/components/InvestDisclosure/page";
 const Product = () => {
   return (
     <React.Fragment>
@@ -37,7 +39,7 @@ const Product = () => {
               {/* h-[968] */}
               {/* here is first section */}
               <div className="  flex items-end  order-2 md:order-1">
-                <div className=" w-full space-y-4">
+                <div className=" w-full md:space-y-4">
                   <div className="hidden md:block space-y-4">
                     <div className=" flex gap-3 items-center   text-stone-500 text-base font-normal   leading-snug">
                       <p>First release date</p>
@@ -144,7 +146,7 @@ const Product = () => {
 
               {/* here is middle section with slider */}
               <div className=" order-1 md:order-2">
-                <div className=" bg-[#F7EFDF] h-full relative flex items-end">
+                <div className=" bg-[#F7EFDF] h-full relative flex items-end pb-6">
                   <div className="w-full  mx-auto py-14">
                     <ProductCarousel />
                   </div>
@@ -153,6 +155,9 @@ const Product = () => {
                   </div>
                   {/* <Image src={rectangle} alt="reactangle" /> */}
                 </div>
+              </div>
+              <div className="md:hidden block order-1 py-8 bg-[#F7EFDF]">
+                <Social />
               </div>
               {/* here is last section  */}
               <div className="md:flex items-end  ps-8 md:order-3 hidden">
@@ -174,6 +179,9 @@ const Product = () => {
         {/* here is mind pledge section */}
         <div className="w-full -z-10">
           <MindPledge />
+        </div>
+        <div className="md:hidden block">
+          <InvestDisclosure />
         </div>
       </div>
 
