@@ -69,7 +69,10 @@ export default function ProductCarousel() {
         {[1, 2, 3]?.map((item: any, i: any) => {
           return (
             <div key={i}>
-              <div key={i} className="flex justify-center items-center pb-20">
+              <div
+                key={i}
+                className="flex justify-center items-center md:pb-20 pb-10"
+              >
                 <div className="relative">
                   <Image
                     src={big1}

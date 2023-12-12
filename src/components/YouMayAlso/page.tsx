@@ -6,7 +6,7 @@ import { Arrows } from "@/assets/icons/Icons";
 export default function YouMayAlso() {
   return (
     <div>
-      <section className=" py-14 px-4 lg:px-0 md:px-4">
+      <section className="">
         <div className="container mx-auto">
           <div className="container max-w-[1248px] grid mx-auto grid-cols-4">
             <div className="h-[620px] flex text-center items-center bg-no-repeat bg-top bg-[url('https://i.ibb.co/093w7Mf/imageplayer.png')]">
