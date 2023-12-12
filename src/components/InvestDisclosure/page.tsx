@@ -26,7 +26,7 @@ export default function InvestDisclosure() {
                       <Disclosure.Button
                         className={`flex w-full justify-between px-4 py-6`}
                       >
-                        <div className="flex w-full flex-wrap justify-between items-center">
+                        <div className="flex w-full flex-wrap justify-between items-center text-9">
                           <div className="  pb-5 text-start">
                             <button
                               className="text-zinc-800 text-lg font-semibold leading-relaxed"
