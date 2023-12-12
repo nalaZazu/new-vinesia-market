@@ -6,7 +6,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { NextIcon2, PrevIcon2 } from "@/assets/icons/Icons";
-export default function ProductCarousel() {
+export default function ProductOverviewCarousel() {
   const sliderSettings = {
     customPaging: function () {
       return (
@@ -46,7 +46,7 @@ export default function ProductCarousel() {
     ],
     prevArrow: (
       <div className=" productcarousel z-50">
-        <div className=" h-20 text-secondary w-6 text-center flex items-center absolute lg:top-[230px] lg:left-[40px] md:top-[215px] md:left-[0px] top-[0px] left-[0px] ">
+        <div className=" bg-rose-200 h-20 text-secondary w-6 text-center flex items-center absolute lg:top-[230px] lg:left-[100px] md:top-[215px] md:left-[0px] top-[0px] left-[0px] ">
           <div className="">
             <PrevIcon2 />
           </div>
@@ -55,7 +55,7 @@ export default function ProductCarousel() {
     ),
     nextArrow: (
       <div className="productcarousel  z-50 ">
-        <div className="text-secondary h-20 w-6 text-center flex items-center absolute lg:top-[230px] lg:right-[40px] md:top-[215px] md:right-[345px] top-[0px] right-[0px]">
+        <div className="text-secondary h-20 w-6 text-center flex items-center absolute lg:top-[230px] lg:right-[100px] md:top-[215px] md:right-[345px] top-[0px] right-[0px]">
           <div className="">
             <NextIcon2 />
           </div>
