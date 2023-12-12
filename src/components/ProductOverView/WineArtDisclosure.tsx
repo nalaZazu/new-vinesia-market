@@ -24,7 +24,7 @@ export default function WineArtDisclosure() {
                   }`}
                 >
                   <div className="flex w-full flex-wrap justify-between items-center">
-                    <div className="  pb-5 text-start">
+                    <div className=" text-start">
                       <button
                         className="text-zinc-800 text-lg font-semibold leading-relaxed"
                         onClick={() => setSelectedTab(0)}
@@ -66,7 +66,7 @@ export default function WineArtDisclosure() {
                   }`}
                 >
                   <div className="flex w-full flex-wrap justify-between items-center">
-                    <div className="  pb-5 text-start">
+                    <div className=" text-start">
                       <button
                         className="text-zinc-800 text-lg font-semibold leading-relaxed"
                         onClick={() => setSelectedTab(1)}
