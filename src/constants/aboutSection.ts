@@ -29,3 +29,12 @@ export const AboutSection = [
     icon: money,
   },
 ];
+
+
+export const AboutModalValue=[
+  {id:1 , title:"Wine" , number:"0"},
+  {id:2 , title:"Stocks" , number:"40"},
+  {id:3 , title:"Bonds" , number:"0"},
+  {id:4 , title:"Real Estate" , number:"0"},
+  {id:5 , title:"Commodity" , number:"0"},
+]

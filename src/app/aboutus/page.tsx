@@ -28,6 +28,7 @@ import arrowdowns from "@/assets/icons/downarrow.svg";
 import textOne from "@/assets/icons/getStarted.svg";
 import textTwo from "@/assets/icons/getstarted2.svg";
 import AboutSlider from "@/components/aboutslider/page";
+import Link from "next/link";
 const About = () => {
   return (
     <React.Fragment>
@@ -301,13 +302,14 @@ const About = () => {
               <p className="max-w-[329px] text-zinc-800 text-lg font-semibold  md:pt-[72px] pt-6 pb-6 leading-relaxed   tracking-[-0.36px]">
                 See what your portfolio could have returned with wine
               </p>
-
-              <button className="px-8 py-[22px] text-white  bg-orange-700 rounded-[48px] justify-center items-center gap-3 inline-flex">
-                CALCULATE{" "}
-                <span>
-                  <Arrows storke="#FFFFFF" />
-                </span>
-              </button>
+              <Link href="/about">
+                <button className="px-8 py-[22px] text-white  bg-orange-700 rounded-[48px] justify-center items-center gap-3 inline-flex">
+                  CALCULATE{" "}
+                  <span>
+                    <Arrows storke="#FFFFFF" />
+                  </span>
+                </button>
+              </Link>
             </div>
             <div className="md:max-w-[608px] ">
               <div className="tracking-[-0.32px] md:pb-8 py-10 ">
@@ -407,7 +409,8 @@ const About = () => {
                 <h3 className="text-white text-4xl font-light   leading-[44px] pb-8">
                   The faster way to get to know us
                 </h3>
-                <button className=" px-8 py-[22px] rounded-[48px] border border-white border-opacity-20 justify-center items-center gap-3 inline-flex   text-center text-white text-xs font-normal   uppercase leading-3 tracking-tight">START INVESTING NOW
+                <button className=" px-8 py-[22px] rounded-[48px] border border-white border-opacity-20 justify-center items-center gap-3 inline-flex   text-center text-white text-xs font-normal   uppercase leading-3 tracking-tight">
+                  START INVESTING NOW
                   <Arrows storke="#FFFFFF" />
                 </button>
               </div>
@@ -415,7 +418,7 @@ const About = () => {
 
             {/* here is new slider  section */}
 
-            <AboutSlider/>
+            <AboutSlider />
           </div>
         </div>
       </div>
