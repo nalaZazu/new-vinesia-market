@@ -6,7 +6,7 @@ export default function AboutArtWork() {
   return (
     <div>
       <section className="py-40 bg-red-900 text-white">
-        <div className="container mx-auto">
+        <div className="container max-w-[1248px] mx-auto">
           <div className="grid grid-col-1  md:grid-cols-5 mx-auto">
             <div className="md:col-span-3 col-span-1 ">
               <p className=" text-stone-400 text-xs font-normal uppercase leading-3 tracking-tight pb-4">
@@ -24,7 +24,7 @@ export default function AboutArtWork() {
               <p className="text-stone-400 text-xs font-normal leading-3">
                 WP Nr.1 Screen print on paper 31x 41 cm 2022
               </p>
-              <p className="flex items-center gap-3 pt-6 pb-8 text-center text-white text-xs font-normal font-['Albert Sans'] uppercase leading-3 tracking-tight">
+              <p className="flex items-center gap-3 pt-6 pb-8 text-center text-white text-xs font-normal  uppercase leading-3 tracking-tight">
                 Artist Famous and Known
                 <span>
                   <svg
@@ -36,14 +36,14 @@ export default function AboutArtWork() {
                     className="w-6 h-6"
                   >
                     <path
-                      stroke-linecap="round"
+                      strokeLinecap="round"
                       stroke-linejoin="round"
                       d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
                     />
                   </svg>
                 </span>
               </p>
-              <p className="text-stone-400 text-base font-normal font-['Albert Sans'] leading-snug pb-8">
+              <p className="text-stone-400 text-base font-normal  leading-snug pb-8">
                 Reso’s deep connection with New York City has been a profound
                 source of inspiration throughout his life. The vibrant
                 subcultural graffiti movement in the 70s and 80s, which painted
@@ -53,7 +53,7 @@ export default function AboutArtWork() {
                 explore typography and the power of letters to evoke emotions in
                 viewers.
               </p>
-              <p className="text-stone-400 text-base font-normal font-['Albert Sans'] leading-snug pb-8">
+              <p className="text-stone-400 text-base font-normal  leading-snug pb-8">
                 His art, born in secrecy and yet attracting extreme attention,
                 later evolved into a multidimensional experience, where letters
                 overlapped, and functionality gave way to artistic expression.
@@ -62,7 +62,7 @@ export default function AboutArtWork() {
                 artistic liberation beyond its confines, embracing a new chapter
                 of his creative exploration.
               </p>
-              <p className="text-stone-400 text-base font-normal font-['Albert Sans'] leading-snug pb-8">
+              <p className="text-stone-400 text-base font-normal  leading-snug pb-8">
                 Reso turned away from the legibility of characters and lettering
                 and instead focused on the viewer’s emotional access to his
                 work. His signs are encoded in a unique and personal way, making
@@ -70,7 +70,7 @@ export default function AboutArtWork() {
                 letters lose their classic distinguishing features when merged
                 through the overlay of letter forms and colors.
               </p>
-              <p className="text-stone-400 text-base font-normal font-['Albert Sans'] leading-snug pb-8">
+              <p className="text-stone-400 text-base font-normal  leading-snug pb-8">
                 Reso consciously breaks with traditional reading habits and
                 offers viewers a completely new image of typography. He no
                 longer arranges the letters classically from left to right and

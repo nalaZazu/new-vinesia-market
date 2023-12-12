@@ -1,22 +1,90 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../../assets/icons/logo1.svg";
-import UserDropDown from "../../common/UserDropDown";
-import { menuBar } from "../../constants/navigate";
 import { usePathname } from "next/navigation";
 import { CartIcon, SearchIcon } from "@/assets/icons/Icons";
 import local from "next/font/local";
 import SidePannel from "./sidepannel/page";
 import { UserIcon } from "@/assets/icons/Icons";
+import { MenuItem, menuBar as menuItems } from "@/constants/navigate";
 
 const canela = local({
   src: "../../../public/fonts/canelatext-black.woff2",
   variable: "--font-canela",
 });
+
+const themes = {
+  Light: {
+    textClass: "text-stone-600",
+    underlineClass: "border-b-[#BF4D20]",
+    selectedClass: "border-b-2 font-semibold border-b-[#BF4D20]",
+    hr: "border-stone-400",
+    border: "border-stone-800",
+  },
+  Dark: {
+    textClass: "text-orange-100",
+    underlineClass: "border-b-[#CC714D]",
+    selectedClass: "border-b-2 font-semibold border-b-[#CC714D]",
+    hr: "opacity-20",
+    border: "border-white",
+  },
+};
+
+const getTopMenuItem = (pathName: string) => {
+  for (let item of menuItems) {
+    for (let subItem of item.items ?? []) {
+      if (subItem.href === pathName) {
+        return item;
+      }
+    }
+  }
+
+  return menuItems[0];
+};
+
+const getMenuItem = (pathName: string) => {
+  for (let item of menuItems) {
+    for (let subItem of item.items ?? []) {
+      if (subItem.href === pathName) {
+        return subItem;
+      }
+    }
+  }
+
+  return menuItems[0].items[0];
+};
+
+const isDark = (pathName: string) =>
+  pathName === "/" ||
+  pathName === "/signup" ||
+  pathName === "/wineart" ||
+  pathName === "/reso" ||
+  pathName === "/wacollections";
+const getTheme = (pathName: string) =>
+  isDark(pathName) ? themes.Dark : themes.Light;
+
 export default function Header() {
   const pathName = usePathname();
+
+  const [topSelected, setTopSelected] = useState(getTopMenuItem(pathName));
+  const [selected, setSelected] = useState(getMenuItem(pathName));
+
+  const [theme, setTheme] = useState(getTheme(pathName));
+
+  useEffect(() => {
+    setTheme(getTheme(pathName));
+    setTopSelected(getTopMenuItem(pathName));
+    setSelected(getMenuItem(pathName));
+  }, [pathName]);
+
+  function select(item: MenuItem) {
+    setTopSelected(item);
+    // setMenuItems(item.items)
+  }
+
+  const Hr = () => <hr className={`hidden md:block ${theme.hr}`} />;
 
   return (
     <>
@@ -30,38 +98,23 @@ export default function Header() {
           <div className="grid grid-cols-3 md:grid-cols-12 justify-between items-center">
             {/* topbar start */}
             <div className="md:flex  hidden items-center space-x-4 lg:space-x-8 md:col-span-5">
-              <Link href="#">
-                <span
-                  className={`hidden md:block py-7 ${
-                    pathName === "/" ||
-                    pathName === "/signup" ||
-                    pathName === "/wine&art"
-                      ? "text-orange-100 border-b-[#CC714D] "
-                      : "text-stone-600 border-b-[#BF4D20]"
-                  } text-base  tracking-tight font-semibold  border-0 border-b-2`}
-                >
-                  Vinesia Story
-                </span>
-              </Link>
-              <Link href="/">
-                <span
-                  className={` hidden md:block py-7 text-orange-100 text-base font-normal tracking-tight  ${
-                    pathName === "/" ||
-                    pathName === "/signup" ||
-                    pathName === "/wine&art"
-                      ? "text-orange-100"
-                      : "text-stone-600"
-                  } `}
-                >
-                  Vinesia Marketplace
-                </span>
-              </Link>
+              {menuItems.map((x) => (
+                <div key={x.id} onClick={() => select(x)}>
+                  <span
+                    className={`hidden md:block py-7 text-base tracking-tight border-0 ${
+                      theme.textClass
+                    } ${x.id === topSelected.id ? theme.selectedClass : ""}`}
+                  >
+                    {x.name}
+                  </span>
+                </div>
+              ))}
             </div>
             {/* Mobile Navbar (Hidden on Desktop)  */}
 
             <div className="md:hidden">
               <div className="block md:hidden">
-                <SidePannel />
+                <SidePannel isDark={isDark(pathName)} />
               </div>
             </div>
             <div className=" text-2xl lg:text-4xl font-bold lg:col-span-2 text-center py-5">
@@ -74,114 +127,48 @@ export default function Header() {
               </Link>
             </div>
             <div className="flex items-center gap-5 md:col-span-5 ms-auto">
-              <div className="hidden md:block">
+              <div className="hidden md:block md:order-1">
                 <div
-                  className={`w-10 h-10 rounded-full border  border-opacity-20 justify-center items-center gap-2.5 inline-flex   ${
-                    pathName == "/" ||
-                    pathName == "/signup" ||
-                    pathName === "/wine&art"
-                      ? "border-white   "
-                      : "border-stone-800"
-                  } `}
+                  className={`w-10 h-10 rounded-full border  border-opacity-20 justify-center items-center gap-2.5 inline-flex   ${theme.border} `}
                 >
-                  <SearchIcon
-                    fill={
-                      pathName == "/" || pathName == "/signup"
-                        ? "white"
-                        : "#3a2824"
-                    }
-                  />
+                  <SearchIcon fill={isDark(pathName) ? "white" : "#3a2824"} />
                 </div>
               </div>
 
               {/* user Icon */}
               <div
-                className={`w-10 h-10 rounded-full border  border-opacity-20 justify-center items-center gap-2.5 inline-flex    ${
-                  pathName == "/" ||
-                  pathName == "/signup" ||
-                  pathName === "/wine&art"
-                    ? "border-white"
-                    : "border-stone-800"
-                } `}
+                className={`w-10 h-10 rounded-full border md:order-2 order-2  border-opacity-20 justify-center items-center gap-2.5 inline-flex    ${theme?.border} `}
               >
-                <UserIcon
-                  fill={
-                    pathName == "/" ||
-                    pathName == "/signup" ||
-                    pathName === "/wine&art"
-                      ? "white"
-                      : "#3a2824"
-                  }
-                />
+                <UserIcon fill={isDark(pathName) ? "white" : "#3a2824"} />
               </div>
               {/* Cart Icon */}
               <div
-                className={`w-10 h-10 rounded-full border border-opacity-20 justify-center items-center gap-2.5 inline-flex  ${
-                  pathName == "/" ||
-                  pathName == "/signup" ||
-                  pathName === "/wine&art"
-                    ? "border-white"
-                    : "border-stone-800 text-"
-                }`}
+                className={`w-10 h-10 md:order-3 order-1 rounded-full border border-opacity-20 justify-center items-center gap-2.5 inline-flex  ${theme?.border}`}
               >
-                <CartIcon
-                  fill={
-                    pathName == "/" ||
-                    pathName == "/signup" ||
-                    pathName === "/wine&art"
-                      ? "white"
-                      : "#3a2824"
-                  }
-                />
+                <CartIcon fill={isDark(pathName) ? "white" : "#3a2824"} />
               </div>
             </div>
           </div>
         </nav>
-        <hr
-          className={` hidden md:block ${
-            pathName == "/" || pathName == "/signup" || pathName === "/wine&art"
-              ? "opacity-20"
-              : "border-stone-400"
-          }`}
-        />
+        <Hr />
+
         {/* Navbar */}
         <nav
-          className={`text-orange-100 text-base font-normal tracking-tight ${
-            pathName == "/" || pathName == "/signup" || pathName === "/wine&art"
-              ? "text-orange-100"
-              : "text-stone-600"
-          } `}
+          className={`text-orange-100 text-base font-normal tracking-tight ${theme.textClass} `}
         >
           <div className="container mx-auto flex justify-center items-center px-4">
             <ul className="hidden md:flex lg:gap-14 md:gap-4">
-              {menuBar?.map((item: any) => {
+              {topSelected.items?.map((item: any) => {
                 const { id, name, href } = item;
                 return (
                   <Link href={href} key={id}>
-                    {pathName == "/" ||
-                    pathName == "/signup" ||
-                    pathName === "/wine&art" ? (
-                      <li
-                        className={`${
-                          name == "Start"
-                            ? "  font-semibold border-b-[#CC714D] border-0 border-b-2  text-base   tracking-tight"
-                            : ""
-                        } py-4`}
-                      >
-                        {name}
-                      </li>
-                    ) : (
-                      <li
-                        className={`${
-                          name == "Start"
-                            ? "  font-semibold text-orange-700 border-b-orange-700 border-0 border-b-2  text-base   tracking-tight"
-                            : ""
-                        } py-4`}
-                      >
-                        {" "}
-                        {name}
-                      </li>
-                    )}
+                    <li
+                      className={`py-4 ${
+                        selected === item ? theme.selectedClass : ""
+                      }`}
+                    >
+                      {name}
+                    </li>
                   </Link>
                 );
               })}
@@ -194,13 +181,13 @@ export default function Header() {
             <form>
               <div className="relative">
                 <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                  <SearchIcon fill={pathName == "/" ? "white" : "#3a2824"} />
+                  <SearchIcon fill={isDark(pathName) ? "white" : "#3a2824"} />
                 </div>
 
                 <input
                   type="search"
                   id="default-search"
-                  className="block w-full p-4 ps-10 text-sm  outline-none  rounded-full border border-white bg-orange-100 bg-transparent "
+                  className={`block w-full p-4 ps-10 text-sm  outline-none  rounded-full border border-opacity-20 bg-transparent ${theme?.border} `}
                   placeholder="Search"
                 />
               </div>
@@ -211,22 +198,21 @@ export default function Header() {
             <form>
               <div className="relative">
                 <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                  <SearchIcon fill={pathName == "/" ? "white" : "#3a2824"} />
+                  <SearchIcon fill={isDark(pathName) ? "white" : "#3a2824"} />
                 </div>
 
                 <input
                   type="search"
                   id="default-search"
-                  className="block w-full p-4 ps-10 text-sm  outline-none bg-orange-100  focus:ring-stone-500 focus:border-stone-500   text-stone-500    rounded-full border border-[#BCA291] "
+                  className={`block w-full p-4 ps-10 text-sm  outline-none   focus:ring-stone-500 focus:border-stone-500   text-stone-500    rounded-full border  bg-transparent border-opacity-20 ${theme?.border} `}
                   placeholder="Search "
                 />
               </div>
             </form>
           </div>
         )}
-        <hr
-          className={` ${pathName == "/" ? "opacity-20" : "border-stone-400 "}`}
-        />
+        <Hr />
+        <hr className={`block md:hidden border-opacity-20 ${theme.border}`} />
       </div>
     </>
   );

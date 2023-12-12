@@ -136,20 +136,20 @@ export default function WineTabe() {
         </div>
         <button
           type="button"
-          className=" text-center text-orange-700 text-xs font-normal font-['Albert Sans'] uppercase leading-3 tracking-tight flex gap-2 items-center focus:ring-0 focus:outline-none focus:ring-gray-100"
+          className=" text-center text-orange-700 text-xs font-normal  uppercase leading-3 tracking-tight flex gap-2 items-center focus:ring-0 focus:outline-none focus:ring-gray-100"
         >
           See More
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            stroke-width="1.5"
+            strokeWidth="1.5"
             stroke="currentColor"
             className="w-4 h-4"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
             />
           </svg>

@@ -14,7 +14,7 @@ export default function ShareCard() {
             className="w-6 h-6 mx-auto"
           >
             <path
-              stroke-linecap="round"
+              strokeLinecap="round"
               stroke-linejoin="round"
               d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
             />
@@ -89,7 +89,7 @@ export default function ShareCard() {
         <div className="hidden md:block">
           <button
             type="button"
-            className="flex text-end text-orange-700 text-xs font-normal font-['Albert Sans'] uppercase leading-3 tracking-tight flex gap-2 items-center focus:ring-0 focus:outline-none focus:ring-gray-100"
+            className="flex text-end text-orange-700 text-xs font-normal  uppercase leading-3 tracking-tight flex gap-2 items-center focus:ring-0 focus:outline-none focus:ring-gray-100"
           >
             See More
             <svg
@@ -101,7 +101,7 @@ export default function ShareCard() {
               className="w-4 h-4 mx-auto"
             >
               <path
-                stroke-linecap="round"
+                strokeLinecap="round"
                 stroke-linejoin="round"
                 d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
               />
@@ -112,7 +112,7 @@ export default function ShareCard() {
       <div className="my-8 max-w-[608px] h-[0px] border border-orange-700 border-opacity-20"></div>
       <div className="md:flex md:justify-between md:items-center">
         <div className=" uppercase items-center flex gap-3 md:pb-0 pb-4">
-          <p className="text-right text-stone-500 text-xs font-normal font-['Albert Sans'] uppercase leading-3 tracking-tight">
+          <p className="text-right text-stone-500 text-xs font-normal  uppercase leading-3 tracking-tight">
             Floor PRICE
           </p>
           <svg

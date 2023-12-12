@@ -3,22 +3,25 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'canela';
-  src: url("../assets/fonts/Canela Text Family/CanelaText-Regular-Trial.otf") format('opentype');
+  font-family: "canela";
+  src: url("../assets/fonts/Canela Text Family/CanelaText-Regular-Trial.otf")
+    format("opentype");
   font-weight: normal; /* 400 */
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'canela';
-  src: url("../assets/fonts/Canela Text Family/CanelaText-Light-Trial.otf") format('opentype');
+  font-family: "canela";
+  src: url("../assets/fonts/Canela Text Family/CanelaText-Light-Trial.otf")
+    format("opentype");
   font-weight: 300; /* Light */
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'canela';
-  src: url("../assets/fonts/Canela Text Family/CanelaText-Bold-Trial.otf") format('opentype');
+  font-family: "canela";
+  src: url("../assets/fonts/Canela Text Family/CanelaText-Bold-Trial.otf")
+    format("opentype");
   font-weight: bold; /* 700 */
   font-style: normal;
 }
@@ -32,7 +35,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  font-family: albert;
+  font-family: albert, 'sans-serif';
 }
 
 body {
@@ -97,8 +100,8 @@ h6 {
 }
 
 .newsletter_banner {
-  background-image: url("../assets/images/newsletter.png");
-  background-position: center;
+  background-image: url("../assets/images/subscription_bg.png");
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -165,7 +168,7 @@ h6 {
 
   .customsign-bg-image {
     background-image: url("../assets/images/signup.png");
-  
+
     background-size: cover;
     /* background-position: center; */
   }
@@ -238,7 +241,7 @@ h6 {
   position: relative !important;
 }
 .subcribe_soon_slider .slick-active {
- background-color: white !important;
+  background-color: white !important;
 }
 .subcribe_soon_slider .slick-dots li {
   width: 7px !important;
@@ -247,11 +250,10 @@ h6 {
   border: 1px solid white;
 }
 .subcribe_soon_slider .slick-dots {
- bottom: 38px !important;
- height: 7px !important;
- position: absolute !important;
+  bottom: 38px !important;
+  height: 7px !important;
+  position: absolute !important;
 }
-
 
 /* .invest_carousel */
 /* }  */
@@ -271,9 +273,7 @@ h6 {
   }
 }
 
-
 @media screen and (min-width: 1440px) {
-
   .custom-bg-image {
     height: 1000px;
   }

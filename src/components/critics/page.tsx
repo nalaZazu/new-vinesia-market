@@ -5,7 +5,7 @@ import alert from "../../assets/icons/alert-circle.svg";
 // import arrow from "../../assets/icons/arrow-right2.svg";
 import wine from "../../assets/images/critcsimage.png";
 import signature from "../../assets/images/signature.png";
-import { Arrows } from "@/assets/icons/Icons";
+import { Arrows, InfoIcon } from "@/assets/icons/Icons";
 
 const Critics = () => {
   return (
@@ -84,28 +84,20 @@ const Critics = () => {
               <div className="text-center"></div>
             </ul>
             <div>
-              <h2 className="  flex items-center text-stone-500 text-xs font-normal  percase leading-3 tracking-tight">
+              <p className="  flex items-center text-stone-500 text-xs font-normal  percase leading-3 tracking-tight uppercase gap-2">
                 Vinesia Score
-                <Image
-                  src={alert}
-                  alt="Picture of the author"
-                  width={15}
-                  height={15}
-                  quality={75}
-                  style={{ objectFit: "contain" }}
-                  className="ml-2"
-                />
-              </h2>
+                <InfoIcon fill="#BF4D20" />
+              </p>
               <div className="flex flex-col ">
-                <span className="  tracking-tight   text-zinc-800 text-7xl font-normal  ">
+                <h1 className="  tracking-tight   text-zinc-800 text-7xl font-normal  ">
                   5/5
-                </span>
+                </h1>
                 <span className=" mt-8  text-stone-500 text-xs font-normal  uppercase leading-3 tracking-tight">
                   Critiqued By
                 </span>
-                <span className="text-zinc-800 text-lg font-semibold  leading-relaxed">
+                <p className="text-zinc-800 text-lg font-semibold  leading-relaxed">
                   Robert Parker
-                </span>
+                </p>
               </div>
               <span>
                 <Image src={signature} alt="signature" />

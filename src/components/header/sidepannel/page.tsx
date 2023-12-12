@@ -7,7 +7,7 @@ import xmark from "../../../assets/icons/x-mark.svg";
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 
-const SidePannel = () => {
+const SidePannel = ({ isDark }: { isDark?: Boolean }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState<any>(false);
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -30,7 +30,7 @@ const SidePannel = () => {
             className="h-6 w-6"
             fill="none"
             viewBox="0 0 24 24"
-            stroke={`${pathname == "/" ? "white" : "#BF4D20"}`}
+            stroke={`${isDark ? "white" : "#BF4D20"}`}
           >
             <path
               strokeLinecap="round"

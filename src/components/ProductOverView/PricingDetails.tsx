@@ -47,7 +47,7 @@ export default function PricingDetail() {
               <p className=" text-stone-500 text-xs font-normal uppercase leading-3 tracking-tight">
                 Highest Price
               </p>
-              <p className=" text-stone-400 text-xs font-normal font-['Albert Sans'] leading-3">
+              <p className=" text-stone-400 text-xs font-normal  leading-3">
                 ever transacted for product
               </p>
             </div>
@@ -58,10 +58,10 @@ export default function PricingDetail() {
 
           <div className="gap-10 p-5 bg-slate-700 rounded-br border border-orange-700 border-opacity-20 flex-col justify-between items-start inline-flex">
             <div>
-              <p className="text-white text-xs font-normal font-['Albert Sans'] uppercase leading-3 tracking-tight">
+              <p className="text-white text-xs font-normal  uppercase leading-3 tracking-tight">
                 Price Change
               </p>
-              <p className=" text-slate-400 text-xs font-normal font-['Albert Sans'] leading-3">
+              <p className=" text-slate-400 text-xs font-normal  leading-3">
                 since first release
               </p>
             </div>
