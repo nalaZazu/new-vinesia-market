@@ -46,7 +46,7 @@ export default function Banner({ breadCrumbData }: { breadCrumbData?: any }) {
               <p className="text-stone-400 text-xs font-normal uppercase leading-3 tracking-tight pb-7 max-w-[200px] md:max-w-full">
                 appreciating your wine, guarding its emotions
               </p>
-              <h1 className="text-white md:text-9xl sm:text-6xl text-5xl font-normal  ">
+              <h1 className="text-white md:text-[144px] md:leading-[200px] sm:text-6xl text-5xl font-normal">
                 Marketplace
               </h1>
               <p className="text-stone-400 text-base font-normal leading-snug pt-4 pb-10 max-w-[470px]">
