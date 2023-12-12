@@ -15,7 +15,7 @@ export default function WineVideoBanner() {
             <Image src={videoplay} alt="" />
           </div>
           <div className="gap-[17px]">
-            <p className="max-w-[303px] text-white md:text-left text-center text-base font-normal leading-snug">
+            <p className="max-w-[303px] text-white md:text-start text-center text-base font-normal leading-snug">
               Château Le Pin is a mini chateau in the Pomerol appellation on the
               right bank of the Bordeaux region.
             </p>

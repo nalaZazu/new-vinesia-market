@@ -29,7 +29,7 @@ export default function UserDropDown() {
   return (
     <div className=" flex justify-center">
       {/* {isAuthenticted ? ( */}
-      <Menu as="div" className="relative inline-block text-left items-center">
+      <Menu as="div" className="relative inline-block text-start items-center">
         {/* <div>
           <Menu.Button className="inline-flex w-full justify-center items-center rounded-md bg-black/20 px-4 py-2   hover:bg-black/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75  text-neutral-900 text-base font-medium  leading-7">
             User Name

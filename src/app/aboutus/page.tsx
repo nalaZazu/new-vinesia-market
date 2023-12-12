@@ -10,26 +10,103 @@ import videoImage from "@/assets/images/video (1080p) 2.png";
 import { Arrows, LineDot } from "@/assets/icons/Icons";
 import { AboutSection } from "@/constants/aboutSection";
 import wineBottle from "@/assets/images/bolltewine.png";
+import videoWine from "@/assets/images/video (1080p) 2.png";
 import wineBottles from "@/assets/images/wineImageBottle.png";
+import background from "@/assets/images/backgroundEllipse .png";
+import backgroundtwo from "@/assets/images/Ellipse circle2x.png";
 import lineregion from "@/assets/icons/lineregion.svg";
-import AccordionWine from "@/components/accordion/page";
+import { AccordionWine, AccordionWineAbout } from "@/components/accordion/page";
 import { CardAbout } from "@/constants/cardregion";
-
+import Newsletter from "@/components/newsletter/page";
+import NewsletterMobile from "@/components/newsletter/MobileView";
+import Footer from "@/components/footer/page";
+import grapes from "@/assets/icons/aboutIllustrations.svg";
+import bottleIllustration from "@/assets/icons/bottle-Illustrations.svg";
+import bottleIllustrations from "@/assets/icons/wine-bottle-Illustrations.svg";
+import glass from "@/assets/icons/glass.svg";
+import arrowdowns from "@/assets/icons/downarrow.svg";
+import textOne from "@/assets/icons/getStarted.svg";
+import textTwo from "@/assets/icons/getstarted2.svg";
+import AboutSlider from "@/components/aboutslider/page";
 const About = () => {
   return (
     <React.Fragment>
       {/* Main heading section */}
-      {/* <div className="mx-4 md:mx-96 text-center">
-        <span className=" text-zinc-800 text-4xl font-light  leading-[44px]">
-          The future of wine investing
-        </span>
-        <h1 className=" text-zinc-800 text-[144px] font-normal ">
-          secure, transparent, easily tradable
-        </h1>
-      </div> */}
+      <div className="relative container mx-auto md:py-0 pb-20">
+        <div className="container mx-auto md:px-0 px-4 ">
+          <div className="md:flex md:justify-end justify-start text-[#BD936B] text-xs font-normal   uppercase leading-3 tracking-tight md:pt-5 pt-4  tracking-[ 0.24px]">
+            <p> appreciating your wine,</p>
+            <p>guarding its emotions</p>
+          </div>
+
+          <div className="md:text-center  pt-16">
+            <div className="relative">
+              <span className=" text-zinc-800 md:text-4xl font-light  md:leading-[44px] tracking-[-0.36px]  md:text-center   text-[21px]  leading-[29px]">
+                The future of wine investing
+              </span>
+              <div className="absolute -top-3 left-0 md:block hidden ">
+                <Image src={grapes} alt="image-icon" />
+              </div>
+            </div>
+            {/* here is main text-div  */}
+            <div className="relative">
+              <h1 className=" text-zinc-800 md:text-[144px] font-normal md:tracking-[-2.88px] md:leading-[155px] tracking-[-1.2px]     text-6xl    leading-[68px]">
+                secure, transparent, easily tradable
+              </h1>
+              <div className="absolute top-0 -right-9 md:block hidden">
+                <Image src={bottleIllustration} alt="image-icon" />
+              </div>
+              <div className="absolute  left-40 md:block hidden">
+                <Image src={bottleIllustrations} alt="image-icon" />
+              </div>
+            </div>
+          </div>
+          <div className="text-center pt-[69px] ">
+            <button className="px-8 py-[22px] bg-orange-700 rounded-full  justify-center items-center gap-3 inline-flex  text-center text-white text-xs font-normal -mb-4 uppercase leading-3 tracking-tight">
+              START NOW <Arrows storke="#FFFFFF" />
+            </button>
+          </div>
+          {/* <div className="relative md:block hidden">
+            <div className="bg-[#ECDDC0] w-[700px] h-[300px] mx-auto  rounded-tl-full rounded-tr-full relative -z-10" />
+
+            <div className="absolute left-0 right-0 top-10">
+              <Image
+                src={videoWine}
+                alt="video"
+                className=" rounded-tl-full rounded-tr-full  w-[600px] h-[259px] mx-auto"
+              />
+            </div>
+          </div> */}
+        </div>
+        <div className="relative md:block hidden">
+          <div className="absolute right-0">
+            <Image src={background} alt="glass image" />
+            <div className="absolute -top-2 ">
+              <Image src={textOne} alt="glass image" />
+            </div>
+            {/* <div className="absolute ">
+            <Image src={textTwo} alt="glass image" />
+          </div> */}
+          </div>
+
+          <div className="relative">
+            <div className="absolute  right-[30px] w-[71px] h-[71px] top-[34px]">
+              <Image src={backgroundtwo} alt="glass image" />
+            </div>
+            <div className="absolute  right-[54px]   top-[55px]">
+              <Image src={arrowdowns} alt="glass image" />
+            </div>
+          </div>
+
+          <div className="absolute right-32">
+            <Image src={glass} alt="glass image" />
+          </div>
+        </div>
+      </div>
+
       {/* here is video section */}
-      <div className="w-full">
-      <Image src={videoImage} alt="video" />
+      <div className="w-full md:pt-80">
+        <Image src={videoImage} className="w-full" alt="video" />
       </div>
       {/* here is next section */}
       <div className="md:py-40 md:px-0 container mx-auto  py-12 px-4">
@@ -176,7 +253,7 @@ const About = () => {
       {/* here is invest in wine section */}
 
       <div className="flex flex-wrap  bg-[#7D302E]  md:h-[800px] ">
-        <div className=" md:basis-5/12 md:block hidden h-full">
+        <div className=" md:basis-5/12 md:block hidden h-full w-full">
           <Image src={wineBottle} className="w-full h-full" alt="winebottle" />
         </div>
         {/* for Mobile responsive  */}
@@ -305,10 +382,10 @@ const About = () => {
               return (
                 <div className="pt-[52px] md:min-w-[29%] min-w-[80%] md:overflow-hidden  overflow-hidden">
                   {/*  */}
-                  <div className=" md:p-4 p-[13px] bg-white">
+                  <div className=" md:p-4 p-[13px]       bg-white">
                     <div className=" " key="index">
                       <Image src={image} alt="image" className=" h-[347px]" />
-                      <p className="text-zinc-800 text-lg font-semibold tracking-[-0.36px]  leading-relaxed">
+                      <p className="text-zinc-800 text-lg font-semibold tracking-[-0.36px]  leading-relaxed  ">
                         {text}
                       </p>
                     </div>
@@ -319,6 +396,65 @@ const About = () => {
           </div>
         </div>
       </div>
+
+      {/* The faster way to get to know us */}
+      <div className="bg-[#2F222B] ">
+        <div className="flex">
+          <div className="basis-1/12"></div>
+          <div className="basis-11/12">
+            <div className="md:py-40 md:px-0  px-4 py-20">
+              <div>
+                <h3 className="text-white text-4xl font-light   leading-[44px] pb-8">
+                  The faster way to get to know us
+                </h3>
+                <button className=" px-8 py-[22px] rounded-[48px] border border-white border-opacity-20 justify-center items-center gap-3 inline-flex   text-center text-white text-xs font-normal   uppercase leading-3 tracking-tight">START INVESTING NOW
+                  <Arrows storke="#FFFFFF" />
+                </button>
+              </div>
+            </div>
+
+            {/* here is new slider  section */}
+
+            <AboutSlider/>
+          </div>
+        </div>
+      </div>
+
+      {/* here Have some questions on how it works? section */}
+
+      <div className="md:py-40 md:px-0  py-16 px-4">
+        <div className="container mx-auto">
+          <div className="grid md:grid-cols-5 grid-cols-1 ">
+            <div className="max-w-[698px] col-span-3">
+              <h2 className="text-zinc-800 md:text-7xl font-normal  md:leading-[84px] md:tracking-[-1.44px]  text-4xl  leading-[42px] md:tracking[-0.36px]">
+                Have some questions on how it works?
+              </h2>
+              <div className="flex items-center pt-9 md:pb-0 pb-12 gap-3">
+                <button className="text-center  text-orange-700 text-xs font-normal justify-start items-center gap-3 inline-flex uppercase leading-3 tracking-tight border-b border-rose-200">
+                  SEE ALL QUESTIONS & ANSWERS
+                </button>
+                <span>
+                  <Arrows storke="#BF4D20" />
+                </span>
+              </div>
+            </div>
+            {/* here is new sextion */}
+            <div className="max-w-[501px] col-span-2">
+              <AccordionWineAbout />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* desktop Newsletter*/}
+      <div className="hidden sm:block">
+        <Newsletter />
+      </div>
+      {/* mobile Newsletter */}
+      <div className="block sm:hidden">
+        <NewsletterMobile />
+      </div>
+      <Footer />
     </React.Fragment>
   );
 };

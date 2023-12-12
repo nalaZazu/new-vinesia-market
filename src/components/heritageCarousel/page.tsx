@@ -74,7 +74,7 @@ export default function HeritageCarousel() {
         <div
           className={`text-black w-16 h-12 flex items-center rounded-full border  justify-center  ${
             currentslide == 0
-              ? "border-[#BF4D2020] pointer-events-none                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     "
+              ? "border-[#BF4D2020] pointer-events-none "
               : "border-orange-700"
           }`}
         >
