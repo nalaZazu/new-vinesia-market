@@ -136,7 +136,7 @@ export default function WineTabe() {
         </div>
         <button
           type="button"
-          className=" text-center text-orange-700 text-xs font-normal font-['Albert Sans'] uppercase leading-3 tracking-tight flex gap-2 items-center focus:ring-0 focus:outline-none focus:ring-gray-100"
+          className=" text-center text-orange-700 text-xs font-normal  uppercase leading-3 tracking-tight flex gap-2 items-center focus:ring-0 focus:outline-none focus:ring-gray-100"
         >
           See More
           <svg

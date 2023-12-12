@@ -17,7 +17,7 @@ export default function ProductCards() {
               />
               <div className="w-[49.94px] h-[50px] absolute -bottom-5 left-0 right-0 mx-auto">
                 <div className="w-[49.94px] h-[50px] left-0 top-0 absolute bg-red-700 rounded-full border-4 border-orange-100" />
-                <div className="left-[12.49px] top-[20px] absolute text-center text-white text-sm font-normal font-['Albert Sans'] uppercase leading-none">
+                <div className="left-[12.49px] top-[20px] absolute text-center text-white text-sm font-normal  uppercase leading-none">
                   #14
                 </div>
               </div>

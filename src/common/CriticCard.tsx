@@ -18,7 +18,7 @@ export default function CriticCard() {
           </p>
         </div>
         <div>
-          <p className="text-center text-zinc-800 text-base font-normal font-['Albert Sans'] leading-snug">
+          <p className="text-center text-zinc-800 text-base font-normal  leading-snug">
             This is the best wine for romantic dinner and long term investment.
             Buy it as soon as you can, cause it wont last long. Buy it as soon
             as you can.
