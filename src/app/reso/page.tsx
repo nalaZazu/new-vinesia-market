@@ -15,9 +15,11 @@ function Reso() {
     <React.Fragment>
       <div className=" absolute -z-10 top-0 left-0 right-0 ">
         <div className="w-full md:h-[744px] sm:h-[1000px] h-[740px] bg-no-repeat bg-cover md:bg-center bg-bottom md:bg-[url('https://i.ibb.co/QfzgMwN/image-137-1.png')] bg-[url('https://i.ibb.co/BG3QMfR/reso-bg.png')] relative">
-          <div className="container px-6 md:px-4">
+          <div className="container mx-auto px-6 md:px-4 relative ">
             {/* BreadCrumb start */}
+
             <VerticalBreadCrumb />
+
             {/* BreadCrumb end */}
             <div className="flex md:items-end items-start container mx-auto md:h-[644px] md:ps-40 ps-0 pt-48">
               <div>
@@ -60,7 +62,7 @@ function Reso() {
         </div>
 
         {/* Destop View */}
-        <div className="max-w-[1038px] mx-auto ">
+        <div className="max-w-[1248px] mx-auto ">
           <hr className="border border-orange-700 border-opacity-20" />
           <div className="hidden md:block my-20 ">
             <Dropdown />
