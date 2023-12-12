@@ -58,7 +58,7 @@ const getMenuItem = (pathName: string) => {
 
 const isDark = (pathName: string) =>
   pathName === "/" ||
-  pathName === "/signup" ||
+ (window?.innerWidth > 786 && pathName === "/signup") ||
   pathName === "/wineart" ||
   pathName === "/reso" ||
   pathName === "/wacollections";
