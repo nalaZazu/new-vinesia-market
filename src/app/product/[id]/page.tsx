@@ -13,11 +13,30 @@ import AboutWinerySection from "@/components/ProductOverView/AboutWinerySection"
 import Newsletter from "@/components/newsletter/page";
 import Footer from "@/components/footer/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
-import HeritageCarousel from "@/components/heritageCarousel/page";
-import YouMayAlso from "@/components/YouMayAlso/page";
-import AboutDisclosure from "@/components/aboutdisclosure/page";
+import useSWR from "swr";
 
-export default function ProductsOverview() {
+
+const fetcher = (arg: string) => fetch(arg).then((res) => res.json())
+
+
+export default function ProductsOverview({ params }: { params: { id: string } }) {
+
+  const { data, error, isLoading } = useSWR(`https://apitest.vinesia.com/products/overview/${params.id}`, fetcher)
+
+  if (isLoading) {
+    return (
+      <div>
+        <div className="md:mx-0 mx-4">
+          <div className="container mx-auto pt-10 pb-7">
+            <div className="flex">
+              Loading ...
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div>
       <div className="md:mx-0 mx-4">
@@ -26,11 +45,12 @@ export default function ProductsOverview() {
             <div className="basis-1/12 hidden md:block"></div>
             <div className="md:basis-11/12 basis-full max-w-[990px]">
               <h1 className="text-zinc-800 md:text-7xl md:leading-[84px] text-4xl font-normal leading-[42px] tracking-[-1.44px]">
-                Chateau La Mission Haut Brion Cru Classe | 2009
+                {data.wine.name} | {data.wine.vintage}
               </h1>
-              <p className="text-zinc-800 text-base font-normal leading-snug pt-2 ">
-                With Art of Lola Designer Fun
-              </p>
+              {data.art.name !== undefined ?
+                <p className="text-zinc-800 text-base font-normal leading-snug pt-2 ">
+                  With Art of Lola Designer Fun
+                </p> : <></>}
             </div>
           </div>{" "}
         </div>
@@ -88,7 +108,7 @@ export default function ProductsOverview() {
             <div className="md:basis-11/12 basis-full ">
               <div className="bg-[#F7EFDF] pt-10 pb-20 ">
                 <div className="md:max-w-[1350px] mx-auto">
-                  <ProductTopSection />
+                  <ProductTopSection data={data.wine} />
                 </div>
               </div>
             </div>
@@ -99,7 +119,7 @@ export default function ProductsOverview() {
       <MindPledge btnTitle="Read More" />
       {/* MindPledge end */}
       {/*Release details start  */}
-      <section className="container mx-auto md:py-40 max-w-[1248px]">
+      <section className="container mx-auto md:py-40">
         <div className="md:flex justify-between items-center">
           <div className="flex justify-between md:pb-6 pb-6  md:py-0 py-6 md:bg-transparent bg-[#F7EFDF] px-4 md:px-0 items-center">
             <h2 className="text-zinc-800 md:text-7xl md:font-normal md:leading-[84px] text-base font-semibold leading-snug">
@@ -110,13 +130,13 @@ export default function ProductsOverview() {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
                 className="w-4 h-4 text-secondary"
               >
                 <path
                   strokeLinecap="round"
-                  stroke-linejoin="round"
+                  strokeLinejoin="round"
                   d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
                 />
               </svg>
@@ -172,13 +192,8 @@ export default function ProductsOverview() {
       </section>
       {/*Release details end  */}
       {/* All editions start */}
-      <div className="bg-orange-700 bg-opacity-10 px-4">
-        <div className="container max-w-[1248px] mx-auto">
-          <AllEditions />
-        </div>
-      </div>
+      <AllEditions />
       {/* All editions end */}
-      {/* desktop start */}
       {/* How to invest in wine start*/}
       <div className="md:block hidden">
         <WineVideoBanner />
@@ -198,34 +213,15 @@ export default function ProductsOverview() {
       <div className="md:block hidden">
         <AboutWinerySection />
       </div>
+
       {/* About Winery Château Le Pin end */}
-      {/* desktop end */}
-      {/* mobile start */}
-      {/* Mobile View */}
-      <div className="block md:hidden">
-        <AboutDisclosure />
-      </div>
-      {/* mobile end */}
-      {/*YouMayAlso start  */}
-      <div className="md:block hidden bg-[#F7EFDF] py-40">
-        <YouMayAlso />
-      </div>
-      <div className="py-20 md:hidden block bg-[#F7EFDF]">
-        <div>
-          <h3 className="text-center text-zinc-800 text-[21px] font-light leading-[29px] pb-12">
-            You may also like
-          </h3>
-          {/* here is video silder */}
-          <HeritageCarousel />
-        </div>
-      </div>
-      {/*YouMayAlso end  */}
       <div className="md:block hidden">
         <Newsletter />
       </div>
       <div className="md:hidden block">
         <NewsletterMobile />
       </div>
+
       <Footer />
     </div>
   );

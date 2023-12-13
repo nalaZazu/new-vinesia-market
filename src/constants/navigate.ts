@@ -78,12 +78,12 @@ export const menuBar: MenuItem[] = [
       {
         id: 5,
         name: "Wine & Art Collections",
-        href: "/wacollections",
+        href: "/wine&art",
       },
       {
         id: 6,
         name: "Limited collections",
-        href: "/collections",
+        href: "/limited",
       },
       {
         id: 7,

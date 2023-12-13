@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../../assets/icons/logo1.svg";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { CartIcon, SearchIcon } from "@/assets/icons/Icons";
 import local from "next/font/local";
 import SidePannel from "./sidepannel/page";
@@ -20,7 +20,9 @@ const themes = {
   Light: {
     textClass: "text-[#61423D]",
     underlineClass: "border-b-[#BF4D20]",
-    selectedClass: "border-b-2 font-semibold border-b-[#BF4D20] ",
+    selectedClass: "border-b-2 font-semibold border-b-[#BF4D20]",
+    iconFill: "#3a2824",
+    iconBorder: "border-stone-800",
     hr: "border-stone-400",
     border: "border-stone-800",
     activeTextClass: "text-[#BF4D20]",
@@ -29,6 +31,8 @@ const themes = {
     textClass: "text-[#F3E8CF]",
     underlineClass: "border-b-[#CC714D]",
     selectedClass: "border-b-2 font-semibold border-b-[#CC714D]",
+    iconFill: "white",
+    iconBorder: "border-white",
     hr: "opacity-20",
     border: "border-white",
     activeTextClass: "text-[#F3E8CF]",
@@ -72,6 +76,7 @@ export default function Header() {
     isDark(pathName) ? themes.Dark : themes.Light;
 
   const pathName = usePathname();
+  const router = useRouter();
 
   const [topSelected, setTopSelected] = useState(getTopMenuItem(pathName));
   const [selected, setSelected] = useState(getMenuItem(pathName));
@@ -92,6 +97,11 @@ export default function Header() {
     // setMenuItems(item.items)
   }
 
+  function navUser() {
+    router.push('/signup', { scroll: false })
+  }
+
+
   const Hr = () => <hr className={`hidden md:block ${theme.hr}`} />;
 
   return (
@@ -107,7 +117,7 @@ export default function Header() {
             {/* topbar start */}
             <div className="md:flex  hidden items-center space-x-4 lg:space-x-8 md:col-span-5">
               {menuItems.map((x) => (
-                <div key={x.id} onClick={() => select(x)}>
+                <div className="cursor-pointer" key={x.id} onClick={() => select(x)}>
                   <span
                     className={`hidden md:block py-7 text-base tracking-tight border-0 ${
                       theme.textClass
@@ -134,27 +144,31 @@ export default function Header() {
                 />
               </Link>
             </div>
+
+            {/* Menu Icons, Search, User, Cart  */}
             <div className="flex items-center gap-5 md:col-span-5 ms-auto">
               <div className="hidden md:block md:order-1">
                 <div
-                  className={`w-10 h-10 rounded-full border  border-opacity-20 justify-center items-center gap-2.5 inline-flex   ${theme.border} `}
+                  className={`w-10 h-10 rounded-full border md:order-2 order-2 border-opacity-20 justify-center items-center gap-2.5 inline-flex ${theme.iconBorder}`}
                 >
-                  <SearchIcon fill={isDark(pathName) ? "white" : "#3a2824"} />
+                  <SearchIcon fill={theme.iconFill} />
                 </div>
               </div>
 
               {/* user Icon */}
               <div
-                className={`w-10 h-10 rounded-full border md:order-2 order-2  border-opacity-20 justify-center items-center gap-2.5 inline-flex    ${theme?.border} `}
+                className={`cursor-pointer w-10 h-10 rounded-full border border-opacity-20 justify-center items-center gap-2.5 inline-flex ${theme.iconBorder}`}
+                onClick={navUser}
               >
-                <UserIcon fill={isDark(pathName) ? "white" : "#3a2824"} />
+                <UserIcon fill={theme.iconFill} />
               </div>
-              {/* Cart Icon */}
-              <div
-                className={`w-10 h-10 md:order-3 order-1 rounded-full border border-opacity-20 justify-center items-center gap-2.5 inline-flex  ${theme?.border}`}
+
+              <Link
+              href="/cart"
+                className={`w-10 h-10 rounded-full border md:order-3 order-1 border-opacity-20 justify-center items-center gap-2.5 inline-flex ${theme.iconBorder}`}
               >
-                <CartIcon fill={isDark(pathName) ? "white" : "#3a2824"} />
-              </div>
+                <CartIcon fill={theme.iconFill} />
+              </Link>
             </div>
           </div>
         </nav>

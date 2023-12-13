@@ -120,16 +120,16 @@ export default function AssetDetails() {
                           <path
                             d="M16.9508 7.55005L7.05078 17.45"
                             stroke="#42A55E"
-                            stroke-width="1.5"
+                            strokeWidth="1.5"
                             strokeLinecap="round"
-                            stroke-linejoin="round"
+                            strokeLinejoin="round"
                           />
                           <path
                             d="M10 7.5L16.95 7.549L17 14.5"
                             stroke="#42A55E"
-                            stroke-width="1.5"
+                            strokeWidth="1.5"
                             strokeLinecap="round"
-                            stroke-linejoin="round"
+                            strokeLinejoin="round"
                           />
                         </svg>
                       </span>
