@@ -11,7 +11,7 @@ import xmark from "../../assets/icons/x-mark-anim.svg";
 
 export default function WineryArt() {
   return (
-    <div>
+    <div className="absolute top-0 left-0 right-0 -z-10">
       <div className="w-full md:h-[742px] h-[620px] bg-no-repeat bg-cover bg-center bg-[url('https://i.ibb.co/R6b3mN9/herobanner.png')]">
         <div className="flex items-center container mx-auto h-[742px] ps-0 md:ps-40">
           <div>

@@ -14,7 +14,7 @@ export function AccordionWine() {
       {AccordionAbout?.map((item: any, index: any) => {
         const { id, title, text } = item;
         return (
-          <div className="w-full md:pt-10 pt-8">
+          <div key={index} className="w-full md:pt-10 pt-8">
             <div className="  w-full  rounded-2xl  md:px-2" key={index}>
               <Disclosure>
                 <>

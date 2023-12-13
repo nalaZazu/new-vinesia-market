@@ -138,9 +138,11 @@ export default function AssetDetails() {
                 </div>
                 {/* column two */}
                 <div className=" grid gap-0 lg:grid-cols-1 md:grid-cols-1 grid-cols-1">
-                  {/* <Appactivity /> */} 
+                  {/* <Appactivity /> */}
                   <div className="pt-6 pl-5 pr-5 pb-5 rounded-bl rounded-tr border">
-                    <h3 className="text-zinc-800 text-lg font-semibold  leading-relaxed">Price history</h3>
+                    <h3 className="text-zinc-800 text-lg font-semibold  leading-relaxed">
+                      Price history
+                    </h3>
                   </div>
                 </div>
               </div>
@@ -149,7 +151,7 @@ export default function AssetDetails() {
           {/* second box */}
           <div className="md:col-span-3 col-span-4 px-4 md:px-6">
             <div className="flex items-center pb-6 gap-10">
-              <h2 className="basis-1/2 text-black text-lg font-semibold tracking-tight">
+              <h2 className="text-black text-lg font-semibold tracking-tight">
                 Transactions history
               </h2>
             </div>
@@ -313,8 +315,10 @@ export default function AssetDetails() {
                       </li>
                     </ul>
 
-                    <button className="text-center text-orange-700 text-xs font-normal  uppercase leading-3 tracking-tight justify-center
-                     items-center gap-3 w-full mx-auto flex pt-6">
+                    <button
+                      className="text-center text-orange-700 text-xs font-normal  uppercase leading-3 tracking-tight justify-center
+                     items-center gap-3 w-full mx-auto flex pt-6"
+                    >
                       SEE MORE
                       <span>
                         <Arrows storke="#BF4D20" />

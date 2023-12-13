@@ -9,6 +9,7 @@ import local from "next/font/local";
 import SidePannel from "./sidepannel/page";
 import { UserIcon } from "@/assets/icons/Icons";
 import { MenuItem, menuBar as menuItems } from "@/constants/navigate";
+import { useWindowSize } from "@/hooks/useWindowSize";
 
 const canela = local({
   src: "../../../public/fonts/canelatext-black.woff2",
@@ -56,16 +57,18 @@ const getMenuItem = (pathName: string) => {
   return menuItems[0].items[0];
 };
 
-const isDark = (pathName: string) =>
-  pathName === "/" ||
-  pathName === "/signup" ||
-  pathName === "/wineart" ||
-  pathName === "/reso" ||
-  pathName === "/wacollections";
-const getTheme = (pathName: string) =>
-  isDark(pathName) ? themes.Dark : themes.Light;
-
 export default function Header() {
+  const tempSize = useWindowSize();
+  const [size, setSize] = useState({ width: 0, height: 0 });
+  const isDark = (pathName: string) =>
+    pathName === "/" ||
+    (size.width > 767 && pathName == "/signup") ||
+    pathName === "/wineart" ||
+    pathName === "/reso" ||
+    pathName === "/wacollections";
+  const getTheme = (pathName: string) =>
+    isDark(pathName) ? themes.Dark : themes.Light;
+
   const pathName = usePathname();
 
   const [topSelected, setTopSelected] = useState(getTopMenuItem(pathName));
@@ -77,7 +80,10 @@ export default function Header() {
     setTheme(getTheme(pathName));
     setTopSelected(getTopMenuItem(pathName));
     setSelected(getMenuItem(pathName));
-  }, [pathName]);
+  }, [pathName, tempSize]);
+  useEffect(() => {
+    setSize(tempSize);
+  }, [tempSize]);
 
   function select(item: MenuItem) {
     setTopSelected(item);

@@ -29,6 +29,7 @@ import textOne from "@/assets/icons/getStarted.svg";
 import textTwo from "@/assets/icons/getstarted2.svg";
 import AboutSlider from "@/components/aboutslider/page";
 import Link from "next/link";
+import ModalBox from "@/common/Modals/page";
 const About = () => {
   return (
     <React.Fragment>
@@ -384,10 +385,10 @@ const About = () => {
               return (
                 <div className="pt-[52px] md:min-w-[29%] min-w-[80%] md:overflow-hidden  overflow-hidden">
                   {/*  */}
-                  <div className=" md:p-4 p-[13px]       bg-white">
+                  <div className=" md:p-4 p-[13px] bg-white">
                     <div className=" " key="index">
                       <Image src={image} alt="image" className=" h-[347px]" />
-                      <p className="text-zinc-800 text-lg font-semibold tracking-[-0.36px]  leading-relaxed  ">
+                      <p className="text-zinc-800 text-lg font-semibold tracking-[-0.36px]  leading-relaxed">
                         {text}
                       </p>
                     </div>
@@ -399,56 +400,9 @@ const About = () => {
         </div>
       </div>
 
-      {/* The faster way to get to know us */}
-      <div className="bg-[#2F222B] ">
-        <div className="flex">
-          <div className="basis-1/12"></div>
-          <div className="basis-11/12">
-            <div className="md:py-40 md:px-0  px-4 py-20">
-              <div>
-                <h3 className="text-white text-4xl font-light   leading-[44px] pb-8">
-                  The faster way to get to know us
-                </h3>
-                <button className=" px-8 py-[22px] rounded-[48px] border border-white border-opacity-20 justify-center items-center gap-3 inline-flex   text-center text-white text-xs font-normal   uppercase leading-3 tracking-tight">
-                  START INVESTING NOW
-                  <Arrows storke="#FFFFFF" />
-                </button>
-              </div>
-            </div>
 
-            {/* here is new slider  section */}
-
-            <AboutSlider />
-          </div>
-        </div>
-      </div>
-
-      {/* here Have some questions on how it works? section */}
-
-      <div className="md:py-40 md:px-0  py-16 px-4">
-        <div className="container mx-auto">
-          <div className="grid md:grid-cols-5 grid-cols-1 ">
-            <div className="max-w-[698px] col-span-3">
-              <h2 className="text-zinc-800 md:text-7xl font-normal  md:leading-[84px] md:tracking-[-1.44px]  text-4xl  leading-[42px] md:tracking[-0.36px]">
-                Have some questions on how it works?
-              </h2>
-              <div className="flex items-center pt-9 md:pb-0 pb-12 gap-3">
-                <button className="text-center  text-orange-700 text-xs font-normal justify-start items-center gap-3 inline-flex uppercase leading-3 tracking-tight border-b border-rose-200">
-                  SEE ALL QUESTIONS & ANSWERS
-                </button>
-                <span>
-                  <Arrows storke="#BF4D20" />
-                </span>
-              </div>
-            </div>
-            {/* here is new sextion */}
-            <div className="max-w-[501px] col-span-2">
-              <AccordionWineAbout />
-            </div>
-          </div>
-        </div>
-      </div>
-
+      
+{/* <ModalBox/> */}
       {/* desktop Newsletter*/}
       <div className="hidden sm:block">
         <Newsletter />

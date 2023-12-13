@@ -10,13 +10,13 @@ import {
 } from "@heroicons/react/20/solid";
 import WineVideoBanner from "../ProductOverView/WineVideoBanner";
 
-export default function AboutDisclosure() {
+export default function InvestDisclosure() {
   const [selectedTab, setSelectedTab] = useState(0);
 
   return (
     <div>
       <>
-        {[1, 2, 3, 4]?.map((item: any, i: any) => {
+        {[1, 2]?.map((item: any, i: any) => {
           return (
             <div key={i} className="pb-6">
               <Disclosure>
@@ -26,13 +26,13 @@ export default function AboutDisclosure() {
                       <Disclosure.Button
                         className={`flex w-full justify-between px-4 py-6`}
                       >
-                        <div className="flex w-full flex-wrap justify-between items-center">
+                        <div className="flex w-full flex-wrap justify-between items-center text-9">
                           <div className="  pb-5 text-start">
                             <button
                               className="text-zinc-800 text-lg font-semibold leading-relaxed"
                               onClick={() => setSelectedTab(0)}
                             >
-                              How to invest in wine?
+                              Wine asset details
                             </button>
                             {/* {open && (
                         <p className=" text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight">

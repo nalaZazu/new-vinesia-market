@@ -500,12 +500,30 @@ export function LineDot({ storke }: { storke: any }) {
   );
 }
 
-
 export function ArrowDown() {
   return (
-    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M8.5 14.041L12.5 10.041L16.5 14.041" stroke="#BF4D20" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
+    <svg
+      width="25"
+      height="25"
+      viewBox="0 0 25 25"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M8.5 14.041L12.5 10.041L16.5 14.041"
+        stroke="#BF4D20"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+}
 
+export function MarksAnim({ fill }: { fill: any }) {
+  return (
+    <svg width="109" height="112" viewBox="0 0 109 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M42.43 8.96206C41.6757 6.14706 41.7211 3.30619 42.427 0.680643L37.3259 2.04747C39.25 3.96832 40.7098 6.40588 41.4641 9.22087L49.7463 40.1305C52.0333 48.666 46.968 57.4393 38.4326 59.7264L7.52293 68.0086C5.09815 68.6583 2.65416 68.7147 0.345143 68.2667L1.43657 72.3399C3.21224 70.7975 5.35696 69.6243 7.78174 68.9746L38.6914 60.6923C47.2268 58.4053 56.0002 63.4706 58.2873 72.0061L66.5695 102.916C67.3238 105.731 67.2783 108.572 66.5725 111.197L71.6736 109.83C69.7495 107.909 68.2897 105.472 67.5354 102.657L59.2532 71.7472C56.9661 63.2118 62.0315 54.4384 70.5669 52.1513L101.477 43.8691C103.901 43.2194 106.345 43.163 108.654 43.611L107.563 39.5378C105.787 41.0803 103.643 42.2535 101.218 42.9032L70.3081 51.1854C61.7726 53.4725 52.9993 48.4071 50.7122 39.8717L42.43 8.96206Z" fill={fill}/>
+    </svg>
+    
   );
 }
