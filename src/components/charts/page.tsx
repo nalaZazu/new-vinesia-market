@@ -97,8 +97,8 @@ export default function Appactivity({ data }: { data?: any }) {
     },
   };
   const labels =
-    data &&
-    data?.map((_v: any, i: any) => {
+    current &&
+    current?.map((_v: any, i: any) => {
       const date = new Date();
       date.setDate(date.getDate() + i);
       return `${moment(_v[0]).format("MMM YY")}`;
@@ -108,9 +108,10 @@ export default function Appactivity({ data }: { data?: any }) {
     datasets: [
       {
         label: "Current",
-        data: data?.map((d: any) => {
-          return d[1];
-        }),
+        data: current,
+        // data: data?.map((d: any) => {
+        //   return d[1];
+        // }),
         borderColor: "#0088F5",
         backgroundColor: "#0088F5",
         yAxisID: "y",
@@ -123,8 +124,8 @@ export default function Appactivity({ data }: { data?: any }) {
 
   return (
     <>
-      <div className="flex justify-between w-full mt-4 px-4 text-xs">
-        <h4>Mobile App Revenue</h4>
+      <div className="flex justify-end w-full mt-4 px-4 text-xs">
+        {/* <h4>Mobile App Revenue</h4> */}
         <div className="flex">
           <p className=" text-blue-600">Current Period</p>
           <div className="w-2 h-2 mt-1 mx-2 rounded-full bg-blue-600 "></div>
@@ -135,7 +136,7 @@ export default function Appactivity({ data }: { data?: any }) {
       <div className="mt-2 ml-5  text-2xl ">{/* <p>$1677787</p> */}</div>
 
       <div className="max-h-60">
-        {data && (
+        {dataa && (
           <Line
             className="mx-2 mb-10 w-20 h-20"
             options={options}

@@ -1,101 +1,81 @@
 import React from "react";
 
-export function NextIcon() {
+export function NextIcon({ fill = "#BF4D20" }: { fill?: any }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
+      width="21"
+      height="10"
+      viewBox="0 0 21 10"
       fill="none"
     >
       <path
-        d="M4.16699 10H15.8337"
-        stroke="#212529"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        d="M15.3711 9.67383C15.6286 8.11608 17.0088 5.00057 20.4692 5.00057"
+        stroke={fill}
       />
       <path
-        d="M10 4.16663L15.8333 9.99996L10 15.8333"
-        stroke="#212529"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        d="M15.3711 0.326172C15.6286 1.88392 17.0088 4.99943 20.4692 4.99943"
+        stroke={fill}
       />
+      <path d="M0 5L19 5" stroke={fill} />
     </svg>
   );
 }
 
-export function PrevIcon() {
+export function PrevIcon({ fill = "#BF4D20" }: { fill?: any }) {
   return (
     <div className="">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 20 20"
+        width="21"
+        height="10"
+        viewBox="0 0 21 10"
         fill="none"
-        version="1.1"
-        transform="matrix(-1,1.2246467991473532e-16,-1.2246467991473532e-16,-1,0,0)"
       >
         <path
-          d="M4.16699 10H15.8337"
-          stroke="#212529"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        ></path>
+          d="M5.62891 9.67383C5.37139 8.11608 3.99124 5.00057 0.530768 5.00057"
+          stroke={fill}
+        />
         <path
-          d="M10 4.16663L15.8333 9.99996L10 15.8333"
-          stroke="#212529"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        ></path>
+          d="M5.62891 0.326172C5.37139 1.88392 3.99124 4.99943 0.530767 4.99943"
+          stroke={fill}
+        />
+        <path d="M21 5L2 5" stroke={fill} />
       </svg>
     </div>
   );
 }
 
-export function InfoIcon() {
+export function InfoIcon({ fill = "gray" }: { fill?: any }) {
   return (
     <div className="">
       <svg
-        width="15"
-        height="15"
-        viewBox="0 0 15 15"
-        fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        width="21"
+        height="21"
+        viewBox="0 0 21 21"
+        fill="none"
       >
-        <g clip-path="url(#clip0_2264_20859)">
-          <path
-            d="M7.5 13.75C10.9518 13.75 13.75 10.9518 13.75 7.5C13.75 4.04822 10.9518 1.25 7.5 1.25C4.04822 1.25 1.25 4.04822 1.25 7.5C1.25 10.9518 4.04822 13.75 7.5 13.75Z"
-            stroke="#212529"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M7.5 5V7.5"
-            stroke="#212529"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M7.5 10H7.50625"
-            stroke="#212529"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </g>
-        <defs>
-          <clipPath id="clip0_2264_20859">
-            <rect width="15" height="15" fill="white" />
-          </clipPath>
-        </defs>
+        <path
+          d="M10.0389 7.42074C9.92388 7.42074 9.83055 7.51407 9.83138 7.62907C9.83138 7.74407 9.92472 7.8374 10.0397 7.8374C10.1547 7.8374 10.248 7.74407 10.248 7.62907C10.248 7.51407 10.1547 7.42074 10.0389 7.42074"
+          stroke={fill}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M10.0391 18.2539V18.2539C5.89656 18.2539 2.53906 14.8964 2.53906 10.7539V10.7539C2.53906 6.61141 5.89656 3.25391 10.0391 3.25391V3.25391C14.1816 3.25391 17.5391 6.61141 17.5391 10.7539V10.7539C17.5391 14.8964 14.1816 18.2539 10.0391 18.2539Z"
+          stroke={fill}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M10.0397 10.7539V14.9206"
+          stroke={fill}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </svg>
     </div>
   );
@@ -129,11 +109,11 @@ export const TextIcon = ({
           d="M 32.550491,148.48008 A -108.15144,-108.15144 0 0 1 140.70194,40.328644 -108.15144,-108.15144 0 0 1 248.85338,148.48008 -108.15144,-108.15144 0 0 1 140.70194,256.63153 -108.15144,-108.15144 0 0 1 32.550491,148.48008 Z"
         />
         <text
-          font-size={fontSize}
+          fontSize={fontSize}
           fill="text-secondary"
-          letter-spacing={letter}
-          font-family="sans-serif"
-          font-weight="normal"
+          letterSpacing={letter}
+          fontFamily="sans-serif"
+          fontWeight="normal"
         >
           <textPath
             href="#SunCatcherStudio"
@@ -371,12 +351,12 @@ export function BgRectangle() {
   return (
     <svg
       width="100%"
-      height="1037"
-      // viewBox="0 0 394 1037"
+      // height="70"
+      viewBox="0 0 394 80"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path d="M0 0H394V967L197 1037L0 967V0Z" fill="#f7f0e0" />
+      <path d="M0 0H394V0L197 70L0 0V0Z" fill="#F7EFDF" />
     </svg>
   );
 }
@@ -469,5 +449,63 @@ export function AlertCircle({ storke }: { storke: any }) {
         strokeLinejoin="round"
       />
     </svg>
+  );
+}
+
+export function RoundArrow() {
+  return (
+    <svg
+      width="25"
+      height="25"
+      viewBox="0 0 25 25"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M18.8643 18.4053V18.4053C15.3493 21.9203 9.65125 21.9203 6.13625 18.4053V18.4053C2.62125 14.8903 2.62125 9.19227 6.13625 5.67727V5.67727C9.65125 2.16227 15.3493 2.16227 18.8643 5.67727V5.67727C22.3793 9.19227 22.3793 14.8903 18.8643 18.4053Z"
+        stroke="#EAA79E"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M15.5 9.04102L9.5 15.041"
+        stroke="#EAA79E"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M11 9.04102H15.5V13.541"
+        stroke="#EAA79E"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function LineDot({ storke }: { storke: any }) {
+  return (
+    <svg
+      width="35"
+      height="11"
+      viewBox="0 0 35 11"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="18" cy="5.36523" r="4.5" fill={storke} stroke={storke} />
+      <path d="M0 5.36523H35" stroke={storke} />
+    </svg>
+  );
+}
+
+
+export function ArrowDown() {
+  return (
+    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.5 14.041L12.5 10.041L16.5 14.041" stroke="#BF4D20" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
   );
 }

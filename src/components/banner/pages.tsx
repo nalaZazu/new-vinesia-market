@@ -5,7 +5,7 @@ import alert from "../../assets/icons/alert-circle.svg";
 import BreadCrumb from "@/common/BreadCrumb";
 import bgImg from "@/assets/images/herobanner.png";
 import Link from "next/link";
-export default function Banner() {
+export default function Banner({ breadCrumbData }: { breadCrumbData?: any }) {
   const [tooltipExtraVisible, setTooltipExtraVisible] = useState(false);
   const [tooltipVisible, setTooltipVisible] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -47,7 +47,7 @@ export default function Banner() {
               <p className="text-stone-400 text-xs font-normal uppercase leading-3 tracking-tight pb-7 max-w-[200px] md:max-w-full">
                 appreciating your wine, guarding its emotions
               </p>
-              <h1 className="text-white md:text-9xl sm:text-6xl text-5xl font-normal  ">
+              <h1 className="text-white md:text-[144px] md:leading-[200px] sm:text-6xl text-5xl font-normal">
                 Marketplace
               </h1>
               <p className="text-stone-400 text-base font-normal leading-snug pt-4 pb-10 max-w-[470px]">
@@ -178,7 +178,7 @@ export default function Banner() {
               </ul>
 
               <div>
-                <BreadCrumb />
+                <BreadCrumb breadCrumbData={breadCrumbData} />
               </div>
             </div>
             {/* <div className=" pt-28 pb-14"></div> */}

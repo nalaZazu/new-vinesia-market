@@ -91,7 +91,9 @@ export default function WineArt() {
                 </svg>
               </button>
               <button className="w-full md:w-auto h-14 px-8 py-[22px] justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal uppercase tracking-tight">
-                MEET THE ARTIST
+                <span className=" underline underline-offset-4 decoration-[#FFFFFF20] decoration-2">
+                  MEET THE ARTIST
+                </span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"

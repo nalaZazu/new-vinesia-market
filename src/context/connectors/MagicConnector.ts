@@ -90,7 +90,7 @@ export class MagicCustomConnector extends Connector {
         //     // LOGIN WITH MAGIC USING OAUTH PROVIDER
         //     if (modalOutput.oauthProvider)
         if (this.type === LoginType.Social) {
-            await magic.oauth.loginWithRedirect({
+            await magic?.oauth.loginWithRedirect({
                 provider: this.subtype,
                 redirectURI: this.oauthCallbackUrl || window.location.href,
             });
@@ -107,7 +107,7 @@ export class MagicCustomConnector extends Connector {
         //             phoneNumber: modalOutput.phoneNumber,
         //         });
         
-        if (await magic.user.isLoggedIn()) {
+        if (await magic?.user.isLoggedIn()) {
             return {
                 account: await this.getAccount(),
                 chain: {
@@ -131,10 +131,10 @@ export class MagicCustomConnector extends Connector {
     async isAuthorized() {
         try {
             const magic = this.getMagicSDK();
-            const isLoggedIn = await magic.user.isLoggedIn();
+            const isLoggedIn = await magic?.user.isLoggedIn();
             if (isLoggedIn)
                 return true;
-            const result = await magic.oauth.getRedirectResult();
+            const result = await magic?.oauth.getRedirectResult();
             return result !== null;
         }
         catch { }
@@ -143,12 +143,14 @@ export class MagicCustomConnector extends Connector {
 
     getMagicSDK() {
         if (!this.magicSDK) {
-            this.magicSDK = new Magic(this.magicOptions.apiKey, {
+            const magic:any = new Magic(this.magicOptions.apiKey, {
                 ...this.magicSdkConfiguration,
-                extensions: [new OAuthExtension()],
+                extensions: [new OAuthExtension() as any],
             });
-        }
+        this.magicSDK = magic;
         return this.magicSDK;
+        
+        }
     }
 
     async getAccount() {

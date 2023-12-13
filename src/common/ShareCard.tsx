@@ -89,7 +89,7 @@ export default function ShareCard() {
         <div className="hidden md:block">
           <button
             type="button"
-            className="flex text-end text-orange-700 text-xs font-normal font-['Albert Sans'] uppercase leading-3 tracking-tight flex gap-2 items-center focus:ring-0 focus:outline-none focus:ring-gray-100"
+            className="flex text-end text-orange-700 text-xs font-normal  uppercase leading-3 tracking-tight flex gap-2 items-center focus:ring-0 focus:outline-none focus:ring-gray-100"
           >
             See More
             <svg
@@ -112,7 +112,7 @@ export default function ShareCard() {
       <div className="my-8 max-w-[608px] h-[0px] border border-orange-700 border-opacity-20"></div>
       <div className="md:flex md:justify-between md:items-center">
         <div className=" uppercase items-center flex gap-3 md:pb-0 pb-4">
-          <p className="text-right text-stone-500 text-xs font-normal font-['Albert Sans'] uppercase leading-3 tracking-tight">
+          <p className="text-right text-stone-500 text-xs font-normal  uppercase leading-3 tracking-tight">
             Floor PRICE
           </p>
           <svg

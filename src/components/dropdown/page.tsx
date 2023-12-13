@@ -50,7 +50,7 @@ const DropDown = ({
           return (
             <Menu
               as="div"
-              className="relative inline-block text-left "
+              className="relative inline-block text-start "
               key={filterItemId}
             >
               <div>

@@ -1,23 +1,30 @@
 import React from "react";
 import Image from "next/image";
-import winebotel from "../../assets/images/winebotel.png";
+import winebotel from "../../assets/images/winecolleciton.png";
 import Art from "../../assets/images/arat.png";
 import Link from "next/link";
 
 export default function ProductCards() {
   return (
     <div>
-      <div className="card_bg_shape bg-no-repeat relative flex justify-end mx-auto w-full">
-        <div className="max-w-[501px] md:h-[674px] h-[674px] left-0 mx-auto">
-          <div className="flex justify-center max-w-[501px]">
-            <Image
-              src={winebotel}
-              alt="Picture of the author"
-              className=" w-auto h-[200px]"
-            />
-          </div>
-          <div className="flex flex-col items-center md:gap-8 gap-5 pt-9 px-5">
-            <div className="justify-start items-start gap-2 inline-flex">
+      <div className="card_bg_shape bg-no-repeat flex justify-end mx-auto w-full relative">
+        <div className="max-w-[288px] md:h-[674px] h-[674px] mx-auto">
+          <div className="flex flex-col items-center md:gap-8 gap-5 px-5">
+            <div className="relative">
+              <Image
+                src={winebotel}
+                alt="Picture of the author"
+                className=" w-auto h-[200px]"
+              />
+              <div className="w-[49.94px] h-[50px] absolute -bottom-5 left-0 right-0 mx-auto">
+                <div className="w-[49.94px] h-[50px] left-0 top-0 absolute bg-red-700 rounded-full border-4 border-orange-100" />
+                <div className="left-[12.49px] top-[20px] absolute text-center text-white text-sm font-normal  uppercase leading-none">
+                  #14
+                </div>
+              </div>
+            </div>
+
+            <div className="justify-start items-start gap-2 inline-flex md:pt-0 pt-4">
               <div className="p-2 h-9 bg-zinc-800 rounded-[30px] border flex justify-end items-center gap-1.5">
                 <Image src={Art} alt="Picture of the author" />
                 <p className="text-center text-white text-xs font-normal uppercase leading-3 tracking-tight">
@@ -58,10 +65,10 @@ export default function ProductCards() {
               </div>
             </div>
           </div>
-          <div className="flex-col justify-start items-center gap-4 flex pt-6">
+          <div className="flex flex-col items-center gap-4 absolute lg:bottom-12 md:bottom-6 bottom-12 left-0 right-0">
             <Link 
             href="/product/1"
-            className="px-8 py-5 bg-orange-700 rounded-full justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal uppercase leading-3 tracking-tight">
+            className="px-8 py-5 bg-orange-700 rounded-full text-center text-white text-xs font-normal uppercase leading-3 tracking-tight">
               SEE OVERVIEW
             </Link>
             <div className="text-center">

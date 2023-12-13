@@ -13,10 +13,10 @@ import { CaradRegion } from "../../constants/cardregion";
 export default function Footer() {
   return (
     <div>
-      <footer className=" mt-14 text-center text-neutral-600     lg:text-left">
+      <footer className=" mt-14 text-center text-neutral-600     lg:text-start">
         {/* <!-- Main container div: holds the entire content of the footer, including four sections (TW elements, Products, Useful links, and Contact), with responsive styling and appropriate padding/margins. --> */}
         <div className="container mx-auto">
-          <div className="mx-6 py-10 text-center md:text-left">
+          <div className="mx-6 py-10 text-center md:text-start">
             <div className="grid gap-8 grid-cols-2 md:grid-cols-5">
               {/* <!-- TW elements section --> */}
               <div className=" col-span-2">

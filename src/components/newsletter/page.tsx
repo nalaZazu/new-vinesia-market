@@ -8,7 +8,7 @@ export default function Newsletter() {
     <div className=" py-40 newsletter_banner flex justify-center">
       <div className="w-[534px] h-[534px] bg-bgred rounded-full backdrop-blur-[20px] flex justify-center items-center">
         <div>
-          <div className="flex justify-center">
+          <div className="flex justify-center mb-6">
             <Image src={graps} alt="" className="w-[46.40px] h-[75px] " />
           </div>
           <div className="flex-col justify-start items-center gap-3 flex">

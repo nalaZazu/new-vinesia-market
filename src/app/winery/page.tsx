@@ -50,19 +50,21 @@ export default function Winary() {
         </div>
 
         {/* accordion start */}
-        {[1, 2, 3]?.map((item: any, i: any) => {
+        {[1,2,3]?.map((item: any, i: any) => {
           return (
             <Disclosure key={i}>
               {({ open }) => (
                 <>
                   <div className="pt-14">
                     <Disclosure.Button className="flex w-full justify-between ">
-                      <div className="flex w-full flex-wrap justify-between items-center">
+                      <div className="flex flex-wrap justify-between items-center w-full">
                         <div>
-                          <p className="text-stone-500 text-xs font-normal uppercase leading-3 tracking-tight text-left">
+                          <p className="text-stone-500 text-xs font-normal uppercase leading-3 tracking-tight text-start">
                             WINERY NAME
                           </p>
-                          <h3 className="max-w-[450px] text-zinc-800 text-4xl font-light leading-[44px] text-left">
+
+                          <h3 className="max-w-[450px] text-zinc-800 text-4xl font-light leading-[44px] text-start  tracking-[-0.36px]">
+
                             Château Mouton Rothschild – 1er Grand Cru Classé
                             Pauillac
                           </h3>
@@ -71,10 +73,10 @@ export default function Winary() {
                           <p className="h-[108.75px] origin-top-left rotate-[24deg] border border-orange-700"></p>
                         </div>
                         <div>
-                          <p className="text-stone-500 text-xs font-normal uppercase leading-3 tracking-tight text-left">
+                          <p className="text-stone-500 text-xs font-normal uppercase leading-3 tracking-tight text-start">
                             WINERY OWNER
                           </p>
-                          <h3 className="max-w-[450px] text-zinc-800 text-4xl font-light leading-[44px] text-left">
+                          <h3 className="max-w-[450px] text-zinc-800 text-4xl font-light leading-[44px] text-start">
                             Yann Charlopin
                           </h3>
                         </div>
@@ -101,7 +103,7 @@ export default function Winary() {
                           <ArrowUpRightIcon
                             className={`${
                               open ? "rotate-180 transform" : ""
-                            } h-5 w-5 text-purple-500`}
+                            } h-5 w-5 text-orange-700`}
                           />
                         </div>
                       </div>
