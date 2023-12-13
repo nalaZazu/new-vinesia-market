@@ -66,7 +66,7 @@ const SidePannel = ({ isDark }: { isDark?: Boolean }) => {
               {menuBar?.map((item: any) => {
                 const { id, name, href } = item;
                 return (
-                  <Link href={href} key={id}>
+                  <Link href={href || "/"} key={id}>
                     <li
                       className={`${
                         name == "Start"
