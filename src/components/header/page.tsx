@@ -18,7 +18,7 @@ const canela = local({
 
 const themes = {
   Light: {
-    textClass: "text-[#61423D]",
+    textClass: "text-stone-600",
     underlineClass: "border-b-[#BF4D20]",
     selectedClass: "border-b-2 font-semibold border-b-[#BF4D20] ",
     hr: "border-stone-400",
@@ -26,7 +26,7 @@ const themes = {
     activeTextClass: "text-[#BF4D20]",
   },
   Dark: {
-    textClass: "text-[orange-100]",
+    textClass: "text-[#F3E8CF]",
     underlineClass: "border-b-[#CC714D]",
     selectedClass: "border-b-2 font-semibold border-b-[#CC714D]",
     hr: "opacity-20",
