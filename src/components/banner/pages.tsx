@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import alert from "../../assets/icons/alert-circle.svg";
 import BreadCrumb from "@/common/BreadCrumb";
 import bgImg from "@/assets/images/herobanner.png";
+import Link from "next/link";
 export default function Banner({ breadCrumbData }: { breadCrumbData?: any }) {
   const [tooltipExtraVisible, setTooltipExtraVisible] = useState(false);
   const [tooltipVisible, setTooltipVisible] = useState(false);
@@ -53,23 +54,25 @@ export default function Banner({ breadCrumbData }: { breadCrumbData?: any }) {
                 Something about technology, advantage of wine investments,
                 unique buying and reselling experience
               </p>
-              <button className="h-14 px-8 py-[22px] rounded-full border border-white border-opacity-20 justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal uppercase tracking-tight">
+              <Link 
+              href="/invest"
+              className="h-14 px-8 py-[22px] rounded-full border border-white border-opacity-20 justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal uppercase tracking-tight">
                 START EXPLORING
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke-width="1.5"
+                  strokeWidth="1.5"
                   stroke="currentColor"
                   className=" w-4"
                 >
                   <path
                     strokeLinecap="round"
-                    stroke-linejoin="round"
+                    strokeLinejoin="round"
                     d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
                   />
                 </svg>
-              </button>
+              </Link>
             </div>
           </div>
           <div className=" pt-28 md:pb-14 pb-5">
