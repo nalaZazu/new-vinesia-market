@@ -51,7 +51,10 @@ export function AccordionWineAbout() {
       {AccordionAboutTwo?.map((item: any, index: any) => {
         const { id, title, text } = item;
         return (
-          <div className="w-full x   pl-6 pr-4 py-4 border-t border-orange-700 border-opacity-20 justify-between items-center inline-flex">
+          <div
+            key={index}
+            className="w-full x   pl-6 pr-4 py-4 border-t border-orange-700 border-opacity-20 justify-between items-center inline-flex"
+          >
             <div className="  w-full  rounded-2xl  md:px-2" key={index}>
               <Disclosure>
                 <>
