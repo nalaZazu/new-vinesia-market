@@ -52,7 +52,6 @@ export default function WineCard() {
               </p>
             </div>
           </div>
-          <div></div>
         </div>
         <div className="my-8 max-w-[608px] h-[0px] border border-orange-700 border-opacity-20"></div>
         <div>
