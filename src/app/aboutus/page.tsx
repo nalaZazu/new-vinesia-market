@@ -29,7 +29,7 @@ const About = () => {
       </div> */}
       {/* here is video section */}
       {/* <div> */}
-        <Image src={videoImage} alt="video" />
+      <Image src={videoImage} alt="video" />
       {/* </div> */}
       {/* here is next section */}
       <div className="md:py-40 md:px-24  py-12 px-4">
@@ -310,27 +310,28 @@ const About = () => {
             </button>
           </div>
           {/* here is card defined  */}
-        <div className=" max-w-[820px] conatiner mx-auto flex gap-8 md:overflow-x-hidden overflow-x-auto">
-        {/*  */}
-          {CardAbout?.map((item: any, index: any) => {
-                const { id, text, image } = item;
-                return (
-                  <div className="pt-[52px] md:min-w-[29%] min-w-[80%] md:overflow-hidden  overflow-hidden">
-                    {/*  */}
+          <div className=" max-w-[820px] conatiner mx-auto flex gap-8 md:overflow-x-hidden overflow-x-auto">
+            {/*  */}
+            {CardAbout?.map((item: any, index: any) => {
+              const { id, text, image } = item;
+              return (
+                <div
+                  key={index}
+                  className="pt-[52px] md:min-w-[29%] min-w-[80%] md:overflow-hidden  overflow-hidden"
+                >
+                  {/*  */}
                   <div className=" md:p-4 p-[13px] bg-white">
-                  <div className=" " key="index">
-                    <Image src={image} alt="image" className=" h-[347px]" />
-                    <p className="text-zinc-800 text-lg font-semibold tracking-[-0.36px]  leading-relaxed">
-                      {text}
-                    </p>
+                    <div className=" " key="index">
+                      <Image src={image} alt="image" className=" h-[347px]" />
+                      <p className="text-zinc-800 text-lg font-semibold tracking-[-0.36px]  leading-relaxed">
+                        {text}
+                      </p>
+                    </div>
                   </div>
-                  </div>
-                  </div>
-                );
-              })}
-        </div>
-              
-           
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </React.Fragment>
