@@ -18,22 +18,24 @@ const canela = local({
 
 const themes = {
   Light: {
-    textClass: "text-stone-600",
+    textClass: "text-[#61423D]",
     underlineClass: "border-b-[#BF4D20]",
     selectedClass: "border-b-2 font-semibold border-b-[#BF4D20]",
     iconFill: "#3a2824",
     iconBorder: "border-stone-800",
     hr: "border-stone-400",
     border: "border-stone-800",
+    activeTextClass: "text-[#BF4D20]",
   },
   Dark: {
-    textClass: "text-orange-100",
+    textClass: "text-[#F3E8CF]",
     underlineClass: "border-b-[#CC714D]",
     selectedClass: "border-b-2 font-semibold border-b-[#CC714D]",
     iconFill: "white",
     iconBorder: "border-white",
     hr: "opacity-20",
     border: "border-white",
+    activeTextClass: "text-[#F3E8CF]",
   },
 };
 
@@ -184,7 +186,9 @@ export default function Header() {
                   <Link href={href} key={id}>
                     <li
                       className={`py-4 ${
-                        selected === item ? theme.selectedClass : ""
+                        selected === item
+                          ? theme.selectedClass + " " + theme.activeTextClass
+                          : theme.textClass
                       }`}
                     >
                       {name}
