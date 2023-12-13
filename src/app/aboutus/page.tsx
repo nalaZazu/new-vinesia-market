@@ -106,9 +106,11 @@ const About = () => {
       </div>
 
       {/* here is video section */}
+
       <div className="w-full md:pt-80">
         <Image src={videoImage} className="w-full" alt="video" />
       </div>
+
       {/* here is next section */}
       <div className="md:py-40 md:px-0 container mx-auto  py-12 px-4">
         <div className="grid md:grid-cols-3 grid-cols-1">
@@ -382,12 +384,13 @@ const About = () => {
             {CardAbout?.map((item: any, index: any) => {
               const { id, text, image } = item;
               return (
-                <div className="pt-[52px] md:min-w-[29%] min-w-[80%] md:overflow-hidden  overflow-hidden">
+                <div key={index} className="pt-[52px] md:min-w-[29%] min-w-[80%] md:overflow-hidden  overflow-hidden">
                   {/*  */}
                   <div className=" md:p-4 p-[13px]       bg-white">
                     <div className=" " key="index">
                       <Image src={image} alt="image" className=" h-[347px]" />
                       <p className="text-zinc-800 text-lg font-semibold tracking-[-0.36px]  leading-relaxed  ">
+
                         {text}
                       </p>
                     </div>
@@ -396,6 +399,7 @@ const About = () => {
               );
             })}
           </div>
+
         </div>
       </div>
 
