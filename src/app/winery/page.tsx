@@ -62,7 +62,10 @@ export default function Winary() {
                           <p className="text-stone-500 text-xs font-normal uppercase leading-3 tracking-tight text-start">
                             WINERY NAME
                           </p>
-                          <h3 className="max-w-[480px] text-zinc-800 text-4xl font-light leading-[44px] text-left tracking-[-0.36px]">
+
+
+                          <h3 className="max-w-[450px] text-zinc-800 text-4xl font-light leading-[44px] text-start  tracking-[-0.36px]">
+
                             Château Mouton Rothschild – 1er Grand Cru Classé
                             Pauillac
                           </h3>
@@ -85,13 +88,13 @@ export default function Winary() {
                               xmlns="http://www.w3.org/2000/svg"
                               fill="none"
                               viewBox="0 0 24 24"
-                              stroke-width="1.5"
+                              strokeWidth="1.5"
                               stroke="currentColor"
                               className="w-3 h-3 text-orange-700"
                             >
                               <path
                                 strokeLinecap="round"
-                                stroke-linejoin="round"
+                                strokeLinejoin="round"
                                 d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
                               />
                             </svg>
