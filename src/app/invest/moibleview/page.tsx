@@ -42,7 +42,7 @@ function MobileFilter() {
   return (
     <>
       <div className=" pt-6  pb-4">
-        <Menu as="div" className="relative inline-block text-left w-full">
+        <Menu as="div" className="relative inline-block text-start w-full">
           <div>
             <Menu.Button
               className="flex items-center w-full justify-between gap-x-1.5 rounded-full   text-xs font-normal   shadow-sm  bg-orange-700   pl-4 pr-3 py-4   bg-opacity-10   text-zinc-800   uppercase leading-3 tracking-tight"
@@ -73,7 +73,7 @@ function MobileFilter() {
                 return (
                   <Menu
                     as="div"
-                    className="relative inline-block text-left w-full py-4 "
+                    className="relative inline-block text-start w-full py-4 "
                     key={filterItemId}
                   >
                     <div>
@@ -172,7 +172,7 @@ function MobileFilter() {
             Sort by
           </p>
         </div>
-        <Menu as="div" className="relative inline-block text-left basis-3/4">
+        <Menu as="div" className="relative inline-block text-start basis-3/4">
           <div>
             <Menu.Button className="w-full flex gap-x-1.5 pl-4 pr-3 py-4 rounded-full   px-3 text-stone-500 text-base font-normal  leading-snug text-priamry border border-stone-500 justify-between uppercase">
               Recommended

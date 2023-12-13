@@ -36,7 +36,7 @@ export default function Popup({
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className="relative w-full max-w-3xl xl:max-w-7xl lg:max-w-5xl md:max-w-2xl sm:max-w-xl lg:h-[600px] md:h-[400px] sm:h-[400px] transform overflow-hidden rounded-lg bg-transparent text-left shadow-xl transition-all">
+              <Dialog.Panel className="relative w-full max-w-3xl xl:max-w-7xl lg:max-w-5xl md:max-w-2xl sm:max-w-xl lg:h-[600px] md:h-[400px] sm:h-[400px] transform overflow-hidden rounded-lg bg-transparent text-start shadow-xl transition-all">
                 <div className="">
                   <div
                     className="flex justify-end items-center cursor-pointer p-4"
