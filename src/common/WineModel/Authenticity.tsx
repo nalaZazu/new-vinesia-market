@@ -4,27 +4,12 @@ import React from "react";
 export default function Authenticity() {
   return (
     <div>
-      <div className="justify-start items-center gap-4 flex pb-8">
-        <div className="justify-center items-center gap-2.5 flex">
-          <div className="text-right text-zinc-800 text-lg font-semibold leading-relaxed">
-            Our Proof of Authenticity
-          </div>
-        </div>
-        <div className="justify-start items-center gap-2 flex">
-          <div className="w-[13px] h-[13px] relative">
-            <div className="w-[13px] h-[13px] left-0 top-0 rounded-full border border-green-500" />
-            <div className="w-[7px] h-[7px] left-[3px] absolute top-[3px] bg-green-500 rounded-full" />
-          </div>
-          <div className="text-green-700 text-xs font-normal uppercase leading-3 tracking-tight">
-            Live
-          </div>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-2">
-        <div className="border-r-2 border-orange-700 border-opacity-20">
+      <div className="md:grid md:grid-cols-2">
+        <div className="md:border-r-2 border-orange-700 border-opacity-20 md:pr-10">
           <div className="flex gap-6">
-            <BarcodeLink />
+            <div className="md:block hidden">
+              <BarcodeLink />
+            </div>
             <div>
               <p className=" text-[#906447] text-xs font-normal uppercase leading-3 tracking-tight pb-2">
                 HOW WE PROVIDE IT
@@ -35,7 +20,7 @@ export default function Authenticity() {
               </p>
             </div>
           </div>
-          <div className="ps-16 pt-8">
+          <div className="md:ps-16 pt-8">
             <p className=" text-[#906447]  text-xs font-normal uppercase leading-3 tracking-tight pb-2">
               HOW IT WORKS
             </p>
@@ -46,24 +31,28 @@ export default function Authenticity() {
             </p>
           </div>
         </div>
-        <div className="flex ps-10 py-6">
+
+        <div className="flex md:ps-10 py-6">
           <div className="space-y-4">
             <div className="md:flex gap-4 items-center">
               <p className="text-[#906447] text-base font-normal leading-snug">
                 NFC ID
               </p>
-              <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
-              <p className="text-center text-orange-700 text-xs font-normal uppercase leading-3 tracking-tight">
-                123456
-              </p>
-              <AlertCircle storke="#BF4D20" />
+              <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20 md:block hidden"></div>
+              <div className="flex items-center gap-2">
+                <p className="text-center text-orange-700 text-xs font-normal uppercase leading-3 tracking-tight">
+                  123456
+                </p>
+                <AlertCircle storke="#BF4D20" />
+              </div>
+              <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20 md:hidden block"></div>
             </div>
             <div className="md:flex gap-4 items-center">
-              <p className="text-[#906447] text-base font-normal leading-snug">
+              <p className="text-[#906447] text-base font-normal leading-snug md:pb-0 pb-4">
                 Stciker applied on
               </p>
-              <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
-              <p className="text-center text-orange-700 text-xs font-normal uppercase leading-3 tracking-tight">
+              <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20 md:block hidden"></div>
+              <p className="text-center text-orange-700 text-base  font-normal uppercase leading-3 tracking-tight">
                 23.08.2023 | 12:36 pm
               </p>
             </div>
@@ -71,11 +60,13 @@ export default function Authenticity() {
               <p className="text-[#906447] text-base font-normal leading-snug">
                 Seal Status
               </p>
-              <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
-              <CheckBox />
-              <p className="text-center text-orange-700 text-xs font-normal uppercase leading-3 tracking-tight">
-                Integrity..
-              </p>
+              <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20 md:block hidden"></div>
+              <div className="flex gap-2 items-center">
+                <CheckBox />
+                <p className="text-center text-orange-700 text-base  font-normal uppercase leading-3 tracking-tight">
+                  Integrity..
+                </p>
+              </div>
             </div>
           </div>
         </div>

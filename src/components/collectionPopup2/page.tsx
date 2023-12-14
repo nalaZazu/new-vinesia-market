@@ -1,14 +1,13 @@
 "use client";
 import React from "react";
-// import Image from "next/image";
 import { Fragment } from "react";
-// import Appactivity from "@/components/charts/page";
 import { Dialog, Transition } from "@headlessui/react";
 import AssetInfo from "@/common/WineModel/AssetInfo";
 import Authenticity from "@/common/WineModel/Authenticity";
 import Ownership from "@/common/WineModel/Ownership";
 import StorageConditions from "@/common/WineModel/StorageConditions";
 import DisclosureModals from "../disclosure/disclosure1/page";
+import AuthenticityDIsclosure from "../disclosure/AuthenticityDIsclosure/page";
 
 // import DisclosureModals from "../disclosure/disclosure1/page";
 export default function CollectionPopup2({
@@ -87,7 +86,7 @@ export default function CollectionPopup2({
                     <div className="md:hidden block">
                       <DisclosureModals />
                     </div>
-                    <div className="max-w-[1024px] h-[0px] border border-orange-700 border-opacity-20 md:my-12"></div>
+                    <div className="max-w-[1024px] h-[0px] border border-orange-700 border-opacity-20 md:my-12 my-8"></div>
 
                     {/* column two */}
                     <div className="pb-12">
@@ -99,16 +98,58 @@ export default function CollectionPopup2({
                         data:
                       </p>
                     </div>
-                    <Authenticity />
+                    <div className="md:block hidden">
+                      <div className="justify-start items-center gap-4 flex pb-8">
+                        <div className="justify-center items-center gap-2.5 flex">
+                          <div className="text-right text-zinc-800 text-lg font-semibold leading-relaxed">
+                            Our Proof of Authenticity
+                          </div>
+                        </div>
+                        <div className="justify-start items-center gap-2 flex">
+                          <div className="w-[13px] h-[13px] relative">
+                            <div className="w-[13px] h-[13px] left-0 top-0 rounded-full border border-green-500" />
+                            <div className="w-[7px] h-[7px] left-[3px] absolute top-[3px] bg-green-500 rounded-full" />
+                          </div>
+                          <div className="text-green-700 text-xs font-normal uppercase leading-3 tracking-tight">
+                            Live
+                          </div>
+                        </div>
+                      </div>
+                      <Authenticity />
+                    </div>
+                    <div className="md:hidden block">
+                      <AuthenticityDIsclosure />
+                    </div>
                     {/* column three */}
-                    <div className="max-w-[1024px] h-[0px] border border-orange-700 border-opacity-20 md:my-12"></div>
-                    <Ownership />
+                    <div className="max-w-[1024px] h-[0px] border border-orange-700 border-opacity-20 md:my-12 my-6 "></div>
+                    <div className="md:block hidden">
+                      <Ownership />
+                    </div>
+                    <div className="md:hidden block">
+                      <AuthenticityDIsclosure />
+                    </div>
                     {/* column four */}
-                    <div className="max-w-[1024px] h-[0px] border border-orange-700 border-opacity-20 md:my-12"></div>
-                    <StorageConditions />
 
+                    <div className="max-w-[1024px] h-[0px] border border-orange-700 border-opacity-20 md:my-12 my-6"></div>
+                    <div className="md:block hidden">
+                      <StorageConditions />
+                    </div>
+                    <div className="md:hidden block">
+                      <AuthenticityDIsclosure />
+                    </div>
                     {/* column five */}
-
+                    <div className="md:hidden block">
+                      <div className="w-80 h-[66px] px-20 pt-5 pb-6 bg-orange-50 justify-center items-center gap-[71px] inline-flex">
+                        <div className="justify-center items-center gap-2 flex">
+                          <div className="text-orange-700 text-base font-normal font-['Albert Sans'] leading-snug">
+                            Read more
+                          </div>
+                          <div className="text-zinc-800 text-base font-normal font-['Albert Sans'] leading-snug">
+                            about Peace of mind pledge
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                     {/* <DisclosureModal /> */}
                   </div>
                 </Dialog.Panel>
