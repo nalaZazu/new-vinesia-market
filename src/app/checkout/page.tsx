@@ -1,5 +1,8 @@
 "use client";
 import { EditIcon, TickCirIcon } from "@/assets/icons/Icons";
+import { CartControls, Checkbox } from "@/common/Components";
+import BillingInfo from "@/components/checkout/BillingInfo";
+import CartInfo from "@/components/checkout/CheckoutAside";
 import React from "react";
 
 export default function Checkout() {
@@ -32,39 +35,11 @@ export default function Checkout() {
         <div className="max-w-[501px]">
           <p className="pb-8">This data will be used for invoicing.</p>
           <div className=" flex-col justify-start items-start gap-1 inline-flex">
-            <div className="justify-start items-center gap-2 inline-flex">
-              <div className="text-zinc-800 text-lg font-semibold leading-relaxed">
-                Billing Address
-              </div>
-              <button>
-                <EditIcon />
-              </button>
-            </div>
-            {/* Billing Address */}
             <div>
-              <p className="w-44 text-zinc-800 text-base font-normal leading-snug">
-                John
-              </p>
-              <p className="w-44 text-zinc-800 text-base font-normal leading-snug">
-                Newman
-              </p>
-              <p className="w-44 text-zinc-800 text-base font-normal leading-snug">
-                Jangfemsteg 12
-              </p>
-              <p className="justify-start items-start gap-1 inline-flex">
-                <span className="text-zinc-800 text-base font-normal leading-snug">
-                  20350
-                </span>
-                <span className=" text-zinc-800 text-base font-normal leading-snug">
-                  Hamburg
-                </span>
-              </p>
-              <p className=" text-zinc-800 text-base font-normal leading-snug">
-                Deutschland
-              </p>
+              <BillingInfo />
             </div>
             {/* Email Address */}
-            <div className=" mt-12">
+            <div className=" mt-12 flex flex-col gap-8">
               <div className=" flex-col justify-start items-start gap-3 inline-flex">
                 <div className="self-stretch text-neutral-900 text-base font-normal  leading-snug">
                   E-mail address to which the electronic invoice will be sent
@@ -86,11 +61,11 @@ export default function Checkout() {
                   </div>
                 </div>
               </div>
-            </div>
+              {/* </div>
 
-            {/* Acknowledgements */}
+            //  Acknowledgements 
 
-            <div className="  flex-col justify-start items-start gap-8 inline-flex">
+            <div className="  flex-col justify-start items-start gap-8 inline-flex"> */}
               <div className="self-stretch">
                 <span className="text-zinc-800 text-xs font-normal leading-[18px]">
                   Your personal data will be used to process your order, support
@@ -104,42 +79,24 @@ export default function Checkout() {
                   .
                 </span>
               </div>
-              <div className=" border border-orange-700 border-opacity-20"></div>
               <div className="self-stretch flex-col justify-start items-start gap-6 flex">
-                <div className="self-stretch justify-start items-center gap-2 inline-flex">
-                  <div className="w-6  relative">
-                    <div className="w-6   left-0 top-0 absolute bg-zinc-800 rounded-md border border-zinc-800" />
-                    <div className="w-4   px-[4.67px] left-[4px] top-[4px] absolute justify-center items-center inline-flex" />
-                    <input
-                      // id={`${item}-${itemId}`}
-                      name="checkbox"
-                      type="checkbox"
-                      className="h-3 w-3 form-checkbox    bg-orange-50 rounded-md border border-zinc-800"
-                      // onChange={(e) =>
-                      //   handleChange(item?.toLowerCase())
-                      // }
-                    />
+                <div className="self-stretch justify-start items-start gap-2 inline-flex">
+                  <div className="w-6 h-6 relative">
+                    <Checkbox />
                   </div>
                   <div className="grow shrink basis-0">
                     <span className="text-red-500 text-xs font-normal leading-[18px]">
                       *
                     </span>
                     <span className="text-neutral-900 text-xs font-normal leading-[18px]">
-                      By clicking here, I state that I have read and understood
-                      the{" "}
-                    </span>
-                    <span className="text-orange-700 text-xs font-normal leading-[18px] underline ">
-                      Terms and conditions
-                    </span>
-                    <span className="text-neutral-900 text-xs font-normal leading-[18px]">
-                      .
+                      I agree to all (number of contracts) the contracts for
+                      every purchased NFT that binds it to the physical asset
                     </span>
                   </div>
                 </div>
-                <div className="h-[0px] border border-orange-700 border-opacity-20"></div>
-                <div className="self-stretch justify-start items-center gap-2 inline-flex">
-                  <div className="w-6 relative">
-                    <div className="w-6 left-0 top-0 absolute bg-orange-50 rounded-md border border-zinc-800" />
+                <div className="self-stretch justify-start items-start gap-2 inline-flex">
+                  <div className="w-6 h-6 relative">
+                    <Checkbox />{" "}
                   </div>
                   <div className=" text-neutral-900 text-xs font-normal leading-[18px]">
                     Subscribe to the Vinesia newsletter
@@ -148,8 +105,12 @@ export default function Checkout() {
               </div>
             </div>
           </div>
+
+          <CartControls />
         </div>
-        <div className="max-w-[501px]">Card</div>
+        <div className="max-w-[501px] md:block hidden">
+          <CartInfo />
+        </div>
       </div>
     </div>
   );
