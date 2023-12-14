@@ -98,9 +98,8 @@ export default function Header() {
   }
 
   function navUser() {
-    router.push('/signup', { scroll: false })
+    router.push("/signup", { scroll: false });
   }
-
 
   const Hr = () => <hr className={`hidden md:block ${theme.hr}`} />;
 
@@ -117,7 +116,11 @@ export default function Header() {
             {/* topbar start */}
             <div className="md:flex  hidden items-center space-x-4 lg:space-x-8 md:col-span-5">
               {menuItems.map((x) => (
-                <div className="cursor-pointer" key={x.id} onClick={() => select(x)}>
+                <div
+                  className="cursor-pointer"
+                  key={x.id}
+                  onClick={() => select(x)}
+                >
                   <span
                     className={`hidden md:block py-7 text-base tracking-tight border-0 ${
                       theme.textClass
@@ -164,7 +167,7 @@ export default function Header() {
               </div>
 
               <Link
-              href="/cart"
+                href="/cart"
                 className={`w-10 h-10 rounded-full border md:order-3 order-1 border-opacity-20 justify-center items-center gap-2.5 inline-flex ${theme.iconBorder}`}
               >
                 <CartIcon fill={theme.iconFill} />
@@ -183,7 +186,7 @@ export default function Header() {
               {topSelected.items?.map((item: any) => {
                 const { id, name, href } = item;
                 return (
-                  <Link href={href} key={id}>
+                  <Link href={href || "/"} key={id}>
                     <li
                       className={`py-4 ${
                         selected === item
