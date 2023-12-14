@@ -10,8 +10,8 @@ const Card = () => {
           const { id, name, image, href } = reg;
           return (
             <div
-              className="md:min-w-sm min-w-[80%] rounded overflow-hidden shadow-lg bg-white"
-              key={id}
+              className="ow-hidden shadow-lg bg-white"
+              key={id}md:min-w-sm min-w-[80%] rounded overfl
             >
               <Link href={`${href}`}>
                 <Image
