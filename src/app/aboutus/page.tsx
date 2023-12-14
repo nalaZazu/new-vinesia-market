@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import bubble from "@/assets/icons/bubbble.svg";
 import amer from "@/assets/icons/amer.svg";
@@ -29,10 +30,22 @@ import textOne from "@/assets/icons/getStarted.svg";
 import textTwo from "@/assets/icons/getstarted2.svg";
 import AboutSlider from "@/components/aboutslider/page";
 import Link from "next/link";
+import ModalContainer from "@/common/ModalContainer";
 const About = () => {
+  const [visible, setVisible] = useState(false);
   return (
     <React.Fragment>
       {/* Main heading section */}
+
+      <ModalContainer
+        visible={visible}
+        setVisible={setVisible}
+        // modalClass="rounded-lg bg-red-500"
+        // isCloseBtn={false}
+        // title="Uswa"
+      >
+        <div className="p-4">Hello World</div>
+      </ModalContainer>
       <div className="relative container mx-auto md:py-0 pb-20">
         <div className="container mx-auto md:px-0 px-4 ">
           <div className="md:flex md:justify-end justify-start text-[#BD936B] text-xs font-normal   uppercase leading-3 tracking-tight md:pt-5 pt-4  tracking-[ 0.24px]">
@@ -304,14 +317,17 @@ const About = () => {
               <p className="max-w-[329px] text-zinc-800 text-lg font-semibold  md:pt-[72px] pt-6 pb-6 leading-relaxed   tracking-[-0.36px]">
                 See what your portfolio could have returned with wine
               </p>
-              <Link href="/about">
-                <button className="px-8 py-[22px] text-white  bg-orange-700 rounded-[48px] justify-center items-center gap-3 inline-flex">
-                  CALCULATE{" "}
-                  <span>
-                    <Arrows storke="#FFFFFF" />
-                  </span>
-                </button>
-              </Link>
+              {/* <Link href="/about"> */}
+              <button
+                onClick={() => setVisible(true)}
+                className="px-8 py-[22px] text-white  bg-orange-700 rounded-[48px] justify-center items-center gap-3 inline-flex"
+              >
+                CALCULATE{" "}
+                <span>
+                  <Arrows storke="#FFFFFF" />
+                </span>
+              </button>
+              {/* </Link> */}
             </div>
             <div className="md:max-w-[608px] ">
               <div className="tracking-[-0.32px] md:pb-8 py-10 ">
@@ -384,13 +400,15 @@ const About = () => {
             {CardAbout?.map((item: any, index: any) => {
               const { id, text, image } = item;
               return (
-                <div key={index} className="pt-[52px] md:min-w-[29%] min-w-[80%] md:overflow-hidden  overflow-hidden">
+                <div
+                  key={index}
+                  className="pt-[52px] md:min-w-[29%] min-w-[80%] md:overflow-hidden  overflow-hidden"
+                >
                   {/*  */}
                   <div className=" md:p-4 p-[13px]       bg-white">
                     <div className=" " key="index">
                       <Image src={image} alt="image" className=" h-[347px]" />
                       <p className="text-zinc-800 text-lg font-semibold tracking-[-0.36px]  leading-relaxed  ">
-
                         {text}
                       </p>
                     </div>
@@ -399,7 +417,6 @@ const About = () => {
               );
             })}
           </div>
-
         </div>
       </div>
 
