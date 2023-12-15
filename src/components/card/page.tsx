@@ -9,10 +9,7 @@ const Card = () => {
         {CaradRegion?.map((reg: any) => {
           const { id, name, image, href } = reg;
           return (
-            <div
-              className="ow-hidden shadow-lg bg-white"
-              key={id}md:min-w-sm min-w-[80%] rounded overfl
-            >
+            <div className="md:min-w-sm min-w-[80%] rounded overflow-hidden shadow-lg bg-white">
               <Link href={`${href}`}>
                 <Image
                   className="w-full h-3/4"

@@ -4,20 +4,22 @@ import wineBottle from "@/assets/images/bolltewine.png";
 import wineBottles from "@/assets/images/wineImageBottle.png";
 import investment from "@/assets/images/investment.png";
 import lineregion from "@/assets/icons/lineregion.svg";
-import { AccordionWine, AccordionWineAbout } from "@/components/accordion/page";
+import { AccordionWine } from "@/components/accordion/page";
 import { Arrows, LineDot, MarksAnim } from "@/assets/icons/Icons";
 import Image from "next/image";
 import ModalContainer from "@/common/ModalContainer";
 import AboutDropDown from "@/components/Modal/AboutModalDropdown/page";
 import CalculationSetting from "@/components/Modal/Calculation/page";
 import PerformanceModel from "@/components/Modal/Performance/page";
+import Appactivity from "@/components/charts/page";
 const AboutTwo = () => {
   const [visible, setVisible] = useState(false);
   const [step, setStep] = useState(1);
   return (
     <React.Fragment>
+
       {/* here is a investment section */}
-      <ModalContainer visible={visible} setVisible={setVisible}>
+      <ModalContainer visible={visible} setVisible={setVisible} isCloseBtn={false}>
         <div>
           <div className="text-center md:pt-[72px]    px-4  pt-[60px] pb-[72px]">
             {step === 1 && (
@@ -75,8 +77,8 @@ const AboutTwo = () => {
                   </h3>
                 </div>{" "}
                 <div className="md:pb-[163px] pb-[150px]">
-                  <div className="pt-[146px] flex justify-center ">
-                    <MarksAnim fill="#2F222B" />
+                  <div className="pt-[146px] flex justify-center animate-rotate ">
+                    <MarksAnim fill="#2F222B"  />
                   </div>
                   <h4 className=" md:pt-6  text-center text-zinc-800 text-[21px] font-light  leading-[29px] tracking-wide">
                     Calculation in progress
@@ -242,33 +244,35 @@ const AboutTwo = () => {
                 </p>
               </div>
 
-              <div className="bg-white p-4">
+              <div className="bg-white p-4 h-[400px]">
                 <h5 className="text-zinc-800 text-lg font-semibold  leading-relaxed pb-3 tacking-[-0.36px]">
                   Performance of investment portfolio with fine wine in
                   comparison to baseline
                 </h5>
                 <div className="bg-orange-100 h-64">
-                  <div className="p-2">
-                    <ul className="flex justify-end gap-4">
+                  <div className="pt-1">
+                    {/* <ul className="flex justify-end gap-4">
                       <li className="flex items-center">
                         <LineDot storke="#28475C" />
                         Baseline
                       </li>
                       <li className="flex items-center">
-                        {" "}
+                       
                         <LineDot storke="#CB220D" /> Portofolio performace
                       </li>
-                    </ul>
+                    </ul> */}
+                     <Appactivity/>  
                   </div>
+               
                 </div>
                 {/* HERE IS NUMBER DEFINED  */}
-                <ul className="flex justify-between text-zinc-800 text-base font-normal   leading-snug">
+                {/* <ul className="flex justify-between text-zinc-800 text-base font-normal   leading-snug">
                   <li>2005</li>
                   <li>2010</li>
                   <li>2015</li>
                   <li>2020</li>
                   <li>2023</li>
-                </ul>
+                </ul> */}
               </div>
             </div>
           </div>
