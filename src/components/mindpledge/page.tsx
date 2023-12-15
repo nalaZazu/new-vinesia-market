@@ -94,10 +94,12 @@ const MindPledge = ({
               </p>
             </div>
           </div>
-          <button onClick={handleNext}>hasan</button>
           {/* here is button  */}
           <div className="flex justify-center md:pb-0 pb-14">
-            <button className="py-[22px] uppercase px-8 rounded-[48px] border border-white border-opacity-40 justify-center items-center gap-3 inline-flex">
+            <button
+              onClick={handleNext}
+              className="py-[22px] uppercase px-8 rounded-[48px] border border-white border-opacity-40 justify-center items-center gap-3 inline-flex"
+            >
               {btnTitle}
               <span>
                 <Arrows storke="#FFFFFF" />
