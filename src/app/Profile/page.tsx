@@ -8,13 +8,19 @@ import {
   Invoice,
   Logout,
   MyAccount,
+  SearchIcon,
   VinesiaCircle,
   Wallet,
 } from "@/assets/icons/Icons";
 import InvestmentTab from "@/components/profile/InvestmentTab";
+// import TabButton from "@/common/TabButton";
+// import DropDownButton from "@/common/DropDownButton";
+// import ProductCards from "@/components/productCard/page";
+import InvestmentCard from "@/components/profile/InvestmentCard";
 
 export default function Profile() {
   const [active, setActive] = useState(0);
+  //   const countryName = ["ALL", "CURRENTLY SELLING", "NOT CURRENtly SELLING"];
 
   let [categories] = useState([
     {
@@ -136,6 +142,8 @@ export default function Profile() {
                   <InvestmentTab />
                 </Tab.Panel>
               ))}
+              <InvestmentCard />
+              
             </Tab.Panels>
           </div>
         </Tab.Group>

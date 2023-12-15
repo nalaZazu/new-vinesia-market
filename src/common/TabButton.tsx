@@ -6,7 +6,7 @@ export default function TabButton({ data }: { data?: any }) {
   const [selectedTab, setSelectedTab] = useState(0);
 
   return (
-    <div className="pb-5">
+    <div className="">
       <div className="flex border-b-2 border-orange-700 border-opacity-20">
         {data?.map((item: any, i: any) => {
           return (
@@ -17,7 +17,7 @@ export default function TabButton({ data }: { data?: any }) {
               } `}
             >
               <button
-                className="text-orange-700 text-xs font-normal uppercase tracking-tight px-4 py-4"
+                className="text-orange-700 text-xs font-normal uppercase tracking-tight py-4"
                 onClick={() => setSelectedTab(i)}
               >
                 {item}
