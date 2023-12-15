@@ -76,13 +76,17 @@ export function BillingInput({
   title,
   placeholder,
   name,
+  Inputclass,
 }: {
   title?: any;
   placeholder?: any;
   name?: any;
+  Inputclass?: any;
 }) {
   return (
-    <div className=" flex-col justify-start items-start gap-2 inline-flex">
+    <div
+      className={`flex-col justify-start items-start gap-2 inline-flex ${Inputclass}`}
+    >
       {title && (
         <div className="h-4 justify-start items-center gap-1 inline-flex">
           <div className="text-[#A6836C] text-xs font-normal uppercase leading-[18px] tracking-tight">

@@ -1,4 +1,5 @@
 import { Arrows, LineDot } from "@/assets/icons/Icons";
+import Appactivity from "@/components/charts/page";
 import React from "react";
 
 const PerformanceModel = () => {
@@ -12,8 +13,9 @@ const PerformanceModel = () => {
             baseline
           </h5>
           <div className="bg-orange-100 h-64">
-            <div className="p-2">
-              <ul className="flex md:justify-end justify-start flex-wrap gap-4">
+            <div className="">
+            <Appactivity/>
+              {/* <ul className="flex md:justify-end justify-start flex-wrap gap-4">
                 <li className="flex items-center">
                   <LineDot storke="#28475C" />
                   Baseline
@@ -22,17 +24,17 @@ const PerformanceModel = () => {
                   {" "}
                   <LineDot storke="#CB220D" /> Portofolio performace
                 </li>
-              </ul>
+              </ul> */}
             </div>
           </div>
           {/* HERE IS NUMBER DEFINED  */}
-          <ul className="flex justify-between text-zinc-800 text-base font-normal   leading-snug">
+          {/* <ul className="flex justify-between text-zinc-800 text-base font-normal   leading-snug">
             <li>2005</li>
             <li>2010</li>
             <li>2015</li>
             <li>2020</li>
             <li>2023</li>
-          </ul>
+          </ul> */}
         </div>
       </div>
 
