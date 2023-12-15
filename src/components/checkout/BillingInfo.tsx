@@ -20,7 +20,7 @@ export default function BillingInfo() {
       {/* Billing Address */}
       {edit ? (
         <div className="pt-6">
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 grid-cols-1 gap-6">
             <BillingInput
               title="Title"
               name="title"
