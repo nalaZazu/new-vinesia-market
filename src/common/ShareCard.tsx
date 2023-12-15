@@ -68,14 +68,12 @@ export default function ShareCard() {
               />
             </div> */}
 
-             <BillingInput
+            <BillingInput
               title="BID AMOUNT*"
               name="BID AMOUNT*"
               placeholder="€"
               Inputclass="w-full"
-            /> 
-          
-            
+            />
           </form>
         </div>
 
@@ -86,8 +84,8 @@ export default function ShareCard() {
           </h6>
           <p className="  text-xs font-normal  tracking-[-0.24px] leading-[18px]">
             Vinesia marketplace is a real-time market. Bids are matched in
-            real-time against Asks. If your bid matches a seller's asking price,
-            the transaction is automatically executed. Otherwise, the
+            real-time against Asks. If your bid matches a {`seller's`} asking
+            price, the transaction is automatically executed. Otherwise, the
             transaction will be executed when the selling price matches your
             bid. For credit card-funded bids, there might be a slight delay.
             Your bid goes live only after we receive the payment. This process

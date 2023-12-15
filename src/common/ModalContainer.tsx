@@ -20,7 +20,7 @@ export default function ModalContainer({
   modalClass?: any;
   isCloseBtn?: any;
   title?: any;
-  backgroundClass: any;
+  backgroundClass?: any;
 }) {
   return (
     <>
