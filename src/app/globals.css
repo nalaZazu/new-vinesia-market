@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+}
 @font-face {
   font-family: "canela";
   src: url("../assets/fonts/Canela Text Family/CanelaText-Regular-Trial.otf")
