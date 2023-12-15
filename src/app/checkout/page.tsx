@@ -3,6 +3,7 @@ import { EditIcon, TickCirIcon } from "@/assets/icons/Icons";
 import { CartControls, Checkbox } from "@/common/Components";
 import BillingInfo from "@/components/checkout/BillingInfo";
 import CartInfo from "@/components/checkout/CheckoutAside";
+import EmailInfo from "@/components/checkout/EmailInfo";
 import React from "react";
 
 export default function Checkout() {
@@ -34,7 +35,7 @@ export default function Checkout() {
       <div className="flex justify-between mt-12 ">
         <div className="max-w-[501px]">
           <p className="pb-8">This data will be used for invoicing.</p>
-          <div className=" flex-col justify-start items-start gap-1 inline-flex">
+          <div className=" flex-col justify-start items-start gap-1">
             <div>
               <BillingInfo />
             </div>
@@ -44,7 +45,7 @@ export default function Checkout() {
                 <div className="self-stretch text-neutral-900 text-base font-normal  leading-snug">
                   E-mail address to which the electronic invoice will be sent
                 </div>
-                <div className="self-stretch justify-start items-center gap-3 inline-flex">
+                {/* <div className="self-stretch justify-start items-center gap-3 inline-flex">
                   <div className="grow shrink basis-0 flex-col justify-start items-start gap-2 inline-flex">
                     <div className="self-stretch h-14 pl-6 pr-5 py-2 bg-orange-700 bg-opacity-10 rounded-[100px] border border-orange-700 border-opacity-20 justify-between items-center inline-flex">
                       <div className="grow shrink basis-0 h-[22px] justify-start items-center gap-2 flex">
@@ -59,7 +60,9 @@ export default function Checkout() {
                       <EditIcon />
                     </button>
                   </div>
-                </div>
+                </div> */}
+
+                <EmailInfo />
               </div>
               {/* </div>
 

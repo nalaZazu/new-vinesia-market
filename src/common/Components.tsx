@@ -1,4 +1,6 @@
-import { NextIcon, PrevIcon } from "@/assets/icons/Icons";
+// import { CheckCircleIcon, XIcon } from '@heroicons/react/solid'
+import { NextIcon, PrevIcon, TickCirIcon } from "@/assets/icons/Icons";
+import { XCircleIcon } from "@heroicons/react/20/solid";
 import React from "react";
 
 export function Checkbox({ label, name }: { label?: any; name?: any }) {
@@ -79,17 +81,49 @@ export function BillingInput({
   name?: any;
 }) {
   return (
-    <div className=" h-20 flex-col justify-start items-start gap-2 inline-flex">
-      <div className="h-4 justify-start items-center gap-1 inline-flex">
-        <div className="text-[#A6836C] text-xs font-normal uppercase leading-[18px] tracking-tight">
-          {title}
+    <div className=" flex-col justify-start items-start gap-2 inline-flex">
+      {title && (
+        <div className="h-4 justify-start items-center gap-1 inline-flex">
+          <div className="text-[#A6836C] text-xs font-normal uppercase leading-[18px] tracking-tight">
+            {title}
+          </div>
         </div>
-      </div>
+      )}
       <input
         name={name}
         className="self-stretch text-[#D99479] h-14 pl-6 pr-5 p-4 rounded-full border border-red-400 bg-transparent focus:border-red-500 placeholder-[#D99479]"
         placeholder={placeholder}
       />
+    </div>
+  );
+}
+
+/* This example requires Tailwind CSS v2.0+ */
+
+export function AlertSuccess() {
+  return (
+    <div className="rounded-md bg-[#42A55E20] p-4 w-full">
+      <div className="flex items-start">
+        <div className="flex-shrink-0 h-6 w-6">
+          <TickCirIcon />
+        </div>
+        <div className="ml-3">
+          <p className="text-sm font-medium text-green-800">
+            Successfully uploaded
+          </p>
+        </div>
+        {/* <div className="ml-auto pl-3">
+          <div className="-mx-1.5 -my-1.5">
+            <button
+              type="button"
+              className="inline-flex rounded-md p-1.5 text-red-500  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-green-50 focus:ring-green-600"
+            >
+              <span className="sr-only">Dismiss</span>
+              <XCircleIcon className="h-5 w-5" aria-hidden="true" />
+            </button>
+          </div>
+        </div> */}
+      </div>
     </div>
   );
 }

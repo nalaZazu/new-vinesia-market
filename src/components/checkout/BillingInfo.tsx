@@ -1,19 +1,21 @@
 "use client";
 import { EditIcon } from "@/assets/icons/Icons";
-import { BillingInput, Button } from "@/common/Components";
+import { AlertSuccess, BillingInput, Button } from "@/common/Components";
 import React, { useState } from "react";
 
 export default function BillingInfo() {
-  const [edit, setEdit] = useState(true);
+  const [edit, setEdit] = useState(false);
   return (
     <div>
       <div className="justify-start items-center gap-2 inline-flex">
         <div className="text-zinc-800 text-lg font-semibold leading-relaxed">
           Billing Address
         </div>
-        <button onClick={() => setEdit(!edit)}>
-          <EditIcon />
-        </button>
+        {!edit && (
+          <button onClick={() => setEdit(!edit)}>
+            <EditIcon />
+          </button>
+        )}
       </div>
       {/* Billing Address */}
       {edit ? (
@@ -58,33 +60,38 @@ export default function BillingInfo() {
             <BillingInput title="City" name="city" placeholder="City" />
           </div>
 
-          <div className=" max-w-[200px] pt-8">
-            <Button label="save address" />
+          <div onClick={() => setEdit(false)} className=" max-w-[200px] pt-8">
+            <Button label="save address" btnStyle="text-xs" />
           </div>
         </div>
       ) : (
-        <div>
-          <p className="w-44 text-zinc-800 text-base font-normal leading-snug">
-            John
-          </p>
-          <p className="w-44 text-zinc-800 text-base font-normal leading-snug">
-            Newman
-          </p>
-          <p className="w-44 text-zinc-800 text-base font-normal leading-snug">
-            Jangfemsteg 12
-          </p>
-          <p className="justify-start items-start gap-1 inline-flex">
-            <span className="text-zinc-800 text-base font-normal leading-snug">
-              20350
-            </span>
-            <span className=" text-zinc-800 text-base font-normal leading-snug">
-              Hamburg
-            </span>
-          </p>
-          <p className=" text-zinc-800 text-base font-normal leading-snug">
-            Deutschland
-          </p>
-        </div>
+        <>
+          <div className="pt-4 pb-6">
+            <AlertSuccess />
+          </div>
+          <div>
+            <p className="w-44 text-zinc-800 text-base font-normal leading-snug">
+              John
+            </p>
+            <p className="w-44 text-zinc-800 text-base font-normal leading-snug">
+              Newman
+            </p>
+            <p className="w-44 text-zinc-800 text-base font-normal leading-snug">
+              Jangfemsteg 12
+            </p>
+            <p className="justify-start items-start gap-1 inline-flex">
+              <span className="text-zinc-800 text-base font-normal leading-snug">
+                20350
+              </span>
+              <span className=" text-zinc-800 text-base font-normal leading-snug">
+                Hamburg
+              </span>
+            </p>
+            <p className=" text-zinc-800 text-base font-normal leading-snug">
+              Deutschland
+            </p>
+          </div>
+        </>
       )}
     </div>
   );
