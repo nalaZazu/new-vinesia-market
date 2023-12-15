@@ -1,17 +1,36 @@
-import React from "react";
+"use client";
+import Image from "next/image";
+import React, { useState } from "react";
+// import { useSelector } from "react-redux";
 import barcode from "@/assets/icons/Barcode.svg";
 import scaner from "@/assets/icons/Sensor.svg";
 import temp from "@/assets/icons/Temprature.svg";
 import play from "@/assets/icons/Play.svg";
-import Image from "next/image";
 import { Arrows } from "@/assets/icons/Icons";
+import CollectionPopup2 from "../collectionPopup2/page";
 const MindPledge = ({
   btnTitle = "SEE ALL CERTIFICATES",
 }: {
   btnTitle?: any;
 }) => {
+  const [open, setOpen] = useState(false);
+  const [openModal2, setOpenModal2] = useState(false);
+  // const isAuthenticted = useSelector<any>(
+  //   (state) => state?.account?.isAuthenticated
+  // );
+  const handleOpen = () => {
+    setOpen(!open);
+  };
+  const handleNext = () => {
+    setOpenModal2(!openModal2);
+    setOpen(!open);
+  };
   return (
     <React.Fragment>
+      <CollectionPopup2
+        open={openModal2}
+        setOpen={() => setOpenModal2(!openModal2)}
+      />
       <div className=" bg-red-900">
         <div className="md:py-[198px] mx-auto max-w-[816px] text-white">
           <div className="">
@@ -77,7 +96,10 @@ const MindPledge = ({
           </div>
           {/* here is button  */}
           <div className="flex justify-center md:pb-0 pb-14">
-            <button className="py-[22px] uppercase px-8 rounded-[48px] border border-white border-opacity-40 justify-center items-center gap-3 inline-flex">
+            <button
+              onClick={handleNext}
+              className="py-[22px] uppercase px-8 rounded-[48px] border border-white border-opacity-40 justify-center items-center gap-3 inline-flex"
+            >
               {btnTitle}
               <span>
                 <Arrows storke="#FFFFFF" />

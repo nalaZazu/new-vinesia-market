@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import ModalContainer from "./ModalContainer";
 import { BiddingSection } from "@/constants/accrodion";
+import { BillingInput } from "./Components";
 
 export default function ShareCard() {
   const [visible, setVisible] = useState(false);
@@ -47,7 +48,7 @@ export default function ShareCard() {
         {/* here is input filed  */}
         <div className="pb-6">
           <form action="">
-            <div className="flex ">
+            {/* <div className="flex ">
               <label
                 htmlFor="text"
                 className="text-stone-500 text-xs font-normal  uppercase leading-[18px] tracking-tight"
@@ -58,7 +59,6 @@ export default function ShareCard() {
             </div>
 
             <div className="mt-2">
-              {/* <p>€</p> */}
               <input
                 id="text"
                 name="text"
@@ -66,7 +66,16 @@ export default function ShareCard() {
                 placeholder="€"
                 className=" w-full rounded-full   py-4   pl-6 pr-5 bg-[#F3E8CF] border border-red-400 justify-between items-center  flex  outline-none "
               />
-            </div>
+            </div> */}
+
+             <BillingInput
+              title="BID AMOUNT*"
+              name="BID AMOUNT*"
+              placeholder="€"
+              Inputclass="w-full"
+            /> 
+          
+            
           </form>
         </div>
 

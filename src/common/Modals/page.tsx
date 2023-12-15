@@ -1,13 +1,12 @@
-"use client"
+"use client";
 import React from "react";
 import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 
-const [open, setOpen] = useState(true);
-
-const cancelButtonRef = useRef(null);
 const ModalBox = () => {
+  const cancelButtonRef = useRef(null);
+  const [open, setOpen] = useState(true);
   return (
     <React.Fragment>
       <Transition.Root show={open} as={Fragment}>
