@@ -63,6 +63,7 @@ export default function Winary() {
                             WINERY NAME
                           </p>
 
+
                           <h3 className="max-w-[450px] text-zinc-800 text-4xl font-light leading-[44px] text-start  tracking-[-0.36px]">
 
                             Château Mouton Rothschild – 1er Grand Cru Classé

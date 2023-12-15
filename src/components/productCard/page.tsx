@@ -6,6 +6,7 @@ import Link from "next/link";
 
 export default function ProductCards() {
   return (
+    
     <div>
       <div className="card_bg_shape bg-no-repeat flex justify-end mx-auto w-full relative">
         <div className="max-w-[288px] md:h-[674px] h-[674px] mx-auto">

@@ -519,6 +519,38 @@ export function ArrowDown() {
   );
 }
 
+export function LinkIcon({ storke }: { storke?: any }) {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g id="Group">
+        <g id="Group_2">
+          <path
+            id="Path"
+            d="M8 8L14 2V6.66667V2H9.33333"
+            stroke="#BF4D20"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            id="Path_2"
+            d="M6 2H3.33333C2.59667 2 2 2.59667 2 3.33333V12.6667C2 13.4033 2.59667 14 3.33333 14H12.6667C13.4033 14 14 13.4033 14 12.6667V10"
+            stroke="#BF4D20"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </g>
+      </g>
+    </svg>
+  );
+}
+
+
 export function TickCirIcon() {
   return (
     <svg
@@ -571,6 +603,180 @@ export function EditIcon() {
         d="M3 13V6.375C3 4.511 4.511 3 6.375 3H17.625C19.489 3 21 4.511 21 6.375V17.625C21 19.489 19.489 21 17.625 21H11"
         stroke="#BF4D20"
       />
+     </svg>
+  );
+}
+
+export function ArrowLongRight({ storke }: { storke?: any }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      className="w-6 h-6 text-secondary"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+      />
+    </svg>
+  )
+}
+
+export function MarksAnim({ fill }: { fill: any }) {
+  return (
+    <svg width="109" height="112" viewBox="0 0 109 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M42.43 8.96206C41.6757 6.14706 41.7211 3.30619 42.427 0.680643L37.3259 2.04747C39.25 3.96832 40.7098 6.40588 41.4641 9.22087L49.7463 40.1305C52.0333 48.666 46.968 57.4393 38.4326 59.7264L7.52293 68.0086C5.09815 68.6583 2.65416 68.7147 0.345143 68.2667L1.43657 72.3399C3.21224 70.7975 5.35696 69.6243 7.78174 68.9746L38.6914 60.6923C47.2268 58.4053 56.0002 63.4706 58.2873 72.0061L66.5695 102.916C67.3238 105.731 67.2783 108.572 66.5725 111.197L71.6736 109.83C69.7495 107.909 68.2897 105.472 67.5354 102.657L59.2532 71.7472C56.9661 63.2118 62.0315 54.4384 70.5669 52.1513L101.477 43.8691C103.901 43.2194 106.345 43.163 108.654 43.611L107.563 39.5378C105.787 41.0803 103.643 42.2535 101.218 42.9032L70.3081 51.1854C61.7726 53.4725 52.9993 48.4071 50.7122 39.8717L42.43 8.96206Z" fill={fill}/>
+    </svg>
+      );
+}
+
+export function BarcodeLink({ storke }: { storke?: any }) {
+  return (
+    <svg
+      width="40"
+      height="40"
+      viewBox="0 0 40 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g id="Vinesia Icons/Barcode">
+        <path
+          id="Path"
+          d="M26.667 35H30.0003C32.7617 35 35.0003 32.7614 35.0003 30V26.6667"
+          stroke="#BF4D20"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          id="Path_2"
+          d="M11.667 14.1667H28.3337"
+          stroke="#BF4D20"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          id="Path_3"
+          d="M5 20L35 19.9998"
+          stroke="#BF4D20"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          id="Path_4"
+          d="M11.667 25.8333H28.3337"
+          stroke="#BF4D20"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          id="Path_5"
+          d="M26.667 5H30.0003C32.7617 5 35.0003 7.23858 35.0003 10V13.3333"
+          stroke="#BF4D20"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          id="Path_6"
+          d="M5 26.6667V30C5 32.7614 7.23858 35 10 35H13.3333"
+          stroke="#BF4D20"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          id="Path_7"
+          d="M5 13.3333V10C5 7.23858 7.23858 5 10 5H13.3333"
+          stroke="#BF4D20"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </g>
+    </svg>
+  );
+}
+
+export function CheckBox({ storke }: { storke?: any }) {
+  return (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g id="Group">
+        <path
+          id="Path"
+          d="M9.375 11.875L7.5 10"
+          stroke="#BF4D20"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          id="Path_2"
+          d="M12.5 8.75L9.375 11.875"
+          stroke="#BF4D20"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          id="Rectangle"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M10 17.5C5.85786 17.5 2.5 14.1421 2.5 10V10C2.5 5.85786 5.85786 2.5 10 2.5V2.5C14.1421 2.5 17.5 5.85786 17.5 10V10C17.5 14.1421 14.1421 17.5 10 17.5V17.5Z"
+          stroke="#BF4D20"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </g>
+    </svg>
+  );
+}
+
+export function SensorModal({ storke }: { storke?: any }) {
+  return (
+    <svg
+      width="40"
+      height="40"
+      viewBox="0 0 40 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g id="Vinesia Icons/Sensor">
+        <path
+          id="Path"
+          d="M21.9121 11.6667C23.944 13.9624 25.0449 16.9345 24.9988 20C25.0449 23.0655 23.944 26.0376 21.9121 28.3333"
+          stroke="#BF4D20"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          id="Path_2"
+          d="M18.6094 14.445C19.8467 16.0288 20.5007 17.9905 20.461 20C20.5007 22.0095 19.8467 23.9712 18.6094 25.555"
+          stroke="#BF4D20"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          id="Path_3"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M6.95262 11.3807L11.3807 6.95262C12.631 5.70238 14.3266 5 16.0947 5H23.9036C25.6717 5 27.3674 5.70238 28.6176 6.95262L33.0474 11.3824C34.2976 12.6326 35 14.3283 35 16.0964V23.9019C35 25.67 34.2976 27.3657 33.0474 28.6159L28.616 33.0474C27.3657 34.2976 25.67 35 23.9019 35H16.0964C14.3288 35 12.6335 34.298 11.3833 33.0483L6.9535 28.6202C5.70272 27.3699 5 25.6738 5 23.9052V16.0948C5 14.3267 5.70237 12.631 6.95262 11.3807Z"
+          stroke="#BF4D20"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          id="Path_4"
+          d="M14.9999 17.2217C16.2354 18.8678 16.2354 21.1322 14.9999 22.7783"
+          stroke="#BF4D20"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </g>
     </svg>
   );
 }

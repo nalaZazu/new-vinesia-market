@@ -2,11 +2,9 @@ import AboutModalOne from "@/components/Modal/page";
 import React from "react";
 
 const AboutModal = () => {
-  return (
-    <div>
-      <AboutModalOne />
-    </div>
-  );
+  return <React.Fragment>
+    <AboutModalOne/>
+  </React.Fragment>;
 };
 
 export default AboutModal;

@@ -52,7 +52,7 @@ export default function ProductsOverview({ params }: { params: { id: string } })
                   With Art of Lola Designer Fun
                 </p> : <></>}
             </div>
-          </div>{" "}
+          </div>
         </div>
         <div className="2xl:container mx-auto">
           <div className="flex relative">
