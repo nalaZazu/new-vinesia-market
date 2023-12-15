@@ -32,7 +32,10 @@ export default function CheckoutAside() {
           {cartList?.map((d, i) => {
             const { name, price } = d;
             return (
-              <div className="self-stretch py-6 border-b border-orange-700 border-opacity-20 justify-between items-start inline-flex">
+              <div
+                key={i}
+                className="self-stretch py-6 border-b border-orange-700 border-opacity-20 justify-between items-start inline-flex"
+              >
                 <div className="w-[295px] text-zinc-800 text-base font-normal  leading-snug">
                   {name}
                 </div>
