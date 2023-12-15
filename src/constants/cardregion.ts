@@ -16,7 +16,7 @@ export const CaradRegion = [
 
 
 export const CardAbout=[
-  {id:1 , text:"The faster way to get to know us",image:investment1},
+  {id:1 , text:"The faster way to get to know us", image:investment1},
   {id:2 , text:"Bottles in the original wooden case",image:investment2},
   {id:3 , text:"Limited edition in special case",image:investment3},
 ]
