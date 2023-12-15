@@ -1,10 +1,10 @@
 import React from "react";
- import {  AccordionWineAbout } from "@/components/accordion/page";
+import { AccordionWineAbout } from "@/components/accordion/page";
 import { CardAbout } from "@/constants/cardregion";
- import { Arrows } from "@/assets/icons/Icons";
+import { Arrows } from "@/assets/icons/Icons";
 import Image from "next/image";
 import AboutSlider from "../aboutslider/page";
- import VectorOne from "@/assets/icons/VectorOne.svg";
+import VectorOne from "@/assets/icons/VectorOne.svg";
 import VectorTwo from "@/assets/icons/VectorTwo.svg";
 const AboutThree = () => {
   return (
@@ -28,14 +28,14 @@ const AboutThree = () => {
             </button>
           </div>
           {/* here is card defined  */}
-          <div className=" max-w-[820px] conatiner mx-auto flex gap-8 md:overflow-x-hidden overflow-x-auto">
+          <div className="max-w-[928px]  container pt-14 mx-auto flex  md:justify-center md:gap-8 gap-5  overflow-x-auto  md:grid md:grid-cols-3 grid-cols-1">
             {CardAbout?.map((item: any, index: any) => {
               const { id, text, image } = item;
               return (
-                <div className=" md:p-4 p-[13px] bg-white" key={index}>
-                  <div className=" md:p-4 p-[13px]       bg-white">
+                <div className="md:min-w-full  min-w-[80%] p-4 bg-white rounded overflow-hidden" key={index}>
+                  <div className=" bg-white">
                     <div className=" " key="index">
-                      <Image src={image} alt="image" className=" h-[347px]" />
+                      <Image src={image} alt="image" className="" />
                       <p className="text-zinc-800 text-lg font-semibold tracking-[-0.36px]  leading-relaxed  ">
                         {text}
                       </p>
@@ -48,9 +48,9 @@ const AboutThree = () => {
         </div>
       </div>
       {/* The faster way to get to know us */}
-      <div className="bg-[#2F222B] ">
+      <div className="bg-[#2F222B]">
         <div className="relative">
-          <div className="absolute">
+          <div className="absolute md:block hidden">
             <Image src={VectorOne} alt="vector" />
           </div>
         </div>
@@ -61,22 +61,23 @@ const AboutThree = () => {
                 <h3 className="text-white text-4xl font-light   leading-[44px] pb-8">
                   The faster way to get to know us
                 </h3>
-                {/* <div className="block md:hidden">
-                  <button className=" px-8 py-[22px] rounded-[48px] border border-white border-opacity-20 justify-center items-center gap-3 inline-flex   text-center text-white text-xs font-normal   uppercase leading-3 tracking-tight">
-                    START INVESTING NOW
-                    <Arrows storke="#FFFFFF" />
-                  </button>
-                </div> */}
               </div>
             </div>
 
             {/* here is new slider  section */}
-            <div className="">
-              <AboutSlider />
+            <div className="hidden md:block">
+              <div>
+                <AboutSlider />
+              </div>
             </div>
-            <div className="relative">
+            <div className="md:hidden block  ">
+              <div className="grid grid-cols-1 ">
+               
+                <AboutSlider />
+              </div>
+            </div>
+            <div className="relative md:block hidden ">
               <div className="absolute bottom-[-151px] right-0">
-              
                 <Image src={VectorTwo} alt="vector" />
               </div>
             </div>

@@ -512,9 +512,9 @@ export function ArrowDown() {
       <path
         d="M8.5 14.041L12.5 10.041L16.5 14.041"
         stroke="#BF4D20"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-              />
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }
@@ -547,6 +547,63 @@ export function LinkIcon({ storke }: { storke?: any }) {
         </g>
       </g>
     </svg>
+  );
+}
+
+
+export function TickCirIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      // width="32"
+      // height="32"
+      viewBox="0 0 32 32"
+      fill="none"
+    >
+      <path
+        d="M16 28C9.37258 28 4 22.6274 4 16C4 9.37258 9.37258 4 16 4C22.6274 4 28 9.37258 28 16C28 22.6274 22.6274 28 16 28Z"
+        fill="#42A55E"
+        stroke="#35844B"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M15 19L12 16"
+        stroke="#ECF6EF"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M20 14L15 19"
+        stroke="#ECF6EF"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function EditIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+    >
+      <path
+        d="M3 18.3797L12.19 9.18973C12.581 8.79873 13.214 8.79873 13.604 9.18973L14.81 10.3957C15.201 10.7867 15.201 11.4197 14.81 11.8097L5.62 20.9997H3L3 18.3797Z"
+        stroke="#BF4D20"
+      />
+      <path d="M13.202 13.4239L10.582 10.7939" stroke="#BF4D20" />
+      <path
+        d="M3 13V6.375C3 4.511 4.511 3 6.375 3H17.625C19.489 3 21 4.511 21 6.375V17.625C21 19.489 19.489 21 17.625 21H11"
+        stroke="#BF4D20"
+      />
+     </svg>
   );
 }
 

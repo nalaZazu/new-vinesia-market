@@ -3,14 +3,20 @@ import React, { useRef, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Arrows, NextIcon, NextIcon2, PrevIcon, PrevIcon2 } from "../../../assets/icons/Icons";
+import {
+  Arrows,
+  NextIcon,
+  NextIcon2,
+  PrevIcon,
+  PrevIcon2,
+} from "../../../assets/icons/Icons";
 import sliderabout from "@/assets/images/sliderImage.png";
 import Image from "next/image";
 import shareIcon from "@/assets/icons/share.svg";
 const AboutSlider = () => {
   const [currentslide, setCurrentSlide] = useState(0);
   const slider = useRef<any>();
-  const slideData = [0, 1, 2, 4, 5, 6, 7, 8];
+  const slideData = [0, 1, 2, 3, 4, 5, 6, 7, 8];
   const sliderSettings = {
     infinite: true,
     speed: 500,
@@ -37,93 +43,82 @@ const AboutSlider = () => {
         },
       },
     ],
-    // prevArrow: (
-    //   <div className=" productcarousel z-50">
-    //     <div className=" h-20 text-secondary w-6 text-center flex items-center absolute lg:top-[230px] lg:left-[40px] md:top-[215px] md:left-[0px] top-[0px] left-[0px] ">
-    //       <div className="">
-    //         <PrevIcon2 />
-    //       </div>
-    //     </div>
-    //   </div>
-    // ),
-    // nextArrow: (
-    //   <div className="productcarousel  z-50 ">
-    //     <div className="text-secondary h-20 w-6 text-center flex items-center absolute lg:top-[230px] lg:right-[40px] md:top-[215px] md:right-[345px] top-[0px] right-[0px]">
-    //       <div className="">
-    //         <NextIcon2/>
-    //       </div>
-    //     </div>
-    //   </div>
-    // ),
+  };
+
+  const CarouselControls = () => {
+    return (
+      <div className="flex md:justify-end justify-center gap-4 md:pe-20 pe-0">
+        <div className="  z-50">
+          <div
+            onClick={() => slider?.current?.slickPrev()}
+            className={`text-black w-16 h-12 flex items-center rounded-full border  justify-center cursor-pointer  ${
+              currentslide == 0
+                ? "border-[#BF4D2020] pointer-events-none"
+                : "border-orange-700"
+            }`}
+          >
+            <div>
+              <PrevIcon fill={currentslide == 0 ? "#BF4D2020" : "#BF4D20"} />
+            </div>
+          </div>
+        </div>
+
+        <div className=" z-50">
+          <div
+            onClick={() => slider?.current?.slickNext()}
+            className={`" text-black w-16 h-12 flex items-center rounded-full border justify-center   ${
+              currentslide == slideData?.length - 1
+                ? "border-[#BF4D2020] pointer-events-none disabled"
+                : "border-orange-700"
+            }`}
+          >
+            <div>
+              <NextIcon
+                fill={
+                  currentslide == slideData?.length - 1
+                    ? "#BF4D2020"
+                    : "#BF4D20"
+                }
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
   };
   return (
     <React.Fragment>
       <div>
-        <div className="flex justify-between productcarousel">
+        <div className="flex justify-between ">
           <button className=" px-8 py-[22px] rounded-[48px] border border-white border-opacity-20 justify-center items-center gap-3 inline-flex   text-center text-white text-xs font-normal   uppercase leading-3 tracking-tight">
             START INVESTING NOW
             <Arrows storke="#FFFFFF" />
           </button>
-          <div className="flex justify-end gap-4 pe-20">
-            <div className="productcarousel  z-auto">
-              <div
-                onClick={() => slider?.current?.slickPrev()}
-                className={`text-black w-16 h-12 flex items-center rounded-full border  justify-center cursor-pointer  ${
-                  currentslide == 0
-                    ? "border-[#BF4D2020] pointer-events-none"
-                    : "border-orange-700"
-                }`}
-              >
-                <div>
-                  <PrevIcon
-                    fill={currentslide == 0 ? "#BF4D2020" : "#BF4D20"}
-                  />
-                </div>
-              </div>
-            </div>
 
-            <div className="productcarousel  z-50">
-              <div
-                onClick={() => slider?.current?.slickNext()}
-                className={`" text-black w-16 h-12 flex items-center rounded-full border justify-center   ${
-                  currentslide == slideData?.length - 1
-                    ? "border-[#BF4D2020] pointer-events-none disabled"
-                    : "border-orange-700"
-                }`}
-              >
-                <div>
-                  <NextIcon
-                    fill={
-                      currentslide == slideData?.length - 1
-                        ? "#BF4D2020"
-                        : "#BF4D20"
-                    }
-                  />
-                </div>
-              </div>
-            </div>
+          <div className="hidden md:block">
+            <CarouselControls />
           </div>
         </div>
-        {/* <div className="grid grid-cols-3"> */}
         <Slider
           ref={slider}
           {...sliderSettings}
-          className="invest_carousel z-0  "
+          className="invest_carousel z-20"
         >
           {slideData?.map((item: any, i: any) => {
             return (
-              <div key={i} className="px-8  pt-8">
+              <div key={i} className="md:px-8 px-4 pt-8">
                 <div className="">
-                  <div className="relative  md:h-[246.23px] h-[165.61px] bg-no-repeat  bg-center bg-[url('https://i.ibb.co/LCb3y9J/slider-Image.png')]">
+                  <div className="relative h-[246.23px]  bg-no-repeat bg-center md:bg-[url('https://i.ibb.co/LCb3y9J/slider-Image.png')]  bg-[url('https://i.ibb.co/MnXJPpn/01-Images.png')] ">
                     {/* <Image src={sliderabout} alt="image" /> */}
-                    <div className="absolute bottom-7 -left-6">
+                    <div className="absolute md:bottom-7 md:-left-6   bottom-12 -left-0">
+                     
                       {/* absolute bottom-24 -left-6 */}
                       <div className="max-w-[121px] h-[0px] border border-orange-700"></div>
                       <p className="text-white text-lg font-semibold  leading-relaxed">
                         Video title would come here
                       </p>
                     </div>
-                  </div>{" "}
+                  </div> 
                   <div className="pt-[15px] flex justify-end gap-4 items-center">
                     <p className="text-white text-[13px] font-normal   uppercase tracking-tight">
                       share
@@ -135,7 +130,9 @@ const AboutSlider = () => {
             );
           })}
         </Slider>
-        {/* </div> */}
+        <div className="md:hidden block">
+          <CarouselControls />
+        </div>
       </div>
     </React.Fragment>
   );
