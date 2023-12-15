@@ -1,10 +1,15 @@
 "use client";
 import { EditIcon } from "@/assets/icons/Icons";
-import { AlertSuccess, BillingInput, Button } from "@/common/Components";
+import {
+  AlertSuccess,
+  BillingInput,
+  Button,
+  SelectBox,
+} from "@/common/Components";
 import React, { useState } from "react";
 
 export default function BillingInfo() {
-  const [edit, setEdit] = useState(false);
+  const [edit, setEdit] = useState(true);
   return (
     <div>
       <div className="justify-start items-center gap-2 inline-flex">
@@ -27,7 +32,7 @@ export default function BillingInfo() {
               placeholder="Choose Value"
             />
 
-            <br />
+            <br className="hidden sm:block" />
             <BillingInput
               title="FIRST NAME"
               name="fname"
@@ -38,10 +43,18 @@ export default function BillingInfo() {
               name="lname"
               placeholder="Last NAME"
             />
+            {/* <div className="w-full">
+              <SelectBox
+                title="Last NAME"
+                name="lname"
+                placeholder="Last NAME"
+              />
+            </div>
+
+            <SelectBox title="Last NAME" name="lname" placeholder="Last NAME" /> */}
 
             {/* Country Pending */}
             {/* Region Pending */}
-
             <BillingInput
               title="address line 1"
               name="address1"

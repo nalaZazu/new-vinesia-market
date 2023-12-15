@@ -19,14 +19,13 @@ export default function EmailInfo({ onSubmit }: { onSubmit?: any }) {
                 *
               </span>
             </div>
-            <div className="self-stretch justify-start items-center gap-3 inline-flex">
-            
+            <div className="self-stretch justify-start items-center gap-3 sm:inline-flex grid grid-cols-1">
               <div>
                 <BillingInput />
               </div>
               <button
                 onClick={() => setEdit(false)}
-                className="w-[141px] px-8 py-[22px] bg-orange-700 rounded-[48px] justify-center items-center gap-3 flex"
+                className="sm:w-[141px] w-full px-8 py-[22px] bg-orange-700 rounded-[48px] justify-center items-center gap-3 flex"
               >
                 <span className="text-center text-white text-xs font-normal  uppercase leading-[18px] tracking-tight">
                   Save E-mail
