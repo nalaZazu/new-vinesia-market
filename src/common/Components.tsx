@@ -340,7 +340,11 @@ export function RadioButton() {
         // <RadioGroup.Option key={plan} value={plan}>
         //   {plan}
         // </RadioGroup.Option>
-        <RadioGroup.Option value={p} className=" my-4 w-full border rounded-lg border-[#6C757D] ">
+        <RadioGroup.Option
+          key={p}
+          value={p}
+          className=" my-4 w-full border rounded-lg border-[#6C757D] "
+        >
           {({ checked }) => (
             <p className={` p-5 w-full flex gap-4 `}>
               <span
