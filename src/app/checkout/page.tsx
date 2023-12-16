@@ -10,7 +10,6 @@ export default function Checkout() {
   return (
     <div className="max-w-[1171px] mx-auto px-4 md:mb-40 mb-20">
       <CheckoutComponent heading="Billing information" icon={true} />
-
       <div className="flex justify-between mt-12 ">
         <div className="max-w-[501px]">
           <p className="pb-8">This data will be used for invoicing.</p>
