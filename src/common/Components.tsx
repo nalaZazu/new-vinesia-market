@@ -256,3 +256,41 @@ export function SelectBox({
     </div>
   );
 }
+
+export function CheckoutComponent({
+  heading,
+  icon = true,
+}: {
+  heading: String;
+  icon?: any;
+}) {
+  return (
+    <>
+      <div className="w-full md:justify-start justify-between items-center md:gap-8 inline-flex pt-[74px] pb-4 border-b border-[#A6836C20]">
+        <div className="justify-start items-center gap-2 flex">
+          {icon && (
+            <div className="w-8 h-8 justify-center items-center flex">
+              <TickCirIcon />
+            </div>
+          )}
+
+          <h1 className="text-[#2F222B] md:text-4xl text-[21px] font-light leading-[44px]">
+            {heading}
+          </h1>
+        </div>
+        <div className="grow shrink basis-0 h-[1px] border border-[#ACA7AA] border-dashed md:block hidden"></div>
+        <h2 className="text-[#A6836C] text-[21px] font-light leading-[29px] tracking-wide md:block hidden ">
+          02 — Finalized
+        </h2>
+        <div className="w-[65px] justify-start items-center gap-4 inline-flex md:hidden">
+          <h2 className="text-[#2F222B] text-[21px] font-light leading-[29px]">
+            02
+          </h2>
+          <h2 className="text-[#A6836C] text-[21px] font-light leading-[29px]">
+            03
+          </h2>
+        </div>
+      </div>
+    </>
+  );
+}
