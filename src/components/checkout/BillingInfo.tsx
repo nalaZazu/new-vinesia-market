@@ -43,15 +43,19 @@ export default function BillingInfo() {
               name="lname"
               placeholder="Last NAME"
             />
-            {/* <div className="w-full">
+            <div className="w-full">
               <SelectBox
-                title="Last NAME"
-                name="lname"
-                placeholder="Last NAME"
+                title="Country"
+                name="country"
+                placeholder="Select Country"
               />
             </div>
 
-            <SelectBox title="Last NAME" name="lname" placeholder="Last NAME" /> */}
+            <SelectBox
+              title="Region"
+              name="region"
+              placeholder="Select Region"
+            />
 
             {/* Country Pending */}
             {/* Region Pending */}

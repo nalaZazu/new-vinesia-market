@@ -9,7 +9,7 @@ import React from "react";
 export default function Checkout() {
   return (
     <div className="max-w-[1171px] mx-auto px-4 md:mb-40 mb-20">
-      <div className="w-full md:justify-start justify-between items-center md:gap-8 inline-flex pt-[74px] pb-4 border-b border-[#A6836C20]">
+      <div className="w-full md:justify-start justify-between items-center md:gap-8 inline-flex sm:pt-[74px] pt-4 pb-4 border-b border-[#A6836C20]">
         <div className="justify-start items-center gap-2 flex">
           <div className="w-8 h-8 justify-center items-center flex">
             <TickCirIcon />

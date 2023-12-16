@@ -1,3 +1,4 @@
+"use client";
 // import { CheckCircleIcon, XIcon } from '@heroicons/react/solid'
 import { NextIcon, PrevIcon, TickCirIcon } from "@/assets/icons/Icons";
 import { XCircleIcon } from "@heroicons/react/20/solid";
@@ -50,13 +51,13 @@ export function Button({
   );
 }
 
-export function CartControls({}) {
+export function CartControls() {
   return (
-    <>
-      <div className="flex sm:justify-end justify-center pt-8 ">
-        <span className=" uppercase text-xs">
-          <span className=" text-[#BF4D20]">next step :</span>
-          &nbsp; Billng details
+    <div>
+      <div className="flex sm:justify-end justify-center pt-8">
+        <span className="uppercase text-xs">
+          <span className="text-[#BF4D20]">next step :</span>
+          Billng details
         </span>
       </div>
       <div className="sm:flex justify-between pt-4 pb-[106px] sm:gap-0 grid grid-cols-1 gap-6">
@@ -65,10 +66,10 @@ export function CartControls({}) {
           Back
         </button>
         <button className="flex items-center gap-4 border border-[#BF4D2020] rounded-full text-white px-8 justify-center h-14 bg-[#BF4D20] sm:order-2 order-1 sm:w-auto w-full">
-          Next <NextIcon fill={"white"} />
+          Next <NextIcon fill="white" />
         </button>
       </div>
-    </>
+    </div>
   );
 }
 
@@ -157,6 +158,8 @@ export function SelectBox({
   function classNames(...classes: any) {
     return classes.filter(Boolean).join(" ");
   }
+  const [selectedPerson, setSelectedPerson] = useState(data[0]);
+
   return (
     <div className=" flex-col w-full justify-start items-start gap-2 inline-flex">
       {title && (
@@ -180,79 +183,28 @@ export function SelectBox({
           ))}
         </Listbox.Options>
       </Listbox> */}
-
-      <Listbox value={value} onChange={onChange}>
-        {({ open }) => (
-          <>
-            <Listbox.Label className="block text-sm font-medium leading-6 text-gray-900">
-              Assigned to
-            </Listbox.Label>
-            <div className="relative mt-2 w-full">
-              <Listbox.Button className="relative w-full cursor-default rounded-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 sm:text-sm sm:leading-6">
-                <span className="flex items-center">
-                  {/* <img src={selected.avatar} alt="" className="h-5 w-5 flex-shrink-0 rounded-full" /> */}
-                  <span className="ml-3 block truncate">{value}</span>
-                </span>
-                {/* <span className="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
-                <ChevronUpDownIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
-              </span> */}
-              </Listbox.Button>
-
-              <Transition
-                show={open}
-                as={Fragment}
-                leave="transition ease-in duration-100"
-                leaveFrom="opacity-100"
-                leaveTo="opacity-0"
+      <div className="relative w-full">
+        <Listbox value={selectedPerson} onChange={setSelectedPerson}>
+          <Listbox.Button className="self-stretch w-full text-start text-[#D99479] h-14 pl-6 pr-5 p-4 rounded-full border border-red-400 bg-transparent outline-red-500 placeholder-[#D99479]">
+            {selectedPerson.name}
+          </Listbox.Button>
+          <Listbox.Options className="absolute bootom-0 w-full border bg-[#A6836C] rounded-lg">
+            {data.map((d) => (
+              <Listbox.Option
+                key={d.id}
+                value={d}
+                className={({ active }) =>
+                  `cursor-pointer select-none relative py-2 pl-10 pr-4 ${
+                    active ? "bg-[#BF4D20] text-white" : "text-gray-900"
+                  }`
+                }
               >
-                <Listbox.Options className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-                  {data.map((d, i) => (
-                    <Listbox.Option
-                      key={i}
-                      className={({ active }) =>
-                        classNames(
-                          active ? "bg-indigo-600 text-white" : "text-gray-900",
-                          "relative cursor-default select-none py-2 pl-3 pr-9"
-                        )
-                      }
-                      value={d}
-                    >
-                      {({ selected, active }) => (
-                        <>
-                          <div className="flex items-center">
-                            <span
-                              className={classNames(
-                                selected ? "font-semibold" : "font-normal",
-                                "ml-3 block truncate"
-                              )}
-                            >
-                              {d.name}
-                            </span>
-                          </div>
-
-                          {selected ? (
-                            <span
-                              className={classNames(
-                                active ? "text-white" : "text-indigo-600",
-                                "absolute inset-y-0 right-0 flex items-center pr-4"
-                              )}
-                            >
-                              {/* <CheckIcon
-                                className="h-5 w-5"
-                                aria-hidden="true"
-                              /> */}
-                            </span>
-                          ) : null}
-                        </>
-                      )}
-                    </Listbox.Option>
-                  ))}
-                </Listbox.Options>
-              </Transition>
-            </div>
-          </>
-        )}
-      </Listbox>
+                {d.name}
+              </Listbox.Option>
+            ))}
+          </Listbox.Options>
+        </Listbox>
+      </div>
     </div>
   );
 }
