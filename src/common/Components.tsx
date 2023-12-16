@@ -104,7 +104,7 @@ export function BillingInput({
 }) {
   return (
     <div
-      className={`flex-col justify-start items-start gap-2 inline-flex ${Inputclass}`}
+      className={`flex-col justify-start items-start gap-2 inline-flex w-full ${Inputclass}`}
     >
       {title && (
         <div className="h-4 justify-start items-center gap-1 inline-flex">
