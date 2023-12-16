@@ -1,7 +1,15 @@
 "use client";
 // import { CheckCircleIcon, XIcon } from '@heroicons/react/solid'
-import { NextIcon, PrevIcon, TickCirIcon } from "@/assets/icons/Icons";
-import { XCircleIcon } from "@heroicons/react/20/solid";
+import {
+  AlertCircle,
+  AlertIcons,
+  ErrorIcon,
+  InfoIcon,
+  NextIcon,
+  PrevIcon,
+  TickCirIcon,
+} from "@/assets/icons/Icons";
+import { XCircleIcon, XMarkIcon } from "@heroicons/react/20/solid";
 import React, { Fragment, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 
@@ -51,7 +59,7 @@ export function Button({
   );
 }
 
-export function CartControls() {
+export function CartControls({ step, setStep }: { step?: any; setStep?: any }) {
   return (
     <div>
       <div className="flex sm:justify-end justify-center pt-8">
@@ -61,11 +69,17 @@ export function CartControls() {
         </span>
       </div>
       <div className="sm:flex justify-between pt-4 pb-[106px] sm:gap-0 grid grid-cols-1 gap-6">
-        <button className="flex items-center gap-4 border border-[#BF4D2020] rounded-full text-[#BF4D20] px-8 justify-center h-14 sm:order-1 order-2 sm:w-auto w-full">
+        <button
+          onClick={() => setStep(step > 1 ? step - 1 : 1)}
+          className="flex items-center gap-4 border border-[#BF4D2020] rounded-full text-[#BF4D20] px-8 justify-center h-14 sm:order-1 order-2 sm:w-auto w-full"
+        >
           <PrevIcon />
           Back
         </button>
-        <button className="flex items-center gap-4 border border-[#BF4D2020] rounded-full text-white px-8 justify-center h-14 bg-[#BF4D20] sm:order-2 order-1 sm:w-auto w-full">
+        <button
+          onClick={() => setStep(step == 3 ? 3 : step + 1)}
+          className="flex items-center gap-4 border border-[#BF4D2020] rounded-full text-white px-8 justify-center h-14 bg-[#BF4D20] sm:order-2 order-1 sm:w-auto w-full"
+        >
           Next <NextIcon fill="white" />
         </button>
       </div>
@@ -122,23 +136,17 @@ export function ListCard({
   return (
     <div className="w-full flex justify-between border-b border-orange-700 border-opacity-20">
       <div className="p-4 ">
-        <p
-          className={`text-zinc-800 text-base font-normal leading-snug ${titleClass} `}
-        >
+        <p className={`text-zinc-800 text-base leading-snug ${titleClass} `}>
           {title}
         </p>
-        <p className="text-zinc-500 text-xs font-normal font leading-[18px]">
-          {subTitle}
-        </p>
+        <p className="text-zinc-500 text-xs font leading-[18px]">{subTitle}</p>
       </div>
 
       <div className=" p-4">
-        <p
-          className={`text-right  text-base font-normal leading-snug ${valueClass}`}
-        >
+        <p className={`text-right  text-base leading-snug ${valueClass}`}>
           {value}
         </p>
-        <p className="text-zinc-500 text-xs font-normal leading-[18px] text-end">
+        <p className="text-zinc-500 text-xs leading-[18px] text-end">
           {subValue}
         </p>
       </div>
@@ -160,17 +168,45 @@ export function AlertSuccess() {
             Successfully uploaded
           </p>
         </div>
-        {/* <div className="ml-auto pl-3">
+        <div className="ml-auto pl-3">
           <div className="-mx-1.5 -my-1.5">
             <button
               type="button"
               className="inline-flex rounded-md p-1.5 text-red-500  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-green-50 focus:ring-green-600"
             >
               <span className="sr-only">Dismiss</span>
-              <XCircleIcon className="h-5 w-5" aria-hidden="true" />
+              <XMarkIcon className="h-5 w-5 text-red-500" aria-hidden="true" />
             </button>
           </div>
-        </div> */}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function AlertError({ message }: { message?: any }) {
+  return (
+    <div className="rounded-md bg-red-500/20 p-4 w-full">
+      <div className="flex items-start">
+        <div className="flex-shrink-0 h-6 w-6">
+          <span className=" rotate-90 text-red-500 ">
+            <ErrorIcon />
+          </span>
+        </div>
+        <div className="ml-3">
+          <p className=" text-base font-medium text-[#DC2626]">{message}</p>
+        </div>
+        <div className="ml-auto pl-3">
+          <div className="-mx-1.5 -my-1.5">
+            <button
+              type="button"
+              className="inline-flex rounded-md p-1.5 text-red-500  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-green-50 focus:ring-green-600"
+            >
+              <span className="sr-only">Dismiss</span>
+              <XMarkIcon className="h-5 w-5 text-red-500" aria-hidden="true" />
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
