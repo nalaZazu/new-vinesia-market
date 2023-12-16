@@ -3,7 +3,7 @@ import { BillingInput, Button, SelectBox } from "@/common/Components";
 import TabButton from "@/common/TabButton";
 import React, { useState } from "react";
 const tabs = ["private", "company"];
-export default function page() {
+export default function Page() {
   const [activeTab, setActiveTab] = useState(0);
   return (
     <div>
