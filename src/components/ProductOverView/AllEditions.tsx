@@ -19,6 +19,7 @@ export default function AllEditions({
     setIsOpen(!isOpen);
   };
   const [isOpen, setIsOpen] = useState(false);
+  const countryName=["France","Germany","Switzerland"]
 
   return (
     <>
@@ -43,7 +44,7 @@ export default function AllEditions({
           {/* desktop DropDownButton */}
           <div className="flex justify-around mx-auto py-8">
             <div className="w-full  border-t-2  border-orange-700 border-opacity-20">
-              <TabButton />
+              <TabButton data={countryName} />
               {/* mobile DropDownButton*/}
               <div className=" md:hidden block">
                 <div className="flex gap-2 items-center justify-between">
