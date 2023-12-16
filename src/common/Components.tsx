@@ -104,6 +104,48 @@ export function BillingInput({
   );
 }
 
+export function ListCard({
+  title,
+  value,
+  subTitle,
+  subValue,
+  titleClass,
+  valueClass = "text-zinc-800",
+}: {
+  title?: any;
+  value?: any;
+  subTitle?: any;
+  subValue?: any;
+  titleClass?: any;
+  valueClass?: any;
+}) {
+  return (
+    <div className="w-full flex justify-between border-b border-orange-700 border-opacity-20">
+      <div className="p-4 ">
+        <p
+          className={`text-zinc-800 text-base font-normal leading-snug ${titleClass} `}
+        >
+          {title}
+        </p>
+        <p className="text-zinc-500 text-xs font-normal font leading-[18px]">
+          {subTitle}
+        </p>
+      </div>
+
+      <div className=" p-4">
+        <p
+          className={`text-right  text-base font-normal leading-snug ${valueClass}`}
+        >
+          {value}
+        </p>
+        <p className="text-zinc-500 text-xs font-normal leading-[18px] text-end">
+          {subValue}
+        </p>
+      </div>
+    </div>
+  );
+}
+
 /* This example requires Tailwind CSS v2.0+ */
 
 export function AlertSuccess() {
