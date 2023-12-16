@@ -12,6 +12,7 @@ import {
 import { XCircleIcon, XMarkIcon } from "@heroicons/react/20/solid";
 import React, { Fragment, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
+import { useRouter } from "next/navigation";
 
 export function Checkbox({ label, name }: { label?: any; name?: any }) {
   return (
@@ -60,6 +61,7 @@ export function Button({
 }
 
 export function CartControls({ step, setStep }: { step?: any; setStep?: any }) {
+  const router = useRouter();
   return (
     <div>
       <div className="flex sm:justify-end justify-center pt-8">
@@ -77,7 +79,9 @@ export function CartControls({ step, setStep }: { step?: any; setStep?: any }) {
           Back
         </button>
         <button
-          onClick={() => setStep(step == 3 ? 3 : step + 1)}
+          onClick={() =>
+            setStep(step == 3 ? router.push("/purchase") : step + 1)
+          }
           className="flex items-center gap-4 border border-[#BF4D2020] rounded-full text-white px-8 justify-center h-14 bg-[#BF4D20] sm:order-2 order-1 sm:w-auto w-full"
         >
           Next <NextIcon fill="white" />
