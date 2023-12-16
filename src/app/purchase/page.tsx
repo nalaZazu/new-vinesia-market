@@ -9,8 +9,8 @@ const Purchase = () => {
   return (
     <React.Fragment>
       <div className="max-w-[560px] cotainer mx-auto py-8">
-        <div className="relative pb-12">
-          <div className="md:pt-20 pt-[60px] md:px-0 px-4">
+        <div className="relative pb-12 px-4">
+          <div className="md:pt-20 pt-[60px] ">
             <div className="pb-2 md:px-6 pt-[60px]  bg-orange-50 rounded-tl-[20px] rounded-tr-[20px] border border-orange-700 border-opacity-20 ">
               <div className="flex justify-center">
                 <Image src={glassIllustrations} alt="image-icon" />
