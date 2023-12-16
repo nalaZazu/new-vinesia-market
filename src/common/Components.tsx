@@ -11,9 +11,8 @@ import {
 } from "@/assets/icons/Icons";
 import { XCircleIcon, XMarkIcon } from "@heroicons/react/20/solid";
 import React, { Fragment, useState } from "react";
-import { Listbox, Transition } from "@headlessui/react";
+import { Listbox, Transition, RadioGroup } from "@headlessui/react";
 import { useRouter } from "next/navigation";
-
 export function Checkbox({ label, name }: { label?: any; name?: any }) {
   return (
     <>
@@ -326,5 +325,34 @@ export function CheckoutComponent({
         </div>
       </div>
     </>
+  );
+}
+
+const plans = ["Euro (€)", "US Dollars ($)"];
+
+export function RadioButton() {
+  const [plan, setPlan] = useState(plans[0]);
+
+  return (
+    <RadioGroup value={plan} onChange={setPlan} name="plan">
+      {/* <RadioGroup.Label>Plan</RadioGroup.Label> */}
+      {plans.map((p) => (
+        // <RadioGroup.Option key={plan} value={plan}>
+        //   {plan}
+        // </RadioGroup.Option>
+        <RadioGroup.Option value={p} className=" my-4 w-full border rounded-lg border-[#6C757D] ">
+          {({ checked }) => (
+            <p className={` p-5 w-full flex gap-4 `}>
+              <span
+                className={`w-6 h-6 rounded-full border-[#6C757D]  ${
+                  checked ? " border-8" : "border-2"
+                } `}
+              ></span>
+              {p}
+            </p>
+          )}
+        </RadioGroup.Option>
+      ))}
+    </RadioGroup>
   );
 }
