@@ -1,5 +1,6 @@
 import { NextIcon, PrevIcon } from "@/assets/icons/Icons";
 import Accordion from "@/common/Accordion";
+import { CartControls } from "@/common/Components";
 import CartCard from "@/components/cart/cartCard";
 import React from "react";
 
@@ -27,14 +28,14 @@ export default function Cart() {
         </div>
         {/* Table Ends */}
 
-        <div className="flex justify-end pt-8">
+        {/* <div className="flex justify-end pt-8">
           <span className=" uppercase text-xs">
             <span className=" text-[#BF4D20]">next step :</span>
             &nbsp; Billng details
           </span>
-        </div>
+        </div> */}
 
-        <div className="flex justify-between pt-4 pb-[106px]">
+        {/* <div className="flex justify-between pt-4 pb-[106px]">
           <button className="flex items-center gap-4 border border-[#BF4D2020] rounded-full text-[#BF4D20] px-8 h-14">
             <PrevIcon />
             Back
@@ -42,7 +43,8 @@ export default function Cart() {
           <button className="flex items-center gap-4 border border-[#BF4D2020] rounded-full text-white px-8 h-14 bg-[#BF4D20]">
             Next <NextIcon fill={"white"} />
           </button>
-        </div>
+        </div> */}
+        <CartControls />
         {/* Accordion */}
         <div className=" border-y-2 border-[#BF4D2020] divide-y divide-[#BF4D2020]">
           <Accordion />

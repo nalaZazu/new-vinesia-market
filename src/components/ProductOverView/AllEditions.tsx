@@ -19,6 +19,7 @@ export default function AllEditions({
     setIsOpen(!isOpen);
   };
   const [isOpen, setIsOpen] = useState(false);
+  const countryName = ["France", "Germany", "Switzerland"];
 
   return (
     <>
@@ -43,7 +44,7 @@ export default function AllEditions({
           {/* desktop DropDownButton */}
           <div className="flex justify-around mx-auto py-8">
             <div className="w-full  border-t-2  border-orange-700 border-opacity-20">
-              <TabButton />
+              <TabButton data={countryName} />
               {/* mobile DropDownButton*/}
               <div className=" md:hidden block">
                 <div className="flex gap-2 items-center justify-between">
@@ -72,8 +73,8 @@ export default function AllEditions({
           </div>
         </div>
         {/* desktop */}
-        <div className="hidden md:block ">
-          <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-1 gap-8 px-4 container max-w-[1248px] mx-auto">
+        <div className="hidden sm:block ">
+          <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-8 px-4 container max-w-[1248px] mx-auto">
             {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, i: any) => {
               return (
                 <div key={i} className=" max-w-[288px] mx-auto">
@@ -90,7 +91,7 @@ export default function AllEditions({
           </div>
         </div>
         {/* mobile */}
-        <div className="block md:hidden">
+        <div className="block sm:hidden">
           <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-1 gap-8">
             {[1, 2]?.map((item: any, i: any) => {
               return (

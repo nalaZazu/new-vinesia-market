@@ -28,10 +28,10 @@ export default function RootLayout({
         <title>Vinesia Market</title>
         <meta name='description' content="Vinesia Market" />
       </Head>
-      <body className={`${albert.className} bg-orange-100 `}>
+      <body className={`${albert.className} bg-[#F3E8CF] `}>
+        <Header />
         <WagmiProvider>
           <UserProvider>
-            <Header />
             {children}
           </UserProvider>
         </WagmiProvider>
