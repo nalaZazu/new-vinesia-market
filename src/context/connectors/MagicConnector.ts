@@ -2,7 +2,6 @@ import { Connector, ConnectorData } from "wagmi";
 import type { InstanceWithExtensions, MagicSDKAdditionalConfiguration, MagicSDKExtensionsOption, SDKBase } from '@magic-sdk/provider';
 import { OAuthExtension, OAuthProvider } from '@magic-ext/oauth';
 import { Magic } from 'magic-sdk';
-import { UserRejectedRequestError } from 'viem';
 import { createWalletClient, custom, getAddress } from 'viem';
 
 const IS_SERVER = typeof window === 'undefined';
@@ -43,6 +42,9 @@ export class MagicCustomConnector extends Connector {
     subtype: OAuthProvider;
     oauthCallbackUrl?: string;
 
+    email: string;
+    phone: string;
+
     constructor(config: any, type: LoginType, subtype: OAuthProvider) {
         super(config);
         this.magicOptions = config.options;
@@ -51,6 +53,9 @@ export class MagicCustomConnector extends Connector {
         }
         this.type = type
         this.subtype = subtype
+
+        this.email = ''
+        this.phone = ''
     }
 
     async connect(): Promise<Required<ConnectorData>> {
@@ -68,7 +73,8 @@ export class MagicCustomConnector extends Connector {
         try {
             chainId = await this.getChainId();
         }
-        catch {
+        catch (e) {
+            console.error(e)
             chainId = 0;
         }
         console.log('Checking if user is authorized')
@@ -83,11 +89,9 @@ export class MagicCustomConnector extends Connector {
                 account: await this.getAccount(),
             };
         }
-        // open the modal and process the magic login steps
-        // if (!this.isModalOpen) {
-        //     const modalOutput = await this.getUserDetailsByForm(this.enableSMSLogin, this.enableEmailLogin, this.oauthProviders);
+
         const magic = this.getMagicSDK();
-        //     // LOGIN WITH MAGIC USING OAUTH PROVIDER
+        // LOGIN WITH MAGIC USING OAUTH PROVIDER
         //     if (modalOutput.oauthProvider)
         if (this.type === LoginType.Social) {
             await magic?.oauth.loginWithRedirect({
@@ -96,17 +100,17 @@ export class MagicCustomConnector extends Connector {
             });
         }
 
-            // // LOGIN WITH MAGIC USING EMAIL
-            // if (modalOutput.email)
-            //     await magic.auth.loginWithMagicLink({
-            //         email: modalOutput.email,
-            //     });
-        //     // LOGIN WITH MAGIC USING PHONE NUMBER
-        //     if (modalOutput.phoneNumber)
-        //         await magic.auth.loginWithSMS({
-        //             phoneNumber: modalOutput.phoneNumber,
-        //         });
-        
+        // LOGIN WITH MAGIC USING EMAIL
+        if (this.type === LoginType.Email && this.email)
+            await magic?.auth.loginWithMagicLink({
+                email: this.email,
+            });
+        // LOGIN WITH MAGIC USING PHONE NUMBER
+        if (this.type === LoginType.Sms &&this.phone)
+            await magic?.auth.loginWithSMS({
+                phoneNumber: this.phone,
+            });
+
         if (await magic?.user.isLoggedIn()) {
             return {
                 account: await this.getAccount(),
@@ -123,9 +127,7 @@ export class MagicCustomConnector extends Connector {
                     unsupported: false
                 },
             }
-            // throw new UserRejectedRequestError(Error('User Rejected Request'));
         }
-        // }
     }
 
     async isAuthorized() {
@@ -135,7 +137,7 @@ export class MagicCustomConnector extends Connector {
             if (isLoggedIn)
                 return true;
             const result = await magic?.oauth.getRedirectResult();
-            return result !== null;
+            return result !== undefined;
         }
         catch { }
         return false;
@@ -143,14 +145,14 @@ export class MagicCustomConnector extends Connector {
 
     getMagicSDK() {
         if (!this.magicSDK) {
-            const magic:any = new Magic(this.magicOptions.apiKey, {
+            const magic: any = new Magic(this.magicOptions.apiKey, {
                 ...this.magicSdkConfiguration,
                 extensions: [new OAuthExtension() as any],
             });
-        this.magicSDK = magic;
-        return this.magicSDK;
-        
+            this.magicSDK = magic;
+            return this.magicSDK;
         }
+        return this.magicSDK
     }
 
     async getAccount() {
