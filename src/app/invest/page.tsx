@@ -7,7 +7,6 @@ import MobileFilter from "./moibleview/page";
 import Newsletter from "@/components/newsletter/page";
 import Footer from "@/components/footer/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
-import Product from "@/components/products/page";
 import ProductCards from "@/components/productCard/page";
 
 const Invest = () => {
