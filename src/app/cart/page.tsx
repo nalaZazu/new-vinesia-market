@@ -44,7 +44,6 @@ export default function Cart() {
             Next <NextIcon fill={"white"} />
           </button>
         </div> */}
-
         <CartControls />
         {/* Accordion */}
         <div className=" border-y-2 border-[#BF4D2020] divide-y divide-[#BF4D2020]">

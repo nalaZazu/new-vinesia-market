@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import videoImage from "@/assets/images/video (1080p) 2.png";
 import { Arrows } from "@/assets/icons/Icons";
-
 import background from "@/assets/images/backgroundEllipse .png";
 import backgroundtwo from "@/assets/images/Ellipse circle2x.png";
-
 import Newsletter from "@/components/newsletter/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
 import Footer from "@/components/footer/page";

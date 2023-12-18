@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+}
 @font-face {
   font-family: "canela";
   src: url("../assets/fonts/Canela Text Family/CanelaText-Regular-Trial.otf")
@@ -35,7 +40,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  font-family: albert, 'sans-serif';
+  font-family: albert, "sans-serif";
 }
 
 body {
@@ -147,6 +152,17 @@ h6 {
   margin: 0;
   list-style: none;
 }
+/* Animation class */
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(100deg);
+  }
+}
+
 /* .mobile_view_slider{} */
 
 /* .slick-arrow {

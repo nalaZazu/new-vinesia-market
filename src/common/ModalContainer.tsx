@@ -10,6 +10,7 @@ export default function ModalContainer({
   visible = false,
   setVisible,
   modalClass,
+  backgroundClass,
   isCloseBtn = true,
   title,
 }: {
@@ -19,6 +20,7 @@ export default function ModalContainer({
   modalClass?: any;
   isCloseBtn?: any;
   title?: any;
+  backgroundClass?: any;
 }) {
   return (
     <>
@@ -38,7 +40,10 @@ export default function ModalContainer({
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 transition-opacity" />
+            <div
+              className={`fixed inset-0 transition-opacity   ${backgroundClass}`}
+            />
+            {/* bg-zinc-800 bg-opacity-95 */}
           </Transition.Child>
 
           <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
@@ -55,17 +60,19 @@ export default function ModalContainer({
                 <Dialog.Panel
                   className={`relative max-w-[1244px] w-full mx-auto lg:h-auto md:h-[600px] sm:h-full transform overflow-hidden bg-[#F3E8CF] text-left shadow-xl transition-all ${modalClass} `}
                 >
-                  {/* {isCloseBtn && (
+                  {isCloseBtn && (
                     <div className=" flex justify-between p-4 ">
-                       <p className=" text-lg font-bold">{title}</p>
+                      <h3 className="text-black text-4xl font-light leading-[44px]">
+                        {title}
+                      </h3>
                       <button onClick={() => setVisible(false)}>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
                           strokeWidth="1.5"
-                          stroke="currentColor"
-                          className="w-10 h-10"
+                          stroke="#BF4D20"
+                          className="w-5 h-5"
                         >
                           <path
                             strokeLinecap="round"
@@ -75,7 +82,7 @@ export default function ModalContainer({
                         </svg>
                       </button>
                     </div>
-                  )} */}
+                  )}
                   {children}
                 </Dialog.Panel>
               </Transition.Child>

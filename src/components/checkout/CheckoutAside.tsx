@@ -14,7 +14,7 @@ const cartList = [
 export default function CheckoutAside() {
   return (
     <div>
-      <div className=" bg-[#F7EFDF] rounded-lg flex-col justify-start items-center inline-flex shadow-sm">
+      <div className=" bg-[#F7EFDF] rounded-lg flex-col justify-start items-center inline-flex shadow-sm w-full">
         <div className="self-stretch px-6 py-5 bg-red-900 justify-start items-center gap-2 inline-flex rounded-t-lg">
           <div className="grow shrink basis-0 text-white text-lg font-semibold  leading-relaxed">
             In cart
