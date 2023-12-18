@@ -1,6 +1,8 @@
+'use client'
+
 import InvestBread from "@/common/InvestBread";
 import xmark from "../../assets/icons/x-mark-anim.svg";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Dropdown from "@/common/DropDown/page";
 import MobileFilter from "./moibleview/page";
@@ -8,10 +10,32 @@ import Newsletter from "@/components/newsletter/page";
 import Footer from "@/components/footer/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
 import Product from "@/components/products/page";
+import useSWR from "swr";
+
+const fetcher = async (url: string, payload?: string) => {
+  const options = {
+    method: 'POST',
+    ...(payload && { body: payload }),
+    headers: {
+      accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  }
+
+  return fetch(url, options).then((res) => res.json())
+}
 
 const Invest = () => {
+  const [tags, setTags] = useState<String[]>([])
+  
+  const { data, error, isLoading } = useSWR(`${process.env.NEXT_PUBLIC_API_ADDRESS}products/search/`, fetcher)
+  
+
   return (
     <div >
+      {/* {`${process.env.NEXT_PUBLIC_API_ADDRESS}products/search/`} */}
+      {/* {JSON.stringify(error)} */}
+      {/* {JSON.stringify(data)} */}
       {/* <Headersecond /> */}
       <div className=" pt-6 container mx-auto px-3">
         <InvestBread />
@@ -37,16 +61,9 @@ const Invest = () => {
         </div>
         {/* product list  */}
         <div className="md:block hidden">
-          <Product />
-          {/* animation  component  */}
-          <div className="p-16 flex justify-center mx-auto ">
-            <Image src={xmark} alt="xmark" />
-          </div>
+          <Product items={data?.data} />
         </div>
 
-
-        {/* next product list  */}
-        <Product />
       </div>
       {/* desktop Newsletter*/}
       <div className="hidden sm:block">
