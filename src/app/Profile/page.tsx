@@ -17,6 +17,7 @@ import InvestmentTab from "@/components/profile/InvestmentTab";
 // import DropDownButton from "@/common/DropDownButton";
 // import ProductCards from "@/components/productCard/page";
 import InvestmentCard from "@/components/profile/InvestmentCard";
+import PortfolioOverview from "@/components/profile/PortfolioOverview";
 
 export default function Profile() {
   const [active, setActive] = useState(0);
@@ -137,13 +138,30 @@ export default function Profile() {
                 <Tab.Panel
                   key={idx}
                   className={`
-                     rounded-md bg-[#F7EFDF] ring-offset-0 focus:outline-none focus:ring-0 py-6 ps-6 pr-8`}
+                     rounded-md ring-offset-0 focus:outline-none focus:ring-0`}
                 >
-                  <InvestmentTab />
+                  {/* <ul>
+                    <li
+                      key={post.id}
+                      className="relative rounded-md p-3 hover:bg-gray-100"
+                    >
+                      <h3 className="text-sm font-medium leading-5">
+                        {post.title}
+                      </h3>
+
+                      <a
+                        href="#"
+                        className={`
+                              absolute inset-0 rounded-md
+                              ring-blue-400 focus:z-10 focus:outline-none focus:ring-2`}
+                      />
+                    </li>
+                  </ul> */}
+                  {/* <InvestmentTab /> */}
+                  <PortfolioOverview />
                 </Tab.Panel>
               ))}
-              <InvestmentCard />
-              
+              {/* <InvestmentCard /> */}
             </Tab.Panels>
           </div>
         </Tab.Group>
