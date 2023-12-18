@@ -31,7 +31,7 @@ export default function InvestmentCard() {
           <TabButton data={countryName} />
         </div>
         <div className="flex justify-between items-center gap-4">
-          <div className="flex border border-stone-400 rounded-full items-center px-3">
+          <div className="flex border border-stone-400 rounded-full items-center px-3 gap-2">
             <div>
               <SearchIcon fill={"#000"} />
             </div>

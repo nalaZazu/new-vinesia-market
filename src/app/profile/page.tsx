@@ -18,6 +18,8 @@ import InvestmentTab from "@/components/profile/InvestmentTab";
 // import ProductCards from "@/components/productCard/page";
 import InvestmentCard from "@/components/profile/InvestmentCard";
 import PortfolioOverview from "@/components/profile/PortfolioOverview";
+import WalletOverview from "@/components/profile/Wallet/WalletOverview";
+import ReceivedBids from "@/components/profile/Wallet/ReceivedBids";
 
 export default function Profile() {
   const [active, setActive] = useState(0);
@@ -81,9 +83,9 @@ export default function Profile() {
           My profile
         </h3>
       </div>
-      <div className="flex gap-8">
+      <div className="grid grid-cols-4 gap-8">
         <Tab.Group>
-          <div className="basis-1/4">
+          <div className="col-span-1">
             <Tab.List className="flex flex-col rounded-lg border-t-2 border-s-2 border-r-2 border-orange-700 border-opacity-20">
               {categories.map(
                 (
@@ -132,7 +134,7 @@ export default function Profile() {
               )}
             </Tab.List>
           </div>
-          <div className="basis-9/12">
+          <div className="col-span-3">
             <Tab.Panels className="mt-2">
               {Object.values(categories).map((post, idx) => (
                 <Tab.Panel
@@ -158,7 +160,9 @@ export default function Profile() {
                     </li>
                   </ul> */}
                   {/* <InvestmentTab /> */}
-                  <PortfolioOverview />
+                  {/* <PortfolioOverview /> */}
+                  {/* <WalletOverview /> */}
+                  <ReceivedBids />
                 </Tab.Panel>
               ))}
               {/* <InvestmentCard /> */}

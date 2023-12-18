@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import Image from "next/image";
 import winebotel from "@/assets/images/big1.png";
 import avatarBase from "@/assets/images/avatarBase.png";
@@ -9,6 +10,7 @@ import {
   NextIcon,
 } from "@/assets/icons/Icons";
 import TabButton from "@/common/TabButton";
+import AskPrice from "../AskPrice/page";
 const dataArray = [
   {
     label: "PURCHASE PRICE",
@@ -25,9 +27,19 @@ const dataArray = [
 ];
 
 export default function PortfolioOverview() {
+  const [open, setOpen] = useState(false);
+  const [openModal2, setOpenModal2] = useState(false);
+  const handleOpen = () => {
+    setOpen(!open);
+  };
+  const handleNext = () => {
+    setOpenModal2(!openModal2);
+    setOpen(!open);
+  };
   const countryName = ["ALL", "TRANSACTIONS", "BIDS", "ASKS"];
   return (
     <>
+      <AskPrice open={openModal2} setOpen={() => setOpenModal2(!openModal2)} />
       <div>
         <p className="text-zinc-800 text-lg font-semibold leading-relaxed">
           Portfolio overview
@@ -92,7 +104,10 @@ export default function PortfolioOverview() {
                     that your wine asset can be sold right away
                   </p>
                 </div>
-                <button className="max-w-[188px] px-8 py-[22px] bg-orange-700 rounded-[48px] gap-3 flex items-center">
+                <button
+                  onClick={handleNext}
+                  className="max-w-[188px] px-8 py-[22px] bg-orange-700 rounded-[48px] gap-3 flex items-center"
+                >
                   <p className="text-white text-xs font-normal uppercase leading-[18px] tracking-tight">
                     Set ask price
                   </p>
@@ -128,6 +143,7 @@ export default function PortfolioOverview() {
             ))}
           </div>
         </div>
+        {/* col 2 */}
         <div className="pt-6 my-8">
           <div className=" bg-[#FAF5EA]">
             <div className="px-6 pt-6">
@@ -171,10 +187,12 @@ export default function PortfolioOverview() {
           </div>
         </div>
         <div className="flex flex-col">
-          <div className="flex justify-between bg-[#F3E8CF] p-6">
-            <p className="text-stone-500 text-xs font-normal uppercase leading-[18px] tracking-tight">
-              Purchase Price
-            </p>
+          <div className="grid grid-cols-6  bg-[#F3E8CF] p-6">
+            <div className=" col-start-2">
+              <p className="text-stone-500 text-xs font-normal uppercase leading-[18px] tracking-tight  ">
+                Purchase Price
+              </p>
+            </div>
             <p className="text-stone-500 text-xs font-normal uppercase leading-[18px] tracking-tight">
               Last 3 months
             </p>
@@ -188,12 +206,14 @@ export default function PortfolioOverview() {
               All time
             </p>
           </div>
-          <div className="flex justify-between p-6 bg-[#FAF5EA] border-b border-orange-700 border-opacity-20">
-            <p className="w-[132px] text-zinc-800 text-base font-normal leading-snug">
-              Estimated increase in value
-            </p>
+          <div className="grid grid-cols-6 p-6 bg-[#FAF5EA] border-b border-orange-700 border-opacity-20">
+            <div className="col-start-1 col-end-3">
+              <p className="w-[132px] text-zinc-800 text-base font-normal leading-snug">
+                Estimated increase in value
+              </p>
+            </div>
             <div>
-              <p className="text-right text-zinc-800 text-base font-normal leading-snug">
+              <p className=" text-zinc-800 text-base font-normal leading-snug">
                 €60
               </p>
               <p className="text-green-700 text-xs font-normal leading-[18px]">
@@ -201,7 +221,7 @@ export default function PortfolioOverview() {
               </p>
             </div>
             <div>
-              <p className="text-right text-zinc-800 text-base font-normal leading-snug">
+              <p className=" text-zinc-800 text-base font-normal leading-snug">
                 €1,000
               </p>
               <p className="text-green-700 text-xs font-normal leading-[18px]">
@@ -209,7 +229,7 @@ export default function PortfolioOverview() {
               </p>
             </div>
             <div>
-              <p className="text-right text-zinc-800 text-base font-normal leading-snug">
+              <p className=" text-zinc-800 text-base font-normal leading-snug">
                 €4,800
               </p>
               <p className="text-green-700 text-xs font-normal leading-[18px]">
@@ -217,7 +237,7 @@ export default function PortfolioOverview() {
               </p>
             </div>
             <div>
-              <p className="text-right text-zinc-800 text-base font-normal leading-snug">
+              <p className=" text-zinc-800 text-base font-normal leading-snug">
                 €4,800
               </p>
               <p className="text-green-700 text-xs font-normal leading-[18px]">
@@ -225,28 +245,30 @@ export default function PortfolioOverview() {
               </p>
             </div>
           </div>
-          <div className="flex justify-between p-6 bg-[#FAF5EA] border-b border-orange-700 border-opacity-20">
+          <div className="grid grid-cols-6 p-6 bg-[#FAF5EA] border-b border-orange-700 border-opacity-20">
             <p className="text-zinc-800 text-base font-normal leading-snug">
               Purchase Price
             </p>
-            <p className="text-right text-zinc-800 text-base font-normal leading-snug">
+            <p className=" text-zinc-800 text-base font-normal leading-snug">
               €1,100
             </p>
           </div>
-          <div className="flex justify-between p-6 bg-[#FAF5EA]">
-            <p className="text-zinc-800 text-lg font-semibold leading-relaxed">
-              Total
-            </p>
-            <p className="text-right text-zinc-800 text-lg font-semibold leading-relaxed">
+          <div className="grid grid-cols-6 p-6 bg-[#FAF5EA]">
+            <div className=" col-start-1 col-end-3">
+              <p className="text-zinc-800 text-lg font-semibold leading-relaxed">
+                Total
+              </p>
+            </div>
+            <p className=" text-zinc-800 text-lg font-semibold leading-relaxed">
               €1,160
             </p>
-            <p className="text-right text-zinc-800 text-lg font-semibold leading-relaxed">
+            <p className=" text-zinc-800 text-lg font-semibold leading-relaxed">
               €2,100
             </p>
-            <p className="text-right text-zinc-800 text-lg font-semibold leading-relaxed">
+            <p className=" text-zinc-800 text-lg font-semibold leading-relaxed">
               €5,900
             </p>
-            <p className="text-right text-zinc-800 text-lg font-semibold leading-relaxed">
+            <p className=" text-zinc-800 text-lg font-semibold leading-relaxed">
               €5,900
             </p>
           </div>
@@ -294,6 +316,12 @@ export default function PortfolioOverview() {
               />
             </div>
           ))}
+          <div className="flex justify-center py-6 items-center gap-3">
+            <button className="text-center text-orange-700 text-xs font-normal font-['Albert Sans'] uppercase leading-[18px] tracking-tight">
+              SEE MORE
+            </button>
+            <NextIcon />
+          </div>
         </div>
       </div>
     </>

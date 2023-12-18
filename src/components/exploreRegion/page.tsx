@@ -6,7 +6,7 @@ import germany from "../../assets/images/germany.png";
 import switzerland from "../../assets/images/Switzerland.png";
 import italy from "../../assets/images/italy.png";
 import usa from "../../assets/images/usa.png";
-import arrow from "../../assets/icons/Long arrow Down.svg";
+import arrow from "../../assets/icons/LongarrowDown.svg";
 import arrowbtn from "../../assets/icons/Button Arrow.svg";
 import Link from "next/link";
 import Popup from "../popup/page";
@@ -39,9 +39,7 @@ const ExploreRegion = () => {
               <Image src={france} alt="play-button" />
             </div>
             <div className=" flex items-end justify-left gap-28 mt-4">
-              <p className=" text-black text-lg  tracking-tight">
-                France
-              </p>
+              <p className=" text-black text-lg  tracking-tight">France</p>
               <Image src={arrow} alt="arrow" />
             </div>
           </div>
@@ -79,9 +77,7 @@ const ExploreRegion = () => {
               </div>
             </div>
             <div className=" flex items-end justify-left  gap-[19rem] mt-4">
-              <p className="text-black text-lg   tracking-tight ">
-                Germany
-              </p>
+              <p className="text-black text-lg   tracking-tight ">Germany</p>
               <Image src={arrow} alt="arrow" />
             </div>
             <div
@@ -111,9 +107,7 @@ const ExploreRegion = () => {
               </div>
             </div>
             <div className=" flex items-end justify-left gap-32 ">
-              <p className="text-black text-lg  tracking-tight mt-4">
-                Italy
-              </p>
+              <p className="text-black text-lg  tracking-tight mt-4">Italy</p>
               <Image src={arrow} alt="arrow" />
             </div>
             {/* next div */}
@@ -126,9 +120,7 @@ const ExploreRegion = () => {
               </div>
             </div>
             <div className=" flex items-end justify-left gap-32 ">
-              <p className="text-black text-lg  tracking-tight ">
-                USA
-              </p>
+              <p className="text-black text-lg  tracking-tight ">USA</p>
               <Image src={arrow} alt="arrow" />
             </div>
           </div>
