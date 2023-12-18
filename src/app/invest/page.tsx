@@ -8,10 +8,11 @@ import Newsletter from "@/components/newsletter/page";
 import Footer from "@/components/footer/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
 import Product from "@/components/products/page";
+import { MarksAnim, Xmark } from "@/assets/icons/Icons";
 
 const Invest = () => {
   return (
-    <div >
+    <div>
       {/* <Headersecond /> */}
       <div className=" pt-6 container mx-auto px-3">
         <InvestBread />
@@ -39,11 +40,12 @@ const Invest = () => {
         <div className="md:block hidden">
           <Product />
           {/* animation  component  */}
-          <div className="p-16 flex justify-center mx-auto ">
-            <Image src={xmark} alt="xmark" />
+          <div className="p-16 flex justify-center mx-auto items-center gap-10">
+            <div className=" border-b-[1px] h-0 w-full border-[#CB220D] border-opacity-10"></div>
+            <MarksAnim fill="#CB220D" />
+            <div className="border-b-[1px] h-0 w-full border-[#CB220D]  border-opacity-10"></div>
           </div>
         </div>
-
 
         {/* next product list  */}
         <Product />
