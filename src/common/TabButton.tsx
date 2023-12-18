@@ -2,11 +2,22 @@
 import Image from "next/image";
 import React, { useState } from "react";
 
-export default function TabButton({ data }: { data?: any }) {
-  const [selectedTab, setSelectedTab] = useState(0);
-
+export default function TabButton({
+  data,
+  activeTab,
+  setActiveTab,
+}: {
+  data?: any;
+  activeTab?: any;
+  setActiveTab?: any;
+}) {
+  const [selectedTab, setSelectedTab] = useState(activeTab || 0);
+  const handleTab = (i: any) => {
+    setSelectedTab(i);
+    setActiveTab(i);
+  };
   return (
-    <div className="pb-5">
+    <div className="">
       <div className="flex border-b-2 border-orange-700 border-opacity-20">
         {data?.map((item: any, i: any) => {
           return (
@@ -17,8 +28,8 @@ export default function TabButton({ data }: { data?: any }) {
               } `}
             >
               <button
-                className="text-orange-700 text-xs font-normal uppercase tracking-tight px-4 py-4"
-                onClick={() => setSelectedTab(i)}
+                className="text-orange-700 text-xs font-normal uppercase tracking-tight py-4"
+                onClick={() => handleTab(i)}
               >
                 {item}
               </button>

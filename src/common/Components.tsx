@@ -1,10 +1,18 @@
 "use client";
 // import { CheckCircleIcon, XIcon } from '@heroicons/react/solid'
-import { NextIcon, PrevIcon, TickCirIcon } from "@/assets/icons/Icons";
-import { XCircleIcon } from "@heroicons/react/20/solid";
+import {
+  AlertCircle,
+  AlertIcons,
+  ErrorIcon,
+  InfoIcon,
+  NextIcon,
+  PrevIcon,
+  TickCirIcon,
+} from "@/assets/icons/Icons";
+import { XCircleIcon, XMarkIcon } from "@heroicons/react/20/solid";
 import React, { Fragment, useState } from "react";
-import { Listbox, Transition } from "@headlessui/react";
-
+import { Listbox, Transition, RadioGroup } from "@headlessui/react";
+import { useRouter } from "next/navigation";
 export function Checkbox({ label, name }: { label?: any; name?: any }) {
   return (
     <>
@@ -51,7 +59,8 @@ export function Button({
   );
 }
 
-export function CartControls() {
+export function CartControls({ step, setStep }: { step?: any; setStep?: any }) {
+  const router = useRouter();
   return (
     <div>
       <div className="flex sm:justify-end justify-center pt-8">
@@ -61,11 +70,19 @@ export function CartControls() {
         </span>
       </div>
       <div className="sm:flex justify-between pt-4 pb-[106px] sm:gap-0 grid grid-cols-1 gap-6">
-        <button className="flex items-center gap-4 border border-[#BF4D2020] rounded-full text-[#BF4D20] px-8 justify-center h-14 sm:order-1 order-2 sm:w-auto w-full">
+        <button
+          onClick={() => setStep(step > 1 ? step - 1 : 1)}
+          className="flex items-center gap-4 border border-[#BF4D2020] rounded-full text-[#BF4D20] px-8 justify-center h-14 sm:order-1 order-2 sm:w-auto w-full"
+        >
           <PrevIcon />
           Back
         </button>
-        <button className="flex items-center gap-4 border border-[#BF4D2020] rounded-full text-white px-8 justify-center h-14 bg-[#BF4D20] sm:order-2 order-1 sm:w-auto w-full">
+        <button
+          onClick={() =>
+            setStep(step == 3 ? router.push("/purchase") : step + 1)
+          }
+          className="flex items-center gap-4 border border-[#BF4D2020] rounded-full text-white px-8 justify-center h-14 bg-[#BF4D20] sm:order-2 order-1 sm:w-auto w-full"
+        >
           Next <NextIcon fill="white" />
         </button>
       </div>
@@ -86,7 +103,7 @@ export function BillingInput({
 }) {
   return (
     <div
-      className={`flex-col justify-start items-start gap-2 inline-flex ${Inputclass}`}
+      className={`flex-col justify-start items-start gap-2 inline-flex w-full ${Inputclass}`}
     >
       {title && (
         <div className="h-4 justify-start items-center gap-1 inline-flex">
@@ -100,6 +117,42 @@ export function BillingInput({
         className="self-stretch text-[#D99479] h-14 pl-6 pr-5 p-4 rounded-full border border-red-400 bg-transparent outline-red-500 placeholder-[#D99479]"
         placeholder={placeholder}
       />
+    </div>
+  );
+}
+
+export function ListCard({
+  title,
+  value,
+  subTitle,
+  subValue,
+  titleClass,
+  valueClass = "text-zinc-800",
+}: {
+  title?: any;
+  value?: any;
+  subTitle?: any;
+  subValue?: any;
+  titleClass?: any;
+  valueClass?: any;
+}) {
+  return (
+    <div className="w-full flex justify-between border-b border-orange-700 border-opacity-20">
+      <div className="p-4 ">
+        <p className={`text-zinc-800 text-base leading-snug ${titleClass} `}>
+          {title}
+        </p>
+        <p className="text-zinc-500 text-xs font leading-[18px]">{subTitle}</p>
+      </div>
+
+      <div className=" p-4">
+        <p className={`text-right  text-base leading-snug ${valueClass}`}>
+          {value}
+        </p>
+        <p className="text-zinc-500 text-xs leading-[18px] text-end">
+          {subValue}
+        </p>
+      </div>
     </div>
   );
 }
@@ -118,17 +171,45 @@ export function AlertSuccess() {
             Successfully uploaded
           </p>
         </div>
-        {/* <div className="ml-auto pl-3">
+        <div className="ml-auto pl-3">
           <div className="-mx-1.5 -my-1.5">
             <button
               type="button"
               className="inline-flex rounded-md p-1.5 text-red-500  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-green-50 focus:ring-green-600"
             >
               <span className="sr-only">Dismiss</span>
-              <XCircleIcon className="h-5 w-5" aria-hidden="true" />
+              <XMarkIcon className="h-5 w-5 text-red-500" aria-hidden="true" />
             </button>
           </div>
-        </div> */}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function AlertError({ message }: { message?: any }) {
+  return (
+    <div className="rounded-md bg-red-500/20 p-4 w-full">
+      <div className="flex items-start">
+        <div className="flex-shrink-0 h-6 w-6">
+          <span className=" rotate-90 text-red-500 ">
+            <ErrorIcon />
+          </span>
+        </div>
+        <div className="ml-3">
+          <p className=" text-base font-medium text-[#DC2626]">{message}</p>
+        </div>
+        <div className="ml-auto pl-3">
+          <div className="-mx-1.5 -my-1.5">
+            <button
+              type="button"
+              className="inline-flex rounded-md p-1.5 text-red-500  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-green-50 focus:ring-green-600"
+            >
+              <span className="sr-only">Dismiss</span>
+              <XMarkIcon className="h-5 w-5 text-red-500" aria-hidden="true" />
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -244,5 +325,38 @@ export function CheckoutComponent({
         </div>
       </div>
     </>
+  );
+}
+
+const plans = ["Euro (€)", "US Dollars ($)"];
+
+export function RadioButton() {
+  const [plan, setPlan] = useState(plans[0]);
+
+  return (
+    <RadioGroup value={plan} onChange={setPlan} name="plan">
+      {/* <RadioGroup.Label>Plan</RadioGroup.Label> */}
+      {plans.map((p) => (
+        // <RadioGroup.Option key={plan} value={plan}>
+        //   {plan}
+        // </RadioGroup.Option>
+        <RadioGroup.Option
+          key={p}
+          value={p}
+          className=" my-4 w-full border rounded-lg border-[#6C757D] "
+        >
+          {({ checked }) => (
+            <p className={` p-5 w-full flex gap-4 `}>
+              <span
+                className={`w-6 h-6 rounded-full border-[#6C757D]  ${
+                  checked ? " border-8" : "border-2"
+                } `}
+              ></span>
+              {p}
+            </p>
+          )}
+        </RadioGroup.Option>
+      ))}
+    </RadioGroup>
   );
 }

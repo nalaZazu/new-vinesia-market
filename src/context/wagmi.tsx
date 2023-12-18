@@ -1,50 +1,13 @@
-import { createContext, useContext } from "react";
-import { Connector, WagmiConfig, configureChains, createConfig, useAccount, useConnect, useDisconnect } from "wagmi";
-import { goerli, mainnet } from "wagmi/chains";
-import { CoinbaseWalletConnector } from "wagmi/connectors/coinbaseWallet";
-import { MetaMaskConnector } from "wagmi/connectors/metaMask";
-import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
-import { publicProvider } from "wagmi/providers/public";
+import { WagmiConfig, configureChains, createConfig } from "wagmi";
 import { LoginType, MagicCustomConnector } from "./connectors/MagicConnector";
-
+import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
+import { MetaMaskConnector } from "wagmi/connectors/metaMask";
+import { CoinbaseWalletConnector } from "wagmi/connectors/coinbaseWallet";
+import { goerli, mainnet } from "wagmi/chains";
+import { publicProvider } from "wagmi/providers/public";
 
 const walletConnectProjectId = 'b339ed4d7a45e8a5c350e565f9ac1c51'
 const magicLinkApiKey = 'pk_live_36148059370BB25E'
-
-export interface ProvideUser {
-    status: string
-    address: `0x${string}` | undefined
-    isConnected: boolean
-    isConnecting: boolean
-    isReconnecting: boolean
-    isDisconnected: boolean
-    isLoading: boolean
-    connectors: Connector<any, any>[]
-
-    connectAsync: (args?: Partial<ConnectArgs>) => Promise<ConnectResult<_wagmi_core.PublicClient>>;
-    disconnectAsync: () => Promise<any>
-}
-
-export function useProvideUser(): ProvideUser {
-  const { status, address, isConnected, isConnecting, isReconnecting, isDisconnected } = useAccount()
-  const { connectAsync, connectors, data, isLoading } = useConnect()
-  const { disconnectAsync } = useDisconnect()
-
-
-    return {
-        status,
-        address,
-        isConnected,
-        isConnecting,
-        isReconnecting,
-        isDisconnected,
-        isLoading,
-        connectors,
-        connectAsync,
-        disconnectAsync
-    }
-}
-
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
     [mainnet, ...(process.env.NODE_ENV === 'development' ? [goerli] : [])],
@@ -52,8 +15,6 @@ const { chains, publicClient, webSocketPublicClient } = configureChains(
         publicProvider(),
     ],
 )
-
-
 
 export const config = createConfig({
     autoConnect: true,
@@ -110,14 +71,7 @@ export const config = createConfig({
     webSocketPublicClient,
 })
 
-const userContext = createContext<ProvideUser | null>(null);
 
-export function UserProvider({ children }: { children: React.ReactNode }) {
-    return (<userContext.Provider value={useProvideUser()}>{children}</userContext.Provider>);
-}
-
-export function useUserContext(): ProvideUser {
-    const context = useContext(userContext);
-    if (context === null) throw new Error('User provider is not set')
-    return context
+export function WagmiProvider({ children }: { children: React.ReactNode }) {
+    return (<WagmiConfig config={config}>{children}</WagmiConfig>);
 }

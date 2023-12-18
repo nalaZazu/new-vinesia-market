@@ -190,8 +190,8 @@ export function PrevIcon2() {
 export function SearchIcon({ fill }: { fill?: any }) {
   return (
     <svg
-      width="25"
-      height="24"
+      width="20"
+      height="20"
       viewBox="0 0 25 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -1150,6 +1150,36 @@ export function Logout({ storke }: { storke?: any }) {
           />
         </g>
       </g>
+    </svg>
+  );
+}
+
+export function ErrorIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+    >
+      <path
+        clip-rule="evenodd"
+        d="M12 21C7.029 21 3 16.971 3 12C3 7.029 7.029 3 12 3C16.971 3 21 7.029 21 12C21 16.971 16.971 21 12 21Z"
+        fill="#EF4444"
+        stroke="#DC2626"
+      />
+      <path
+        clip-rule="evenodd"
+        d="M12.001 16.75C12.139 16.75 12.251 16.638 12.25 16.5C12.25 16.362 12.138 16.25 12 16.25C11.862 16.25 11.75 16.362 11.75 16.5C11.75 16.638 11.862 16.75 12.001 16.75Z"
+        fill="white"
+      />
+      <path
+        d="M12.001 16.75C12.139 16.75 12.251 16.638 12.25 16.5C12.25 16.362 12.138 16.25 12 16.25C11.862 16.25 11.75 16.362 11.75 16.5C11.75 16.638 11.862 16.75 12.001 16.75"
+        stroke="white"
+      />
+      <path clip-rule="evenodd" d="M12 12.75L12 7.75L12 12.75Z" fill="white" />
+      <path d="M12 12.75L12 7.75" stroke="white" />
     </svg>
   );
 }
