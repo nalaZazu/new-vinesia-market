@@ -8,14 +8,14 @@ import Newsletter from "@/components/newsletter/page";
 import Footer from "@/components/footer/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
 import Product from "@/components/products/page";
+import ProductCards from "@/components/productCard/page";
 
 const Invest = () => {
   return (
-    <div >
+    <div>
       {/* <Headersecond /> */}
       <div className=" pt-6 container mx-auto px-3">
         <InvestBread />
-
         <div className=" mt-9 hidden md:block">
           <h2 className=" text-primary text-[144px] font-normal ">Invest</h2>
         </div>
@@ -25,7 +25,6 @@ const Invest = () => {
             Invest
           </h2>
         </div>
-
         {/* dropdown */}
         <div className="hidden md:block">
           <Dropdown />
@@ -37,16 +36,30 @@ const Invest = () => {
         </div>
         {/* product list  */}
         <div className="md:block hidden">
-          <Product />
+          <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20">
+            {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, index: any) => {
+              return (
+                <div key={index}>
+                  <ProductCards />
+                </div>
+              );
+            })}
+          </div>
           {/* animation  component  */}
           <div className="p-16 flex justify-center mx-auto ">
             <Image src={xmark} alt="xmark" />
           </div>
         </div>
-
-
         {/* next product list  */}
-        <Product />
+        <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20 ">
+            {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, index: any) => {
+              return (
+                <div key={index}>
+                  <ProductCards />
+                </div>
+              );
+            })}
+          </div>
       </div>
       {/* desktop Newsletter*/}
       <div className="hidden sm:block">

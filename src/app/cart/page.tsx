@@ -2,6 +2,7 @@ import { NextIcon, PrevIcon } from "@/assets/icons/Icons";
 import Accordion from "@/common/Accordion";
 import { CartControls } from "@/common/Components";
 import CartCard from "@/components/cart/cartCard";
+import Link from "next/link";
 import React from "react";
 
 export default function Cart() {
@@ -44,7 +45,9 @@ export default function Cart() {
             Next <NextIcon fill={"white"} />
           </button>
         </div> */}
+        <Link href="/checkout">
         <CartControls />
+        </Link>
         {/* Accordion */}
         <div className=" border-y-2 border-[#BF4D2020] divide-y divide-[#BF4D2020]">
           <Accordion />
