@@ -1,12 +1,11 @@
 "use client"
 
-import type { Metadata } from "next";
 import { Albert_Sans } from "next/font/google";
-import local from "next/font/local";
 import "./globals.css";
 import Header from "@/components/header/page";
 import { UserProvider } from "@/context/user";
 import Head from "next/head";
+import { WagmiProvider } from "@/context/wagmi";
 // pages/_app.js or pages/_app.tsx
 const albert = Albert_Sans({
   variable: "--font-albert",
@@ -31,9 +30,11 @@ export default function RootLayout({
       </Head>
       <body className={`${albert.className} bg-[#F3E8CF] `}>
         <Header />
-        <UserProvider>
-          {children}
-        </UserProvider>
+        <WagmiProvider>
+          <UserProvider>
+            {children}
+          </UserProvider>
+        </WagmiProvider>
       </body>
     </html>
   );

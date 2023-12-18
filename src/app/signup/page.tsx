@@ -11,7 +11,6 @@ import magic from "../../assets/images/magic.png";
 import alert from "../../assets/icons/alert-circle.svg";
 import { AlertCircle } from "@/assets/icons/Icons";
 import { useUserContext } from "@/context/user";
-import { useAccount, useConnect, useDisconnect } from "wagmi";
 import { MagicCustomConnector } from "@/context/connectors/MagicConnector";
 
 const Wrapper = ({
@@ -33,11 +32,15 @@ const Wrapper = ({
   </>
 
 const SignUp = () => {
-  const authContext = useUserContext()
-
-  const { status, address, isConnected, isConnecting, isReconnecting, isDisconnected } = useAccount()
-  const { connectAsync, connectors, data, isLoading } = useConnect()
-  const { disconnectAsync } = useDisconnect()
+  const {
+    isLoading, 
+    isConnecting,
+    isReconnecting,
+    isConnected,
+    connectors, 
+    connectAsync, 
+    disconnectAsync
+  } = useUserContext()
 
   const [ terms, setTerms ] = useState(false)
 
