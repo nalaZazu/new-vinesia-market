@@ -14,6 +14,7 @@ import Newsletter from "@/components/newsletter/page";
 import Footer from "@/components/footer/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
 import useSWR from "swr";
+import Link from "next/link";
 
 
 const fetcher = (arg: string) => fetch(arg).then((res) => res.json())
@@ -56,55 +57,55 @@ export default function ProductsOverview({ params }: { params: { id: string } })
         </div>
         <div className="2xl:container mx-auto">
           <div className="flex relative">
-            <div className="basis-1/12 hidden md:block">
-              {/* <div>
-            <nav
-              className="flex absolute top-0 bottom-0 -rotate-90 left-48"
-              aria-label="Breadcrumb"
-            >
-              <ol className="container mx-auto flex flex-wrap gap-3 px-4 items-center">
-                <li className="inline-flex items-center">
-                  <Link
-                    href="#"
-                    className="text-stone-600 text-xs font-normal leading-3"
-                  >
-                    vinesia marketplace
-                  </Link>
-                </li>
-                <li className="hidden md:block lg:block  text-xs font-normal">
-                  /
-                </li>
-                <li>
-                  <div className="flex items-center">
-                    <Link
-                      href="#"
-                      className=" text-stone-500 text-xs font-normal leading-3"
-                    >
-                      home page
-                    </Link>
-                  </div>
-                </li>
-                <li className="hidden md:block lg:block text-xs font-normal">
-                  /
-                </li>
-                <li aria-current="page">
-                  <div className="flex items-center">
-                    <span className=" text-stone-500 text-xs font-normal leading-3">
-                      collections
-                    </span>
-                  </div>
-                </li>
-                <li aria-current="page">
-                  <div className="flex items-center">
-                    <span className=" text-stone-500 text-xs font-normal leading-3">
-                      Chateau La Mission and Art
-                    </span>
-                  </div>
-                </li>
-              </ol>
-            </nav>
-          </div> */}
-            </div>
+            {/* <div className="basis-1/12 hidden md:block">
+              <div>
+                <nav
+                  className="flex absolute top-0 bottom-0 -rotate-90 left-48"
+                  aria-label="Breadcrumb"
+                >
+                  <ol className="container mx-auto flex flex-wrap gap-3 px-4 items-center">
+                    <li className="inline-flex items-center">
+                      <Link
+                        href="#"
+                        className="text-stone-600 text-xs font-normal leading-3"
+                      >
+                        vinesia marketplace
+                      </Link>
+                    </li>
+                    <li className="hidden md:block lg:block  text-xs font-normal">
+                      /
+                    </li>
+                    <li>
+                      <div className="flex items-center">
+                        <Link
+                          href="#"
+                          className=" text-stone-500 text-xs font-normal leading-3"
+                        >
+                          home page
+                        </Link>
+                      </div>
+                    </li>
+                    <li className="hidden md:block lg:block text-xs font-normal">
+                      /
+                    </li>
+                    <li aria-current="page">
+                      <div className="flex items-center">
+                        <span className=" text-stone-500 text-xs font-normal leading-3">
+                          collections
+                        </span>
+                      </div>
+                    </li>
+                    <li aria-current="page">
+                      <div className="flex items-center">
+                        <span className=" text-stone-500 text-xs font-normal leading-3">
+                          Chateau La Mission and Art
+                        </span>
+                      </div>
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div> */}
             <div className="md:basis-11/12 basis-full ">
               <div className="bg-[#F7EFDF] pt-10 pb-20 ">
                 <div className="md:max-w-[1350px] mx-auto">
