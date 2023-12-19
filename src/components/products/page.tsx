@@ -6,42 +6,50 @@ import Image from "next/image";
 import ProductCards from "../productCard/page";
 import { ProductCardDto } from "@/types/productCard.dto";
 
-const Product = ({ items }: { items: ProductCardDto[] }) => {
-
+const Product = ({ items }: { items?: ProductCardDto[] }) => {
   function splitToChunks(items: ProductCardDto[]): ProductCardDto[][] {
-    const result: ProductCardDto[][] = []
+    const result: ProductCardDto[][] = [];
 
-    if (items === undefined || items.length === 0)
-      return result
+    if (items === undefined || items.length === 0) return result;
 
-    const chunkSize = 8
+    const chunkSize = 8;
     for (let i = 0; i < items.length; i += chunkSize) {
-      const chunk = items.slice(i, i + chunkSize)
-      result.push(chunk)
+      const chunk = items.slice(i, i + chunkSize);
+      result.push(chunk);
     }
 
-    return result
+    return result;
   }
 
   return (
     <React.Fragment>
-      {splitToChunks(items).map((item, i) => {
-        return <>
-          <div key={i} className="container mx-auto grid grid-cols-1 md:grid-cols-4 mt-16 gap-x-6 gap-y-10">
-            {item === undefined ? <></> : item.map((item2, i) => {
-              return (
-                <div key={i}>
-                  <ProductCards item={item2} />
-                </div>
-              );
-            })}
-          </div>
-          {/* animation  component  */}
-          <div className="p-16 flex justify-center mx-auto ">
-            <Image src={xmark} alt="xmark" />
-          </div>
-        </>
-      })}
+      {items &&
+        splitToChunks(items).map((item, i) => {
+          return (
+            <>
+              <div
+                key={i}
+                className="container mx-auto grid grid-cols-1 md:grid-cols-4 mt-16 gap-x-6 gap-y-10"
+              >
+                {item === undefined ? (
+                  <></>
+                ) : (
+                  item.map((item2, i) => {
+                    return (
+                      <div key={i}>
+                        <ProductCards item={item2} />
+                      </div>
+                    );
+                  })
+                )}
+              </div>
+              {/* animation  component  */}
+              <div className="p-16 flex justify-center mx-auto ">
+                <Image src={xmark} alt="xmark" />
+              </div>
+            </>
+          );
+        })}
     </React.Fragment>
   );
 };
