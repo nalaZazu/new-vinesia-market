@@ -15,7 +15,6 @@ function France({ params }: { params: any }) {
   const { slug } = params;
 
   return (
-    <React.Fragment>
       <div className=" absolute top-0 right-0 left-0 -z-10">
         <div className="w-full md:h-[744px] h-[620px] bg-no-repeat bg-cover bg-center bg-[url('https://i.ibb.co/hLLYBjr/winery-bg.png')] relative">
           {/* BreadCrumb start */}
@@ -60,12 +59,6 @@ function France({ params }: { params: any }) {
             <MobileFilter />
           </div>
           {/* product list */}
-<<<<<<< HEAD:src/app/france/page.tsx
-          <Product items={[]} />
-          {/* product list 
-          <Product /> */}
-
-=======
           <Product
           />
           {/* <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20 ">
@@ -78,7 +71,6 @@ function France({ params }: { params: any }) {
             })}
           </div>{" "} */}
           {/* product list  */}
->>>>>>> main:src/app/regions/[slug]/page.tsx
           {/* animation  component  */}
           <div className="p-16 flex justify-center mx-auto items-center gap-16">
         <div className=" border-b-2 h-0 w-full border-[#CB220D] border-opacity-10"></div>
@@ -86,10 +78,6 @@ function France({ params }: { params: any }) {
         <div className="border-b-2 h-0 w-full border-[#CB220D]  border-opacity-10"></div>
       </div>
           {/* next product list  */}
-<<<<<<< HEAD:src/app/france/page.tsx
-
-          {/* <Product /> */}
-=======
           {/* <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20 ">
             {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, index: any) => {
               return (
@@ -101,7 +89,6 @@ function France({ params }: { params: any }) {
           </div>{" "} */
         }
           <Product />
->>>>>>> main:src/app/regions/[slug]/page.tsx
           {/* animation  component  */}
           <div className="p-16 flex justify-center mx-auto items-center gap-16">
         <div className=" border-b-2 h-0 w-full border-[#CB220D] border-opacity-10"></div>
@@ -119,7 +106,6 @@ function France({ params }: { params: any }) {
         </div>{" "}
         <Footer />
       </div>
-    </React.Fragment>
   );
 }
 
