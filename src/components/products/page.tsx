@@ -5,10 +5,9 @@ import Art from "../../assets/images/arat.png";
 import Image from "next/image";
 import ProductCards from "../productCard/page";
 import { ProductCardDto } from "@/types/productCard.dto";
-import { ProductList } from "@/constants/products";
 import { MarksAnim } from "@/assets/icons/Icons";
 // Temporarly Added Default Products as Apis not fully integrated
-const Product = ({ items = ProductList }: { items?: ProductCardDto[] }) => {
+const Product = ({ items }: { items?: ProductCardDto[] }) => {
   function splitToChunks(items: ProductCardDto[]): ProductCardDto[][] {
     const result: ProductCardDto[][] = [];
 

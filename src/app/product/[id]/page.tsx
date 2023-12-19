@@ -40,6 +40,18 @@ export default function ProductsOverview({
     );
   }
 
+  if (data === undefined) {
+    return (
+      <div>
+        <div className="md:mx-0 mx-4">
+          <div className="container mx-auto pt-10 pb-7">
+            <div className="flex">An error has occured ... could not fetch data from the server</div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div>
       <div className="md:mx-0 mx-4">
@@ -155,7 +167,7 @@ export default function ProductsOverview({
       {/* MindPledge end */}
 
       {/* All editions start */}
-      <AllEditions />
+      <AllEditions products={data.editions} />
       {/* All editions end */}
       {/* How to invest in wine start*/}
       <div className="md:block hidden">
