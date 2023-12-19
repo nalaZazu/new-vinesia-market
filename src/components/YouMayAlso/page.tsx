@@ -3,7 +3,6 @@ import ProductCards from "../productCard/page";
 import playvideo from "@/assets/icons/Playbtn.svg";
 import Image from "next/image";
 import { Arrows } from "@/assets/icons/Icons";
-import Product from "../products/page";
 import { ProductList } from "@/constants/products";
 export default function YouMayAlso() {
   return (
