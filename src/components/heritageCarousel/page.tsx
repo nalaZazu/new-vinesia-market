@@ -111,7 +111,7 @@ export default function HeritageCarousel() {
           {slideData?.map((item: any, i: any) => {
             return (
               <div key={i} className="px-4">
-                <ProductCards />
+                <ProductCards item={undefined} />
               </div>
             );
           })}

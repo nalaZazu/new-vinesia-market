@@ -36,15 +36,15 @@ const Invest = () => {
           <MobileFilter />
         </div>
         {/* product list  */}
-        <Product />
+        <Product items={[]}/>
 
         {/* animation  component  */}
-        <div className="p-16 flex justify-center mx-auto ">
+        {/* <div className="p-16 flex justify-center mx-auto ">
           <Image src={xmark} alt="xmark" />
-        </div>
+        </div> */}
         {/* next product list  */}
 
-        <Product />
+        {/* <Product /> */}
       </div>
       {/* desktop Newsletter*/}
       <div className="hidden sm:block">

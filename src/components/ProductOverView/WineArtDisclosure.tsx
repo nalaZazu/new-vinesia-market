@@ -48,7 +48,7 @@ export default function WineArtDisclosure() {
                 </Disclosure.Button>
                 <Disclosure.Panel>
                   <div className="px-4">
-                    <WineCard />
+                    <WineCard data={undefined} />
                   </div>
                 </Disclosure.Panel>
               </div>

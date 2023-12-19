@@ -9,8 +9,13 @@ import { Disclosure } from "@headlessui/react";
 import { ArrowUpRightIcon } from "@heroicons/react/20/solid";
 import WineArtDisclosure from "./WineArtDisclosure";
 
-const ProductTopSection = ({data}:{data:any}) => {
+const ProductTopSection = ({ data }: { data: any }) => {
   const [selectedTab, setSelectedTab] = useState(0);
+
+  if (data === undefined || data === null) {
+    return <></>
+  }
+
   return (
     <div>
       <section className="md:mx-0 mx-4">
@@ -20,12 +25,13 @@ const ProductTopSection = ({data}:{data:any}) => {
             <ProductCarousel />
           </div>
           <div className="md:hidden block">
-            <ShareCard />
+            <ShareCard data={data} />
           </div>
           {/* slider end */}
           {/* first section start */}
           <div className="md:grid md:grid-cols-1 md:pb-0 pb-5 hidden max-w-[607px]">
             <div className="flex gap-5 border-b border-orange-700 border-opacity-20">
+              { data.wine === null ? <></>:
               <div className="border-b border-orange-950 border-opacity-20 pb-5">
                 <button
                   className="text-zinc-800 text-lg font-semibold leading-relaxed"
@@ -34,9 +40,11 @@ const ProductTopSection = ({data}:{data:any}) => {
                   Wine
                 </button>
                 <p className=" text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight">
-                  LWIN: {data.lwinNumber}
+                  LWIN: {data.wine.lwinNumber}
                 </p>
               </div>
+              }
+
               <div>
                 <button
                   className="text-black text-lg font-semibold leading-relaxed"
@@ -52,7 +60,7 @@ const ProductTopSection = ({data}:{data:any}) => {
 
             {selectedTab == 0 ? (
               <>
-                <WineCard />
+                <WineCard data={data}/>
               </>
             ) : (
               <>

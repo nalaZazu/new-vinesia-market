@@ -22,8 +22,8 @@ export interface ProvideUser {
 
     getText: (text: string) => string
 
-    connectAsync: (args?: Partial<ConnectArgs>) => Promise<ConnectResult<_wagmi_core.PublicClient>>;
-    disconnectAsync: () => Promise<any>
+    // connectAsync: (args?: Partial<ConnectArgs>) => Promise<ConnectResult<_wagmi_core.PublicClient>>;
+    // disconnectAsync: () => Promise<any>
 }
 
 export function useProvideUser(): ProvideUser {
@@ -53,8 +53,8 @@ export function useProvideUser(): ProvideUser {
         isDisconnected,
         isLoading,
         connectors,
-        connectAsync,
-        disconnectAsync
+        // connectAsync,
+        // disconnectAsync
     }
 }
 

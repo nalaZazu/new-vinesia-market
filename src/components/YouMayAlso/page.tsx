@@ -36,7 +36,7 @@ export default function YouMayAlso() {
             {[1, 2, 3]?.map((item: any, index: any) => {
               return (
                 <div key={index} className="max-w-[288px] mx-auto">
-                  <ProductCards />
+                  <ProductCards item={undefined} />
                 </div>
               );
             })}

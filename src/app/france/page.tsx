@@ -56,9 +56,9 @@ function France() {
             <MobileFilter />
           </div>
           {/* product list */}
-          <Product />
-          {/* product list  */}
-          <Product />
+          <Product items={[]} />
+          {/* product list 
+          <Product /> */}
 
           {/* animation  component  */}
           <div className="p-16 flex justify-center mx-auto ">
@@ -66,7 +66,7 @@ function France() {
           </div>
           {/* next product list  */}
 
-          <Product />
+          {/* <Product /> */}
           {/* animation  component  */}
           <div className="p-16 flex justify-center mx-auto ">
             <Image src={xmark} alt="xmark" />

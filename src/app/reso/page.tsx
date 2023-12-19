@@ -72,17 +72,8 @@ function Reso() {
             <MobileFilter />
           </div>
           {/* product list */}
-          <Product />
-          {/* product list  */}
-          <Product />
+          <Product items={[]} />
 
-          {/* animation  component  */}
-          <div className="p-16 flex justify-center mx-auto ">
-            <Image src={xmark} alt="xmark" />
-          </div>
-          {/* next product list  */}
-
-          <Product />
           {/* animation  component  */}
           <div className="p-16 flex justify-center mx-auto ">
             <Image src={xmark} alt="xmark" />

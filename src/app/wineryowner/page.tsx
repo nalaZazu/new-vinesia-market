@@ -70,7 +70,7 @@ export default function WineryOwner() {
 
         {/* next product list  */}
 
-        <Product />
+        <Product items={[]} />
         {/* animation  component  */}
         <div className="p-16 flex justify-center mx-auto ">
           <Image src={xmark} alt="xmark" />

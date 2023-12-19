@@ -4,8 +4,13 @@ import ModalContainer from "./ModalContainer";
 import { BiddingSection } from "@/constants/accrodion";
 import { BillingInput } from "./Components";
 
-export default function ShareCard() {
+export default function ShareCard({ data }: { data: any }) {
   const [visible, setVisible] = useState(false);
+
+  if (data === undefined) {
+    return <></>
+
+  }
 
   return (
     <React.Fragment>
@@ -168,10 +173,10 @@ export default function ShareCard() {
               />
             </svg>
             <p className="text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight">
-              999
+              {data.starred}
             </p>
           </div>
-          <div className="md:flex gap-2 items-center md:space-y-0 space-y-4">
+          {/* <div className="md:flex gap-2 items-center md:space-y-0 space-y-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -189,7 +194,7 @@ export default function ShareCard() {
             <p className="text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight">
               999
             </p>
-          </div>
+          </div> */}
           <div className="hidden md:block">
             <button
               type="button"

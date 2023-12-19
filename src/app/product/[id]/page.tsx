@@ -22,7 +22,7 @@ const fetcher = (arg: string) => fetch(arg).then((res) => res.json())
 
 export default function ProductsOverview({ params }: { params: { id: string } }) {
 
-  const { data, error, isLoading } = useSWR(`https://apitest.vinesia.com/products/overview/${params.id}`, fetcher)
+  const { data, error, isLoading } = useSWR(`${process.env.NEXT_PUBLIC_API_ADDRESS}products/overview/${params.id}`, fetcher)
 
   if (isLoading) {
     return (
@@ -46,9 +46,9 @@ export default function ProductsOverview({ params }: { params: { id: string } })
             <div className="basis-1/12 hidden md:block"></div>
             <div className="md:basis-11/12 basis-full max-w-[990px]">
               <h1 className="text-zinc-800 md:text-7xl md:leading-[84px] text-4xl font-normal leading-[42px] tracking-[-1.44px]">
-                {data.wine.name} | {data.wine.vintage}
+                {data.name}
               </h1>
-              {data.art.name !== undefined ?
+              {data.art?.name !== undefined ?
                 <p className="text-zinc-800 text-base font-normal leading-snug pt-2 ">
                   With Art of Lola Designer Fun
                 </p> : <></>}
@@ -109,7 +109,7 @@ export default function ProductsOverview({ params }: { params: { id: string } })
             <div className="md:basis-11/12 basis-full ">
               <div className="bg-[#F7EFDF] pt-10 pb-20 ">
                 <div className="md:max-w-[1350px] mx-auto">
-                  <ProductTopSection data={data.wine} />
+                  <ProductTopSection data={data} />
                 </div>
               </div>
             </div>

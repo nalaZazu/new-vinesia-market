@@ -27,7 +27,7 @@ export default function Home() {
               <HeritageCarousel />
             </div>
             <div className="block md:hidden">
-              <ProductCards />
+              <ProductCards item={undefined} />
             </div>
             <div className="pt-14 md:pt-20 pb-20 md:pb-40">
               <VideoBanner />
