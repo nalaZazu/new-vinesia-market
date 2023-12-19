@@ -1,12 +1,12 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import france from "../../assets/images/mobilefrance.png";
-import germany from "../../assets/images/germany.png";
-import switzerland from "../../assets/images/Switzerland.png";
-import italy from "../../assets/images/italy.png";
-import usa from "../../assets/images/usa.png";
-import arrow from "../../assets/icons/Long arrow Down.svg";
+// import france from "../../assets/images/mobilefrance.png";
+// import germany from "../../assets/images/germany.png";
+// import switzerland from "../../assets/images/Switzerland.png";
+// import italy from "../../assets/images/italy.png";
+// import usa from "../../assets/images/usa.png";
+import arrow from "../../assets/icons/LongarrowDown.svg";
 import Link from "next/link";
 import Popup from "../popup/page";
 import {

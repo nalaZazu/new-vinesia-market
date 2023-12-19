@@ -3,6 +3,7 @@ import React from "react";
 import ProductCards from "../productCard/page";
 import { SearchIcon } from "@/assets/icons/Icons";
 import TabButton from "@/common/TabButton";
+import Product from "../products/page";
 
 export default function InvestmentCard() {
   const countryName = ["ALL", "CURRENTLY SELLING", "NOT CURRENtly SELLING"];
@@ -31,7 +32,7 @@ export default function InvestmentCard() {
           <TabButton data={countryName} />
         </div>
         <div className="flex justify-between items-center gap-4">
-          <div className="flex border border-stone-400 rounded-full items-center px-3">
+          <div className="flex border border-stone-400 rounded-full items-center px-3 gap-2">
             <div>
               <SearchIcon fill={"#000"} />
             </div>
@@ -54,7 +55,7 @@ export default function InvestmentCard() {
           </div>
         </div>
       </div>
-      <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
+      {/* <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
         {[1, 2, 3, 4, 5, 6]?.map((item: any, i: any) => {
           return (
             <div key={i}>
@@ -62,7 +63,8 @@ export default function InvestmentCard() {
             </div>
           );
         })}
-      </div>
+      </div> */}
+      <Product />
     </div>
   );
 }

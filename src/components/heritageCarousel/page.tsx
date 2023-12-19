@@ -8,10 +8,10 @@ import { NextIcon, NextIcon2, PrevIcon } from "../../assets/icons/Icons";
 import winebotel1 from "../../assets/images/winebotel1.png";
 import Art from "../../assets/images/arat.png";
 import ProductCards from "../productCard/page";
+import { ProductList } from "@/constants/products";
 
 export default function HeritageCarousel() {
   const [currentslide, setCurrentSlide] = useState(0);
-  const slideData = [0, 1, 2, 3, 4, 5, 6, 8, 9];
   const sliderSettings = {
     customPaging: function () {
       return (
@@ -42,7 +42,7 @@ export default function HeritageCarousel() {
             <div className="productcarousel  z-50">
               <div
                 className={`" text-black w-16 h-12 flex items-center rounded-full border justify-center   ${
-                  currentslide == slideData?.length
+                  currentslide == ProductList?.length
                     ? "border-[#BF4D2020]"
                     : "border-orange-700"
                 }`}
@@ -50,7 +50,7 @@ export default function HeritageCarousel() {
                 <div>
                   <NextIcon
                     fill={
-                      currentslide == slideData?.length - 2
+                      currentslide == ProductList?.length - 2
                         ? "#BF4D2020"
                         : "#BF4D20"
                     }
@@ -88,7 +88,7 @@ export default function HeritageCarousel() {
       <div className="productcarousel  z-50">
         <div
           className={`" text-black w-16 h-12 flex items-center rounded-full border justify-center   ${
-            currentslide == slideData?.length - 1
+            currentslide == ProductList?.length - 1
               ? "border-[#BF4D2020] pointer-events-none disabled"
               : "border-orange-700"
           }`}
@@ -96,7 +96,9 @@ export default function HeritageCarousel() {
           <div>
             <NextIcon
               fill={
-                currentslide == slideData?.length - 1 ? "#BF4D2020" : "#BF4D20"
+                currentslide == ProductList?.length - 1
+                  ? "#BF4D2020"
+                  : "#BF4D20"
               }
             />
           </div>
@@ -108,10 +110,10 @@ export default function HeritageCarousel() {
     <div>
       <div className=" container mx-auto lg:max-w-[928px] md:max-w-[600px]">
         <Slider {...sliderSettings} className="invest_carousel z-0">
-          {slideData?.map((item: any, i: any) => {
+          {ProductList?.map((item: any, i: any) => {
             return (
               <div key={i} className="px-4">
-                <ProductCards item={undefined} />
+                <ProductCards item={item} />
               </div>
             );
           })}

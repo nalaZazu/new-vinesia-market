@@ -5,7 +5,7 @@ import Image from "next/image";
 import { AlertCircle, Arrows } from "@/assets/icons/Icons";
 import law from "@/assets/icons/law.svg";
 import esstinal from "@/assets/icons/esstinal.svg";
-import avatar from "@/assets/images/avatar Base.png";
+import avatar from "@/assets/images/avatarBase.png";
 export default function AssetDetails() {
   const [selected, setSelected] = useState(0);
   const list = ["All", "Transactions", "Bid", "Asks"];

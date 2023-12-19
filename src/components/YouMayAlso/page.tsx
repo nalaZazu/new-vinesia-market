@@ -3,6 +3,7 @@ import ProductCards from "../productCard/page";
 import playvideo from "@/assets/icons/Playbtn.svg";
 import Image from "next/image";
 import { Arrows } from "@/assets/icons/Icons";
+import Product from "../products/page";
 export default function YouMayAlso() {
   return (
     <div>
@@ -33,13 +34,14 @@ export default function YouMayAlso() {
               </div>
             </div>
 
-            {[1, 2, 3]?.map((item: any, index: any) => {
+            {/* {[1, 2, 3]?.map((item: any, index: any) => {
               return (
                 <div key={index} className="max-w-[288px] mx-auto">
                   <ProductCards item={undefined} />
                 </div>
               );
-            })}
+            })} */}
+            <Product />
           </div>
         </div>
       </section>

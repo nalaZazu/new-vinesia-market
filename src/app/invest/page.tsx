@@ -24,6 +24,8 @@ const fetcher = async (url: string, payload?: string) => {
 
   return fetch(url, options).then((res) => res.json())
 }
+import { MarksAnim, Xmark } from "@/assets/icons/Icons";
+import ProductCards from "@/components/productCard/page";
 
 const Invest = () => {
   const [tags, setTags] = useState<String[]>([])
@@ -36,10 +38,10 @@ const Invest = () => {
       {/* {`${process.env.NEXT_PUBLIC_API_ADDRESS}products/search/`} */}
       {/* {JSON.stringify(error)} */}
       {/* {JSON.stringify(data)} */}
+    <div>
       {/* <Headersecond /> */}
       <div className=" pt-6 container mx-auto px-3">
         <InvestBread />
-
         <div className=" mt-9 hidden md:block">
           <h2 className=" text-primary text-[144px] font-normal ">Invest</h2>
         </div>
@@ -49,7 +51,6 @@ const Invest = () => {
             Invest
           </h2>
         </div>
-
         {/* dropdown */}
         <div className="hidden md:block">
           <Dropdown />
@@ -63,7 +64,16 @@ const Invest = () => {
         <div className="md:block hidden">
           <Product items={data?.data} />
         </div>
+          {/* animation  component  */}
+          <div className="p-16 flex justify-center mx-auto items-center gap-10">
+            <div className=" border-b-[1px] h-0 w-full border-[#CB220D] border-opacity-10"></div>
+            <MarksAnim fill="#CB220D" />
+            <div className="border-b-[1px] h-0 w-full border-[#CB220D]  border-opacity-10"></div>
+          </div>
+        </div>
 
+        {/* next product list  */}
+        <Product  items={data?.data} />
       </div>
       {/* desktop Newsletter*/}
       <div className="hidden sm:block">

@@ -119,7 +119,7 @@ export default function Winary() {
                         />
                       </div>
                       <div className="mt-40">
-                        <ProductCards item={undefined} />
+                        {/* <ProductCards /> */}
                       </div>
                     </Disclosure.Panel>
                   </div>
