@@ -29,7 +29,7 @@ const Product = ({ items }: { items?: ProductCardDto[] }) => {
             <>
               <div
                 key={i}
-                className="container mx-auto grid grid-cols-1 md:grid-cols-4 mt-16 gap-x-6 gap-y-10"
+                className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20"
               >
                 {item === undefined ? (
                   <></>
