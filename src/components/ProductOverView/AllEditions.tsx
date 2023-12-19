@@ -74,6 +74,15 @@ export default function AllEditions({
         </div>
         {/* desktop */}
         <div className="hidden sm:block ">
+          {/* <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-8 px-4 container max-w-[1248px] mx-auto">
+            {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, i: any) => {
+              return (
+                <div key={i} className=" max-w-[288px] mx-auto">
+                  <ProductCard />
+                </div>
+              );
+            })}
+          </div> */}
           <Product />
         </div>
         {/* mobile */}
@@ -82,7 +91,7 @@ export default function AllEditions({
             {[1, 2]?.map((item: any, i: any) => {
               return (
                 <div key={i} className="pb-6">
-                  <ProductCard />
+                  <ProductCard item={undefined} />
                 </div>
               );
             })}

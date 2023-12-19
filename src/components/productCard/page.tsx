@@ -5,7 +5,7 @@ import Art from "../../assets/images/arat.png";
 import Link from "next/link";
 import { ProductCardDto } from "@/types/productCard.dto";
 
-export default function ProductCards({item}: {item: ProductCardDto}) {
+export default function ProductCards({item}: {item: ProductCardDto | undefined}) {
   if (item === undefined) {
     return <></>
   }

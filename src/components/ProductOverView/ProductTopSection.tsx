@@ -7,8 +7,13 @@ import ProductCarousel from "./ProductOverviewCarousel";
 import ShareCard from "@/common/ShareCard";
 import WineArtDisclosure from "./WineArtDisclosure";
 
-const ProductTopSection = ({data}:{data:any}) => {
+const ProductTopSection = ({ data }: { data: any }) => {
   const [selectedTab, setSelectedTab] = useState(0);
+
+  if (data === undefined || data === null) {
+    return <></>;
+  }
+
   return (
     <div>
       <section className="md:mx-0 mx-4">
@@ -18,39 +23,45 @@ const ProductTopSection = ({data}:{data:any}) => {
             <ProductCarousel />
           </div>
           <div className="md:hidden block">
-            <ShareCard />
+            <ShareCard data={data} />
           </div>
           {/* slider end */}
           {/* first section start */}
           <div className="md:grid md:grid-cols-1 md:pb-0 pb-5 hidden max-w-[607px]">
             <div className="flex gap-5 border-b border-orange-700 border-opacity-20">
-              <div className="border-b-2 border-orange-700   pb-5 min-w-[180px]">
-                <button
-                  className="text-zinc-800 text-lg font-semibold leading-relaxed "
-                  onClick={() => setSelectedTab(0)}
-                >
-                  Wine
-                </button>
-                <p className=" text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight">
-                  LWIN: {data.lwinNumber}
-                </p>
-              </div>
-              <div className="min-w-[180px]">
-                <button
-                  className="text-black text-lg font-semibold leading-relaxed"
-                  onClick={() => setSelectedTab(1)}
-                >
-                  Art
-                </button>
-                <p className=" text-black text-xs font-normal uppercase leading-3 tracking-tight">
-                  Artist: Lola Designer Fun...
-                </p>
-              </div>
+              {data.wine === null ? (
+                <></>
+              ) : (
+                <>
+                  <div className="border-b border-orange-950 border-opacity-20 pb-5">
+                    <button
+                      className="text-zinc-800 text-lg font-semibold leading-relaxed "
+                      onClick={() => setSelectedTab(0)}
+                    >
+                      Wine
+                    </button>
+                    <p className=" text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight">
+                      LWIN: {data.wine.lwinNumber}
+                    </p>
+                  </div>
+                  <div className="min-w-[180px]">
+                    <button
+                      className="text-black text-lg font-semibold leading-relaxed"
+                      onClick={() => setSelectedTab(1)}
+                    >
+                      Art
+                    </button>
+                    <p className=" text-black text-xs font-normal uppercase leading-3 tracking-tight">
+                      Artist: Lola Designer Fun...
+                    </p>
+                  </div>
+                </>
+              )}
             </div>
 
             {selectedTab == 0 ? (
               <>
-                <WineCard />
+                <WineCard data={data} />
               </>
             ) : (
               <>
