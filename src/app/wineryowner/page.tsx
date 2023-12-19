@@ -71,7 +71,7 @@ export default function WineryOwner() {
 
         {/* next product list  */}
 
-        <Product />
+        <Product items={[]} />
         {/* animation  component  */}
         <div className="py-16 flex justify-center mx-auto items-center gap-10">
           <div className=" border-b-[1px] h-0 w-full border-[#CB220D] border-opacity-10"></div>

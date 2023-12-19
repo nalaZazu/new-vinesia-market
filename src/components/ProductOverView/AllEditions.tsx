@@ -79,7 +79,7 @@ export default function AllEditions({
             {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, i: any) => {
               return (
                 <div key={i} className=" max-w-[288px] mx-auto">
-                  <ProductCard />
+                  <ProductCard item={undefined} />
                 </div>
               );
             })}
@@ -92,7 +92,7 @@ export default function AllEditions({
             {[1, 2]?.map((item: any, i: any) => {
               return (
                 <div key={i} className="pb-6">
-                  <ProductCard />
+                  <ProductCard item={undefined} />
                 </div>
               );
             })}

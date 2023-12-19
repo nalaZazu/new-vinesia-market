@@ -15,7 +15,6 @@ function France({ params }: { params: any }) {
   const { slug } = params;
 
   return (
-    <React.Fragment>
       <div className=" absolute top-0 right-0 left-0 -z-10">
         <div className="w-full md:h-[744px] h-[620px] bg-no-repeat bg-cover bg-center bg-[url('https://i.ibb.co/hLLYBjr/winery-bg.png')] relative">
           {/* BreadCrumb start */}
@@ -107,7 +106,6 @@ function France({ params }: { params: any }) {
         </div>{" "}
         <Footer />
       </div>
-    </React.Fragment>
   );
 }
 
