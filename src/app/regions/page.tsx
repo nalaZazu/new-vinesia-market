@@ -13,6 +13,7 @@ import Image from "next/image";
 import Card from "@/components/card/page";
 import lineregion from "@/assets/icons/lineregion.svg";
 import { MarksAnim } from "@/assets/icons/Icons";
+import ProductCards from "@/components/productCard/page";
 
 export default function Regions() {
   return (
@@ -25,7 +26,6 @@ export default function Regions() {
           <Image src={lineregion} alt="image" />
         </div>
         <Card />
-
         {/* here is next list */}
         {/* dropdown */}
         <div className="hidden md:block">
@@ -36,6 +36,34 @@ export default function Regions() {
         <div className="md:hidden block">
           <MobileFilter />
         </div>
+        {/* product list  */}
+        <Product />
+        {/* <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20 ">
+          {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, index: any) => {
+            return (
+              <div key={index}>
+                <ProductCards />
+              </div>
+            );
+          })}
+        </div>{" "} */}
+        {/* animation  component  */}
+        <div className="p-16 flex justify-center mx-auto items-center gap-16">
+        <div className=" border-b-2 h-0 w-full border-[#CB220D] border-opacity-10"></div>
+        <MarksAnim fill="#CB220D" />
+        <div className="border-b-2 h-0 w-full border-[#CB220D]  border-opacity-10"></div>
+      </div>
+        {/* next product list  */}
+        <Product />
+        {/* <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20 ">
+          {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, index: any) => {
+            return (
+              <div key={index}>
+                <ProductCards />
+              </div>
+            );
+          })}
+        </div> */}
       </div>
 
       {/* product list  */}

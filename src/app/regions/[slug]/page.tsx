@@ -1,15 +1,18 @@
 import Dropdown from "@/common/DropDown/page";
 import VerticalBreadCrumb from "@/common/verticalBreadcrumb/page";
 import React from "react";
-import MobileFilter from "../invest/moibleview/page";
 import Product from "@/components/products/page";
 import Newsletter from "@/components/newsletter/page";
 import Footer from "@/components/footer/page";
-import xmark from "../../assets/icons/x-mark-anim.svg";
+import xmark from "../../../assets/icons/x-mark-anim.svg";
 import Image from "next/image";
 import NewsletterMobile from "@/components/newsletter/MobileView";
+import MobileFilter from "@/app/invest/moibleview/page";
+import ProductCards from "@/components/productCard/page";
 
-function France() {
+function France({ params }: { params: any }) {
+  const { slug } = params;
+
   return (
     <React.Fragment>
       <div className=" absolute top-0 right-0 left-0 -z-10">
@@ -18,8 +21,8 @@ function France() {
           <VerticalBreadCrumb />
           {/* BreadCrumb end */}
           <div className="flex justify-center items-center h-[600px]">
-            <h1 className="text-center text-zinc-800 md:text-[144px] text-6xl font-normal">
-              France
+            <h1 className="text-center text-zinc-800 md:text-[144px] text-6xl font-normal capitalize">
+              {slug}
             </h1>
           </div>
         </div>
@@ -56,17 +59,30 @@ function France() {
             <MobileFilter />
           </div>
           {/* product list */}
-          <Product />
+          <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20 ">
+            {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, index: any) => {
+              return (
+                <div key={index}>
+                  <ProductCards />
+                </div>
+              );
+            })}
+          </div>{" "}
           {/* product list  */}
-          <Product />
-
           {/* animation  component  */}
           <div className="p-16 flex justify-center mx-auto ">
             <Image src={xmark} alt="xmark" />
           </div>
           {/* next product list  */}
-
-          <Product />
+          <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20 ">
+            {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, index: any) => {
+              return (
+                <div key={index}>
+                  <ProductCards />
+                </div>
+              );
+            })}
+          </div>{" "}
           {/* animation  component  */}
           <div className="p-16 flex justify-center mx-auto ">
             <Image src={xmark} alt="xmark" />

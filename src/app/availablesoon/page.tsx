@@ -7,44 +7,60 @@ import MobileFilter from "./moibleview/page";
 import Newsletter from "@/components/newsletter/page";
 import Footer from "@/components/footer/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
-import Product from "@/components/products/page";
+import ProductCards from "@/components/productCard/page";
 
-const Invest = () => {
+const AvailableSoon = () => {
   return (
     <div>
       {/* <Headersecond /> */}
       <div className=" pt-6 container mx-auto px-3">
         <InvestBread />
-
         <div className=" mt-9 hidden md:block">
-          <h2 className=" text-primary text-[144px] font-normal ">Invest</h2>
+          <h2 className=" text-primary text-[144px] font-normal ">
+            AvailableSoon
+          </h2>
         </div>
         {/* for mobileView */}
         <div className="mt-9 md:hidden block">
-          <h2 className=" text-6xl font-normal leading-[68px] text-primary">
-            Invest
+          <h2 className=" text-zinc-800 text-6xl font-normal   leading-[68px]">
+            AvailableSoon
           </h2>
         </div>
-
         {/* dropdown */}
         <div className="hidden md:block">
           <Dropdown />
-          <div className="border border-secondary mt-12"></div>
+          <div className=" border-red-700 border-[0.5px]  mt-12"></div>
         </div>
         {/* Mobile view */}
         <div className="md:hidden block">
           <MobileFilter />
         </div>
         {/* product list  */}
-        <Product />
-
-        {/* animation  component  */}
-        <div className="p-16 flex justify-center mx-auto ">
-          <Image src={xmark} alt="xmark" />
+        <div className="md:block hidden">
+          <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20">
+            {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, index: any) => {
+              return (
+                <div key={index}>
+                  <ProductCards />
+                </div>
+              );
+            })}
+          </div>
+          {/* animation  component  */}
+          <div className="p-16 flex justify-center mx-auto ">
+            <Image src={xmark} alt="xmark" />
+          </div>
         </div>
         {/* next product list  */}
-
-        <Product />
+        <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20 ">
+          {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, index: any) => {
+            return (
+              <div key={index}>
+                <ProductCards />
+              </div>
+            );
+          })}
+        </div>
       </div>
       {/* desktop Newsletter*/}
       <div className="hidden sm:block">
@@ -59,4 +75,4 @@ const Invest = () => {
   );
 };
 
-export default Invest;
+export default AvailableSoon;

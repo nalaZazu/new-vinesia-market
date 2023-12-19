@@ -7,11 +7,11 @@ import investment1 from "@/assets/images/investment-1.png";
 import investment2 from "@/assets/images/investment-2.png";
 import investment3 from "@/assets/images/investment-3.png";
 export const CaradRegion = [
-  { id: 1, name: "France", image: france, href: "/region/france" },
-  { id: 2, name: "Germany", image: germany, href: "/region/germany" },
-  { id: 3, name: "italy", image: italy, href: "/region/italy" },
-  { id: 4, name: "USA", image: usa, href: "/region/usa" },
-  { id: 5, name: "Switzerland", image: switzerland, href: "/region/switzerland" },
+  { id: 1, name: "France", image: france, href: "/regions/france" },
+  { id: 2, name: "Germany", image: germany, href: "/regions/germany" },
+  { id: 3, name: "italy", image: italy, href: "/regions/italy" },
+  { id: 4, name: "USA", image: usa, href: "/regions/usa" },
+  { id: 5, name: "Switzerland", image: switzerland, href: "/regions/switzerland" },
 ];
 
 

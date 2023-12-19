@@ -1,16 +1,19 @@
 import Dropdown from "@/common/DropDown/page";
 // import VerticalBreadCrumb from "@/common/verticalBreadcrumb/page";
 import React from "react";
-import MobileFilter from "../invest/moibleview/page";
+import MobileFilter from "../../invest/moibleview/page";
 import Product from "@/components/products/page";
 import Newsletter from "@/components/newsletter/page";
 import Footer from "@/components/footer/page";
-import xmark from "../../assets/icons/x-mark-anim.svg";
+import xmark from "../../../assets/icons/x-mark-anim.svg";
 import Image from "next/image";
 import NewsletterMobile from "@/components/newsletter/MobileView";
 import VerticalBreadCrumb from "@/common/verticalBreadcrumb/page";
+import ProductCards from "@/components/productCard/page";
 
-function Reso() {
+function Reso({ params }: { params: any }) {
+  const { slug } = params;
+
   return (
     <React.Fragment>
       <div className=" absolute -z-10 top-0 left-0 right-0 ">
@@ -18,7 +21,7 @@ function Reso() {
           <div className="container mx-auto px-6 md:px-4 relative ">
             {/* BreadCrumb start */}
 
-            <VerticalBreadCrumb />
+            {/* <VerticalBreadCrumb /> */}
 
             {/* BreadCrumb end */}
             <div className="flex md:items-end items-start container mx-auto md:h-[644px] md:ps-40 ps-0 pt-48">
@@ -72,16 +75,30 @@ function Reso() {
             <MobileFilter />
           </div>
           {/* product list */}
-          <Product />
+          <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20 ">
+            {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, index: any) => {
+              return (
+                <div key={index}>
+                  <ProductCards />
+                </div>
+              );
+            })}
+          </div>{" "}
           {/* product list  */}
-          <Product />
-
+          <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20 ">
+            {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, index: any) => {
+              return (
+                <div key={index}>
+                  <ProductCards />
+                </div>
+              );
+            })}
+          </div>{" "}
           {/* animation  component  */}
           <div className="p-16 flex justify-center mx-auto ">
             <Image src={xmark} alt="xmark" />
           </div>
           {/* next product list  */}
-
           <Product />
           {/* animation  component  */}
           <div className="p-16 flex justify-center mx-auto ">
