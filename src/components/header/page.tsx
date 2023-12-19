@@ -70,7 +70,7 @@ export default function Header() {
     pathName === "/" ||
     (size.width > 767 && pathName == "/signup") ||
     pathName === "/wacollections" ||
-    pathName === "/reso" ||
+    pathName === "/wacollections/reso" ||
     pathName === "/limitedcollections";
   const getTheme = (pathName: string) =>
     isDark(pathName) ? themes.Dark : themes.Light;
@@ -150,15 +150,14 @@ export default function Header() {
 
             {/* Menu Icons, Search, User, Cart  */}
             <div className="flex items-center gap-5 md:col-span-5 ms-auto">
-
-               <div className="hidden md:block md:order-1">
+              <div className="hidden md:block md:order-1">
                 <div
                   className={`w-10 h-10 rounded-full border border-opacity-20 justify-center items-center gap-2.5 inline-flex ${theme.iconBorder}`}
                 >
                   <SearchIcon fill={theme.iconFill} />
                 </div>
               </div>
-               {/* user Icon */}
+              {/* user Icon */}
               <div
                 className={`cursor-pointer w-10 h-10 rounded-full border order-2 border-opacity-20 justify-center items-center gap-2.5 inline-flex ${theme.iconBorder}`}
                 onClick={navUser}

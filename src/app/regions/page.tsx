@@ -49,40 +49,19 @@ export default function Regions() {
         </div>{" "} */}
         {/* animation  component  */}
         <div className="p-16 flex justify-center mx-auto items-center gap-16">
-        <div className=" border-b-2 h-0 w-full border-[#CB220D] border-opacity-10"></div>
-        <MarksAnim fill="#CB220D" />
-        <div className="border-b-2 h-0 w-full border-[#CB220D]  border-opacity-10"></div>
-      </div>
+          <div className=" border-b-2 h-0 w-full border-[#CB220D] border-opacity-10"></div>
+          <MarksAnim fill="#CB220D" />
+          <div className="border-b-2 h-0 w-full border-[#CB220D]  border-opacity-10"></div>
+        </div>
         {/* next product list  */}
         <Product />
-        {/* <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20 ">
-          {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, index: any) => {
-            return (
-              <div key={index}>
-                <ProductCards />
-              </div>
-            );
-          })}
-        </div> */}
-      </div>
 
-      {/* product list  */}
-      <Product />
-      {/* animation  component  */}
-
-      <div className="p-16 flex justify-center mx-auto items-center gap-16">
-        <div className=" border-b-2 h-0 w-full border-[#CB220D] border-opacity-10"></div>
-        <MarksAnim fill="#CB220D" />
-        <div className="border-b-2 h-0 w-full border-[#CB220D]  border-opacity-10"></div>
-      </div>
-      {/* next product list  */}
-
-      <Product />
-
-      <div className="p-16 flex justify-center mx-auto items-center gap-16">
-        <div className=" border-b-2 h-0 w-full border-[#CB220D] border-opacity-10"></div>
-        <MarksAnim fill="#CB220D" />
-        <div className="border-b-2 h-0 w-full border-[#CB220D]  border-opacity-10"></div>
+        <div className="p-16 flex justify-center mx-auto items-center gap-16">
+          <div className=" border-b-2 h-0 w-full border-[#CB220D] border-opacity-10"></div>
+          <MarksAnim fill="#CB220D" />
+          <div className="border-b-2 h-0 w-full border-[#CB220D]  border-opacity-10"></div>
+        </div>
+       
       </div>
 
       {/* desktop Newsletter*/}

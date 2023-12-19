@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import InvestBread from "@/common/InvestBread";
 import xmark from "../../assets/icons/x-mark-anim.svg";
@@ -14,16 +14,16 @@ import useSWR from "swr";
 
 const fetcher = async (url: string, payload?: string) => {
   const options = {
-    method: 'POST',
+    method: "POST",
     ...(payload && { body: payload }),
     headers: {
       accept: "application/json",
       "Content-Type": "application/json",
     },
-  }
+  };
 
-  return fetch(url, options).then((res) => res.json())
-}
+  return fetch(url, options).then((res) => res.json());
+};
 import { MarksAnim, Xmark } from "@/assets/icons/Icons";
 import ProductCards from "@/components/productCard/page";
 
@@ -34,7 +34,7 @@ const Invest = () => {
 
 
   return (
-    <div >
+    <div>
       {/* {`${process.env.NEXT_PUBLIC_API_ADDRESS}products/search/`} */}
       {/* {JSON.stringify(error)} */}
       {/* {JSON.stringify(data)} */}

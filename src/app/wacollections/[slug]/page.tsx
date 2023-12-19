@@ -105,8 +105,10 @@ function Reso({ params }: { params: any }) {
           {/* next product list  */}
           <Product />
           {/* animation  component  */}
-          <div className="p-16 flex justify-center mx-auto ">
-            <Image src={xmark} alt="xmark" />
+          <div className="p-16 flex justify-center mx-auto items-center gap-10">
+            <div className=" border-b-[1px] h-0 w-full border-[#CB220D] border-opacity-10"></div>
+            <MarksAnim fill="#CB220D" />
+            <div className="border-b-[1px] h-0 w-full border-[#CB220D]  border-opacity-10"></div>
           </div>
         </div>
         {/* desktop Newsletter*/}
