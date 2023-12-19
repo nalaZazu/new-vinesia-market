@@ -177,7 +177,14 @@ export default function ProductsOverview({
         <AboutWinerySection />
       </div>
       {/* you main also like section */}
-      <YouMayAlso />
+      <div className=" text-center">
+        <div className=" pb-12">
+          <h1 className=" text-4xl font-light text-[#2F222B]">
+            You may also like
+          </h1>
+        </div>
+        <YouMayAlso />
+      </div>
       {/* About Winery Château Le Pin end */}
       <div className="md:block hidden">
         <Newsletter />

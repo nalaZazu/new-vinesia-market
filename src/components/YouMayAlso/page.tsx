@@ -34,7 +34,7 @@ export default function YouMayAlso() {
               </div>
             </div>
 
-            {ProductList?.slice(1,4)?.map((item: any, index: any) => {
+            {ProductList?.slice(0, 3)?.map((item: any, index: any) => {
               return (
                 <div key={index} className="max-w-[288px] mx-auto">
                   <ProductCards item={item} />
