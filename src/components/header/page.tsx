@@ -64,8 +64,8 @@ const getMenuItem = (pathName: string) => {
 };
 
 export default function Header() {
-  const tempSize = useWindowSize();
-  const [size, setSize] = useState({ width: 0, height: 0 });
+  const size = useWindowSize();
+
   const isDark = (pathName: string) =>
     pathName === "/" ||
     (size.width > 767 && pathName == "/signup") ||
@@ -87,10 +87,7 @@ export default function Header() {
     setTheme(getTheme(pathName));
     setTopSelected(getTopMenuItem(pathName));
     setSelected(getMenuItem(pathName));
-  }, [pathName, tempSize]);
-  useEffect(() => {
-    setSize(tempSize);
-  }, [tempSize]);
+  }, [pathName, size]);
 
   function select(item: MenuItem) {
     setTopSelected(item);
