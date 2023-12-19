@@ -53,7 +53,7 @@ export default function WineCard({data}: {data: any}) {
               <p>Type </p>
               <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20 mb:block hidden"></div>
               <p className="text-zinc-800 text-base font-normal leading-snug">
-                {data.wine.metadata.color}, {data.wine.metadata.percentage}
+                {data.wine?.metadata?.color}, {data.wine?.metadata?.percentage}
               </p>
             </div>
             <div className="md:flex gap-4 items-center text-stone-500 text-base font-normal leading-snug space-y-1">
