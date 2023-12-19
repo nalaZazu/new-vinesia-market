@@ -83,7 +83,7 @@ export default function WineCard({data}: {data: any}) {
                     {item.critic}
                   </p>
                   <div className="flex items-end">
-                    <p className=" text-zinc-800 text-[21px] font-lightw-6 h-6 leading-[29px] tracking-wide">
+                    <p className=" text-[#906447] text-[21px] font-lightw-6 h-6 leading-[29px] tracking-wide">
                       {item.rating}
                     </p>
                     <span className=" text-[#BCA291] text-xs font-normal uppercase leading-3 tracking-tight">

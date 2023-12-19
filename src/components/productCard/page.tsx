@@ -17,6 +17,7 @@ export default function ProductCards({item}: {item: ProductCardDto | undefined})
         <div className="max-w-[288px] md:h-[674px] h-[674px] mx-auto">
           <div className="flex flex-col items-center md:gap-8 gap-5 px-5">
             <div className="relative">
+              
               <Image
                 src={winebotel}
                 alt="Picture of the author"

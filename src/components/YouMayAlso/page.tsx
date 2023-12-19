@@ -4,6 +4,7 @@ import playvideo from "@/assets/icons/Playbtn.svg";
 import Image from "next/image";
 import { Arrows } from "@/assets/icons/Icons";
 import Product from "../products/page";
+import { ProductList } from "@/constants/products";
 export default function YouMayAlso() {
   return (
     <div>
@@ -34,14 +35,14 @@ export default function YouMayAlso() {
               </div>
             </div>
 
-            {/* {[1, 2, 3]?.map((item: any, index: any) => {
+            {ProductList?.slice(1,4)?.map((item: any, index: any) => {
               return (
                 <div key={index} className="max-w-[288px] mx-auto">
-                  <ProductCards item={undefined} />
+                  <ProductCards item={item} />
                 </div>
               );
-            })} */}
-            <Product />
+            })}
+            {/* <Product /> */}
           </div>
         </div>
       </section>

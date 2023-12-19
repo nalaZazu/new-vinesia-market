@@ -14,12 +14,19 @@ import Newsletter from "@/components/newsletter/page";
 import Footer from "@/components/footer/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
 import useSWR from "swr";
+import YouMayAlso from "@/components/YouMayAlso/page";
 
 const fetcher = (arg: string) => fetch(arg).then((res) => res.json());
 
-export default function ProductsOverview({ params }: { params: { id: string } }) {
-
-  const { data, error, isLoading } = useSWR(`${process.env.NEXT_PUBLIC_API_ADDRESS}products/overview/${params.id}`, fetcher)
+export default function ProductsOverview({
+  params,
+}: {
+  params: { id: string };
+}) {
+  const { data, error, isLoading } = useSWR(
+    `${process.env.NEXT_PUBLIC_API_ADDRESS}products/overview/${params.id}`,
+    fetcher
+  );
 
   if (isLoading) {
     return (
@@ -43,8 +50,8 @@ export default function ProductsOverview({ params }: { params: { id: string } })
               <h1 className="text-zinc-800 md:text-7xl md:leading-[84px] text-4xl font-normal leading-[42px] tracking-[-1.44px]">
                 {data.name}
               </h1>
-              {data.art.name !== undefined ?
-                (<p className="text-zinc-800 text-base font-normal leading-snug pt-2 ">
+              {data.art.name !== undefined ? (
+                <p className="text-zinc-800 text-base font-normal leading-snug pt-2 ">
                   With Art of Lola Designer Fun
                 </p>
               ) : (
@@ -169,7 +176,8 @@ export default function ProductsOverview({ params }: { params: { id: string } })
       <div className="md:block hidden">
         <AboutWinerySection />
       </div>
-
+      {/* you main also like section */}
+      <YouMayAlso />
       {/* About Winery Château Le Pin end */}
       <div className="md:block hidden">
         <Newsletter />
