@@ -59,7 +59,17 @@ export function Button({
   );
 }
 
-export function CartControls({ step, setStep }: { step?: any; setStep?: any }) {
+export function CartControls({
+  step,
+  setStep,
+  btnOneTittle='Back',
+  btnTwoTittle ="Next",
+}: {
+  step?: any;
+  setStep?: any;
+  btnOneTittle?: any;
+  btnTwoTittle?: any;
+}) {
   const router = useRouter();
   return (
     <div>
@@ -75,7 +85,7 @@ export function CartControls({ step, setStep }: { step?: any; setStep?: any }) {
           className="flex items-center gap-4 border border-[#BF4D2020] rounded-full text-[#BF4D20] px-8 justify-center h-14 sm:order-1 order-2 sm:w-auto w-full"
         >
           <PrevIcon />
-          Back
+        {btnOneTittle}
         </button>
         <button
           onClick={() =>
@@ -83,7 +93,7 @@ export function CartControls({ step, setStep }: { step?: any; setStep?: any }) {
           }
           className="flex items-center gap-4 border border-[#BF4D2020] rounded-full text-white px-8 justify-center h-14 bg-[#BF4D20] sm:order-2 order-1 sm:w-auto w-full"
         >
-          Next <NextIcon fill="white" />
+         {btnTwoTittle} <NextIcon fill="white" />
         </button>
       </div>
     </div>

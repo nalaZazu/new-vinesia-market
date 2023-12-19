@@ -1,15 +1,13 @@
 "use client";
-import { EditIcon, TickCirIcon } from "@/assets/icons/Icons";
+import { TickCirIcon } from "@/assets/icons/Icons";
 import { CartControls, Checkbox } from "@/common/Components";
-import BillingInfo from "@/components/checkout/BillingInfo";
 import CartInfo from "@/components/checkout/CheckoutAside";
-import EmailInfo from "@/components/checkout/EmailInfo";
 import Step1 from "@/components/checkout/Steps/Step1";
 import Step2 from "@/components/checkout/Steps/Step2";
 import React, { useState } from "react";
 
 export default function Checkout() {
-  const [step, setStep] = useState(2);
+  const [step, setStep] = useState(1);
   return (
     <div className="max-w-[1171px] mx-auto px-4 md:mb-40 mb-20">
       <div className="w-full md:justify-start justify-between items-center md:gap-8 inline-flex sm:pt-[74px] pt-4 pb-4 border-b border-[#A6836C20]">

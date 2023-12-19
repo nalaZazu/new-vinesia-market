@@ -46,7 +46,7 @@ export default function Cart() {
           </button>
         </div> */}
         <Link href="/checkout">
-        <CartControls />
+          <CartControls btnOneTittle="Back" btnTwoTittle="Continute" />
         </Link>
         {/* Accordion */}
         <div className=" border-y-2 border-[#BF4D2020] divide-y divide-[#BF4D2020]">

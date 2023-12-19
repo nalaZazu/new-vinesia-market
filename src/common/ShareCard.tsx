@@ -52,27 +52,7 @@ export default function ShareCard({ data }: { data: any }) {
         </div>
         {/* here is input filed  */}
         <div className="pb-6">
-          <form action="">
-            {/* <div className="flex ">
-              <label
-                htmlFor="text"
-                className="text-stone-500 text-xs font-normal  uppercase leading-[18px] tracking-tight"
-              >
-                BID AMOUNT
-              </label>
-              <p className="text-[#CB220D]">*</p>
-            </div>
-
-            <div className="mt-2">
-              <input
-                id="text"
-                name="text"
-                type="text"
-                placeholder="€"
-                className=" w-full rounded-full   py-4   pl-6 pr-5 bg-[#F3E8CF] border border-red-400 justify-between items-center  flex  outline-none "
-              />
-            </div> */}
-
+          <form action=""> 
             <BillingInput
               title="BID AMOUNT*"
               name="BID AMOUNT*"
@@ -112,7 +92,7 @@ export default function ShareCard({ data }: { data: any }) {
       </ModalContainer>
       {/* here is end of modal */}
       <div>
-        <div className="flex md:justify-start justify-between items-center gap-3 md:gap-4 md:pe-8 pe-0">
+        <div className="flex md:justify-start justify-between items-center gap-3 md:gap-12 md:pe-8 pe-0">
           <div className="md:flex gap-2 items-center md:space-y-0 space-y-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -176,7 +156,7 @@ export default function ShareCard({ data }: { data: any }) {
               {data.starred}
             </p>
           </div>
-          <div className="md:hidden">
+          {/* <div className="md:hidden">
             <div className="md:flex gap-2 items-center md:space-y-0 space-y-4  ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -196,7 +176,7 @@ export default function ShareCard({ data }: { data: any }) {
                 999
               </p>
             </div>
-          </div>
+          </div> */}
 
           {/* <div className="hidden md:block">
             <button
@@ -224,7 +204,7 @@ export default function ShareCard({ data }: { data: any }) {
         <div className="my-8 max-w-[608px] h-[0px] border border-orange-700 border-opacity-20"></div>
         <div className="md:flex md:justify-between md:items-center">
           <div className=" uppercase items-center flex gap-3 md:pb-0 pb-4">
-            <p className="text-right text-stone-500 text-xs font-normal  uppercase leading-3 tracking-tight">
+            <p className="text-right text-[#906447] text-xs font-normal  uppercase leading-3 tracking-tight">
               Floor PRICE
             </p>
             <svg
