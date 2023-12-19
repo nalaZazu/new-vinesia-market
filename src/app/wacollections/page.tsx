@@ -54,10 +54,10 @@ export default function WineryArt() {
         <Link href="/wacollections/reso">
           <div className="relative md:block hidden container mx-auto">
             <div className="absolute flex justify-between w-full">
-              <h1 className="text-[600px] opacity-20 text-stone-400 font-normal leading-[250px] md:ms-[-450px] -z-10">
+              <h1 className="text-[600px] opacity-20 text-stone-400 font-normal leading-[600px] md:ms-[-450px] -z-10">
                 reso
               </h1>
-              <h1 className="text-[600px] opacity-20 text-end text-stone-400 font-normal leading-[250px] -z-10 absolute -right-[740px] ">
+              <h1 className="text-[600px] opacity-20 text-end text-stone-400 font-normal leading-[600px] -z-10 absolute -right-[740px] ">
                 reso
               </h1>
             </div>
@@ -83,7 +83,7 @@ export default function WineryArt() {
       </div>
 
       {/* Destop View */}
-      <div className="container mx-auto ">
+      <div className="container mx-auto mt-20">
         <hr className="border border-orange-700 border-opacity-20" />
         <div className="hidden md:block my-20 ">
           <Dropdown />
@@ -93,41 +93,23 @@ export default function WineryArt() {
           <MobileFilter />
         </div>
         {/* product list */}
-        {/* <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20 ">
-          {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, index: any) => {
-            return (
-              <div key={index}>
-                <ProductCards />
-              </div>
-            );
-          })}
-        </div> */}
         <Product />
         {/* product list  */}
-        {/* <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20 ">
-          {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, index: any) => {
-            return (
-              <div key={index}>
-                <ProductCards />
-              </div>
-            );
-          })}
-        </div> */}
 
         {/* animation  component  */}
-        <div className="p-16 flex justify-center mx-auto items-center gap-16">
-          <div className=" border-b-2 h-0 w-full border-[#CB220D] border-opacity-10"></div>
+        <div className="p-16 flex justify-center mx-auto items-center gap-10">
+          <div className=" border-b-[1px] h-0 w-full border-[#CB220D] border-opacity-10"></div>
           <MarksAnim fill="#CB220D" />
-          <div className="border-b-2 h-0 w-full border-[#CB220D]  border-opacity-10"></div>
+          <div className="border-b-[1px] h-0 w-full border-[#CB220D]  border-opacity-10"></div>
         </div>
         {/* next product list  */}
 
         <Product />
         {/* animation  component  */}
-        <div className="p-16 flex justify-center mx-auto items-center gap-16">
-          <div className=" border-b-2 h-0 w-full border-[#CB220D] border-opacity-10"></div>
+        <div className="p-16 flex justify-center mx-auto items-center gap-10">
+          <div className=" border-b-[1px] h-0 w-full border-[#CB220D] border-opacity-10"></div>
           <MarksAnim fill="#CB220D" />
-          <div className="border-b-2 h-0 w-full border-[#CB220D]  border-opacity-10"></div>
+          <div className="border-b-[1px] h-0 w-full border-[#CB220D]  border-opacity-10"></div>
         </div>
       </div>
       {/* desktop Newsletter*/}
@@ -139,7 +121,7 @@ export default function WineryArt() {
         <NewsletterMobile />
       </div>
 
-      <Newsletter />
+      {/* <Newsletter /> */}
       <Footer />
     </div>
   );

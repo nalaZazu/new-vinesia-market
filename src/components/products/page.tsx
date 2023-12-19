@@ -45,9 +45,9 @@ const Product = ({ items = ProductList }: { items?: ProductCardDto[] }) => {
                 )}
               </div>
               {/* animation  component  */}
-              <div className="p-16 flex justify-center mx-auto ">
+              {/* <div className="p-16 flex justify-center mx-auto ">
                 <Image src={xmark} alt="xmark" />
-              </div>
+              </div> */}
             </>
           );
         })}

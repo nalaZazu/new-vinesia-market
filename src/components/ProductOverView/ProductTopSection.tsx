@@ -33,27 +33,41 @@ const ProductTopSection = ({ data }: { data: any }) => {
                 <></>
               ) : (
                 <>
-                  <div className="border-b border-orange-950 border-opacity-20 pb-5">
+                  <div
+                    className={`${
+                      selectedTab === 0 ? "border-b-2" : ""
+                    }  border-orange-700  pb-3  min-w-[180px]`}
+                  >
                     <button
-                      className="text-zinc-800 text-lg font-semibold leading-relaxed "
+                      className="text-start"
                       onClick={() => setSelectedTab(0)}
                     >
-                      Wine
+                      <p className=" text-zinc-800 text-lg font-semibold leading-relaxed ">
+                        {" "}
+                        Wine
+                      </p>
+                      <p className=" text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight">
+                        LWIN: {data.wine.lwinNumber}
+                      </p>
                     </button>
-                    <p className=" text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight">
-                      LWIN: {data.wine.lwinNumber}
-                    </p>
                   </div>
-                  <div className="min-w-[180px]">
+                  <div
+                    className={`${
+                      selectedTab === 1 ? "border-b-2" : ""
+                    }  border-orange-700  pb-3  min-w-[180px]`}
+                  >
                     <button
-                      className="text-black text-lg font-semibold leading-relaxed"
+                      className="text-start"
                       onClick={() => setSelectedTab(1)}
                     >
-                      Art
+                      <p className="text-black text-lg font-semibold leading-relaxed">
+                        {" "}
+                        Art
+                      </p>{" "}
+                      <p className=" text-black text-xs font-normal uppercase leading-3 tracking-tight">
+                        Artist: Lola Designer Fun...
+                      </p>
                     </button>
-                    <p className=" text-black text-xs font-normal uppercase leading-3 tracking-tight">
-                      Artist: Lola Designer Fun...
-                    </p>
                   </div>
                 </>
               )}

@@ -18,7 +18,7 @@ export default function AllEditions({
     setIsOpen(!isOpen);
   };
   const [isOpen, setIsOpen] = useState(false);
-  const countryName = ["France", "Germany", "Switzerland"];
+  const countryName = ["All", "Ask", "Bid"];
 
   return (
     <>
