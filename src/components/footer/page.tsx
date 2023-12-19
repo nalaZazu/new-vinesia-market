@@ -42,9 +42,9 @@ export default function Footer() {
         {/* <!-- Main container div: holds the entire content of the footer, including four sections (TW elements, Products, Useful links, and Contact), with responsive styling and appropriate padding/margins. --> */}
         <div className="container mx-auto pt-12 pb-12">
           <div className="mx-6 py-10 text-center md:text-start">
-            <div className="grid gap-[128px] grid-cols-2 md:grid-cols-6">
+            <div className="grid md:gap-28 gap-16 grid-cols-2 md:grid-cols-9">
               {/* <!-- Useful links section --> */}
-              <div className="">
+              <div className="md:col-span-2 ">
                 <h6 className="mb-4 flex justify-center  md:justify-start    text-white text-xs font-normal   uppercase leading-[18px] tracking-tight">
                   About Vinesia
                 </h6>
@@ -63,7 +63,7 @@ export default function Footer() {
                 })}
               </div>
               {/* <!-- Useful links section --> */}
-              <div className="">
+              <div className="md:col-span-2">
                 <h6 className="mb-4 flex justify-center  md:justify-start   text-white text-xs font-normal   uppercase leading-[18px] tracking-tight">
                   Investments
                 </h6>
@@ -82,7 +82,7 @@ export default function Footer() {
                 })}
               </div>
               {/* <!-- TW elements section --> */}
-              <div className=" col-span-2">
+              <div className=" col-span-3">
                 <h6 className="mb-4 flex items-center justify-center  uppercase md:justify-start text-white text-xs font-normal  leading-[18px] tracking-tight">
                   Want to know More?
                 </h6>
@@ -99,7 +99,7 @@ export default function Footer() {
                 </div>
               </div>
               {/* <!-- Products section --> */}
-              <div className=" col-span-2">
+              <div className=" md:col-span-2">
                 <h6 className="mb-4 flex justify-center uppercase md:justify-start   text-neutral-300 text-base font-normal  leading-snug">
                   Share info on your investment, make connections
                 </h6>

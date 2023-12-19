@@ -18,6 +18,9 @@ export default function CartCard() {
               </p>
             </div>
             <div>
+              <button className="text-orange-700  border-b border-orange-700 border-opacity-20 uppercase">Remove</button>
+            </div>
+            <div>
               <p>€ 5,300</p>
             </div>
           </div>

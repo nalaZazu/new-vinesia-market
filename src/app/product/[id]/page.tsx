@@ -16,96 +16,57 @@ import NewsletterMobile from "@/components/newsletter/MobileView";
 import useSWR from "swr";
 import Link from "next/link";
 
+const fetcher = (arg: string) => fetch(arg).then((res) => res.json());
 
-const fetcher = (arg: string) => fetch(arg).then((res) => res.json())
-
-
-export default function ProductsOverview({ params }: { params: { id: string } }) {
-
-  const { data, error, isLoading } = useSWR(`https://apitest.vinesia.com/products/overview/${params.id}`, fetcher)
+export default function ProductsOverview({
+  params,
+}: {
+  params: { id: string };
+}) {
+  const { data, error, isLoading } = useSWR(
+    `https://apitest.vinesia.com/products/overview/${params.id}`,
+    fetcher
+  );
 
   if (isLoading) {
     return (
       <div>
         <div className="md:mx-0 mx-4">
           <div className="container mx-auto pt-10 pb-7">
-            <div className="flex">
-              Loading ...
-            </div>
+            <div className="flex">Loading ...</div>
           </div>
         </div>
       </div>
-    )
+    );
   }
 
   return (
     <div>
       <div className="md:mx-0 mx-4">
-        <div className="container mx-auto pt-10 pb-7">
+        <div className=" mx-auto pt-10 pb-7">
           <div className="flex">
             <div className="basis-1/12 hidden md:block"></div>
             <div className="md:basis-11/12 basis-full max-w-[990px]">
               <h1 className="text-zinc-800 md:text-7xl md:leading-[84px] text-4xl font-normal leading-[42px] tracking-[-1.44px]">
                 {data.wine.name} | {data.wine.vintage}
               </h1>
-              {data.art.name !== undefined ?
+              {data.art.name !== undefined ? (
                 <p className="text-zinc-800 text-base font-normal leading-snug pt-2 ">
                   With Art of Lola Designer Fun
-                </p> : <></>}
+                </p>
+              ) : (
+                <></>
+              )}
             </div>
           </div>
         </div>
         <div className="2xl:container mx-auto">
           <div className="flex relative">
-            {/* <div className="basis-1/12 hidden md:block">
+            <div className="basis-1/12 hidden md:block">
               <div>
-                <nav
-                  className="flex absolute top-0 bottom-0 -rotate-90 left-48"
-                  aria-label="Breadcrumb"
-                >
-                  <ol className="container mx-auto flex flex-wrap gap-3 px-4 items-center">
-                    <li className="inline-flex items-center">
-                      <Link
-                        href="#"
-                        className="text-stone-600 text-xs font-normal leading-3"
-                      >
-                        vinesia marketplace
-                      </Link>
-                    </li>
-                    <li className="hidden md:block lg:block  text-xs font-normal">
-                      /
-                    </li>
-                    <li>
-                      <div className="flex items-center">
-                        <Link
-                          href="#"
-                          className=" text-stone-500 text-xs font-normal leading-3"
-                        >
-                          home page
-                        </Link>
-                      </div>
-                    </li>
-                    <li className="hidden md:block lg:block text-xs font-normal">
-                      /
-                    </li>
-                    <li aria-current="page">
-                      <div className="flex items-center">
-                        <span className=" text-stone-500 text-xs font-normal leading-3">
-                          collections
-                        </span>
-                      </div>
-                    </li>
-                    <li aria-current="page">
-                      <div className="flex items-center">
-                        <span className=" text-stone-500 text-xs font-normal leading-3">
-                          Chateau La Mission and Art
-                        </span>
-                      </div>
-                    </li>
-                  </ol>
-                </nav>
+                <VerticalBreadCrumb />
               </div>
-            </div> */}
+            </div>
             <div className="md:basis-11/12 basis-full ">
               <div className="bg-[#F7EFDF] pt-10 pb-20 ">
                 <div className="md:max-w-[1350px] mx-auto">
@@ -116,9 +77,6 @@ export default function ProductsOverview({ params }: { params: { id: string } })
           </div>
         </div>
       </div>
-      {/* MindPledge start*/}
-      <MindPledge btnTitle="Read More" />
-      {/* MindPledge end */}
       {/*Release details start  */}
       <section className="container mx-auto md:py-40">
         <div className="md:flex justify-between items-center">
@@ -192,6 +150,10 @@ export default function ProductsOverview({ params }: { params: { id: string } })
         </div>
       </section>
       {/*Release details end  */}
+      {/* MindPledge start*/}
+      <MindPledge btnTitle="Read More" />
+      {/* MindPledge end */}
+
       {/* All editions start */}
       <AllEditions />
       {/* All editions end */}
