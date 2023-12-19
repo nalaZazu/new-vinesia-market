@@ -50,7 +50,7 @@ export default function ProductsOverview({
               <h1 className="text-zinc-800 md:text-7xl md:leading-[84px] text-4xl font-normal leading-[42px] tracking-[-1.44px]">
                 {data.name}
               </h1>
-              {data.art.name !== undefined ? (
+              {data.art?.name !== undefined ? (
                 <p className="text-zinc-800 text-base font-normal leading-snug pt-2 ">
                   With Art of Lola Designer Fun
                 </p>
@@ -107,7 +107,7 @@ export default function ProductsOverview({
                 On the market are
               </span>
               <span className=" text-zinc-800 text-lg font-semibold leading-relaxed">
-                24
+                {data.editions?.length}
               </span>
             </p>
             <p className="flex gap-4 items-center">
@@ -137,7 +137,7 @@ export default function ProductsOverview({
         <div className="mt-8 md:bg-[#FAF5EA] bg-transparent md:p-6 px-4 pb-14">
           <div className="grid gap-5 lg:grid-cols-2 md:grid-cols-2 grid-cols-1">
             <div>
-              <PricingDetail />
+              <PricingDetail item={data} />
             </div>
 
             <div>
