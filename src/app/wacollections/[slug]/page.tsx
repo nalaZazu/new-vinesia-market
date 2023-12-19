@@ -10,6 +10,7 @@ import Image from "next/image";
 import NewsletterMobile from "@/components/newsletter/MobileView";
 import VerticalBreadCrumb from "@/common/verticalBreadcrumb/page";
 import ProductCards from "@/components/productCard/page";
+import { MarksAnim } from "@/assets/icons/Icons";
 
 function Reso({ params }: { params: any }) {
   const { slug } = params;
@@ -75,7 +76,8 @@ function Reso({ params }: { params: any }) {
             <MobileFilter />
           </div>
           {/* product list */}
-          <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20 ">
+          <Product />
+          {/* <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20 ">
             {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, index: any) => {
               return (
                 <div key={index}>
@@ -83,9 +85,9 @@ function Reso({ params }: { params: any }) {
                 </div>
               );
             })}
-          </div>{" "}
+          </div>{" "} */}
           {/* product list  */}
-          <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20 ">
+          {/* <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20 ">
             {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, index: any) => {
               return (
                 <div key={index}>
@@ -93,10 +95,12 @@ function Reso({ params }: { params: any }) {
                 </div>
               );
             })}
-          </div>{" "}
+          </div>{" "} */}
           {/* animation  component  */}
-          <div className="p-16 flex justify-center mx-auto ">
-            <Image src={xmark} alt="xmark" />
+          <div className="p-16 flex justify-center mx-auto items-center gap-16">
+            <div className=" border-b-2 h-0 w-full border-[#CB220D] border-opacity-10"></div>
+            <MarksAnim fill="#CB220D" />
+            <div className="border-b-2 h-0 w-full border-[#CB220D]  border-opacity-10"></div>
           </div>
           {/* next product list  */}
           <Product />

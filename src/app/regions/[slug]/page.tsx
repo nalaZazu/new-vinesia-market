@@ -9,6 +9,7 @@ import Image from "next/image";
 import NewsletterMobile from "@/components/newsletter/MobileView";
 import MobileFilter from "@/app/invest/moibleview/page";
 import ProductCards from "@/components/productCard/page";
+import { MarksAnim } from "@/assets/icons/Icons";
 
 function France({ params }: { params: any }) {
   const { slug } = params;
@@ -59,7 +60,9 @@ function France({ params }: { params: any }) {
             <MobileFilter />
           </div>
           {/* product list */}
-          <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20 ">
+          <Product
+          />
+          {/* <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20 ">
             {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, index: any) => {
               return (
                 <div key={index}>
@@ -67,14 +70,16 @@ function France({ params }: { params: any }) {
                 </div>
               );
             })}
-          </div>{" "}
+          </div>{" "} */}
           {/* product list  */}
           {/* animation  component  */}
-          <div className="p-16 flex justify-center mx-auto ">
-            <Image src={xmark} alt="xmark" />
-          </div>
+          <div className="p-16 flex justify-center mx-auto items-center gap-16">
+        <div className=" border-b-2 h-0 w-full border-[#CB220D] border-opacity-10"></div>
+        <MarksAnim fill="#CB220D" />
+        <div className="border-b-2 h-0 w-full border-[#CB220D]  border-opacity-10"></div>
+      </div>
           {/* next product list  */}
-          <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20 ">
+          {/* <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20 ">
             {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, index: any) => {
               return (
                 <div key={index}>
@@ -82,11 +87,15 @@ function France({ params }: { params: any }) {
                 </div>
               );
             })}
-          </div>{" "}
+          </div>{" "} */
+        }
+          <Product />
           {/* animation  component  */}
-          <div className="p-16 flex justify-center mx-auto ">
-            <Image src={xmark} alt="xmark" />
-          </div>
+          <div className="p-16 flex justify-center mx-auto items-center gap-16">
+        <div className=" border-b-2 h-0 w-full border-[#CB220D] border-opacity-10"></div>
+        <MarksAnim fill="#CB220D" />
+        <div className="border-b-2 h-0 w-full border-[#CB220D]  border-opacity-10"></div>
+      </div>
         </div>
         {/* desktop Newsletter*/}
         <div className="hidden sm:block">

@@ -6,6 +6,7 @@ import Product from "@/components/products/page";
 import Image from "next/image";
 import xmark from "../../assets/icons/x-mark-anim.svg";
 import ProductCards from "@/components/productCard/page";
+import { MarksAnim } from "@/assets/icons/Icons";
 
 const LimitedCollection = () => {
   return (
@@ -89,7 +90,8 @@ const LimitedCollection = () => {
           {/* product list */}
 
           <div className="md:block hidden">
-            <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20">
+            <Product />
+            {/* <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20">
               {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, index: any) => {
                 return (
                   <div key={index}>
@@ -97,10 +99,12 @@ const LimitedCollection = () => {
                   </div>
                 );
               })}
-            </div>
+            </div> */}
             {/* animation  component  */}
-            <div className="p-16 flex justify-center mx-auto ">
-              <Image src={xmark} alt="xmark" />
+            <div className="p-16 flex justify-center mx-auto items-center gap-16">
+              <div className=" border-b-2 h-0 w-full border-[#CB220D] border-opacity-10"></div>
+              <MarksAnim fill="#CB220D" />
+              <div className="border-b-2 h-0 w-full border-[#CB220D]  border-opacity-10"></div>
             </div>
           </div>
           {/* product list  */}
@@ -113,7 +117,8 @@ const LimitedCollection = () => {
           {/* next product list  */}
 
           {/* next product list  */}
-          <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20 ">
+          <Product />
+          {/* <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20 ">
             {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, index: any) => {
               return (
                 <div key={index}>
@@ -121,10 +126,12 @@ const LimitedCollection = () => {
                 </div>
               );
             })}
-          </div>
+          </div> */}
           {/* animation  component  */}
-          <div className="p-16 flex justify-center mx-auto ">
-            <Image src={xmark} alt="xmark" />
+          <div className="p-16 flex justify-center mx-auto items-center gap-16">
+            <div className=" border-b-2 h-0 w-full border-[#CB220D] border-opacity-10"></div>
+            <MarksAnim fill="#CB220D" />
+            <div className="border-b-2 h-0 w-full border-[#CB220D]  border-opacity-10"></div>
           </div>
         </div>
       </div>

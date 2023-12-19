@@ -33,9 +33,11 @@ export default function RootLayout({
 
       <body className={`${albert.className} bg-[#F3E8CF] `}>
         <Header />
-        <WagmiProvider>
-          <UserProvider>{children}</UserProvider>
-        </WagmiProvider>
+        {/* <WagmiProvider> */}
+        {/* <UserProvider>
+          </UserProvider> */}
+        {children}
+        {/* </WagmiProvider> */}
       </body>
     </html>
   );

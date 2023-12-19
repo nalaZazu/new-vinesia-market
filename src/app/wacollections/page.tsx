@@ -10,6 +10,7 @@ import NewsletterMobile from "@/components/newsletter/MobileView";
 import xmark from "../../assets/icons/x-mark-anim.svg";
 import Link from "next/link";
 import ProductCards from "@/components/productCard/page";
+import { MarksAnim } from "@/assets/icons/Icons";
 
 export default function WineryArt() {
   return (
@@ -92,7 +93,7 @@ export default function WineryArt() {
           <MobileFilter />
         </div>
         {/* product list */}
-        <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20 ">
+        {/* <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20 ">
           {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, index: any) => {
             return (
               <div key={index}>
@@ -100,9 +101,10 @@ export default function WineryArt() {
               </div>
             );
           })}
-        </div>
+        </div> */}
+        <Product />
         {/* product list  */}
-        <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20 ">
+        {/* <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20 ">
           {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, index: any) => {
             return (
               <div key={index}>
@@ -110,18 +112,22 @@ export default function WineryArt() {
               </div>
             );
           })}
-        </div>
+        </div> */}
 
         {/* animation  component  */}
-        <div className="p-16 flex justify-center mx-auto ">
-          <Image src={xmark} alt="xmark" />
+        <div className="p-16 flex justify-center mx-auto items-center gap-16">
+          <div className=" border-b-2 h-0 w-full border-[#CB220D] border-opacity-10"></div>
+          <MarksAnim fill="#CB220D" />
+          <div className="border-b-2 h-0 w-full border-[#CB220D]  border-opacity-10"></div>
         </div>
         {/* next product list  */}
 
         <Product />
         {/* animation  component  */}
-        <div className="p-16 flex justify-center mx-auto ">
-          <Image src={xmark} alt="xmark" />
+        <div className="p-16 flex justify-center mx-auto items-center gap-16">
+          <div className=" border-b-2 h-0 w-full border-[#CB220D] border-opacity-10"></div>
+          <MarksAnim fill="#CB220D" />
+          <div className="border-b-2 h-0 w-full border-[#CB220D]  border-opacity-10"></div>
         </div>
       </div>
       {/* desktop Newsletter*/}

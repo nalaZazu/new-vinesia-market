@@ -5,7 +5,7 @@ import Link from "next/link";
 import facebook from "../../assets/icons/facebook.svg";
 import twitter from "../../assets/icons/TwitterX.svg";
 import youtube from "../../assets/icons/youtube.svg";
-import instagram from "../../assets/icons/Instagram.svg";
+import instagram from "../../assets/icons/instagram.svg";
 import linkdin from "../../assets/icons/linkdeIn.svg";
 import { FooterNavigate, FooterNavigateTwo } from "@/constants/footernavigate";
 import envelope from "../../assets/icons/envelope.svg";
