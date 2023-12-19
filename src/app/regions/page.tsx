@@ -12,6 +12,7 @@ import xmark from "@/assets/icons/x-mark-anim.svg";
 import Image from "next/image";
 import Card from "@/components/card/page";
 import lineregion from "@/assets/icons/lineregion.svg";
+import { MarksAnim } from "@/assets/icons/Icons";
 
 export default function Regions() {
   return (
@@ -40,12 +41,21 @@ export default function Regions() {
       {/* product list  */}
       <Product />
       {/* animation  component  */}
-      <div className="p-16 flex justify-center mx-auto ">
-        <Image src={xmark} alt="xmark" />
+
+      <div className="p-16 flex justify-center mx-auto items-center gap-16">
+        <div className=" border-b-2 h-0 w-full border-[#CB220D] border-opacity-10"></div>
+        <MarksAnim fill="#CB220D" />
+        <div className="border-b-2 h-0 w-full border-[#CB220D]  border-opacity-10"></div>
       </div>
       {/* next product list  */}
 
       <Product />
+
+      <div className="p-16 flex justify-center mx-auto items-center gap-16">
+        <div className=" border-b-2 h-0 w-full border-[#CB220D] border-opacity-10"></div>
+        <MarksAnim fill="#CB220D" />
+        <div className="border-b-2 h-0 w-full border-[#CB220D]  border-opacity-10"></div>
+      </div>
 
       {/* desktop Newsletter*/}
       <div className="hidden sm:block">
