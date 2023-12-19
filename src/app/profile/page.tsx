@@ -17,6 +17,9 @@ import InvestmentTab from "@/components/profile/InvestmentTab";
 // import DropDownButton from "@/common/DropDownButton";
 // import ProductCards from "@/components/productCard/page";
 import InvestmentCard from "@/components/profile/InvestmentCard";
+import PortfolioOverview from "@/components/profile/PortfolioOverview";
+import WalletOverview from "@/components/profile/Wallet/WalletOverview";
+import ReceivedBids from "@/components/profile/Wallet/ReceivedBids";
 
 export default function Profile() {
   const [active, setActive] = useState(0);
@@ -80,9 +83,9 @@ export default function Profile() {
           My profile
         </h3>
       </div>
-      <div className="flex gap-8">
+      <div className="grid grid-cols-4 gap-8">
         <Tab.Group>
-          <div className="basis-1/4">
+          <div className="col-span-1">
             <Tab.List className="flex flex-col rounded-lg border-t-2 border-s-2 border-r-2 border-orange-700 border-opacity-20">
               {categories.map(
                 (
@@ -131,19 +134,38 @@ export default function Profile() {
               )}
             </Tab.List>
           </div>
-          <div className="basis-9/12">
+          <div className="col-span-3">
             <Tab.Panels className="mt-2">
               {Object.values(categories).map((post, idx) => (
                 <Tab.Panel
                   key={idx}
                   className={`
-                     rounded-md bg-[#F7EFDF] ring-offset-0 focus:outline-none focus:ring-0 py-6 ps-6 pr-8`}
+                     rounded-md ring-offset-0 focus:outline-none focus:ring-0`}
                 >
-                  <InvestmentTab />
+                  {/* <ul>
+                    <li
+                      key={post.id}
+                      className="relative rounded-md p-3 hover:bg-gray-100"
+                    >
+                      <h3 className="text-sm font-medium leading-5">
+                        {post.title}
+                      </h3>
+
+                      <a
+                        href="#"
+                        className={`
+                              absolute inset-0 rounded-md
+                              ring-blue-400 focus:z-10 focus:outline-none focus:ring-2`}
+                      />
+                    </li>
+                  </ul> */}
+                  {/* <InvestmentTab /> */}
+                  {/* <PortfolioOverview /> */}
+                  {/* <WalletOverview /> */}
+                  <ReceivedBids />
                 </Tab.Panel>
               ))}
-              <InvestmentCard />
-              
+              {/* <InvestmentCard /> */}
             </Tab.Panels>
           </div>
         </Tab.Group>
