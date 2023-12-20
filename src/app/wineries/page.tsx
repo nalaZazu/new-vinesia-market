@@ -7,7 +7,7 @@ import { ArrowUpRightIcon } from "@heroicons/react/20/solid";
 import ProductCards from "@/components/productCard/page";
 import Footer from "@/components/footer/page";
 import Newsletter from "@/components/newsletter/page";
-import { ProductList } from "@/constants/products";
+// import { ProductList } from "@/constants/products";
 export default function Winary() {
   return (
     <div>
@@ -118,7 +118,7 @@ export default function Winary() {
                         />
                       </div>
                       <div className="mt-40">
-                        <ProductCards item={ProductList[0]} />
+                        {/* <ProductCards item={ProductList[0]} /> */}
                       </div>
                     </Disclosure.Panel>
                   </div>
