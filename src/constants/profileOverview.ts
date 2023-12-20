@@ -26,3 +26,35 @@ export const profileOverview = [
     dates: "",
   },
 ];
+
+// const userProfiles = [
+//   {
+//     id: 1,
+//     title: "Name and last name",
+//     subtitle: "John",
+//     editIcon: true,
+//     subtext: "Travolta",
+//   },
+//   {
+//     id: 2,
+//     title: "Email address",
+//     subtitle: "john.t@gmail.com",
+//     info: true,
+//     subtext: "Registered with ",
+//     google: true,
+//   },
+//   {
+//     id: 3,
+//     title: "Billing address",
+//     editIcon: true,
+//     subtitle: "20350 Hamburg",
+//     subtext: "Deutschland",
+//     headingtext: "comany@example.com",
+//   },
+//   {
+//     id: 4,
+//     title: "Bank account number",
+//     subtitle: "DE89370400440532013000",
+//     editIcon: true,
+//   },
+// ];

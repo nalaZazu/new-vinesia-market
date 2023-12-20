@@ -20,6 +20,8 @@ import InvestmentCard from "@/components/profile/InvestmentCard";
 import PortfolioOverview from "@/components/profile/PortfolioOverview";
 import WalletOverview from "@/components/profile/Wallet/WalletOverview";
 import ReceivedBids from "@/components/profile/Wallet/ReceivedBids";
+import Sales from "@/components/profile/Wallet/Sales";
+import Account from "@/components/profile/Account";
 
 export default function Profile() {
   const [active, setActive] = useState(0);
@@ -162,7 +164,9 @@ export default function Profile() {
                   {/* <InvestmentTab /> */}
                   {/* <PortfolioOverview /> */}
                   {/* <WalletOverview /> */}
-                  <ReceivedBids />
+                  {/* <ReceivedBids /> */}
+                  {/* <Sales /> */}
+                  <Account />
                 </Tab.Panel>
               ))}
               {/* <InvestmentCard /> */}

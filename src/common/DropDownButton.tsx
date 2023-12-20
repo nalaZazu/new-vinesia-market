@@ -7,13 +7,17 @@ function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function DropDownButton() {
+export default function DropDownButton({
+  title = "Recommended",
+}: {
+  title?: any;
+}) {
   return (
     <>
       <Menu as="div" className="w-full relative inline-block text-start">
         <div>
-          <Menu.Button className="justify-between    gap-1 flex items-center w-full gap-x-1.5 pl-4 pr-3 py-4 rounded-full  px-3  text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight bg-orange-700 bg-opacity-10">
-            Recommended
+          <Menu.Button className="justify-between  gap-1 flex items-center w-full gap-x-1.5 pl-4 pr-3 py-4 rounded-full  px-3  text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight bg-orange-700 bg-opacity-10">
+            {title}
             <ChevronDownIcon
               className="-mr-1 h-5 w-5 text-stone-500"
               aria-hidden="true"
