@@ -75,6 +75,9 @@ export default function Header() {
     (size.width > 767 && pathName == "/signup") ||
     pathName === "/wineart" ||
     pathName === "/wacollections" ||
+    pathName === "/wineart" ||
+    pathName === "/wineart" ||
+    pathName === "/aboutus" ||
     pathName === "/wacollections/reso" ||
     pathName === "/limitedcollections" ||
     pathName === "/gifts" ;
