@@ -1,12 +1,13 @@
 "use client"
 import { createContext, useContext, useState } from "react";
-import { Connector, WagmiConfig, configureChains, createConfig, useAccount, useConnect, useDisconnect } from "wagmi";
+import { Connector, PublicClient, WagmiConfig, configureChains, createConfig, useAccount, useConnect, useDisconnect } from "wagmi";
 import { goerli, mainnet } from "wagmi/chains";
 import { CoinbaseWalletConnector } from "wagmi/connectors/coinbaseWallet";
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
 import { publicProvider } from "wagmi/providers/public";
 import { LoginType, MagicCustomConnector } from "./connectors/MagicConnector";
+import { ConnectArgs, ConnectResult } from "wagmi/actions";
 
 export interface ProvideUser {
     status: string
@@ -25,7 +26,7 @@ export interface ProvideUser {
     getPriceText: (price: number) => string
     getPriceDifference: (release: number, current: number) => string
 
-    // connectAsync: (args?: Partial<ConnectArgs>) => Promise<ConnectResult<_wagmi_core.PublicClient>>;
+    connectAsync: (args?: Partial<ConnectArgs>) => Promise<ConnectResult<PublicClient>>;
     disconnectAsync: () => Promise<any>
 }
 
@@ -48,15 +49,6 @@ export function useProvideUser(): ProvideUser {
     }
 
     function getPriceDifference(release: number, current: number) {
-
-              {/* +
-              {`  ${(
-                ((release?.highPrice - release?.releasePrice) /
-                  release?.releasePrice) *
-                100
-              ).toFixed(3)} % ↑`} */}
-            //   + 66.6%
-
         const diff = (current - release) / release * 100
 
         return diff.toFixed(1)+'%'
@@ -80,7 +72,7 @@ export function useProvideUser(): ProvideUser {
         isDisconnected,
         isLoading,
         connectors,
-        // connectAsync,
+        connectAsync,
         disconnectAsync
     }
 }

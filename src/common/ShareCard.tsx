@@ -4,8 +4,11 @@ import ModalContainer from "./ModalContainer";
 import { BiddingSection } from "@/constants/accrodion";
 import { BillingInput } from "./Components";
 import { useUserContext } from "@/context/user";
+import { useCartContext } from "@/context/cart";
 
 export default function ShareCard({ data }: { data: any }) {
+  const { addCartItem } = useCartContext()
+
   const [visible, setVisible] = useState(false);
 
   const { getPriceText } = useUserContext()
@@ -232,7 +235,8 @@ export default function ShareCard({ data }: { data: any }) {
           <div>
             <button
               onClick={() => {
-                setVisible(!visible);
+                addCartItem(data)
+                // setVisible(!visible);
               }}
               type="button"
               className="w-full bg-secondary text-center rounded-full text-white text-xs font-normal uppercase leading-3 tracking-tight focus:ring-0 focus:outline-none md:w-48 px-8 py-5 items-center"

@@ -10,6 +10,7 @@ import SidePannel from "./sidepannel/page";
 import { UserIcon } from "@/assets/icons/Icons";
 import { MenuItem, menuBar as menuItems } from "@/constants/navigate";
 import { useWindowSize } from "@/hooks/useWindowSize";
+import { useCartContext } from "@/context/cart";
 
 const canela = local({
   src: "../../../public/fonts/canelatext-black.woff2",
@@ -65,6 +66,8 @@ const getMenuItem = (pathName: string) => {
 };
 
 export default function Header() {
+  const {cartItems} = useCartContext();
+
   const size = useWindowSize();
 
   const isDark = (pathName: string) =>
@@ -169,7 +172,7 @@ export default function Header() {
               >
                 <CartIcon fill={theme.iconFill} />
                 <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -end-2 dark:border-gray-900">
-                  20
+                  {cartItems.length}
                 </div>
               </Link>
             </div>
