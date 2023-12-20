@@ -8,6 +8,7 @@ import Head from "next/head";
 import { WagmiProvider } from "@/context/wagmi";
 import Script from "next/script";
 import { CartProvider } from "@/context/cart";
+import MagicProvider from "@/context/MagicProvider";
 
 const albert = Albert_Sans({
   variable: "--font-albert",
@@ -34,12 +35,14 @@ export default function RootLayout({
 
       <body className={`${albert.className} bg-[#F3E8CF] `}>
         <WagmiProvider>
-          <CartProvider>
-            <UserProvider>
-              <Header />
-              {children}
-            </UserProvider>
-          </CartProvider>
+          <MagicProvider>
+            <CartProvider>
+              <UserProvider>
+                <Header />
+                {children}
+              </UserProvider>
+            </CartProvider>
+          </MagicProvider>
         </WagmiProvider>
       </body>
     </html>
