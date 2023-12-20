@@ -96,7 +96,7 @@ export const BlogDetailsList = [
     title:
       "The benefits and differences when sourcing wines directly from wineries",
     date: "24/10/2023",
-    image: details1,
+    image: details2,
   },
   {
     id: 2,

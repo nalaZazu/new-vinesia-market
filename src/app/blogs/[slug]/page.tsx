@@ -11,14 +11,14 @@ import NewsletterMobile from "@/components/newsletter/MobileView";
 const BlogDetails = () => {
   return (
     <React.Fragment>
-      <div>
+      <div className="container mx-auto">
         <Image
           src={banner}
           alt="banner"
           className="object-cover bg-center w-full"
         />
-        <div className="container mx-auto pt-8">
-          <div className="grid md:grid-cols-8  pb-20 gap-32 border-b border-orange-700 border-opacity-20 ">
+        <div className="container px-4 mx-auto pt-8">
+          <div className="grid md:grid-cols-8  pb-20 lg:gap-32 md:gap border-b border-orange-700 border-opacity-20 ">
             <div className="col-span-5   flex-col justify-start items-start gap-6 inline-flex">
               <div>
                 <span className="text-[#906447] pb-3 text-xs font-normal   uppercase leading-[18px] tracking-tight">
@@ -86,7 +86,7 @@ const BlogDetails = () => {
                   </div>
                   {/* here is image  */}
                   <div className="py-12">
-                    <Image src={blogimages} alt="image" />
+                    <Image src={blogimages} alt="image" className="w-full" />
                   </div>
                   {/* here is   section */}
                   <div>
@@ -215,36 +215,37 @@ const BlogDetails = () => {
               </div>
             </div>
             {/* here is second col */}
-            <div className="col-span-3">
-              <div className="pb-4">
+            <div className="md:col-span-3 col-span-12">
+              <div className="pb-4 md:pt-0 pt-8">
                 {" "}
                 <span className="text-zinc-800 text-lg font-semibold   leading-relaxed ">
-                  Read releted stories
+                  Read related stories
                 </span>
               </div>
-
-              {BlogDetailsList?.map((item, index) => {
-                const { title, image, date } = item;
-                return (
-                  <div
-                    className="px-4 py-6 border-t border-b border-orange-700 border-opacity-20 justify-start items-start gap-6 inline-flex"
-                    key={index}
-                  >
-                    <div className="flex gap-6">
-                      <Image src={image} alt="image" />
-                      <div>
-                        <p className="text-zinc-800 text-lg font-semibold   leading-snug">
-                          {" "}
-                          {title}
-                        </p>
-                        <span className="text-[#906447] text-xs font-normal  uppercase leading-[18px] tracking-tigh">
-                          {date}
-                        </span>
+              <div className="grid md:grid-cols-1 sm:grid-cols-2 grid-cols-1">
+                {BlogDetailsList?.map((item, index) => {
+                  const { title, image, date } = item;
+                  return (
+                    <div
+                      className="px-4 py-6 md:border-t md:border-b border-orange-700 border-opacity-20 justify-start items-start gap-6 inline-flex"
+                      key={index}
+                    >
+                      <div className="grid md:grid-cols-3 grid-cols-1">
+                        <Image src={image} alt="image" className="w-full" />
+                        <div className=" col-span-2 md:ps-6">
+                          <p className="text-zinc-800 text-lg font-semibold   leading-snug">
+                            {" "}
+                            {title}
+                          </p>
+                          <span className="text-[#906447] text-xs font-normal  uppercase leading-[18px] tracking-tigh">
+                            {date}
+                          </span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
             {/* <div className=" py-20 border-b border-orange-700 border-opacity-20  " /> */}
           </div>
@@ -256,11 +257,11 @@ const BlogDetails = () => {
             </h3>
 
             <div className="grid md:grid-cols-3 gap-8 pt-12 grid-cols-1 md:px-0 px-4 ">
-              {BlogLists?.splice(0, 3)?.map((item: any, index: any) => {
+              {BlogLists?.slice(0, 3)?.map((item: any, index: any) => {
                 const { title, image } = item;
                 return (
                   <div key={index}>
-                    <Image src={image} alt="image" />
+                    <Image src={image} alt="image" className="w-full" />
                     <div className="py-8">
                       <span className="text-[#906447] text-xs font-normal  uppercase leading-[18px] tracking-tight">
                         WINE INVESTMENT
@@ -280,13 +281,13 @@ const BlogDetails = () => {
         </div>
         {/* here is newlettels */}
         {/* desktop Newsletter*/}
-        <div className="hidden sm:block">
-          <Newsletter />
-        </div>
-        {/* mobile Newsletter */}
-        <div className="block sm:hidden">
-          <NewsletterMobile />
-        </div>
+      </div>
+      <div className="hidden sm:block">
+        <Newsletter />
+      </div>
+      {/* mobile Newsletter */}
+      <div className="block sm:hidden">
+        <NewsletterMobile />
       </div>
     </React.Fragment>
   );

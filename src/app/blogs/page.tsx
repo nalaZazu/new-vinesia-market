@@ -39,13 +39,17 @@ const BlogList = () => {
             <h3 className="text-zinc-800 text-4xl font-light   leading-[44px] pb-6 ">
               Featured story
             </h3>
-            <Image src={banner} alt="banner"  className="object-cover bg-center"/>
+            <Image
+              src={banner}
+              alt="banner"
+              className="object-cover bg-center w-full"
+            />
             {/* here is text area */}
             <div className="py-8">
               <span className="text-[#906447] text-xs font-normal  uppercase leading-[18px] tracking-tight">
                 WINE INVESTMENT
               </span>
-              <h3 className="text-zinc-800 text-4xl font-light  leading-[44px] pb-[20px]">
+              <h3 className="text-zinc-800 md:text-4xl text-2xl font-light  md:leading-[44px] pb-[20px]">
                 Wine scoring system – how does it work? A pros/cons analysis
               </h3>
               <span className="text-zinc-500 text-xs font-normal   uppercase leading-[18px] tracking-tight">
@@ -55,15 +59,15 @@ const BlogList = () => {
           </div>
           {/* here is next section  */}
           <div>
-            <div className="grid md:grid-cols-2 grid-cols-1 md:px-0 px-4 gap-8">
+            <div className="grid sm:grid-cols-2 grid-cols-1 md:px-0 px-4 gap-8">
               {/* first div */}
               <div className=" ">
-                <Image src={featured1} alt="image" />
+                <Image src={featured1} alt="image" className="w-full" />
                 <div className="py-8">
                   <span className="text-[#906447] text-xs font-normal  uppercase leading-[18px] tracking-tight">
                     WINE INVESTMENT
                   </span>
-                  <h3 className="text-zinc-800 text-4xl font-light   leading-[44px]  pb-[20px]">
+                  <h3 className="text-zinc-800 lg:text-4xl md:text-2xl text-xl font-light   lg:leading-[44px]  pb-[20px]">
                     Burgundy vs Barbaresco: discover the differences in these
                     regions
                   </h3>
@@ -74,12 +78,12 @@ const BlogList = () => {
               </div>
               {/* second div */}
               <div>
-                <Image src={featured2} alt="image" />
+                <Image src={featured2} alt="image" className="w-full" />
                 <div className="md:pt-8 md:pb-0 pt-8 pb-0">
                   <span className="text-[#906447] text-xs font-normal  uppercase leading-[18px] tracking-tight">
                     WINE INVESTMENT
                   </span>
-                  <h3 className="text-zinc-800 text-4xl font-light   leading-[44px]  pb-[20px]">
+                  <h3 className="text-zinc-800 lg:text-4xl md:text-2xl text-xl font-light   lg:leading-[44px]  pb-[20px]">
                     Burgundy vs Barbaresco: discover the differences in these
                     regions
                   </h3>
