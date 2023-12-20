@@ -51,7 +51,7 @@ export default function Winary() {
         </div>
 
         {/* accordion start */}
-        {[1,2,3]?.map((item: any, i: any) => {
+        {[1, 2, 3]?.map((item: any, i: any) => {
           return (
             <Disclosure key={i}>
               {({ open }) => (
@@ -64,9 +64,7 @@ export default function Winary() {
                             WINERY NAME
                           </p>
 
-
                           <h3 className="max-w-[450px] text-zinc-800 text-4xl font-light leading-[44px] text-start  tracking-[-0.36px]">
-
                             Château Mouton Rothschild – 1er Grand Cru Classé
                             Pauillac
                           </h3>
@@ -120,7 +118,7 @@ export default function Winary() {
                         />
                       </div>
                       <div className="mt-40">
-                        <ProductCards />
+                        <ProductCards item={ProductList[0]} />
                       </div>
                     </Disclosure.Panel>
                   </div>

@@ -13,7 +13,9 @@ export const ProductList = [
     owners: [
       "Vinesia"
       ],
-    buyNowPrice: 3600
+    buyNowPrice: 3600,
+     estPrice: 20,
+     number: 10
     },
     {
         id:2,
@@ -30,7 +32,9 @@ export const ProductList = [
       "Vinesia",
       "Private"
       ],
-    buyNowPrice: 3600
+    buyNowPrice: 3600,
+     estPrice: 20,
+     number: 10
     },
     {
         id:3,
@@ -46,7 +50,9 @@ export const ProductList = [
     owners: [
       "Vinesia"
       ],
-    buyNowPrice: 3600
+    buyNowPrice: 3600,
+     estPrice: 20,
+     number: 10
     },
     {
         id:4,
@@ -62,7 +68,9 @@ export const ProductList = [
     owners: [
       "Vinesia"
       ],
-    buyNowPrice: 3600
+    buyNowPrice: 3600,
+     estPrice: 20,
+     number: 10
     },
     {
         id:5,
@@ -79,7 +87,9 @@ export const ProductList = [
       "Vinesia",
       "Private"
       ],
-    buyNowPrice: 3600
+    buyNowPrice: 3600,
+     estPrice: 20,
+     number: 10
     },
     {
         id:6,
@@ -95,6 +105,8 @@ export const ProductList = [
     owners: [
       "Private"
       ],
-    estPrice: 13600
+      buyNowPrice: 3600,
+      estPrice: 20,
+      number: 10
     }
   ]
