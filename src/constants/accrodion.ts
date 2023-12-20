@@ -1,3 +1,9 @@
+import featured1 from "@/assets/images/Rectangle1.png";
+import featured2 from "@/assets/images/Rectangle2.png";
+import featured3 from "@/assets/images/Rectangle3.png";
+import details1 from "@/assets/images/deatils1.png";
+import details2 from "@/assets/images/deatils2.png";
+
 export const AccordionAbout = [
   {
     id: 1,
@@ -39,4 +45,69 @@ export const BiddingSection = [
   { id: "1", title: "Available funds", concurrence: "70" },
   { id: "2", title: "Ask price", concurrence: " 1,200" },
   { id: "3", title: "Highest bid", concurrence: "1,145" },
+];
+
+export const BlogLists = [
+  {
+    id: 1,
+    title:
+      "The benefits and differences when sourcing wines directly from wineries",
+    date: "12/11/2023",
+    image: featured1,
+  },
+  {
+    id: 2,
+    title:
+      "How does climate change influence wine supply and the wineries we choose to source from",
+    date: "12/11/2023",
+    image: featured2,
+  },
+  {
+    id: 3,
+    title: "Burgundy vs Barbaresco: discover the differences in these regions",
+    date: "12/11/2023",
+    image: featured3,
+  },
+  {
+    id: 4,
+    title:
+      "How does climate change influence wine supply and the wineries we choose to source from",
+    date: "12/11/2023",
+    image: featured2,
+  },
+  {
+    id: 5,
+    title:
+      "The benefits and differences when sourcing wines directly from wineries",
+    date: "12/11/2023",
+    image: featured1,
+  },
+  {
+    id: 6,
+    title: "Burgundy vs Barbaresco: discover the differences in these regions",
+    date: "12/11/2023",
+    image: featured3,
+  },
+];
+
+export const BlogDetailsList = [
+  {
+    id: 1,
+    title:
+      "The benefits and differences when sourcing wines directly from wineries",
+    date: "24/10/2023",
+    image: details1,
+  },
+  {
+    id: 2,
+    title: "The rising stars of French wines that you need to know",
+    date: "23/10/2023",
+    image: details2,
+  },
+  {
+    id: 3,
+    title: "The rising stars of French wines that you need to know",
+    date: "23/10/2023",
+    image: details2,
+  },
 ];
