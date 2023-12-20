@@ -1198,8 +1198,6 @@ export function ErrorIcon() {
     </svg>
   );
 }
-<<<<<<< Updated upstream
-=======
 
 export function ArrowLongUP() {
   return (
@@ -1621,4 +1619,3 @@ export function ArtworkIcon({ color = "#BF4D20" }: { color?: any }) {
     </svg>
   );
 }
->>>>>>> Stashed changes
