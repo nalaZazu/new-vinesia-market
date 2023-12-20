@@ -39,7 +39,7 @@ export default function NewslettersTwo() {
               Fancy discussing wine with our community?
             </h3>
             <p className=" text-center text-[#D4DADE] text-base font-normal max-w-[360px]  leading-snug pt-4">
-              Join our investors' community and talk about investment
+              Join our {`investor's`} community and talk about investment
               opportunities, ask questions or discuss anything wine-related!
             </p>
           </div>
