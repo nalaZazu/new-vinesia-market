@@ -21,6 +21,7 @@ const config: Config = {
         Primarybutton: "#BF4D20",
       },
     },
+    fontFamily: { canela: "Canela", albertsans: "Albert Sans", jost: "Jost" },
   },
   plugins: [
     function ({ addComponents }: { addComponents: any }) {

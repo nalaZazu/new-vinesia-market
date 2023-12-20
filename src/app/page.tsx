@@ -3,7 +3,7 @@ import Critics from "../components/critics/page";
 import ProductCards from "../components/productCard/page";
 import Subscription from "../components/subscription/page";
 import VideoBanner from "../components/videoBanner/page";
-import WineArt from "../components/wineArt/page";
+import WineArtSection from "../components/wineArtSection/page";
 import HeritageCarousel from "../components/heritageCarousel/page";
 import ExploreRegion from "../components/exploreRegion/page";
 import Newsletter from "../components/newsletter/page";
@@ -51,7 +51,7 @@ export default function Home() {
           </div>
         </div>
         <div className=" py-20 md:py-40 bg-red-900 relative">
-          <WineArt />
+          <WineArtSection />
         </div>
 
         <div className="md:py-40 py-20 relative">

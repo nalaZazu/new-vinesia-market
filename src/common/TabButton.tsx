@@ -18,17 +18,21 @@ export default function TabButton({
   };
   return (
     <div className="">
-      <div className="flex border-b-2 border-orange-700 border-opacity-20">
+      <div className="flex  md:flex-nowrap  flex-wrap border-b-2 border-orange-700 border-opacity-20">
         {data?.map((item: any, i: any) => {
           return (
             <div
               key={i}
-              className={` border-orange-700 text-center w-full ${
-                selectedTab == i && "border-b-2"
+              className={` border-orange-700  text-center w-full ${
+                selectedTab == i && "border-b-4 "
               } `}
             >
               <button
-                className="text-orange-700 text-xs font-normal uppercase tracking-tight py-4"
+                className={`${
+                  selectedTab == i
+                    ? " text-orange-700 "
+                    : " "
+                }    py-4 font-normal uppercase tracking-tight text-xs `}
                 onClick={() => handleTab(i)}
               >
                 {item}

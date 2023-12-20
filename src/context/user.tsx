@@ -1,6 +1,6 @@
 "use client"
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
-import { Connector, PublicClient, WagmiConfig, configureChains, createConfig, useAccount, useConnect, useDisconnect } from "wagmi";
+import { configureChains, createConfig, useAccount, useConnect, useDisconnect } from "wagmi";
 import { goerli, mainnet } from "wagmi/chains";
 import { CoinbaseWalletConnector } from "wagmi/connectors/coinbaseWallet";
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
@@ -19,12 +19,12 @@ export interface ProvideUser {
     isDisconnected: boolean
     isLoading: boolean
 
-    currency: string
-    language: string
+    currency: string;
+    language: string;
 
-    getText: (text: string) => string
-    getPriceText: (price: number) => string
-    getPriceDifference: (release: number, current: number) => string
+    getText: (text: string) => string;
+    getPriceText: (price: number) => string;
+    getPriceDifference: (release: number, current: number) => string;
 
     connectSocialAsync: (subtype: string) => Promise<any>
     disconnectAsync: () => Promise<any>
@@ -110,15 +110,17 @@ export function useProvideUser(): ProvideUser {
         // setIsReconnecting(false)
     }, [token, magic])
 
-
     function getText(text: string): string {
-        return ''
+        return "";
     }
 
     function getPriceText(price: number): string {
         const priceDec = price / 100
 
-        return priceDec.toLocaleString('en-US', { style: "currency", currency: "EUR" })
+        return priceDec.toLocaleString("en-US", {
+            style: "currency",
+            currency: "EUR",
+        });
     }
 
     function getPriceDifference(release: number, current: number) {
@@ -147,6 +149,7 @@ export function useProvideUser(): ProvideUser {
         }
     }, [magic, setToken]);
 
+
     return {
         currency,
         language,
@@ -170,15 +173,10 @@ export function useProvideUser(): ProvideUser {
     }
 }
 
-
 const { chains, publicClient, webSocketPublicClient } = configureChains(
-    [mainnet, ...(process.env.NODE_ENV === 'development' ? [goerli] : [])],
-    [
-        publicProvider(),
-    ],
-)
-
-
+    [mainnet, ...(process.env.NODE_ENV === "development" ? [goerli] : [])],
+    [publicProvider()]
+);
 
 export const config = createConfig({
     autoConnect: true,
@@ -204,11 +202,15 @@ export const config = createConfig({
 const userContext = createContext<ProvideUser | null>(null);
 
 export function UserProvider({ children }: { children: React.ReactNode }) {
-    return (<userContext.Provider value={useProvideUser()}>{children}</userContext.Provider>);
+    return (
+        <userContext.Provider value={useProvideUser()}>
+            {children}
+        </userContext.Provider>
+    );
 }
 
 export function useUserContext(): ProvideUser {
     const context = useContext(userContext);
-    if (context === null) throw new Error('User provider is not set')
-    return context
+    if (context === null) throw new Error("User provider is not set");
+    return context;
 }
