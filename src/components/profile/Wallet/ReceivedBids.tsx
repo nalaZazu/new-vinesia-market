@@ -14,9 +14,9 @@ export default function ReceivedBids() {
     <>
       <div>
         <div className="justify-between items-center flex">
-          <div className="text-zinc-800 text-lg font-semibold leading-relaxed">
+          <p className="text-zinc-800 text-lg font-semibold leading-relaxed">
             Received Bids
-          </div>
+          </p>
           <div className="flex border border-stone-400 rounded-full items-center px-3 gap-2">
             <div>
               <SearchIcon fill={"#000"} />
