@@ -69,9 +69,16 @@ export default function Header() {
   const isDark = (pathName: string) =>
     pathName === "/" ||
     (size.width > 767 && pathName == "/signup") ||
+<<<<<<< Updated upstream
     pathName === "/wineart" ||
     pathName === "/reso" ||
     pathName === "/wacollections";
+=======
+    pathName === "/wacollections" ||
+    pathName === "/wacollections/reso" ||
+    pathName === "/gifts" ||
+    pathName === "/limitedcollections";
+>>>>>>> Stashed changes
   const getTheme = (pathName: string) =>
     isDark(pathName) ? themes.Dark : themes.Light;
 
