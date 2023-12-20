@@ -7,12 +7,11 @@ import MobileFilter from "./moibleview/page";
 import Newsletter from "@/components/newsletter/page";
 import Footer from "@/components/footer/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
-import ProductCards from "@/components/productCard/page";
 import Product from "@/components/products/page";
 import { MarksAnim } from "@/assets/icons/Icons";
-import { ProductList } from "@/constants/products";
+import { ProductCardDto } from "@/types/productCard.dto";
 
-const AvailableSoon = () => {
+export default function AvailableSoon() {
   return (
     <div>
       {/* <Headersecond /> */}
@@ -40,7 +39,7 @@ const AvailableSoon = () => {
         </div>
         {/* product list  */}
         <div className="md:block hidden">
-          <Product items={ProductList} />
+          <Product />
           {/* <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20">
             {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, index: any) => {
               return (
@@ -86,5 +85,3 @@ const AvailableSoon = () => {
     </div>
   );
 };
-
-export default AvailableSoon;

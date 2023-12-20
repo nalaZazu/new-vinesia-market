@@ -12,7 +12,6 @@ import CriticsMobile from "../components/critics/mobileView";
 import ExploreRegionMobile from "../components/exploreRegion/mobileview";
 import NewsletterMobile from "../components/newsletter/MobileView";
 import Product from "@/components/products/page";
-import { ProductList } from "@/constants/products";
 
 export default function Home() {
   const breadCrumbData = ["italy", "spttimano", "barbaresco", "2020"];
@@ -29,7 +28,7 @@ export default function Home() {
               <HeritageCarousel />
             </div>
             <div className="block md:hidden">
-              <Product items={ProductList} />
+              <Product />
               {/* <ProductCards /> */}
             </div>
             <div className="pt-14 md:pt-20 pb-20 md:pb-40">

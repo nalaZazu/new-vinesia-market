@@ -3,8 +3,8 @@ import ProductCards from "../productCard/page";
 import playvideo from "@/assets/icons/Playbtn.svg";
 import Image from "next/image";
 import { Arrows } from "@/assets/icons/Icons";
-import { ProductList } from "@/constants/products";
-export default function YouMayAlso() {
+import { ProductCardDto } from "@/types/productCard.dto";
+export default function YouMayAlso({items}:{items?: ProductCardDto[]}) {
   return (
     <div>
       <section className="">
@@ -34,7 +34,7 @@ export default function YouMayAlso() {
               </div>
             </div>
 
-            {ProductList?.slice(0, 3)?.map((item: any, index: any) => {
+            {items?.slice(0, 3)?.map((item: any, index: any) => {
               return (
                 <div key={index} className="max-w-[288px] mx-auto">
                   <ProductCards item={item} />

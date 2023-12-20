@@ -1,3 +1,4 @@
+"use client"
 import { createContext, useContext, useState } from "react";
 import { Connector, WagmiConfig, configureChains, createConfig, useAccount, useConnect, useDisconnect } from "wagmi";
 import { goerli, mainnet } from "wagmi/chains";

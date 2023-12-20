@@ -1,16 +1,13 @@
 "use client";
-import Image from "next/image";
 import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { NextIcon, NextIcon2, PrevIcon } from "../../assets/icons/Icons";
-import winebotel1 from "../../assets/images/winebotel1.png";
-import Art from "../../assets/images/arat.png";
+import { NextIcon, PrevIcon } from "../../assets/icons/Icons";
 import ProductCards from "../productCard/page";
-import { ProductList } from "@/constants/products";
+import { ProductCardDto } from "@/types/productCard.dto";
 
-export default function HeritageCarousel() {
+export default function HeritageCarousel({items}:{items?: ProductCardDto[]}) {
   const [currentslide, setCurrentSlide] = useState(0);
   const sliderSettings = {
     customPaging: function () {
@@ -42,7 +39,7 @@ export default function HeritageCarousel() {
             <div className="productcarousel  z-50">
               <div
                 className={`" text-black w-16 h-12 flex items-center rounded-full border justify-center   ${
-                  currentslide == ProductList?.length
+                  currentslide == items?.length
                     ? "border-[#BF4D2020]"
                     : "border-orange-700"
                 }`}
@@ -50,7 +47,7 @@ export default function HeritageCarousel() {
                 <div>
                   <NextIcon
                     fill={
-                      currentslide == ProductList?.length - 2
+                      currentslide == items?.length ?? 0 - 2
                         ? "#BF4D2020"
                         : "#BF4D20"
                     }
@@ -88,7 +85,7 @@ export default function HeritageCarousel() {
       <div className="productcarousel  z-50">
         <div
           className={`" text-black w-16 h-12 flex items-center rounded-full border justify-center   ${
-            currentslide == ProductList?.length - 1
+            currentslide == items?.length ?? 0 - 1
               ? "border-[#BF4D2020] pointer-events-none disabled"
               : "border-orange-700"
           }`}
@@ -96,7 +93,7 @@ export default function HeritageCarousel() {
           <div>
             <NextIcon
               fill={
-                currentslide == ProductList?.length - 1
+                currentslide == items?.length ?? 0 - 1
                   ? "#BF4D2020"
                   : "#BF4D20"
               }
@@ -110,7 +107,7 @@ export default function HeritageCarousel() {
     <div>
       <div className=" container mx-auto lg:max-w-[928px] md:max-w-[600px]">
         <Slider {...sliderSettings} className="invest_carousel z-0">
-          {ProductList?.map((item: any, i: any) => {
+          {items?.map((item: any, i: any) => {
             return (
               <div key={i} className="px-4">
                 <ProductCards item={item} />
