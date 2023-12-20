@@ -86,6 +86,14 @@ h6 {
   background-size: cover;
   /* background-position: center; */
 }
+/* winery page */
+.winery-bg-image {
+  background-image: url("../assets/images/winerybanner.png");
+  height: 818px;
+  background-size: cover;
+  /* background-position: center; */
+}
+
 /* signUp-page */
 .customsign-bg-image {
   background-image: none;

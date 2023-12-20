@@ -39,7 +39,7 @@ export default function OurStory() {
     <div>
       {" "}
       <div className="pb-12">
-        <h2 className="self-stretch text-zinc-800 text-7xl font-normal font-['Canela'] leading-[84px] pb-6">
+        <h2 className="self-stretch text-zinc-800 text-7xl font-normal leading-[84px] pb-6">
           Our story
         </h2>
         <p className="self-stretch text-zinc-800 text-lg font-semibold leading-relaxed">
