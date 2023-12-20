@@ -4,6 +4,7 @@ import TabButton from "@/common/TabButton";
 import DropDownButton from "@/common/DropDownButton";
 import Product from "../products/page";
 import { Checkbox } from "@/common/Components";
+import ProductCards from "../productCard/page";
 
 export default function AllEditions({
   products,
@@ -74,28 +75,28 @@ export default function AllEditions({
         </div>
         {/* desktop */}
         <div className="hidden sm:block ">
-          {/* <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-8 px-4 container max-w-[1248px] mx-auto">
-            {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, i: any) => {
+          <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-8 px-4 container max-w-[1248px] mx-auto">
+            {products?.map((item: any, i: any) => {
               return (
                 <div key={i} className=" max-w-[288px] mx-auto">
-                  <ProductCard />
+                  <ProductCards item={item} isEdition={true} />
                 </div>
               );
             })}
-          </div> */}
+          </div>
           <Product />
         </div>
         {/* mobile */}
         <div className="block sm:hidden">
-          {/* <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-1 gap-8">
-            {[1, 2]?.map((item: any, i: any) => {
+          <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-1 gap-8">
+            {products?.map((item: any, i: any) => {
               return (
                 <div key={i} className="pb-6">
-                  <ProductCard item={undefined} />
+                  <ProductCards item={item} />
                 </div>
               );
             })}
-          </div> */}
+          </div>
           <Product />
         </div>
       </div>

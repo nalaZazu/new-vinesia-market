@@ -28,12 +28,10 @@ import { MarksAnim, Xmark } from "@/assets/icons/Icons";
 import ProductCards from "@/components/productCard/page";
 
 const Invest = () => {
-  const [tags, setTags] = useState<String[]>([]);
+  const [tags, setTags] = useState<String[]>([])
 
-  const { data, error, isLoading } = useSWR(
-    `${process.env.NEXT_PUBLIC_API_ADDRESS}products/search/`,
-    fetcher
-  );
+  const { data, error, isLoading } = useSWR(`${process.env.NEXT_PUBLIC_API_ADDRESS}products/search/`, fetcher)
+
 
   return (
     <div>
@@ -62,25 +60,13 @@ const Invest = () => {
           <div className="md:hidden block">
             <MobileFilter />
           </div>
+          
           {/* product list  */}
           <div className="md:block hidden">
             <Product items={data?.data} />
           </div>
-          {/* animation  component  */}
-          <div className="p-16 flex justify-center mx-auto items-center gap-10">
-            <div className=" border-b-[1px] h-0 w-full border-[#CB220D] border-opacity-10"></div>
-            <MarksAnim fill="#CB220D" />
-            <div className="border-b-[1px] h-0 w-full border-[#CB220D]  border-opacity-10"></div>
-          </div>
         </div>
 
-        {/* next product list  */}
-        <Product items={data?.data} />
-        <div className="p-16 flex justify-center mx-auto items-center gap-10">
-          <div className=" border-b-[1px] h-0 w-full border-[#CB220D] border-opacity-10"></div>
-          <MarksAnim fill="#CB220D" />
-          <div className="border-b-[1px] h-0 w-full border-[#CB220D]  border-opacity-10"></div>
-        </div>
       </div>
       {/* desktop Newsletter*/}
       <div className="hidden sm:block">

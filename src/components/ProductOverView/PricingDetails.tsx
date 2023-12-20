@@ -2,9 +2,12 @@
 import React from "react";
 import Image from "next/image";
 import infologo from "@/assets/icons/info.svg";
+import { useUserContext } from "@/context/user";
 
 // export default function PricingDetail({ release }: { release: any }) {
-export default function PricingDetail() {
+export default function PricingDetail({item}: {item?: any }) {
+  const { getPriceText, getPriceDifference } = useUserContext()
+
   return (
     <div>
       <p className="text-zinc-800 text-lg font-semibold leading-relaxed">
@@ -23,7 +26,7 @@ export default function PricingDetail() {
               />
             </div>
             <p className="text-zinc-800 text-lg font-semibold leading-relaxed">
-              €38,888
+              {getPriceText(item?.releaseDetails?.releasePrice)}
             </p>
           </div>
           <div className="gap-10 p-5 rounded-tr border-l border-r border-t border-orange-700 border-opacity-20 flex-col justify-between items-start inline-flex">
@@ -36,7 +39,7 @@ export default function PricingDetail() {
               />
             </div>
             <p className=" text-lg font-semibold text-gray-500 tracking-tight">
-              €48,888
+              {getPriceText(item?.releaseDetails?.averagePrice)}
             </p>
           </div>
         </div>
@@ -52,7 +55,7 @@ export default function PricingDetail() {
               </p>
             </div>
             <p className=" text-lg font-semibold text-gray-500 tracking-tight">
-              €68,888
+              {getPriceText(item?.releaseDetails?.highPrice)}
             </p>
           </div>
 
@@ -66,13 +69,7 @@ export default function PricingDetail() {
               </p>
             </div>
             <p className=" text-lg font-semibold text-white  tracking-tight">
-              {/* +
-              {`  ${(
-                ((release?.highPrice - release?.releasePrice) /
-                  release?.releasePrice) *
-                100
-              ).toFixed(3)} % ↑`} */}
-              + 66.6%
+              {getPriceDifference(item?.releaseDetails?.releasePrice, item?.floorPrice)}
             </p>
           </div>
         </div>

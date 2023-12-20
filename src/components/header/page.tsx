@@ -48,7 +48,7 @@ const getTopMenuItem = (pathName: string) => {
     }
   }
 
-  return menuItems[0];
+  return menuItems[1];
 };
 
 const getMenuItem = (pathName: string) => {
@@ -60,7 +60,8 @@ const getMenuItem = (pathName: string) => {
     }
   }
 
-  return menuItems[0].items[0];
+  return null
+  // return menuItems[1].items[0];
 };
 
 export default function Header() {

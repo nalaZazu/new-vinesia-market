@@ -32,45 +32,47 @@ const ProductTopSection = ({ data }: { data: any }) => {
               {data.wine === null ? (
                 <></>
               ) : (
-                <>
-                  <div
-                    className={`${
-                      selectedTab === 0 ? "border-b-2" : ""
+                <div
+                  className={`${selectedTab === 0 ? "border-b-2" : ""
                     }  border-orange-700  pb-3  min-w-[180px]`}
+                >
+                  <button
+                    className="text-start"
+                    onClick={() => setSelectedTab(0)}
                   >
-                    <button
-                      className="text-start"
-                      onClick={() => setSelectedTab(0)}
-                    >
-                      <p className=" text-zinc-800 text-lg font-semibold leading-relaxed ">
-                        {" "}
-                        Wine
-                      </p>
-                      <p className=" text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight">
-                        LWIN: {data.wine.lwinNumber}
-                      </p>
-                    </button>
-                  </div>
-                  <div
-                    className={`${
-                      selectedTab === 1 ? "border-b-2" : ""
-                    }  border-orange-700  pb-3  min-w-[180px]`}
-                  >
-                    <button
-                      className="text-start"
-                      onClick={() => setSelectedTab(1)}
-                    >
-                      <p className="text-black text-lg font-semibold leading-relaxed">
-                        {" "}
-                        Art
-                      </p>{" "}
-                      <p className=" text-black text-xs font-normal uppercase leading-3 tracking-tight">
-                        Artist: Lola Designer Fun...
-                      </p>
-                    </button>
-                  </div>
-                </>
+                    <p className=" text-zinc-800 text-lg font-semibold leading-relaxed ">
+                      {" "}
+                      Wine
+                    </p>
+                    <p className=" text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight">
+                      LWIN: {data.wine.lwinNumber}
+                    </p>
+                  </button>
+                </div>
               )}
+
+              {data.art === null ? (
+                <></>
+              ) : (
+                <div
+                  className={`${selectedTab === 1 ? "border-b-2" : ""
+                    }  border-orange-700  pb-3  min-w-[180px]`}
+                >
+                  <button
+                    className="text-start"
+                    onClick={() => setSelectedTab(1)}
+                  >
+                    <p className="text-black text-lg font-semibold leading-relaxed">
+                      {" "}
+                      Art
+                    </p>{" "}
+                    <p className=" text-black text-xs font-normal uppercase leading-3 tracking-tight">
+                      Artist: Lola Designer Fun...
+                    </p>
+                  </button>
+                </div>
+              )}
+
             </div>
 
             {selectedTab == 0 ? (

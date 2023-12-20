@@ -5,9 +5,9 @@ import Art from "../../assets/images/arat.png";
 import Image from "next/image";
 import ProductCards from "../productCard/page";
 import { ProductCardDto } from "@/types/productCard.dto";
-import { ProductList } from "@/constants/products";
+import { MarksAnim } from "@/assets/icons/Icons";
 // Temporarly Added Default Products as Apis not fully integrated
-const Product = ({ items = ProductList }: { items?: ProductCardDto[] }) => {
+const Product = ({ items }: { items?: ProductCardDto[] }) => {
   function splitToChunks(items: ProductCardDto[]): ProductCardDto[][] {
     const result: ProductCardDto[][] = [];
 
@@ -45,9 +45,12 @@ const Product = ({ items = ProductList }: { items?: ProductCardDto[] }) => {
                 )}
               </div>
               {/* animation  component  */}
-              {/* <div className="p-16 flex justify-center mx-auto ">
-                <Image src={xmark} alt="xmark" />
-              </div> */}
+              <div className="p-16 flex justify-center mx-auto items-center gap-10">
+                <div className=" border-b-[1px] h-0 w-full border-[#CB220D] border-opacity-10"></div>
+                <MarksAnim fill="#CB220D" />
+                <div className="border-b-[1px] h-0 w-full border-[#CB220D]  border-opacity-10"></div>
+              </div>
+
             </>
           );
         })}

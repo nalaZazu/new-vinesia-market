@@ -2,6 +2,7 @@
 export interface ProductCardDto {
     id: number
     name: string
+    number: number
     description: string
 
     owners: string[]

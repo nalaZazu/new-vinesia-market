@@ -21,9 +21,11 @@ export interface ProvideUser {
     language: string
 
     getText: (text: string) => string
+    getPriceText: (price: number) => string
+    getPriceDifference: (release: number, current: number) => string
 
     // connectAsync: (args?: Partial<ConnectArgs>) => Promise<ConnectResult<_wagmi_core.PublicClient>>;
-    // disconnectAsync: () => Promise<any>
+    disconnectAsync: () => Promise<any>
 }
 
 export function useProvideUser(): ProvideUser {
@@ -38,12 +40,36 @@ export function useProvideUser(): ProvideUser {
         return ''
     }
 
+    function getPriceText(price: number): string {
+        const priceDec = price/100
+
+        return priceDec.toLocaleString('en-US', { style: "currency", currency: "EUR" })
+    }
+
+    function getPriceDifference(release: number, current: number) {
+
+              {/* +
+              {`  ${(
+                ((release?.highPrice - release?.releasePrice) /
+                  release?.releasePrice) *
+                100
+              ).toFixed(3)} % ↑`} */}
+            //   + 66.6%
+
+        const diff = (current - release) / release * 100
+
+        return diff.toFixed(1)+'%'
+    }
+
 
     return {
         currency,
         language,
 
         getText,
+
+        getPriceText,
+        getPriceDifference,
 
         status,
         address,
@@ -54,7 +80,7 @@ export function useProvideUser(): ProvideUser {
         isLoading,
         connectors,
         // connectAsync,
-        // disconnectAsync
+        disconnectAsync
     }
 }
 

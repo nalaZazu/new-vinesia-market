@@ -3,9 +3,12 @@ import React, { useState } from "react";
 import ModalContainer from "./ModalContainer";
 import { BiddingSection } from "@/constants/accrodion";
 import { BillingInput } from "./Components";
+import { useUserContext } from "@/context/user";
 
 export default function ShareCard({ data }: { data: any }) {
   const [visible, setVisible] = useState(false);
+
+  const { getPriceText } = useUserContext()
 
   if (data === undefined) {
     return <></>
@@ -221,8 +224,8 @@ export default function ShareCard({ data }: { data: any }) {
                 d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
               />
             </svg>
-            <h1 className=" text-zinc-800 text-4xl font-light leading-[44px]">
-              €68,888
+            <h1 className="text-zinc-800 text-4xl font-light leading-[44px]">
+              {getPriceText(data.floorPrice)}
             </h1>
           </div>
 
