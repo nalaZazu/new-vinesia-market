@@ -1,130 +1,148 @@
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
-import videoImage from "@/assets/images/video (1080p) 2.png";
-import { Arrows } from "@/assets/icons/Icons";
-import background from "@/assets/images/backgroundEllipse .png";
-import backgroundtwo from "@/assets/images/Ellipse circle2x.png";
-import Newsletter from "@/components/newsletter/page";
-import NewsletterMobile from "@/components/newsletter/MobileView";
+import AboutBanner from "@/components/aboutpage/AboutBanner";
+import FeaturedLogos from "@/components/aboutpage/FeaturedLogos";
+import OurMission from "@/components/aboutpage/OurMission";
+import OurVision from "@/components/aboutpage/OurVision";
+import OurValues from "@/components/aboutpage/OurValues";
+import Wanttoknow from "@/components/aboutpage/Wanttoknow";
+import OurStory from "@/components/aboutpage/OurStory";
+import VideoStoryBanner from "@/components/aboutpage/VideoStoryBanner";
+import OutTeam from "@/components/aboutpage/OutTeam";
+import OurExpert from "@/components/aboutpage/OurExpert";
+import AboutSlider from "@/components/AboutSection/aboutslider/page";
+import VectorTwo from "@/assets/icons/VectorTwo.svg";
+import VectorOne from "@/assets/icons/VectorOne.svg";
 import Footer from "@/components/footer/page";
-import grapes from "@/assets/icons/aboutIllustrations.svg";
-import bottleIllustration from "@/assets/icons/bottle-Illustrations.svg";
-import bottleIllustrations from "@/assets/icons/wine-bottle-Illustrations.svg";
-import glass from "@/assets/icons/glass.svg";
-import arrowdowns from "@/assets/icons/downarrow.svg";
-import textOne from "@/assets/icons/getStarted.svg";
-import textTwo from "@/assets/icons/getstarted2.svg";
-import star from "@/assets/icons/star.svg";
-import AboutOne from "@/components/AboutSection/aboutOne/page";
-import AboutTwo from "@/components/AboutSection/aboutTwo/page";
-import AboutThree from "@/components/AboutSection/aboutThree/page";
-const About = () => {
+
+export default function AboutUs() {
   return (
-    <React.Fragment>
-      {/* Main heading section */}
-
-      <div className="relative container mx-auto md:py-0 pb-20">
-        <div className="container mx-auto md:px-0 px-4 ">
-          <div className="md:flex md:justify-end justify-start text-[#BD936B] text-xs font-normal   uppercase leading-3 tracking-tight md:pt-5 pt-4  tracking-[ 0.24px]">
-            <p> appreciating your wine,</p>
-            <p>guarding its emotions</p>
-          </div>
-
-          <div className="md:text-center  pt-16">
-            <div className="relative">
-              <span className=" text-zinc-800 md:text-4xl font-light  md:leading-[44px] tracking-[-0.36px]  md:text-center   text-[21px]  leading-[29px]">
-                The future of wine investing
-              </span>
-              <div className="absolute -top-3 left-0 md:block hidden ">
-                <Image src={grapes} alt="image-icon" />
-              </div>
-            </div>
-            {/* here is main text-div  */}
-            <div className="relative">
-              <h1 className=" text-zinc-800 md:text-[144px] font-normal md:tracking-[-2.88px] md:leading-[155px] tracking-[-1.2px]     text-6xl    leading-[68px]">
-                secure, transparent, easily tradable
-              </h1>
-              <div className="absolute top-0 -right-9 md:block hidden">
-                <Image src={bottleIllustration} alt="image-icon" />
-              </div>
-              <div className="absolute  left-40 md:block hidden">
-                <Image src={bottleIllustrations} alt="image-icon" />
-              </div>
-            </div>
-          </div>
-          <div className="text-center pt-[69px] ">
-            <button className="px-8 py-[22px] bg-orange-700 rounded-full  justify-center items-center gap-3 inline-flex  text-center text-white text-xs font-normal -mb-4 uppercase leading-3 tracking-tight">
-              START NOW <Arrows storke="#FFFFFF" />
-            </button>
-          </div>
-          {/* <div className="relative md:block hidden">
-            <div className="bg-[#ECDDC0] w-[700px] h-[300px] mx-auto  rounded-tl-full rounded-tr-full relative -z-10" />
-
-            <div className="absolute left-0 right-0 top-10">
-              <Image
-                src={videoWine}
-                alt="video"
-                className=" rounded-tl-full rounded-tr-full  w-[600px] h-[259px] mx-auto"
-              />
-            </div>
-          </div> */}
+    <div className="absolute top-0 -z-10 left-0 right-0">
+      <div>
+        <div className="relative">
+          <AboutBanner />
         </div>
-        <div className="relative md:block hidden">
-          <div className="absolute right-0">
-            <Image src={background} alt="glass image" />
-            <div className="absolute -top-2 -left-2 ">
-              <Image src={textOne} alt="glass image" />
-            </div>
-            <div className="absolute  bottom-[20px] left-10">
-              <Image src={star} alt="glass image" />
-            </div>
-            <div className="absolute  -bottom-3 -right-3">
-              <Image src={textTwo} alt="glass image" />
-            </div>
-            <div className="absolute  left-24 bottom-28">
-              <Image src={star} alt="glass image" />
-            </div>
+      </div>
+      <FeaturedLogos />
+      <div className="py-20">
+        <div className="container mx-auto px-4">
+          <OurMission />
+        </div>
+      </div>
+      <div className="pt-20 pb-40">
+        <div className="container mx-auto px-4">
+          <OurVision />
+        </div>
+      </div>
+      <div className="pt-40 pb-24 bg-zinc-800">
+        <div className="container mx-auto px-4">
+          <OurValues />
+        </div>
+      </div>
+      <div className="py-12 bg-red-900">
+        <div className=" container mx-auto px-4">
+          <Wanttoknow />
+        </div>
+      </div>
+      <div className="container mx-auto px-4 py-40">
+        <OurStory />
+      </div>
+      <VideoStoryBanner />
+      {/* our team */}
+      <div className="bg-[#F7EFDF]">
+        <div className=" container mx-auto px-4 pt-40 pb-24">
+          <div className="pb-12">
+            <h2 className="text-zinc-800 text-7xl font-normal font-['Canela'] leading-[84px]">
+              Our team
+            </h2>
           </div>
-
-          <div className="relative">
-            <div className="absolute  right-[30px] w-[71px] h-[71px] top-[34px]">
-              <Image src={backgroundtwo} alt="glass image" />
-            </div>
-            <div className="absolute  right-14   top-[55px]">
-              <Image src={arrowdowns} alt="glass image" />
-            </div>
-          </div>
-
-          <div className="absolute right-32">
-            <Image src={glass} alt="glass image" />
+          <div className="grid grid-cols-4 gap-8">
+            {[1, 2, 3, 4, 5, 6, 7, 8].map((items, i) => {
+              return (
+                <div key={i} className="pb-16">
+                  <OutTeam />
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
+      {/* our experts */}
+      <div className="py-40 px-4">
+        <div className=" container mx-auto">
+          <div className="flex-col justify-start items-start gap-1 flex">
+            <p className="text-stone-500 text-xs font-normal font-['Albert Sans'] uppercase leading-[18px] tracking-tight">
+              Our
+            </p>
+            <h2 className="text-zinc-800 text-7xl font-normal font-['Canela'] leading-[84px]">
+              Expert advisors
+            </h2>
+          </div>
 
-      {/* here is video section */}
-      <div className="w-full md:pt-80">
-        <Image src={videoImage} className="w-full" alt="video" />
+          <div className="grid grid-cols-2 gap-20 pt-6 pb-16">
+            <p className="grow shrink basis-0 text-zinc-800 text-base font-normal font-['Albert Sans'] leading-snug">
+              Deep knowledge, experience and a healthy dose of challenge from
+              our expert advisors to keep us on our toes.Our success stems from
+              the ability to source exceptional wines for our investors, to act
+              as respectful stewards towards the magical products.
+            </p>
+            <p className="grow shrink basis-0 text-zinc-800 text-base font-normal font-['Albert Sans'] leading-snug">
+              Deep knowledge, experience and a healthy dose of challenge from
+              our expert advisors to keep us on our toes.Our success stems from
+              the ability to source exceptional wines for our investors, to act
+              as respectful stewards towards the magical products.
+            </p>
+          </div>
+          <div className="grid grid-cols-3">
+            {[1, 2, 3].map((items, i) => {
+              return (
+                <div key={i}>
+                  <OurExpert />
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
-      {/* here is next section */}
-      <AboutOne />
+      {/* the faster way */}
+      {/* The faster way to get to know us */}
+      <div className="bg-[#2F222B]">
+        <div className="relative">
+          <div className="absolute md:block hidden">
+            <Image src={VectorOne} alt="vector" />
+          </div>
+        </div>
+        <div className="flex justify-end md:py-40 md:px-0  px-4 py-20">
+          <div className=" max-w-[1314px]">
+            <div className="">
+              <div>
+                <h3 className="text-white text-4xl font-light   leading-[44px] pb-8">
+                  The faster way to get to know us
+                </h3>
+              </div>
+            </div>
 
-      {/* here is next section */}
-      <AboutTwo />
-
-      {/* here is next section */}
-      <AboutThree />
-
-      {/* desktop Newsletter*/}
-      <div className="hidden sm:block">
-        <Newsletter />
+            {/* here is new slider  section */}
+            <div className="hidden md:block">
+              <div>
+                <AboutSlider />
+              </div>
+            </div>
+            <div className="md:hidden block  ">
+              <div className="grid grid-cols-1 ">
+                <AboutSlider />
+              </div>
+            </div>
+            <div className="relative md:block hidden ">
+              <div className="absolute bottom-[-151px] right-0">
+                <Image src={VectorTwo} alt="vector" />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      {/* mobile Newsletter */}
-      <div className="block sm:hidden">
-        <NewsletterMobile />
-      </div>
+      {/* footer */}
       <Footer />
-    </React.Fragment>
+    </div>
   );
-};
-
-export default About;
+}

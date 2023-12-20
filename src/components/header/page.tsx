@@ -70,6 +70,9 @@ export default function Header() {
     pathName === "/" ||
     (size.width > 767 && pathName == "/signup") ||
     pathName === "/wacollections" ||
+    pathName === "/wineart" ||
+    pathName === "/wineart" ||
+    pathName === "/aboutus" ||
     pathName === "/wacollections/reso" ||
     pathName === "/limitedcollections";
   const getTheme = (pathName: string) =>

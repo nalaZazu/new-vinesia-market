@@ -1,6 +1,6 @@
 import Wanttoknow from "@/components/aboutpage/Wanttoknow";
-import Relationship from "@/components/wineryart2/Relationship";
-import WineryBanner from "@/components/wineryart2/WineryBanner";
+import Relationship from "@/components/wineArtPage/Relationship";
+import WineryBanner from "@/components/wineArtPage/WineryBanner";
 import React from "react";
 
 export default function wineryArt() {
