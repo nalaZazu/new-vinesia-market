@@ -84,7 +84,7 @@ export default function ReceivedBids() {
                       scope="row"
                       className=" text-zinc-800 text-base font-normal leading-snug py-5 px-4"
                     >
-                      1# Brunello di Montalcino "Piaggione" | 2019
+                      1# Brunello di Montalcino {"Piaggione"} | 2019
                       <p className="flex gap-2 pt-2 text-[#906447] text-xs font-normal font-['Albert Sans'] uppercase leading-[18px] tracking-tight">
                         ALL BIDS FOR THIS WINE ASSET
                         <LinkIcon />

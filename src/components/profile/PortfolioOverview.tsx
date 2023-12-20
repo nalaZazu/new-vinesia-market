@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import Image from "next/image";
 import winebotel from "@/assets/images/big1.png";
@@ -60,7 +60,7 @@ export default function PortfolioOverview() {
           <div className="flex flex-col pb-6">
             <div className="flex gap-2 items-center pb-2">
               <h4 className="text-zinc-800 text-[21px] font-light leading-[29px] tracking-wide">
-                1# Brunello di Montalcino "Piaggione" | 2019
+                1# Brunello di Montalcino {"Piaggione"} | 2019
               </h4>
               <LinkIcon />
             </div>

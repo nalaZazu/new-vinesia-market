@@ -31,7 +31,7 @@ const MindPledge = ({
         open={openModal2}
         setOpen={() => setOpenModal2(!openModal2)}
       />
-      <div className=" bg-red-900">
+      <div className=" bg-[#7D302E]">
         <div className="md:py-[198px] mx-auto max-w-[816px] text-white">
           <div className="">
             {/* desktop */}
@@ -60,7 +60,7 @@ const MindPledge = ({
                 </svg>
               </span>
             </div>
-            <p className="text-base text-stone-400 md:text-center font-normal md:pt-4 md:pb-12 leading-snug px-4 md:px-0 md:py-0 pt-14">
+            <p className="text-base text-[#CBACAB] md:text-center font-normal md:pt-4 md:pb-12 leading-snug px-4 md:px-0 md:py-0 pt-14">
               “Investor Peace of Mind” is a core principle at Vinesia. It
               encapsulates our commitment to providing a secure, transparent,
               and hassle-free investment experience. Here’s what it entails:

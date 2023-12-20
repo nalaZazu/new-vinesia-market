@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 import { Connector, WagmiConfig, configureChains, createConfig, useAccount, useConnect, useDisconnect } from "wagmi";
 import { goerli, mainnet } from "wagmi/chains";
 import { CoinbaseWalletConnector } from "wagmi/connectors/coinbaseWallet";
@@ -6,10 +6,6 @@ import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
 import { publicProvider } from "wagmi/providers/public";
 import { LoginType, MagicCustomConnector } from "./connectors/MagicConnector";
-
-
-const walletConnectProjectId = 'b339ed4d7a45e8a5c350e565f9ac1c51'
-const magicLinkApiKey = 'pk_live_36148059370BB25E'
 
 export interface ProvideUser {
     status: string
@@ -21,8 +17,13 @@ export interface ProvideUser {
     isLoading: boolean
     connectors: Connector<any, any>[]
 
-    connectAsync: (args?: Partial<ConnectArgs>) => Promise<ConnectResult<_wagmi_core.PublicClient>>;
-    disconnectAsync: () => Promise<any>
+    currency: string
+    language: string
+
+    getText: (text: string) => string
+
+    // connectAsync: (args?: Partial<ConnectArgs>) => Promise<ConnectResult<_wagmi_core.PublicClient>>;
+    // disconnectAsync: () => Promise<any>
 }
 
 export function useProvideUser(): ProvideUser {
@@ -30,8 +31,20 @@ export function useProvideUser(): ProvideUser {
   const { connectAsync, connectors, data, isLoading } = useConnect()
   const { disconnectAsync } = useDisconnect()
 
+    const [currency, setCurrency] = useState('EUR')
+    const [language, setLanguage] = useState('en')
+
+    function getText(text: string): string {
+        return ''
+    }
+
 
     return {
+        currency,
+        language,
+
+        getText,
+
         status,
         address,
         isConnected,
@@ -40,8 +53,8 @@ export function useProvideUser(): ProvideUser {
         isDisconnected,
         isLoading,
         connectors,
-        connectAsync,
-        disconnectAsync
+        // connectAsync,
+        // disconnectAsync
     }
 }
 
@@ -68,28 +81,28 @@ export const config = createConfig({
         new WalletConnectConnector({
             chains,
             options: {
-                projectId: walletConnectProjectId,
+                projectId: process.env.NEXT_PUBLIC_API_WALLET_CONNECT,
             },
         }),
 
         new MagicCustomConnector({
             options: {
-                apiKey: magicLinkApiKey, //required
+                apiKey: process.env.NEXT_PUBLIC_API_MAGIC_LINK, //required
             },
         }, LoginType.Social, 'google'),
         new MagicCustomConnector({
             options: {
-                apiKey: magicLinkApiKey, //required
+                apiKey: process.env.NEXT_PUBLIC_API_MAGIC_LINK, //required
             },
         }, LoginType.Social, 'twitter'),
         new MagicCustomConnector({
             options: {
-                apiKey: magicLinkApiKey, //required
+                apiKey: process.env.NEXT_PUBLIC_API_MAGIC_LINK, //required
             },
         }, LoginType.Social, 'apple'),
         new MagicCustomConnector({
             options: {
-                apiKey: magicLinkApiKey, //required
+                apiKey: process.env.NEXT_PUBLIC_API_MAGIC_LINK, //required
             },
         }, LoginType.Social, 'facebook')
 

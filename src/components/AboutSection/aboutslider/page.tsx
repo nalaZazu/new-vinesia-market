@@ -66,7 +66,7 @@ const AboutSlider = () => {
         <div className=" z-50">
           <div
             onClick={() => slider?.current?.slickNext()}
-            className={`" text-black w-16 h-12 flex items-center rounded-full border justify-center   ${
+            className={`" text-black w-16 h-12 flex items-center rounded-full border justify-center  cursor-pointer  ${
               currentslide == slideData?.length - 1
                 ? "border-[#BF4D2020] pointer-events-none disabled"
                 : "border-orange-700"

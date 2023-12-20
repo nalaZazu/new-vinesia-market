@@ -6,7 +6,7 @@ import graps from "../../assets/images/newslettergraps.png";
 export default function Newsletter() {
   return (
     <div className=" py-40 newsletter_banner flex justify-center">
-      <div className="w-[534px] h-[534px] bg-bgred rounded-full backdrop-blur-[20px] flex justify-center items-center">
+      <div className="w-[534px] h-[534px] bg-[#7D302E99]  rounded-full  flex justify-center items-center">
         <div>
           <div className="flex justify-center mb-6">
             <Image src={graps} alt="" className="w-[46.40px] h-[75px] " />

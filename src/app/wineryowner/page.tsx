@@ -8,6 +8,7 @@ import MobileFilter from "../invest/moibleview/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
 import xmark from "../../assets/icons/x-mark-anim.svg";
 import Image from "next/image";
+import { MarksAnim } from "@/assets/icons/Icons";
 
 export default function WineryOwner() {
   return (
@@ -70,10 +71,12 @@ export default function WineryOwner() {
 
         {/* next product list  */}
 
-        <Product />
+        <Product items={[]} />
         {/* animation  component  */}
-        <div className="p-16 flex justify-center mx-auto ">
-          <Image src={xmark} alt="xmark" />
+        <div className="py-16 flex justify-center mx-auto items-center gap-10">
+          <div className=" border-b-[1px] h-0 w-full border-[#CB220D] border-opacity-10"></div>
+          <MarksAnim fill="#CB220D" />
+          <div className="border-b-[1px] h-0 w-full border-[#CB220D]  border-opacity-10"></div>
         </div>
       </div>
       {/* desktop Newsletter*/}

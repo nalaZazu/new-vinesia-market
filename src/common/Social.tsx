@@ -3,8 +3,8 @@ import React from "react";
 export default function Social() {
   return (
     <div>
-      <div className="flex flex-wrap justify-between items-center md:gap-6 gap-3 md:pe-8">
-        <div className="md:flex mx-auto gap-2 items-center ">
+      <div className="flex md:justify-start justify-between items-center gap-3 md:gap-12 md:pe-8 pe-0">
+        <div className="md:flex gap-2 items-center ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -24,7 +24,7 @@ export default function Social() {
             Favorite
           </p>
         </div>
-        <div className="md:flex mx-auto gap-2 items-center">
+        <div className="md:flex gap-2 items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -43,7 +43,7 @@ export default function Social() {
             Share
           </p>
         </div>
-        <div className="md:flex mx-auto gap-2 items-center">
+        <div className="md:flex m gap-2 items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -67,7 +67,7 @@ export default function Social() {
             999
           </p>
         </div>
-        <div className="md:flex mx-auto gap-2 items-center">
+        {/* <div className="md:flex mx-auto gap-2 items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -85,8 +85,8 @@ export default function Social() {
           <p className="text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight">
             999
           </p>
-        </div>
-        <div className="md:block hidden">
+        </div> */}
+        {/* <div className="md:block hidden">
           <button
             type="button"
             className=" text-center text-orange-700 text-xs font-normal  uppercase leading-3 tracking-tight flex gap-2 items-center focus:ring-0 focus:outline-none focus:ring-gray-100"
@@ -107,7 +107,7 @@ export default function Social() {
               />
             </svg>
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

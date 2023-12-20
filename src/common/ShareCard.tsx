@@ -4,8 +4,13 @@ import ModalContainer from "./ModalContainer";
 import { BiddingSection } from "@/constants/accrodion";
 import { BillingInput } from "./Components";
 
-export default function ShareCard() {
+export default function ShareCard({ data }: { data: any }) {
   const [visible, setVisible] = useState(false);
+
+  if (data === undefined) {
+    return <></>
+
+  }
 
   return (
     <React.Fragment>
@@ -47,27 +52,7 @@ export default function ShareCard() {
         </div>
         {/* here is input filed  */}
         <div className="pb-6">
-          <form action="">
-            {/* <div className="flex ">
-              <label
-                htmlFor="text"
-                className="text-stone-500 text-xs font-normal  uppercase leading-[18px] tracking-tight"
-              >
-                BID AMOUNT
-              </label>
-              <p className="text-[#CB220D]">*</p>
-            </div>
-
-            <div className="mt-2">
-              <input
-                id="text"
-                name="text"
-                type="text"
-                placeholder="€"
-                className=" w-full rounded-full   py-4   pl-6 pr-5 bg-[#F3E8CF] border border-red-400 justify-between items-center  flex  outline-none "
-              />
-            </div> */}
-
+          <form action=""> 
             <BillingInput
               title="BID AMOUNT*"
               name="BID AMOUNT*"
@@ -107,7 +92,7 @@ export default function ShareCard() {
       </ModalContainer>
       {/* here is end of modal */}
       <div>
-        <div className="flex justify-between items-center gap-3 md:gap-4 md:pe-8 pe-0">
+        <div className="flex md:justify-start justify-between items-center gap-3 md:gap-12 md:pe-8 pe-0">
           <div className="md:flex gap-2 items-center md:space-y-0 space-y-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -168,29 +153,32 @@ export default function ShareCard() {
               />
             </svg>
             <p className="text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight">
-              999
+              {data.starred}
             </p>
           </div>
-          <div className="md:flex gap-2 items-center md:space-y-0 space-y-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="w-6 h-6 mx-auto"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"
-              />
-            </svg>
-            <p className="text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight">
-              999
-            </p>
-          </div>
-          <div className="hidden md:block">
+          {/* <div className="md:hidden">
+            <div className="md:flex gap-2 items-center md:space-y-0 space-y-4  ">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="w-6 h-6 mx-auto"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"
+                />
+              </svg>
+              <p className="text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight">
+                999
+              </p>
+            </div>
+          </div> */}
+
+          {/* <div className="hidden md:block">
             <button
               type="button"
               className="flex text-end text-orange-700 text-xs font-normal  uppercase leading-3 tracking-tight  gap-2 items-center focus:ring-0 focus:outline-none focus:ring-gray-100"
@@ -211,12 +199,12 @@ export default function ShareCard() {
                 />
               </svg>
             </button>
-          </div>
+          </div> */}
         </div>
         <div className="my-8 max-w-[608px] h-[0px] border border-orange-700 border-opacity-20"></div>
         <div className="md:flex md:justify-between md:items-center">
           <div className=" uppercase items-center flex gap-3 md:pb-0 pb-4">
-            <p className="text-right text-stone-500 text-xs font-normal  uppercase leading-3 tracking-tight">
+            <p className="text-right text-[#906447] text-xs font-normal  uppercase leading-3 tracking-tight">
               Floor PRICE
             </p>
             <svg
@@ -233,9 +221,9 @@ export default function ShareCard() {
                 d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
               />
             </svg>
-            <p className=" text-zinc-800 text-4xl font-light leading-[44px]">
+            <h1 className=" text-zinc-800 text-4xl font-light leading-[44px]">
               €68,888
-            </p>
+            </h1>
           </div>
 
           <div>

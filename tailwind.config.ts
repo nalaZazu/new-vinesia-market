@@ -1,22 +1,18 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
-    './src/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
       backgroundImage: {
-        'hero': "url('/src/assets/images/herobanner.png')",
+        hero: "url('/src/assets/images/herobanner.png')",
         // 'hero-mobile': "url('/src/assets/images/herobanner.png')",
       },
-      backgroundColor:{
-
-      },
+      backgroundColor: {},
       colors: {
         primary: "#2F222B",
         "primary-dark": "#61423D",
-        secondary: "#BF4D20",
+        secondary: "#BF4D20", 
         teritary: "#C2B7A2",
         critcstext: "#2F222B",
         critcscount: "#A6836C",
@@ -27,18 +23,18 @@ const config: Config = {
     },
   },
   plugins: [
-    function({ addComponents }:{addComponents:any}) {
+    function ({ addComponents }: { addComponents: any }) {
       const containerMax = {
-        '.containerMax': {
-          maxWidth: '1400px', // Set your desired max-width
-          padding: '1rem',   // Set your desired padding
-          marginLeft: 'auto',
-          marginRight: 'auto',
+        ".containerMax": {
+          maxWidth: "1400px", // Set your desired max-width
+          padding: "1rem", // Set your desired padding
+          marginLeft: "auto",
+          marginRight: "auto",
         },
-      }
+      };
 
-      addComponents(containerMax)
-    }
+      addComponents(containerMax);
+    },
   ],
 };
 export default config;

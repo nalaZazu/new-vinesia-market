@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Albert_Sans } from "next/font/google";
 import "./globals.css";
@@ -6,6 +6,7 @@ import Header from "@/components/header/page";
 import { UserProvider } from "@/context/user";
 import Head from "next/head";
 import { WagmiProvider } from "@/context/wagmi";
+import Script from "next/script";
 // pages/_app.js or pages/_app.tsx
 const albert = Albert_Sans({
   variable: "--font-albert",
@@ -26,8 +27,10 @@ export default function RootLayout({
     <html lang="en">
       <Head>
         <title>Vinesia Market</title>
-        <meta name='description' content="Vinesia Market" />
+        <meta name="description" content="Vinesia Market" />
       </Head>
+      <Script src="/js/main.js" />
+
       <body className={`${albert.className} bg-[#F3E8CF] `}>
         <Header />
         <WagmiProvider>

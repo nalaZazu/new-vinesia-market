@@ -52,7 +52,7 @@ const PaymentMethod = () => {
             </div>
           </div>
 
-          <CartControls />
+          <CartControls/>
         </div>
       </div>
     </React.Fragment>
