@@ -4,7 +4,7 @@
 
 html {
   scroll-behavior: smooth;
-  }
+}
 @font-face {
   font-family: "canela";
   src: url("../assets/fonts/Canela Text Family/CanelaText-Regular-Trial.otf")
@@ -79,7 +79,13 @@ h6 {
   background-size: cover;
   /* background-position: center; */
 }
-
+/* about banner */
+.aboutus-bg-image {
+  background-image: url("../assets/images/aboutus.png");
+  height: 818px;
+  background-size: cover;
+  /* background-position: center; */
+}
 /* signUp-page */
 .customsign-bg-image {
   background-image: none;
@@ -269,7 +275,6 @@ h6 {
   position: absolute !important;
 }
 
-
 /* Custom CheckBox */
 .custom_checkbox input {
   position: absolute;
@@ -277,7 +282,6 @@ h6 {
   cursor: pointer;
   height: 0;
   width: 0;
-  
 }
 
 /* Create a custom checkbox */
@@ -288,8 +292,8 @@ h6 {
   height: 24px;
   width: 24px;
   background-color: #eee;
-  border-radius:6px;
-  border: 1px solid  #2F222B;
+  border-radius: 6px;
+  border: 1px solid #2f222b;
 }
 
 /* On mouse-over, add a grey background color */
@@ -327,7 +331,7 @@ h6 {
   transform: rotate(45deg);
 }
 
-.scroll_rotate{
+.scroll_rotate {
   animation: scrollRotate 1s linear infinite;
   animation-play-state: paused;
   animation-delay: calc(var(--scroll) * -1s);
