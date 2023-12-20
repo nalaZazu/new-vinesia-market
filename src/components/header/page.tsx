@@ -70,9 +70,12 @@ export default function Header() {
   const isDark = (pathName: string) =>
     pathName === "/" ||
     (size.width > 767 && pathName == "/signup") ||
+    pathName === "/wineart" ||
     pathName === "/wacollections" ||
     pathName === "/wacollections/reso" ||
-    pathName === "/limitedcollections";
+    pathName === "/limitedcollections" ||
+    pathName === "/gifts" ;
+
   const getTheme = (pathName: string) =>
     isDark(pathName) ? themes.Dark : themes.Light;
 

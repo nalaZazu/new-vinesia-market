@@ -7,6 +7,7 @@ import { UserProvider } from "@/context/user";
 import Head from "next/head";
 import { WagmiProvider } from "@/context/wagmi";
 import Script from "next/script";
+import Footer from "@/components/footer/page";
 // pages/_app.js or pages/_app.tsx
 const albert = Albert_Sans({
   variable: "--font-albert",
