@@ -164,9 +164,12 @@ export default function Header() {
 
               <Link
                 href="/cart"
-                className={`w-10 h-10 rounded-full border md:order-3 order-1 border-opacity-20 justify-center items-center gap-2.5 inline-flex ${theme.iconBorder}`}
+                className={`w-10 h-10 relative rounded-full border md:order-3 order-1 border-opacity-20 justify-center items-center gap-2.5 inline-flex ${theme.iconBorder}`}
               >
                 <CartIcon fill={theme.iconFill} />
+                <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -end-2 dark:border-gray-900">
+                  20
+                </div>
               </Link>
             </div>
           </div>
