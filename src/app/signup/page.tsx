@@ -38,8 +38,8 @@ const SignUp = () => {
     isReconnecting,
     isConnected,
     connectors, 
-    // connectAsync, 
-    // disconnectAsync
+    connectAsync, 
+    disconnectAsync
   } = useUserContext()
 
   const [ terms, setTerms ] = useState(false)
@@ -57,9 +57,9 @@ const SignUp = () => {
       if (item instanceof MagicCustomConnector) {
         const conn = item as MagicCustomConnector
         if (conn.subtype === subtype) {
-          // await connectAsync({
-          //   connector: conn,
-          // })
+          await connectAsync({
+            connector: conn,
+          })
           setIsRedirecting(true)
         }
       }
@@ -67,7 +67,7 @@ const SignUp = () => {
   }
 
   async function disconnect() {
-    // await disconnectAsync()
+    await disconnectAsync()
   }
 
   if (isRedirecting) {

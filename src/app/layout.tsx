@@ -7,8 +7,8 @@ import { UserProvider } from "@/context/user";
 import Head from "next/head";
 import { WagmiProvider } from "@/context/wagmi";
 import Script from "next/script";
-import Footer from "@/components/footer/page";
-// pages/_app.js or pages/_app.tsx
+import { CartProvider } from "@/context/cart";
+
 const albert = Albert_Sans({
   variable: "--font-albert",
   subsets: ["latin"],
@@ -33,11 +33,13 @@ export default function RootLayout({
       <Script src="/js/main.js" />
 
       <body className={`${albert.className} bg-[#F3E8CF] `}>
-        <Header />
         <WagmiProvider>
-          <UserProvider>
-            {children}
-          </UserProvider>
+          <CartProvider>
+            <UserProvider>
+              <Header />
+              {children}
+            </UserProvider>
+          </CartProvider>
         </WagmiProvider>
       </body>
     </html>

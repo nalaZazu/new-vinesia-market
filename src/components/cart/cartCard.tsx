@@ -2,7 +2,17 @@ import Image from "next/image";
 import React from "react";
 import productImg from "@/assets/images/bolltewine.png";
 import InfoTooltip from "@/common/InfoTooltip";
-export default function CartCard() {
+import { ProductCardDto } from "@/types/productCard.dto";
+import { useUserContext } from "@/context/user";
+import { useCartContext } from "@/context/cart";
+
+export default function CartCard({item}: {item?: ProductCardDto}) {
+  const {getPriceText} = useUserContext()
+  const {removeCartItem} = useCartContext()
+
+  if (item === undefined)
+    return <></>
+
   return (
     <div className=" p-8 border-b-2 border-[rgba(191, 77, 32, 0.20)] bg-[#FAF5EA]">
       <div className="flex gap-6 w-full">
@@ -11,17 +21,18 @@ export default function CartCard() {
           <div className="flex justify-between">
             <div>
               <h6 className=" text-[21px] text-[#2F222B] font-light">
-                1# Chateau La Mission Haut Brion Cru Classe | 2009
+                {item?.name}
               </h6>
               <p className=" text-base font-normal">
-                With Art of Lola Designer Fun
+                {item?.description}
               </p>
             </div>
             <div>
-              <button className="text-orange-700  border-b border-orange-700 border-opacity-20 uppercase">Remove</button>
+              <button className="text-orange-700  border-b border-orange-700 border-opacity-20 uppercase"
+              onClick={() => removeCartItem(item)}>Remove</button>
             </div>
             <div>
-              <p>€ 5,300</p>
+              <p>{getPriceText(item?.floorPrice ?? 0)}</p>
             </div>
           </div>
           <div className="flex justify-between">

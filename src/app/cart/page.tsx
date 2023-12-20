@@ -1,11 +1,19 @@
+"use client"
+
 import { NextIcon, PrevIcon } from "@/assets/icons/Icons";
 import Accordion from "@/common/Accordion";
 import { CartControls } from "@/common/Components";
 import CartCard from "@/components/cart/cartCard";
+import { useCartContext } from "@/context/cart";
+import { useUserContext } from "@/context/user";
+import { ProductCardDto } from "@/types/productCard.dto";
 import Link from "next/link";
 import React from "react";
 
 export default function Cart() {
+  const {cartItems, cartTotal, getCartTotal} = useCartContext()
+  const {getPriceText} = useUserContext()
+
   return (
     <div className=" pb-40">
       <div className=" max-w-[1066px] mx-auto px-4">
@@ -14,17 +22,17 @@ export default function Cart() {
         </h1>
 
         {/* Table Starts */}
-        {[0, 1]?.map((d: any, i: any) => {
+        {cartItems.map((item: ProductCardDto, i: any) => {
           return (
             <div key={i}>
-              <CartCard />
+              <CartCard item={item} />
             </div>
           );
         })}
         <div className=" p-6 border-b-2 border-[rgba(191, 77, 32, 0.20)] bg-[#FAF5EA]">
           <div className="flex justify-between">
             <p className=" font-semibold text-lg">Total Price</p>
-            <p className=" font-semibold text-lg">€ 10,600</p>
+            <p className=" font-semibold text-lg">{getPriceText(getCartTotal())}</p>
           </div>
         </div>
         {/* Table Ends */}
