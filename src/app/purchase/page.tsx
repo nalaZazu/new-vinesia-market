@@ -8,11 +8,11 @@ import { listItemPurchase } from "@/constants/accrodion";
 
 const Purchase = () => {
   return (
-    <React.Fragment>
+    <>
       <div className="max-w-[560px] cotainer mx-auto py-8">
         <div className="relative pb-12 px-4">
           <div className="md:pt-20 pt-[60px] ">
-            <div className="pb-2 md:px-6 pt-[60px]  bg-orange-50 rounded-tl-[20px] rounded-tr-[20px] border border-orange-700 border-opacity-20 ">
+            <div className="pb-2 md:px-6 pt-[60px]  bg-orange-50 rounded-[20px]   border border-orange-700 border-opacity-20 ">
               <div className="flex justify-center">
                 <Image src={glassIllustrations} alt="image-icon" />
               </div>
@@ -56,12 +56,12 @@ const Purchase = () => {
           </div>
 
           {/* here is total view  */}
-          <button className="w-full px-2.5 py-5 bg-[#F7EFDF] rounded-bl-[20px] rounded-br-[20px] border-l border-r border-b border-orange-700 border-opacity-20  text-center  text-orange-700 text-xs font-normal  uppercase leading-[18px] tracking-tight  justify-center items-center gap-2.5 flex">
-            {/* VIEW ON POLYGON{" "}
+          {/* <button className="w-full px-2.5 py-5 bg-[#F7EFDF] rounded-bl-[20px] rounded-br-[20px] border-l border-r border-b border-orange-700 border-opacity-20  text-center  text-orange-700 text-xs font-normal  uppercase leading-[18px] tracking-tight  justify-center items-center gap-2.5 flex">
+            VIEW ON POLYGON{" "}
             <span>
               <Arrows storke="#BF4D20" />
-            </span> */}
-          </button>
+            </span>
+          </button> */}
           {/* end of relative div */}
           <div className="absolute top-[410px] right-[-50px] -z-10 md:block hidden">
             <Image src={grapes} alt="image-icon" />
@@ -76,7 +76,7 @@ const Purchase = () => {
           VIEW INVESTMENT <Arrows storke="#FFFFFF" />
         </button>
       </div>
-    </React.Fragment>
+    </>
   );
 };
 
