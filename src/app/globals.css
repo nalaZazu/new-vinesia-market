@@ -79,6 +79,12 @@ h6 {
   background-size: cover;
   /* background-position: center; */
 }
+.custom-limited-bg-image {
+  background-image: url("../assets/images/limitedBG.png");
+  height: 818px;
+  background-size: cover;
+  /* background-position: center; */
+}
 /* about banner */
 .aboutus-bg-image {
   background-image: url("../assets/images/aboutus.png");

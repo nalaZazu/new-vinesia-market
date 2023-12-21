@@ -4,13 +4,12 @@ import Footer from "@/components/footer/page";
 import VerticalBreadCrumb from "@/common/verticalBreadcrumb/page";
 import Dropdown from "@/common/DropDown/page";
 import Product from "@/components/products/page";
-import MobileFilter from "../invest/moibleview/page";
+import MobileFilter from "../../invest/moibleview/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
-import xmark from "../../assets/icons/x-mark-anim.svg";
-import Image from "next/image";
 import { MarksAnim } from "@/assets/icons/Icons";
 
 export default function WineryOwner() {
+
   return (
     <div>
       <div className="w-full md:h-[744px] h-[620px] bg-no-repeat bg-cover bg-center bg-[url('https://i.ibb.co/hLLYBjr/winery-bg.png')] relative">

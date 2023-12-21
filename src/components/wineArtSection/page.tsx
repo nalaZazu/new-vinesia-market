@@ -6,6 +6,7 @@ import graps from "../../assets/images/graps.png";
 import art1 from "../../assets/images/art1.png";
 import glass from "../../assets/images/glass.png";
 import bottle from "../../assets/images/bottle.png";
+import Link from "next/link";
 export default function WineArt() {
   return (
     <div>
@@ -73,7 +74,7 @@ export default function WineArt() {
             </div>
 
             <div className=" md:flex md:justify-center md:pt-12 pt-10 px-4 md:px-0 ">
-              <button className=" w-full md:w-auto h-14 px-8 py-[22px] rounded-full border border-white border-opacity-20 justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal uppercase tracking-tight">
+               <button className=" w-full md:w-auto h-14 px-8 py-[22px] rounded-full border border-white border-opacity-20 justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal uppercase tracking-tight">
                 START EXPLORING
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -90,6 +91,8 @@ export default function WineArt() {
                   />
                 </svg>
               </button>
+            
+              <Link href="/wineries/slug"> 
               <button className="w-full md:w-auto h-14 px-8 py-[22px] justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal uppercase tracking-tight">
                 <span className=" underline underline-offset-4 decoration-[#FFFFFF20] decoration-2">
                   MEET THE ARTIST
@@ -109,6 +112,7 @@ export default function WineArt() {
                   />
                 </svg>
               </button>
+              </Link>
             </div>
           </div>
         </div>

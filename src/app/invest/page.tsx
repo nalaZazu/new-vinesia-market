@@ -26,12 +26,15 @@ const fetcher = async (url: string, payload?: string) => {
 };
 import { MarksAnim, Xmark } from "@/assets/icons/Icons";
 import ProductCards from "@/components/productCard/page";
+import ScrollAnimation from "@/common/ScrollAnimation/page";
 
 const Invest = () => {
-  const [tags, setTags] = useState<String[]>([])
+  const [tags, setTags] = useState<String[]>([]);
 
-  const { data, error, isLoading } = useSWR(`${process.env.NEXT_PUBLIC_API_ADDRESS}products/search/`, fetcher)
-
+  const { data, error, isLoading } = useSWR(
+    `${process.env.NEXT_PUBLIC_API_ADDRESS}products/search/`,
+    fetcher
+  );
 
   return (
     <div>
@@ -60,13 +63,14 @@ const Invest = () => {
           <div className="md:hidden block">
             <MobileFilter />
           </div>
-          
+
           {/* product list  */}
           <div className="md:block hidden">
             <Product items={data?.data} />
           </div>
+          {/* animation  component  */}
+          <ScrollAnimation/>
         </div>
-
       </div>
       {/* desktop Newsletter*/}
       <div className="hidden sm:block">
