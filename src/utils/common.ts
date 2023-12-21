@@ -1,4 +1,4 @@
-import { Magic } from './types';
+import { Magic } from '@/context/MagicProvider';
 import { Dispatch, SetStateAction } from 'react';
 
 export type LoginMethod = 'EMAIL' | 'SMS' | 'SOCIAL' | 'FORM';

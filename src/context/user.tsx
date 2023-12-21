@@ -76,7 +76,7 @@ export function useProvideUser(): ProvideUser {
                     console.log('Magic token: ' + result.magic.idToken)
                     //   setLoadingFlag('false');
                     setProvider('MAGIC')
-                    await backendLogin()
+                    // await backendLogin()
 
                     setIsLoading(false)
                 }
@@ -162,7 +162,7 @@ export function useProvideUser(): ProvideUser {
                     saveToken(account, setToken, 'EMAIL');
                     setProvider('MAGIC')
 
-                    await backendLogin()
+                    // await backendLogin()
                     //   setEmail('');
                 }
             } else {
