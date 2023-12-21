@@ -7,6 +7,7 @@ import Product from "@/components/products/page";
 import MobileFilter from "../../invest/moibleview/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
 import { MarksAnim } from "@/assets/icons/Icons";
+import ScrollAnimation from "@/common/ScrollAnimation/page";
 
 export default function WineryOwner() {
 
@@ -71,12 +72,8 @@ export default function WineryOwner() {
         {/* next product list  */}
 
         <Product items={[]} />
-        {/* animation  component  */}
-        <div className="py-16 flex justify-center mx-auto items-center gap-10">
-          <div className=" border-b-[1px] h-0 w-full border-[#CB220D] border-opacity-10"></div>
-          <MarksAnim fill="#CB220D" />
-          <div className="border-b-[1px] h-0 w-full border-[#CB220D]  border-opacity-10"></div>
-        </div>
+      {/* animation  component  */}
+      <ScrollAnimation/>
       </div>
       {/* desktop Newsletter*/}
       <div className="hidden sm:block">

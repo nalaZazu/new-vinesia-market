@@ -111,3 +111,9 @@ export const BlogDetailsList = [
     image: details2,
   },
 ];
+
+
+export const listItemPurchase = [
+  { id: 1, title: "  Assets price", amount: "5,850.00" },
+  { id: 1, title: "Service fees", amount: "13.20" },
+];

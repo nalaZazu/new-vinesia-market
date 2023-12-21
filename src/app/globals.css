@@ -234,7 +234,12 @@ h6 {
     background-size: cover;
     /* background-position: center; */
   }
-
+  .custom-limited-bg-image {
+    background-image: url("../assets/images/limitedMobile.png");
+    height: 1000px;
+    background-size: cover;
+    /* background-position: center; */
+  }
   .invest_carousel .slick-prev,
   .invest_carousel .slick-next {
     position: absolute;
@@ -365,7 +370,8 @@ h6 {
 }
 
 @media screen and (min-width: 1440px) {
-  .custom-bg-image {
+  .custom-bg-image
+  .custom-limited-bg-image {
     height: 1000px;
   }
 }
