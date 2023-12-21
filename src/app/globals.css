@@ -6,28 +6,14 @@ html {
   scroll-behavior: smooth;
 }
 @font-face {
-  font-family: "canela";
-  src: url("../assets/fonts/Canela Text Family/CanelaText-Regular-Trial.otf")
+  font-family: "Canela";
+  src: url("../assets/fonts/Canela-Regular-Trial.otf")
     format("opentype");
-  font-weight: normal; /* 400 */
+  font-weight: 100,200,300,400,500,600,700,800; /* 400 */
   font-style: normal;
 }
 
-@font-face {
-  font-family: "canela";
-  src: url("../assets/fonts/Canela Text Family/CanelaText-Light-Trial.otf")
-    format("opentype");
-  font-weight: 300; /* Light */
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "canela";
-  src: url("../assets/fonts/Canela Text Family/CanelaText-Bold-Trial.otf")
-    format("opentype");
-  font-weight: bold; /* 700 */
-  font-style: normal;
-}
+/*  */
 @font-face {
   font-family: "Bon Vivant";
   src: url("../assets/fonts/BonVivant-Regular.ttf");
@@ -51,7 +37,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "canela";
+  font-family: "Canela";
 }
 /* webkit class */
 .dropdownstyle::-webkit-scrollbar-track {
