@@ -21,7 +21,7 @@ export default function Appactivity({ data }: { data?: any }) {
     Tooltip
   );
 
-  console.log("Data ", data);
+  // console.log("Data ", data);
 
   const daysLeft = 10;
 
