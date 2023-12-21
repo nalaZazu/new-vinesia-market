@@ -1,6 +1,6 @@
 "use client"
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
-import { configureChains, createConfig, useAccount, useConnect, useDisconnect } from "wagmi";
+import { configureChains, createConfig, useAccount, useConnect, useDisconnect, useSignMessage } from "wagmi";
 import { goerli, mainnet } from "wagmi/chains";
 import { CoinbaseWalletConnector } from "wagmi/connectors/coinbaseWallet";
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
@@ -8,6 +8,10 @@ import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
 import { publicProvider } from "wagmi/providers/public";
 import { useMagic } from "./MagicProvider";
 import { logout, saveToken } from "@/utils/common";
+import { SiweMessage } from "siwe";
+import { Address, createWalletClient, custom, getAddress } from "viem";
+
+
 
 export interface ProvideUser {
     status: string
@@ -26,7 +30,9 @@ export interface ProvideUser {
     getPriceText: (price: number) => string;
     getPriceDifference: (release: number, current: number) => string;
 
+    connectAsync: (emailOrPhone: string) => Promise<any>
     connectSocialAsync: (subtype: string) => Promise<any>
+    connectWalletAsync: () => Promise<any>
     disconnectAsync: () => Promise<any>
 }
 
@@ -37,6 +43,9 @@ export function useProvideUser(): ProvideUser {
     const wagmiAccount = useAccount()
     const wagmiConnect = useConnect()
     const wagmiDisconnect = useDisconnect()
+    const wagmiSign = useSignMessage()
+
+    const [provider, setProvider] = useState<string | null>(null)
 
     const [address, setAddress] = useState<string | null>(null)
     const [status, setStatus] = useState('')
@@ -53,7 +62,8 @@ export function useProvideUser(): ProvideUser {
     const [token, setToken] = useState('')
 
 
-    const { magic } = useMagic()
+    const { magic, web3 } = useMagic()
+
 
     useEffect(() => {
         const checkLogin = async () => {
@@ -65,6 +75,8 @@ export function useProvideUser(): ProvideUser {
                     saveToken(result.magic.idToken, setToken, 'SOCIAL');
                     console.log('Magic token: ' + result.magic.idToken)
                     //   setLoadingFlag('false');
+                    setProvider('MAGIC')
+                    await backendLogin()
 
                     setIsLoading(false)
                 }
@@ -92,6 +104,7 @@ export function useProvideUser(): ProvideUser {
                 const metadata = await magic?.user.getInfo();
                 if (metadata) {
                     localStorage.setItem('user', metadata?.publicAddress!);
+                    setProvider('MAGIC')
                     setAddress(metadata?.publicAddress!);
                 }
             }
@@ -131,15 +144,128 @@ export function useProvideUser(): ProvideUser {
 
     const connectSocialAsync = useCallback(async (subtype: string) => {
         if (magic) {
-            if (subtype === 'google') {
+            if (subtype === 'google' || subtype === 'facebook' || subtype === 'twitter' || subtype === 'apple') {
                 await magic?.oauth.loginWithRedirect({
-                    provider: 'google',
+                    provider: subtype,
                     redirectURI: window.location.href,
                 });
                 setIsRedirecting(true)
             }
         }
     }, [magic, setIsRedirecting]);
+
+    const connectAsync = useCallback(async (emailOrPhone: string) => {
+        if (magic) {
+            if (emailOrPhone.indexOf('@') > -1) {
+                const account = await magic?.auth.loginWithEmailOTP({ email: emailOrPhone });
+                if (account) {
+                    saveToken(account, setToken, 'EMAIL');
+                    setProvider('MAGIC')
+
+                    await backendLogin()
+                    //   setEmail('');
+                }
+            } else {
+                const account = await magic?.auth.loginWithSMS({
+                    phoneNumber: emailOrPhone,
+                });
+                if (account) {
+                    saveToken(account, setToken, 'SMS');
+                    setProvider('MAGIC')
+                    // setPhone('');
+                }
+            }
+
+            // if (subtype === 'google' || subtype === 'facebook' || subtype === 'twitter' || subtype === 'apple') {
+            //     await magic?.oauth.loginWithRedirect({
+            //         provider: subtype,
+            //         redirectURI: window.location.href,
+            //     });
+            //     setIsRedirecting(true)
+            // }
+        }
+    }, [magic, setIsRedirecting]);
+
+
+
+    useEffect(() => {
+        async function signMessageAsync(message: SiweMessage) {
+            if (provider === 'WAGMI') {
+                const signature = await wagmiSign.signMessageAsync({
+                    message: message.prepareMessage(),
+                })
+            }
+    
+            if (provider === 'MAGIC' && magic !== null && address !== null && address.length > 0) {
+
+                const account = getAddress(address)
+
+                const walletClient = createWalletClient({
+                    account,
+                    chain: goerli,
+                    transport: custom(magic?.rpcProvider)
+                })
+
+
+                if (walletClient === null) return
+
+                console.log('logging in to backend using magic')
+                const signedMessage = await walletClient.signMessage({
+                    message: message.prepareMessage()
+                })
+
+                console.log("signedMessage:", signedMessage);
+    
+                const verifyRes = await fetch('http://localhost:3010/auth/verify', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message: message.prepareMessage(), signature: signedMessage }),
+                })
+                if (!verifyRes.ok) throw new Error('Error verifying message')
+                const resp = await verifyRes.json()
+    
+                console.log('JWT token', resp.access_token)
+            }
+        }
+
+        async function backendLogin() {
+            console.log('logging in to backend', provider)
+            if (address === null || address.length === 0) return
+            if (provider === null) return
+
+            const chainId = Number(web3?.defaultChain ?? '1')
+
+            const message = new SiweMessage({
+                domain: window.location.host,
+                address,
+                statement: 'Sign in with Ethereum to the app.',
+                uri: window.location.origin,
+                version: '1',
+                chainId: 0,
+                nonce: ''
+            });
+
+            await signMessageAsync(message)
+        }
+        backendLogin()
+    }, [address, provider, web3])
+
+
+
+    const connectWalletAsync = useCallback(async () => {
+        if (magic) {
+            // if (subtype === 'google' || subtype === 'facebook' || subtype === 'twitter' || subtype === 'apple') {
+            //     await magic?.oauth.loginWithRedirect({
+            //         provider: subtype,
+            //         redirectURI: window.location.href,
+            //     });
+            //     setIsRedirecting(true)
+            // }
+        }
+    }, [magic, setIsRedirecting]);
+
 
     const disconnectAsync = useCallback(async () => {
         if (magic) {
@@ -168,7 +294,9 @@ export function useProvideUser(): ProvideUser {
         isDisconnected,
         isLoading,
 
+        connectAsync,
         connectSocialAsync,
+        connectWalletAsync,
         disconnectAsync
     }
 }
@@ -214,3 +342,5 @@ export function useUserContext(): ProvideUser {
     if (context === null) throw new Error("User provider is not set");
     return context;
 }
+
+

@@ -33,25 +33,37 @@ const Wrapper = ({
 
 const SignUp = () => {
   const {
-    isLoading, 
+    isLoading,
     isConnecting,
     isRedirecting,
     isReconnecting,
     isConnected,
     address,
+    connectAsync,
     connectSocialAsync,
     disconnectAsync
   } = useUserContext()
 
-  const [ terms, setTerms ] = useState(false)
+  const [terms, setTerms] = useState(false)
+  const [email, setEmail] = useState('')
 
   async function change(e: any) {
-    setTerms(e.target.value)
+    if (e.target.name === 'terms')
+      setTerms(e.target.checked)
+
+    if (e.target.name === 'email')
+      setEmail(e.target.value)
   }
 
   async function connect(subtype: string) {
     await connectSocialAsync(subtype)
   }
+
+  async function connectEmail() {
+    if (email.length === 0) return
+    await connectAsync(email)
+  }
+
 
   async function disconnect() {
     await disconnectAsync()
@@ -100,18 +112,18 @@ const SignUp = () => {
         <h6>Sign in with social media </h6>
         <div className="justify-center items-center gap-6 flex py-4 cursor-pointer">
           {" "}
-          <span onClick={()=>connect('google')} className="p-3.5 bg-white rounded-xl border border-white justify-center items-center gap-6 flex">
+          <span onClick={() => connect('google')} className="p-3.5 bg-white rounded-xl border border-white justify-center items-center gap-6 flex">
             <Image src={google} alt="google" />
           </span>
-          <span onClick={()=>connect('facebook')} className="p-3.5 bg-blue-500 rounded-xl justify-start items-center gap-6 inline-flex">
+          <span onClick={() => connect('facebook')} className="p-3.5 bg-blue-500 rounded-xl justify-start items-center gap-6 inline-flex">
             {" "}
             <Image src={facebook} alt="facebook" />
           </span>
-          <span onClick={()=>connect('twitter')} className="p-3.5 bg-black rounded-xl justify-start items-center gap-6 inline-flex">
+          <span onClick={() => connect('twitter')} className="p-3.5 bg-black rounded-xl justify-start items-center gap-6 inline-flex">
             {" "}
             <Image src={xsoical} alt="xsoical" />
           </span>
-          <span onClick={()=>connect('apple')} className="p-3.5 bg-black rounded-xl justify-start items-center gap-6 inline-flex">
+          <span onClick={() => connect('apple')} className="p-3.5 bg-black rounded-xl justify-start items-center gap-6 inline-flex">
             {" "}
             <Image src={apple} alt="apple" />
           </span>
@@ -129,7 +141,6 @@ const SignUp = () => {
       </div>
       {/* here is form start */}
 
-      <form>
         <div>
           <div className="flex gap-1 items-center">
             <label
@@ -150,17 +161,19 @@ const SignUp = () => {
               type="email"
               placeholder="Eg. +(00)123456 / example@mail.com"
               className=" pl-6 pr-5 py-5 rounded-[100px] border bg-orange-100 outline-none border-orange-700 border-opacity-40 justify-between items-center inline-flex  w-full  "
+              value={email}
+              onChange={change}
             />
           </div>
         </div>
 
         <button
+          onClick={connectEmail}
           type="submit"
           className="text-center text-white text-xs font-normal  px-8 py-[22px] bg-orange-700 rounded-[48px]  w-full mt-4  uppercase leading-3 tracking-tight justify-center items-center gap-3 inline-flex "
         >
           Continue
         </button>
-      </form>
 
       <div className="text-stone-400 text-base font-normal text-center leading-snug my-6">
         <h6>or external wallet</h6>
@@ -177,8 +190,8 @@ const SignUp = () => {
       <div className="relative flex gap-x-3 mt-8">
         <div className="flex h-6 items-center">
           <input
-            id="candidates"
-            name="candidates"
+            id="terms"
+            name="terms"
             type="checkbox"
             checked={terms}
             onChange={change}
