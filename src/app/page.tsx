@@ -63,8 +63,8 @@ const About = () => {
         },
         padding: '0px',
         borderRadius: '0px',
-        width: '1440',
-        maxWidth: '1440',
+        width: window.screen.width,
+        maxWidth: window.screen.width,
         margin: 0,
         ease: 'none'
       }
