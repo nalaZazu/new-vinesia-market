@@ -13,12 +13,12 @@ export interface MenuItem {
 export const menuBar: MenuItem[] = [
   {
     id: 1,
-    name: "Vinesia Story",
+    name: "Discover Vinesia",
     items: [
       {
         id: 1,
         name: "Start",
-        href: "/start",
+        href: "/aboutvinesia",
       },
       {
         id: 2,
