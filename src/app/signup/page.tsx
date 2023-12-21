@@ -7,11 +7,11 @@ import facebook from "../../assets/icons/facebook.svg";
 import xsoical from "../../assets/icons/Social Icons.svg";
 import apple from "../../assets/icons/Apple Logo.svg";
 import wallet from "../../assets/icons/Wallet.svg";
-import magic from "../../assets/images/magic.png";
+import * as magicIcon from "../../assets/images/magic.png";
 import alert from "../../assets/icons/alert-circle.svg";
 import { AlertCircle } from "@/assets/icons/Icons";
 import { useUserContext } from "@/context/user";
-import { MagicCustomConnector } from "@/context/connectors/MagicConnector";
+import { useMagic } from "@/context/MagicProvider";
 
 const Wrapper = ({
   children,
@@ -33,38 +33,37 @@ const Wrapper = ({
 
 const SignUp = () => {
   const {
-    isLoading, 
+    isLoading,
     isConnecting,
+    isRedirecting,
     isReconnecting,
     isConnected,
-    connectors, 
-    connectAsync, 
+    address,
+    connectAsync,
+    connectSocialAsync,
     disconnectAsync
   } = useUserContext()
 
-  const [ terms, setTerms ] = useState(false)
-
-  const [isRedirecting, setIsRedirecting] = useState(false)
+  const [terms, setTerms] = useState(false)
+  const [email, setEmail] = useState('')
 
   async function change(e: any) {
-    setTerms(e.target.value)
+    if (e.target.name === 'terms')
+      setTerms(e.target.checked)
+
+    if (e.target.name === 'email')
+      setEmail(e.target.value)
   }
 
-  async function connectSocial(subtype: string) {
-    if (!terms) return;
-
-    for (let item of connectors) {
-      if (item instanceof MagicCustomConnector) {
-        const conn = item as MagicCustomConnector
-        if (conn.subtype === subtype) {
-          await connectAsync({
-            connector: conn,
-          })
-          setIsRedirecting(true)
-        }
-      }
-    }
+  async function connect(subtype: string) {
+    await connectSocialAsync(subtype)
   }
+
+  async function connectEmail() {
+    if (email.length === 0) return
+    await connectAsync(email)
+  }
+
 
   async function disconnect() {
     await disconnectAsync()
@@ -84,17 +83,17 @@ const SignUp = () => {
       </h1></Wrapper>)
   }
 
-  if (isConnecting || isReconnecting) {
-    return (<Wrapper>
-      <h1 className="max-w-[448px] text-center text-zinc-800 md:text-4xl text-[21px]  font-light  md:leading-[44px] leading-[29px] mb-8">
-        Please wait ...
-      </h1></Wrapper>)
-  }
+  // if (isConnecting || isReconnecting) {
+  //   return (<Wrapper>
+  //     <h1 className="max-w-[448px] text-center text-zinc-800 md:text-4xl text-[21px]  font-light  md:leading-[44px] leading-[29px] mb-8">
+  //       Please wait ...
+  //     </h1></Wrapper>)
+  // }
 
   if (isConnected) {
     return (<Wrapper>
       <h1 className="max-w-[448px] text-center text-zinc-800 md:text-4xl text-[21px]  font-light  md:leading-[44px] leading-[29px] mb-8">
-        You are already connected
+        You are already connected {address}
       </h1>
       {/* here is disconnect button */}
       <button onClick={disconnect} className="text-center w-full text-orange-700 text-xs font-normal   uppercase leading-3 tracking-tight px-8 py-[22px] rounded-[48px] border border-orange-700 border-opacity-20 justify-center items-center gap-3 inline-flex">
@@ -113,18 +112,18 @@ const SignUp = () => {
         <h6>Sign in with social media </h6>
         <div className="justify-center items-center gap-6 flex py-4 cursor-pointer">
           {" "}
-          <span onClick={()=>connectSocial('google')} className="p-3.5 bg-white rounded-xl border border-white justify-center items-center gap-6 flex">
+          <span onClick={() => connect('google')} className="p-3.5 bg-white rounded-xl border border-white justify-center items-center gap-6 flex">
             <Image src={google} alt="google" />
           </span>
-          <span onClick={()=>connectSocial('facebook')} className="p-3.5 bg-blue-500 rounded-xl justify-start items-center gap-6 inline-flex">
+          <span onClick={() => connect('facebook')} className="p-3.5 bg-blue-500 rounded-xl justify-start items-center gap-6 inline-flex">
             {" "}
             <Image src={facebook} alt="facebook" />
           </span>
-          <span onClick={()=>connectSocial('twitter')} className="p-3.5 bg-black rounded-xl justify-start items-center gap-6 inline-flex">
+          <span onClick={() => connect('twitter')} className="p-3.5 bg-black rounded-xl justify-start items-center gap-6 inline-flex">
             {" "}
             <Image src={xsoical} alt="xsoical" />
           </span>
-          <span onClick={()=>connectSocial('apple')} className="p-3.5 bg-black rounded-xl justify-start items-center gap-6 inline-flex">
+          <span onClick={() => connect('apple')} className="p-3.5 bg-black rounded-xl justify-start items-center gap-6 inline-flex">
             {" "}
             <Image src={apple} alt="apple" />
           </span>
@@ -142,7 +141,6 @@ const SignUp = () => {
       </div>
       {/* here is form start */}
 
-      <form>
         <div>
           <div className="flex gap-1 items-center">
             <label
@@ -163,17 +161,19 @@ const SignUp = () => {
               type="email"
               placeholder="Eg. +(00)123456 / example@mail.com"
               className=" pl-6 pr-5 py-5 rounded-[100px] border bg-orange-100 outline-none border-orange-700 border-opacity-40 justify-between items-center inline-flex  w-full  "
+              value={email}
+              onChange={change}
             />
           </div>
         </div>
 
         <button
+          onClick={connectEmail}
           type="submit"
           className="text-center text-white text-xs font-normal  px-8 py-[22px] bg-orange-700 rounded-[48px]  w-full mt-4  uppercase leading-3 tracking-tight justify-center items-center gap-3 inline-flex "
         >
           Continue
         </button>
-      </form>
 
       <div className="text-stone-400 text-base font-normal text-center leading-snug my-6">
         <h6>or external wallet</h6>
@@ -190,8 +190,8 @@ const SignUp = () => {
       <div className="relative flex gap-x-3 mt-8">
         <div className="flex h-6 items-center">
           <input
-            id="candidates"
-            name="candidates"
+            id="terms"
+            name="terms"
             type="checkbox"
             checked={terms}
             onChange={change}
@@ -224,7 +224,7 @@ const SignUp = () => {
         <p className="text-center text-stone-400 text-xs font-normal  uppercase leading-3 tracking-tight">
           Powered
         </p>
-        <Image src={magic} alt="powered" />
+        <Image src={magicIcon} alt="powered" />
       </div>
     </Wrapper>
   );
