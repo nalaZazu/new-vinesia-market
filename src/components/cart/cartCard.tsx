@@ -6,32 +6,32 @@ import { ProductCardDto } from "@/types/productCard.dto";
 import { useUserContext } from "@/context/user";
 import { useCartContext } from "@/context/cart";
 
-export default function CartCard({item}: {item?: ProductCardDto}) {
-  const {getPriceText} = useUserContext()
-  const {removeCartItem} = useCartContext()
+export default function CartCard({ item }: { item?: ProductCardDto }) {
+  const { getPriceText } = useUserContext();
+  const { removeCartItem } = useCartContext();
 
-  if (item === undefined)
-    return <></>
+  if (item === undefined) return <></>;
 
   return (
     <div className=" p-8 border-b-2 border-[rgba(191, 77, 32, 0.20)] bg-[#FAF5EA]">
       <div className="flex gap-6 w-full">
         <Image src={productImg} width={112} alt="Product Image" />
         <div className="flex flex-col justify-between w-full">
-          <div className="flex justify-between">
+          <div className="flex gap-4 items-start  justify-between">
             <div>
               <h6 className=" text-[21px] text-[#2F222B] font-light">
                 {item?.name}
               </h6>
-              <p className=" text-base font-normal">
-                {item?.description}
-              </p>
+              <p className=" text-base font-normal">{item?.description}</p>
             </div>
-            <div>
-              <button className="text-orange-700  border-b border-orange-700 border-opacity-20 uppercase"
-              onClick={() => removeCartItem(item)}>Remove</button>
-            </div>
-            <div>
+            <div className="flex gap-4 ">
+              <button
+                className="text-orange-700  border-b border-orange-700 border-opacity-20 uppercase"
+                onClick={() => removeCartItem(item)}
+              >
+                Remove
+              </button>
+
               <p>{getPriceText(item?.floorPrice ?? 0)}</p>
             </div>
           </div>

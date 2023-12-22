@@ -12,7 +12,7 @@ import Popup from "../popup/page";
 import {
   regionItaly,
   regionUs,
-  regionexplor,
+  regionexplore,
 } from "../../constants/regionexplor";
 import TabButton from "@/common/TabButton";
 const ExploreRegionMobile = () => {
@@ -72,7 +72,7 @@ const ExploreRegionMobile = () => {
         <div className="">
           <div>
             <ul className="text-secondary text-sm font-normal   leading-[49px] tracking-tight">
-              {regionexplor?.map((reg) => {
+              {regionexplore?.map((reg) => {
                 const { id, name, href } = reg;
                 return (
                   <Link href={href} key={id}>

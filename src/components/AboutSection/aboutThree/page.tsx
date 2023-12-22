@@ -32,7 +32,10 @@ const AboutThree = () => {
             {CardAbout?.map((item: any, index: any) => {
               const { id, text, image } = item;
               return (
-                <div className="md:min-w-full  min-w-[80%] p-4 bg-white rounded overflow-hidden" key={index}>
+                <div
+                  className="md:min-w-full  min-w-[80%] p-4 bg-white rounded overflow-hidden"
+                  key={index}
+                >
                   <div className=" bg-white">
                     <div className=" " key="index">
                       <Image src={image} alt="image" className="" />
@@ -72,7 +75,6 @@ const AboutThree = () => {
             </div>
             <div className="md:hidden block  ">
               <div className="grid grid-cols-1 ">
-               
                 <AboutSlider />
               </div>
             </div>

@@ -14,6 +14,7 @@ import Gpay from "../../assets/icons/GooglePay.svg";
 import applePay from "../../assets/icons/ApplePay.svg";
 import visa from "../../assets/icons/visa-logo.svg";
 import master from "../../assets/icons/Mastercard.svg";
+import { Facebook, LinkdeIn, Twitter } from "@/assets/icons/Icons";
 export default function Footer() {
   return (
     <div className="bg-[#2F222B]">
@@ -121,17 +122,15 @@ export default function Footer() {
               <span>Follow us</span>
               <div className="flex justify-center  items-center gap-[10px] pt-[10px]">
                 <Link href="#" className="p-2">
-                  <Image
-                    src={facebook}
-                    alt="facebook"
-                    className="w-4 text-black"
-                  />
+                <Facebook fill="#ACA7AA" /> 
                 </Link>
                 <Link href="#" className="p-2">
-                  <Image src={linkdin} alt="twitter" className="w-4" />
+                <LinkdeIn fill="#ACA7AA " />
+
+                  {/* <Image src={linkdin} alt="twitter" className="w-4" /> */}
                 </Link>
                 <Link href="#" className="p-2">
-                  <Image src={twitter} alt="twitter" className="w-4" />
+                <Twitter fill="#ACA7AA" />
                 </Link>
 
                 <Link href="#" className="p-2">

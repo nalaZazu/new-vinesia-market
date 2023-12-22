@@ -61,12 +61,12 @@ const getMenuItem = (pathName: string) => {
     }
   }
 
-  return null
+  return null;
   // return menuItems[1].items[0];
 };
 
 export default function Header() {
-  const {cartItems} = useCartContext();
+  const { cartItems } = useCartContext();
 
   const size = useWindowSize();
 
@@ -80,7 +80,7 @@ export default function Header() {
     pathName === "/aboutus" ||
     pathName === "/wacollections/reso" ||
     pathName === "/limitedcollections" ||
-    pathName === "/gifts" ;
+    pathName === "/gifts";
 
   const getTheme = (pathName: string) =>
     isDark(pathName) ? themes.Dark : themes.Light;
@@ -118,7 +118,7 @@ export default function Header() {
         }
       `}</style>
       <div className=" bg-transparent z-10">
-        <nav className="px-6 container mx-auto">
+        <nav className="px-4 container mx-auto">
           <div className="grid grid-cols-3 md:grid-cols-12 justify-between items-center">
             {/* topbar start */}
             <div className="md:flex  hidden items-center space-x-4 lg:space-x-8 md:col-span-5">

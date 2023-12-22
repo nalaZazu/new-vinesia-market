@@ -9,9 +9,6 @@ import {
   ArtworkIcon,
   BookIcon,
   Certif_Icon,
-  DecentrIcon,
-  DocIcon,
-  DocVerifyIcon,
   ExculsiveIcon,
   GiftIcon,
   VintageIcon,
@@ -19,6 +16,7 @@ import {
 import BirthImage from "@/assets/images/birth_image.png";
 import GiftImg from "@/assets/images/gift_img.png";
 import Footer from "@/components/footer/page";
+import Benifits from "@/components/secruityPage/Benifits";
 const whatIsABondedWarehouseAndWhyDoesVinesiaUseItOptionsList = [
   { label: "Option1", value: "option1" },
   { label: "Option2", value: "option2" },
@@ -308,41 +306,7 @@ const VinesiaGiftsPage: React.FC = () => {
                   3 easy step to give loved ones a unique gift
                 </p>
               </div>
-              <div
-                className="grid sm:grid-cols-3 grid-cols-1 font-albertsans md:gap-10 gap-[136px] justify-start px-5 w-auto md:w-full"
-                // orientation="horizontal"
-              >
-                <div className="flex flex-col gap-[22px] items-start justify-start w-auto">
-                  <div className="flex flex-col items-start justify-start w-16">
-                    <span className="flex h-16 items-center justify-center w-16 p-5 bg-[#28475C] rounded-full">
-                      <DecentrIcon />
-                    </span>
-                  </div>
-                  <p className="font-semibold leading-[26.00px] max-w-[183px] md:max-w-full text-[#2F222B] text-lg tracking-[-0.36px]">
-                    Decentralized and immutable data
-                  </p>
-                </div>
-                <div className="flex flex-col gap-[22px] items-start justify-start w-auto">
-                  <div className="flex flex-col items-start justify-start w-16">
-                    <span className="flex h-16 items-center justify-center w-16 bg-[#28475C] p-5 rounded-full">
-                      <DocIcon />
-                    </span>
-                  </div>
-                  <p className="font-semibold leading-[26.00px] max-w-[183px] md:max-w-full text-[#2F222B] text-lg tracking-[-0.36px]">
-                    Full history of asset in real-time
-                  </p>
-                </div>
-                <div className="flex flex-col gap-[22px] items-start justify-start w-auto">
-                  <div className="flex flex-col items-start justify-start w-16">
-                    <span className="flex h-16 items-center justify-center w-16 bg-[#28475C] p-5 rounded-full">
-                      <DocVerifyIcon />
-                    </span>
-                  </div>
-                  <p className="font-semibold leading-[26.00px] max-w-[183px] md:max-w-full  text-[#2F222B] text-lg tracking-[-0.36px]">
-                    360° verifiable asset integrity
-                  </p>
-                </div>
-              </div>
+              <Benifits />
             </div>
             <div className=" md:px-5 relative w-full bg-[#F7EFDF] md:pt-40 md:pb-44 py-10">
               <div className="  mx-auto pb-8 w-full">

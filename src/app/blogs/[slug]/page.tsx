@@ -1,13 +1,11 @@
 import React from "react";
 import banner from "@/assets/images/blogbanner.png";
-
 import blogimages from "@/assets/images/blogimages.png";
 import Image from "next/image";
 import { Facebook, LinkdeIn, SharePin, Twitter } from "@/assets/icons/Icons";
 import { BlogDetailsList, BlogLists } from "@/constants/accrodion";
 import Newsletter from "@/components/newsletter/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
-
 const BlogDetails = () => {
   return (
     <React.Fragment>
@@ -18,7 +16,7 @@ const BlogDetails = () => {
           className="object-cover bg-center w-full"
         />
         <div className="container px-4 mx-auto pt-8">
-          <div className="grid md:grid-cols-8  pb-20 lg:gap-32 md:gap border-b border-orange-700 border-opacity-20 ">
+          <div className="grid md:grid-cols-8  pb-20 lg:gap-32 md:gap-12 border-b border-orange-700 border-opacity-20 ">
             <div className="col-span-5   flex-col justify-start items-start gap-6 inline-flex">
               <div>
                 <span className="text-[#906447] pb-3 text-xs font-normal   uppercase leading-[18px] tracking-tight">
@@ -159,8 +157,26 @@ const BlogDetails = () => {
                     </div>
                   </div>
                   {/* here is section  image*/}
+                  <div className=" w-[715px] h-[281px] bg-no-repeat bg-cover bg-center bg-[url('https://i.ibb.co/S3nDYyp/blogimage.png')]">
+                    {/* <Image src={imagebanner} alt="image"/> */}
+                    {/* <Image src={imagebanner} alt="image" className="w-full" /> */}
+                    {/**/}
+                    <div className="py-12 px-12">
+                      <h4 className="text-[#FFFFFF] text-[21px] font-light font-['Canela'] leading-[29px] tracking-wide">
+                        Like to discuss the wine investing?
+                      </h4>
+                      <p className="w-[327px] text-gray-400 text-base font-normal pt-2 pb-8  leading-snug">
+                        Join the Investors Community. Talk about wines, asets
+                        and investing and learn about the interesting world of
+                        wine.
+                      </p>
+                      <button className=" px-8 py-4 bg-white rounded-full justify-center items-center gap-3 inline-flex text-center text-orange-700 text-xs font-normal   uppercase leading-[18px] tracking-tight">
+                        JOIN THE COMMUNITY
+                      </button>
+                    </div>
+                  </div>
                   {/* here is section  */}
-                  <div className=" ">
+                  <div className=" pt-12">
                     <h4 className=" text-zinc-800 text-[21px] font-light  leading-[29px] tracking-wide">
                       3 Tips for Using Wine Scores Wisely
                     </h4>
@@ -183,7 +199,7 @@ const BlogDetails = () => {
                     </p>
                   </div>
                   {/* here is section  */}
-                  <div className=" py-12">
+                  <div className=" pb-12">
                     <h4 className=" text-zinc-800 text-[21px] font-light  leading-[29px] tracking-wide">
                       Consider the Region
                     </h4>
@@ -195,7 +211,7 @@ const BlogDetails = () => {
                     </p>
                   </div>
                   {/* here is section  */}
-                  <div className=" ">
+                  <div className="">
                     <h4 className=" text-zinc-800 text-[21px] font-light  leading-[29px] tracking-wide">
                       Develop Your Own Palate
                     </h4>
