@@ -150,11 +150,11 @@ const AboutTwo = () => {
           <h2 className="max-w-[769px] text-zinc-800 md:text-7xl font-normal md:leading-[84px] mx-auto   text-center text-4xl   leading-[42px]">
             Wine investments without the worries
           </h2>
-          <p className=" py-6 text-neutral-600 text-base font-normal leading-snug">
+          <p className=" py-8 text-neutral-600 text-base font-normal leading-snug">
             Learn how our process brings our investor “Peace of Mind” pledge to
             life.
           </p>
-          <button className="px-8 py-[22px] bg-orange-700 rounded-[48px] justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal  uppercase leading-3 tracking-tight">
+          <button className="px-8 py-4 bg-orange-700 rounded-[48px] justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal  uppercase leading-3 tracking-tight">
             START INVESTING NOW
             <span>
               <Arrows storke="#FFFFFF" />
@@ -221,7 +221,7 @@ const AboutTwo = () => {
 
               <button
                 onClick={() => setVisible(true)}
-                className="px-8 py-[22px] text-white  bg-orange-700 rounded-[48px] justify-center items-center gap-3 inline-flex"
+                className="px-8 py-4 text-white  bg-orange-700 rounded-[48px] justify-center items-center gap-3 inline-flex"
               >
                 CALCULATE{" "}
                 <span>

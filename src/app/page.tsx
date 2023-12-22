@@ -101,9 +101,9 @@ const About = () => {
 
           <div className="md:text-center pt-8">
             <div className="relative">
-              <span className="font-['Canela'] text-zinc-800 md:text-4xl font-light  md:leading-[44px] tracking-[-0.36px]  md:text-center   text-[21px]  leading-[29px]">
+              <h3 className="font-['Canela'] text-zinc-800 md:text-4xl font-light  md:leading-[44px] tracking-[-0.36px]  md:text-center   text-[21px]  leading-[29px]">
                 The future of wine investing
-              </span>
+              </h3>
               <div className="absolute -top-10 left-20 md:block hidden ">
                 <Image src={grapes} alt="image-icon" />
               </div>
@@ -122,7 +122,7 @@ const About = () => {
             </div>
           </div>
           <div className="text-center pt-[39px] ">
-            <Link href={'/invest'} className="px-8 py-[22px] bg-secondary rounded-full  justify-center items-center gap-3 inline-flex  text-center text-white text-xs font-normal -mb-4 uppercase leading-3 tracking-tight">
+            <Link href={'/invest'} className="px-8 py-4 bg-secondary rounded-full  justify-center items-center gap-3 inline-flex  text-center text-white text-xs font-normal -mb-4 uppercase leading-3 tracking-tight">
               START NOW <Arrows storke="#FFFFFF" />
             </Link>
           </div>

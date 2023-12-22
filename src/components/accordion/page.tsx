@@ -3,7 +3,7 @@ import React, { Fragment, useState } from "react";
 import { Disclosure } from "@headlessui/react";
 import { ArrowDown, RoundArrow } from "@/assets/icons/Icons";
 import { AccordionAbout, AccordionAboutTwo } from "@/constants/accrodion";
-
+import { ChevronUpIcon } from "@heroicons/react/20/solid";
 export function AccordionWine() {
   const [isActive, setIsActive] = useState<any>();
   const handleDisclosure = (id: any) => {
@@ -64,7 +64,8 @@ export function AccordionWineAbout() {
                   >
                     <p className="max-w-[440px]">{title}</p>
                     <div className="md:w-0 md:h-0 w-6 h-6">
-                      <ArrowDown />
+                   <ArrowDown />  
+ 
                     </div>
                   </Disclosure.Button>
 
