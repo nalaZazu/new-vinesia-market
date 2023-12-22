@@ -29,14 +29,32 @@ export const AccordionAboutTwo = [
     text: "Please provide comprehensive answers to those questions. You will save lots of time and money by eliminating the necessity to give constant support. You also will keep your clients' time cause they will quickly find the answers to all their questions.",
   },
   {
-    id: 1,
+    id: 2,
     title:
       "Are the photos on the website actual images of the wines I can invest in?",
     text: "Please provide comprehensive answers to those questions. You will save lots of time and money by eliminating the necessity to give constant support. You also will keep your clients' time cause they will quickly find the answers to all their questions.",
   },
   {
-    id: 1,
+    id: 3,
     title: "What is a bonded warehouse and why does Vinesia use it?",
+    text: "Please provide comprehensive answers to those questions. You will save lots of time and money by eliminating the necessity to give constant support. You also will keep your clients' time cause they will quickly find the answers to all their questions.",
+  },
+];
+
+export const AccordionSecurity = [
+  {
+    id: 1,
+    title: "Proof of authenticity",
+    text: "The concept of Peace of Mind is paramount in alleviating the fear associated with investing in rare and exquisite wines. Investing in vintage commodities, such as old cars or watches, begins with verifying authenticity. At Vinesia, we source our wines exclusively from winemakers, allowing us to guarantee 100% authentic provenance to our investors and collectors.  How does it come to life? Upon the delivery of wines from the winemakers to our Luxembourg warehouse, a tamper-proof NFC tag is applied directly over the top of the bottle or across the lid of the case. Breaking this seal indicates that the bottle has been opened or tampered with. This NFC tag transmits a unique identifier to the blockchain (Polygon), serving as the wine's certificate of authenticity. This certificate remains valid for the bottle's lifetime, whether stored in our warehouse or after delivery.",
+  },
+  {
+    id: 2,
+    title: "Proof of ownership",
+    text: "Please provide comprehensive answers to those questions. You will save lots of time and money by eliminating the necessity to give constant support. You also will keep your clients' time cause they will quickly find the answers to all their questions.",
+  },
+  {
+    id: 3,
+    title: "Proof of storage conditions",
     text: "Please provide comprehensive answers to those questions. You will save lots of time and money by eliminating the necessity to give constant support. You also will keep your clients' time cause they will quickly find the answers to all their questions.",
   },
 ];

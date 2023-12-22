@@ -1,5 +1,5 @@
-"use client"
 
+"use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
@@ -38,7 +38,7 @@ const InvestBread = () => {
             <li aria-current="page">
               <div className="flex items-center">
                 <span className=" text-zinc-800 text-base font-normal  leading-snug">
-                  winery
+                  {pathname.split("/")}
                 </span>
               </div>
             </li>
@@ -70,7 +70,7 @@ const InvestBread = () => {
             <li aria-current="page">
               <div className="flex items-center">
                 <span className=" text-zinc-800 text-base font-normal  leading-snug   ">
-                  winery
+                  {pathname.split("/")}
                 </span>
               </div>
             </li>

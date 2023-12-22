@@ -17,18 +17,18 @@ function France({ params }: { params: any }) {
 
   return (
     <div className=" absolute top-0 right-0 left-0 -z-10">
-      <div className="w-full md:h-[744px] h-[620px] bg-no-repeat bg-cover bg-center bg-[url('https://i.ibb.co/hLLYBjr/winery-bg.png')] relative">
+      <div className="w-full md:h-[744px] h-[620px] pt-40 bg-no-repeat bg-cover bg-center bg-[url('https://i.ibb.co/hLLYBjr/winery-bg.png')] relative">
         {/* BreadCrumb start */}
         <VerticalBreadCrumb />
         {/* BreadCrumb end */}
-        <div className="flex justify-center items-center h-[600px]">
+        <div className="flex justify-center  items-center md:h-[600px] h-[400px]">
           <h1 className="text-center text-zinc-800 md:text-[144px] text-6xl font-normal capitalize">
             {slug}
           </h1>
         </div>
       </div>
       {/* text */}
-      <div className="flex flex-wrap py-20 max-w-[1030px] mx-auto gap-8">
+      <div className="flex flex-wrap py-20 max-w-[1030px] mx-auto gap-8 md:px-0 px-4">
         <div className="pb-7 md:pb-0">
           <p className="max-w-[499px] text-zinc-800 text-base font-normal leading-snug">
             France is renowned worldwide for its exquisite wines, each region

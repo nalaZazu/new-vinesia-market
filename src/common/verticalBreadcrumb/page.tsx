@@ -5,6 +5,7 @@ import React from "react";
 
 const VerticalBreadCrumb = () => {
   const pathname = usePathname();
+  console.log(pathname, "pathname");
   return (
     <React.Fragment>
       <div className="md:block hidden">
@@ -107,8 +108,8 @@ const VerticalBreadCrumb = () => {
             </li>
 
             <li className="text-[#975958]">/</li>
-            <li className="text-[#E5D6D5] text-xs font-normal font-['Albert Sans'] leading-[18px]">
-              active page
+            <li className="text-[#615C51] text-xs font-normal font-['Albert Sans'] leading-[18px]">
+              {/* {pathname.split("/ , 2")} */}
             </li>
           </ul>
         </div>

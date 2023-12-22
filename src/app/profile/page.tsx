@@ -162,11 +162,11 @@ export default function Profile() {
                     </li>
                   </ul> */}
                   {/* <InvestmentTab /> */}
-                  {/* <PortfolioOverview /> */}
+                  <PortfolioOverview />
                   {/* <WalletOverview /> */}
                   {/* <ReceivedBids /> */}
                   {/* <Sales /> */}
-                  <Account />
+                  {/* <Account /> */}
                 </Tab.Panel>
               ))}
               {/* <InvestmentCard /> */}

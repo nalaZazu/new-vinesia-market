@@ -8,6 +8,7 @@ import Badges from "../badage/page";
 import { SearchIcon } from "@/assets/icons/Icons";
 import { usePathname } from "next/navigation";
 import useSWR from "swr";
+import { RangeSlider } from "@/common/Components";
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
@@ -58,6 +59,7 @@ const Filters = ({
     // setSelectedItems([]);
     close();
   };
+  const handleRangeChange = () => {};
 
   return (
     <>
@@ -94,9 +96,9 @@ const Filters = ({
                         leaveFrom="transform opacity-100 scale-100"
                         leaveTo="transform opacity-0 scale-95"
                       >
-                        <Popover.Panel className="absolute left-0 z-10 mt-2 w-[355px] origin-top-right rounded-md bg-orange-50 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                        <Popover.Panel className="absolute left-0 z-10 mt-2 w-[355px] origin-top-right rounded-lg bg-orange-50 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                           <div className="py-1 ">
-                            <form>
+                            {/* <form>
                               <div className="relative px-4 py-6 w-full">
                                 <div className="absolute left-5 inset-y-0 flex items-center w-7  pointer-events-none ps-2">
                                   <SearchIcon
@@ -115,42 +117,61 @@ const Filters = ({
                                   className="block w-full p-4 bg-orange-50 text-primary ps-8 text-sm font-normal  leading-tight   outline-none  rounded-full border border-stone-400  "
                                 />
                               </div>
-                            </form>
+                            </form> */}
                             <div className=" dropdownstyle max-h-60 overflow-y-auto">
                               {" "}
                               {/* here add the webkit classs  */}
-                              {options?.map((item: any, itemId: any) => {
-                                return (
-                                  <div key={itemId}>
-                                    <Menu.Item>
-                                      {({ active }) => (
-                                        <p className="px-4 py-4 cursor-pointer text-secondary text-xxs font-normal  tracking-wide flex gap-2 items-center border border-orange-100 ">
-                                          <input
-                                            id={`${item}-${itemId}`}
-                                            name="checkbox"
-                                            type="checkbox"
-                                            className="h-3 w-3 form-checkbox    bg-orange-50 rounded-md border border-zinc-800"
-                                            onChange={(e) =>
-                                              handleChange(item?.toLowerCase())
-                                            }
-                                          />
-                                          <label
-                                            htmlFor={`${item}-${itemId}`}
-                                            className={classNames(
-                                              active
-                                                ? "  text-zinc-800 "
-                                                : "text-primary-dark ",
-                                              "text-lg font-semibold  leading-relaxed"
-                                            )}
-                                          >
-                                            {item}
-                                          </label>
-                                        </p>
-                                      )}
-                                    </Menu.Item>
+                              {type && type?.toLowerCase() === "range" ? (
+                                <div className="py-4 px-8">
+                                  <div className="w-[289px] h-[37px] flex-col justify-start items-start gap-1 inline-flex">
+                                    <div className="text-zinc-800 text-base font-semibold leading-snug">
+                                      Price range
+                                    </div>
+                                    <div className="self-stretch text-neutral-600 text-base font-normal leading-snug">
+                                      User slider or enter min and max price
+                                    </div>
                                   </div>
-                                );
-                              })}
+                                  <RangeSlider
+                                    range={options}
+                                    onChange={handleRangeChange}
+                                  />
+                                </div>
+                              ) : (
+                                options?.map((item: any, itemId: any) => {
+                                  return (
+                                    <div key={itemId}>
+                                      <Menu.Item>
+                                        {({ active }) => (
+                                          <p className="px-4 py-4 cursor-pointer text-secondary text-xxs font-normal  tracking-wide flex gap-2 items-center border border-orange-100 ">
+                                            <input
+                                              id={`${item}-${itemId}`}
+                                              name="checkbox"
+                                              type="checkbox"
+                                              className="h-3 w-3 form-checkbox    bg-orange-50 rounded-md border border-zinc-800"
+                                              onChange={(e) =>
+                                                handleChange(
+                                                  item?.toLowerCase()
+                                                )
+                                              }
+                                            />
+                                            <label
+                                              htmlFor={`${item}-${itemId}`}
+                                              className={classNames(
+                                                active
+                                                  ? "  text-zinc-800 "
+                                                  : "text-primary-dark ",
+                                                "text-lg font-semibold  leading-relaxed"
+                                              )}
+                                            >
+                                              {item}
+                                            </label>
+                                          </p>
+                                        )}
+                                      </Menu.Item>
+                                    </div>
+                                  );
+                                })
+                              )}
                             </div>
 
                             <div className=" cursor-pointer p-6  justify-end items-start gap-4 flex">
