@@ -16,18 +16,18 @@ import ScrollAnimation from "@/common/ScrollAnimation/page";
 export default function WineryArt() {
   return (
     <div className="absolute top-0 left-0 right-0 -z-10">
-      <div className="w-full md:h-[742px] h-[620px] bg-no-repeat bg-cover bg-center bg-[url('https://i.ibb.co/R6b3mN9/herobanner.png')]">
-        <div className="flex items-center container mx-auto h-[742px] ps-0 md:ps-40">
+      <div className="w-full md:h-[742px] h-[620px] bg-no-repeat bg-cover bg-center bg-[url('https://i.ibb.co/pRfQnBG/image-137.png')]">
+        <div className="flex md:items-end  items-center container mx-auto h-[628px] md:px-0 px-4">
           <div>
-            <div>
-              <h1 className="text-white md:text-[144px] font-normal text-6xl">
-                Wine & art
-              </h1>
-            </div>
-            <div className="pt-8">
+            <div className="">
               <h3 className="text-white md:text-4xl font-light md:leading-[44px] text-cente text-[21px] leading-[29px]">
                 Collections
               </h3>
+            </div>
+            <div className="order-1">
+              <h1 className="text-white md:text-[144px] font-normal text-6xl">
+                Wine & art
+              </h1>
             </div>
           </div>
         </div>

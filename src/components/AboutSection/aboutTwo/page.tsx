@@ -12,14 +12,18 @@ import AboutDropDown from "@/components/Modal/AboutModalDropdown/page";
 import CalculationSetting from "@/components/Modal/Calculation/page";
 import PerformanceModel from "@/components/Modal/Performance/page";
 import Appactivity from "@/components/charts/page";
+import Link from "next/link";
 const AboutTwo = () => {
   const [visible, setVisible] = useState(false);
   const [step, setStep] = useState(1);
   return (
     <React.Fragment>
-
       {/* here is a investment section */}
-      <ModalContainer visible={visible} setVisible={setVisible} isCloseBtn={false}>
+      <ModalContainer
+        visible={visible}
+        setVisible={setVisible}
+        isCloseBtn={false}
+      >
         <div>
           <div className="text-center md:pt-[72px]    px-4  pt-[60px] pb-[72px]">
             {step === 1 && (
@@ -78,7 +82,7 @@ const AboutTwo = () => {
                 </div>{" "}
                 <div className="md:pb-[163px] pb-[150px]">
                   <div className="pt-[146px] flex justify-center animate-rotate ">
-                    <MarksAnim fill="#2F222B"  />
+                    <MarksAnim fill="#2F222B" />
                   </div>
                   <h4 className=" md:pt-6  text-center text-zinc-800 text-[21px] font-light  leading-[29px] tracking-wide">
                     Calculation in progress
@@ -154,12 +158,14 @@ const AboutTwo = () => {
             Learn how our process brings our investor “Peace of Mind” pledge to
             life.
           </p>
-          <button className="px-8 py-4 bg-orange-700 rounded-[48px] justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal  uppercase leading-3 tracking-tight">
-            START INVESTING NOW
-            <span>
-              <Arrows storke="#FFFFFF" />
-            </span>
-          </button>
+          <Link href="/invest">
+            <button className="px-8 py-4 bg-orange-700 rounded-[48px] justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal  uppercase leading-3 tracking-tight">
+              START INVESTING NOW
+              <span>
+                <Arrows storke="#FFFFFF" />
+              </span>
+            </button>
+          </Link>
         </div>
         {/* here is image defined */}
         <div className="flex justify-center md:pt-[92px] pt-12">
@@ -194,14 +200,16 @@ const AboutTwo = () => {
                 <AccordionWine />
               </div>
               {/* here is button  */}
-              <div className=" pb-[70px]">
-                <button className="w-full  px-8 py-[22px] rounded-full border border-white border-opacity-20 justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal  uppercase leading-3 tracking-tight">
-                  START INVESTING NOW{" "}
-                  <span>
-                    <Arrows storke="#FFFFFF" />
-                  </span>
-                </button>
-              </div>{" "}
+              <Link href="/invest">
+                <div className=" pb-[70px]">
+                  <button className="w-full  px-8 py-[22px] rounded-full border border-white border-opacity-20 justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal  uppercase leading-3 tracking-tight">
+                    START INVESTING NOW{" "}
+                    <span>
+                      <Arrows storke="#FFFFFF" />
+                    </span>
+                  </button>
+                </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -261,9 +269,8 @@ const AboutTwo = () => {
                         <LineDot storke="#CB220D" /> Portofolio performace
                       </li>
                     </ul> */}
-                     <Appactivity/>  
+                    <Appactivity />
                   </div>
-               
                 </div>
                 {/* HERE IS NUMBER DEFINED  */}
                 {/* <ul className="flex justify-between text-zinc-800 text-base font-normal   leading-snug">
