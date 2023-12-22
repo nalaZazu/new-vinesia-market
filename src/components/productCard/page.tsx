@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import winebotel from "../../assets/images/winecolleciton.png";
+import winebotel from "../../assets/images/Group 10462.png";
 import Art from "../../assets/images/arat.png";
 import Link from "next/link";
 import { ProductCardDto } from "@/types/productCard.dto";

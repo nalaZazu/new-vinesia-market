@@ -13,12 +13,12 @@ export interface MenuItem {
 export const menuBar: MenuItem[] = [
   {
     id: 1,
-    name: "Vinesia Story",
+    name: "Discover Vinesia",
     items: [
       {
         id: 1,
         name: "Start",
-        href: "/start",
+        href: "/",
       },
       {
         id: 2,
@@ -64,7 +64,7 @@ export const menuBar: MenuItem[] = [
       {
         id: 1,
         name: "Marketplace",
-        href: "/",
+        href: "/marketplace",
       },
       {
         id: 2,
