@@ -2,11 +2,12 @@ import Image from "next/image";
 import React from "react";
 import productImg from "@/assets/images/bolltewine.png";
 import InfoTooltip from "@/common/InfoTooltip";
-import { ProductCardDto } from "@/types/productCard.dto";
 import { useUserContext } from "@/context/user";
 import { useCartContext } from "@/context/cart";
+import { ProductOverview } from "@/types/productOverview.dto";
 
-export default function CartCard({ item }: { item?: ProductCardDto }) {
+
+export default function CartCard({ item }: { item?: ProductOverview }) {
   const { getPriceText } = useUserContext();
   const { removeCartItem } = useCartContext();
 
@@ -15,12 +16,17 @@ export default function CartCard({ item }: { item?: ProductCardDto }) {
   return (
     <div className=" p-8 border-b-2 border-[rgba(191, 77, 32, 0.20)] bg-[#FAF5EA]">
       <div className="flex gap-6 w-full">
-        <Image src={productImg} width={112} alt="Product Image" />
+        <img 
+        src={`${process.env.NEXT_PUBLIC_API_ADDRESS}products/file/${item.wine?.media}`} 
+        height={150} width={0} 
+        alt="Product Image" 
+        className="w-auto h-[150px]"
+        />
         <div className="flex flex-col justify-between w-full">
           <div className="flex gap-4 items-start  justify-between">
             <div>
               <h6 className=" text-[21px] text-[#2F222B] font-light">
-                {item?.name}
+                {item?.wine?.winery.name} | {item?.wine?.vintage} | {item?.name}
               </h6>
               <p className=" text-base font-normal">{item?.description}</p>
             </div>

@@ -45,6 +45,9 @@ export function useProvideUser(): ProvideUser {
     const wagmiDisconnect = useDisconnect()
     const wagmiSign = useSignMessage()
 
+
+
+
     const [provider, setProvider] = useState<string | null>(null)
 
     const [address, setAddress] = useState<string | null>(null)
@@ -61,9 +64,10 @@ export function useProvideUser(): ProvideUser {
     const [language, setLanguage] = useState('en')
     const [token, setToken] = useState('')
 
+    const [jwtToken, setJwtToken] = useState('')
+
 
     const { magic, web3 } = useMagic()
-
 
     useEffect(() => {
         const checkLogin = async () => {
@@ -96,6 +100,11 @@ export function useProvideUser(): ProvideUser {
     }, [setToken]);
 
     useEffect(() => {
+        const jwtToken = localStorage.getItem('jwt_token') ?? ''
+        setJwtToken(jwtToken);
+    }, [setJwtToken]);
+
+    useEffect(() => {
         if (!magic) return
 
         async function checkAddress() {
@@ -122,6 +131,24 @@ export function useProvideUser(): ProvideUser {
         // setIsConnecting(false)
         // setIsReconnecting(false)
     }, [token, magic])
+
+    useEffect(() => {
+        if (jwtToken === undefined || jwtToken.length === 0) return
+
+        async function fetchProfile() {
+            const verifyRes = await fetch(process.env.NEXT_PUBLIC_API_ADDRESS+'auth/profile', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'authorization': 'Bearer '+jwtToken
+                }
+            })
+
+            console.log('Profile: ',verifyRes)
+        }
+        fetchProfile();
+
+    }, [jwtToken])
 
     function getText(text: string): string {
         return "";
@@ -228,6 +255,9 @@ export function useProvideUser(): ProvideUser {
                 const resp = await verifyRes.json()
     
                 console.log('JWT token', resp.access_token)
+
+                setJwtToken(resp.access_token)
+                localStorage.setItem('jwt_token', resp.access_token)
             }
         }
 

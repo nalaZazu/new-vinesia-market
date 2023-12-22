@@ -1,12 +1,10 @@
 "use client";
-import { NextIcon, PrevIcon } from "@/assets/icons/Icons";
 import Accordion from "@/common/Accordion";
 import { CartControls } from "@/common/Components";
 import CartCard from "@/components/cart/cartCard";
 import { useCartContext } from "@/context/cart";
 import { useUserContext } from "@/context/user";
-import { ProductCardDto } from "@/types/productCard.dto";
-import Link from "next/link";
+import { ProductOverview } from "@/types/productOverview.dto";
 import React from "react";
 
 export default function Cart() {
@@ -60,6 +58,7 @@ The 2.4% service decreases based on the volume of your investments (Asset Under 
   return (
     <>
     <title>Cart</title>
+
     <div className=" pb-40">
       <div className=" max-w-[1066px] mx-auto px-4">
         <h1 className="text-[#2F222B] text-4xl font-light pt-[90px] pb-12">
@@ -68,7 +67,7 @@ The 2.4% service decreases based on the volume of your investments (Asset Under 
 
         {/* Table Starts */}
         {cartItems?.length > 0 ? (
-          cartItems?.map((item: ProductCardDto, i: any) => {
+          cartItems?.map((item: ProductOverview, i: any) => {
             return (
               <div key={i}>
                 <CartCard item={item} />

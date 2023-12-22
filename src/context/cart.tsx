@@ -1,20 +1,20 @@
 "use client"
-import { ProductCardDto } from "@/types/productCard.dto";
+import { ProductOverview } from "@/types/productOverview.dto";
 import { createContext, useContext, useState } from "react";
 
 export interface ProvideCart {
-    cartItems: ProductCardDto[]
+    cartItems: ProductOverview[]
     cartTotal: number,
-    addCartItem: (item: ProductCardDto) => void
-    removeCartItem: (item: ProductCardDto) => void
+    addCartItem: (item: ProductOverview) => void
+    removeCartItem: (item: ProductOverview) => void
     getCartTotal: () => number
 }
 
 export function useProvideCart(): ProvideCart {
-    const [cartItems, setCartItems] = useState<ProductCardDto[]>([])
+    const [cartItems, setCartItems] = useState<ProductOverview[]>([])
     const [cartTotal, setCartTotal] = useState(0)
 
-    function addCartItem(item: ProductCardDto) {
+    function addCartItem(item: ProductOverview) {
         if (cartItems.indexOf(item) !== -1) 
             return
 
@@ -22,7 +22,7 @@ export function useProvideCart(): ProvideCart {
         setCartItems(items)
     }
 
-    function removeCartItem(item: ProductCardDto) {
+    function removeCartItem(item: ProductOverview) {
         const items = cartItems.filter(x=>x !== item)
         setCartItems(items)
     }

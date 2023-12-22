@@ -33,7 +33,7 @@ html {
 @font-face {
   font-family: "Canela";
   src: url("../assets/fonts/Canela Web/Canela-Light-Web.woff") format("woff"),
-   url("../assets/fonts/Canela Web/Canela-Light-Web.woff2") format("woff");
+   url("../assets/fonts/Canela Web/Canela-Light-Web.woff2") format("woff2");
   font-style: normal;
 }
 
