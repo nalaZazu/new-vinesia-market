@@ -18,7 +18,7 @@ export default function SecruityTags() {
               </p>
             </div>
             <p className=" text-zinc-500 text-base font-normal leading-snug">
-              This tag ensures the bottle's authenticity, recording all the
+              This tag ensures the {`bottle's`} authenticity, recording all the
               information about the wine itself. The NFC creates a unique ID
               that, along with the initial upload info, cannot be changed or
               tampered with.
