@@ -5,18 +5,18 @@
 html {
   scroll-behavior: smooth;
 }
+
 @font-face {
   font-family: "Canela";
-  src: url("../assets/fonts/Canela/Canela-Regular-Web.woff")
-    format("woff");
+  src: url("../assets/fonts/Canela/Canela-Regular.otf")
+    format("opentype");
   font-weight: 400; /* 400 */
   font-style: normal;
 }
 
 @font-face {
   font-family: "Canela";
-  src: url("../assets/fonts/Canela/Canela-Light-Web.woff") format("woff"),
-   url("../assets/fonts/Canela/Canela-Light-Web.woff2") format("woff");
+  src: url("../assets/fonts/Canela/Canela-Light.otf") format("opentype");
   font-style: normal;
 }
 
