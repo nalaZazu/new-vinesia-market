@@ -30,7 +30,7 @@ export default function Ownership() {
                 HOW WE PROVIDE IT
               </p>
               <p className="max-w-[399px] text-zinc-800 text-base font-normal leading-snug">
-                We use RFID technology to secure our products in storage.
+                We use BLE (Bluetooth Low Energy) technology to secure our products in storage.
               </p>
             </div>
           </div>
@@ -49,7 +49,7 @@ export default function Ownership() {
           <div className="space-y-4">
             <div className="md:flex gap-4 items-center">
               <p className="text-[#906447] text-base font-normal leading-snug">
-                RFID
+                BLE
               </p>
               <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
               <p className="text-center text-orange-700 text-xs font-normal uppercase leading-3 tracking-tight">
@@ -73,7 +73,7 @@ export default function Ownership() {
               </p>
               <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
               <p className="text-zinc-800 text-base font-normal leading-snug">
-                19.10.2023 | 12:45 pm
+                22.12.2023 | 08:00 am
               </p>
             </div>
             <div className="md:flex gap-4 items-center">

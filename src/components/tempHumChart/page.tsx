@@ -21,8 +21,8 @@ export default function TempHumChart({ data }: { data?: any }) {
     Tooltip
   );
 
-  const current = [17.1, 17.1, 16.8, 16.4, 16.2, 16.2, 16.4];
-  const previous = [1, 200, 3000, 200, 299];
+  const temp = [17.1, 17.1, 16.8, 16.4, 16.2, 16.2, 16.4];
+  const hum = [47.7, 46.8, 45.9, 45.2, 46, 46.8, 46.8];
 
   const options: any = {
     innerHeight: 200,
@@ -89,21 +89,38 @@ export default function TempHumChart({ data }: { data?: any }) {
           },
         },
       },
+      y2: {
+        type: "linear" as const,
+        display: true,
+        position: "right" as const,
+        grid: {
+          display: false,
+        },
+        // max: 100000,
+        ticks: {
+          beginAtZero: true,
+          callback: function (value: number, index: number) {
+            return index % 2 === 0 ? value + `` : "";
+          },
+        },
+      },
     },
   };
   const labels =
-    current &&
-    current?.map((_v: any, i: any) => {
-      const date = new Date();
-      date.setDate(date.getDate() + i);
-      return `${moment(_v[0]).format("MMM YY")}`;
+    temp &&
+    temp?.map((_v: any, i: any) => {
+      const date = new Date(2023, 11, 16+i);
+      const dateM = moment(date.toISOString())
+      // date.setDate(date.getDate());
+      return `${dateM.format('MMM DD')}`;
     });
-  const dataa = {
+
+  const chartData = {
     labels: labels,
     datasets: [
       {
-        label: "Current",
-        data: current,
+        label: "Temp",
+        data: temp,
         // data: data?.map((d: any) => {
         //   return d[1];
         // }),
@@ -114,28 +131,27 @@ export default function TempHumChart({ data }: { data?: any }) {
         tension: 0.4,
         pointRadius: 0,
       },
+      {
+        label: "Hum",
+        data: hum,
+        borderColor: "#CB220D",
+        backgroundColor: "#CB220D",
+        yAxisID: "y2",
+        borderWidth: 2,
+        tension: 0.4,
+        pointRadius: 0,
+      },
     ],
   };
 
   return (
     <>
-      <div className="flex justify-end w-full mt-4 px-4 text-xs">
-        {/* <h4>Mobile App Revenue</h4> */}
-        <div className="flex">
-          <p className=" text-blue-600">Current Period</p>
-          <div className="w-2 h-2 mt-1 mx-2 rounded-full bg-blue-600 "></div>
-          {/* <p className=" text-red-600">Previous Period</p>
-          <div className="w-2 h-2 mt-1 mx-2 rounded-full bg-red-600 "></div> */}
-        </div>
-      </div>
-      <div className="mt-2 ml-5  text-2xl ">{/* <p>$1677787</p> */}</div>
-
       <div className="max-h-60">
-        {dataa && (
+        {chartData && (
           <Line
             className="mx-2 mb-10 w-20 h-20"
             options={options}
-            data={dataa || []}
+            data={chartData || []}
           />
         )}
       </div>

@@ -93,34 +93,21 @@ export default function StorageConditions() {
               </div>
             </div>
             <div className="pt-8">
-              <TempHumChart/>
-            </div>
-            <div className="pt-4">
-              <div className="justify-around flex">
-                <div className="text-zinc-800 text-base font-normal leading-snug">
-                  Oct 23
-                </div>
-                <div className="text-zinc-800 text-base font-normal leading-snug">
-                  Oct 30
-                </div>
-                <div className="text-zinc-800 text-base font-normal leading-snug">
-                  Nov 7
-                </div>
-              </div>
+            <TempHumChart/>
             </div>
           </div>
           <div className="max-w-[433px] border border-orange-700 border-opacity-20 my-6"></div>
           <div className="flex gap-1">
             <p className="text-zinc-800 text-base font-normal leading-snug">
-              Recommended temprature : 12°C
+              Recommended temperature : 12-16°C
             </p>
-            <AlertCircle storke="#BF4D20" />
+            {/* <AlertCircle storke="#BF4D20" /> */}
           </div>
           <div className="flex gap-1">
             <p className="text-zinc-800 text-base font-normal leading-snug">
-              Recommended humidity : 17%
+              Recommended humidity : 50%-70%
             </p>
-            <AlertCircle storke="#BF4D20" />
+            {/* <AlertCircle storke="#BF4D20" /> */}
           </div>
         </div>
       </div>

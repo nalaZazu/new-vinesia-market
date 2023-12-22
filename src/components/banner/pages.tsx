@@ -103,7 +103,7 @@ export default function Banner({ breadCrumbData }: { breadCrumbData?: any }) {
                       <div className="absolute inline-block w-40 px-4 py-3 mb-10 -ml-32 text-white bg-[#959596] rounded-lg z-10 top-[-125px] left-12">
                         <span className="inline-block text-xs text-center font-normal leading-tight text-[#141619]  tracking-wide ">
                           A quick explanation of the technology used here and
-                          how it differs from the {`"old word"`}. RFID
+                          how it differs from the {`"old word"`}. BLE (Bluetooth Low Energy)
                           explanation.
                         </span>
                         <span
@@ -134,7 +134,7 @@ export default function Banner({ breadCrumbData }: { breadCrumbData?: any }) {
                       <div className="absolute inline-block w-40 px-4 py-3 -ml-32 text-white bg-[#959596] rounded-lg z-10 top-[-125px] left-12">
                         <span className="inline-block text-xs text-center font-normal leading-tight text-[#141619]  tracking-wide ">
                           A quick explanation of the technology used here and
-                          how it differs from the {`"old word"`}. RFID
+                          how it differs from the {`"old word"`}. BLE (Bluetooth Low Energy)
                           explanation.
                         </span>
                         <span
