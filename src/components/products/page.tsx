@@ -40,6 +40,8 @@ const Product = ({ items }: { items?: ProductCardDto[] }) => {
                   })
                 )}
               </div>
+              {/* animation  component  */}
+              <ScrollAnimation />
             </>
           );
         })}
