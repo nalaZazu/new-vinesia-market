@@ -5,6 +5,10 @@ import Benifits from "@/components/secruityPage/Benifits";
 import AboutSlider from "@/components/AboutSection/aboutslider/page";
 import Footer from "@/components/footer/page";
 import { VideoSlider } from "@/constants/videoslider";
+import investment1 from "@/assets/images/secrutiyinvestment.png";
+import investment2 from "@/assets/images/secrutiyinvestment1.png";
+import PeaceVinesia from "@/components/secruityPage/PeaceVinesia";
+import Image from "next/image";
 
 export default function Security() {
   return (
@@ -46,6 +50,77 @@ export default function Security() {
             </h3>
           </div>
           <Benifits />
+        </div>
+      </div>
+      <div className="py-40 bg-[#F7EFDF]">
+        <div className="container mx-auto px-4">
+          <PeaceVinesia />
+        </div>
+      </div>
+
+      <div className="py-40">
+        <div className="container mx-auto px-4">
+          <p className="max-w-[769px] text-zinc-800 text-lg font-semibold leading-relaxed pb-16">
+            All the data about the wine is stored in the blockchain and tied to
+            each unique NFT so you can see the history of each wine. Since this
+            history is also public and unchangeable, it eliminates fraud, which
+            has occurred when outliers go through the old, traditional routes of
+            wine investing. 
+            <br />
+          </p>
+          <div className="grid grid-cols-2 pb-16">
+            <div className="pe-[141px]">
+              <h2 className="text-zinc-800 text-4xl font-light leading-[44px]">
+                Insuring your investment
+              </h2>
+              <div className="py-8">
+                <p className=" text-neutral-600 text-base font-normal leading-snug">
+                  Vinesia, a wine investment platform that distinguishes itself
+                  by its transparency, takes extraordinary measures to ensure
+                  the safety and security of the fine wines stored on behalf of
+                  its clients in their state-of-the-art warehouse in Luxembourg.
+                  Each bottle or case are meticulously cataloged upon arrival
+                  and assigned a unique tracking number recorded on the Polygon
+                  blockchain, guaranteeing precise identification and
+                  traceability. The warehouse is fortified with advanced
+                  security systems, including 24/7 surveillance cameras,
+                  biometric access controls, and temperature monitoring systems
+                  that maintain optimal conditions for wine preservation.
+                </p>
+              </div>
+            </div>
+            <div>
+              <Image
+                className="w-full h-auto"
+                src={investment1}
+                alt="Transistor"
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 ">
+            <div>
+              <Image
+                className="w-full h-auto"
+                src={investment2}
+                alt="Transistor"
+              />
+            </div>
+            <div className="ps-[140px] flex items-end">
+              <div className="py-8">
+                <p className=" text-neutral-600 text-base font-normal leading-snug">
+                  In addition to physical safeguards, Vinesia provides
+                  comprehensive insurance coverage for each bottle at their
+                  replacement value. This policy encompasses protection against
+                  a wide range of potential risks, such as theft, accidental
+                  damage, and natural disasters. The combination of rigorous
+                  security protocols and extensive insurance coverage offers
+                  clients peace of mind, knowing their prized wine collections
+                  are in safe hands and fully insured against unforeseen events.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       {/* The faster way to get to know us */}

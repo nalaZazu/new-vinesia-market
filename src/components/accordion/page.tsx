@@ -41,14 +41,14 @@ export function AccordionWine() {
   );
 }
 
-export function AccordionWineAbout() {
+export function AccordionWineAbout({ data = AccordionAbout }: { data?: any }) {
   const [isActive, setIsActive] = useState<any>();
   const handleToggle = (id: any) => {
     setIsActive(id);
   };
   return (
     <React.Fragment>
-      {AccordionAboutTwo?.map((item: any, index: any) => {
+      {data?.map((item: any, index: any) => {
         const { id, title, text } = item;
         return (
           <div
