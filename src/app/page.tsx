@@ -27,8 +27,6 @@ import gsap from 'gsap'
 import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 
-
-
 const About = () => {
   const container = useRef(null);
   const round = useRef(null);
@@ -45,115 +43,41 @@ const About = () => {
         trigger: el,
         pin: true,
         start: 'top top',
-        end:'+=150%'
+        end: '+=120%'
       }
     });
-
-    // tl.to(el2, {
-    //   duration: 0.5,
-    //   width: '626px',
-    //   height: '626px'
-    // })
     tl
       .to(el3, {
         duration: .2,
         width: '511px',
         height: '511px',
       })
-      .to(el3, { duration: .2})
+      .to(el3, { duration: .2 })
       .to(el3, {
         duration: .2,
         width: '100vw',
-        height: '70vh',
+        height: '80vh',
         borderRadius: '0px',
-        top: '0vh'
+        top: '40vh'
       })
-      .to(el3, {duration: .1})
+      .to(el3, { duration: .1 })
 
+    const tl2 = gsap.timeline()
+    tl2
+      .to(el2, {
+        duration: .2,
+        width: '626px',
+        height: '626px',
+      })
+      .to(el2, { duration: .2 })
+      .to(el2, {
+        duration: .2,
+        width: '0',
+        height: '0',
+      })
 
-    // gsap.to(
-    //   el,
-    //   {
-    //     scrollTrigger: {
-    //       trigger: el,
-    //       pin: true,
-    //       start: 'top top',
-    //       end: "+=100%"
-    //     },
-    //   }
-    // )
-
-    // gsap.to(
-    //   el2,
-    //   {
-    //     scrollTrigger: {
-    //       trigger: el,
-    //       // pin: true,
-    //       start: 'top top',
-    //       end: "+=100%"
-    //     },
-    //     width: '628px',
-    //     height: '628px'
-    //   },
-    // )
+    tl.add(tl2, 0)
   })
-
-  // useGSAP(() => {
-  //   const el = container.current
-  //   const el2 = round.current
-  //   const el3 = round2.current
-
-  //   gsap.to(
-  //     el,
-  //     {
-  //       scrollTrigger: {
-  //         trigger: el,
-  //         pin: true,
-  //         start: 'top top',
-  //         end: "+=130%"
-  //       },
-  //     }
-  //   )
-
-  //   gsap.fromTo(
-  //     el2,
-  //     {
-  //       borderRadius: '500px',
-  //       padding: '59px'
-  //     },
-  //     {
-  //       scrollTrigger: {
-  //         trigger: el,
-  //         scrub: true,
-  //         start: 'top top',
-  //         end: "+=100%"
-  //       },
-  //       padding: '0px',
-  //       borderRadius: '0px',
-  //       width: window.screen.width,
-  //       maxWidth: window.screen.width,
-  //       margin: 0,
-  //       ease: 'none'
-  //     }
-  //   )
-
-  //   gsap.fromTo(
-  //     el3,
-  //     {
-  //       borderRadius: '500px'
-  //     },
-  //     {
-  //       scrollTrigger: {
-  //         trigger: el,
-  //         scrub: true,
-  //         start: 'top top',
-  //         end: "+=100%"
-  //       },
-  //       borderRadius: '0px',
-  //       ease: 'none'
-  //     }
-  //   )
-  // }, { scope: container }); // <-- scope is for selector text (optional)
 
   return (
     <React.Fragment>
@@ -244,8 +168,16 @@ const About = () => {
 
 
 
-      <div className="w-full absolute bottom-[-45vh]" ref={container}>
-        <div className="block relative top-[15vh] overflow-hidden w-[735px] h-[735px] rounded-[1000px] m-auto" ref={round2}>
+      <div className="w-full absolute bottom-[-75vh] h-[100vh]" ref={container}>
+        <div className="absolute bg-[#ECDDC0] w-[812px] h-[812px]  
+      top-[50%] translate-y-[-50%] 
+      left-[50%] translate-x-[-50%] 
+      rounded-[1000px] block" ref={round}></div>
+
+        <div className="block absolute overflow-hidden w-[735px] h-[735px] rounded-[1000px] m-auto
+      top-[50%] translate-y-[-50%] 
+      left-[50%] translate-x-[-50%] 
+        " ref={round2}>
           <video className="absolute left-1/2 z-0 max-w-none object-cover -translate-x-1/2" autoPlay loop muted>
             <source src='assets/video/winevideo.mp4' />
             Your browser does not support the video tag.
