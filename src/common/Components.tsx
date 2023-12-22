@@ -64,12 +64,14 @@ export function CartControls({
   setStep,
   btnOneTittle = "Back",
   btnTwoTittle = "Next",
+  nextStep = "Billing Details",
   disable,
 }: {
   step?: any;
   setStep?: any;
   btnOneTittle?: any;
   btnTwoTittle?: any;
+  nextStep?: string
   disable?: any;
 }) {
   const router = useRouter();
@@ -77,8 +79,7 @@ export function CartControls({
     <div>
       <div className="flex sm:justify-end justify-center pt-8">
         <span className="uppercase text-xs">
-          <span className="text-[#BF4D20]">next step :</span>
-          Billing details
+          <span className="text-[#BF4D20]">next step: </span>{nextStep}
         </span>
       </div>
       <div className="sm:flex justify-between pt-4 pb-[106px] sm:gap-0 grid grid-cols-1 gap-6">

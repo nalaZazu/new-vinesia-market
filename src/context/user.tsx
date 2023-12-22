@@ -217,7 +217,7 @@ export function useProvideUser(): ProvideUser {
 
                 console.log("signedMessage:", signedMessage);
     
-                const verifyRes = await fetch('http://localhost:3010/auth/verify', {
+                const verifyRes = await fetch(process.env.NEXT_PUBLIC_API_ADDRESS+'auth/verify', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

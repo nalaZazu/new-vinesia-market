@@ -27,11 +27,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
+      <Script src="/js/main.js" />
+
         <title>Vinesia Market</title>
         <meta name="description" content="Vinesia Market" />
-      </Head>
-      <Script src="/js/main.js" />
 
       <body className={`${albert.className} bg-[#F3E8CF] `}>
         <WagmiProvider>
