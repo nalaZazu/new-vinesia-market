@@ -71,7 +71,7 @@ export default function Header() {
   const size = useWindowSize();
 
   const isDark = (pathName: string) =>
-    pathName === "/" ||
+    pathName === "/marketplace" ||
     (size.width > 767 && pathName == "/signup") ||
     pathName === "/wineart" ||
     pathName === "/wacollections" ||
