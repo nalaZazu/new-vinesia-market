@@ -2,7 +2,7 @@ import ShareCard from "@/common/ShareCard";
 import { Share } from "next/font/google";
 import React from "react";
 
-export default function WineCard({data}: {data: any}) {
+export default function WineCard({ data }: { data: any }) {
 
   function getSize() {
     if (data.wine.size === 'Standard') {
@@ -14,7 +14,7 @@ export default function WineCard({data}: {data: any}) {
 
   function getPackageType() {
     if (data.wine.packageType === 'Case') {
-      return 'Case of '+data.wine.items
+      return 'Case of ' + data.wine.items
     }
     return data.wine.packageType
   }
@@ -32,7 +32,7 @@ export default function WineCard({data}: {data: any}) {
               <p>First Release Date</p>
               <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20 md:block hidden"></div>
               <p className="text-zinc-800 text-base font-normal leading-snug">
-                Dec 29, 2023
+                Dec 22, 2023
               </p>
             </div>
             <div className="md:flex gap-4 items-center text-[#906447] text-base font-normal leading-snug">
@@ -46,7 +46,7 @@ export default function WineCard({data}: {data: any}) {
               <p>Case & bottle size</p>
               <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20 md:block hidden"></div>
               <p className="text-zinc-800 text-base font-normal leading-snug">
-                 {getPackageType()}, {getSize()}
+                {getPackageType()}, {getSize()}
               </p>
             </div>
             <div className="md:flex gap-4 items-center text-[#906447] text-base font-normal leading-snug">
@@ -58,17 +58,13 @@ export default function WineCard({data}: {data: any}) {
             </div>
             <div className="md:flex gap-4 items-center text-[#906447] text-base font-normal leading-snug space-y-1">
               <p>Origin </p>
-              <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20 md:block hidden"></div>
-              <p className="text-zinc-800 text-base font-normal leading-snug">
-                Winery
-              </p>
               <div className="w-[30px] h-[0px] border   border-orange-700 border-opacity-20 md:block hidden"></div>
-              <p className="text-orange-700 ">Château Le Pin </p>
+              <p className="text-orange-700 ">{data.wine?.winery?.name}</p>
               <div className="opacity-20 text-orange-700 md:block hidden">
                 /
               </div>
               <p className="text-zinc-800 text-base font-normal leading-snug">
-                France, Region, Appellation
+                {data.wine?.winery?.region?.name}, {data.wine?.winery?.region?.country?.name}
               </p>
             </div>
           </div>
@@ -79,7 +75,7 @@ export default function WineCard({data}: {data: any}) {
             {data.wine.ratings?.map((item: any, i: any) => {
               return (
                 <div key={i} className=" col-span-1 rounded-sm">
-                  <p className="text-[#906447] text-xs font-normal uppercase leading-3 tracking-tight pb-3">
+                  <p className="text-[#906447] text-xs font-normal uppercase leading-3 tracking-tight pb-3 h-10">
                     {item.critic}
                   </p>
                   <div className="flex items-end">
@@ -87,7 +83,7 @@ export default function WineCard({data}: {data: any}) {
                       {item.rating}
                     </p>
                     <span className=" text-[#BCA291] text-xs font-normal uppercase leading-3 tracking-tight">
-                     / {item.max}
+                      / {item.max}
                     </span>
                   </div>
                 </div>

@@ -70,7 +70,7 @@ export function CartControls({
   setStep?: any;
   btnOneTittle?: any;
   btnTwoTittle?: any;
-  disable: any;
+  disable?: any;
 }) {
   const router = useRouter();
   return (

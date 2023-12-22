@@ -1,6 +1,8 @@
 import { AlertCircle, LineDot, SensorModal } from "@/assets/icons/Icons";
 import React from "react";
 import SwitchToggle from "../Switch";
+import Appactivity from "@/components/charts/page";
+import TempHumChart from "@/components/tempHumChart/page";
 
 export default function StorageConditions() {
   return (
@@ -54,7 +56,7 @@ export default function StorageConditions() {
               Date of last check
             </p>
             <p className="text-right text-zinc-800 text-base font-normal font-['Albert Sans'] leading-snug">
-              19.10.2023, 12:45 PM
+              22.12.2023, 08:00 PM
             </p>
           </div>
         </div>
@@ -79,7 +81,7 @@ export default function StorageConditions() {
                 <div className="justify-start items-center gap-1 flex">
                   <LineDot storke="#28475C" />
                   <p className="text-zinc-800 text-base font-normal leading-snug">
-                    Temprature
+                    Temperature
                   </p>
                 </div>
                 <div className="justify-start items-center gap-1 flex">
@@ -91,60 +93,21 @@ export default function StorageConditions() {
               </div>
             </div>
             <div className="pt-8">
-              <div className="flex justify-between gap-1.5 items-end pb-5">
-                <p className="text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight">
-                  13°C
-                </p>
-                <div className="grow shrink basis-0 h-[0px] border border-orange-700 border-opacity-20"></div>
-                <p className="text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight">
-                  71%
-                </p>
-              </div>
-              <div className="flex justify-between gap-1.5 items-end pb-5">
-                <p className="text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight">
-                  12°C
-                </p>
-                <div className="grow shrink basis-0 h-[0px] border border-orange-700 border-opacity-20"></div>
-                <p className="text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight">
-                  68%
-                </p>
-              </div>
-              <div className="flex justify-between gap-1.5 items-end">
-                <p className="text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight">
-                  11°C
-                </p>
-                <div className="grow shrink basis-0 h-[0px] border border-orange-700 border-opacity-20"></div>
-                <p className="text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight">
-                  65%
-                </p>
-              </div>
-            </div>
-            <div className="pt-4">
-              <div className="justify-around flex">
-                <div className="text-zinc-800 text-base font-normal leading-snug">
-                  Oct 23
-                </div>
-                <div className="text-zinc-800 text-base font-normal leading-snug">
-                  Oct 30
-                </div>
-                <div className="text-zinc-800 text-base font-normal leading-snug">
-                  Nov 7
-                </div>
-              </div>
+            <TempHumChart/>
             </div>
           </div>
           <div className="max-w-[433px] border border-orange-700 border-opacity-20 my-6"></div>
           <div className="flex gap-1">
             <p className="text-zinc-800 text-base font-normal leading-snug">
-              Recommended temprature : 12°C
+              Recommended temperature : 12-15°C
             </p>
-            <AlertCircle storke="#BF4D20" />
+            {/* <AlertCircle storke="#BF4D20" /> */}
           </div>
           <div className="flex gap-1">
             <p className="text-zinc-800 text-base font-normal leading-snug">
-              Recommended humidity : 17%
+              Recommended humidity : 60%-80%
             </p>
-            <AlertCircle storke="#BF4D20" />
+            {/* <AlertCircle storke="#BF4D20" /> */}
           </div>
         </div>
       </div>

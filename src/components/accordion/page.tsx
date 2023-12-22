@@ -53,16 +53,16 @@ export function AccordionWineAbout() {
         return (
           <div
             key={index}
-            className="w-full x   pl-6 pr-4 py-4 border-t border-orange-700 border-opacity-20 justify-between items-center inline-flex"
+            className="w-full pl-6 pr-4 py-4 border-t border-orange-700 border-opacity-20 justify-between items-center inline-flex"
           >
-            <div className="  w-full  rounded-2xl  md:px-2" key={index}>
+            <div className="w-full rounded-2xl  md:px-2" key={index}>
               <Disclosure>
                 <>
                   <Disclosure.Button
-                    className="flex md:gap-0 gap-10 w-full justify-between     tracking[-0.36px] text-zinc-800 text-lg font-semibold text-start  leading-relaxed "
+                    className="flex md:gap-0 gap-10 w-full justify-between tracking[-0.36px] text-zinc-800 text-lg font-semibold text-start  leading-relaxed "
                     onClick={() => handleToggle(id)}
                   >
-                    <p className="max-w-[425px]">{title}</p>
+                    <p className="max-w-[440px]">{title}</p>
                     <div className="md:w-0 md:h-0 w-6 h-6">
                    <ArrowDown />  
  

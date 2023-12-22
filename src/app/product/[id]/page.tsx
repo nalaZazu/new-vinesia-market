@@ -7,7 +7,7 @@ import Appactivity from "@/components/charts/page";
 import AllEditions from "@/components/ProductOverView/AllEditions";
 import MindPledge from "@/components/mindpledge/page";
 import WineVideoBanner from "@/components/ProductOverView/WineVideoBanner";
-import AboutMission from "@/components/ProductOverView/AboutMission";
+import AboutWine from "@/components/ProductOverView/AboutWine";
 import AboutArtWork from "@/components/ProductOverView/AboutArtWork";
 import AboutWinerySection from "@/components/ProductOverView/AboutWinerySection";
 import Newsletter from "@/components/newsletter/page";
@@ -58,9 +58,9 @@ export default function ProductsOverview({
         <div className=" mx-auto pt-10 pb-7">
           <div className="flex">
             <div className="basis-1/12 hidden md:block"></div>
-            <div className="md:basis-11/12 basis-full max-w-[990px]">
+            <div className="md:basis-11/12 basis-full">
               <h1 className="text-zinc-800 md:text-7xl md:leading-[84px] text-4xl font-normal leading-[42px] tracking-[-1.44px]">
-                {data.name}
+                {data.wine.winery.name} | {data.wine.vintage} | <br/> {data.name}
               </h1>
               {data.art?.name !== undefined ? (
                 <p className="text-zinc-800 text-base font-normal leading-snug pt-2 ">
@@ -176,7 +176,7 @@ export default function ProductsOverview({
       {/* How to invest in wine end*/}
       {/* About Chateau La Mission Haut Brion Cru Classe | 2009 start */}
       <div className="md:block hidden">
-        <AboutMission />
+        <AboutWine wine={data.wine} />
       </div>
       {/* About Chateau La Mission Haut Brion Cru Classe | 2009 end */}
       {/* About artwork start */}

@@ -5,13 +5,38 @@
 html {
   scroll-behavior: smooth;
 }
-@font-face {
+
+/* @font-face {
   font-family: "Canela";
-  src: url("../assets/fonts/Canela-Regular-Trial.otf")
+  src: url("../assets/fonts/Canela/Canela-Regular.otf")
     format("opentype");
-  font-weight: 100,200,300,400,500,600,700,800; /* 400 */
+  font-weight: 400, 500;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Canela";
+  src: url("../assets/fonts/Canela/Canela-Light.otf") format("opentype");
+  font-style: normal;
+  font-weight: 300;
+} */
+
+
+@font-face {
+  font-family: "Canela";
+  src: url("../assets/fonts/Canela Web/Canela-Regular-Web.woff")
+    format("woff");
+  font-weight: 400; /* 400 */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Canela";
+  src: url("../assets/fonts/Canela Web/Canela-Light-Web.woff") format("woff"),
+   url("../assets/fonts/Canela Web/Canela-Light-Web.woff2") format("woff");
+  font-style: normal;
+}
+
 
 /*  */
 @font-face {
