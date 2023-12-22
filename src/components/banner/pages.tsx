@@ -5,6 +5,7 @@ import alert from "../../assets/icons/alert-circle.svg";
 import BreadCrumb from "@/common/BreadCrumb";
 import bgImg from "@/assets/images/herobanner.png";
 import Link from "next/link";
+import InfoTooltip from "@/common/InfoTooltip";
 export default function Banner({ breadCrumbData }: { breadCrumbData?: any }) {
   const [tooltipExtraVisible, setTooltipExtraVisible] = useState(false);
   const [tooltipVisible, setTooltipVisible] = useState(false);
@@ -54,9 +55,10 @@ export default function Banner({ breadCrumbData }: { breadCrumbData?: any }) {
                 Something about technology, advantage of wine investments,
                 unique buying and reselling experience
               </p>
-              <Link 
-              href="/invest"
-              className="h-14 px-8 py-[22px] rounded-full border border-white border-opacity-20 justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal uppercase tracking-tight">
+              <Link
+                href="/invest"
+                className="h-14 px-8 py-[22px] rounded-full border border-white border-opacity-20 justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal uppercase tracking-tight"
+              >
                 START EXPLORING
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -81,9 +83,10 @@ export default function Banner({ breadCrumbData }: { breadCrumbData?: any }) {
             </p>
             <div className="pt-4 flex flex-wrap md:flex-row flex-col justify-between gap-40 md:gap-20 lg:gap-0">
               <ul className="flex flex-col md:flex-row gap-5 font-normal text-xs text-black">
-                <li className="flex relative font-normal gap-2 text-stone-400 text-base leading-snug items-center">
+                <li className="flex relative font-normal gap-2 text-[#CBACAB] text-base leading-snug items-center">
                   Proof of Authenticity
-                  <span
+                  <InfoTooltip fill="#CBACAB" />
+                  {/* <span
                     onMouseEnter={showTooltipExtra}
                     onMouseLeave={hideTooltipExtra}
                   >
@@ -112,11 +115,12 @@ export default function Banner({ breadCrumbData }: { breadCrumbData?: any }) {
                         ></span>
                       </div>
                     </div>
-                  </span>
+                  </span> */}
                 </li>
-                <li className="flex relative items-center font-normal gap-2 text-stone-400 text-base  leading-snug">
+                <li className="flex relative items-center font-normal gap-2 text-[#CBACAB] text-base  leading-snug">
                   Proof of Ownership
-                  <span onMouseEnter={showTooltip} onMouseLeave={hideTooltip}>
+                  <InfoTooltip fill="#CBACAB" />
+                  {/* <span onMouseEnter={showTooltip} onMouseLeave={hideTooltip}>
                     <Image
                       src={alert}
                       alt="Picture of the author"
@@ -143,13 +147,13 @@ export default function Banner({ breadCrumbData }: { breadCrumbData?: any }) {
                         ></span>
                       </div>
                     </div>
-                  </span>
+                  </span> */}
                 </li>
-                <li className="flex relative gap-2 items-center  font-normal text-stone-400 text-base leading-snug">
+                <li className="flex relative gap-2 items-center  font-normal text-[#CBACAB] text-base leading-snug">
                   Proof of Storage conditions
-                  <span
-                  // onMouseEnter={handleMouseEnter}
-                  // onMouseLeave={handleMouseLeave}
+                  <InfoTooltip fill="#CBACAB" />
+                  {/* <span
+                 
                   >
                     <Image
                       src={alert}
@@ -173,7 +177,7 @@ export default function Banner({ breadCrumbData }: { breadCrumbData?: any }) {
                         ></span>
                       </div>
                     </div>
-                  </span>
+                  </span> */}
                 </li>
               </ul>
 

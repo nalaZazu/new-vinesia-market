@@ -14,6 +14,7 @@ export const menuBar: MenuItem[] = [
   {
     id: 1,
     name: "Discover Vinesia",
+    href:"/",
     items: [
       {
         id: 1,
@@ -60,6 +61,7 @@ export const menuBar: MenuItem[] = [
   {
     id: 2,
     name: "Vinesia Marketplace",
+    href: "/marketplace",
     items: [
       {
         id: 1,

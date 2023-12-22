@@ -28,7 +28,7 @@ const LimitedCollection = () => {
           </section>
         </div>
 
-        <div className="flex flex-wrap py-20 md-px-0 px-4 max-w-[1030px] mx-auto gap-8">
+        <div className="flex flex-wrap py-20 max-w-[1030px] mx-auto gap-8 md:px-0 px-4">
           <div className="pb-7 md:pb-0">
             <p className="max-w-[499px] text-zinc-800 text-base font-normal leading-snug">
               Bordeaux, a renowned wine region, is acclaimed for its bold red
@@ -45,13 +45,12 @@ const LimitedCollection = () => {
               elegant, nuanced, and often complex flavors, highly sought after
               by wine connoisseurs. Champagne, located in northeastern France,
               is synonymous with sparkling wine. Using the traditional méthode
-              champenoise, this region crafts the {`world's`} most celebrated
+              champenoise, this region crafts the world's most celebrated
               bubbly. Champagne is known for its effervescence, finesse, and
               celebratory nature.
             </p>
           </div>
         </div>
-
         {/* Destop View */}
         <div className="container mx-auto ">
           <div className="md:block hidden">

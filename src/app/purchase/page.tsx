@@ -12,15 +12,15 @@ const Purchase = () => {
       <div className="max-w-[560px] cotainer mx-auto py-8">
         <div className="relative pb-12 px-4">
           <div className="md:pt-20 pt-[60px] ">
-            <div className="pb-2 md:px-6 pt-[60px]  bg-orange-50 rounded-[20px]   border border-orange-700 border-opacity-20 ">
+            <div className="pb-2 md:px-6 pt-[60px]  bg-[#FAF5EA] rounded-[20px]   border border-orange-700 border-opacity-20 ">
               <div className="flex justify-center">
                 <Image src={glassIllustrations} alt="image-icon" />
               </div>
-              <div className="flex-col justify-center items-center  flex ">
-                <h3 className="  text-green-500 md:text-4xl font-light pt-8  md:leading-[44px]  text-center  text-[21px]  leading-[29px] ">
+              <div className="flex-col justify-center items-center  flex pb-6">
+                <h3 className="  text-[#42A55E] md:text-4xl font-light pt-8  md:leading-[44px]  text-center  text-[21px]  leading-[29px] ">
                   Your purchase is complete
                 </h3>
-                <p className="  md:max-w-full max-w-[239px]  text-green-700 md:py-4  pt-2 text-base font-normal md:leading-snug text-center leading-snug">
+                <p className="  md:max-w-full max-w-[239px]  text-[#35844B] md:py-4  pt-2 text-base font-normal md:leading-snug text-center leading-snug">
                   Your new wines have now been added to your portfolio
                 </p>
               </div>
@@ -32,10 +32,10 @@ const Purchase = () => {
                     const { title, amount } = item;
                     return (
                       <div className="flex justify-between " key={index}>
-                        <p className="text-right text-zinc-800 text-base font-normal  leading-snug">
+                        <p className="text-right text-[#2F222B] text-base font-normal  leading-snug">
                           {title}
                         </p>
-                        <p className="text-right text-zinc-800 text-base font-normal  leading-snug  ">
+                        <p className="text-right text-[#2F222B] text-base font-normal  leading-snug  ">
                           €{amount}
                         </p>
                       </div>
@@ -44,10 +44,10 @@ const Purchase = () => {
                 </div>
                 <div className="border-b  pt-6 border-orange-700 border-opacity-20" />
                 <div className="flex justify-between pt-6">
-                  <p className="text-right text-zinc-800 text-lg font-semibold leading-relaxed">
+                  <p className="text-right text-[#2F222B] text-lg font-semibold leading-relaxed">
                     Total price
                   </p>
-                  <p className="text-zinc-800 text-lg font-semibold leading-relaxed">
+                  <p className="text-[#2F222B] text-lg font-semibold leading-relaxed">
                     € 5,863.20
                   </p>
                 </div>
@@ -72,7 +72,7 @@ const Purchase = () => {
           {/* here is end of svg */}
         </div>
         {/* here is end of relative div */}
-        <button className="px-8 py-[22px] bg-orange-700 rounded-full justify-center items-center gap-3 mx-auto flex  text-center text-white text-xs font-normal font-['Albert Sans'] uppercase leading-[18px] tracking-tight">
+        <button className="px-8 py-4 bg-[#BF4D20] rounded-full justify-center items-center gap-3 mx-auto flex  text-center text-white text-xs font-normal font-['Albert Sans'] uppercase leading-[18px] tracking-tight">
           VIEW INVESTMENT <Arrows storke="#FFFFFF" />
         </button>
       </div>

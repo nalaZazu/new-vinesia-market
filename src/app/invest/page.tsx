@@ -36,13 +36,12 @@ const Invest = () => {
   };
 
   const { data, error, isLoading, mutate } = useSWR(
-    `${process.env.NEXT_PUBLIC_API_ADDRESS}products/search/`,
+    `${process.env.NEXT_PUBLIC_API_ADDRESS}products/search`,
     fetcher
   );
   useEffect(() => {
     mutate();
   }, [selectedFilters]);
-
 
   return (
     <div>
@@ -72,8 +71,6 @@ const Invest = () => {
           <div className="md:block hidden">
             <Product items={data?.data} />
           </div>
-          {/* animation  component  */}
-          <ScrollAnimation/>
         </div>
       </div>
       {/* desktop Newsletter*/}
