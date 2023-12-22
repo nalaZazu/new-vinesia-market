@@ -65,7 +65,7 @@ export const menuBar: MenuItem[] = [
     items: [
       {
         id: 1,
-        name: "Marketplace",
+        name: "Overview",
         href: "/marketplace",
       },
       {

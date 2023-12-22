@@ -1,4 +1,4 @@
-import { AlertCircle, LineDot, SensorModal } from "@/assets/icons/Icons";
+import { AlertCircle, CheckBox, LineDot, SensorModal } from "@/assets/icons/Icons";
 import React from "react";
 import SwitchToggle from "../Switch";
 import Appactivity from "@/components/charts/page";
@@ -53,8 +53,9 @@ export default function StorageConditions() {
           </div>
           <div className="flex ps-16 pt-8 gap-2 items-center">
             <p className=" text-[#906447] text-right text-xs font-normal font-['Albert Sans'] uppercase leading-3 tracking-tight">
-              Date of last check
+              Date of last check 
             </p>
+            <CheckBox storke="#22C55E" />
             <p className="text-right text-zinc-800 text-base font-normal font-['Albert Sans'] leading-snug">
               22.12.2023, 08:00 PM
             </p>

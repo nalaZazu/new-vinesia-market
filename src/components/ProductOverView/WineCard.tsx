@@ -6,7 +6,11 @@ export default function WineCard({ data }: { data: any }) {
 
   function getSize() {
     if (data.wine.size === 'Standard') {
-      return 'Standard (0,75l)'
+      // return 'Standard (0,75l)'
+      return '0,75l'
+    }
+    if (data.wine.size === 'Magnum') {
+      return '1,5l'
     }
 
     return data.wine.size
@@ -29,13 +33,6 @@ export default function WineCard({ data }: { data: any }) {
         <div className="md:pt-8 flex">
           <div className="space-y-4">
             <div className="md:flex gap-4 items-center text-[#906447] text-base font-normal leading-snug">
-              <p>First Release Date</p>
-              <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20 md:block hidden"></div>
-              <p className="text-zinc-800 text-base font-normal leading-snug">
-                Dec 22, 2023
-              </p>
-            </div>
-            <div className="md:flex gap-4 items-center text-[#906447] text-base font-normal leading-snug">
               <p>This wine is sourced</p>
               <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20 md:block hidden"></div>
               <p className="text-zinc-800 text-base font-normal leading-snug">
@@ -46,11 +43,11 @@ export default function WineCard({ data }: { data: any }) {
               <p>Case & bottle size</p>
               <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20 md:block hidden"></div>
               <p className="text-zinc-800 text-base font-normal leading-snug">
-                {getPackageType()}, {getSize()}
+                {getPackageType()} x {getSize()}
               </p>
             </div>
             <div className="md:flex gap-4 items-center text-[#906447] text-base font-normal leading-snug">
-              <p>Type </p>
+              <p>Type, Alc. </p>
               <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20 md:block hidden"></div>
               <p className="text-zinc-800 text-base font-normal leading-snug">
                 {data.wine?.metadata?.color}, {data.wine?.metadata?.percentage}
