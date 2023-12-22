@@ -18,10 +18,10 @@ const AboutOne = () => {
             </p>
           </div>
           <div className="col-span-2">
-            <h4 className=" text-zinc-800 md:text-4xl md:leading-[44px]  md:py-0 py-6  text-[21px] font-light  leading-[29px]">
+            <h3 className=" text-zinc-800 md:text-4xl md:leading-[44px]  md:py-0 py-6  text-[21px] font-light  leading-[29px]">
               We are the first marketplace that protects your investment in a
               secure and transparent way to offer you complete Peace of Mind.
-            </h4>
+            </h3>
             <p className="md:pt-8 pt-0 text-zinc-800 text-base font-normal leading-snug">
               As stewards of your wine, sourced exclusively from winemakers,
               Vinesia is the best place to appreciate it while guarding its
@@ -40,9 +40,9 @@ const AboutOne = () => {
                     <span>
                       <Image src={icon} alt="lock" width={20} height={20} />
                     </span>
-                    <h6 className="text-zinc-800 text-lg font-semibold pt-6 pb-3 leading-relaxed">
+                    <span className="text-zinc-800 text-lg font-semibold pt-6 pb-3 leading-relaxed">
                       {title}
-                    </h6>
+                    </span>
                     <p className="text-neutral-600 text-base font-normal  leading-snug">
                       {text}
                     </p>
@@ -58,9 +58,9 @@ const AboutOne = () => {
       <div className="md:block hidden">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 container">
           <div className="flex flex-wrap justify-between  gap-10 items-center">
-            <h6 className="text-center text-stone-600 text-xs font-normal uppercase leading-3 tracking-tight">
+            <span className="text-center text-stone-600 text-xs font-normal uppercase leading-3 tracking-tight">
               Featured in
-            </h6>
+            </span>
             <Image
               className="col-span-2  max-w-[74.24px] max-h-[19.20px] object-contain lg:col-span-1"
               src={bubble}
