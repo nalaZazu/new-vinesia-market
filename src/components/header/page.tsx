@@ -128,13 +128,15 @@ export default function Header() {
                   key={x.id}
                   onClick={() => select(x)}
                 >
-                  <span
-                    className={`hidden md:block py-7 text-base tracking-tight border-0 ${
-                      theme.textClass
-                    } ${x.id === topSelected.id ? theme.selectedClass : ""}`}
-                  >
-                    {x.name}
-                  </span>
+                  <Link href={x.href}>
+                    <span
+                      className={`hidden md:block py-7 text-base tracking-tight border-0 ${
+                        theme.textClass
+                      } ${x.id === topSelected.id ? theme.selectedClass : ""}`}
+                    >
+                      {x.name}
+                    </span>
+                  </Link>
                 </div>
               ))}
             </div>
