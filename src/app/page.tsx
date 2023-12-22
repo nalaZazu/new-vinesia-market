@@ -110,7 +110,7 @@ const About = () => {
             </div>
             {/* here is main text-div  */}
             <div className="relative">
-              <h1 className=" text-zinc-800 md:text-[144px] font-normal md:leading-[155px] tracking-tight leading-[68px]">
+              <h1 className=" text-zinc-800 2xl:text-[144px] md:text-[120px] font-normal tracking-tighter leading-[68px]">
                 secure, transparent, <br /> easily tradable
               </h1>
               <div className="absolute -top-12 right-3 md:block hidden">
