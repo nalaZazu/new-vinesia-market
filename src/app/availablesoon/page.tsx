@@ -10,6 +10,7 @@ import NewsletterMobile from "@/components/newsletter/MobileView";
 import Product from "@/components/products/page";
 import { MarksAnim } from "@/assets/icons/Icons";
 import { ProductCardDto } from "@/types/productCard.dto";
+import ScrollAnimation from "@/common/ScrollAnimation/page";
 
 export default function AvailableSoon() {
   return (
@@ -40,33 +41,13 @@ export default function AvailableSoon() {
         {/* product list  */}
         <div className="md:block hidden">
           <Product />
-          {/* <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20">
-            {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, index: any) => {
-              return (
-                <div key={index}>
-                  <ProductCards />
-                </div>
-              );
-            })}
-          </div> */}
+           
           {/* animation  component  */}
-          <div className="p-16 flex justify-center mx-auto items-center gap-16">
-            <div className=" border-b-2 h-0 w-full border-[#CB220D] border-opacity-10"></div>
-            <MarksAnim fill="#CB220D" />
-            <div className="border-b-2 h-0 w-full border-[#CB220D]  border-opacity-10"></div>
-          </div>
+        <ScrollAnimation />
         </div>
         {/* next product list  */}
         <Product />
-        {/* <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20 ">
-          {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, index: any) => {
-            return (
-              <div key={index}>
-                <ProductCards />
-              </div>
-            );
-          })}
-        </div> */}
+       
       </div>
       <div className="p-16 flex justify-center mx-auto items-center gap-16">
         <div className=" border-b-2 h-0 w-full border-[#CB220D] border-opacity-10"></div>

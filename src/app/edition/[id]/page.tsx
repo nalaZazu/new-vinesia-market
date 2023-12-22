@@ -1,4 +1,5 @@
 "use client";
+
 import VerticalBreadCrumb from "@/common/verticalBreadcrumb/page";
 import React from "react";
 import { AlertIcons, Arrows, BgRectangle } from "@/assets/icons/Icons";

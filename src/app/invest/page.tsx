@@ -14,6 +14,7 @@ import useSWR from "swr";
 
 import { MarksAnim, Xmark } from "@/assets/icons/Icons";
 import ProductCards from "@/components/productCard/page";
+import ScrollAnimation from "@/common/ScrollAnimation/page";
 import FilterSection from "@/components/FilterSection/page";
 
 const Invest = () => {
@@ -41,6 +42,7 @@ const Invest = () => {
   useEffect(() => {
     mutate();
   }, [selectedFilters]);
+
 
   return (
     <div>
@@ -70,6 +72,8 @@ const Invest = () => {
           <div className="md:block hidden">
             <Product items={data?.data} />
           </div>
+          {/* animation  component  */}
+          <ScrollAnimation/>
         </div>
       </div>
       {/* desktop Newsletter*/}

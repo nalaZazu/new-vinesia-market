@@ -1,20 +1,25 @@
-import React from "react"; 
+import React from "react";
 import Dropdown from "@/common/DropDown/page";
 import Newsletter from "@/components/newsletter/page";
 import Footer from "@/components/footer/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
 import Product from "@/components/products/page";
-import MobileFilter from "../invest/moibleview/page"; 
-// import xmark from "../../assets/icons/x-mark-anim.svg"; 
+import MobileFilter from "../invest/moibleview/page";
+// import xmark from "../../assets/icons/x-mark-anim.svg";
 import Image from "next/image";
 import Card from "@/components/card/page";
 import lineregion from "@/assets/icons/lineregion.svg";
-import { MarksAnim } from "@/assets/icons/Icons"; 
+import { MarksAnim } from "@/assets/icons/Icons";
+import ScrollAnimation from "@/common/ScrollAnimation/page";
+import VerticalBreadCrumb from "@/common/verticalBreadcrumb/page";
 
 export default function Regions() {
   return (
     <React.Fragment>
       <div className="container mx-auto pt-14 px-4 md:px-0">
+        {/* BreadCrumb start */}
+        {/* <VerticalBreadCrumb/> */}
+        {/* BreadCrumb end */}
         <h1 className="text-zinc-800 md:text-[144px] text-6xl font-normal">
           Regions
         </h1>
@@ -34,30 +39,13 @@ export default function Regions() {
         </div>
         {/* product list  */}
         <Product />
-        {/* <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20 ">
-          {[1, 2, 3, 4, 5, 6, 7, 8]?.map((item: any, index: any) => {
-            return (
-              <div key={index}>
-                <ProductCards />
-              </div>
-            );
-          })}
-        </div>{" "} */}
+
         {/* animation  component  */}
-        <div className="p-16 flex justify-center mx-auto items-center gap-16">
-          <div className=" border-b-2 h-0 w-full border-[#CB220D] border-opacity-10"></div>
-          <MarksAnim fill="#CB220D" />
-          <div className="border-b-2 h-0 w-full border-[#CB220D]  border-opacity-10"></div>
-        </div>
+        <ScrollAnimation />
         {/* next product list  */}
         <Product />
-
-        <div className="p-16 flex justify-center mx-auto items-center gap-16">
-          <div className=" border-b-2 h-0 w-full border-[#CB220D] border-opacity-10"></div>
-          <MarksAnim fill="#CB220D" />
-          <div className="border-b-2 h-0 w-full border-[#CB220D]  border-opacity-10"></div>
-        </div>
-       
+        {/* animation  component  */}
+        <ScrollAnimation />
       </div>
 
       {/* desktop Newsletter*/}

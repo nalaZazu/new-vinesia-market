@@ -9,14 +9,15 @@ import {
   NextIcon2,
   PrevIcon,
   PrevIcon2,
-} from "../../../assets/icons/Icons";
+} from "@/assets/icons/Icons";
 import sliderabout from "@/assets/images/sliderImage.png";
 import Image from "next/image";
 import shareIcon from "@/assets/icons/share.svg";
-const AboutSlider = () => {
+import { VideoSlider } from "@/constants/videoslider";
+const AboutSlider = ({ data = VideoSlider }: { data?: any }) => {
   const [currentslide, setCurrentSlide] = useState(0);
   const slider = useRef<any>();
-  const slideData = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+
   const sliderSettings = {
     infinite: true,
     speed: 500,
@@ -67,7 +68,7 @@ const AboutSlider = () => {
           <div
             onClick={() => slider?.current?.slickNext()}
             className={`" text-black w-16 h-12 flex items-center rounded-full border justify-center  cursor-pointer  ${
-              currentslide == slideData?.length - 1
+              currentslide == data?.length - 1
                 ? "border-[#BF4D2020] pointer-events-none disabled"
                 : "border-orange-700"
             }`}
@@ -75,9 +76,7 @@ const AboutSlider = () => {
             <div>
               <NextIcon
                 fill={
-                  currentslide == slideData?.length - 1
-                    ? "#BF4D2020"
-                    : "#BF4D20"
+                  currentslide == data?.length - 1 ? "#BF4D2020" : "#BF4D20"
                 }
               />
             </div>
@@ -104,21 +103,20 @@ const AboutSlider = () => {
           {...sliderSettings}
           className="invest_carousel z-20"
         >
-          {slideData?.map((item: any, i: any) => {
+          {data?.map((item: any, i: any) => {
             return (
               <div key={i} className="md:px-8 px-4 pt-8">
                 <div className="">
                   <div className="relative h-[246.23px]  bg-no-repeat bg-center md:bg-[url('https://i.ibb.co/LCb3y9J/slider-Image.png')]  bg-[url('https://i.ibb.co/MnXJPpn/01-Images.png')] ">
                     {/* <Image src={sliderabout} alt="image" /> */}
                     <div className="absolute md:bottom-7 md:-left-6   bottom-12 -left-0">
-                     
                       {/* absolute bottom-24 -left-6 */}
-                      <div className="max-w-[121px] h-[0px] border border-orange-700"></div>
+                      <div className="max-w-[121px] h-[0px] border border-orange-700 my-5"></div>
                       <p className="text-white text-lg font-semibold  leading-relaxed">
-                        Video title would come here
+                        {item.label}
                       </p>
                     </div>
-                  </div> 
+                  </div>
                   <div className="pt-[15px] flex justify-end gap-4 items-center">
                     <p className="text-white text-[13px] font-normal   uppercase tracking-tight">
                       share
