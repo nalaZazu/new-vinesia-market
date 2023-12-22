@@ -361,6 +361,48 @@ h6 {
   transform: rotate(45deg);
 }
 
+/* Range Slider CSS */
+
+.horizontal-slider {
+  height: 50px;
+}
+
+.horizontal-slider .example-track {
+  top: 15px;
+  height: 6px;
+  border-radius: 20px;
+}
+
+.example-track.example-track-0 {
+  background: #BF4D2010;
+}
+
+.example-track.example-track-1 {
+  background: #BF4D20;
+}
+
+.example-track.example-track-2 {
+  background: #BF4D2010;
+}
+
+.horizontal-slider .example-thumb {
+  top: 1px;
+  width: 50px;
+  height: 48px;
+  line-height: 38px;
+  border-radius: 50%;
+  font-size: 0.9em;
+  text-align: center;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border: 5px solid gray;
+  box-sizing: border-box;
+}
+
+
+/*  Range Slider CSS END */
+
 .scroll_rotate {
   animation: scrollRotate 1s linear infinite;
   animation-play-state: paused;

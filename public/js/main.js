@@ -3,7 +3,8 @@ window.addEventListener(
   () => {
     document.body.style.setProperty(
       "--scroll",
-      window.pageYOffset / (document.body.offsetHeight - window.innerHeight)
+      (window.pageYOffset / (document.body.offsetHeight - window.innerHeight)) *
+        2
     );
   },
   false
