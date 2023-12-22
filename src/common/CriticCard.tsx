@@ -18,7 +18,7 @@ export default function CriticCard({ review }: { review?: any }) {
           </p>
         </div>
         <div>
-          <p className="text-center text-zinc-800 text-base font-normal  leading-snug">
+          <p className="text-zinc-800 text-base font-normal leading-snug">
             {review?.description}
           </p>
         </div>

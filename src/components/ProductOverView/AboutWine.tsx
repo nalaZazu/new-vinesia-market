@@ -21,7 +21,6 @@ export default function AboutWine({wine}: {wine?: any}) {
               <div className="max-w-[500px]">
                 <div className="flex gap-3">
                   <span className=" text-zinc-800 text-base font-bold leading-snug">
-                    {wine?.metadata.color}, {wine?.metadata.percentage} Alc
                   </span>
                 </div>
                 <p className="w-full text-zinc-800 text-base font-normal leading-snug pb-8 whitespace-pre-line">

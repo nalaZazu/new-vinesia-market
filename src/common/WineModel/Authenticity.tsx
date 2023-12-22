@@ -62,9 +62,9 @@ export default function Authenticity() {
               </p>
               <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20 md:block hidden"></div>
               <div className="flex gap-2 items-center">
-                <CheckBox />
+                <CheckBox storke="#22C55E" />
                 <p className="text-center text-orange-700 text-base  font-normal uppercase leading-3 tracking-tight">
-                  Integrity..
+                  Integrity Verified
                 </p>
               </div>
             </div>

@@ -727,14 +727,14 @@ export function CheckBox({ storke }: { storke?: any }) {
         <path
           id="Path"
           d="M9.375 11.875L7.5 10"
-          stroke="#BF4D20"
+          stroke={storke ?? "#BF4D20"}
           strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
           id="Path_2"
           d="M12.5 8.75L9.375 11.875"
-          stroke="#BF4D20"
+          stroke={storke ?? "#BF4D20"}
           strokeLinecap="round"
           strokeLinejoin="round"
         />
@@ -743,7 +743,7 @@ export function CheckBox({ storke }: { storke?: any }) {
           fill-rule="evenodd"
           clip-rule="evenodd"
           d="M10 17.5C5.85786 17.5 2.5 14.1421 2.5 10V10C2.5 5.85786 5.85786 2.5 10 2.5V2.5C14.1421 2.5 17.5 5.85786 17.5 10V10C17.5 14.1421 14.1421 17.5 10 17.5V17.5Z"
-          stroke="#BF4D20"
+          stroke={storke ?? "#BF4D20"}
           strokeLinecap="round"
           strokeLinejoin="round"
         />

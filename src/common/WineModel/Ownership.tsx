@@ -49,21 +49,11 @@ export default function Ownership() {
           <div className="space-y-4">
             <div className="md:flex gap-4 items-center">
               <p className="text-[#906447] text-base font-normal leading-snug">
-                BLE
+                BLE ID
               </p>
               <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
               <p className="text-center text-orange-700 text-xs font-normal uppercase leading-3 tracking-tight">
                 3u033=39dje043=94
-              </p>
-              <AlertCircle storke="#BF4D20" />
-            </div>
-            <div className="md:flex gap-4 items-center">
-              <p className="text-[#906447] text-base font-normal leading-snug">
-                Last audit
-              </p>
-              <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
-              <p className="text-zinc-800 text-base font-normal leading-snug">
-                30.06.2023
               </p>
               <AlertCircle storke="#BF4D20" />
             </div>
@@ -81,16 +71,15 @@ export default function Ownership() {
                 Last check status
               </p>
               <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
+              <CheckBox storke="#22C55E" />
               <div>
                 <div className="flex gap-1">
-                  <CheckBox />
                   <p className="text-zinc-800 text-base font-normal leading-snug">
                     Product in our warehouse
                   </p>
                 </div>
                 <div className="flex gap-1">
-                  <CheckBox />
-                  <p>Luxemburg</p>
+                  <p className="text-zinc-800 text-base font-normal">in Luxembourg</p>
                 </div>
               </div>
             </div>

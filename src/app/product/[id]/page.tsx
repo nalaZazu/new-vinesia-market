@@ -180,13 +180,13 @@ export default function ProductsOverview({
       </div>
       {/* About Chateau La Mission Haut Brion Cru Classe | 2009 end */}
       {/* About artwork start */}
-      <div className="md:block hidden">
+      {/* <div className="md:block hidden">
         <AboutArtWork />
-      </div>
+      </div> */}
       {/* About artwork end */}
       {/* About Winery Château Le Pin start */}
       <div className="md:block hidden">
-        <AboutWinerySection />
+        <AboutWinerySection data={data.wine?.winery} />
       </div>
       {/* you main also like section */}
       <div className=" text-center">

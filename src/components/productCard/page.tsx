@@ -27,9 +27,11 @@ export default function ProductCards({
         <div className="max-w-[288px] md:h-[674px] h-[674px] mx-auto">
           <div className="flex flex-col items-center md:gap-8 gap-5 px-5">
             <div className="relative">
-              <Image
-                src={winebotel}
-                alt="Picture of the author"
+              <img
+                src={`http://localhost:3010/products/file/${item.media}`}
+                alt="Product picture"
+                width={0}
+                height={200}
                 className=" w-auto h-[200px]"
               />
               {isEdition ? (
@@ -40,7 +42,14 @@ export default function ProductCards({
                   </div>
                 </div>
               ) : (
-                <></>
+                <>
+                <div className="w-[49.94px] h-[50px] absolute -bottom-5 left-0 right-0 mx-auto">
+                  <div className="w-[49.94px] h-[50px] left-0 top-0 absolute bg-red-700 rounded-full border-4 border-orange-100" />
+                  <div className="left-[12.49px] top-[20px] w-[25px] absolute text-center text-white text-sm font-normal  uppercase leading-none">
+                    {item.description.startsWith('Case') ? '6 x' : ' 1 x'}
+                  </div>
+                </div>
+                </>
               )}
             </div>
 
@@ -49,7 +58,7 @@ export default function ProductCards({
                 <></>
               ) : (
                 <div className="p-2 h-9 bg-zinc-800 rounded-[30px] border flex justify-end items-center gap-1.5">
-                  <Image src={Art} alt="Picture of the author" />
+                  <Image src={Art} alt="Artwork picture" />
                   <p className="text-center text-white text-xs font-normal uppercase leading-3 tracking-tight">
                     ARTWORK
                   </p>
