@@ -10,6 +10,7 @@ import { useMagic } from "./MagicProvider";
 import { logout, saveToken } from "@/utils/common";
 import { SiweMessage } from "siwe";
 import { Address, createWalletClient, custom, getAddress } from "viem";
+import { User } from "@/types/user.dto";
 
 
 
@@ -25,6 +26,8 @@ export interface ProvideUser {
 
     currency: string;
     language: string;
+
+    isLoggedIn: () => Promise<User | undefined>;
 
     getText: (text: string) => string;
     getPriceText: (price: number) => string;
@@ -64,8 +67,8 @@ export function useProvideUser(): ProvideUser {
     const [language, setLanguage] = useState('en')
     const [token, setToken] = useState('')
 
-    const [jwtToken, setJwtToken] = useState('')
-
+    const [jwtToken, setJwtToken] = useState(localStorage.getItem('jwt_token') ?? '')
+    const [profile, setProfile] = useState<User | null>(null)
 
     const { magic, web3 } = useMagic()
 
@@ -100,11 +103,6 @@ export function useProvideUser(): ProvideUser {
     }, [setToken]);
 
     useEffect(() => {
-        const jwtToken = localStorage.getItem('jwt_token') ?? ''
-        setJwtToken(jwtToken);
-    }, [setJwtToken]);
-
-    useEffect(() => {
         if (!magic) return
 
         async function checkAddress() {
@@ -132,6 +130,18 @@ export function useProvideUser(): ProvideUser {
         // setIsReconnecting(false)
     }, [token, magic])
 
+    async function fetchProfile(jwtToken: string) {
+        const verifyRes = await fetch(process.env.NEXT_PUBLIC_API_ADDRESS+'auth/profile', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'authorization': 'Bearer '+jwtToken
+            }
+        })
+
+        return (await verifyRes.json()) as User
+    }
+
     useEffect(() => {
         if (jwtToken === undefined || jwtToken.length === 0) return
 
@@ -149,6 +159,21 @@ export function useProvideUser(): ProvideUser {
         fetchProfile();
 
     }, [jwtToken])
+
+    async function isLoggedIn(): Promise<User | undefined> {
+        if (profile !== null) return profile
+
+        const jwtToken = localStorage.getItem('jwt_token')
+        if (jwtToken !== null && jwtToken.length > 0) {
+            const profile = await fetchProfile(jwtToken)
+
+            setProfile(profile)
+
+            return profile
+        }
+
+        return undefined
+    }
 
     function getText(text: string): string {
         return "";
@@ -324,6 +349,8 @@ export function useProvideUser(): ProvideUser {
         isReconnecting,
         isDisconnected,
         isLoading,
+
+        isLoggedIn,
 
         connectAsync,
         connectSocialAsync,
