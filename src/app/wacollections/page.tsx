@@ -11,6 +11,7 @@ import xmark from "../../assets/icons/x-mark-anim.svg";
 import Link from "next/link";
 import ProductCards from "@/components/productCard/page";
 import { MarksAnim } from "@/assets/icons/Icons";
+import ScrollAnimation from "@/common/ScrollAnimation/page";
 
 export default function WineryArt() {
   return (
@@ -97,20 +98,12 @@ export default function WineryArt() {
         {/* product list  */}
 
         {/* animation  component  */}
-        <div className="p-16 flex justify-center mx-auto items-center gap-10">
-          <div className=" border-b-[1px] h-0 w-full border-[#CB220D] border-opacity-10"></div>
-          <MarksAnim fill="#CB220D" />
-          <div className="border-b-[1px] h-0 w-full border-[#CB220D]  border-opacity-10"></div>
-        </div>
+        <ScrollAnimation />
         {/* next product list  */}
 
         <Product />
         {/* animation  component  */}
-        <div className="p-16 flex justify-center mx-auto items-center gap-10">
-          <div className=" border-b-[1px] h-0 w-full border-[#CB220D] border-opacity-10"></div>
-          <MarksAnim fill="#CB220D" />
-          <div className="border-b-[1px] h-0 w-full border-[#CB220D]  border-opacity-10"></div>
-        </div>
+        <ScrollAnimation />
       </div>
       {/* desktop Newsletter*/}
       <div className="hidden sm:block">

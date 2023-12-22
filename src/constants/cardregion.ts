@@ -20,3 +20,6 @@ export const CardAbout=[
   {id:2 , text:"Bottles in the original wooden case",image:investment2},
   {id:3 , text:"Limited edition in special case",image:investment3},
 ]
+
+
+

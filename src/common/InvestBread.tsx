@@ -1,7 +1,9 @@
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 
 const InvestBread = () => {
+  const pathname = usePathname();
   return (
     <>
       <div className="conatiner mx-auto hidden md:block">
@@ -50,7 +52,11 @@ const InvestBread = () => {
               <div className="flex items-center">
                 <Link
                   href="#"
-                  className=" text-base font-normal text-stone-500  leading-snug"
+                  className={`   text-base font-normal  leading-snug    ${
+                    pathname === "/invest"
+                      ? "text-[#975958]"
+                      : "text-stone-500 "
+                  }`}
                 >
                   home
                 </Link>

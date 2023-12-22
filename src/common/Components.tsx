@@ -62,13 +62,15 @@ export function Button({
 export function CartControls({
   step,
   setStep,
-  btnOneTittle='Back',
-  btnTwoTittle ="Next",
+  btnOneTittle = "Back",
+  btnTwoTittle = "Next",
+  disable,
 }: {
   step?: any;
   setStep?: any;
   btnOneTittle?: any;
   btnTwoTittle?: any;
+  disable: any;
 }) {
   const router = useRouter();
   return (
@@ -76,7 +78,7 @@ export function CartControls({
       <div className="flex sm:justify-end justify-center pt-8">
         <span className="uppercase text-xs">
           <span className="text-[#BF4D20]">next step :</span>
-          Billng details
+          Billing details
         </span>
       </div>
       <div className="sm:flex justify-between pt-4 pb-[106px] sm:gap-0 grid grid-cols-1 gap-6">
@@ -85,15 +87,21 @@ export function CartControls({
           className="flex items-center gap-4 border border-[#BF4D2020] rounded-full text-[#BF4D20] px-8 justify-center h-14 sm:order-1 order-2 sm:w-auto w-full"
         >
           <PrevIcon />
-        {btnOneTittle}
+          {btnOneTittle}
         </button>
         <button
+          disabled={disable}
           onClick={() =>
-            setStep(step == 3 ? router.push("/purchase") : step + 1)
+            step
+              ? setStep(step == 3 ? router.push("/purchase") : step + 1)
+              : router.push("/checkout")
           }
-          className="flex items-center gap-4 border border-[#BF4D2020] rounded-full text-white px-8 justify-center h-14 bg-[#BF4D20] sm:order-2 order-1 sm:w-auto w-full"
+          className={`  ${
+            disable ? "cursor-no-drop" : "cursor-pointer"
+          }  flex items-center gap-4 border   border-[#BF4D2020] rounded-full text-white px-8 justify-center h-14 bg-[#BF4D20] sm:order-2 order-1 sm:w-auto w-full
+        `}
         >
-         {btnTwoTittle} <NextIcon fill="white" />
+          {btnTwoTittle} <NextIcon fill="white" />
         </button>
       </div>
     </div>
