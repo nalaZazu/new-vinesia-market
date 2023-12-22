@@ -57,7 +57,7 @@ const VerticalBreadCrumb = () => {
             >
               /
             </li>
-            <li>
+            {/* <li>
               <Link
                 href="#"
                 className={` text-xs font-normal leading-3 ${
@@ -77,7 +77,7 @@ const VerticalBreadCrumb = () => {
               }`}
             >
               /
-            </li>
+            </li> */}
             <li aria-current="page">
               <Link
                 href="#"
