@@ -26,12 +26,16 @@ const fetcher = async (url: string, payload?: string) => {
 };
 import { MarksAnim, Xmark } from "@/assets/icons/Icons";
 import ProductCards from "@/components/productCard/page";
+import FilterSection from "@/components/FilterSection/page";
 
 const Invest = () => {
-  const [tags, setTags] = useState<String[]>([])
+  const [tags, setTags] = useState<String[]>([]);
+  const [selectedFilters, setSelectedFilters] = useState([]);
 
-  const { data, error, isLoading } = useSWR(`${process.env.NEXT_PUBLIC_API_ADDRESS}products/search/`, fetcher)
-
+  const { data, error, isLoading } = useSWR(
+    `${process.env.NEXT_PUBLIC_API_ADDRESS}products/search/`,
+    fetcher
+  );
 
   return (
     <div>
@@ -51,22 +55,14 @@ const Invest = () => {
               Invest
             </h2>
           </div>
-          {/* dropdown */}
-          <div className="hidden md:block">
-            <Dropdown />
-            <div className=" border-red-700 border-[0.5px]  mt-12"></div>
-          </div>
-          {/* Mobile view */}
-          <div className="md:hidden block">
-            <MobileFilter />
-          </div>
-          
+
+          <FilterSection selectedFilters={selectedFilters} setSelectedFilters={setSelectedFilters} />
+
           {/* product list  */}
           <div className="md:block hidden">
             <Product items={data?.data} />
           </div>
         </div>
-
       </div>
       {/* desktop Newsletter*/}
       <div className="hidden sm:block">
