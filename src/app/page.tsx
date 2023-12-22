@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useRef, useState } from "react";
+import React, { use, useRef, useState } from "react";
 import Image from "next/image";
 import videoImage from "@/assets/images/video (1080p) 2.png";
 import { Arrows } from "@/assets/icons/Icons";
@@ -27,66 +27,133 @@ import gsap from 'gsap'
 import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 
+
+
 const About = () => {
   const container = useRef(null);
   const round = useRef(null);
   const round2 = useRef(null);
   useGSAP(() => {
+    console.log('GSAP!')
     const el = container.current
     const el2 = round.current
     const el3 = round2.current
 
-    gsap.to(
-      el,
-      {
-        scrollTrigger: {
-          trigger: el,
-          pin: true,
-          start: 'top top',
-          end: "+=130%"
-        },
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        scrub: 1,
+        trigger: el,
+        pin: true,
+        start: 'top top',
+        end:'+=150%'
       }
-    )
+    });
 
-    gsap.fromTo(
-      el2,
-      {
-        borderRadius: '500px',
-        padding: '59px'
-      },
-      {
-        scrollTrigger: {
-          trigger: el,
-          scrub: true,
-          start: 'top top',
-          end: "+=100%"
-        },
-        padding: '0px',
+    // tl.to(el2, {
+    //   duration: 0.5,
+    //   width: '626px',
+    //   height: '626px'
+    // })
+    tl
+      .to(el3, {
+        duration: .2,
+        width: '511px',
+        height: '511px',
+      })
+      .to(el3, { duration: .2})
+      .to(el3, {
+        duration: .2,
+        width: '100vw',
+        height: '70vh',
         borderRadius: '0px',
-        width: window.screen.width,
-        maxWidth: window.screen.width,
-        margin: 0,
-        ease: 'none'
-      }
-    )
+        top: '0vh'
+      })
+      .to(el3, {duration: .1})
 
-    gsap.fromTo(
-      el3,
-      {
-        borderRadius: '500px'
-      },
-      {
-        scrollTrigger: {
-          trigger: el,
-          scrub: true,
-          start: 'top top',
-          end: "+=100%"
-        },
-        borderRadius: '0px',
-        ease: 'none'
-      }
-    )
-  }, { scope: container }); // <-- scope is for selector text (optional)
+
+    // gsap.to(
+    //   el,
+    //   {
+    //     scrollTrigger: {
+    //       trigger: el,
+    //       pin: true,
+    //       start: 'top top',
+    //       end: "+=100%"
+    //     },
+    //   }
+    // )
+
+    // gsap.to(
+    //   el2,
+    //   {
+    //     scrollTrigger: {
+    //       trigger: el,
+    //       // pin: true,
+    //       start: 'top top',
+    //       end: "+=100%"
+    //     },
+    //     width: '628px',
+    //     height: '628px'
+    //   },
+    // )
+  })
+
+  // useGSAP(() => {
+  //   const el = container.current
+  //   const el2 = round.current
+  //   const el3 = round2.current
+
+  //   gsap.to(
+  //     el,
+  //     {
+  //       scrollTrigger: {
+  //         trigger: el,
+  //         pin: true,
+  //         start: 'top top',
+  //         end: "+=130%"
+  //       },
+  //     }
+  //   )
+
+  //   gsap.fromTo(
+  //     el2,
+  //     {
+  //       borderRadius: '500px',
+  //       padding: '59px'
+  //     },
+  //     {
+  //       scrollTrigger: {
+  //         trigger: el,
+  //         scrub: true,
+  //         start: 'top top',
+  //         end: "+=100%"
+  //       },
+  //       padding: '0px',
+  //       borderRadius: '0px',
+  //       width: window.screen.width,
+  //       maxWidth: window.screen.width,
+  //       margin: 0,
+  //       ease: 'none'
+  //     }
+  //   )
+
+  //   gsap.fromTo(
+  //     el3,
+  //     {
+  //       borderRadius: '500px'
+  //     },
+  //     {
+  //       scrollTrigger: {
+  //         trigger: el,
+  //         scrub: true,
+  //         start: 'top top',
+  //         end: "+=100%"
+  //       },
+  //       borderRadius: '0px',
+  //       ease: 'none'
+  //     }
+  //   )
+  // }, { scope: container }); // <-- scope is for selector text (optional)
 
   return (
     <React.Fragment>
@@ -173,18 +240,18 @@ const About = () => {
 
         </div>
       </div>
-      <div className="w-full" ref={container}>
-        <div id="round" className="
-           block md:w-[628px] md:h-[628px] w-[300px] h-[300px] rounded-full bg-[#ECDDC0] md:p-[59px] mx-auto 
-          " ref={round}>
+      <div className="h-[200vh] w-full block"></div>
 
-          <div className="block relative overflow-hidden w-full h-full rounded-full" ref={round2}>
-            <video className="absolute left-1/2 z-0 max-w-none object-cover -translate-x-1/2" autoPlay loop muted>
-              <source src='assets/video/winevideo.mp4' />
-              Your browser does not support the video tag.
-            </video>
-          </div>
+
+
+      <div className="w-full absolute bottom-[-45vh]" ref={container}>
+        <div className="block relative top-[15vh] overflow-hidden w-[735px] h-[735px] rounded-[1000px] m-auto" ref={round2}>
+          <video className="absolute left-1/2 z-0 max-w-none object-cover -translate-x-1/2" autoPlay loop muted>
+            <source src='assets/video/winevideo.mp4' />
+            Your browser does not support the video tag.
+          </video>
         </div>
+
       </div>
 
       {/* here is next section */}
