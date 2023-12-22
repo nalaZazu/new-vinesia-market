@@ -1,5 +1,4 @@
 import { WagmiConfig, configureChains, createConfig } from "wagmi";
-import { LoginType, MagicCustomConnector } from "./connectors/MagicConnector";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { CoinbaseWalletConnector } from "wagmi/connectors/coinbaseWallet";
@@ -30,56 +29,6 @@ export const config = createConfig({
         projectId: walletConnectProjectId,
       },
     }),
-
-    new MagicCustomConnector(
-      {
-        options: {
-          apiKey: magicLinkApiKey, //required
-        },
-      },
-      LoginType.Social,
-      "google"
-    ),
-    new MagicCustomConnector(
-      {
-        options: {
-          apiKey: magicLinkApiKey, //required
-        },
-      },
-      LoginType.Social,
-      "twitter"
-    ),
-    new MagicCustomConnector(
-      {
-        options: {
-          apiKey: magicLinkApiKey, //required
-        },
-      },
-      LoginType.Social,
-      "apple"
-    ),
-    new MagicCustomConnector(
-      {
-        options: {
-          apiKey: magicLinkApiKey, //required
-        },
-      },
-      LoginType.Social,
-      "facebook"
-    ),
-
-    // new DedicatedWalletConnector({
-    //   options: {
-    //     apiKey: magicLinkApiKey, //required
-    //     oauthOptions : {
-    //       providers: ['google', 'twitter', 'apple'],
-    //     },
-    //     enableSMSLogin: true,
-    //     enableEmailLogin: true,
-    //     customHeaderText: 'Vinesia Login'
-    //     //...Other options
-    //   },
-    // })
   ],
   publicClient,
   webSocketPublicClient,
