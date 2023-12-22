@@ -120,6 +120,8 @@ export default function wineryArt() {
           </div>
         </div>
       </div>
+
+      {/*  */}
       {/* desktop */}
       <div className="md:block hidden">
         <Newsletter />
