@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+"use client"
+
+import React, { useRef, useState } from "react";
 import Image from "next/image";
 import videoImage from "@/assets/images/video (1080p) 2.png";
 import { Arrows } from "@/assets/icons/Icons";
@@ -19,7 +21,73 @@ import AboutOne from "@/components/AboutSection/aboutOne/page";
 import AboutTwo from "@/components/AboutSection/aboutTwo/page";
 import AboutThree from "@/components/AboutSection/aboutThree/page";
 import Link from "next/link";
+
+import { useGSAP } from "@gsap/react";
+import gsap from 'gsap'
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger);
+
 const About = () => {
+  const container = useRef(null);
+  const round = useRef(null);
+  const round2 = useRef(null);
+  useGSAP(() => {
+    const el = container.current
+    const el2 = round.current
+    const el3 = round2.current
+
+    gsap.to(
+      el,
+      {
+        scrollTrigger: {
+          trigger: el,
+          pin: true,
+          start: 'top top',
+          end: "+=130%"
+        },
+      }
+    )
+
+    gsap.fromTo(
+      el2,
+      {
+        borderRadius: '500px',
+        padding: '59px'
+      },
+      {
+        scrollTrigger: {
+          trigger: el,
+          scrub: true,
+          start: 'top top',
+          end: "+=100%"
+        },
+        padding: '0px',
+        borderRadius: '0px',
+        width: window.screen.width,
+        maxWidth: window.screen.width,
+        margin: 0,
+        ease: 'none'
+      }
+    )
+
+    gsap.fromTo(
+      el3,
+      {
+        borderRadius: '500px'
+      },
+      {
+        scrollTrigger: {
+          trigger: el,
+          scrub: true,
+          start: 'top top',
+          end: "+=100%"
+        },
+        borderRadius: '0px',
+        ease: 'none'
+      }
+    )
+  }, { scope: container }); // <-- scope is for selector text (optional)
+
   return (
     <React.Fragment>
       {/* Main heading section */}
@@ -27,8 +95,8 @@ const About = () => {
       <div className="relative container mx-auto md:py-0 pb-20">
         <div className="container mx-auto md:px-0 px-4 ">
           <div className="md:flex md:justify-end justify-start text-[#BD936B] text-xs font-normal   uppercase leading-3 tracking-tight md:pt-5 pt-4  tracking-[ 0.24px]">
-            <p> appreciating your wine,</p>
-            <p>guarding its emotions</p>
+            {/* <p> appreciating your wine,</p>
+            <p>guarding its emotions</p> */}
           </div>
 
           <div className="md:text-center pt-8">
@@ -42,8 +110,8 @@ const About = () => {
             </div>
             {/* here is main text-div  */}
             <div className="relative">
-              <h1 className=" text-zinc-800 md:text-[144px] font-normal md:leading-[155px] tracking-tight leading-[68px]">
-                secure, transparent, <br/> easily tradable
+              <h1 className=" text-zinc-800 md:text-[7.75rem] font-normal tracking-tight leading-[7.75rem]">
+                secure, transparent, <br /> easily tradable
               </h1>
               <div className="absolute -top-12 right-3 md:block hidden">
                 <Image src={bottleIllustration} alt="image-icon" />
@@ -90,24 +158,35 @@ const About = () => {
               <Image src={glass} alt="glass image" />
             </div>
           </div>
-          <div className="relative md:block hidden pt-5">
-            <div className="bg-[#ECDDC0] w-[628px] h-[628px] mx-auto rounded-full relative -z-10" />
+
+          {/* <div id="round" className="relative md:block hidden pt-5">
+            <div className="bg-[#ECDDC0] w-[628px] h-[628px] mx-auto rounded-full relative -z-10"  ref={container} />
 
             <div className="absolute left-0 right-0 top-0 pt-[79px]">
-              <video width={600} height={600} className="rounded-full w-[510px] h-[510px] mx-auto object-cover" autoPlay loop controls>
+              <video width={600} height={600} className="rounded-full w-[510px] h-[510px] mx-auto object-cover" autoPlay loop>
                 <source src='assets/video/winevideo.mp4' />
                 Your browser does not support the video tag.
               </video>
             </div>
+          </div> */}
+
+
+        </div>
+      </div>
+      <div className="w-full" ref={container}>
+        <div id="round" className="
+           block md:w-[628px] md:h-[628px] w-[300px] h-[300px] rounded-full bg-[#ECDDC0] md:p-[59px] mx-auto 
+          " ref={round}>
+
+          <div className="block relative overflow-hidden w-full h-full rounded-full" ref={round2}>
+            <video className="absolute left-1/2 z-0 max-w-none object-cover -translate-x-1/2" autoPlay loop muted>
+              <source src='assets/video/winevideo.mp4' />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
-
       </div>
 
-      {/* here is video section */}
-      <div className="w-full md:pt-80">
-        <Image src={videoImage} className="w-full" alt="video" />
-      </div>
       {/* here is next section */}
       <AboutOne />
 
