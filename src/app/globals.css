@@ -10,7 +10,7 @@ html {
   font-family: "Canela";
   src: url("../assets/fonts/Canela/Canela-Regular.otf")
     format("opentype");
-  font-weight: 400,500; /* 400 */
+  font-weight: 400; /* 400 */
   font-style: normal;
 }
 
