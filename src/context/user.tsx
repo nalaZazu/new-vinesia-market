@@ -133,6 +133,7 @@ export function useProvideUser(): ProvideUser {
         return priceDec.toLocaleString("en-US", {
             style: "currency",
             currency: "EUR",
+            minimumFractionDigits: 0
         });
     }
 

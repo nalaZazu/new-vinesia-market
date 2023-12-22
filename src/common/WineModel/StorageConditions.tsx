@@ -99,13 +99,13 @@ export default function StorageConditions() {
           <div className="max-w-[433px] border border-orange-700 border-opacity-20 my-6"></div>
           <div className="flex gap-1">
             <p className="text-zinc-800 text-base font-normal leading-snug">
-              Recommended temperature : 12-16°C
+              Recommended temperature : 12-15°C
             </p>
             {/* <AlertCircle storke="#BF4D20" /> */}
           </div>
           <div className="flex gap-1">
             <p className="text-zinc-800 text-base font-normal leading-snug">
-              Recommended humidity : 50%-70%
+              Recommended humidity : 60%-80%
             </p>
             {/* <AlertCircle storke="#BF4D20" /> */}
           </div>

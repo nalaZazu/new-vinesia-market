@@ -6,12 +6,16 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { NextIcon2, PrevIcon2 } from "@/assets/icons/Icons";
-export default function ProductOverviewCarousel() {
+export default function ProductOverviewCarousel({data}: {data?: string[]}) {
+  if (data === undefined || data.length === 0) {
+    return <></>
+  }
+
   const sliderSettings = {
     customPaging: function () {
       return (
         <div className="imagedots z-0 flx-img-border absolute top-0 buttom-0">
-          <Image src={big} alt="" />
+          <Image src={`/upload/${data[0]}`} fill alt="" />
         </div>
       );
     },
@@ -66,7 +70,7 @@ export default function ProductOverviewCarousel() {
   return (
     <div>
       <Slider {...sliderSettings} className="product_slider z-0">
-        {[1, 2, 3]?.map((item: any, i: any) => {
+        {data?.map((item: any, i: any) => {
           return (
             <div key={i}>
               <div
@@ -75,7 +79,9 @@ export default function ProductOverviewCarousel() {
               >
                 <div className="relative">
                   <Image
-                    src={big1}
+                    src={`/upload/${item}`}
+                    width={340}
+                    height={340}
                     alt="Picture of the author"
                     className=" z-0 px-5"
                   />

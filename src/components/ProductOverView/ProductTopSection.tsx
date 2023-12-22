@@ -20,7 +20,7 @@ const ProductTopSection = ({ data }: { data: any }) => {
         <div className="grid pb-16 lg:grid-cols-2 md:grid-cols-2 grid-cols-1">
           {/* slider start */}
           <div className="">
-            <ProductCarousel />
+            <ProductCarousel data={[data.wine.media]}/>
           </div>
           <div className="md:hidden block">
             <ShareCard data={data} />
