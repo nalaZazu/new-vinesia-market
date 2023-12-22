@@ -10,7 +10,7 @@ const AboutThree = () => {
   return (
     <React.Fragment>
       {/* Start your investment journey today  */}
-      <div className="md:py-40 md:px-0 px-4 py-20">
+      <div className="md:py-40 md:px-0 px-4 py-20 bg-[#F7EFDF]">
         <div className="container mx-auto">
           <div className="max-w-[820px] mx-auto">
             <h2 className="md:tracking-[-1.44px] md:text-center text-zinc-800 md:text-7xl font-normal   md:leading-[84px]    text-4xl leading-[44px] tracking-[-0.36px]">
@@ -23,7 +23,7 @@ const AboutThree = () => {
               diligent real-time monitoring in our Luxembourg warehouse, the
               value of these assets are poised to appreciate.
             </p>
-            <button className="px-8 py-[22px] bg-orange-700 rounded-full justify-center items-center mx-auto gap-3 flex  text-center text-white text-xs font-normal  uppercase leading-3 tracking-tight">
+            <button className="px-8 py-4 bg-orange-700 rounded-full justify-center items-center mx-auto gap-3 flex  text-center text-white text-xs font-normal  uppercase leading-3 tracking-tight">
               EXPLORE YOUT OPTIONS <Arrows storke="#FFFFFF" />
             </button>
           </div>

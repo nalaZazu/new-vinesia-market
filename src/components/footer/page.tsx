@@ -17,13 +17,14 @@ import master from "../../assets/icons/Mastercard.svg";
 import { Facebook, LinkdeIn, Twitter } from "@/assets/icons/Icons";
 export default function Footer() {
   return (
-    <div className="bg-[#2F222B]">
+    <React.Fragment>
+       <div className="bg-[#2F222B] ">
       <footer className=" text-center text-neutral-600     lg:text-start">
-        <div className="container mx-auto flex justify-center py-[30px]     items-center gap-6  ">
+        <div className="container mx-auto md:flex md:justify-center py-[30px]     items-center gap-6  ">
           <div>
             <span>appreciating your wine</span>
           </div>
-          <div>
+          <div className="order-1">
             {" "}
             <Link href="/">
               <Image
@@ -41,11 +42,11 @@ export default function Footer() {
         <div className="border-b  border-white border-opacity-20 " />
 
         {/* <!-- Main container div: holds the entire content of the footer, including four sections (TW elements, Products, Useful links, and Contact), with responsive styling and appropriate padding/margins. --> */}
-        <div className="container mx-auto pt-12 pb-12">
-          <div className="mx-6 py-10 text-center md:text-start">
-            <div className="grid md:gap-28 gap-16 grid-cols-2 md:grid-cols-9">
+        <div className="container mx-auto pt-12 pb-12 px-4">
+          <div className=" py-10 text-center md:text-start">
+            <div className="grid md:gap-28 gap-16 grid-cols-1 sm:flex">
               {/* <!-- Useful links section --> */}
-              <div className="md:col-span-2 ">
+              <div className="  sm:col-span-1">
                 <h6 className="mb-4 flex justify-center  md:justify-start    text-white text-xs font-normal   uppercase leading-[18px] tracking-tight">
                   About Vinesia
                 </h6>
@@ -64,7 +65,7 @@ export default function Footer() {
                 })}
               </div>
               {/* <!-- Useful links section --> */}
-              <div className="md:col-span-2">
+              <div className=" sm:col-span-1">
                 <h6 className="mb-4 flex justify-center  md:justify-start   text-white text-xs font-normal   uppercase leading-[18px] tracking-tight">
                   Investments
                 </h6>
@@ -83,14 +84,14 @@ export default function Footer() {
                 })}
               </div>
               {/* <!-- TW elements section --> */}
-              <div className=" col-span-3">
+              <div className=" sm:col-span-2 col-span-1 max-w-[310px]">
                 <h6 className="mb-4 flex items-center justify-center  uppercase md:justify-start text-white text-xs font-normal  leading-[18px] tracking-tight">
                   Want to know More?
                 </h6>
                 <p className=" pe-0 md:pe-14">
                   Ask about wine investing We are answering in 24 hours
                 </p>
-                <div className="flex gap-3">
+                <div className="flex gap-3  md:justify-start justify-center">
                   <span>
                     <Image src={envelope} alt="envelope@" />
                   </span>
@@ -100,10 +101,10 @@ export default function Footer() {
                 </div>
               </div>
               {/* <!-- Products section --> */}
-              <div className=" md:col-span-2">
-                <h6 className="mb-4 flex justify-center uppercase md:justify-start   text-neutral-300 text-base font-normal  leading-snug">
+              <div className=" sm:col-span-2 col-span-1 max-w-[303px]">
+                <p className="mb-4 flex justify-center uppercase md:justify-start   text-neutral-300 text-base font-normal  leading-snug">
                   Share info on your investment, make connections
-                </h6>
+                </p>
                 <button className="px-8 py-[22px] bg-white rounded-[48px] justify-center items-center gap-3 inline-flex text-orange-700 text-xs">
                   JOIN OUR COMMUNITY
                 </button>
@@ -112,25 +113,25 @@ export default function Footer() {
           </div>
           <hr className="border-b  border-white border-opacity-20" />
           {/* here is langugae and other icon */}
-          <div className="pt-12 flex justify-between">
+          <div className="pt-12 md:px-0 px-4 flex flex-wrap md:justify-between justify-center">
             <div className="flex flex-wrap flex-col">
               <span>Visit our international sites</span>
               <span className="pt-4">FR | GER | ENG | CHN </span>
             </div>
-            <div className="border-r-2   border-white border-opacity-20"></div>
-            <div>
+            <div className="md:border-r-2    border-white border-opacity-20  " />
+            <div className="md:pt-0 pt-4">
               <span>Follow us</span>
-              <div className="flex justify-center  items-center gap-[10px] pt-[10px]">
+              <div className="flex justify-center   items-center gap-[10px] pt-[10px]">
                 <Link href="#" className="p-2">
-                <Facebook fill="#ACA7AA" /> 
+                  <Facebook fill="#ACA7AA" />
                 </Link>
                 <Link href="#" className="p-2">
-                <LinkdeIn fill="#ACA7AA " />
+                  <LinkdeIn fill="#ACA7AA " />
 
                   {/* <Image src={linkdin} alt="twitter" className="w-4" /> */}
                 </Link>
                 <Link href="#" className="p-2">
-                <Twitter fill="#ACA7AA" />
+                  <Twitter fill="#ACA7AA" />
                 </Link>
 
                 <Link href="#" className="p-2">
@@ -144,54 +145,56 @@ export default function Footer() {
           </div>
           {/* <!--Copyright section--> */}
         </div>
-        <div className="flex items-center justify-center bg-[#1C141A] text-white p-2 lg:justify-between">
-          <div className=" container mx-auto flex justify-between items-center">
-            <div className="mr-12 hidden lg:block">
+        <div className="flex  items-center sm:justify-center bg-[#1C141A] text-white p-2 lg:justify-between">
+          <div className=" container mx-auto flex-wrap  flex md:justify-between justify-center items-center">
+            <div className="md:mr-12 ">
               <span className="text-neutral-400 text-xs font-normal  leading-[18px]">
                 Copyright © 2023 Vinesia. All Rights Reserved
               </span>
             </div>
-            <div>
-              <div className="flex justify-center  items-center gap-[10px] pt-[10px]">
+            <div className=" ">
+              <div className="flex justify-center items-center gap-[10px] pt-[10px]">
                 <Link href="#" className="p-2">
-                  <Image
-                    src={strip}
-                    alt="facebook"
-                  
-                  />
+                  <Image src={strip} alt="facebook" />
                 </Link>
                 <Link href="#" className="p-2">
-                  <Image src={Gpay} alt="twitter"   />
+                  <Image src={Gpay} alt="twitter" />
                 </Link>
                 <Link href="#" className="p-2">
-                  <Image src={applePay} alt="twitter"   />
+                  <Image src={applePay} alt="twitter" />
                 </Link>
 
                 <Link href="#" className="p-2">
-                  <Image src={visa} alt="twitter"  />
+                  <Image src={visa} alt="twitter" />
                 </Link>
                 <Link href="#" className="p-2">
-                  <Image src={master} alt="twitter"  />
+                  <Image src={master} alt="twitter" />
                 </Link>
               </div>
             </div>
-            <div className="text-right text-neutral-400 text-xs font-normal  leading-[18px] divide-x flex gap-4">
-              <div>
-                <Link href="/"> Terms & conditions</Link>
-              </div>
-              <div className="ps-4">
-                <Link href="/">Privacy Policy</Link>
-              </div>
-              <div className="ps-4">
-                <Link href="/">Cookie Policy</Link>
-              </div>
-              <div className="ps-4">
-                <Link href="/">Disclaimer</Link>
+            <div className="md:pt-0 pt-4 ">
+              <div className=" md:mx-0 mx-4 md:text-right text-neutral-400 text-xs font-normal  leading-[18px] md:divide-x  flex gap-4 flex-wrap  justify-center">
+                <div>
+                  <Link href="/"> Terms & conditions</Link>
+                </div>
+                <div className="ps-4">
+                  <Link href="/">Privacy Policy</Link>
+                </div>
+                <div className="ps-4">
+                  <Link href="/">Cookie Policy</Link>
+                </div>
+                <div className="ps-4">
+                  <Link href="/">Disclaimer</Link>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </footer>
     </div>
+
+
+    </React.Fragment>
+   
   );
 }
