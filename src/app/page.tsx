@@ -175,7 +175,7 @@ const About = () => {
       </div>
       <div className="w-full" ref={container}>
         <div id="round" className="
-           block w-[628px] h-[628px] rounded-full bg-[#ECDDC0] p-[59px] mx-auto
+           block md:w-[628px] md:h-[628px] w-[300px] h-[300px] rounded-full bg-[#ECDDC0] md:p-[59px] mx-auto 
           " ref={round}>
 
           <div className="block relative overflow-hidden w-full h-full rounded-full" ref={round2}>
