@@ -95,8 +95,8 @@ const About = () => {
       <div className="relative container mx-auto md:py-0 pb-20">
         <div className="container mx-auto md:px-0 px-4 ">
           <div className="md:flex md:justify-end justify-start text-[#BD936B] text-xs font-normal   uppercase leading-3 tracking-tight md:pt-5 pt-4  tracking-[ 0.24px]">
-            <p> appreciating your wine,</p>
-            <p>guarding its emotions</p>
+            {/* <p> appreciating your wine,</p>
+            <p>guarding its emotions</p> */}
           </div>
 
           <div className="md:text-center pt-8">

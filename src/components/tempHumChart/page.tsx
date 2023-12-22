@@ -21,7 +21,7 @@ export default function TempHumChart({ data }: { data?: any }) {
     Tooltip
   );
 
-  const current = [1, 200, 3000, 20000, 29009, 39009, 79009];
+  const current = [17.1, 17.1, 16.8, 16.4, 16.2, 16.2, 16.4];
   const previous = [1, 200, 3000, 200, 299];
 
   const options: any = {
@@ -78,7 +78,6 @@ export default function TempHumChart({ data }: { data?: any }) {
         type: "linear" as const,
         display: true,
         position: "left" as const,
-        min: 0,
         grid: {
           display: false,
         },
