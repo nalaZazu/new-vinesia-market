@@ -19,7 +19,7 @@ export default function InvestorsLove() {
               The investment landscape is full of possibilities, from
               traditional stocks and bonds to alternative assets such as real
               estate, precious metals, and even art. One such alternative asset
-              that's been garnering growing attention is fine wine. For many,
+              {`that's`} been garnering growing attention is fine wine. For many,
               wine is a passion, an indulgence, and a symbol of the good life.
               But increasingly, it is also being viewed as an investable asset,
               which can also convey unique emotions whenever the investor

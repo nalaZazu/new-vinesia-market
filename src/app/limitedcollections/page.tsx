@@ -45,7 +45,7 @@ const LimitedCollection = () => {
               elegant, nuanced, and often complex flavors, highly sought after
               by wine connoisseurs. Champagne, located in northeastern France,
               is synonymous with sparkling wine. Using the traditional méthode
-              champenoise, this region crafts the world's most celebrated
+              champenoise, this region crafts the {`world's`} most celebrated
               bubbly. Champagne is known for its effervescence, finesse, and
               celebratory nature.
             </p>
