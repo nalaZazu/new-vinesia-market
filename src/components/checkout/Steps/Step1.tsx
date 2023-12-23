@@ -41,13 +41,13 @@ export default function Step1() {
                 <div className="w-6 h-6 relative">
                   <Checkbox />
                 </div>
-                <div className="grow shrink basis-0">
+                <div className="grow shrink basis-0 gap-1">
                   <span className="text-red-500 text-xs font-normal leading-[18px]">
                     *
                   </span>
                   <span className="text-neutral-900 text-xs font-normal leading-[18px]">
-                    I agree to all (number of contracts) the contracts for every
-                    purchased NFT that binds it to the physical asset
+                    I confirm that I meet the legal drinking age requirements in
+                    my country. 18 or higher, depending on the country.
                   </span>
                 </div>
               </div>
