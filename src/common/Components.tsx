@@ -383,9 +383,11 @@ export function RadioButton() {
 export const RangeSlider = ({
   range,
   onChange,
+  value,
 }: {
   range: any;
   onChange: Function;
+  value?: any;
 }) => {
   const Thumb = (props: any, state: any) => (
     <div
@@ -408,7 +410,7 @@ export const RangeSlider = ({
   return (
     <div>
       <ReactSlider
-        // value={range}
+        value={value}
         className="horizontal-slider w-full mt-10"
         thumbClassName="bg-primary w-5 h-5 rounded-full top-2 text-xs mx-auto"
         trackClassName="example-track"

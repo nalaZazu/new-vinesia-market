@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Fragment } from "react";
 import { Menu, Transition, Popover } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
@@ -27,16 +27,23 @@ const fetcher = async (url: string, payload?: string) => {
 const Filters = ({
   selectedFilters,
   setSelectedFilters,
+  priceRange,
+  setPriceRange,
 }: {
   selectedFilters?: any;
   setSelectedFilters?: any;
+  priceRange?: any;
+  setPriceRange?: any;
 }) => {
   const { data, error, isLoading } = useSWR(
     `${process.env.NEXT_PUBLIC_API_ADDRESS}products/filters`,
     fetcher
   );
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedItems, setSelectedItems] = useState<string[]>([]);
+  const [selectedItems, setSelectedItems] = useState<string[]>(
+    selectedFilters || []
+  );
+  const [tempRange, setTempRange] = useState([0, 500]);
   const pathName = usePathname();
   const handleChange = (e: any) => {
     let index = selectedItems?.findIndex((d: any) => d === e);
@@ -50,16 +57,25 @@ const Filters = ({
   };
   const handleApply = (close: any) => {
     setSelectedFilters(selectedItems);
-    console.log("selectedItems", selectedItems);
-
-    // close();
+    setSelectedItems([]);
+    close();
   };
   const handleClear = (close: any) => {
     setSearchTerm("");
-    // setSelectedItems([]);
+    setSelectedItems([]);
     close();
   };
-  const handleRangeChange = () => {};
+  const handleRangeChange = (e: []) => {
+    setTempRange(e);
+  };
+  const handleRangeApply = (close: any) => {
+    setPriceRange(tempRange);
+    close();
+  };
+
+  useEffect(() => {
+    setSelectedItems(selectedFilters);
+  }, [selectedFilters]);
 
   return (
     <>
@@ -123,17 +139,61 @@ const Filters = ({
                               {/* here add the webkit classs  */}
                               {type && type?.toLowerCase() === "range" ? (
                                 <div className="py-4 px-8">
-                                  <div className="w-[289px] h-[37px] flex-col justify-start items-start gap-1 inline-flex">
+                                  <div className="w-[289px]  flex-col justify-start items-start gap-1 inline-flex">
                                     <div className="text-zinc-800 text-base font-semibold leading-snug">
                                       Price range
                                     </div>
                                     <div className="self-stretch text-neutral-600 text-base font-normal leading-snug">
                                       User slider or enter min and max price
                                     </div>
+
+                                    <div className="w-[307px] h-14 justify-start items-center gap-6 inline-flex">
+                                      <div className="justify-start items-center gap-2 flex">
+                                        <div className="text-center text-black text-lg font-semibold font-['Albert Sans'] leading-relaxed">
+                                          Min
+                                        </div>
+                                        <div className="w-[84px] flex-col justify-start items-start gap-2 inline-flex">
+                                          <input
+                                            // defaultValue={tempRange[0]}
+                                            value={tempRange[0]}
+                                            type="number"
+                                            onChange={(e) =>
+                                              setTempRange([
+                                                parseInt(e.target.value),
+                                                tempRange[1],
+                                              ])
+                                            }
+                                            className="self-stretch h-14 pl-6 pr-5 py-2 rounded-[100px] border border-orange-700 justify-between items-center inline-flex bg-transparent"
+                                          ></input>
+                                        </div>
+                                      </div>
+                                      <div className="text-center text-black text-lg font-semibold font-['Albert Sans'] leading-relaxed">
+                                        -
+                                      </div>
+                                      <div className="justify-start items-center gap-2 flex">
+                                        <div className="text-center text-black text-lg font-semibold font-['Albert Sans'] leading-relaxed">
+                                          Max
+                                        </div>
+                                        <div className="w-[84px] flex-col justify-start items-start gap-2 inline-flex">
+                                          <input
+                                            value={tempRange[1]}
+                                            type="number"
+                                            onChange={(e) =>
+                                              setTempRange([
+                                                tempRange[1],
+                                                parseInt(e.target.value),
+                                              ])
+                                            }
+                                            className="self-stretch bg-transparent h-14 pl-6 pr-5 py-2 rounded-[100px] border border-orange-700 justify-between items-center inline-flex"
+                                          ></input>
+                                        </div>
+                                      </div>
+                                    </div>
                                   </div>
                                   <RangeSlider
                                     range={options}
                                     onChange={handleRangeChange}
+                                    value={tempRange}
                                   />
                                 </div>
                               ) : (
@@ -177,14 +237,22 @@ const Filters = ({
                             <div className=" cursor-pointer p-6  justify-end items-start gap-4 flex">
                               <button
                                 className="text-center text-secondary text-xs font-normal  tracking-wide   px-8 py-3 rounded-full border border-secondary "
-                                onClick={() => handleClear(close)}
+                                onClick={() =>
+                                  type?.toLowerCase() == "range"
+                                    ? setPriceRange([])
+                                    : handleClear(close)
+                                }
                               >
                                 Clear
                               </button>
 
                               <button
                                 className="text-center text-white text-xs font-normal tracking-wide   px-8 py-3 bg-secondary rounded-full"
-                                onClick={() => handleApply(close)}
+                                onClick={() =>
+                                  type?.toLowerCase() == "range"
+                                    ? handleRangeApply(close)
+                                    : handleApply(close)
+                                }
                               >
                                 Apply
                               </button>
@@ -204,6 +272,8 @@ const Filters = ({
         <Badges
           selectedItems={selectedFilters}
           setSelectedItems={setSelectedFilters}
+          priceRange={priceRange}
+          setPriceRange={setPriceRange}
         />
       </div>
     </>
