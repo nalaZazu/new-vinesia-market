@@ -6,6 +6,7 @@ html {
   scroll-behavior: smooth;
 }
 
+
 /* @font-face {
   font-family: "Canela";
   src: url("../assets/fonts/Canela/Canela-Regular.otf")
@@ -50,6 +51,7 @@ html {
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   font-family: albert, "sans-serif";
+  scroll-behavior: smooth;
 }
 
 body {
