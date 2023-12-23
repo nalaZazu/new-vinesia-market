@@ -31,11 +31,23 @@ const About = () => {
   const container = useRef(null);
   const round = useRef(null);
   const round2 = useRef(null);
+
+  const grapeRef = useRef(null);
+  const bottle1Ref = useRef(null);
+  const bottle2Ref = useRef(null);
+  const glassRef = useRef(null);
+
+
   useGSAP(() => {
     console.log('GSAP!')
     const el = container.current
     const el2 = round.current
     const el3 = round2.current
+
+    const grape = grapeRef.current
+    const bottle1 = bottle1Ref.current
+    const bottle2 = bottle2Ref.current
+    const glass = glassRef.current
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -77,6 +89,42 @@ const About = () => {
       })
 
     tl.add(tl2, 0)
+
+    const gtl = gsap.timeline()
+    gtl.to(glass, {
+      top: '20vh',
+      right: '15vw',
+      rotate: -35,
+      duration: .2,
+    })
+    tl.add(gtl, 0)
+
+    const grtl = gsap.timeline()
+    grtl.to(grape, {
+      top: '70vh',
+      left: '15vw',
+      rotate: 30,
+      duration: .2,
+    })
+    tl.add(grtl, 0)
+
+    const b1tl = gsap.timeline()
+    b1tl.to(bottle1, {
+      top: '60vh',
+      right: '20vw',
+      rotate: 30,
+      duration: .2,
+    })
+    tl.add(b1tl, 0)
+
+    const b2tl = gsap.timeline()
+    b2tl.to(bottle2, {
+      top: '20vh',
+      left: '20vw',
+      rotate: -30,
+      duration: .2,
+    })
+    tl.add(b2tl, 0)
   })
 
   return (
@@ -95,21 +143,12 @@ const About = () => {
               <h3 className="font-['Canela'] text-zinc-800 md:text-4xl font-light  md:leading-[44px] tracking-[-0.36px]  md:text-center   text-[21px]  leading-[29px]">
                 The future of wine investing
               </h3>
-              <div className="absolute -top-10 left-20 md:block hidden ">
-                <Image src={grapes} alt="image-icon" />
-              </div>
             </div>
             {/* here is main text-div  */}
             <div className="relative">
               <h1 className=" text-zinc-800 md:text-[7.75rem] font-normal tracking-tight leading-[7.75rem]">
                 secure, transparent, <br /> easily tradable
               </h1>
-              <div className="absolute -top-12 right-3 md:block hidden">
-                <Image src={bottleIllustration} alt="image-icon" />
-              </div>
-              <div className="absolute left-52 top-72 md:block hidden">
-                <Image src={bottleIllustrations} alt="image-icon" />
-              </div>
             </div>
           </div>
           <div className="text-center pt-[39px] ">
@@ -144,24 +183,7 @@ const About = () => {
                 <Image src={arrowdowns} alt="glass image" />
               </div>
             </div>
-
-            <div className="absolute right-32">
-              <Image src={glass} alt="glass image" />
-            </div>
           </div>
-
-          {/* <div id="round" className="relative md:block hidden pt-5">
-            <div className="bg-[#ECDDC0] w-[628px] h-[628px] mx-auto rounded-full relative -z-10"  ref={container} />
-
-            <div className="absolute left-0 right-0 top-0 pt-[79px]">
-              <video width={600} height={600} className="rounded-full w-[510px] h-[510px] mx-auto object-cover" autoPlay loop>
-                <source src='assets/video/winevideo.mp4' />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div> */}
-
-
         </div>
       </div>
       <div className="h-[200vh] w-full block"></div>
@@ -169,7 +191,22 @@ const About = () => {
 
 
       <div className="w-full absolute bottom-[-75vh] h-[100vh]" ref={container}>
-        <div className="absolute bg-[#ECDDC0] w-[812px] h-[812px]  
+        <div className="absolute top-[-56vh] md:block hidden
+        left-[25%] translate-x-[-50%]
+        " ref={grapeRef}>
+          <Image src={grapes} alt="image-icon" />
+        </div>
+        <div className="absolute -top-[55vh] right-[15vw] md:block hidden" ref={bottle1Ref}>
+          <Image src={bottleIllustration} alt="image-icon" />
+        </div>
+        <div className="absolute left-[25vw] -top-[20vh] md:block hidden" ref={bottle2Ref}>
+          <Image src={bottleIllustrations} alt="image-icon" />
+        </div>
+        <div className="absolute -top-36 right-[18vw]" ref={glassRef}>
+          <Image src={glass} alt="glass image" />
+        </div>
+
+        <div className="absolute bg-[#ECDDC0] w-[878px] h-[878px]  
       top-[50%] translate-y-[-50%] 
       left-[50%] translate-x-[-50%] 
       rounded-[1000px] block" ref={round}></div>
