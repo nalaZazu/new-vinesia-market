@@ -15,8 +15,7 @@ export default function Authenticity() {
                 HOW WE PROVIDE IT
               </p>
               <p className="max-w-[399px] text-zinc-800 text-base font-normal leading-snug">
-                We use NFC tags to secure wine and keep track of information
-                about a given bottle.
+                We use NFC tags to provide a unique identifier to each wine or case. The NFC tag is tamper-proof, it guarantees that no case or bottle can be opened without being informed, and it offers total Proof of Authenticity throughout the life of the wine and for as long as the tag remains on the bottle (or the case).
               </p>
             </div>
           </div>
@@ -25,9 +24,8 @@ export default function Authenticity() {
               HOW IT WORKS
             </p>
             <p className="max-w-[399px] text-zinc-800 text-base font-normal leading-snug">
-              The bottles brought from the winery are sealed with NFC stickers
-              and placed in the safe environment of our wearhouse. From this
-              point on, the bottle data is recorded live and digitally.
+              The bottles are brought from the wineries directly to our warehouse. Upon reaching it, an NFC tag is glued across the top of each bottle (or case lid) and it is then placed in the safe environment of our warehouse. From this point on, the bottle data and its status are recorded live on the blockchain. Any tampering of the seal will be visible here transparently.
+              All data is publicly available on the Polygon blockchain.
             </p>
           </div>
         </div>
@@ -41,7 +39,7 @@ export default function Authenticity() {
               <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20 md:block hidden"></div>
               <div className="flex items-center gap-2">
                 <p className="text-center text-orange-700 text-xs font-normal uppercase leading-3 tracking-tight">
-                  123456
+                04ad57c2407680
                 </p>
                 <AlertCircle storke="#BF4D20" />
               </div>
@@ -49,7 +47,7 @@ export default function Authenticity() {
             </div>
             <div className="md:flex gap-4 items-center">
               <p className="text-[#906447] text-base font-normal leading-snug md:pb-0 pb-4">
-                Stciker applied on
+                Sticker applied on
               </p>
               <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20 md:block hidden"></div>
               <p className="text-center text-orange-700 text-base  font-normal uppercase leading-3 tracking-tight">
