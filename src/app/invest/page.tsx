@@ -20,6 +20,7 @@ import FilterSection from "@/components/FilterSection/page";
 const Invest = () => {
   const [tags, setTags] = useState<String[]>([]);
   const [selectedFilters, setSelectedFilters] = useState([]);
+  const [priceRange, setPriceRange] = useState([]);
   const fetcher = async (url: string, payload?: string) => {
     const options = {
       method: "POST",
@@ -65,6 +66,8 @@ const Invest = () => {
           <FilterSection
             selectedFilters={selectedFilters}
             setSelectedFilters={setSelectedFilters}
+            priceRange={priceRange}
+            setPriceRange={setPriceRange}
           />
 
           {/* product list  */}
