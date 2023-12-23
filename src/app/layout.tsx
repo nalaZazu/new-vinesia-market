@@ -37,7 +37,7 @@ export default function RootLayout({
           <MagicProvider>
             <CartProvider>
               <UserProvider>
-                <Header />
+                {/* <Header /> */}
                 {children}
               </UserProvider>
             </CartProvider>

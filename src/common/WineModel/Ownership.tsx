@@ -30,7 +30,7 @@ export default function Ownership() {
                 HOW WE PROVIDE IT
               </p>
               <p className="max-w-[399px] text-zinc-800 text-base font-normal leading-snug">
-              We use BLE (Bluetooth Low Energy) technology to secure and locate our products in storage. This offers you proof that your wines are safe in our storage in real time.
+              We use BLE (Bluetooth Low Energy) technology to secure and locate our products in storage. This offers you proof that your wines are safe in our warehouse in real time.
               </p>
             </div>
           </div>

@@ -131,11 +131,11 @@ export function useProvideUser(): ProvideUser {
     }, [token, magic])
 
     async function fetchProfile(jwtToken: string) {
-        const verifyRes = await fetch(process.env.NEXT_PUBLIC_API_ADDRESS+'auth/profile', {
+        const verifyRes = await fetch(process.env.NEXT_PUBLIC_API_ADDRESS + 'auth/profile', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'authorization': 'Bearer '+jwtToken
+                'authorization': 'Bearer ' + jwtToken
             }
         })
 
@@ -151,15 +151,19 @@ export function useProvideUser(): ProvideUser {
         if (jwtToken === undefined || jwtToken.length === 0) return
 
         async function fetchProfile() {
-            const verifyRes = await fetch(process.env.NEXT_PUBLIC_API_ADDRESS+'auth/profile', {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'authorization': 'Bearer '+jwtToken
-                }
-            })
+            try {
+                const verifyRes = await fetch(process.env.NEXT_PUBLIC_API_ADDRESS + 'auth/profile', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'authorization': 'Bearer ' + jwtToken
+                    }
+                })
 
-            console.log('Profile: ',verifyRes)
+                console.log('Profile: ', verifyRes)
+            } catch (e) {
+                console.log('Error while fetching profile: ', e)
+            }
         }
         fetchProfile();
 
@@ -246,6 +250,7 @@ export function useProvideUser(): ProvideUser {
 
 
 
+    //Logins to backend, using SIWE procedure
     useEffect(() => {
         async function signMessageAsync(message: SiweMessage) {
             if (provider === 'WAGMI') {
@@ -253,7 +258,7 @@ export function useProvideUser(): ProvideUser {
                     message: message.prepareMessage(),
                 })
             }
-    
+
             if (provider === 'MAGIC' && magic !== null && address !== null && address.length > 0) {
 
                 const account = getAddress(address)
@@ -273,8 +278,9 @@ export function useProvideUser(): ProvideUser {
                 })
 
                 console.log("signedMessage:", signedMessage);
-    
-                const verifyRes = await fetch(process.env.NEXT_PUBLIC_API_ADDRESS+'auth/verify', {
+
+                try {
+                const verifyRes = await fetch(process.env.NEXT_PUBLIC_API_ADDRESS + 'auth/verify', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -283,18 +289,22 @@ export function useProvideUser(): ProvideUser {
                 })
                 if (!verifyRes.ok) throw new Error('Error verifying message')
                 const resp = await verifyRes.json()
-    
+
                 console.log('JWT token', resp.access_token)
 
                 setJwtToken(resp.access_token)
                 localStorage.setItem('jwt_token', resp.access_token)
+                } catch (e) {
+                    console.log('Failed to get JWT token', e)
+                } 
             }
         }
 
         async function backendLogin() {
-            console.log('logging in to backend', provider)
             if (address === null || address.length === 0) return
             if (provider === null) return
+
+            console.log('logging in to backend', provider)
 
             const chainId = Number(web3?.defaultChain ?? '1')
 
@@ -304,14 +314,14 @@ export function useProvideUser(): ProvideUser {
                 statement: 'Sign in with Ethereum to the app.',
                 uri: window.location.origin,
                 version: '1',
-                chainId: 0,
+                chainId: chainId,
                 nonce: ''
             });
 
             await signMessageAsync(message)
         }
         backendLogin()
-    }, [address, provider, web3])
+    }, [address, provider, web3, magic, wagmiSign])
 
 
 
