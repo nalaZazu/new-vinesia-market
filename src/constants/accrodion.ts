@@ -8,17 +8,17 @@ export const AccordionAbout = [
   {
     id: 1,
     title: "Stable Returns",
-    text: "Fine wine , like other tangible assets, tends to have a more predictable market value compared to  volatile assets like stocks or cryptocurrencies. The value of fine wines grows over  time as it matures and becomes rarer, making it a relatively stable investment.",
+    text: "Fine wine, like other tangible assets, tends to have a more predictable market value compared to volatile assets like stocks or cryptocurrencies. The value of fine wines grows over time as it matures and becomes rarer, making it a relatively stable investment.",
   },
   {
     id: 2,
     title: "Resistant to inflation",
-    text: "Fine wine , like other tangible assets, tends to have a more predictable market value compared to  volatile assets like stocks or cryptocurrencies. The value of fine wines grows over  time as it matures and becomes rarer, making it a relatively stable investment.",
+    text: "Tangible assets like fine wine, gold, and real estate have historically served as an effective hedge against inflation. This is due to their limited supply.",
   },
   {
     id: 3,
     title: "Low correlation with traditional markets",
-    text: "Fine wine , like other tangible assets, tends to have a more predictable market value compared to  volatile assets like stocks or cryptocurrencies. The value of fine wines grows over  time as it matures and becomes rarer, making it a relatively stable investment.",
+    text: "The performance of the wine market tends to be uncorrelated with traditional financial markets. During the 2008 financial crisis, while many asset classes experienced significant losses, the fine wine market remained relatively resilient.",
   },
 ];
 
@@ -45,7 +45,7 @@ export const AccordionSecurity = [
   {
     id: 1,
     title: "Proof of authenticity",
-    text: "The concept of Peace of Mind is paramount in alleviating the fear associated with investing in rare and exquisite wines. Investing in vintage commodities, such as old cars or watches, begins with verifying authenticity. At Vinesia, we source our wines exclusively from winemakers, allowing us to guarantee 100% authentic provenance to our investors and collectors.  How does it come to life? Upon the delivery of wines from the winemakers to our Luxembourg warehouse, a tamper-proof NFC tag is applied directly over the top of the bottle or across the lid of the case. Breaking this seal indicates that the bottle has been opened or tampered with. This NFC tag transmits a unique identifier to the blockchain (Polygon), serving as the wine's certificate of authenticity. This certificate remains valid for the bottle's lifetime, whether stored in our warehouse or after delivery.",
+    text: "The concept of Peace of Mind is paramount in alleviating the fear associated with investing in rare and exquisite wines. Investing in vintage commodities, such as old cars or watches, begins with verifying authenticity. At Vinesia, we source our wines exclusively from winemakers, allowing us to guarantee 100% authentic provenance to our investors and collectors.How does it come to life?Upon the delivery of wines from the winemakers to our Luxembourg warehouse, a tamper-proof NFC tag is applied directly over the top of the bottle or across the lid of the case. Breaking this seal indicates that the bottle has been opened or tampered with. This NFC tag transmits a unique identifier to the blockchain (Polygon), serving as the wine's certificate of authenticity. This certificate remains valid for the bottle's lifetime, whether stored in our warehouse or after delivery.",
   },
   {
     id: 2,
