@@ -89,10 +89,7 @@ const AboutSlider = ({ data = VideoSlider }: { data?: any }) => {
     <React.Fragment>
       <div>
         <div className="flex justify-between ">
-          <button className=" px-8 py-[22px] rounded-[48px] border border-white border-opacity-20 justify-center items-center gap-3 inline-flex   text-center text-white text-xs font-normal   uppercase leading-3 tracking-tight">
-            START INVESTING NOW
-            <Arrows storke="#FFFFFF" />
-          </button>
+
 
           <div className="hidden md:block">
             <CarouselControls />

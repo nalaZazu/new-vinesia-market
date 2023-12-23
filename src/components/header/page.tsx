@@ -24,7 +24,7 @@ const themes = {
     selectedClass: "border-b-2 font-semibold border-b-[#BF4D20]",
     iconFill: "#3a2824",
     iconBorder: "border-stone-800",
-    hr: "border-stone-400",
+    hr: "border-stone-800 border-opacity-20",
     border: "border-stone-800",
     activeTextClass: "text-[#BF4D20]",
   },
@@ -128,7 +128,6 @@ export default function Header() {
                   key={x.id}
                   onClick={() => select(x)}
                 >
-                  <Link href={x.href || "/"}>
                     <span
                       className={`hidden md:block py-7 text-base tracking-tight border-0 ${
                         theme.textClass
@@ -136,7 +135,6 @@ export default function Header() {
                     >
                       {x.name}
                     </span>
-                  </Link>
                 </div>
               ))}
             </div>

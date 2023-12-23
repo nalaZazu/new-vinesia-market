@@ -10,7 +10,7 @@ const AboutOne = () => {
   return (
     <React.Fragment>
       {/* here is next section */}
-      <div className="md:py-40 md:px-0 container mx-auto  py-12 px-4">
+      <div className="md:px-0 container mx-auto py-14 px-4">
         <div className="grid md:grid-cols-3 grid-cols-1">
           <div className="col-span-1">
             <p className="md:max-w-[214px] text-zinc-800 text-base font-normal  leading-snug">
@@ -55,7 +55,7 @@ const AboutOne = () => {
       </div>
 
       {/* here is logo img */}
-      <div className="md:block hidden">
+      {/* <div className="md:block hidden">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 container">
           <div className="flex flex-wrap justify-between  gap-10 items-center">
             <span className="text-center text-stone-600 text-xs font-normal uppercase leading-3 tracking-tight">
@@ -88,17 +88,17 @@ const AboutOne = () => {
             />
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Here is mobile responsive view */}
-      <div className="block md:hidden">
+      {/* <div className="block md:hidden">
         <div className="py-20 px-4">
           <div className="mx-auto max-w-7xl px-6 ">
             <h6 className="text-center text-stone-600 text-xs font-normal uppercase leading-3 tracking-tight pb-8">
               Featured in
             </h6>
             <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-6 gap-y-12  ">
-              {/*sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5 */}
+              {/*sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5 
               <Image
                 className="col-span-2  object-contain lg:col-span-1"
                 src={bubble}
@@ -137,7 +137,7 @@ const AboutOne = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </React.Fragment>
   );
 };

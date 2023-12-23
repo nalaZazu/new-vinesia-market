@@ -6,6 +6,7 @@ import videoImage from "@/assets/images/video (1080p) 2.png";
 import { Arrows } from "@/assets/icons/Icons";
 import background from "@/assets/images/backgroundEllipse .png";
 import backgroundtwo from "@/assets/images/Ellipse circle2x.png";
+import getStartedBtn from "@/assets/images/GetStartedBtn.png";
 import Newsletter from "@/components/newsletter/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
 import Footer from "@/components/footer/page";
@@ -26,10 +27,11 @@ import { useGSAP } from "@gsap/react";
 import gsap from 'gsap'
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 
 import Header from "@/components/header/page";
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
 
 const About = () => {
   const container = useRef(null);
@@ -43,7 +45,7 @@ const About = () => {
 
 
   useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
 
     ScrollSmoother.create({
       smooth: 1,
@@ -65,7 +67,7 @@ const About = () => {
         trigger: el,
         pin: true,
         start: 'top top',
-        end: '+=200%',
+        end: '+=180%',
         // snap: {
         //   snapTo: "labelsDirectional", // snap to the closest label in the timeline
         //   duration: { min: 0.2, max: 3 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
@@ -116,6 +118,10 @@ const About = () => {
       rotate: -35,
       duration: .2,
     })
+      .to(glass, {
+        opacity: 0,
+        duration: .4
+      })
     tl.add(gtl, 0)
 
     const grtl = gsap.timeline()
@@ -125,6 +131,10 @@ const About = () => {
       rotate: 30,
       duration: .2,
     })
+      .to(grape, {
+        opacity: 0,
+        duration: .4
+      })
     tl.add(grtl, 0)
 
     const b1tl = gsap.timeline()
@@ -134,6 +144,10 @@ const About = () => {
       rotate: 30,
       duration: .2,
     })
+      .to(bottle1, {
+        opacity: 0,
+        duration: .4
+      })
     tl.add(b1tl, 0)
 
     const b2tl = gsap.timeline()
@@ -143,6 +157,10 @@ const About = () => {
       rotate: -30,
       duration: .2,
     })
+      .to(bottle2, {
+        opacity: 0,
+        duration: .4
+      })
     tl.add(b2tl, 0)
   })
 
@@ -173,43 +191,14 @@ const About = () => {
                   </h1>
                 </div>
               </div>
-              <div className="text-center pt-[39px] z-[999] relative ">
-                <Link href={'/invest'} className=" px-8 py-4 bg-secondary rounded-full  justify-center items-center gap-3 inline-flex  text-center text-white text-xs font-normal -mb-4 uppercase leading-3 tracking-tight">
-                  START NOW <Arrows storke="#FFFFFF" />
-                </Link>
-              </div>
 
-              {/* Round right button to scroll down to rest of the page */}
-              <div className="relative md:block hidden">
-                <div className="absolute right-0">
-                  <Image src={background} alt="glass image" />
-                  <div className="absolute -top-2 -left-2 ">
-                    <Image src={textOne} alt="glass image" />
-                  </div>
-                  <div className="absolute  bottom-[20px] left-10">
-                    <Image src={star} alt="glass image" />
-                  </div>
-                  <div className="absolute  -bottom-3 -right-3">
-                    <Image src={textTwo} alt="glass image" />
-                  </div>
-                  <div className="absolute  left-24 bottom-28">
-                    <Image src={star} alt="glass image" />
-                  </div>
-                </div>
+              <Image src={getStartedBtn} className="fixed right-12" alt="GetStarted" onClick={() => { gsap.to(window, { duration: 0, scrollTo: "#start_investing" }); }} />
 
-                <div className="relative">
-                  <div className="absolute  right-[30px] w-[71px] h-[71px] top-[34px]">
-                    <Image src={backgroundtwo} alt="glass image" />
-                  </div>
-                  <div className="absolute  right-14   top-[55px]">
-                    <Image src={arrowdowns} alt="glass image" />
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 
-          <div className="w-full relative h-[100vh]" ref={container}>
+
+          <div className="w-full relative h-[90vh] mt-[12vh]" ref={container}>
             <div className="absolute top-[-420px] md:block hidden 
         left-[25%] translate-x-[-50%]
         " ref={grapeRef}>
@@ -235,11 +224,21 @@ const About = () => {
       left-[50%] translate-x-[-50%] 
         " ref={round2}>
               <video className="absolute left-1/2 z-0 max-w-none object-cover -translate-x-1/2" autoPlay loop muted>
-                <source src='assets/video/winevideo.mp4' />
+                <source src='assets/video/231215_Vinesia_Hero_3.mp4' />
                 Your browser does not support the video tag.
               </video>
             </div>
-
+          </div>
+          <div className="mt-[-80vh] mb-[80vh]" id="start_investing"></div>
+          <div className="text-center w-full">
+            <Link href="/invest">
+              <button className="px-8 py-4 bg-orange-700 rounded-[48px] justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal  uppercase leading-3 tracking-tight">
+                START INVESTING NOW
+                <span>
+                  <Arrows storke="#FFFFFF" />
+                </span>
+              </button>
+            </Link>
           </div>
 
           {/* here is next section */}
