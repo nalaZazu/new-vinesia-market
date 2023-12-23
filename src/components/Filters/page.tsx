@@ -163,7 +163,7 @@ const Filters = ({
                                                 tempRange[1],
                                               ])
                                             }
-                                            className="self-stretch h-14 pl-6 pr-5 py-2 rounded-[100px] border border-orange-700 justify-between items-center inline-flex bg-transparent"
+                                            className="self-stretch h-14 px-4 py-2 rounded-[100px] border border-orange-700 justify-between items-center inline-flex bg-transparent"
                                           ></input>
                                         </div>
                                       </div>
@@ -184,7 +184,7 @@ const Filters = ({
                                                 parseInt(e.target.value),
                                               ])
                                             }
-                                            className="self-stretch bg-transparent h-14 pl-6 pr-5 py-2 rounded-[100px] border border-orange-700 justify-between items-center inline-flex"
+                                            className="self-stretch bg-transparent h-14 px-4 py-2 rounded-[100px] border border-orange-700 justify-between items-center inline-flex"
                                           ></input>
                                         </div>
                                       </div>
