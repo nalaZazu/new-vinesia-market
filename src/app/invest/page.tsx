@@ -25,7 +25,13 @@ const Invest = () => {
     const options = {
       method: "POST",
       ...(selectedFilters && {
-        body: JSON.stringify({ filters: selectedFilters }),
+        body: JSON.stringify({
+          filters: selectedFilters,
+          price:
+            priceRange?.length > 0
+              ? { min: priceRange[0], max: priceRange[1] }
+              : {},
+        }),
       }),
       headers: {
         accept: "application/json",
@@ -42,7 +48,7 @@ const Invest = () => {
   );
   useEffect(() => {
     mutate();
-  }, [selectedFilters]);
+  }, [selectedFilters, priceRange]);
 
   return (
     <div>
