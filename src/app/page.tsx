@@ -24,7 +24,10 @@ import Link from "next/link";
 
 import { useGSAP } from "@gsap/react";
 import gsap from 'gsap'
-import { ScrollTrigger, ScrollSmoother } from "gsap/all";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+
 import Header from "@/components/header/page";
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -40,6 +43,8 @@ const About = () => {
 
 
   useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+    
     console.log('GSAP!')
     ScrollSmoother.create({
       smooth: 1,
