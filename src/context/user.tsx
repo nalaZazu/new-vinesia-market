@@ -67,7 +67,7 @@ export function useProvideUser(): ProvideUser {
     const [language, setLanguage] = useState('en')
     const [token, setToken] = useState('')
 
-    const [jwtToken, setJwtToken] = useState(localStorage.getItem('jwt_token') ?? '')
+    const [jwtToken, setJwtToken] = useState('')
     const [profile, setProfile] = useState<User | null>(null)
 
     const { magic, web3 } = useMagic()
@@ -141,6 +141,11 @@ export function useProvideUser(): ProvideUser {
 
         return (await verifyRes.json()) as User
     }
+
+    useEffect(() => {
+        const jwtToken = localStorage.getItem('jwt_token') ?? ''
+        setJwtToken(jwtToken)
+    }, [])
 
     useEffect(() => {
         if (jwtToken === undefined || jwtToken.length === 0) return

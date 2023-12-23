@@ -63,8 +63,8 @@ export default function Page() {
             <BillingInput title="Last name" required={true} />
             <BillingInput title="Email Address" required={true} />
             <BillingInput title="Phone Number" required={true} />
-            <SelectBox title="Country" required={true} />
-            <SelectBox title="Region" required={true} />
+            <SelectBox title="Country" required={true} data={[]} />
+            <SelectBox title="Region" required={true} data={[]} />
             <BillingInput title="address line 1" required={true} />
             <BillingInput title="address line 2 (optional) " />
             <BillingInput title="Zip code" required={true} />
@@ -79,8 +79,8 @@ export default function Page() {
             </div>
             <BillingInput title="Email Address" required={true} />
             <BillingInput title="tax id" required={true} />
-            <SelectBox title="Country" required={true} />
-            <SelectBox title="Region" required={true} />
+            <SelectBox title="Country" required={true} data={[]} />
+            <SelectBox title="Region" required={true} data={[]} />
             <BillingInput title="address line 1" required={true} />
             <BillingInput title="address line 2 (optional) " />
             <BillingInput title="Zip code" required={true}/>

@@ -48,6 +48,7 @@ export default function BillingInfo() {
                 title="Country"
                 name="country"
                 placeholder="Select Country"
+                data={[]}
               />
             </div>
 
@@ -55,6 +56,7 @@ export default function BillingInfo() {
               title="Region"
               name="region"
               placeholder="Select Region"
+              data={[]}
             />
 
             {/* Country Pending */}
