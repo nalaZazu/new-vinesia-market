@@ -9,6 +9,7 @@ import { WagmiProvider } from "@/context/wagmi";
 import Script from "next/script";
 import { CartProvider } from "@/context/cart";
 import MagicProvider from "@/context/MagicProvider";
+import { useRouter } from "next/router";
 
 const albert = Albert_Sans({
   variable: "--font-albert",
@@ -25,19 +26,22 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const router = useRouter()
+
+
   return (
     <html lang="en">
       <Script src="/js/main.js" />
 
-        <title>Vinesia Market</title>
-        <meta name="description" content="Vinesia Market" />
+      <title>Vinesia Market</title>
+      <meta name="description" content="Vinesia Market" />
 
       <body className={`${albert.className} bg-[#F3E8CF] `}>
         <WagmiProvider>
           <MagicProvider>
             <CartProvider>
               <UserProvider>
-                {/* <Header /> */}
+                {router.route === '/' ? <></> : <Header />}
                 {children}
               </UserProvider>
             </CartProvider>
