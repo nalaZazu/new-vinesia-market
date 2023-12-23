@@ -9,7 +9,7 @@ import { WagmiProvider } from "@/context/wagmi";
 import Script from "next/script";
 import { CartProvider } from "@/context/cart";
 import MagicProvider from "@/context/MagicProvider";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
 const albert = Albert_Sans({
   variable: "--font-albert",
@@ -26,8 +26,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const router = useRouter()
-
+  const path = usePathname()
 
   return (
     <html lang="en">
@@ -41,7 +40,7 @@ export default function RootLayout({
           <MagicProvider>
             <CartProvider>
               <UserProvider>
-                {router.route === '/' ? <></> : <Header />}
+                {path === '/' ? <></> : <Header />}
                 {children}
               </UserProvider>
             </CartProvider>

@@ -44,8 +44,7 @@ const About = () => {
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-    
-    console.log('GSAP!')
+
     ScrollSmoother.create({
       smooth: 1,
       effects: true,
@@ -66,9 +65,9 @@ const About = () => {
         trigger: el,
         pin: true,
         start: 'top top',
-        end: '+=220%',
+        end: '+=200%',
         // snap: {
-        //   snapTo: "labels", // snap to the closest label in the timeline
+        //   snapTo: "labelsDirectional", // snap to the closest label in the timeline
         //   duration: { min: 0.2, max: 3 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
         //   delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
         //   ease: "power1.inOut", // the ease of the snap animation ("power3" by default)
@@ -76,11 +75,13 @@ const About = () => {
       }
     });
     tl
+      .addLabel('start')
       .to(el3, {
         duration: .2,
         width: '511px',
         height: '511px',
       })
+      .addLabel('center', .2)
       .to(el3, { duration: .2 })
       .to(el3, {
         duration: .2,
@@ -89,6 +90,7 @@ const About = () => {
         borderRadius: '0px',
         top: '40vh'
       })
+      .addLabel('full', .6)
       .to(el3, { duration: .1 })
 
     const tl2 = gsap.timeline()
@@ -208,12 +210,12 @@ const About = () => {
           </div>
 
           <div className="w-full relative h-[100vh]" ref={container}>
-            <div className="absolute top-[-56vh] md:block hidden 
+            <div className="absolute top-[-420px] md:block hidden 
         left-[25%] translate-x-[-50%]
         " ref={grapeRef}>
               <Image src={grapes} alt="image-icon" />
             </div>
-            <div className="absolute -top-[55vh] right-[15vw] md:block hidden" ref={bottle1Ref}>
+            <div className="absolute -top-[412px] right-[15vw] md:block hidden" ref={bottle1Ref}>
               <Image src={bottleIllustration} alt="image-icon" />
             </div>
             <div className="absolute left-[20vw] -top-[20vh] md:block hidden" ref={bottle2Ref}>
