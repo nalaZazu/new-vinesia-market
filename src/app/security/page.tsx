@@ -11,6 +11,7 @@ import PeaceVinesia from "@/components/secruityPage/PeaceVinesia";
 import Image from "next/image";
 
 export default function Security() {
+  
   return (
     <div>
       <div className="pt-[124px] pb-40">
