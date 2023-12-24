@@ -1,12 +1,10 @@
 "use client";
-import { NextIcon, PrevIcon } from "@/assets/icons/Icons";
 import Accordion from "@/common/Accordion";
 import { CartControls } from "@/common/Components";
 import CartCard from "@/components/cart/cartCard";
 import { useCartContext } from "@/context/cart";
 import { useUserContext } from "@/context/user";
-import { ProductCardDto } from "@/types/productCard.dto";
-import Link from "next/link";
+import { ProductOverview } from "@/types/productOverview.dto";
 import React from "react";
 
 export default function Cart() {
@@ -45,9 +43,22 @@ export default function Cart() {
         </div>
       ),
     },
-    { id: 2, title: "Service fees" },
+    { id: 2, title: "Service fees",
+  description: (
+    <div className="pt-8">
+
+    Yes. We offer a 0% service fee for the first 12 months following an investment on primary sales, which applies when an investor purchases their wine directly from Vinesia’s initial inventory.
+Please note that this does not apply to secondary sales on the Vinesia marketplace.
+After the first year, a service fee of 2.4% per annum is applied.
+This fee covers the core tech that enables Vinesia to offer our “Peace of Mind” pledge towards our investors (Proof of Authenticity, Proof of Ownership, Proof of Storage Conditions).It also covers the costs of storage, insurance, and optimal storage conditions.Finally, it funds the development of new functionalities which are on our roadmap for the future.
+The 2.4% service decreases based on the volume of your investments (Asset Under Management, AUM).</div>
+
+  ) },
   ];
   return (
+    <>
+    <title>Cart</title>
+
     <div className=" pb-40">
       <div className=" max-w-[1066px] mx-auto px-4">
         <h1 className="text-[#2F222B] text-4xl font-light pt-[90px] pb-12">
@@ -56,7 +67,7 @@ export default function Cart() {
 
         {/* Table Starts */}
         {cartItems?.length > 0 ? (
-          cartItems?.map((item: ProductCardDto, i: any) => {
+          cartItems?.map((item: ProductOverview, i: any) => {
             return (
               <div key={i}>
                 <CartCard item={item} />
@@ -81,27 +92,10 @@ export default function Cart() {
           ""
         )}
 
-        {/* Table Ends */}
-
-        {/* <div className="flex justify-end pt-8">
-          <span className=" uppercase text-xs">
-            <span className=" text-[#BF4D20]">next step :</span>
-            &nbsp; Billng details
-          </span>
-        </div> */}
-
-        {/* <div className="flex justify-between pt-4 pb-[106px]">
-          <button className="flex items-center gap-4 border border-[#BF4D2020] rounded-full text-[#BF4D20] px-8 h-14">
-            <PrevIcon />
-            Back
-          </button>
-          <button className="flex items-center gap-4 border border-[#BF4D2020] rounded-full text-white px-8 h-14 bg-[#BF4D20]">
-            Next <NextIcon fill={"white"} />
-          </button>
-        </div> */}
         <CartControls
           btnOneTittle="Back"
-          btnTwoTittle="Continute"
+          btnTwoTittle="Continue"
+          nextStep="Billing Details"
           disable={cartItems.length == 0}
         />
 
@@ -117,5 +111,6 @@ export default function Cart() {
         </div>
       </div>
     </div>
+    </>
   );
 }

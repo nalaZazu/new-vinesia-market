@@ -112,8 +112,8 @@ export default function AboutUs() {
             <Image src={VectorOne} alt="vector" />
           </div>
         </div>
-        <div className="flex justify-end md:py-40 md:px-0  px-4 py-20">
-          <div className=" max-w-[1314px]">
+        <div className="flex justify-end md:py-40 md:px-0 px-4 py-20">
+          <div className="max-w-[1314px]">
             <div className="">
               <div>
                 <h3 className="text-white text-4xl font-light   leading-[44px] pb-8">

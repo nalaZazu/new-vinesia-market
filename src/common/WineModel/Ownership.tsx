@@ -30,7 +30,7 @@ export default function Ownership() {
                 HOW WE PROVIDE IT
               </p>
               <p className="max-w-[399px] text-zinc-800 text-base font-normal leading-snug">
-                We use BLE (Bluetooth Low Energy) technology to secure our products in storage.
+              We use BLE (Bluetooth Low Energy) technology to secure and locate our products in storage. This offers you proof that your wines are safe in our warehouse in real time.
               </p>
             </div>
           </div>
@@ -39,9 +39,7 @@ export default function Ownership() {
               HOW IT WORKS
             </p>
             <p className="max-w-[399px] text-zinc-800 text-base font-normal leading-snug">
-              The bottles brought from the winery are sealed with NFC stickers
-              and placed in the safe environment of our wearhouse. From this
-              point on, the bottle data is recorded live and digitally.
+            A second tag, BLE, is applied on each bottle or case. All BLE tags are scanned regularly and show whether your asset is indeed stored in our warehouse and has not moved. The safety and whereabouts of your assets is of paramount importance as we strive to offer Total Peace of Mind to our investors. All data is publicly available on the Polygon blockchain.
             </p>
           </div>
         </div>
@@ -53,7 +51,7 @@ export default function Ownership() {
               </p>
               <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
               <p className="text-center text-orange-700 text-xs font-normal uppercase leading-3 tracking-tight">
-                3u033=39dje043=94
+                943469B5656E
               </p>
               <AlertCircle storke="#BF4D20" />
             </div>
@@ -63,7 +61,7 @@ export default function Ownership() {
               </p>
               <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
               <p className="text-zinc-800 text-base font-normal leading-snug">
-                22.12.2023 | 08:00 am
+                23.12.2023 | 08:00 am
               </p>
             </div>
             <div className="md:flex gap-4 items-center">

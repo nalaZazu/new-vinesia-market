@@ -21,8 +21,8 @@ export default function TempHumChart({ data }: { data?: any }) {
     Tooltip
   );
 
-  const temp = [17.1, 17.1, 16.8, 16.4, 16.2, 16.2, 16.4];
-  const hum = [47.7, 46.8, 45.9, 45.2, 46, 46.8, 46.8];
+  const temp = [17.1, 16.8, 16.4, 16.2, 16.2, 16.4, 16.5];
+  const hum = [46.8, 45.9, 45.2, 46, 46.8, 46.8, 47.7];
 
   const options: any = {
     innerHeight: 200,

@@ -65,12 +65,14 @@ export function CartControls({
   setStep,
   btnOneTittle = "Back",
   btnTwoTittle = "Next",
+  nextStep = "Billing Details",
   disable,
 }: {
   step?: any;
   setStep?: any;
   btnOneTittle?: any;
   btnTwoTittle?: any;
+  nextStep?: string
   disable?: any;
 }) {
   const router = useRouter();
@@ -78,8 +80,7 @@ export function CartControls({
     <div>
       <div className="flex sm:justify-end justify-center pt-8">
         <span className="uppercase text-xs">
-          <span className="text-[#BF4D20]">next step :</span>
-          Billing details
+          <span className="text-[#BF4D20]">next step: </span>{nextStep}
         </span>
       </div>
       <div className="sm:flex justify-between pt-4 pb-[106px] sm:gap-0 grid grid-cols-1 gap-6">
@@ -114,11 +115,13 @@ export function BillingInput({
   placeholder,
   name,
   Inputclass,
+  required
 }: {
   title?: any;
   placeholder?: any;
   name?: any;
   Inputclass?: any;
+  required?: boolean
 }) {
   return (
     <div
@@ -127,13 +130,13 @@ export function BillingInput({
       {title && (
         <div className="h-4 justify-start items-center gap-1 inline-flex">
           <div className="text-[#A6836C] text-xs font-normal uppercase leading-[18px] tracking-tight">
-            {title}
+            {title} {required !== undefined ? <>*</>: <></>}
           </div>
         </div>
       )}
       <input
         name={name}
-        className="self-stretch text-[#D99479] h-14 pl-6 pr-5 p-4 rounded-full border border-red-400 bg-transparent outline-red-500 placeholder-[#D99479]"
+        className="self-stretch text-[#827A80] h-14 pl-6 pr-5 p-4 rounded-full border border-[#BF4D20] bg-transparent outline-red-500 placeholder-[#D99479]"
         placeholder={placeholder}
       />
     </div>
@@ -240,20 +243,24 @@ export function SelectBox({
   name,
   value,
   onChange,
+  required,
+  data = []
 }: {
   title?: any;
   placeholder?: any;
   name?: any;
   value?: any;
   onChange?: any;
+  required?: boolean,
+  data: any[];
 }) {
-  const data = [
-    { id: 1, name: "Durward Reynolds" },
-    { id: 2, name: "Kenton Towne" },
-    { id: 3, name: "Therese Wunsch" },
-    { id: 4, name: "Benedict Kessler" },
-    { id: 5, name: "Katelyn Rohan" },
-  ];
+  // const data = [
+  //   { id: 1, name: "Durward Reynolds" },
+  //   { id: 2, name: "Kenton Towne" },
+  //   { id: 3, name: "Therese Wunsch" },
+  //   { id: 4, name: "Benedict Kessler" },
+  //   { id: 5, name: "Katelyn Rohan" },
+  // ];
 
   function classNames(...classes: any) {
     return classes.filter(Boolean).join(" ");
@@ -265,7 +272,7 @@ export function SelectBox({
       {title && (
         <div className="h-4 justify-start items-center gap-1 inline-flex">
           <div className="text-[#A6836C] text-xs font-normal uppercase leading-[18px] tracking-tight">
-            {title}
+            {title} {required !== undefined ? <>*</>: <></>}
           </div>
         </div>
       )}
@@ -285,17 +292,17 @@ export function SelectBox({
       </Listbox> */}
       <div className="relative w-full">
         <Listbox value={selectedPerson} onChange={setSelectedPerson}>
-          <Listbox.Button className="self-stretch w-full text-start text-[#D99479] h-14 pl-6 pr-5 p-4 rounded-full border border-red-400 bg-transparent outline-red-500 placeholder-[#D99479]">
-            {selectedPerson.name}
+          <Listbox.Button className="self-stretch w-full text-start text-[#D99479] h-14 pl-6 pr-5 p-4 rounded-full border  border-[#CC714D]  bg-transparent outline-red-500 placeholder-[#D99479]">
+            {selectedPerson?.name}
           </Listbox.Button>
-          <Listbox.Options className="absolute bootom-0 w-full border bg-[#A6836C] rounded-lg">
+          <Listbox.Options className="absolute w-full border bg-[#F7EFDF]">
             {data.map((d) => (
               <Listbox.Option
                 key={d.id}
                 value={d}
                 className={({ active }) =>
-                  `cursor-pointer select-none relative py-2 pl-10 pr-4 ${
-                    active ? "bg-[#BF4D20] text-white" : "text-gray-900"
+                  `cursor-pointer select-none relative py-2 pl-10 pr-4 border-b-[1px] border-[#BF4D20]/10 ${
+                    active ? "bg-[#F5EAD5] text-[#2F222B]" : "text-[#2F222B]"
                   }`
                 }
               >

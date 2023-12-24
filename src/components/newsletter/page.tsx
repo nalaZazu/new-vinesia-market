@@ -30,8 +30,7 @@ export default function Newsletter() {
               </button>
             </div>
             <div className="w-[289px] text-center text-red-400 text-base font-normal  leading-snug">
-              You agree to the terms & conditions by signing up for this
-              newsletter
+
             </div>
           </div>
         </div>

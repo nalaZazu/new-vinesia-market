@@ -8,17 +8,17 @@ export const AccordionAbout = [
   {
     id: 1,
     title: "Stable Returns",
-    text: "Fine wine , like other tangible assets, tends to have a more predictable market value compared to  volatile assets like stocks or cryptocurrencies. The value of fine wines grows over  time as it matures and becomes rarer, making it a relatively stable investment.",
+    text: "Fine wine, like other tangible assets, tends to have a more predictable market value compared to volatile assets like stocks or cryptocurrencies. The value of fine wines grows over time as it matures and becomes rarer, making it a relatively stable investment.",
   },
   {
     id: 2,
     title: "Resistant to inflation",
-    text: "Fine wine , like other tangible assets, tends to have a more predictable market value compared to  volatile assets like stocks or cryptocurrencies. The value of fine wines grows over  time as it matures and becomes rarer, making it a relatively stable investment.",
+    text: "Tangible assets like fine wine, gold, and real estate have historically served as an effective hedge against inflation. This is due to their limited supply.",
   },
   {
     id: 3,
     title: "Low correlation with traditional markets",
-    text: "Fine wine , like other tangible assets, tends to have a more predictable market value compared to  volatile assets like stocks or cryptocurrencies. The value of fine wines grows over  time as it matures and becomes rarer, making it a relatively stable investment.",
+    text: "The performance of the wine market tends to be uncorrelated with traditional financial markets. During the 2008 financial crisis, while many asset classes experienced significant losses, the fine wine market remained relatively resilient.",
   },
 ];
 

@@ -43,7 +43,7 @@ export default function Artists() {
             {ProductList.slice(0, 2).map((items, i) => {
               return (
                 <div key={i}>
-                  <ProductCards item={items} />
+                  <ProductCards />
                 </div>
               );
             })}
@@ -57,7 +57,7 @@ export default function Artists() {
             {ProductList.slice(0, 2).map((items, i) => {
               return (
                 <div key={i}>
-                  <ProductCards item={items} />
+                  <ProductCards />
                 </div>
               );
             })}

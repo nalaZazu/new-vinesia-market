@@ -5,6 +5,11 @@ export interface ProductCardDto {
     number: number
     description: string
 
+    vintage: number
+    packageType: string
+    packageSize: number
+    bottleSize: string
+
     owners: string[]
     buyNowPrice?: number
     estPrice?: number

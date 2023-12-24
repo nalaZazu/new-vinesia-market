@@ -24,8 +24,7 @@ export default function Footer() {
           <div>
             <span>appreciating your wine</span>
           </div>
-          <div className=" ">
-            {" "}
+          <div className="">
             <Link href="/">
               <Image
                 src={logo1}
@@ -47,7 +46,7 @@ export default function Footer() {
             <div className="grid md:gap-28 gap-16 grid-cols-1 sm:flex">
               {/* <!-- Useful links section --> */}
               <div className="  sm:col-span-1">
-                <h6 className="mb-4 flex justify-center  md:justify-start    text-white text-xs font-normal   uppercase leading-[18px] tracking-tight">
+                <h6 className="mb-4 font-albertsans flex justify-center md:justify-start text-white text-xs font-normal uppercase leading-[18px] tracking-wider">
                   About Vinesia
                 </h6>
                 {FooterNavigate?.map((reg: any) => {
@@ -56,7 +55,7 @@ export default function Footer() {
                     <p className="mb-4" key={id}>
                       <Link
                         href={href}
-                        className="text-zinc-500 text-base font-normal  leading-snug border-b border-orange-700 border-opacity-20"
+                        className="text-zinc-500 text-base font-normal leading-snug"
                       >
                         {title}
                       </Link>
@@ -66,7 +65,7 @@ export default function Footer() {
               </div>
               {/* <!-- Useful links section --> */}
               <div className=" sm:col-span-1">
-                <h6 className="mb-4 flex justify-center  md:justify-start   text-white text-xs font-normal   uppercase leading-[18px] tracking-tight">
+                <h6 className="mb-4 flex font-albertsans justify-center md:justify-start text-white text-xs font-normal uppercase leading-[18px] tracking-wider">
                   Investments
                 </h6>
                 {FooterNavigateTwo?.map((item: any) => {
@@ -75,7 +74,7 @@ export default function Footer() {
                     <p className="mb-4" key={id}>
                       <Link
                         href={href}
-                        className="text-zinc-500 text-base font-normal  leading-snug border-b border-orange-700 border-opacity-20"
+                        className="text-zinc-500 text-base font-normal leading-snug0"
                       >
                         {title}
                       </Link>
@@ -85,13 +84,13 @@ export default function Footer() {
               </div>
               {/* <!-- TW elements section --> */}
               <div className=" sm:col-span-2 col-span-1 max-w-[310px]">
-                <h6 className="mb-4 flex items-center justify-center  uppercase md:justify-start text-white text-xs font-normal  leading-[18px] tracking-tight">
+                <h6 className="mb-4 font-albertsans flex items-center justify-center uppercase md:justify-start text-white text-xs font-normal leading-[18px] tracking-wider">
                   Want to know More?
                 </h6>
                 <p className=" pe-0 md:pe-14">
-                  Ask about wine investing We are answering in 24 hours
+                  Ask about wine investing. <br/>We answer withing 24h, during business days
                 </p>
-                <div className="flex gap-3  md:justify-start justify-center">
+                <div className="flex gap-3 mt-2 md:justify-start justify-center">
                   <span>
                     <Image src={envelope} alt="envelope@" />
                   </span>
@@ -101,21 +100,21 @@ export default function Footer() {
                 </div>
               </div>
               {/* <!-- Products section --> */}
-              <div className=" sm:col-span-2 col-span-1 max-w-[303px]">
+              {/* <div className=" sm:col-span-2 col-span-1 max-w-[303px]">
                 <p className="mb-4 flex justify-center uppercase md:justify-start   text-neutral-300 text-base font-normal  leading-snug">
                   Share info on your investment, make connections
                 </p>
                 <button className="px-8 py-[22px] bg-white rounded-[48px] justify-center items-center gap-3 inline-flex text-orange-700 text-xs">
                   JOIN OUR COMMUNITY
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
           <hr className="border-b  border-white border-opacity-20" />
           {/* here is langugae and other icon */}
           <div className="pt-12 md:px-0 px-4 flex flex-wrap md:justify-between justify-center">
             <div className="flex flex-wrap flex-col">
-              <span>Visit our international sites</span>
+              <span>Other languages</span>
               <span className="pt-4">FR | GER | ENG | CHN </span>
             </div>
             <div className="md:border-r-2    border-white border-opacity-20  " />

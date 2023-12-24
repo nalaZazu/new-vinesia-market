@@ -149,7 +149,7 @@ const AboutTwo = () => {
       </ModalContainer>
 
       {/* here is end of modal */}
-      <div className="py-20  px-4 md:py-40 md:px-24">
+      <div className="py-16 px-4 md:py-30 md:px-24">
         <div className="text-center">
           <h2 className="max-w-[769px] text-zinc-800 md:text-7xl font-normal md:leading-[84px] mx-auto   text-center text-4xl   leading-[42px]">
             Wine investments without the worries
@@ -169,7 +169,11 @@ const AboutTwo = () => {
         </div>
         {/* here is image defined */}
         <div className="flex justify-center md:pt-[92px] pt-12">
-          <Image src={investment} alt="image" />
+          {/* <Image src={investment} alt="image" /> */}
+          <video className="w-1/2" autoPlay loop muted>
+                <source src='assets/video/vinesia 211223.mp4' />
+                Your browser does not support the video tag.
+              </video>
         </div>
       </div>
 
@@ -190,7 +194,7 @@ const AboutTwo = () => {
               <div>
                 <div className=" ">
                   <h3 className="text-white md:text-4xl font-light  md:leading-[44px]    text-[21px]  leading-[29px]">
-                    Why to invest in wine?
+                    Why investing in wine?
                   </h3>
 
                   <div className="underline decoration-wavy md:pt-10 pt-8">
@@ -224,7 +228,7 @@ const AboutTwo = () => {
                 The potential of wine investment in numbers
               </h2>
               <p className="max-w-[329px] text-zinc-800 text-lg font-semibold  md:pt-[72px] pt-6 pb-6 leading-relaxed   tracking-[-0.36px]">
-                See what your portfolio could have returned with wine
+                See what your investment could have returned with wine
               </p>
 
               <button

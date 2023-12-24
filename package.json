@@ -17,7 +17,7 @@
     "autoprefixer": "^10.4.16",
     "chart.js": "^4.4.1",
     "ethers": "^6.9.0",
-    "gsap": "^3.12.4",
+    "gsap": "npm:@gsap/shockingly@^3.12.4",
     "magic-sdk": "^21.4.1",
     "moment": "^2.29.4",
     "next": "14.0.3",

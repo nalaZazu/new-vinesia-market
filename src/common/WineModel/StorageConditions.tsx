@@ -33,9 +33,8 @@ export default function StorageConditions() {
                 HOW WE PROVIDE IT
               </p>
               <p className="max-w-[399px] text-zinc-800 text-base font-normal leading-snug">
-                We are monitoring conditions in our cellars using Internet of
-                Things technology and specialistic sensors to provide best
-                storage conditions. Live.a
+              We offer you full transparency into the storage conditions over time in our warehouse. You have real-time access to data on temperature and humidity levels.
+Vinesia does its best efforts to keep all wines stored between 12°C-15°C temperature and 60%-80% humidity levels at all times.
               </p>
             </div>
           </div>
@@ -44,11 +43,7 @@ export default function StorageConditions() {
               HOW IT WORKS
             </p>
             <p className="max-w-[399px] text-zinc-800 text-base font-normal leading-snug">
-              We are monitoring conditions in our cellars. Live. We are
-              monitoring conditions in our cellars. Live.We are monitoring
-              conditions in our cellars. Live.We are monitoring conditions in
-              our cellars. Live. We are monitoring conditions in our cellars.
-              Live.
+            Internet of Things (IoT) sensors are placed in our warehouse and all data is immediately sent to the Polygon blockchain, which leaves an auditable history of storage conditions.
             </p>
           </div>
           <div className="flex ps-16 pt-8 gap-2 items-center">
@@ -57,7 +52,7 @@ export default function StorageConditions() {
             </p>
             <CheckBox storke="#22C55E" />
             <p className="text-right text-zinc-800 text-base font-normal font-['Albert Sans'] leading-snug">
-              22.12.2023, 08:00 PM
+              23.12.2023, 08:00 PM
             </p>
           </div>
         </div>
@@ -102,13 +97,11 @@ export default function StorageConditions() {
             <p className="text-zinc-800 text-base font-normal leading-snug">
               Recommended temperature : 12-15°C
             </p>
-            {/* <AlertCircle storke="#BF4D20" /> */}
           </div>
           <div className="flex gap-1">
             <p className="text-zinc-800 text-base font-normal leading-snug">
               Recommended humidity : 60%-80%
             </p>
-            {/* <AlertCircle storke="#BF4D20" /> */}
           </div>
         </div>
       </div>

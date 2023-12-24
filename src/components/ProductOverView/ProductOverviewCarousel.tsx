@@ -15,7 +15,7 @@ export default function ProductOverviewCarousel({data}: {data?: string[]}) {
     customPaging: function () {
       return (
         <div className="imagedots z-0 flx-img-border absolute top-0 buttom-0">
-          <Image src={`http://localhost:3010/products/file/${data[0]}`} height={0} width={340} alt="" />
+          <Image src={`${process.env.NEXT_PUBLIC_API_ADDRESS}products/file/${data[0]}`} height={0} width={340} alt="" />
         </div>
       );
     },
@@ -79,7 +79,7 @@ export default function ProductOverviewCarousel({data}: {data?: string[]}) {
               >
                 <div className="relative">
                   <Image
-                    src={`http://localhost:3010/products/file/${item}`}
+                    src={`${process.env.NEXT_PUBLIC_API_ADDRESS}products/file/${item}`}
                     width={340}
                     height={0} 
                     sizes="100vw"
