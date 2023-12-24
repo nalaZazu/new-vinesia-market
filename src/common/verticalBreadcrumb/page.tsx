@@ -83,7 +83,7 @@ const VerticalBreadCrumb = () => {
               <Link
                 href="#"
                 className={` text-xs font-normal leading-3 ${
-                  pathname === "/reso" || pathname === "/limitedcollections"
+                  pathname === "/reso" || pathname === "/limitedcollections" 
                     ? "text-stone-400 "
                     : "text-stone-600"
                 }`}
@@ -100,7 +100,8 @@ const VerticalBreadCrumb = () => {
             <li className="] text-xs font-normal   leading-[18px]">
               <Link
                 href={` ${
-                  pathname === "/regions" ? "text-[#975958]" : "text-[#CBACAB]"
+                  pathname === "/regions" || pathname === "/wacollections" ? "text-[#CBACAB]" : " text-[#975958]" 
+                
                 }`}
               >
                 home

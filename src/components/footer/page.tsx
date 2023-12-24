@@ -24,7 +24,7 @@ export default function Footer() {
           <div>
             <span>appreciating your wine</span>
           </div>
-          <div className="order-1">
+          <div className=" ">
             {" "}
             <Link href="/">
               <Image
