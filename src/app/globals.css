@@ -6,6 +6,7 @@ html {
   scroll-behavior: smooth;
 }
 
+
 /* @font-face {
   font-family: "Canela";
   src: url("../assets/fonts/Canela/Canela-Regular.otf")
@@ -21,11 +22,9 @@ html {
   font-weight: 300;
 } */
 
-
 @font-face {
   font-family: "Canela";
-  src: url("../assets/fonts/Canela Web/Canela-Regular-Web.woff")
-    format("woff");
+  src: url("../assets/fonts/Canela Web/Canela-Regular-Web.woff") format("woff");
   font-weight: 400; /* 400 */
   font-style: normal;
 }
@@ -33,10 +32,9 @@ html {
 @font-face {
   font-family: "Canela";
   src: url("../assets/fonts/Canela Web/Canela-Light-Web.woff") format("woff"),
-   url("../assets/fonts/Canela Web/Canela-Light-Web.woff2") format("woff");
+    url("../assets/fonts/Canela Web/Canela-Light-Web.woff2") format("woff");
   font-style: normal;
 }
-
 
 /*  */
 @font-face {
@@ -50,6 +48,7 @@ html {
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   font-family: albert, "sans-serif";
+  scroll-behavior: smooth;
 }
 
 body {
@@ -96,6 +95,7 @@ h6 {
   background-size: cover;
   /* background-position: center; */
 }
+
 /* about banner */
 .aboutus-bg-image {
   background-image: url("../assets/images/aboutus.png");
@@ -265,6 +265,12 @@ h6 {
     background-size: cover;
     /* background-position: center; */
   }
+  /* w&art collection */
+  .custom-collection-bg-image {
+    background-image: url("../assets/images/collection.png");
+    height: 1000px;
+    background-size: cover;
+  }
   .invest_carousel .slick-prev,
   .invest_carousel .slick-next {
     position: absolute;
@@ -374,15 +380,15 @@ h6 {
 }
 
 .example-track.example-track-0 {
-  background: #BF4D2010;
+  background: #bf4d2010;
 }
 
 .example-track.example-track-1 {
-  background: #BF4D20;
+  background: #bf4d20;
 }
 
 .example-track.example-track-2 {
-  background: #BF4D2010;
+  background: #bf4d2010;
 }
 
 .horizontal-slider .example-thumb {
@@ -399,7 +405,6 @@ h6 {
   border: 5px solid gray;
   box-sizing: border-box;
 }
-
 
 /*  Range Slider CSS END */
 
@@ -437,8 +442,7 @@ h6 {
 }
 
 @media screen and (min-width: 1440px) {
-  .custom-bg-image
-  .custom-limited-bg-image {
+  .custom-bg-image .custom-limited-bg-image .custom-collection-bg-image {
     height: 1000px;
   }
 }

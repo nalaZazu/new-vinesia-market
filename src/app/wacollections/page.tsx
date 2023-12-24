@@ -1,39 +1,54 @@
 "use client";
 import React from "react";
-import Image from "next/image";
 import Newsletter from "@/components/newsletter/page";
 import Footer from "@/components/footer/page";
 import Dropdown from "@/common/DropDown/page";
 import MobileFilter from "../invest/moibleview/page";
 import Product from "@/components/products/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
-import xmark from "../../assets/icons/x-mark-anim.svg";
 import Link from "next/link";
-import ProductCards from "@/components/productCard/page";
-import { MarksAnim } from "@/assets/icons/Icons";
 import ScrollAnimation from "@/common/ScrollAnimation/page";
+import VerticalBreadCrumb from "@/common/verticalBreadcrumb/page";
 
 export default function WineryArt() {
   return (
     <div className="absolute top-0 left-0 right-0 -z-10">
-      <div className="w-full md:h-[742px] h-[620px] bg-no-repeat bg-cover bg-center bg-[url('https://i.ibb.co/pRfQnBG/image-137.png')]">
-        <div className="flex md:items-end  items-center container mx-auto h-[628px] md:px-0 px-4">
-          <div>
+      <div className="w-full md:h-[742px] custom-collection-bg-image md:pt-0 pt-40 h-[620px] bg-no-repeat bg-cover bg-center bg-[url('https://i.ibb.co/pRfQnBG/image-137.png')]">
+        {/* BreadCrumb start */}
+        <VerticalBreadCrumb />
+        {/* BreadCrumb end */}
+        <div className="flex md:items-end  items-center container mx-auto h-[628px] md:px-0 px-4 ">
+          <div className="md:block hidden">
             <div className="">
               <h3 className="text-white md:text-4xl font-light md:leading-[44px] text-cente text-[21px] leading-[29px]">
                 Collections
               </h3>
             </div>
-            <div className="order-1">
+            <div className="">
               <h1 className="text-white md:text-[144px] font-normal text-6xl">
                 Wine & art
               </h1>
             </div>
           </div>
+          {/* mobile view */}
+          <div>
+            <div className="block md:hidden   container mx-auto   md:px-0 px-4">
+              <div className="">
+                <h1 className="      text-white text-6xl font-normal  leading-[68px]">
+                  Wine & art
+                </h1>
+              </div>
+              <div className="">
+                <h3 className="text-white md:text-4xl font-light md:leading-[44px] text-cente text-[21px] leading-[29px]">
+                  Collections
+                </h3>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       {/* text */}
-      <div className="flex flex-wrap py-20 max-w-[1030px] mx-auto gap-8">
+      <div className="flex flex-wrap py-20 max-w-[1030px] mx-auto gap-8 md:px-0 px-4">
         <div className="pb-7 md:pb-0">
           <p className="max-w-[499px] text-zinc-800 text-base font-normal leading-snug">
             Not all great wine producers come from traditional families or have

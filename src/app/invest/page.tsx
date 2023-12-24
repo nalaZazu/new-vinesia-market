@@ -20,11 +20,18 @@ import FilterSection from "@/components/FilterSection/page";
 const Invest = () => {
   const [tags, setTags] = useState<String[]>([]);
   const [selectedFilters, setSelectedFilters] = useState([]);
+  const [priceRange, setPriceRange] = useState([]);
   const fetcher = async (url: string, payload?: string) => {
     const options = {
       method: "POST",
       ...(selectedFilters && {
-        body: JSON.stringify({ filters: selectedFilters }),
+        body: JSON.stringify({
+          filters: selectedFilters,
+          price:
+            priceRange?.length > 0
+              ? { min: priceRange[0], max: priceRange[1] }
+              : {},
+        }),
       }),
       headers: {
         accept: "application/json",
@@ -41,7 +48,7 @@ const Invest = () => {
   );
   useEffect(() => {
     mutate();
-  }, [selectedFilters]);
+  }, [selectedFilters, priceRange]);
 
   return (
     <div>
@@ -65,6 +72,8 @@ const Invest = () => {
           <FilterSection
             selectedFilters={selectedFilters}
             setSelectedFilters={setSelectedFilters}
+            priceRange={priceRange}
+            setPriceRange={setPriceRange}
           />
 
           {/* product list  */}
