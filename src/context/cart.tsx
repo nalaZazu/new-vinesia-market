@@ -19,7 +19,7 @@ export function useProvideCart(): ProvideCart {
     function addProductCartItem(item: ProductOverview) {
         const found = cartItems.filter((x) => x.id === item.id && x.type === ItemType.Product)
 
-        if (found.length === 0) {
+        if (found.length === 0 && item.buyNowPrice !== undefined) {
             const add: CartItem = {
                 id: item.id,
                 type: ItemType.Product,
@@ -36,7 +36,7 @@ export function useProvideCart(): ProvideCart {
     function addEditionCartItem(item: EditionOverview) {
         const found = cartItems.filter((x) => x.id === item.id && x.type === ItemType.Edition)
 
-        if (found.length === 0) {
+        if (found.length === 0 && item.buyNowPrice !== undefined) {
             const add: CartItem = {
                 id: item.id,
                 type: ItemType.Edition,

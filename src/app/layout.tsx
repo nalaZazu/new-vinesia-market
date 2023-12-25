@@ -37,14 +37,14 @@ export default function RootLayout({
 
       <body className={`${albert.className} bg-[#F3E8CF] `}>
         <WagmiProvider>
-          <MagicProvider>
-            <CartProvider>
-              <UserProvider>
+          <UserProvider>
+            <MagicProvider>
+              <CartProvider>
                 {path === '/' ? <></> : <Header />}
                 {children}
-              </UserProvider>
-            </CartProvider>
-          </MagicProvider>
+              </CartProvider>
+            </MagicProvider>
+          </UserProvider>
         </WagmiProvider>
       </body>
     </html>

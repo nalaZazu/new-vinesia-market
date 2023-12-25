@@ -14,6 +14,8 @@ import { useUser } from "@/context/user";
 import { useMagic } from "@/context/MagicProvider";
 import { useRouter } from "next/navigation";
 import { pagePaths } from "@/constants/navigate";
+import { useWalletClient } from "wagmi";
+import Loading from "@/components/loading/loading";
 
 const Wrapper = ({
   children,
@@ -36,15 +38,15 @@ const Wrapper = ({
 const SignUp = () => {
   const {
     isLoading,
-    isConnecting,
-    isRedirecting,
-    isReconnecting,
-    isConnected,
-    address,
-    connectAsync,
-    connectSocialAsync,
+    isLoggedIn,
+    publicAddress,
     disconnectAsync
   } = useUser()
+
+  const {isConnected, isRedirecting} = useMagic()
+
+  const {connectAsync, connectSocialAsync} = useMagic()
+  const {} = useWalletClient()
 
   const {push} = useRouter()
 
@@ -79,6 +81,10 @@ const SignUp = () => {
     await disconnectAsync()
   }
 
+  if (isLoading) {
+    return <Loading/>
+  }
+
   if (isRedirecting) {
     return (<Wrapper>
       <h1 className="max-w-[448px] text-center text-zinc-800 md:text-4xl text-[21px]  font-light  md:leading-[44px] leading-[29px] mb-8">
@@ -86,12 +92,6 @@ const SignUp = () => {
       </h1></Wrapper>)
   }
 
-  if (isLoading) {
-    return (<Wrapper>
-      <h1 className="max-w-[448px] text-center text-zinc-800 md:text-4xl text-[21px]  font-light  md:leading-[44px] leading-[29px] mb-8">
-        Loading ...
-      </h1></Wrapper>)
-  }
 
   // if (isConnecting || isReconnecting) {
   //   return (<Wrapper>
@@ -103,7 +103,7 @@ const SignUp = () => {
   if (isConnected) {
     return (<Wrapper>
       <h1 className="max-w-[448px] text-center text-zinc-800 md:text-4xl text-[21px]  font-light  md:leading-[44px] leading-[29px] mb-8">
-        You are already connected {address}
+        You are already connected {publicAddress}
       </h1>
       {/* here is disconnect button */}
       <button onClick={disconnect} className="text-center w-full text-orange-700 text-xs font-normal   uppercase leading-3 tracking-tight px-8 py-[22px] rounded-[48px] border border-orange-700 border-opacity-20 justify-center items-center gap-3 inline-flex">

@@ -4,7 +4,7 @@ import { CartControls } from "@/common/Components";
 import CartCard from "@/components/cart/cartCard";
 import { useCart } from "@/context/cart";
 import { useUser } from "@/context/user";
-import { ProductOverview } from "@/types/productOverview.dto";
+import { CartItem } from "@/types/dto/checkoutCart.dto";
 import React from "react";
 
 export default function Cart() {
@@ -67,7 +67,7 @@ The 2.4% service decreases based on the volume of your investments (Asset Under 
 
         {/* Table Starts */}
         {cartItems?.length > 0 ? (
-          cartItems?.map((item: ProductOverview, i: any) => {
+          cartItems?.map((item: CartItem, i: any) => {
             return (
               <div key={i}>
                 <CartCard item={item} />

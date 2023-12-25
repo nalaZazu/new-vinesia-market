@@ -9,8 +9,9 @@ export interface CartItem {
 
     type: ItemType
 
-    price?: Record<Currency, number>
+    price: Record<Currency, number>
     name?: string
+    description?: string
     media?: string
 }
 
