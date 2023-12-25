@@ -1,17 +1,14 @@
+import { useCart } from "@/context/cart";
+import { useUser } from "@/context/user";
 import React from "react";
 
-const cartList = [
-  { name: 'Brunello di Montalcino "Piaggione" | 2019', price: "1,900" },
-  {
-    name: "Château Lafite Rothschild - Vintage 100 points Dunnuck | 2020",
-    price: "1,900",
-  },
-  {
-    name: "Château Lafite Rothschild - Vintage 100 points Parker | 2019",
-    price: "1,900",
-  },
-];
 export default function CheckoutAside() {
+  const {cartItems, getCartTotal} = useCart()
+  const { getPriceText } = useUser()
+
+  if (cartItems === undefined || cartItems.length === 0)
+    return <></>
+
   return (
     <div>
       <div className=" bg-[#F7EFDF] rounded-lg flex-col justify-start items-center inline-flex shadow-sm w-full">
@@ -21,26 +18,27 @@ export default function CheckoutAside() {
           </div>
           <div className="justify-start items-start gap-2.5 flex">
             <div className="text-white text-lg font-semibold  leading-relaxed">
-              3{" "}
+              {cartItems.length}{" "}
             </div>
             <div className="text-white text-lg font-semibold  leading-relaxed">
-              Wine assets
+              {cartItems.length === 1 ? <>Wine asset</> : <>Wine assets</>}
             </div>
           </div>
         </div>
         <div className="self-stretch px-6 flex-col justify-start items-start flex ">
-          {cartList?.map((d, i) => {
-            const { name, price } = d;
+          {cartItems.map((d, i) => {
+            const { wine, buyNowPrice } = d;
             return (
               <div
                 key={i}
                 className="self-stretch py-6 border-b border-orange-700 border-opacity-20 justify-between items-start inline-flex"
               >
                 <div className="w-[295px] text-zinc-800 text-base font-normal  leading-snug">
-                  {name}
+                  {wine?.winery?.name} | {wine?.vintage} <br/>
+                  {wine?.name}
                 </div>
                 <div className="text-zinc-800 text-base font-normal  leading-snug">
-                  € {price}
+                  {getPriceText(buyNowPrice ?? 0)}
                 </div>
               </div>
             );
@@ -50,7 +48,7 @@ export default function CheckoutAside() {
               Service fees
             </div>
             <div className="text-zinc-800 text-base font-normal  leading-snug">
-              € 13.20
+              € 0
             </div>
           </div>
         </div>
@@ -59,7 +57,7 @@ export default function CheckoutAside() {
             Order summary
           </div>
           <div className="text-zinc-800 text-lg font-semibold  leading-relaxed">
-            € 5,900
+            {getPriceText(getCartTotal())}
           </div>
         </div>
       </div>

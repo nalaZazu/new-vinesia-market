@@ -3,38 +3,52 @@
 import { BillingInput, Button, SelectBox } from "@/common/Components";
 import TabButton from "@/common/TabButton";
 import Loading from "@/components/loading/loading";
-import { useUserContext } from "@/context/user";
+import { pagePaths } from "@/constants/navigate";
+import { useUser } from "@/context/user";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
 
 const tabs = ["private", "company"];
 
 const titles = [
-  {id: 1, name: 'Mr.'},
-  {id: 2, name: 'Mrs.'},
-  {id: 3, name: 'Ms.'},
+  { id: 1, name: 'Mr.' },
+  { id: 2, name: 'Mrs.' },
+  { id: 3, name: 'Ms.' },
 ]
 
+type Inputs = {
+  firstName: string
+  lastName: string
+  emailAddress: string
+  phoneNumber: string
+  country: string,
+  region: string,
+  addressLine1: string
+  addressLine2: string
+  zipCode: string
+  city: string
+}
+
 export default function Page() {
-  const { isLoggedIn } = useUserContext()
+  const { isLoggedIn, isLoading } = useUser()
 
-  const router = useRouter();
+  const {push} = useRouter();
 
-  const [isLoading, setIsLoading] = useState(true)
   const [activeTab, setActiveTab] = useState(0);
 
-  useEffect(() => {
-    async function check() {
-      const user = await isLoggedIn()
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm<Inputs>()
+  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data)
 
-      if (user !== undefined) {
-        setIsLoading(false)
-      } else {
-        router.push('/signup')
-      }
-    }
-    check()
-  }, [isLoggedIn, router]) 
+  useEffect(() => {
+    if (isLoading) return
+    if (!isLoggedIn) push(pagePaths.signup)
+  }, [isLoggedIn, isLoading, push])
 
   if (isLoading) {
     return <Loading />
@@ -56,35 +70,37 @@ export default function Page() {
         />
 
         {activeTab == 0 && (
-          <div className="py-6 grid sm:grid-cols-2 grid-cols-1 gap-6">
-            <SelectBox title="title" data={titles} />
-            <br className="hidden md:block" />
-            <BillingInput title="First name" required={true} />
-            <BillingInput title="Last name" required={true} />
-            <BillingInput title="Email Address" required={true} />
-            <BillingInput title="Phone Number" required={true} />
-            <SelectBox title="Country" required={true} data={[]} />
-            <SelectBox title="Region" required={true} data={[]} />
-            <BillingInput title="address line 1" required={true} />
-            <BillingInput title="address line 2 (optional) " />
-            <BillingInput title="Zip code" required={true} />
-            <BillingInput title="City" required={true} />
-          </div>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="py-6 grid sm:grid-cols-2 grid-cols-1 gap-6">
+              <SelectBox title="title" name='title' data={titles} />
+              <br className="hidden md:block" />
+              <BillingInput label="First name" name='firstName' required={true} />
+              <BillingInput label="Last name" name='lastName' required={true} />
+              <BillingInput label="Email Address" name='email' required={true} />
+              <BillingInput label="Phone Number" name='phone' required={true} />
+              <SelectBox title="Country" name='country' required={true} data={[]} />
+              <SelectBox title="Region" name='region' required={true} data={[]} />
+              <BillingInput label="address line 1" name='address1' required={true} />
+              <BillingInput label="address line 2 (optional)" name='address2' />
+              <BillingInput label="Zip code" name='zipCode' required={true} />
+              <BillingInput label="City" name='city' required={true} />
+            </div>
+          </form>
         )}
 
         {activeTab == 1 && (
           <div className="py-6 grid sm:grid-cols-2 grid-cols-1 gap-6">
             <div className=" sm:col-span-2 col-span-1">
-              <BillingInput title="company name" required={true} />
+              <BillingInput label="company name" name='companyName' required={true} />
             </div>
-            <BillingInput title="Email Address" required={true} />
-            <BillingInput title="tax id" required={true} />
-            <SelectBox title="Country" required={true} data={[]} />
-            <SelectBox title="Region" required={true} data={[]} />
-            <BillingInput title="address line 1" required={true} />
-            <BillingInput title="address line 2 (optional) " />
-            <BillingInput title="Zip code" required={true}/>
-            <BillingInput title="City" required={true}/>
+            <BillingInput label="Email Address" name='email' required={true} />
+            <BillingInput label="tax id" name='taxId' required={true} />
+            <SelectBox title="Country" name='country' required={true} data={[]} />
+            <SelectBox title="Region" name='region' required={true} data={[]} />
+            <BillingInput label="address line 1" name='address1' required={true} />
+            <BillingInput label="address line 2 (optional)" name='address2' />
+            <BillingInput label="Zip code" name='zipCode' required={true} />
+            <BillingInput label="City" name='city' required={true} />
           </div>
         )}
         <div className="max-w-[300px] mx-auto">

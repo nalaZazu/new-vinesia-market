@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import google from "../../assets/icons/Google.svg";
 import facebook from "../../assets/icons/facebook.svg";
 import xsoical from "../../assets/icons/Social Icons.svg";
@@ -10,8 +10,10 @@ import wallet from "../../assets/icons/Wallet.svg";
 import * as magicIcon from "../../assets/images/magic.png";
 import alert from "../../assets/icons/alert-circle.svg";
 import { AlertCircle } from "@/assets/icons/Icons";
-import { useUserContext } from "@/context/user";
+import { useUser } from "@/context/user";
 import { useMagic } from "@/context/MagicProvider";
+import { useRouter } from "next/navigation";
+import { pagePaths } from "@/constants/navigate";
 
 const Wrapper = ({
   children,
@@ -42,10 +44,18 @@ const SignUp = () => {
     connectAsync,
     connectSocialAsync,
     disconnectAsync
-  } = useUserContext()
+  } = useUser()
+
+  const {push} = useRouter()
 
   const [terms, setTerms] = useState(false)
   const [email, setEmail] = useState('')
+
+  useEffect(() => {
+    if (isConnected) {
+      push(pagePaths.profile)
+    }
+  }, [isConnected, push])
 
   async function change(e: any) {
     if (e.target.name === 'terms')

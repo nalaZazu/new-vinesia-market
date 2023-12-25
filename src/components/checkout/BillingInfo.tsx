@@ -6,10 +6,55 @@ import {
   Button,
   SelectBox,
 } from "@/common/Components";
-import React, { useState } from "react";
+import { Countries } from "@/constants/countries";
+import { address_validation, city_validation, country_validation, last_name_validation, name_validation } from "@/constants/formFields";
+import { useUser } from "@/context/user";
+import { truncate } from "fs";
+import React, { useEffect, useState } from "react";
+import { FormProvider, useForm } from "react-hook-form";
+import Loading from "../loading/loading";
+import { useRouter } from "next/navigation";
+import { pagePaths } from "@/constants/navigate";
+import { Address } from "@/types/user.dto";
 
 export default function BillingInfo() {
-  const [edit, setEdit] = useState(true);
+  const { profile, isLoading, isLoggedIn, setBillingAddress } = useUser()
+  const { push } = useRouter()
+
+  const [edit, setEdit] = useState(false);
+  const [isSaving, setIsSaving] = useState(false)
+
+  const methods = useForm()
+
+  const onSubmit = methods.handleSubmit(async (data) => {
+    setIsSaving(true)
+    const address: Address = {
+      title: data.title,
+      firstName: data.firstName,
+      lastName: data.lastName,
+      country: data.country,
+      region: data.region,
+      addressLine1: data.address1,
+      addressLine2: data.address2,
+      zipCode: data.zipCode,
+      city: data.city
+    }
+
+    await setBillingAddress(address)
+
+    setIsSaving(false)
+    setEdit(false)
+  })
+
+  useEffect(() => {
+    if (isLoading) return
+    if (!isLoggedIn) push(pagePaths.signup)
+  }, [isLoggedIn, isLoading, push])
+
+  if (isLoading) {
+    return <Loading />
+  }
+
   return (
     <div>
       <div className="justify-start items-center gap-2 inline-flex">
@@ -25,91 +70,114 @@ export default function BillingInfo() {
       {/* Billing Address */}
       {edit ? (
         <div className="pt-6">
-          <div className="grid sm:grid-cols-2 grid-cols-1 gap-6">
-            <BillingInput
-              title="Title"
-              name="title"
-              placeholder="Choose Value"
-            />
 
-            <br className="hidden sm:block" />
-            <BillingInput
-              title="FIRST NAME"
-              name="fname"
-              placeholder="FIRST NAME"
-            />
-            <BillingInput
-              title="Last NAME"
-              name="lname"
-              placeholder="Last NAME"
-            />
-            <div className="w-full">
-              <SelectBox
-                title="Country"
-                name="country"
-                placeholder="Select Country"
-                data={[]}
-              />
-            </div>
+          <FormProvider {...methods}>
+            <form
+              onSubmit={e => e.preventDefault()}
+              noValidate
+              autoComplete="off"
+              className="container"
+            >
+              <div className="grid sm:grid-cols-2 grid-cols-1 gap-6">
+                <BillingInput
+                  label="Title"
+                  name="title"
+                  placeholder="Choose Value"
+                />
 
-            <SelectBox
-              title="Region"
-              name="region"
-              placeholder="Select Region"
-              data={[]}
-            />
+                <br className="hidden sm:block" />
+                <BillingInput
+                  label="FIRST NAME"
+                  name="firstName"
+                  placeholder="FIRST NAME"
+                  value={profile?.billingAddress?.firstName}
+                  {...name_validation}
+                />
+                <BillingInput
+                  label="Last NAME"
+                  name="lastName"
+                  placeholder="Last NAME"
+                  value={profile?.billingAddress?.lastName}
+                  {...last_name_validation}
 
-            {/* Country Pending */}
-            {/* Region Pending */}
-            <BillingInput
-              title="address line 1"
-              name="address1"
-              placeholder="Address"
-            />
-            <BillingInput
-              title="address line (optional)"
-              name="address2"
-              placeholder="Addres (Optional)"
-            />
-            <BillingInput
-              title="Zip Code"
-              name="zip_code"
-              placeholder="Zip Code"
-            />
-            <BillingInput title="City" name="city" placeholder="City" />
-          </div>
+                />
+                <SelectBox
+                  title="Country"
+                  name="country"
+                  placeholder="Select Country"
+                  data={Countries.map((x) => x.name)}
+                  value={profile?.billingAddress?.country}
+                  {...country_validation}
+                />
 
-          <div onClick={() => setEdit(false)} className=" max-w-[200px] pt-8">
-            <Button label="save address" btnStyle="text-xs" />
-          </div>
+                <BillingInput
+                  label="Region"
+                  name="region"
+                  placeholder="Region"
+                  value={profile?.billingAddress?.region}
+                />
+
+                {/* Country Pending */}
+                {/* Region Pending */}
+                <BillingInput
+                  label="address line 1"
+                  name="address1"
+                  placeholder="Address"
+                  value={profile?.billingAddress?.addressLine1}
+                  {...address_validation}
+                />
+                <BillingInput
+                  label="address line (optional)"
+                  name="address2"
+                  placeholder="Address (Optional)"
+                  value={profile?.billingAddress?.addressLine2}
+                />
+                <BillingInput
+                  label="Zip Code"
+                  name="zipCode"
+                  placeholder="Zip Code"
+                  value={profile?.billingAddress?.zipCode}
+                />
+                <BillingInput
+                  label="City"
+                  name="city"
+                  placeholder="City"
+                  value={profile?.billingAddress?.city}
+                  {...city_validation}
+                />
+              </div>
+
+              <div onClick={onSubmit} className=" max-w-[200px] pt-8">
+                <Button disabled={isSaving} label="save address" btnStyle="text-xs" />
+              </div>
+            </form>
+          </FormProvider>
         </div>
       ) : (
         <>
-          <div className="pt-4 pb-6">
-            <AlertSuccess />
-          </div>
-          <div>
-            <p className="w-44 text-zinc-800 text-base font-normal leading-snug">
-              John
-            </p>
-            <p className="w-44 text-zinc-800 text-base font-normal leading-snug">
-              Newman
-            </p>
-            <p className="w-44 text-zinc-800 text-base font-normal leading-snug">
-              Jangfemsteg 12
-            </p>
-            <p className="justify-start items-start gap-1 inline-flex">
-              <span className="text-zinc-800 text-base font-normal leading-snug">
-                20350
-              </span>
-              <span className=" text-zinc-800 text-base font-normal leading-snug">
-                Hamburg
-              </span>
-            </p>
-            <p className=" text-zinc-800 text-base font-normal leading-snug">
-              Deutschland
-            </p>
-          </div>
+          {profile === null ? <></> :
+            <div>
+              <p className="w-44 text-zinc-800 text-base font-normal leading-snug">
+                {profile.billingAddress.firstName}
+              </p>
+              <p className="w-44 text-zinc-800 text-base font-normal leading-snug">
+                {profile.billingAddress.lastName}
+              </p>
+              <p className="w-44 text-zinc-800 text-base font-normal leading-snug">
+                {profile.billingAddress.addressLine1}
+              </p>
+              <p className="justify-start items-start gap-1 inline-flex">
+                <span className="text-zinc-800 text-base font-normal leading-snug">
+                  {profile.billingAddress.zipCode}
+                </span>
+                <span className=" text-zinc-800 text-base font-normal leading-snug">
+                  {profile.billingAddress.city}
+                </span>
+              </p>
+              <p className=" text-zinc-800 text-base font-normal leading-snug">
+                {profile.billingAddress.country}
+              </p>
+            </div>}
         </>
       )}
     </div>

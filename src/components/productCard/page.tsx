@@ -6,7 +6,7 @@ import winebotel from "../../assets/images/Group 10462.png";
 import Art from "../../assets/images/arat.png";
 import Link from "next/link";
 import { ProductCardDto } from "@/types/productCard.dto";
-import { useUserContext } from "@/context/user";
+import { useUser } from "@/context/user";
 
 import bottleIcon from "../../assets/icons/bottleIcon.svg"
 
@@ -17,7 +17,7 @@ export default function ProductCards({
   item?: ProductCardDto;
   isEdition?: boolean;
 }) {
-  const { getPriceText } = useUserContext();
+  const { getPriceText } = useUser();
 
   if (item === undefined) {
     return <></>;

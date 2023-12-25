@@ -4,7 +4,6 @@ import { createContext, useContext, useState } from "react";
 
 export interface ProvideCart {
     cartItems: ProductOverview[]
-    cartTotal: number,
     addCartItem: (item: ProductOverview) => void
     removeCartItem: (item: ProductOverview) => void
     getCartTotal: () => number
@@ -37,7 +36,6 @@ export function useProvideCart(): ProvideCart {
 
     return {
         cartItems,
-        cartTotal,
         addCartItem,
         removeCartItem,
         getCartTotal
@@ -50,7 +48,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     return (<cartContext.Provider value={useProvideCart()}>{children}</cartContext.Provider>);
 }
 
-export function useCartContext(): ProvideCart {
+export function useCart(): ProvideCart {
     const context = useContext(cartContext);
     if (context === null) throw new Error('Cart provider is not set')
     return context

@@ -1,13 +1,38 @@
 "use client";
 import { TickCirIcon } from "@/assets/icons/Icons";
-import { CartControls, Checkbox } from "@/common/Components";
+import { CartControls } from "@/common/Components";
 import CartInfo from "@/components/checkout/CheckoutAside";
 import Step1 from "@/components/checkout/Steps/Step1";
 import Step2 from "@/components/checkout/Steps/Step2";
-import React, { useState } from "react";
+import Loading from "@/components/loading/loading";
+import { pagePaths } from "@/constants/navigate";
+import { useCart } from "@/context/cart";
+import { useUser } from "@/context/user";
+import { useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 export default function Checkout() {
+  const { isLoggedIn, isLoading } = useUser()
+  const { cartItems } = useCart()
+  const { push } = useRouter()
   const [step, setStep] = useState(1);
+
+  useEffect(() => {
+    if (isLoading) return
+
+    //User is not logged in, redirect to signup    
+    if (!isLoggedIn) push(pagePaths.signup)
+
+    //Cart is empty, redirect to invest page
+    if (cartItems.length === 0) push(pagePaths.invest)
+
+  }, [isLoading, isLoggedIn, push, cartItems])
+
+  if (isLoading) {
+    return <Loading/>
+  }
+
   return (
     <div className="max-w-[1171px] mx-auto px-4 md:mb-40 mb-20">
       <div className="w-full md:justify-start justify-between items-center md:gap-8 inline-flex sm:pt-[74px] pt-4 pb-4 border-b border-[#A6836C20]">

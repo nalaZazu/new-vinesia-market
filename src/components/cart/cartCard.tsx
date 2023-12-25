@@ -2,14 +2,14 @@ import Image from "next/image";
 import React from "react";
 import productImg from "@/assets/images/bolltewine.png";
 import InfoTooltip from "@/common/InfoTooltip";
-import { useUserContext } from "@/context/user";
-import { useCartContext } from "@/context/cart";
+import { useUser } from "@/context/user";
+import { useCart } from "@/context/cart";
 import { ProductOverview } from "@/types/productOverview.dto";
 
 
 export default function CartCard({ item }: { item?: ProductOverview }) {
-  const { getPriceText } = useUserContext();
-  const { removeCartItem } = useCartContext();
+  const { getPriceText } = useUser();
+  const { removeCartItem } = useCart();
 
   if (item === undefined) return <></>;
 

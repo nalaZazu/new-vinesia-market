@@ -3,15 +3,15 @@ import React, { useState } from "react";
 import ModalContainer from "./ModalContainer";
 import { BiddingSection } from "@/constants/accrodion";
 import { BillingInput } from "./Components";
-import { useUserContext } from "@/context/user";
-import { useCartContext } from "@/context/cart";
+import { useUser } from "@/context/user";
+import { useCart } from "@/context/cart";
 
 export default function ShareCard({ data }: { data: any }) {
-  const { addCartItem } = useCartContext()
+  const { addCartItem } = useCart()
 
   const [visible, setVisible] = useState(false);
 
-  const { getPriceText } = useUserContext()
+  const { getPriceText } = useUser()
 
   if (data === undefined) {
     return <></>
@@ -60,10 +60,10 @@ export default function ShareCard({ data }: { data: any }) {
         <div className="pb-6">
           <form action=""> 
             <BillingInput
-              title="BID AMOUNT*"
-              name="BID AMOUNT*"
+              label="BID AMOUNT*"
+              name="amount"
               placeholder="€"
-              Inputclass="w-full"
+              className="w-full"
             />
           </form>
         </div>

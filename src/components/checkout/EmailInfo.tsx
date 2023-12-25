@@ -21,7 +21,7 @@ export default function EmailInfo({ onSubmit }: { onSubmit?: any }) {
             </div>
             <div className="self-stretch justify-start items-center gap-3 sm:inline-flex grid grid-cols-1">
               <div>
-                <BillingInput />
+                <BillingInput name='email'/>
               </div>
               <button
                 onClick={() => setEdit(false)}

@@ -10,7 +10,7 @@ import SidePannel from "./sidepannel/page";
 import { UserIcon } from "@/assets/icons/Icons";
 import { MenuItem, menuBar as menuItems } from "@/constants/navigate";
 import { useWindowSize } from "@/hooks/useWindowSize";
-import { useCartContext } from "@/context/cart";
+import { useCart } from "@/context/cart";
 
 const canela = local({
   src: "../../../public/fonts/canelatext-black.woff2",
@@ -66,7 +66,7 @@ const getMenuItem = (pathName: string) => {
 };
 
 export default function Header() {
-  const { cartItems } = useCartContext();
+  const { cartItems } = useCart();
 
   const size = useWindowSize();
 

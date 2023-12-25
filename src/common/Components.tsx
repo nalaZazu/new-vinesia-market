@@ -10,10 +10,12 @@ import {
   TickCirIcon,
 } from "@/assets/icons/Icons";
 import { XCircleIcon, XMarkIcon } from "@heroicons/react/20/solid";
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { Listbox, Transition, RadioGroup } from "@headlessui/react";
 import { useRouter } from "next/navigation";
 import ReactSlider from "react-slider";
+import { Controller, useFormContext } from "react-hook-form";
+import { findInputError, isFormInvalid } from "@/utils/form";
 export function Checkbox({ label, name }: { label?: any; name?: any }) {
   return (
     <>
@@ -38,6 +40,7 @@ export function Button({
   onClick,
   filled = true,
   btnStyle,
+  disabled = false
 }: {
   label: any;
   beforeIcon?: any;
@@ -45,13 +48,14 @@ export function Button({
   onClick?: any;
   filled?: any;
   btnStyle?: any;
+  disabled?: boolean
 }) {
   return (
     <button
+      disabled={disabled}
       onClick={onClick}
-      className={`flex items-center gap-4 border border-[#BF4D2020] rounded-full px-8 justify-center h-14 w-full uppercase ${
-        filled ? "bg-[#BF4D20] text-white" : "text-[#BF4D20] "
-      } ${btnStyle}`}
+      className={`flex items-center gap-4 border border-[#BF4D2020] rounded-full px-8 justify-center h-14 w-full uppercase ${filled ? "bg-[#BF4D20] text-white" : "text-[#BF4D20] "
+        } ${btnStyle}`}
     >
       {beforeIcon && beforeIcon}
       {label}
@@ -98,9 +102,8 @@ export function CartControls({
               ? setStep(step == 3 ? router.push("/purchase") : step + 1)
               : router.push("/checkout")
           }
-          className={`  ${
-            disable ? "cursor-no-drop" : "cursor-pointer"
-          }  flex items-center gap-4 border   border-[#BF4D2020] rounded-full text-white px-8 justify-center h-14 bg-[#BF4D20] sm:order-2 order-1 sm:w-auto w-full
+          className={`  ${disable ? "cursor-no-drop" : "cursor-pointer"
+            }  flex items-center gap-4 border   border-[#BF4D2020] rounded-full text-white px-8 justify-center h-14 bg-[#BF4D20] sm:order-2 order-1 sm:w-auto w-full
         `}
         >
           {btnTwoTittle} <NextIcon fill="white" />
@@ -111,34 +114,52 @@ export function CartControls({
 }
 
 export function BillingInput({
-  title,
-  placeholder,
   name,
-  Inputclass,
-  required
+  label,
+  id,
+  placeholder,
+  validation,
+  className,
+  value,
+  required = false
 }: {
-  title?: any;
-  placeholder?: any;
-  name?: any;
-  Inputclass?: any;
+  name: string;
+  label?: string;
+  id?: any;
+  placeholder?: string;
+  validation?: any;
+  className?: string;
   required?: boolean
+  value?: string
 }) {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext()
+
+  const inputErrors = findInputError(errors, name)
+  const isInvalid = isFormInvalid(inputErrors)
+
+  const options = {value: value, ...validation}
+
   return (
     <div
-      className={`flex-col justify-start items-start gap-2 inline-flex w-full ${Inputclass}`}
+      className={`flex-col justify-start items-start gap-2 inline-flex w-full ${className}`}
     >
-      {title && (
+      {label && (
         <div className="h-4 justify-start items-center gap-1 inline-flex">
           <div className="text-[#A6836C] text-xs font-normal uppercase leading-[18px] tracking-tight">
-            {title} {required !== undefined ? <>*</>: <></>}
+            {label} {required && (<>*</>)}
           </div>
         </div>
       )}
       <input
-        name={name}
-        className="self-stretch text-[#827A80] h-14 pl-6 pr-5 p-4 rounded-full border border-[#BF4D20] bg-transparent outline-red-500 placeholder-[#D99479]"
+        id={id}
         placeholder={placeholder}
+        className="self-stretch text-[#827A80] h-14 pl-6 pr-5 p-4 rounded-full border border-[#BF4D20] bg-transparent outline-red-500 placeholder-[#D99479]"
+        {...register(name, options)}
       />
+      {isInvalid && (<span>{inputErrors.error?.message}</span>)}
     </div>
   );
 }
@@ -181,7 +202,13 @@ export function ListCard({
 
 /* This example requires Tailwind CSS v2.0+ */
 
-export function AlertSuccess() {
+export function AlertSuccess({ text = '' }: { text?: string }) {
+  const [visible, setVisible] = useState(true)
+
+  if (!visible) {
+    return <></>
+  }
+
   return (
     <div className="rounded-md bg-[#42A55E20] p-4 w-full">
       <div className="flex items-start">
@@ -190,7 +217,7 @@ export function AlertSuccess() {
         </div>
         <div className="ml-3">
           <p className="text-sm font-medium text-green-800">
-            Successfully uploaded
+            {text}
           </p>
         </div>
         <div className="ml-auto pl-3">
@@ -200,7 +227,10 @@ export function AlertSuccess() {
               className="inline-flex rounded-md p-1.5 text-red-500  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-green-50 focus:ring-green-600"
             >
               <span className="sr-only">Dismiss</span>
-              <XMarkIcon className="h-5 w-5 text-red-500" aria-hidden="true" />
+              <XMarkIcon
+                onClick={() => setVisible(false)}
+                className="h-5 w-5 text-red-500" aria-hidden="true"
+              />
             </button>
           </div>
         </div>
@@ -239,79 +269,79 @@ export function AlertError({ message }: { message?: any }) {
 
 export function SelectBox({
   title,
-  placeholder,
   name,
+  placeholder,
+  validation,
   value,
-  onChange,
   required,
   data = []
 }: {
   title?: any;
+  name: any;
   placeholder?: any;
-  name?: any;
+  validation?: any;
   value?: any;
-  onChange?: any;
   required?: boolean,
   data: any[];
 }) {
-  // const data = [
-  //   { id: 1, name: "Durward Reynolds" },
-  //   { id: 2, name: "Kenton Towne" },
-  //   { id: 3, name: "Therese Wunsch" },
-  //   { id: 4, name: "Benedict Kessler" },
-  //   { id: 5, name: "Katelyn Rohan" },
-  // ];
+  const {
+    register,
+    formState: { errors },
+    control
+  } = useFormContext()
 
-  function classNames(...classes: any) {
-    return classes.filter(Boolean).join(" ");
-  }
-  const [selectedPerson, setSelectedPerson] = useState(data[0]);
+
+  const inputErrors = findInputError(errors, name)
+  const isInvalid = isFormInvalid(inputErrors)
 
   return (
     <div className=" flex-col w-full justify-start items-start gap-2 inline-flex">
       {title && (
         <div className="h-4 justify-start items-center gap-1 inline-flex">
           <div className="text-[#A6836C] text-xs font-normal uppercase leading-[18px] tracking-tight">
-            {title} {required !== undefined ? <>*</>: <></>}
+            {title} {required !== undefined ? <>*</> : <></>}
           </div>
         </div>
       )}
-      {/* <Listbox value={value} onChange={onChange}>
-        <Listbox.Button>{value}</Listbox.Button>
-        <Listbox.Options>
-          {data.map((d, i) => (
-            <Listbox.Option
-              key={i}
-              value={d}
-              // disabled={d.unavailable}
-            >
-              {d.name}
-            </Listbox.Option>
-          ))}
-        </Listbox.Options>
-      </Listbox> */}
-      <div className="relative w-full">
-        <Listbox value={selectedPerson} onChange={setSelectedPerson}>
-          <Listbox.Button className="self-stretch w-full text-start text-[#D99479] h-14 pl-6 pr-5 p-4 rounded-full border  border-[#CC714D]  bg-transparent outline-red-500 placeholder-[#D99479]">
-            {selectedPerson?.name}
-          </Listbox.Button>
-          <Listbox.Options className="absolute w-full border bg-[#F7EFDF]">
-            {data.map((d) => (
-              <Listbox.Option
-                key={d.id}
-                value={d}
-                className={({ active }) =>
-                  `cursor-pointer select-none relative py-2 pl-10 pr-4 border-b-[1px] border-[#BF4D20]/10 ${
-                    active ? "bg-[#F5EAD5] text-[#2F222B]" : "text-[#2F222B]"
-                  }`
-                }
-              >
-                {d.name}
-              </Listbox.Option>
-            ))}
-          </Listbox.Options>
-        </Listbox>
-      </div>
+      <select 
+      {...register(name, validation)}
+      className="self-stretch w-full text-start text-[#D99479] h-14 pl-6 pr-5 p-4 rounded-full border  border-[#BF4D20]  bg-transparent outline-red-500 placeholder-[#D99479]"
+      >
+        <option value="">Select {title}</option>
+        {data.map((d, i) => (
+          <option key={i} value={d}>{d}</option>
+        ))}
+      </select>
+      {isInvalid && (<span>{inputErrors.error?.message}</span>)}
+      {/* <Controller
+          name={name}
+          control={control}
+          defaultValue={value}
+          render={({ field: { onChange, onBlur, value, ref } }) => (
+            <Listbox value={selectedPerson} onChange={(x) => {
+              handleChange(x)
+              onChange(x)
+            }} >
+              <Listbox.Button className="self-stretch w-full text-start text-[#D99479] h-14 pl-6 pr-5 p-4 rounded-full border  border-[#CC714D]  bg-transparent outline-red-500 placeholder-[#D99479]">
+                {value ?? placeholder}
+              </Listbox.Button>
+              <Listbox.Options className="absolute w-full border bg-[#F7EFDF] overflow-y-scroll max-h-60">
+                {data.map((d, i) => (
+                  <Listbox.Option
+                    key={i}
+                    value={d}
+                    className={({ active }) =>
+                      `cursor-pointer select-none relative py-2 pl-10 pr-4 border-b-[1px] border-[#BF4D20]/10 ${active ? "bg-[#F5EAD5] text-[#2F222B]" : "text-[#2F222B]"
+                      }`
+                    }
+                  >
+                    {d}
+                  </Listbox.Option>
+                ))}
+              </Listbox.Options>
+            </Listbox>
+          )}
+        /> */}
     </div>
   );
 }
@@ -374,9 +404,8 @@ export function RadioButton() {
           {({ checked }) => (
             <p className={` p-5 w-full flex gap-4 `}>
               <span
-                className={`w-6 h-6 rounded-full border-[#6C757D]  ${
-                  checked ? " border-8" : "border-2"
-                } `}
+                className={`w-6 h-6 rounded-full border-[#6C757D]  ${checked ? " border-8" : "border-2"
+                  } `}
               ></span>
               {p}
             </p>

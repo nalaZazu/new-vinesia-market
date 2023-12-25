@@ -2,14 +2,14 @@
 import Accordion from "@/common/Accordion";
 import { CartControls } from "@/common/Components";
 import CartCard from "@/components/cart/cartCard";
-import { useCartContext } from "@/context/cart";
-import { useUserContext } from "@/context/user";
+import { useCart } from "@/context/cart";
+import { useUser } from "@/context/user";
 import { ProductOverview } from "@/types/productOverview.dto";
 import React from "react";
 
 export default function Cart() {
-  const { cartItems, cartTotal, getCartTotal } = useCartContext();
-  const { getPriceText } = useUserContext();
+  const { cartItems, getCartTotal } = useCart();
+  const { getPriceText } = useUser();
   const items = [
     {
       id: 1,
