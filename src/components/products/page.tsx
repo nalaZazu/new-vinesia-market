@@ -1,11 +1,11 @@
 import React from "react";
 import ProductCards from "../productCard/page";
-import { ProductCardDto } from "@/types/productCard.dto";
+import { ItemCardDto } from "@/types/productCard.dto";
 import ScrollAnimation from "@/common/ScrollAnimation/page";
 // Temporarly Added Default Products as Apis not fully integrated
-const Product = ({ items }: { items?: ProductCardDto[] }) => {
-  function splitToChunks(items: ProductCardDto[]): ProductCardDto[][] {
-    const result: ProductCardDto[][] = [];
+const Product = ({ items }: { items?: ItemCardDto[] }) => {
+  function splitToChunks(items: ItemCardDto[]): ItemCardDto[][] {
+    const result: ItemCardDto[][] = [];
 
     if (items === undefined || items.length === 0) return result;
 

@@ -3,8 +3,8 @@ import ProductCards from "../productCard/page";
 import playvideo from "@/assets/icons/Playbtn.svg";
 import Image from "next/image";
 import { Arrows } from "@/assets/icons/Icons";
-import { ProductCardDto } from "@/types/productCard.dto";
-export default function YouMayAlso({items}:{items?: ProductCardDto[]}) {
+import { ItemCardDto } from "@/types/productCard.dto";
+export default function YouMayAlso({items}:{items?: ItemCardDto[]}) {
   return (
     <div>
       <section className="">

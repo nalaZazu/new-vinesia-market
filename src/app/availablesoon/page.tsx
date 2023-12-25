@@ -9,7 +9,7 @@ import Footer from "@/components/footer/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
 import Product from "@/components/products/page";
 import { MarksAnim } from "@/assets/icons/Icons";
-import { ProductCardDto } from "@/types/productCard.dto";
+import { ItemCardDto } from "@/types/productCard.dto";
 import ScrollAnimation from "@/common/ScrollAnimation/page";
 
 export default function AvailableSoon() {

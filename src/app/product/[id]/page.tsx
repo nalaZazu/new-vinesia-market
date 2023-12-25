@@ -167,7 +167,7 @@ export default function ProductsOverview({
       {/* MindPledge end */}
 
       {/* All editions start */}
-      <AllEditions products={data.editions} />
+      <AllEditions items={data.editions} />
       {/* All editions end */}
       {/* How to invest in wine start*/}
       <div className="md:block hidden">
