@@ -10,7 +10,7 @@ import { useMagic } from "./MagicProvider";
 import { logout, saveToken } from "@/utils/common";
 import { SiweMessage } from "siwe";
 import { createWalletClient, custom, getAddress } from "viem";
-import { Address, User } from "@/types/user.dto";
+import { Address, Currency, User } from "@/types/user.dto";
 
 
 
@@ -30,7 +30,7 @@ export interface ProvideUser {
     isLoading: boolean //true if, profile is being loaded, false if profile has been loaded, to check if user is loaded, either get the profile (which should be not null) or check flag isLoggedIn
     isLoggedIn?: boolean //undefined if the profile is loading, true if used is logged in, false if user is not loggedin
 
-    currency: string;
+    currency: Currency;
     language: string;
 
     profile: User | null
@@ -67,7 +67,7 @@ export function useProvideUser(): ProvideUser {
     const [isDisconnected, setIsDisconnected] = useState(true)
     const [isLoading, setIsLoading] = useState(true)
 
-    const [currency, setCurrency] = useState('EUR')
+    const [currency, setCurrency] = useState(Currency.EUR)
     const [language, setLanguage] = useState('en')
     const [magicToken, setMagicToken] = useState('')
 
