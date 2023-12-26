@@ -127,6 +127,7 @@ export default function Header() {
                   key={x.id}
                   onClick={() => select(x)}
                 >
+                  <Link href={x.href || "/"}>
                     <span
                       className={`hidden md:block py-7 text-base tracking-tight border-0 ${
                         theme.textClass
@@ -134,6 +135,7 @@ export default function Header() {
                     >
                       {x.name}
                     </span>
+                  </Link>
                 </div>
               ))}
             </div>

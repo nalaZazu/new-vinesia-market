@@ -2,8 +2,7 @@
 import React, { Fragment, useState } from "react";
 import { Disclosure } from "@headlessui/react";
 import { ArrowDown, RoundArrow } from "@/assets/icons/Icons";
-import { AccordionAbout, AccordionAboutTwo } from "@/constants/accrodion";
-import { ChevronUpIcon } from "@heroicons/react/20/solid";
+import { AccordionAbout} from "@/constants/accrodion";  
 export function AccordionWine() {
   const [isActive, setIsActive] = useState<any>();
   const handleDisclosure = (id: any) => {

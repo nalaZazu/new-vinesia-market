@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { use, useRef, useState } from "react";
 import Image from "next/image";
@@ -24,11 +24,10 @@ import AboutThree from "@/components/AboutSection/aboutThree/page";
 import Link from "next/link";
 
 import { useGSAP } from "@gsap/react";
-import gsap from 'gsap'
+import gsap from "gsap";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-
 
 import Header from "@/components/header/page";
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
@@ -43,7 +42,6 @@ const About = () => {
   const bottle2Ref = useRef(null);
   const glassRef = useRef(null);
 
-
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
 
@@ -52,117 +50,120 @@ const About = () => {
       effects: true,
     });
 
-    const el = container.current
-    const el2 = round.current
-    const el3 = round2.current
+    const el = container.current;
+    const el2 = round.current;
+    const el3 = round2.current;
 
-    const grape = grapeRef.current
-    const bottle1 = bottle1Ref.current
-    const bottle2 = bottle2Ref.current
-    const glass = glassRef.current
+    const grape = grapeRef.current;
+    const bottle1 = bottle1Ref.current;
+    const bottle2 = bottle2Ref.current;
+    const glass = glassRef.current;
 
     const tl = gsap.timeline({
       scrollTrigger: {
         scrub: 1,
         trigger: el,
         pin: true,
-        start: 'top top',
-        end: '+=180%',
+        start: "top top",
+        end: "+=180%",
         // snap: {
         //   snapTo: "labelsDirectional", // snap to the closest label in the timeline
         //   duration: { min: 0.2, max: 3 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
         //   delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
         //   ease: "power1.inOut", // the ease of the snap animation ("power3" by default)
         // },
-      }
+      },
     });
-    tl
-      .addLabel('start')
+    tl.addLabel("start")
       .to(el3, {
-        duration: .2,
-        width: '511px',
-        height: '511px',
+        duration: 0.2,
+        width: "511px",
+        height: "511px",
       })
-      .addLabel('center', .2)
-      .to(el3, { duration: .2 })
+      .addLabel("center", 0.2)
+      .to(el3, { duration: 0.2 })
       .to(el3, {
-        duration: .2,
-        width: '100vw',
-        height: '80vh',
-        borderRadius: '0px',
-        top: '40vh'
+        duration: 0.2,
+        width: "100vw",
+        height: "80vh",
+        borderRadius: "0px",
+        top: "40vh",
       })
-      .addLabel('full', .6)
-      .to(el3, { duration: .1 })
+      .addLabel("full", 0.6)
+      .to(el3, { duration: 0.1 });
 
-    const tl2 = gsap.timeline()
+    const tl2 = gsap.timeline();
     tl2
       .to(el2, {
-        duration: .2,
-        width: '626px',
-        height: '626px',
+        duration: 0.2,
+        width: "626px",
+        height: "626px",
       })
-      .to(el2, { duration: .2 })
+      .to(el2, { duration: 0.2 })
       .to(el2, {
-        duration: .2,
-        width: '0',
-        height: '0',
+        duration: 0.2,
+        width: "0",
+        height: "0",
+      });
+
+    tl.add(tl2, 0);
+
+    const gtl = gsap.timeline();
+    gtl
+      .to(glass, {
+        top: "20vh",
+        right: "15vw",
+        rotate: -35,
+        duration: 0.2,
       })
-
-    tl.add(tl2, 0)
-
-    const gtl = gsap.timeline()
-    gtl.to(glass, {
-      top: '20vh',
-      right: '15vw',
-      rotate: -35,
-      duration: .2,
-    })
       .to(glass, {
         opacity: 0,
-        duration: .4
-      })
-    tl.add(gtl, 0)
+        duration: 0.4,
+      });
+    tl.add(gtl, 0);
 
-    const grtl = gsap.timeline()
-    grtl.to(grape, {
-      top: '70vh',
-      left: '15vw',
-      rotate: 30,
-      duration: .2,
-    })
+    const grtl = gsap.timeline();
+    grtl
+      .to(grape, {
+        top: "70vh",
+        left: "15vw",
+        rotate: 30,
+        duration: 0.2,
+      })
       .to(grape, {
         opacity: 0,
-        duration: .4
-      })
-    tl.add(grtl, 0)
+        duration: 0.4,
+      });
+    tl.add(grtl, 0);
 
-    const b1tl = gsap.timeline()
-    b1tl.to(bottle1, {
-      top: '60vh',
-      right: '20vw',
-      rotate: 30,
-      duration: .2,
-    })
+    const b1tl = gsap.timeline();
+    b1tl
+      .to(bottle1, {
+        top: "60vh",
+        right: "20vw",
+        rotate: 30,
+        duration: 0.2,
+      })
       .to(bottle1, {
         opacity: 0,
-        duration: .4
-      })
-    tl.add(b1tl, 0)
+        duration: 0.4,
+      });
+    tl.add(b1tl, 0);
 
-    const b2tl = gsap.timeline()
-    b2tl.to(bottle2, {
-      top: '20vh',
-      left: '20vw',
-      rotate: -30,
-      duration: .2,
-    })
+    const b2tl = gsap.timeline();
+    b2tl
+      .to(bottle2, {
+        top: "20vh",
+        left: "20vw",
+        rotate: -30,
+        duration: 0.2,
+      })
       .to(bottle2, {
         opacity: 0,
-        duration: .4
-      })
-    tl.add(b2tl, 0)
-  })
+        duration: 0.4,
+      });
+    tl.add(b2tl, 0);
+  });
 
   return (
     <React.Fragment>
@@ -192,39 +193,67 @@ const About = () => {
                 </div>
               </div>
 
-              <Image src={getStartedBtn} className="fixed right-12" alt="GetStarted" onClick={() => { gsap.to(window, { duration: 0, scrollTo: "#start_investing" }); }} />
-
+              <Image
+                src={getStartedBtn}
+                className="fixed right-12"
+                alt="GetStarted"
+                onClick={() => {
+                  gsap.to(window, {
+                    duration: 0,
+                    scrollTo: "#start_investing",
+                  });
+                }}
+              />
             </div>
           </div>
 
-
           <div className="w-full relative h-[90vh] mt-[12vh]" ref={container}>
-            <div className="absolute top-[-420px] md:block hidden 
+            <div
+              className="absolute top-[-420px] md:block hidden 
         left-[25%] translate-x-[-50%]
-        " ref={grapeRef}>
+        "
+              ref={grapeRef}
+            >
               <Image src={grapes} alt="image-icon" />
             </div>
-            <div className="absolute -top-[412px] right-[15vw] md:block hidden" ref={bottle1Ref}>
+            <div
+              className="absolute -top-[412px] right-[15vw] md:block hidden"
+              ref={bottle1Ref}
+            >
               <Image src={bottleIllustration} alt="image-icon" />
             </div>
-            <div className="absolute left-[20vw] -top-[20vh] md:block hidden" ref={bottle2Ref}>
+            <div
+              className="absolute left-[20vw] -top-[20vh] md:block hidden"
+              ref={bottle2Ref}
+            >
               <Image src={bottleIllustrations} alt="image-icon" />
             </div>
             <div className="absolute -top-36 right-[18vw]" ref={glassRef}>
               <Image src={glass} alt="glass image" />
             </div>
 
-            <div className="absolute bg-[#ECDDC0] w-[878px] h-[878px] z-0
+            <div
+              className="absolute bg-[#ECDDC0] w-[878px] h-[878px] z-0
       top-[50%] translate-y-[-50%] 
       left-[50%] translate-x-[-50%] 
-      rounded-[1000px] block" ref={round}></div>
+      rounded-[1000px] block"
+              ref={round}
+            ></div>
 
-            <div className="block absolute overflow-hidden w-[735px] h-[735px] rounded-[1000px] m-auto
+            <div
+              className="block absolute overflow-hidden w-[735px] h-[735px] rounded-[1000px] m-auto
       top-[50%] translate-y-[-50%] 
       left-[50%] translate-x-[-50%] 
-        " ref={round2}>
-              <video className="absolute left-1/2 z-0 max-w-none object-cover -translate-x-1/2" autoPlay loop muted>
-                <source src='assets/video/231215_Vinesia_Hero_3.mp4' />
+        "
+              ref={round2}
+            >
+              <video
+                className="absolute left-1/2 z-0 max-w-none object-cover -translate-x-1/2"
+                autoPlay
+                loop
+                muted
+              >
+                <source src="assets/video/231215_Vinesia_Hero_3.mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -259,7 +288,6 @@ const About = () => {
             <NewsletterMobile />
           </div>
           <Footer />
-
         </div>
       </div>
     </React.Fragment>

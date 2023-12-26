@@ -20,7 +20,7 @@ export default function Home() {
       <div className="absolute top-0 -z-10 left-0 right-0">
         <div className="relative">
           <Banner breadCrumbData={breadCrumbData} />
-          <div className=" pt-40 container mx-auto ">
+          <div className=" md:py-40 py-20  container mx-auto ">
             <h2 className="text-center text-zinc-800 text-4xl font-normal md:leading-[80px] leading-[42px] md:pb-20 pb-16 ">
               Invest in heritage and excellence
             </h2>

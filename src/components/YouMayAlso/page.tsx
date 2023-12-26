@@ -4,7 +4,8 @@ import playvideo from "@/assets/icons/Playbtn.svg";
 import Image from "next/image";
 import { Arrows } from "@/assets/icons/Icons";
 import { ProductCardDto } from "@/types/productCard.dto";
-export default function YouMayAlso({items}:{items?: ProductCardDto[]}) {
+import Link from "next/link";
+export default function YouMayAlso({ items }: { items?: ProductCardDto[] }) {
   return (
     <div>
       <section className="">
@@ -19,17 +20,19 @@ export default function YouMayAlso({items}:{items?: ProductCardDto[]}) {
                   <h6 className="text-white text-[21px] font-light leading-[29px] tracking-wide">
                     Vinesia Art Collections
                   </h6>
-                  <div className="flex justify-center pt-7">
-                    <button
-                      type="button"
-                      className="text-base text-white bg-spacegray focus:ring-4 focus:outline-none   font-medium   text-center  px-8 py-[22px] rounded-[48px] border border-white border-opacity-40 justify-center items-center gap-3 inline-flex"
-                    >
-                      Explore
-                      <span>
-                        <Arrows storke="#FFFFFF" />
-                      </span>
-                    </button>
-                  </div>
+                  <Link href="/wacollections">
+                    <div className="flex justify-center pt-7">
+                      <button
+                        type="button"
+                        className="text-base text-white bg-spacegray focus:ring-4 focus:outline-none   font-medium   text-center  px-8 py-[22px] rounded-[48px] border border-white border-opacity-40 justify-center items-center gap-3 inline-flex"
+                      >
+                        Explore
+                        <span>
+                          <Arrows storke="#FFFFFF" />
+                        </span>
+                      </button>
+                    </div>
+                  </Link>
                 </div>
               </div>
             </div>

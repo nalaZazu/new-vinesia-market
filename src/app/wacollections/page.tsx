@@ -15,7 +15,7 @@ export default function WineryArt() {
     <div className="absolute top-0 left-0 right-0 -z-10">
       <div className="w-full md:h-[742px] custom-collection-bg-image md:pt-0 pt-40 h-[620px] bg-no-repeat bg-cover bg-center bg-[url('https://i.ibb.co/pRfQnBG/image-137.png')]">
         {/* BreadCrumb start */}
-        <VerticalBreadCrumb />
+        {/* <VerticalBreadCrumb /> */}
         {/* BreadCrumb end */}
         <div className="flex md:items-end  items-center container mx-auto h-[628px] md:px-0 px-4 ">
           <div className="md:block hidden">
@@ -34,7 +34,7 @@ export default function WineryArt() {
           <div>
             <div className="block md:hidden   container mx-auto   md:px-0 px-4">
               <div className="">
-                <h1 className="      text-white text-6xl font-normal  leading-[68px]">
+                <h1 className=" text-white text-6xl font-normal  leading-[68px]">
                   Wine & art
                 </h1>
               </div>
@@ -66,7 +66,6 @@ export default function WineryArt() {
         </div>
       </div>
       <div>
-        {" "}
         <Link href="/wacollections/reso">
           <div className="relative md:block hidden container mx-auto">
             <div className="absolute flex justify-between w-full">
