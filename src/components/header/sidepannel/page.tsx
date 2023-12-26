@@ -17,7 +17,7 @@ const SidePannel = ({ isDark }: { isDark?: Boolean }) => {
 
   return (
     <>
-      <div className="flex">
+      <div className="flex bg-[rgba(47, 34, 43, 0.99)]">
         <button
           onClick={toggleSidebar}
           data-drawer-target="default-sidebar"
@@ -43,11 +43,11 @@ const SidePannel = ({ isDark }: { isDark?: Boolean }) => {
         {isSidebarOpen && (
           <div
             id="default-sidebar"
-            className="fixed top-0 left-0 z-40 w-48 h-screen transition-transform  sm:translate-x-0 bg-themegray  bg-secondary"
+            className="fixed top-0 left-0 z-40 max-w-80 w-full p-4 h-screen transition-transform  sm:translate-x-0  bg-[rgba(47,34,43,0.99)]"
             aria-label="Sidebar"
           >
             <ul className="space-y-4 font-medium">
-              <li className="flex gap-20 space-x-2 mt-5 ml-3">
+              <li className="flex justify-between space-x-2 mt-5 ml-3">
                 <Image
                   src={logo}
                   alt="Picture of the author"
@@ -64,19 +64,39 @@ const SidePannel = ({ isDark }: { isDark?: Boolean }) => {
               </li>
               <hr className="my-4  mx-2 text-secondary  font-bold h-px border border-bg-secondary-700 " />
               {menuBar?.map((item: any) => {
-                const { id, name, href } = item;
+                const { id, name, href, items } = item;
                 return (
-                  <Link href={href || "/"} key={id}>
-                    <li
-                      className={`${
-                        name == "Start"
-                          ? "text-primary-dark font-semibold border-b-orange-50  border-0 border-b-2 w-16"
-                          : ""
-                      } py-4 mx-2 text-primary`}
-                    >
-                      {name}
-                    </li>
-                  </Link>
+                  <div key={id}>
+                    <Link href={href || "/"}>
+                      <li
+                        className={`${
+                          name == "Start"
+                            ? " font-semibold border-b-orange-50  border-0 border-b-2 w-16"
+                            : ""
+                        } py-4 text-white`}
+                      >
+                        {name}
+                      </li>
+                    </Link>
+                    <div className="flex flex-col gap-5">
+                      {items?.map((item: any, i: any) => {
+                        return (
+                          <Link
+                            href={item?.href}
+                            key={id + "-" + i}
+                            className="w-72 h-6 justify-between items-start inline-flex"
+                          >
+                            <div className="text-neutral-400 text-base font-normal leading-snug">
+                              {item?.name}
+                            </div>
+                            <div className="w-6 h-6 justify-center items-center flex">
+                              <div className="w-6 h-6 relative"></div>
+                            </div>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
                 );
               })}
             </ul>
