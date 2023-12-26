@@ -1,16 +1,52 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Newsletter from "@/components/newsletter/page";
 import Footer from "@/components/footer/page";
 import VerticalBreadCrumb from "@/common/verticalBreadcrumb/page";
-import Dropdown from "@/common/DropDown/page";
 import Product from "@/components/products/page";
-import MobileFilter from "../../invest/moibleview/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
-import { MarksAnim } from "@/assets/icons/Icons";
-import ScrollAnimation from "@/common/ScrollAnimation/page";
+import useSWR from "swr";
+import FilterSection from "@/components/FilterSection/page";
 
-export default function WineryOwner() {
+export default function WineryOwner({ params }: { params: any }) {
+  const { slug } = params;
 
+  const [selectedFilters, setSelectedFilters] = useState<any>([]);
+  const [priceRange, setPriceRange] = useState([]);
+  const fetcher = async (url: string, payload?: string) => {
+    const options = {
+      method: "POST",
+      ...(selectedFilters && {
+        body: JSON.stringify({
+          filters: selectedFilters,
+          price:
+            priceRange?.length > 0
+              ? { min: priceRange[0], max: priceRange[1] }
+              : {},
+        }),
+      }),
+      headers: {
+        accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    };
+    console.log("fetch", url, payload);
+    return fetch(url, options).then((res) => res.json());
+  };
+
+  const { data, error, isLoading, mutate } = useSWR(
+    `${process.env.NEXT_PUBLIC_API_ADDRESS}products/search`,
+    fetcher
+  );
+  useEffect(() => {
+    mutate();
+  }, [selectedFilters, priceRange, mutate]);
+
+  useEffect(() => {
+    if (slug) {
+      setSelectedFilters([decodeURIComponent(slug)]);
+    }
+  }, [slug]);
   return (
     <div>
       <div className="w-full md:h-[744px] h-[620px] bg-no-repeat bg-cover bg-center bg-[url('https://i.ibb.co/hLLYBjr/winery-bg.png')] relative">
@@ -61,19 +97,19 @@ export default function WineryOwner() {
       {/* Destop View */}
       <div className="max-w-[1038px] mx-auto ">
         <hr className="border border-orange-700 border-opacity-20" />
-        <div className="hidden md:block my-20 ">
-          <Dropdown />
-        </div>
-        {/* Mobile view */}
-        <div className="md:hidden block px-6">
-          <MobileFilter />
+        <div className=" my-20 ">
+          <FilterSection
+            selectedFilters={selectedFilters}
+            setSelectedFilters={setSelectedFilters}
+            priceRange={priceRange}
+            setPriceRange={setPriceRange}
+          />
         </div>
 
         {/* next product list  */}
 
-        <Product items={[]} />
-      {/* animation  component  */}
-      <ScrollAnimation/>
+        <Product items={data?.data} />
+        {/* animation  component  */}
       </div>
       {/* desktop Newsletter*/}
       <div className="hidden sm:block">

@@ -7,7 +7,7 @@ import { ArrowUpRightIcon } from "@heroicons/react/20/solid";
 import Footer from "@/components/footer/page";
 import Newsletter from "@/components/newsletter/page";
 import Link from "next/link";
-import { wineriesList } from "@/constants/winery"; 
+import { wineriesList } from "@/constants/winery";
 export default function Winary() {
   return (
     <div>
@@ -87,7 +87,7 @@ export default function Winary() {
                                   </h3>
                                 </div>
                                 <div className="max-w-[235.47px] h-14 justify-start items-center gap-[60px] inline-flex">
-                                  <Link href="/wineries/slug">
+                                  <Link href={`/wineries/${wineryname}`}>
                                     <button className="text-center text-orange-700 text-xs font-normal uppercase leading-3 tracking-tight max-w-[151.47px] px-8 py-[22px] rounded-[48px] border border-orange-700 border-opacity-20 justify-center items-center gap-3 flex">
                                       EXPLORE
                                       <svg

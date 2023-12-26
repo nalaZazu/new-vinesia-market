@@ -1,15 +1,55 @@
+"use client";
 import Dropdown from "@/common/DropDown/page";
 // import VerticalBreadCrumb from "@/common/verticalBreadcrumb/page";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import MobileFilter from "../../invest/moibleview/page";
 import Product from "@/components/products/page";
 import Newsletter from "@/components/newsletter/page";
-import Footer from "@/components/footer/page"; 
-import NewsletterMobile from "@/components/newsletter/MobileView"; 
+import Footer from "@/components/footer/page";
+import NewsletterMobile from "@/components/newsletter/MobileView";
 import ScrollAnimation from "@/common/ScrollAnimation/page";
+import useSWR from "swr";
+import FilterSection from "@/components/FilterSection/page";
 
 function Reso({ params }: { params: any }) {
- 
+  const { slug } = params;
+
+  const [selectedFilters, setSelectedFilters] = useState<any>([]);
+  const [priceRange, setPriceRange] = useState([]);
+  const fetcher = async (url: string, payload?: string) => {
+    const options = {
+      method: "POST",
+      ...(selectedFilters && {
+        body: JSON.stringify({
+          filters: selectedFilters,
+          price:
+            priceRange?.length > 0
+              ? { min: priceRange[0], max: priceRange[1] }
+              : {},
+        }),
+      }),
+      headers: {
+        accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    };
+    console.log("fetch", url, payload);
+    return fetch(url, options).then((res) => res.json());
+  };
+
+  const { data, error, isLoading, mutate } = useSWR(
+    `${process.env.NEXT_PUBLIC_API_ADDRESS}products/search`,
+    fetcher
+  );
+  useEffect(() => {
+    mutate();
+  }, [selectedFilters, priceRange, mutate]);
+
+  useEffect(() => {
+    if (slug) {
+      setSelectedFilters([decodeURIComponent(slug)]);
+    }
+  }, [slug]);
 
   return (
     <React.Fragment>
@@ -64,22 +104,16 @@ function Reso({ params }: { params: any }) {
         {/* Destop View */}
         <div className="max-w-[1248px] mx-auto ">
           <hr className="border border-orange-700 border-opacity-20" />
-          <div className="hidden md:block my-20 ">
-            <Dropdown />
+          <div className="my-20 ">
+            <FilterSection
+              selectedFilters={selectedFilters}
+              setSelectedFilters={setSelectedFilters}
+              priceRange={priceRange}
+              setPriceRange={setPriceRange}
+            />
           </div>
           {/* Mobile view */}
-          <div className="md:hidden block px-6">
-            <MobileFilter />
-          </div>
-          {/* product list */}
-          <Product />
-          
-          {/* animation  component  */}
-          <ScrollAnimation/>
-          {/* next product list  */}
-          <Product />
-          {/* animation  component  */}
-          <ScrollAnimation/>
+          <Product items={data?.data} />
         </div>
         {/* desktop Newsletter*/}
         <div className="hidden sm:block">

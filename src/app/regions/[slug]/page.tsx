@@ -1,6 +1,7 @@
+"use client";
 import Dropdown from "@/common/DropDown/page";
 import VerticalBreadCrumb from "@/common/verticalBreadcrumb/page";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Product from "@/components/products/page";
 import Newsletter from "@/components/newsletter/page";
 import Footer from "@/components/footer/page";
@@ -11,10 +12,48 @@ import MobileFilter from "@/app/invest/moibleview/page";
 import ProductCards from "@/components/productCard/page";
 import { MarksAnim } from "@/assets/icons/Icons";
 import ScrollAnimation from "@/common/ScrollAnimation/page";
+import useSWR from "swr";
+import FilterSection from "@/components/FilterSection/page";
 
 function France({ params }: { params: any }) {
   const { slug } = params;
 
+  const [selectedFilters, setSelectedFilters] = useState<any>([]);
+  const [priceRange, setPriceRange] = useState([]);
+  const fetcher = async (url: string, payload?: string) => {
+    const options = {
+      method: "POST",
+      ...(selectedFilters && {
+        body: JSON.stringify({
+          filters: selectedFilters,
+          price:
+            priceRange?.length > 0
+              ? { min: priceRange[0], max: priceRange[1] }
+              : {},
+        }),
+      }),
+      headers: {
+        accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    };
+    console.log("fetch", url, payload);
+    return fetch(url, options).then((res) => res.json());
+  };
+
+  const { data, error, isLoading, mutate } = useSWR(
+    `${process.env.NEXT_PUBLIC_API_ADDRESS}products/search`,
+    fetcher
+  );
+  useEffect(() => {
+    mutate();
+  }, [selectedFilters, priceRange, mutate]);
+
+  useEffect(() => {
+    if (slug) {
+      setSelectedFilters([decodeURIComponent(slug)]);
+    }
+  }, [slug]);
   return (
     <div className=" absolute top-0 right-0 left-0 -z-10">
       <div className="w-full md:h-[744px] h-[620px] pt-40 bg-no-repeat bg-cover bg-center bg-[url('https://i.ibb.co/hLLYBjr/winery-bg.png')] relative">
@@ -53,23 +92,19 @@ function France({ params }: { params: any }) {
       <div className="container mx-auto ">
         <hr className="border border-orange-700 border-opacity-20" />
         <div className="hidden md:block my-20 ">
-          <Dropdown />
+          <FilterSection
+            selectedFilters={selectedFilters}
+            setSelectedFilters={setSelectedFilters}
+            priceRange={priceRange}
+            setPriceRange={setPriceRange}
+          />
+
+          {/* product list  */}
+          <div className="">
+            <Product items={data?.data} />
+          </div>
         </div>
         {/* Mobile view */}
-        <div className="md:hidden block px-6">
-          <MobileFilter />
-        </div>
-        {/* product list */}
-        <Product />
-
-        {/* product list  */}
-        {/* animation  component  */}
-        <ScrollAnimation />
-        {/* next product list  */}
-
-        <Product />
-        {/* animation  component  */}
-        <ScrollAnimation />
       </div>
       {/* desktop Newsletter*/}
       <div className="hidden sm:block">
