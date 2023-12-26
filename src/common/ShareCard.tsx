@@ -3,15 +3,16 @@ import React, { useState } from "react";
 import ModalContainer from "./ModalContainer";
 import { BiddingSection } from "@/constants/accrodion";
 import { BillingInput } from "./Components";
-import { useUserContext } from "@/context/user";
-import { useCartContext } from "@/context/cart";
+import { useUser } from "@/context/user";
+import { useCart } from "@/context/cart";
+import { ProductOverview } from "@/types/productOverview.dto";
 
-export default function ShareCard({ data }: { data: any }) {
-  const { addCartItem } = useCartContext()
+export default function ShareCard({ data }: { data: ProductOverview }) {
+  const { addProductCartItem } = useCart()
 
   const [visible, setVisible] = useState(false);
 
-  const { getPriceText } = useUserContext()
+  const { getPriceText, currency } = useUser()
 
   if (data === undefined) {
     return <></>
@@ -60,10 +61,10 @@ export default function ShareCard({ data }: { data: any }) {
         <div className="pb-6">
           <form action=""> 
             <BillingInput
-              title="BID AMOUNT*"
-              name="BID AMOUNT*"
+              label="BID AMOUNT*"
+              name="amount"
               placeholder="€"
-              Inputclass="w-full"
+              className="w-full"
             />
           </form>
         </div>
@@ -228,15 +229,14 @@ export default function ShareCard({ data }: { data: any }) {
               />
             </svg>
             <h1 className="text-zinc-800 text-4xl font-light leading-[44px]">
-              {getPriceText(data.floorPrice)}
+              {data.floorPrice && getPriceText(data.floorPrice[currency])}
             </h1>
           </div>
 
           <div>
             <button
               onClick={() => {
-                addCartItem(data)
-                // setVisible(!visible);
+                addProductCartItem(data)
               }}
               type="button"
               className="w-full bg-secondary text-center rounded-full text-white text-xs font-normal uppercase leading-3 tracking-tight focus:ring-0 focus:outline-none md:w-48 px-8 py-5 items-center"

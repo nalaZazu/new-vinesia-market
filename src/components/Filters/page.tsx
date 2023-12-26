@@ -210,7 +210,7 @@ const Filters = ({
                                               className="h-3 w-3 form-checkbox    bg-orange-50 rounded-md border border-zinc-800"
                                               onChange={(e) =>
                                                 handleChange(
-                                                  item?.toLowerCase()
+                                                  item
                                                 )
                                               }
                                             />

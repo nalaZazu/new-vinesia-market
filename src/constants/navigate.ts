@@ -10,6 +10,16 @@ export interface MenuItem {
   items: ChildItems[];
 }
 
+export const pagePaths = {
+  invest: '/invest',
+  signup: '/signup',
+  marketplace: '/marketplace',
+  home: '/',
+  cart: '/cart',
+  checkout: '/checkout',
+  profile: '/profile'
+}
+
 export const menuBar: MenuItem[] = [
   {
     id: 1,

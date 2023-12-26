@@ -174,16 +174,16 @@ export default function Footer() {
             <div className="md:pt-0 pt-4 ">
               <div className=" md:mx-0 mx-4 md:text-right text-neutral-400 text-xs font-normal  leading-[18px] md:divide-x  flex gap-4 flex-wrap  justify-center">
                 <div>
-                  <Link href="/"> Terms & conditions</Link>
+                  <Link href="/terms_conditions"> Terms & conditions</Link>
                 </div>
                 <div className="ps-4">
-                  <Link href="/">Privacy Policy</Link>
+                  <Link href="/privacy_policy">Privacy Policy</Link>
                 </div>
                 <div className="ps-4">
-                  <Link href="/">Cookie Policy</Link>
+                  <Link href="/cookie_policy">Cookie Policy</Link>
                 </div>
                 <div className="ps-4">
-                  <Link href="/">Disclaimer</Link>
+                  <Link href="/disclaimer">Disclaimer</Link>
                 </div>
               </div>
             </div>

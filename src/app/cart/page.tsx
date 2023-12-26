@@ -2,14 +2,14 @@
 import Accordion from "@/common/Accordion";
 import { CartControls } from "@/common/Components";
 import CartCard from "@/components/cart/cartCard";
-import { useCartContext } from "@/context/cart";
-import { useUserContext } from "@/context/user";
-import { ProductOverview } from "@/types/productOverview.dto";
+import { useCart } from "@/context/cart";
+import { useUser } from "@/context/user";
+import { CartItem } from "@/types/dto/checkoutCart.dto";
 import React from "react";
 
 export default function Cart() {
-  const { cartItems, cartTotal, getCartTotal } = useCartContext();
-  const { getPriceText } = useUserContext();
+  const { cartItems, getCartTotal } = useCart();
+  const { getPriceText } = useUser();
   const items = [
     {
       id: 1,
@@ -67,7 +67,7 @@ The 2.4% service decreases based on the volume of your investments (Asset Under 
 
         {/* Table Starts */}
         {cartItems?.length > 0 ? (
-          cartItems?.map((item: ProductOverview, i: any) => {
+          cartItems?.map((item: CartItem, i: any) => {
             return (
               <div key={i}>
                 <CartCard item={item} />

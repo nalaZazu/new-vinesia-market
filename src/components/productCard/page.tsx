@@ -5,8 +5,8 @@ import Image from "next/image";
 import winebotel from "../../assets/images/Group 10462.png";
 import Art from "../../assets/images/arat.png";
 import Link from "next/link";
-import { ProductCardDto } from "@/types/productCard.dto";
-import { useUserContext } from "@/context/user";
+import { ItemCardDto } from "@/types/productCard.dto";
+import { useUser } from "@/context/user";
 
 import bottleIcon from "../../assets/icons/bottleIcon.svg";
 
@@ -14,10 +14,10 @@ export default function ProductCards({
   item,
   isEdition = false,
 }: {
-  item?: ProductCardDto;
+  item: ItemCardDto;
   isEdition?: boolean;
 }) {
-  const { getPriceText } = useUserContext();
+  const { getPriceText, currency } = useUser();
 
   if (item === undefined) {
     return <></>;
@@ -32,14 +32,9 @@ export default function ProductCards({
     return "Bottles";
   }
 
-  function getCount(item: ProductCardDto) {
-    return (
-      item.total +
-      " " +
-      (item.description.startsWith("Case")
-        ? getCaseName(item.total)
-        : getBottleName(item.total))
-    );
+
+  function getCount(item: ItemCardDto) {
+    return item.total + ' ' + (item.description.startsWith('Case') ? getCaseName(item.total) : getBottleName(item.total))
   }
 
   return (
@@ -123,7 +118,7 @@ export default function ProductCards({
                   BUY NOW
                 </div>
                 <div className="text-zinc-800 text-center md:text-xl text-xl font-light  leading-[44px]">
-                  {getPriceText(item.buyNowPrice ?? 0)}
+                  {getPriceText(item.buyNowPrice[currency] ?? 0)}
                 </div>
               </div>
             ) : (
@@ -133,7 +128,7 @@ export default function ProductCards({
                     EST. PRICE
                   </div>
                   <div className="text-zinc-800 md:text-xl text-xl font-light  leading-[44px]">
-                    {getPriceText(item.estPrice ?? 0)}
+                    {item.estPrice && getPriceText(item.estPrice[currency] ?? 0)}
                   </div>
                 </div>
                 <div className="flex-col justify-center items-center gap-2 inline-flex">
@@ -141,7 +136,7 @@ export default function ProductCards({
                     FLOOR PRICE
                   </div>
                   <div className="text-zinc-800 md:text-xl text-xl font-light  leading-[44px]">
-                    {getPriceText(item.floorPrice ?? 0)}
+                    {item.floorPrice && getPriceText(item.floorPrice[currency] ?? 0)}
                   </div>
                 </div>
               </>

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../../assets/icons/logo1.svg";
@@ -10,7 +10,7 @@ import SidePannel from "./sidepannel/page";
 import { UserIcon } from "@/assets/icons/Icons";
 import { MenuItem, menuBar as menuItems } from "@/constants/navigate";
 import { useWindowSize } from "@/hooks/useWindowSize";
-import { useCartContext } from "@/context/cart";
+import { useCart } from "@/context/cart";
 
 const canela = local({
   src: "../../../public/fonts/canelatext-black.woff2",
@@ -65,35 +65,40 @@ const getMenuItem = (pathName: string) => {
   // return menuItems[1].items[0];
 };
 
+const isDark = (pathName: string, size: any) => {
+  const width = size?.width
+
+  const dark = pathName === "/marketplace" ||
+  ((width === undefined || width > 767) && pathName.startsWith("/signup")) ||
+  pathName === "/wineart" ||
+  pathName === "/wacollections" ||
+  pathName === "/wineart" ||
+  pathName === "/wineart" ||
+  pathName === "/aboutus" ||
+  pathName === "/wacollections/reso" ||
+  pathName === "/limitedcollections" ||
+  pathName === "/gifts"
+  return dark
+}
+
+const getTheme = (pathName: string, size: any) =>
+  isDark(pathName, size) ? themes.Dark : themes.Light
+
+
 export default function Header() {
-  const { cartItems } = useCartContext();
+  const { cartItems } = useCart();
 
   const size = useWindowSize();
-
-  const isDark = (pathName: string) =>
-    pathName === "/marketplace" ||
-    (size.width > 767 && pathName == "/signup") ||
-    pathName === "/wineart" ||
-    pathName === "/wacollections" ||
-    pathName === "/performance" ||
-    pathName === "/aboutus" ||
-    pathName === "/wacollections/reso" ||
-    pathName === "/limitedcollections" ||
-    pathName === "/gifts";
-
-  const getTheme = (pathName: string) =>
-    isDark(pathName) ? themes.Dark : themes.Light;
-
   const pathName = usePathname();
   const router = useRouter();
 
   const [topSelected, setTopSelected] = useState(getTopMenuItem(pathName));
   const [selected, setSelected] = useState(getMenuItem(pathName));
 
-  const [theme, setTheme] = useState(getTheme(pathName));
+  const [theme, setTheme] = useState(getTheme(pathName, size));
 
   useEffect(() => {
-    setTheme(getTheme(pathName));
+    setTheme(getTheme(pathName, size));
     setTopSelected(getTopMenuItem(pathName));
     setSelected(getMenuItem(pathName));
   }, [pathName, size]);
@@ -141,7 +146,7 @@ export default function Header() {
 
             <div className="md:hidden">
               <div className="block md:hidden">
-                <SidePannel isDark={isDark(pathName)} />
+                <SidePannel isDark={isDark(pathName, size)} />
               </div>
             </div>
             <div className=" text-2xl lg:text-4xl font-bold lg:col-span-2 text-center py-5">
@@ -216,7 +221,7 @@ export default function Header() {
             <form>
               <div className="relative">
                 <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                  <SearchIcon fill={isDark(pathName) ? "white" : "#3a2824"} />
+                  <SearchIcon fill={isDark(pathName, size) ? "white" : "#3a2824"} />
                 </div>
 
                 <input
@@ -233,7 +238,7 @@ export default function Header() {
             <form>
               <div className="relative">
                 <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                  <SearchIcon fill={isDark(pathName) ? "white" : "#3a2824"} />
+                  <SearchIcon fill={isDark(pathName, size) ? "white" : "#3a2824"} />
                 </div>
 
                 <input

@@ -2,11 +2,11 @@
 import React from "react";
 import Image from "next/image";
 import infologo from "@/assets/icons/info.svg";
-import { useUserContext } from "@/context/user";
+import { useUser } from "@/context/user";
 
 // export default function PricingDetail({ release }: { release: any }) {
 export default function PricingDetail({item}: {item?: any }) {
-  const { getPriceText, getPriceDifference } = useUserContext()
+  const { getPriceText, getPriceDifference } = useUser()
 
   return (
     <div>

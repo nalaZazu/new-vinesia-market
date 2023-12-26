@@ -1,11 +1,8 @@
 "use client"
 
-import React, { use, useRef, useState } from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
-import videoImage from "@/assets/images/video (1080p) 2.png";
 import { Arrows } from "@/assets/icons/Icons";
-import background from "@/assets/images/backgroundEllipse .png";
-import backgroundtwo from "@/assets/images/Ellipse circle2x.png";
 import getStartedBtn from "@/assets/images/GetStartedBtn.png";
 import Newsletter from "@/components/newsletter/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
@@ -14,10 +11,6 @@ import grapes from "@/assets/icons/aboutIllustrations.svg";
 import bottleIllustration from "@/assets/icons/bottle-Illustrations.svg";
 import bottleIllustrations from "@/assets/icons/wine-bottle-Illustrations.svg";
 import glass from "@/assets/icons/glass.svg";
-import arrowdowns from "@/assets/icons/downarrow.svg";
-import textOne from "@/assets/icons/getStarted.svg";
-import textTwo from "@/assets/icons/getstarted2.svg";
-import star from "@/assets/icons/star.svg";
 import AboutOne from "@/components/AboutSection/aboutOne/page";
 import AboutTwo from "@/components/AboutSection/aboutTwo/page";
 import AboutThree from "@/components/AboutSection/aboutThree/page";
@@ -224,6 +217,7 @@ const About = () => {
       left-[50%] translate-x-[-50%] 
         " ref={round2}>
               <video className="absolute left-1/2 z-0 max-w-none object-cover -translate-x-1/2" autoPlay loop muted>
+                <source src='assets/video/231215_Vinesia_Hero_3_360.mp4' media="all and (max-width: 700px)" />
                 <source src='assets/video/231215_Vinesia_Hero_3.mp4' />
                 Your browser does not support the video tag.
               </video>
