@@ -1,14 +1,48 @@
+"use client";
 import Dropdown from "@/common/DropDown/page";
 import VerticalBreadCrumb from "@/common/verticalBreadcrumb/page";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import MobileFilter from "../invest/moibleview/page";
 import Product from "@/components/products/page";
 import ScrollAnimation from "@/common/ScrollAnimation/page";
 import Newsletter from "@/components/newsletter/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
 import Footer from "@/components/footer/page";
+import useSWR from "swr";
+import FilterSection from "@/components/FilterSection/page";
 
 const LimitedCollection = () => {
+  const [selectedFilters, setSelectedFilters] = useState([]);
+  const [priceRange, setPriceRange] = useState([]);
+  const fetcher = async (url: string, payload?: string) => {
+    const options = {
+      method: "POST",
+      ...(selectedFilters && {
+        body: JSON.stringify({
+          filters: selectedFilters,
+          price:
+            priceRange?.length > 0
+              ? { min: priceRange[0], max: priceRange[1] }
+              : {},
+        }),
+      }),
+      headers: {
+        accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    };
+    console.log("fetch", url, payload);
+    return fetch(url, options).then((res) => res.json());
+  };
+
+  const { data, error, isLoading, mutate } = useSWR(
+    `${process.env.NEXT_PUBLIC_API_ADDRESS}products/search`,
+    fetcher
+  );
+  useEffect(() => {
+    mutate();
+  }, [selectedFilters, priceRange, mutate]);
+
   return (
     <React.Fragment>
       <div className=" absolute top-0 right-0 left-0 -z-10">
@@ -57,27 +91,20 @@ const LimitedCollection = () => {
             <hr className=" border border-orange-700 border-opacity-20" />
           </div>
 
-          <div className="hidden md:block my-20 ">
-            <Dropdown />
-          </div>
-          {/* Mobile view */}
-          <div className="md:hidden block px-6">
-            <MobileFilter />
+          <div className="my-20 ">
+            <FilterSection
+              selectedFilters={selectedFilters}
+              setSelectedFilters={setSelectedFilters}
+              priceRange={priceRange}
+              setPriceRange={setPriceRange}
+            />
           </div>
 
           {/* product list */}
 
-          <div className="md:block hidden">
-            <Product />
-
-            {/* animation  component  */}
-            <ScrollAnimation />
+          <div className="">
+            <Product items={data?.data} />
           </div>
-          {/* product list  */}
-
-          <Product />
-          {/* animation  component  */}
-          <ScrollAnimation />
           {/* next product list  */}
         </div>
         {/* desktop Newsletter*/}

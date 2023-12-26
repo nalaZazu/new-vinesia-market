@@ -83,12 +83,12 @@ const VerticalBreadCrumb = () => {
               <Link
                 href="#"
                 className={` text-xs font-normal leading-3 ${
-                  pathname === "/reso" || pathname === "/limitedcollections" 
+                  pathname === "/reso" || pathname === "/limitedcollections"
                     ? "text-stone-400 "
                     : "text-stone-600"
                 }`}
               >
-                {pathname.split("/")}
+                {decodeURIComponent(pathname).split("/")}
               </Link>
             </li>
           </ol>
@@ -100,8 +100,9 @@ const VerticalBreadCrumb = () => {
             <li className="] text-xs font-normal   leading-[18px]">
               <Link
                 href={` ${
-                  pathname === "/regions" || pathname === "/wacollections" ? "text-[#CBACAB]" : " text-[#975958]" 
-                
+                  pathname === "/regions" || pathname === "/wacollections"
+                    ? "text-[#CBACAB]"
+                    : " text-[#975958]"
                 }`}
               >
                 home

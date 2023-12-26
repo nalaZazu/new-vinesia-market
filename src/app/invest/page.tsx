@@ -69,7 +69,7 @@ const Invest = () => {
           />
 
           {/* product list  */}
-          <div className="md:block hidden">
+          <div className="">
             <Product items={data?.data} />
           </div>
         </div>
