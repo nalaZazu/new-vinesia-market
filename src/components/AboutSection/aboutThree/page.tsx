@@ -82,7 +82,7 @@ const AboutThree = () => {
               </div>
             </div> */}
             <div className="relative md:block hidden ">
-              <div className="absolute bottom-[-175px] right-0">
+              <div className="absolute bottom-[-152px] right-0">
                 <Image src={VectorTwo} alt="vector" />
               </div>
             </div>
