@@ -8,7 +8,7 @@ import React, { useState } from "react";
 // import usa from "../../assets/images/usa.png";
 import arrow from "../../assets/icons/LongarrowDown.svg";
 import Link from "next/link";
-import Popup from "../popup/page";
+import Popup from "../videoPopup/page";
 import {
   regionItaly,
   regionUs,

@@ -71,16 +71,16 @@ const AboutThree = () => {
             </div>
 
             {/* here is new slider  section */}
-            <div className="hidden md:block">
-              <div>
-                <AboutSlider />
-              </div>
-            </div>
-            <div className="md:hidden block  ">
+            <div className="">
               <div className="grid grid-cols-1 ">
                 <AboutSlider />
               </div>
             </div>
+            {/* <div className="md:hidden block  ">
+              <div className="grid grid-cols-1 ">
+                <AboutSlider />
+              </div>
+            </div> */}
             <div className="relative md:block hidden ">
               <div className="absolute bottom-[-175px] right-0">
                 <Image src={VectorTwo} alt="vector" />
