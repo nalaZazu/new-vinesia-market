@@ -152,13 +152,11 @@ export default function Header() {
               </div>
             </div>
             <div className=" text-2xl lg:text-4xl font-bold lg:col-span-2 text-center py-5">
-              <Link href="/">
                 <Image
                   src={logo}
                   className="mx-auto"
                   alt="Picture of the author"
                 />
-              </Link>
             </div>
 
             {/* Menu Icons, Search, User, Cart  */}
