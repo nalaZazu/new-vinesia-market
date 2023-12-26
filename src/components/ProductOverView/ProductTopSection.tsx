@@ -6,8 +6,9 @@ import ArtCard from "./ArtCard";
 import ProductCarousel from "./ProductOverviewCarousel";
 import ShareCard from "@/common/ShareCard";
 import WineArtDisclosure from "./WineArtDisclosure";
+import { ProductOverview } from "@/types/productOverview.dto";
 
-const ProductTopSection = ({ data }: { data: any }) => {
+const ProductTopSection = ({ data }: { data: ProductOverview }) => {
   const [selectedTab, setSelectedTab] = useState(0);
 
   if (data === undefined || data === null) {
@@ -20,7 +21,7 @@ const ProductTopSection = ({ data }: { data: any }) => {
         <div className="grid pb-16 lg:grid-cols-2 md:grid-cols-2 grid-cols-1">
           {/* slider start */}
           <div className="">
-            <ProductCarousel data={[data.wine.media]}/>
+            <ProductCarousel data={[data?.wine?.media ?? '']}/>
           </div>
           <div className="md:hidden block">
             <ShareCard data={data} />

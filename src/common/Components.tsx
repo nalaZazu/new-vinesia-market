@@ -159,9 +159,15 @@ export function BillingInput({
         className="self-stretch text-[#827A80] h-14 pl-6 pr-5 p-4 rounded-full border border-[#BF4D20] bg-transparent outline-red-500 placeholder-[#D99479]"
         {...register(name, options)}
       />
-      {isInvalid && (<span>{inputErrors.error?.message}</span>)}
+      {isInvalid && (<InputError text={inputErrors.error?.message ?? ''} />)}
     </div>
   );
+}
+
+export function InputError({
+text
+}: {text: string}) {
+  return <span className="text-[#EF4444] text-[12px]">{text}</span>
 }
 
 export function ListCard({
@@ -312,7 +318,7 @@ export function SelectBox({
           <option key={i} value={d}>{d}</option>
         ))}
       </select>
-      {isInvalid && (<span>{inputErrors.error?.message}</span>)}
+      {isInvalid && (<InputError text={inputErrors.error?.message ?? ''} />)}
       {/* <Controller
           name={name}
           control={control}

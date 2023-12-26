@@ -14,7 +14,7 @@ export default function ProductCards({
   item,
   isEdition = false,
 }: {
-  item?: ItemCardDto;
+  item: ItemCardDto;
   isEdition?: boolean;
 }) {
   const { getPriceText, currency } = useUser();
@@ -42,7 +42,7 @@ export default function ProductCards({
         <div className="max-w-[288px] md:h-[674px] h-[674px] mx-auto">
           <div className="flex flex-col items-center md:gap-8 gap-5 px-5">
             <div className="relative">
-              
+
               <img
                 src={`${process.env.NEXT_PUBLIC_API_ADDRESS}products/file/${item.media}`}
                 alt="Product picture"

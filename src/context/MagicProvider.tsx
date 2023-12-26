@@ -4,7 +4,7 @@ import { AuthExtension } from '@magic-ext/auth';
 import { Magic as MagicBase } from 'magic-sdk';
 import { ReactNode, createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { Web3 } from 'web3'
-import { saveToken } from '@/utils/common';
+import { logout, saveToken } from '@/utils/common';
 import { useUser } from './user';
 import { createWalletClient, custom, getAddress } from 'viem';
 import { SiweMessage } from 'siwe'
@@ -15,9 +15,12 @@ type MagicContextType = {
     magic: Magic | null;
     web3: Web3 | null;
     isConnected: boolean
+    isConnecting: boolean
     isRedirecting: boolean
-    connectAsync: ((subtype: string) => void)
-    connectSocialAsync: ((subtype: string) => void)
+    isReconnecting: boolean
+    connectAsync: (subtype: string) => Promise<void>
+    connectSocialAsync: (subtype: string) => Promise<void>
+    disconnectAsync: () => Promise<void>
 };
 
 export function useProvideMagic(): MagicContextType {
@@ -26,9 +29,10 @@ export function useProvideMagic(): MagicContextType {
 
     const [isConnected, setIsConnected] = useState(false)
     const [isRedirecting, setIsRedirecting] = useState(false)
-    const [isConnecting, setIsConnecting] = useState(false)
-    const [isReconnecting, setIsReconnecting] = useState(false)
-    const [isDisconnected, setIsDisconnected] = useState(true)
+
+    const [isConnecting, setIsConnecting] = useState(true)
+    const [isReconnecting, setIsReconnecting] = useState(true)
+    // const [isDisconnected, setIsDisconnected] = useState(true)
 
     const [magicToken, setMagicToken] = useState('')
     const [magicProvider, setMagicProvider] = useState<string | null>(null)
@@ -37,23 +41,26 @@ export function useProvideMagic(): MagicContextType {
 
     const [address, setAddress] = useState('')
 
-    //Checks if this is a redirect from magic social login
+    // Checks if this is a redirect from magic social login
     useEffect(() => {
         const checkLogin = async () => {
+            setIsConnecting(true)
             try {
                 if (magic) {
                     console.log('Getting Redirect Result')
                     const result = await magic?.oauth.getRedirectResult();
+
                     //do stuff with user profile data
                     saveToken(result.magic.idToken, setMagicToken, 'SOCIAL');
                     console.log('Magic token: ' + result.magic.idToken)
-                    //   setLoadingFlag('false');
                     setMagicProvider('MAGIC')
-                    // await backendLogin()
+                    setAddress(result.magic.userMetadata.publicAddress!);
+                    setIsConnected(true)
                 }
             } catch (e) {
                 // console.log('social login error: ' + e);
             }
+            setIsConnecting(false)
         };
 
         checkLogin();
@@ -66,31 +73,42 @@ export function useProvideMagic(): MagicContextType {
         async function checkAddress() {
             const isLoggedIn = await magic?.user.isLoggedIn();
             if (isLoggedIn) {
+                setIsConnected(true)
+                
                 const metadata = await magic?.user.getInfo();
                 if (metadata) {
                     localStorage.setItem('user', metadata?.publicAddress!);
                     setMagicProvider('MAGIC')
                     setAddress(metadata?.publicAddress!);
                 }
+            } else {
+                setIsConnected(false)
+                // setIsDisconnected(true)
+                // setIsConnecting(false)
             }
+            setIsReconnecting(false)
         }
         checkAddress()
 
-        if (magicToken.length > 0) {
-            setIsConnected(true)
-            setIsDisconnected(false)
-        } else {
-            setIsConnected(false)
-            setIsDisconnected(true)
-        }
-    }, [magicToken, magic])
+        // if (magicToken.length > 0) {
+        //     setIsReconnecting(true)
+        //     // setIsConnected(true)
+        //     // setIsDisconnected(false)
+        // } else {
+        //     setIsConnected(false)
+        //     setIsDisconnected(true)
+        // }
+    }, [magic])
 
     //Logins to backend, using SIWE procedure, works only if user is not loggedIn
     useEffect(() => {
         if (isLoggedIn) return
 
+        if (magic === null) return
         if (address === null || address.length === 0) return
         if (magicProvider === null) return
+
+        console.log('SIWE2')
 
         async function signMessageAsync(message: SiweMessage) {
             if (magicProvider === 'MAGIC' && magic !== null && address !== null && address.length > 0) {
@@ -122,9 +140,6 @@ export function useProvideMagic(): MagicContextType {
         }
 
         async function backendLogin() {
-            if (address === null || address.length === 0) return
-            if (magicProvider === null) return
-
             console.log('logging in to backend', magicProvider)
 
             const chainId = Number(web3?.defaultChain ?? '1')
@@ -196,13 +211,26 @@ export function useProvideMagic(): MagicContextType {
         }
     }, [magic]);
 
+    const disconnectAsync = useCallback(async () => {
+        if (magic) {
+            setAddress('')
+            setIsConnected(false)
+            setIsRedirecting(false)
+            setIsReconnecting(false)
+            await logout(setMagicToken, magic);
+        }
+    }, [magic]);
+
     return {
         magic,
         web3,
         connectSocialAsync,
         connectAsync,
+        disconnectAsync,
         isConnected,
-        isRedirecting
+        isConnecting,
+        isRedirecting,
+        isReconnecting
     }
 }
 

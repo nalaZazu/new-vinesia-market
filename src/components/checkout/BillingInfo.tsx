@@ -9,13 +9,13 @@ import {
 import { Countries } from "@/constants/countries";
 import { address_validation, city_validation, country_validation, last_name_validation, name_validation } from "@/constants/formFields";
 import { useUser } from "@/context/user";
-import { truncate } from "fs";
 import React, { useEffect, useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import Loading from "../loading/loading";
 import { useRouter } from "next/navigation";
 import { pagePaths } from "@/constants/navigate";
 import { Address } from "@/types/user.dto";
+import toast from "react-hot-toast";
 
 export default function BillingInfo() {
   const { profile, isLoading, isLoggedIn, setBillingAddress } = useUser()
@@ -40,10 +40,16 @@ export default function BillingInfo() {
       city: data.city
     }
 
-    await setBillingAddress(address)
+    try {
+      await setBillingAddress(address)
+      setEdit(false)
+
+    } catch (e) {
+      console.log('Error while saving address: ', e)
+      toast.error('Could not save your billing info!')
+    }
 
     setIsSaving(false)
-    setEdit(false)
   })
 
   useEffect(() => {
@@ -51,7 +57,7 @@ export default function BillingInfo() {
     if (!isLoggedIn) push(pagePaths.signup)
   }, [isLoggedIn, isLoading, push])
 
-  if (isLoading) {
+  if (isLoading || !isLoggedIn) {
     return <Loading />
   }
 

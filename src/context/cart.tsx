@@ -3,6 +3,7 @@ import { CartItem, ItemType } from "@/types/dto/checkoutCart.dto";
 import { EditionOverview, ProductOverview } from "@/types/productOverview.dto";
 import { createContext, useContext, useState } from "react";
 import { useUser } from "./user";
+import toast from "react-hot-toast";
 
 export interface ProvideCart {
     cartItems: CartItem[]
@@ -30,6 +31,9 @@ export function useProvideCart(): ProvideCart {
 
             const items = [...cartItems, add]
             setCartItems(items)
+            toast.success('Product added to cart')
+        } else {
+            toast.success('Product is already in cart')
         }
     }
 

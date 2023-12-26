@@ -110,15 +110,16 @@ export function useProvideUser(): ProvideUser {
     }, [])
 
     const disconnectAsync = useCallback(async () => {
+        localStorage.removeItem('jwt_token')
+        setJwtToken('')
+        setProfile(null)
+        setIsLoading(false)
+        setCurrency(Currency.EUR)
+        setLanguage('en')
+
+        //Only after other settings are clean
+        setIsLoggedIn(false)
     }, [])
-    //     if (magic) {
-    //         setIsLoading(true)
-    //         await logout(setMagicToken, magic);
-    //         setIsLoading(false)
-    //     }
-    // }, [magic, setMagicToken]);
-
-
 
     const setBillingAddress = useCallback(async (address: Address) => {
         if (jwtToken === undefined || jwtToken.length === 0 || profile === null)
@@ -136,12 +137,12 @@ export function useProvideUser(): ProvideUser {
             if (!verifyRes.ok) throw new Error('Error updating address')
             const resp = await verifyRes.json()
 
-            debugger
-
             const newProfile: User = { ...profile, billingAddress: address }
+            
             setProfile(newProfile)
         } catch (e) {
             console.log('Failed to update address', e)
+            throw e
         }
 
     }, [jwtToken, profile])
