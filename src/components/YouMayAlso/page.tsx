@@ -8,6 +8,7 @@ import Link from "next/link";
 export default function YouMayAlso({ items }: { items?: ItemCardDto[] }) {
   return (
     <div>
+      
       <section className="">
         <div className="container mx-auto">
           <div className="container max-w-[1248px] grid mx-auto grid-cols-4">
