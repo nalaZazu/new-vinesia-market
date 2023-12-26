@@ -146,7 +146,7 @@ export default function Header() {
 
             <div className="md:hidden">
               <div className="block md:hidden">
-                <SidePannel isDark={isDark(pathName)} />
+                <SidePannel isDark={isDark(pathName, size)} />
               </div>
             </div>
             <div className=" text-2xl lg:text-4xl font-bold lg:col-span-2 text-center py-5">
@@ -221,7 +221,7 @@ export default function Header() {
             <form>
               <div className="relative">
                 <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                  <SearchIcon fill={isDark(pathName) ? "white" : "#3a2824"} />
+                  <SearchIcon fill={isDark(pathName, size) ? "white" : "#3a2824"} />
                 </div>
 
                 <input
@@ -238,7 +238,7 @@ export default function Header() {
             <form>
               <div className="relative">
                 <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                  <SearchIcon fill={isDark(pathName) ? "white" : "#3a2824"} />
+                  <SearchIcon fill={isDark(pathName, size) ? "white" : "#3a2824"} />
                 </div>
 
                 <input
