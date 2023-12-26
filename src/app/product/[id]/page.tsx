@@ -15,6 +15,7 @@ import Footer from "@/components/footer/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
 import useSWR from "swr";
 import YouMayAlso from "@/components/YouMayAlso/page";
+import Loading from "@/components/loading/loading";
 
 const fetcher = (arg: string) => fetch(arg).then((res) => res.json());
 
@@ -29,15 +30,7 @@ export default function ProductsOverview({
   );
 
   if (isLoading) {
-    return (
-      <div>
-        <div className="md:mx-0 mx-4">
-          <div className="container mx-auto pt-10 pb-7">
-            <div className="flex">Loading ...</div>
-          </div>
-        </div>
-      </div>
-    );
+    return <Loading/>
   }
 
   if (data === undefined) {
@@ -59,8 +52,8 @@ export default function ProductsOverview({
           <div className="flex">
             <div className="basis-1/12 hidden md:block"></div>
             <div className="md:basis-11/12 basis-full">
-              <h1 className="text-zinc-800 md:text-7xl md:leading-[84px] text-4xl font-normal leading-[42px] tracking-[-1.44px]">
-                {data.wine.winery.name} | {data.wine.vintage} | <br/> {data.name}
+              <h1 className="whitespace-pre-line text-zinc-800 md:text-7xl md:leading-[84px] text-4xl font-normal leading-[42px] tracking-[-1.44px]">
+                {data.name}
               </h1>
               {data.art?.name !== undefined ? (
                 <p className="text-zinc-800 text-base font-normal leading-snug pt-2 ">
@@ -167,7 +160,7 @@ export default function ProductsOverview({
       {/* MindPledge end */}
 
       {/* All editions start */}
-      <AllEditions products={data.editions} />
+      <AllEditions items={data.editions} />
       {/* All editions end */}
       {/* How to invest in wine start*/}
       <div className="md:block hidden">

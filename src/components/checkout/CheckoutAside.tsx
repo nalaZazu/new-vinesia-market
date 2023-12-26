@@ -4,7 +4,7 @@ import React from "react";
 
 export default function CheckoutAside() {
   const {cartItems, getCartTotal} = useCart()
-  const { getPriceText } = useUser()
+  const { getPriceText, currency } = useUser()
 
   if (cartItems === undefined || cartItems.length === 0)
     return <></>
@@ -27,18 +27,17 @@ export default function CheckoutAside() {
         </div>
         <div className="self-stretch px-6 flex-col justify-start items-start flex ">
           {cartItems.map((d, i) => {
-            const { wine, buyNowPrice } = d;
+            const { name, price} = d;
             return (
               <div
                 key={i}
                 className="self-stretch py-6 border-b border-orange-700 border-opacity-20 justify-between items-start inline-flex"
               >
                 <div className="w-[295px] text-zinc-800 text-base font-normal  leading-snug">
-                  {wine?.winery?.name} | {wine?.vintage} <br/>
-                  {wine?.name}
+                  {name}
                 </div>
                 <div className="text-zinc-800 text-base font-normal  leading-snug">
-                  {getPriceText(buyNowPrice ?? 0)}
+                  {getPriceText(price[currency] ?? 0)}
                 </div>
               </div>
             );

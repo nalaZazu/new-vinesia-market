@@ -10,10 +10,10 @@ import {
   PrevIcon,
   PrevIcon2,
 } from "@/assets/icons/Icons";
-import sliderabout from "@/assets/images/sliderImage.png";
 import Image from "next/image";
 import shareIcon from "@/assets/icons/share.svg";
 import { VideoSlider } from "@/constants/videoslider";
+import Link from "next/link";
 const AboutSlider = ({ data = VideoSlider }: { data?: any }) => {
   const [currentslide, setCurrentSlide] = useState(0);
   const slider = useRef<any>();
@@ -88,8 +88,13 @@ const AboutSlider = ({ data = VideoSlider }: { data?: any }) => {
   return (
     <React.Fragment>
       <div>
-        <div className="flex justify-between ">
-
+        <div className="flex justify-between">
+          <Link href="/invest" className="z-20">
+            <button className="  px-8 py-[22px]  cursor-pointer  rounded-[48px] border border-white border-opacity-20 justify-center items-center gap-3 inline-flex   text-center text-white text-xs font-normal   uppercase leading-3 tracking-tight">
+              START INVESTING NOW
+              <Arrows storke="#FFFFFF" />
+            </button>
+          </Link>
 
           <div className="hidden md:block">
             <CarouselControls />

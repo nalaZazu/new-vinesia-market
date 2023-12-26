@@ -4,6 +4,7 @@ import { ProductList } from "@/constants/products";
 import artists from "@/assets/images/artists.png";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Artists() {
   return (
@@ -22,15 +23,18 @@ export default function Artists() {
               <br />
               His art, born in secrecy yet attracting extreme attention, later
               evolved into a multidimensional experience where letters
-              overlapped, and functionality gave way to artistic expression. 
+              overlapped, and functionality gave way to artistic expression.
             </p>
           </div>
-          <div className="flex items-center gap-3 ">
-            <button className="border-b-2 border-orange-700 border-opacity-20 text-orange-700 text-xs font-normal uppercase leading-[18px] tracking-tight">
-              MEET THE ARTIST
-            </button>
-            <NextIcon />
-          </div>
+          <Link href="/wacollections/reso">
+            <div className="flex items-center gap-3 ">
+              <button className="border-b-2 border-orange-700 border-opacity-20 text-orange-700 text-xs font-normal uppercase leading-[18px] tracking-tight">
+                MEET THE ARTIST
+              </button>
+              <NextIcon />
+            </div>
+          </Link>
+
           <Image src={artists} alt="" />
         </div>
 
@@ -39,7 +43,7 @@ export default function Artists() {
             {ProductList.slice(0, 2).map((items, i) => {
               return (
                 <div key={i}>
-                  <ProductCards />
+                  <ProductCards item={items} />
                 </div>
               );
             })}
@@ -53,7 +57,7 @@ export default function Artists() {
             {ProductList.slice(0, 2).map((items, i) => {
               return (
                 <div key={i}>
-                  <ProductCards />
+                  <ProductCards item={items} />
                 </div>
               );
             })}
@@ -74,15 +78,19 @@ export default function Artists() {
               To add to his repertoire, he is the creator of the animated TV
               series “Ratz,” currently streaming on Netflix. Vinesia has
               partnered with him to create exclusive art for various
-              collections. 
+              collections.
             </p>
           </div>
-          <div className="flex items-center gap-3 ">
-            <button className="border-b-2 border-orange-700 border-opacity-20 text-orange-700 text-xs font-normal uppercase leading-[18px] tracking-tight">
-              MEET THE ARTIST
-            </button>
-            <NextIcon />
-          </div>
+          <Link href="/wacollections/reso">
+            {" "}
+            <div className="flex items-center gap-3 ">
+              <button className="border-b-2 border-orange-700 border-opacity-20 text-orange-700 text-xs font-normal uppercase leading-[18px] tracking-tight">
+                MEET THE ARTIST
+              </button>
+              <NextIcon />
+            </div>
+          </Link>
+
           <Image src={artists} alt="" />
         </div>
       </div>
