@@ -72,7 +72,7 @@ export function CartControls({
   setStep?: any;
   btnOneTittle?: any;
   btnTwoTittle?: any;
-  nextStep?: string
+  nextStep?: string;
   disable?: any;
 }) {
   const router = useRouter();
@@ -80,7 +80,8 @@ export function CartControls({
     <div>
       <div className="flex sm:justify-end justify-center pt-8">
         <span className="uppercase text-xs">
-          <span className="text-[#BF4D20]">next step: </span>{nextStep}
+          <span className="text-[#BF4D20]">next step: </span>
+          {nextStep}
         </span>
       </div>
       <div className="sm:flex justify-between pt-4 pb-[106px] sm:gap-0 grid grid-cols-1 gap-6">
@@ -115,13 +116,13 @@ export function BillingInput({
   placeholder,
   name,
   Inputclass,
-  required
+  required,
 }: {
   title?: any;
   placeholder?: any;
   name?: any;
   Inputclass?: any;
-  required?: boolean
+  required?: boolean;
 }) {
   return (
     <div
@@ -130,13 +131,46 @@ export function BillingInput({
       {title && (
         <div className="h-4 justify-start items-center gap-1 inline-flex">
           <div className="text-[#A6836C] text-xs font-normal uppercase leading-[18px] tracking-tight">
-            {title} {required !== undefined ? <>*</>: <></>}
+            {title} {required !== undefined ? <>*</> : <></>}
           </div>
         </div>
       )}
       <input
         name={name}
         className="self-stretch text-[#827A80] h-14 pl-6 pr-5 p-4 rounded-full border border-[#BF4D20] bg-transparent outline-red-500 placeholder-[#D99479]"
+        placeholder={placeholder}
+      />
+    </div>
+  );
+}
+
+export function TextArea({
+  title,
+  placeholder,
+  name,
+  Inputclass,
+  required,
+}: {
+  title?: any;
+  placeholder?: any;
+  name?: any;
+  Inputclass?: any;
+  required?: boolean;
+}) {
+  return (
+    <div
+      className={`flex-col justify-start items-start gap-2 inline-flex w-full ${Inputclass}`}
+    >
+      {title && (
+        <div className="h-4 justify-start items-center gap-1 inline-flex">
+          <div className="text-[#A6836C] text-xs font-normal uppercase leading-[18px] tracking-tight">
+            {title} {required !== undefined ? <>*</> : <></>}
+          </div>
+        </div>
+      )}
+      <textarea
+        name={name} rows={5}
+        className="self-stretch text-[#827A80] pl-6 pr-5 p-4 rounded-xl border border-[#BF4D20] bg-transparent outline-red-500 placeholder-[#D99479]"
         placeholder={placeholder}
       />
     </div>
@@ -244,14 +278,14 @@ export function SelectBox({
   value,
   onChange,
   required,
-  data = []
+  data = [],
 }: {
   title?: any;
   placeholder?: any;
   name?: any;
   value?: any;
   onChange?: any;
-  required?: boolean,
+  required?: boolean;
   data: any[];
 }) {
   // const data = [
@@ -272,7 +306,7 @@ export function SelectBox({
       {title && (
         <div className="h-4 justify-start items-center gap-1 inline-flex">
           <div className="text-[#A6836C] text-xs font-normal uppercase leading-[18px] tracking-tight">
-            {title} {required !== undefined ? <>*</>: <></>}
+            {title} {required !== undefined ? <>*</> : <></>}
           </div>
         </div>
       )}

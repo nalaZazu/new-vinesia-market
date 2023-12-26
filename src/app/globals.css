@@ -6,7 +6,6 @@ html {
   scroll-behavior: smooth;
 }
 
-
 /* @font-face {
   font-family: "Canela";
   src: url("../assets/fonts/Canela/Canela-Regular.otf")
@@ -115,6 +114,53 @@ h6 {
 .customsign-bg-image {
   background-image: none;
 
+  background-size: cover;
+  /* background-position: center; */
+}
+
+/* contacts start*/
+.contact-bg-image {
+  background-image: url("../assets/images/contactus.png");
+  height: 448px;
+  background-size: cover;
+}
+.flx-calender-style {
+  background-color: #f3e8cf !important;
+  width: 100% !important;
+  border: 1px solid rgba(191, 77, 32, 0.2) !important;
+  border-radius: 8px !important ;
+  color: #cb220d !important;
+}
+.flx-calender-style .react-calendar__navigation {
+  border-bottom: 1px solid rgba(191, 77, 32, 0.2) !important;
+}
+.flx-calender-style .react-calendar__tile--active {
+  background: #cb220d !important;
+  color: white;
+  border-radius: 100% !important;
+  flex-basis: auto !important;
+  width: 40px !important;
+  height: 40px !important;
+}
+.flx-calender-style .react-calendar__tile--now {
+  background: #cb220d;
+  color: white;
+  width: 40px !important;
+  height: 40px !important;
+  flex-basis: auto !important;
+  border-radius: 100% !important;
+}
+.flx-calender-style .react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background: #cb220d;
+  color: white;
+}
+/* contact end */
+
+/* vinesia banner */
+.vinesia-bg-image {
+  background-image: url("../assets/images/vinesiabanner.png");
+  height: 818px;
   background-size: cover;
   /* background-position: center; */
 }
