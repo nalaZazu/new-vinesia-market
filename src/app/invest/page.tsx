@@ -18,7 +18,6 @@ import ScrollAnimation from "@/common/ScrollAnimation/page";
 import FilterSection from "@/components/FilterSection/page";
 
 const Invest = () => {
-  const [tags, setTags] = useState<String[]>([]);
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [priceRange, setPriceRange] = useState([]);
   const fetcher = async (url: string, payload?: string) => {

@@ -14,8 +14,11 @@ import Image from "next/image";
 import shareIcon from "@/assets/icons/share.svg";
 import { VideoSlider } from "@/constants/videoslider";
 import Link from "next/link";
+import VideoPopup from "@/components/videoPopup/page";
 const AboutSlider = ({ data = VideoSlider }: { data?: any }) => {
   const [currentslide, setCurrentSlide] = useState(0);
+  const [open, setOpen] = useState(false);
+  const [videoLink, setVideoLink] = useState(null);
   const slider = useRef<any>();
 
   const sliderSettings = {
@@ -85,8 +88,13 @@ const AboutSlider = ({ data = VideoSlider }: { data?: any }) => {
       </div>
     );
   };
+  const handleVideoModal = (video: any) => {
+    setVideoLink(video);
+    setOpen(true);
+  };
   return (
     <React.Fragment>
+      <VideoPopup open={open} setOpen={() => setOpen(false)} link={videoLink} />
       <div>
         <div className="flex justify-between">
           <Link href="/invest" className="z-20">
@@ -106,10 +114,14 @@ const AboutSlider = ({ data = VideoSlider }: { data?: any }) => {
           className="invest_carousel z-20"
         >
           {data?.map((item: any, i: any) => {
+            const { video } = item;
             return (
               <div key={i} className="md:px-8 px-4 pt-8">
                 <div className="">
-                  <div className="relative h-[246.23px]  bg-no-repeat bg-center md:bg-[url('https://i.ibb.co/LCb3y9J/slider-Image.png')]  bg-[url('https://i.ibb.co/MnXJPpn/01-Images.png')] ">
+                  <div
+                    onClick={() => handleVideoModal(video)}
+                    className=" cursor-pointer relative h-[246.23px]  bg-no-repeat bg-center md:bg-[url('https://i.ibb.co/LCb3y9J/slider-Image.png')]  bg-[url('https://i.ibb.co/MnXJPpn/01-Images.png')] "
+                  >
                     {/* <Image src={sliderabout} alt="image" /> */}
                     <div className="absolute md:bottom-7 md:-left-6   bottom-12 -left-0">
                       {/* absolute bottom-24 -left-6 */}
