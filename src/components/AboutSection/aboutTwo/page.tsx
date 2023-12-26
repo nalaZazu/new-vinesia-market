@@ -13,6 +13,11 @@ import CalculationSetting from "@/components/Modal/Calculation/page";
 import PerformanceModel from "@/components/Modal/Performance/page";
 import Appactivity from "@/components/charts/page";
 import Link from "next/link";
+import { GraphProvider } from "@/context/GraphContextProvider";
+import { Flex } from 'antd';
+import LeftPanel from "@/components/simulator/LeftPanel";
+import GraphPanel from "@/components/simulator/GraphPanel";
+import RightPanel from "@/components/simulator/RightPanel";
 const AboutTwo = () => {
   const [visible, setVisible] = useState(false);
   const [step, setStep] = useState(1);
@@ -24,127 +29,14 @@ const AboutTwo = () => {
         setVisible={setVisible}
         isCloseBtn={false}
       >
-        <div>
-          <div className="text-center md:pt-[72px]    px-4  pt-[60px] pb-[72px]">
-            {step === 1 && (
-              <div className="md:max-w-[607px]   mx-auto text-center ">
-                <div className="md:pb-14 pb-8">
-                  <span className="text-[#A6836C]  text-xs font-normal  uppercase leading-3 tracking-tight ">
-                    Steps
-                  </span>
-                  <h3 className="text-zinc-800 text-4xl font-light  leading-[44px] tracking[-0.36px]">
-                    1/3
-                  </h3>
-                </div>
-                <div>
-                  <h3 className=" text-center text-zinc-800 md:text-4xl  pb-4 md:leading-[44px] tracking-[-0.36px]  text-[21px] font-light   leading-[29px]">
-                    Assets in your investment portfolio
-                  </h3>
-                  <p className="text-center text-zinc-800 text-base font-normal  leading-snug ">
-                    Choose assets and determine what percentage of your
-                    portfolio they represent
-                  </p>
-                </div>
-                <div className="py-8 md:px-12 ">
-                  <AboutDropDown />
-                </div>
-              </div>
-            )}
-            {step === 2 && (
-              <div className=" md:max-w-[607px]   mx-auto ">
-                <div className="md:pb-14 pb-8 text-center">
-                  <span className="text-[#A6836C]  text-xs font-normal  uppercase leading-3 tracking-tight ">
-                    Steps
-                  </span>
-                  <h3 className="text-zinc-800 text-4xl font-light  leading-[44px] tracking[-0.36px]">
-                    2/3
-                  </h3>
-                </div>
-                <div className="py-8 md:px-12">
-                  <div className="pb-8">
-                    <h3 className="  text-zinc-800 md:text-4xl  text-center pb-4 md:leading-[44px] tracking-[-0.36px]  text-[21px] font-light   leading-[29px]">
-                      Calculation settings
-                    </h3>
-                  </div>
-                  <CalculationSetting />
-                </div>
-              </div>
-            )}
-            {step === 3 && (
-              <div className=" ">
-                <div className=" text-center">
-                  <span className="text-[#A6836C]  text-xs font-normal  uppercase leading-3 tracking-tight ">
-                    Steps
-                  </span>
-                  <h3 className="text-zinc-800 text-4xl font-light  leading-[44px] tracking[-0.36px]">
-                    3/3
-                  </h3>
-                </div>{" "}
-                <div className="md:pb-[163px] pb-[150px]">
-                  <div className="pt-[146px] flex justify-center animate-rotate ">
-                    <MarksAnim fill="#2F222B" />
-                  </div>
-                  <h4 className=" md:pt-6  text-center text-zinc-800 text-[21px] font-light  leading-[29px] tracking-wide">
-                    Calculation in progress
-                  </h4>
-                </div>
-              </div>
-            )}
-
-            {step === 4 && (
-              <div className="md:max-w-[607px]  mx-auto ">
-                <div className="md:pb-14 pb-8 text-center">
-                  <span className="text-[#A6836C]  text-xs font-normal  uppercase leading-3 tracking-tight ">
-                    Steps
-                  </span>
-                  <h3 className="text-zinc-800 text-4xl font-light  leading-[44px] tracking[-0.36px]">
-                    3/3
-                  </h3>
-                </div>
-                <PerformanceModel />
-              </div>
-            )}
-            {step === 5 && (
-              <div className="container mx-auto">
-                <div className="  md:pb-[117px]  md:py-0  py-[60px] px-4 text-center">
-                  <div className="md:pb-14 pb-8 text-center">
-                    <span className="text-[#A6836C]  text-xs font-normal  uppercase leading-3 tracking-tight ">
-                      Steps
-                    </span>
-                    <h3 className="text-zinc-800 text-4xl font-light  leading-[44px] tracking[-0.36px]">
-                      3/3
-                    </h3>
-                  </div>
-                  {/* here is grid section */}
-                  <div className="grid md:grid-cols-4 gap-8 pb-8">
-                    <div className="col-span-1">
-                      <AboutDropDown />
-                    </div>
-                    <div className="col-span-2">
-                      <PerformanceModel />
-                    </div>
-                    <div className="col-span-1">
-                      <CalculationSetting />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {step == 1 || step === 2 || step === 3 || step === 4 ? (
-              <button
-                onClick={() => setStep(step + 1)}
-                className="px-8 py-[22px] rounded-full border text-center border-orange-700 text-orange-700 border-opacity-20 justify-center items-center gap-3 inline-flex"
-              >
-                NEXT <Arrows storke="#BF4D20" />
-              </button>
-            ) : (
-              <button className="px-8 py-[22px] rounded-full border text-center border-orange-700 text-orange-700 border-opacity-20 justify-center items-center gap-3 inline-flex">
-                START AGAN
-                <Arrows storke="#BF4D20" />
-              </button>
-            )}
-          </div>
+        <div className="md:pt-[18px] px-4 pt-[10px] pb-[18px] font-['Canela']">
+        <GraphProvider>
+          <Flex gap="small" vertical={false} >
+            <LeftPanel />
+            <GraphPanel />
+            <RightPanel />
+          </Flex>
+        </GraphProvider>
         </div>
       </ModalContainer>
 
