@@ -4,17 +4,12 @@ import React from "react";
 import MobileFilter from "../../invest/moibleview/page";
 import Product from "@/components/products/page";
 import Newsletter from "@/components/newsletter/page";
-import Footer from "@/components/footer/page";
-import xmark from "../../../assets/icons/x-mark-anim.svg";
-import Image from "next/image";
-import NewsletterMobile from "@/components/newsletter/MobileView";
-import VerticalBreadCrumb from "@/common/verticalBreadcrumb/page";
-import ProductCards from "@/components/productCard/page";
-import { MarksAnim } from "@/assets/icons/Icons";
+import Footer from "@/components/footer/page"; 
+import NewsletterMobile from "@/components/newsletter/MobileView"; 
 import ScrollAnimation from "@/common/ScrollAnimation/page";
 
 function Reso({ params }: { params: any }) {
-  const { slug } = params;
+ 
 
   return (
     <React.Fragment>

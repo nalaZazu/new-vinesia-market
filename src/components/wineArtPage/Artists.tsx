@@ -4,6 +4,7 @@ import { ProductList } from "@/constants/products";
 import artists from "@/assets/images/artists.png";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Artists() {
   return (
@@ -25,12 +26,15 @@ export default function Artists() {
               overlapped, and functionality gave way to artistic expression.
             </p>
           </div>
-          <div className="flex items-center gap-3 ">
-            <button className="border-b-2 border-orange-700 border-opacity-20 text-orange-700 text-xs font-normal uppercase leading-[18px] tracking-tight">
-              MEET THE ARTIST
-            </button>
-            <NextIcon />
-          </div>
+          <Link href="/wacollections/reso">
+            <div className="flex items-center gap-3 ">
+              <button className="border-b-2 border-orange-700 border-opacity-20 text-orange-700 text-xs font-normal uppercase leading-[18px] tracking-tight">
+                MEET THE ARTIST
+              </button>
+              <NextIcon />
+            </div>
+          </Link>
+
           <Image src={artists} alt="" />
         </div>
 
@@ -77,12 +81,16 @@ export default function Artists() {
               collections.
             </p>
           </div>
-          <div className="flex items-center gap-3 ">
-            <button className="border-b-2 border-orange-700 border-opacity-20 text-orange-700 text-xs font-normal uppercase leading-[18px] tracking-tight">
-              MEET THE ARTIST
-            </button>
-            <NextIcon />
-          </div>
+          <Link href="/wacollections/reso">
+            {" "}
+            <div className="flex items-center gap-3 ">
+              <button className="border-b-2 border-orange-700 border-opacity-20 text-orange-700 text-xs font-normal uppercase leading-[18px] tracking-tight">
+                MEET THE ARTIST
+              </button>
+              <NextIcon />
+            </div>
+          </Link>
+
           <Image src={artists} alt="" />
         </div>
       </div>
