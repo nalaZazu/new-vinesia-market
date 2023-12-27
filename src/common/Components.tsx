@@ -14,7 +14,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import { Listbox, Transition, RadioGroup } from "@headlessui/react";
 import { useRouter } from "next/navigation";
 import ReactSlider from "react-slider";
-import { Controller, useFormContext, useForm } from "react-hook-form";
+import { Controller, useFormContext } from "react-hook-form";
 import { findInputError, isFormInvalid } from "@/utils/form";
 export function Checkbox({ label, name }: { label?: any; name?: any }) {
   return (
@@ -138,7 +138,7 @@ export function BillingInput({
   const {
     register,
     formState: { errors },
-  } = useForm();
+  } = useFormContext();
 
   const inputErrors = findInputError(errors, name);
   const isInvalid = isFormInvalid(inputErrors);
@@ -328,7 +328,7 @@ export function SelectBox({
     register,
     formState: { errors },
     control,
-  } = useForm();
+  } = useFormContext();
 
   const inputErrors = findInputError(errors, name);
   const isInvalid = isFormInvalid(inputErrors);

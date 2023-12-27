@@ -70,9 +70,6 @@ export default function Footer() {
                     <p className="mb-4 flex justify-center    text-neutral-300 text-base font-normal  leading-snug tracking-[0.32px]">
                       Share info on your investment, make connections
                     </p>
-                    <button className="px-8 py-4 bg-orange-700  rounded-[48px] justify-center items-center gap-3 inline-flex text-[#F2DBD2] text-xs">
-                      JOIN OUR COMMUNITY
-                    </button>
                     <div className="pt-8 ">
                       <span>Follow us</span>
                       <div className="flex justify-center   items-center gap-[10px] pt-[10px]">
