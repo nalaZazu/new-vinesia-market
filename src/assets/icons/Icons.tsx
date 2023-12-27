@@ -163,7 +163,7 @@ export function NextIcon2({ fill = "currentColor" }: { fill?: any }) {
       viewBox="0 0 24 24"
       strokeWidth="1.5"
       stroke={fill}
-      className="w-6 h-6"
+      className="w-full h-full"
     >
       <path
         strokeLinecap="round"

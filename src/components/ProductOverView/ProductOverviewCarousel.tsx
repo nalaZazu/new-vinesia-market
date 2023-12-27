@@ -6,16 +6,21 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { NextIcon2, PrevIcon2 } from "@/assets/icons/Icons";
-export default function ProductOverviewCarousel({data}: {data?: string[]}) {
+export default function ProductOverviewCarousel({ data }: { data?: string[] }) {
   if (data === undefined || data.length === 0) {
-    return <></>
+    return <></>;
   }
 
   const sliderSettings = {
     customPaging: function () {
       return (
         <div className="imagedots z-0 flx-img-border absolute top-0 buttom-0">
-          <Image src={`${process.env.NEXT_PUBLIC_API_ADDRESS}products/file/${data[0]}`} height={0} width={340} alt="" />
+          <Image
+            src={`${process.env.NEXT_PUBLIC_API_ADDRESS}products/file/${data[0]}`}
+            height={0}
+            width={340}
+            alt=""
+          />
         </div>
       );
     },
@@ -60,7 +65,7 @@ export default function ProductOverviewCarousel({data}: {data?: string[]}) {
     nextArrow: (
       <div className="productcarousel  z-50 ">
         <div className="text-secondary h-20 w-6 text-center flex items-center absolute lg:top-[230px] lg:right-[100px] md:top-[215px] md:right-[345px] top-[0px] right-[0px]">
-          <div className="">
+          <div className="h-6 w-6">
             <NextIcon2 />
           </div>
         </div>
@@ -81,7 +86,7 @@ export default function ProductOverviewCarousel({data}: {data?: string[]}) {
                   <Image
                     src={`${process.env.NEXT_PUBLIC_API_ADDRESS}products/file/${item}`}
                     width={340}
-                    height={0} 
+                    height={0}
                     sizes="100vw"
                     alt="Picture of the author"
                     className=" z-0 px-5 h-[500px] w-auto"
