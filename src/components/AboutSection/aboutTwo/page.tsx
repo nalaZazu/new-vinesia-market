@@ -171,9 +171,9 @@ const AboutTwo = () => {
         <div className="flex justify-center md:pt-[92px] pt-12">
           {/* <Image src={investment} alt="image" /> */}
           <video className="w-1/2" autoPlay loop muted>
-                <source src='assets/video/vinesia 211223.mp4' />
-                Your browser does not support the video tag.
-              </video>
+            <source src="assets/video/vinesia 211223.mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
 
@@ -201,7 +201,7 @@ const AboutTwo = () => {
                     <Image src={lineregion} alt="image" />
                   </div>
                 </div>
-                <AccordionWine />
+                <AccordionWine containerClass=" md:py-5 py-4" />
               </div>
               {/* here is button  */}
               <Link href="/invest">
