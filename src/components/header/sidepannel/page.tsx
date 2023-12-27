@@ -42,7 +42,7 @@ const SidePannel = ({ isDark }: { isDark?: Boolean }) => {
         {isSidebarOpen && (
           <div
             id="default-sidebar"
-            className="fixed top-0 left-0 z-40 max-w-80 w-full py-12 px-4 h-full transition-transform  sm:translate-x-0  bg-[rgba(47,34,43,0.99)]"
+            className="fixed top-0 left-0 z-40 max-w-80 w-full py-12 px-4 h-full overflow-y-auto  transition-transform  sm:translate-x-0  bg-[rgba(47,34,43,0.99)]"
             aria-label="Sidebar"
           >
             <ul className="  font-medium">
