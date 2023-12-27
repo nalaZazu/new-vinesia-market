@@ -155,14 +155,14 @@ export const Xmark = () => {
   );
 };
 
-export function NextIcon2() {
+export function NextIcon2({ fill = "currentColor" }: { fill?: any }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth="1.5"
-      stroke="currentColor"
+      stroke={fill}
       className="w-6 h-6"
     >
       <path
