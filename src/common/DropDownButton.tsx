@@ -7,11 +7,7 @@ function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function DropDownButton({
-  title = "Recommended",
-}: {
-  title?: any;
-}) {
+export default function DropDownButton({ title = "Default" }: { title?: any }) {
   return (
     <>
       <Menu as="div" className="w-full relative inline-block text-start">
@@ -47,7 +43,7 @@ export default function DropDownButton({
                       "block px-4 py-2 text-sm"
                     )}
                   >
-                    Account settings
+                    Price: Low to High
                   </Link>
                 )}
               </Menu.Item>
@@ -60,20 +56,7 @@ export default function DropDownButton({
                       "block px-4 py-2 text-sm"
                     )}
                   >
-                    License
-                  </Link>
-                )}
-              </Menu.Item>
-              <Menu.Item>
-                {({ active }) => (
-                  <Link
-                    href="#"
-                    className={classNames(
-                      active ? "  text-gray-900" : "text-gray-700",
-                      "block px-4 py-2 text-sm"
-                    )}
-                  >
-                    Support
+                    Price: High to Low
                   </Link>
                 )}
               </Menu.Item>
