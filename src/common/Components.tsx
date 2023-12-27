@@ -14,7 +14,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import { Listbox, Transition, RadioGroup } from "@headlessui/react";
 import { useRouter } from "next/navigation";
 import ReactSlider from "react-slider";
-import { Controller, useFormContext } from "react-hook-form";
+import { Controller, useFormContext, useForm } from "react-hook-form";
 import { findInputError, isFormInvalid } from "@/utils/form";
 export function Checkbox({ label, name }: { label?: any; name?: any }) {
   return (
@@ -40,7 +40,7 @@ export function Button({
   onClick,
   filled = true,
   btnStyle,
-  disabled = false
+  disabled = false,
 }: {
   label: any;
   beforeIcon?: any;
@@ -48,14 +48,15 @@ export function Button({
   onClick?: any;
   filled?: any;
   btnStyle?: any;
-  disabled?: boolean
+  disabled?: boolean;
 }) {
   return (
     <button
       disabled={disabled}
       onClick={onClick}
-      className={`flex items-center gap-4 border border-[#BF4D2020] rounded-full px-8 justify-center h-14 w-full uppercase ${filled ? "bg-[#BF4D20] text-white" : "text-[#BF4D20] "
-        } ${btnStyle}`}
+      className={`flex items-center gap-4 border border-[#BF4D2020] rounded-full px-8 justify-center h-14 w-full uppercase ${
+        filled ? "bg-[#BF4D20] text-white" : "text-[#BF4D20] "
+      } ${btnStyle}`}
     >
       {beforeIcon && beforeIcon}
       {label}
@@ -103,8 +104,9 @@ export function CartControls({
               ? setStep(step == 3 ? router.push("/purchase") : step + 1)
               : router.push("/checkout")
           }
-          className={`  ${disable ? "cursor-no-drop" : "cursor-pointer"
-            }  flex items-center gap-4 border   border-[#BF4D2020] rounded-full text-white px-8 justify-center h-14 bg-[#BF4D20] sm:order-2 order-1 sm:w-auto w-full
+          className={`  ${
+            disable ? "cursor-no-drop" : "cursor-pointer"
+          }  flex items-center gap-4 border   border-[#BF4D2020] rounded-full text-white px-8 justify-center h-14 bg-[#BF4D20] sm:order-2 order-1 sm:w-auto w-full
         `}
         >
           {btnTwoTittle} <NextIcon fill="white" />
@@ -122,7 +124,7 @@ export function BillingInput({
   validation,
   className,
   value,
-  required = false
+  required = false,
 }: {
   name: string;
   label?: string;
@@ -130,18 +132,18 @@ export function BillingInput({
   placeholder?: string;
   validation?: any;
   className?: string;
-  required?: boolean
-  value?: string
+  required?: boolean;
+  value?: string;
 }) {
   const {
     register,
     formState: { errors },
-  } = useFormContext()
+  } = useForm();
 
-  const inputErrors = findInputError(errors, name)
-  const isInvalid = isFormInvalid(inputErrors)
+  const inputErrors = findInputError(errors, name);
+  const isInvalid = isFormInvalid(inputErrors);
 
-  const options = {value: value, ...validation}
+  const options = { value: value, ...validation };
 
   return (
     <div
@@ -150,7 +152,7 @@ export function BillingInput({
       {label && (
         <div className="h-4 justify-start items-center gap-1 inline-flex">
           <div className="text-[#A6836C] text-xs font-normal uppercase leading-[18px] tracking-tight">
-            {label} {required && (<>*</>)}
+            {label} {required && <>*</>}
           </div>
         </div>
       )}
@@ -160,15 +162,13 @@ export function BillingInput({
         className="self-stretch text-[#827A80] h-14 pl-6 pr-5 p-4 rounded-full border border-[#BF4D20] bg-transparent outline-red-500 placeholder-[#D99479]"
         {...register(name, options)}
       />
-      {isInvalid && (<InputError text={inputErrors.error?.message ?? ''} />)}
+      {isInvalid && <InputError text={inputErrors.error?.message ?? ""} />}
     </div>
   );
 }
 
-export function InputError({
-text
-}: {text: string}) {
-  return <span className="text-[#EF4444] text-[12px]">{text}</span>
+export function InputError({ text }: { text: string }) {
+  return <span className="text-[#EF4444] text-[12px]">{text}</span>;
 }
 
 export function TextArea({
@@ -196,7 +196,8 @@ export function TextArea({
         </div>
       )}
       <textarea
-        name={name} rows={5}
+        name={name}
+        rows={5}
         className="self-stretch text-[#827A80] pl-6 pr-5 p-4 rounded-xl border border-[#BF4D20] bg-transparent outline-red-500 placeholder-[#D99479]"
         placeholder={placeholder}
       />
@@ -242,11 +243,11 @@ export function ListCard({
 
 /* This example requires Tailwind CSS v2.0+ */
 
-export function AlertSuccess({ text = '' }: { text?: string }) {
-  const [visible, setVisible] = useState(true)
+export function AlertSuccess({ text = "" }: { text?: string }) {
+  const [visible, setVisible] = useState(true);
 
   if (!visible) {
-    return <></>
+    return <></>;
   }
 
   return (
@@ -256,9 +257,7 @@ export function AlertSuccess({ text = '' }: { text?: string }) {
           <TickCirIcon />
         </div>
         <div className="ml-3">
-          <p className="text-sm font-medium text-green-800">
-            {text}
-          </p>
+          <p className="text-sm font-medium text-green-800">{text}</p>
         </div>
         <div className="ml-auto pl-3">
           <div className="-mx-1.5 -my-1.5">
@@ -269,7 +268,8 @@ export function AlertSuccess({ text = '' }: { text?: string }) {
               <span className="sr-only">Dismiss</span>
               <XMarkIcon
                 onClick={() => setVisible(false)}
-                className="h-5 w-5 text-red-500" aria-hidden="true"
+                className="h-5 w-5 text-red-500"
+                aria-hidden="true"
               />
             </button>
           </div>
@@ -321,18 +321,17 @@ export function SelectBox({
   placeholder?: any;
   validation?: any;
   value?: any;
-  required?: boolean,
+  required?: boolean;
   data: any[];
 }) {
   const {
     register,
     formState: { errors },
-    control
-  } = useFormContext()
+    control,
+  } = useForm();
 
-
-  const inputErrors = findInputError(errors, name)
-  const isInvalid = isFormInvalid(inputErrors)
+  const inputErrors = findInputError(errors, name);
+  const isInvalid = isFormInvalid(inputErrors);
 
   return (
     <div className=" flex-col w-full justify-start items-start gap-2 inline-flex">
@@ -343,16 +342,18 @@ export function SelectBox({
           </div>
         </div>
       )}
-      <select 
-      {...register(name, validation)}
-      className="self-stretch w-full text-start text-[#D99479] h-14 pl-6 pr-5 p-4 rounded-full border  border-[#BF4D20]  bg-transparent outline-red-500 placeholder-[#D99479]"
+      <select
+        {...register(name, validation)}
+        className="self-stretch w-full text-start text-[#D99479] h-14 pl-6 pr-5 p-4 rounded-full border  border-[#BF4D20]  bg-transparent outline-red-500 placeholder-[#D99479]"
       >
         <option value="">Select {title}</option>
         {data.map((d, i) => (
-          <option key={i} value={d}>{d}</option>
+          <option key={i} value={d.id}>
+            {d.name}
+          </option>
         ))}
       </select>
-      {isInvalid && (<InputError text={inputErrors.error?.message ?? ''} />)}
+      {isInvalid && <InputError text={inputErrors.error?.message ?? ""} />}
       {/* <Controller
           name={name}
           control={control}
@@ -444,8 +445,9 @@ export function RadioButton() {
           {({ checked }) => (
             <p className={` p-5 w-full flex gap-4 `}>
               <span
-                className={`w-6 h-6 rounded-full border-[#6C757D]  ${checked ? " border-8" : "border-2"
-                  } `}
+                className={`w-6 h-6 rounded-full border-[#6C757D]  ${
+                  checked ? " border-8" : "border-2"
+                } `}
               ></span>
               {p}
             </p>
