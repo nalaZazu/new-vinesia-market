@@ -45,13 +45,13 @@ export default function Banner({ breadCrumbData }: { breadCrumbData?: any }) {
         <div className=" container mx-auto flex flex-col md:justify-end justify-between text-white md:px-0 px-4 pt-10 md:pt-0">
           <div>
             <div>
-              <p className="text-stone-400 text-xs font-normal uppercase leading-3 tracking-tight pb-7 max-w-[200px] md:max-w-full">
+              <p className="text-stone-400 text-xs font-normal uppercase leading-3 tracking-tight   pb-6 max-w-[200px] md:max-w-full">
                 appreciating your wine, guarding its emotions
               </p>
               <h1 className="text-white md:text-[144px] md:leading-[200px] sm:text-6xl text-5xl font-normal">
                 Marketplace
               </h1>
-              <p className="text-stone-400 text-base font-normal leading-snug pt-4 pb-10 max-w-[470px]">
+              <p className="text-stone-400 text-base font-normal leading-snug md:pt-6  pt-4 pb-8 md:pb-10 max-w-[470px]">
                 Something about technology, advantage of wine investments,
                 unique buying and reselling experience
               </p>

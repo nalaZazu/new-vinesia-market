@@ -23,11 +23,8 @@ const Product = ({ items }: { items?: ItemCardDto[] }) => {
       {items &&
         splitToChunks(items).map((item, i) => {
           return (
-            <>
-              <div
-                key={i}
-                className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20"
-              >
+            <div key={i}>
+              <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20">
                 {item === undefined ? (
                   <></>
                 ) : (
@@ -42,7 +39,7 @@ const Product = ({ items }: { items?: ItemCardDto[] }) => {
               </div>
               {/* animation  component  */}
               <ScrollAnimation />
-            </>
+            </div>
           );
         })}
     </React.Fragment>

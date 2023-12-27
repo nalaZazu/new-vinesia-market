@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import ModalContainer from "./ModalContainer";
 import { BiddingSection } from "@/constants/accrodion";
 import { BillingInput } from "./Components";
+import { CartIcon } from "@/assets/icons/Icons";
 import { useUser } from "@/context/user";
 import { useCart } from "@/context/cart";
 import { ProductOverview } from "@/types/productOverview.dto";
@@ -15,8 +16,7 @@ export default function ShareCard({ data }: { data: ProductOverview }) {
   const { getPriceText, currency } = useUser()
 
   if (data === undefined) {
-    return <></>
-
+    return <></>;
   }
 
   return (
@@ -59,7 +59,7 @@ export default function ShareCard({ data }: { data: ProductOverview }) {
         </div>
         {/* here is input filed  */}
         <div className="pb-6">
-          <form action=""> 
+          <form action="">
             <BillingInput
               label="BID AMOUNT*"
               name="amount"
@@ -239,9 +239,9 @@ export default function ShareCard({ data }: { data: ProductOverview }) {
                 addProductCartItem(data)
               }}
               type="button"
-              className="w-full bg-secondary text-center rounded-full text-white text-xs font-normal uppercase leading-3 tracking-tight focus:ring-0 focus:outline-none md:w-48 px-8 py-5 items-center"
+              className="w-full flex justify-center gap-3 bg-secondary text-center rounded-full text-white text-xs font-normal uppercase leading-3 tracking-tight focus:ring-0 focus:outline-none md:w-48 px-8 py-5 items-center"
             >
-              Invest now
+              Invest now <CartIcon fill="#FFFF" />
             </button>
           </div>
           <div className="my-8 max-w-[608px] h-[0px] border border-orange-700 border-opacity-20 md:hidden block"></div>

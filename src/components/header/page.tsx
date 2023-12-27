@@ -132,6 +132,7 @@ export default function Header() {
                   key={x.id}
                   onClick={() => select(x)}
                 >
+                  <Link href={x.href || "/"}>
                     <span
                       className={`hidden md:block py-7 text-base tracking-tight border-0 ${
                         theme.textClass
@@ -139,6 +140,7 @@ export default function Header() {
                     >
                       {x.name}
                     </span>
+                  </Link>
                 </div>
               ))}
             </div>
@@ -150,13 +152,11 @@ export default function Header() {
               </div>
             </div>
             <div className=" text-2xl lg:text-4xl font-bold lg:col-span-2 text-center py-5">
-              <Link href="/">
                 <Image
                   src={logo}
                   className="mx-auto"
                   alt="Picture of the author"
                 />
-              </Link>
             </div>
 
             {/* Menu Icons, Search, User, Cart  */}

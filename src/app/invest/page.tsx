@@ -11,7 +11,6 @@ import useSWR from "swr";
 import FilterSection from "@/components/FilterSection/page";
 
 const Invest = () => {
-  const [tags, setTags] = useState<String[]>([]);
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [priceRange, setPriceRange] = useState([]);
   const fetcher = async (url: string, payload?: string) => {
@@ -70,7 +69,7 @@ const Invest = () => {
           />
 
           {/* product list  */}
-          <div className="md:block hidden">
+          <div className="">
             <Product items={data?.data} />
           </div>
         </div>

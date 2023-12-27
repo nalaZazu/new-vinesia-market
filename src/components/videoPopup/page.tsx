@@ -3,12 +3,14 @@ import React from "react";
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { Xmark } from "../../assets/icons/Icons";
-export default function Popup({
+export default function VideoPopup({
   open = false,
   setOpen,
+  link = "https://www.youtube.com/embed/iu2C7AeIqac?si=m_dZQecmVZYzo6MU",
 }: {
   open?: any;
   setOpen?: any;
+  link?: any;
 }) {
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -53,7 +55,7 @@ export default function Popup({
                   <div className="sm:flex sm:items-start">
                     <iframe
                       className=" w-full lg:h-[600px] md:h-[400px] sm:h-[400px]"
-                      src="https://www.youtube.com/embed/iu2C7AeIqac?si=m_dZQecmVZYzo6MU "
+                      src={link}
                       title="YouTube video player"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     ></iframe>

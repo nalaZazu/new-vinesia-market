@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Newsletter from "@/components/newsletter/page";
 import Footer from "@/components/footer/page";
 import Dropdown from "@/common/DropDown/page";
@@ -9,13 +9,46 @@ import NewsletterMobile from "@/components/newsletter/MobileView";
 import Link from "next/link";
 import ScrollAnimation from "@/common/ScrollAnimation/page";
 import VerticalBreadCrumb from "@/common/verticalBreadcrumb/page";
+import useSWR from "swr";
+import FilterSection from "@/components/FilterSection/page";
 
 export default function WineryArt() {
+  const [selectedFilters, setSelectedFilters] = useState([]);
+  const [priceRange, setPriceRange] = useState([]);
+  const fetcher = async (url: string, payload?: string) => {
+    const options = {
+      method: "POST",
+      ...(selectedFilters && {
+        body: JSON.stringify({
+          filters: selectedFilters,
+          price:
+            priceRange?.length > 0
+              ? { min: priceRange[0], max: priceRange[1] }
+              : {},
+        }),
+      }),
+      headers: {
+        accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    };
+    console.log("fetch", url, payload);
+    return fetch(url, options).then((res) => res.json());
+  };
+
+  const { data, error, isLoading, mutate } = useSWR(
+    `${process.env.NEXT_PUBLIC_API_ADDRESS}products/search`,
+    fetcher
+  );
+  useEffect(() => {
+    mutate();
+  }, [selectedFilters, priceRange]);
+
   return (
     <div className="absolute top-0 left-0 right-0 -z-10">
       <div className="w-full md:h-[742px] custom-collection-bg-image md:pt-0 pt-40 h-[620px] bg-no-repeat bg-cover bg-center bg-[url('https://i.ibb.co/pRfQnBG/image-137.png')]">
         {/* BreadCrumb start */}
-        <VerticalBreadCrumb />
+        {/* <VerticalBreadCrumb /> */}
         {/* BreadCrumb end */}
         <div className="flex md:items-end  items-center container mx-auto h-[628px] md:px-0 px-4 ">
           <div className="md:block hidden">
@@ -34,7 +67,7 @@ export default function WineryArt() {
           <div>
             <div className="block md:hidden   container mx-auto   md:px-0 px-4">
               <div className="">
-                <h1 className="      text-white text-6xl font-normal  leading-[68px]">
+                <h1 className=" text-white text-6xl font-normal  leading-[68px]">
                   Wine & art
                 </h1>
               </div>
@@ -66,7 +99,6 @@ export default function WineryArt() {
         </div>
       </div>
       <div>
-        {" "}
         <Link href="/wacollections/reso">
           <div className="relative md:block hidden container mx-auto">
             <div className="absolute flex justify-between w-full">
@@ -101,24 +133,17 @@ export default function WineryArt() {
       {/* Destop View */}
       <div className="container mx-auto mt-20">
         <hr className="border border-orange-700 border-opacity-20" />
-        <div className="hidden md:block my-20 ">
-          <Dropdown />
+        <div className="my-20">
+          <FilterSection
+            selectedFilters={selectedFilters}
+            setSelectedFilters={setSelectedFilters}
+            priceRange={priceRange}
+            setPriceRange={setPriceRange}
+          />
+          {/* product list */}
+          <Product items={data?.data} />
+          {/* product list  */}
         </div>
-        {/* Mobile view */}
-        <div className="md:hidden block px-6">
-          <MobileFilter />
-        </div>
-        {/* product list */}
-        <Product />
-        {/* product list  */}
-
-        {/* animation  component  */}
-        <ScrollAnimation />
-        {/* next product list  */}
-
-        <Product />
-        {/* animation  component  */}
-        <ScrollAnimation />
       </div>
       {/* desktop Newsletter*/}
       <div className="hidden sm:block">
