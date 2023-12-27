@@ -191,66 +191,64 @@ export default function Footer() {
                     <Twitter fill="#ACA7AA" />
                   </Link>
 
-                  <Link href="https://www.instagram.com/" className="p-2">
-                    <Image src={instagram} alt="twitter" className="w-4" />
+                    <Link href="https://www.instagram.com/" className="p-2">
+                      <Image src={instagram} alt="twitter" className="w-4" />
+                    </Link>
+                    <Link href="https://www.youtube.com/" className="p-2">
+                      <Image src={youtube} alt="twitter" className="w-4" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              {/* <!--Copyright section--> */}
+            </div>
+            <div className="flex  items-center sm:justify-center bg-[#1C141A] text-white p-2 lg:justify-between">
+              <div className=" container mx-auto flex-wrap  flex md:justify-between justify-center items-center">
+                <div className="md:mr-12 ">
+                  <span className="text-neutral-400 text-xs font-normal  leading-[18px]">
+                    Copyright © 2023 Vinesia. All Rights Reserved
+                  </span>
+                </div>
+                <div className=" ">
+                  <div className="flex justify-center items-center gap-[10px] pt-[10px]">
+                    <Link href="#" className="p-2">
+                      <Image src={strip} alt="strip" />
+                    </Link>
+                    <Link href="#" className="p-2">
+                      <Image src={Gpay} alt="Gpay" />
+                    </Link>
+                    <Link href="#" className="p-2">
+                      <Image src={applePay} alt="applePay" />
+                    </Link>
+
+                  <Link href="#" className="p-2">
+                    <Image src={visa} alt="visa" />
                   </Link>
-                  <Link href="https://www.youtube.com/" className="p-2">
-                    <Image src={youtube} alt="twitter" className="w-4" />
+                  <Link href="#" className="p-2">
+                    <Image src={master} alt="master" />
                   </Link>
                 </div>
               </div>
+              <div className="md:pt-0 pt-4 ">
+                <div className=" md:mx-0 mx-4 md:text-right text-neutral-400 text-xs font-normal  leading-[18px] md:divide-x  flex gap-4 flex-wrap  justify-center">
+                  <div>
+                    <Link href="/terms_conditions"> Terms & conditions</Link>
+                  </div>
+                  <div className="ps-4">
+                    <Link href="/privacy_policy">Privacy Policy</Link>
+                  </div>
+                  <div className="ps-4">
+                    <Link href="/cookie_policy">Cookie Policy</Link>
+                  </div>
+                  <div className="ps-4">
+                    <Link href="/disclaimer">Disclaimer</Link>
+                  </div>
+                </div>
+              </div>
             </div>
-            {/* <!--Copyright section--> */}
           </div>
-          <div className="flex  items-center sm:justify-center bg-[#1C141A] text-white p-2 lg:justify-between">
-            <div className=" container mx-auto flex-wrap  flex md:justify-between justify-center items-center">
-              <div className="md:mr-12 ">
-                <span className="text-neutral-400 text-xs font-normal  leading-[18px]">
-                  Copyright © 2023 Vinesia. All Rights Reserved
-                </span>
-              </div>
-              <div className=" ">
-                <div className="flex justify-center items-center gap-[10px] pt-[10px]">
-                  <Link href="#" className="p-2">
-                    <Image src={strip} alt="facebook" />
-                  </Link>
-                  <Link href="#" className="p-2">
-                    <Image src={Gpay} alt="twitter" />
-                  </Link>
-                  <Link href="#" className="p-2">
-                    <Image src={applePay} alt="twitter" />
-                  </Link>
-
-                <Link href="#" className="p-2">
-                  <Image src={visa} alt="twitter" />
-                </Link>
-                <Link href="#" className="p-2">
-                  <Image src={master} alt="twitter" />
-                </Link>
-              </div>
-            </div>
-            <div className="md:pt-0 pt-4 ">
-              <div className=" md:mx-0 mx-4 md:text-right text-neutral-400 text-xs font-normal  leading-[18px] md:divide-x  flex gap-4 flex-wrap  justify-center">
-                <div>
-                  <Link href="/terms_conditions"> Terms & conditions</Link>
-                </div>
-                <div className="ps-4">
-                  <Link href="/privacy_policy">Privacy Policy</Link>
-                </div>
-                <div className="ps-4">
-                  <Link href="/cookie_policy">Cookie Policy</Link>
-                </div>
-                <div className="ps-4">
-                  <Link href="/disclaimer">Disclaimer</Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
-
-
+        </footer>
+      </div>
     </React.Fragment>
   );
 }
