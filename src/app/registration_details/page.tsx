@@ -69,7 +69,7 @@ export default function Page() {
           data={tabs}
         />
 
-        {activeTab == 0 && (
+        {activeTab == 0 && (n
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="py-6 grid sm:grid-cols-2 grid-cols-1 gap-6">
               <SelectBox title="title" name='title' data={titles} />
