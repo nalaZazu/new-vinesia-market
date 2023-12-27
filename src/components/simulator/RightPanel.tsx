@@ -14,7 +14,7 @@ export default function RightPanel() {
   return (
     <Flex style={{fontFamily:'Canela', width:"20%", height:"100vh"}} gap="1rem" vertical>
         <div style={{height:"10vh"}}></div>
-        <h3 style={{height:"10vh", fontWeight: "bold",fontSize:"clamp(0.5em, 1.2vw, 1.2em)"}}>Choose the baseline you want to compare the performance of your portfolio against</h3>
+        <h3 style={{height:"10%", fontWeight: "bold",fontSize:"clamp(0.5em, 1.2vw, 1.2em)"}}>Choose the baseline you want to compare the performance of your portfolio against</h3>
         <h2 style={{fontWeight:"normal", marginTop: 0, fontSize: "clamp(1.25rem, 1.5vw, 1.5rem)"}}>Baseline</h2>
         <div style={{border:"0.2px dashed #BF4D20", padding: "0 0 0 0.4rem"}}>
         <h2 style={{fontWeight:"normal", marginTop: 0, fontSize: "clamp(1.25em, 1.5vw, 1.5em)"}}>Classic 60/40 Portfolio</h2>

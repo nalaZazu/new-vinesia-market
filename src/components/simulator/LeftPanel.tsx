@@ -138,7 +138,7 @@ export default function LeftPanel() {
             <h2 style={{fontWeight:"normal", width:"12.6vw", fontSize: "clamp(1.25rem, 1.5vw, 1.5rem)"}}>Your Portfolio</h2>
             <Button type="text" style={{fontFamily: "Canela",borderColor:"#BF4D20", width:"5.4vw", textAlign:"center"}} icon={<UndoOutlined style={{fontSize:".80vw", margin:"0 -0.1vw 0 -0.2vw"}} rotate={180}/>} onClick={() => resetValuesToCurrentBaseline()}>Reset</Button>
         </Flex>
-        <div style={{height:"30vh", width:"100%", marginBottom:"1em"}}>
+        <div style={{height:"30%", width:"100%"}}>
           <Space direction='vertical' size="small">
             {items.map((item) => {
               return (
@@ -148,7 +148,7 @@ export default function LeftPanel() {
             })}
           </Space>
         </div>
-        { error ? <span style={{color: "#f00", fontWeight:"300", marginTop:"1.5em"}}>Please adjust the values so that their total equals 100%. <br/>Current total: <span style={{fontWeight: "600"}}>[{sum}]%</span></span>   : null   }
+        { error ? <span style={{color: "#f00", fontWeight:"300"}}>Please adjust the values so that their total equals 100%. <br/>Current total: <span style={{fontWeight: "600"}}>[{sum}]%</span></span>   : null   }
       </Flex>
   )
 }
