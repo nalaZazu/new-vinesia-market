@@ -85,7 +85,7 @@ export default function LeftPanel() {
           key: '1',
           label:
                 <Flex align='center' justify='space-between' style={{width:"100%"}}>
-                  <span style={{width:"50%", fontFamily:'Canela', fontSize:"clamp(0.5rem, 1vw, 1rem)"}}>Wine Index <br/> (Liv-ex 1000)</span>
+                  <span style={{width:"50%", fontFamily:'Canela', fontSize:"clamp(0.5em, 1vw, 1em)"}}>Wine Index <br/> (Liv-ex 1000)</span>
                   <Input id="highlight-input" placeholder='%' name="wine" suffix="%" onChange={handleInputChange} value={input.wine} style={{backgroundColor: "#F2E5CA", width:"30%", fontFamily: "Canela",borderColor:" #BD936B"}} ></Input>
                 </Flex>
         },
@@ -94,7 +94,7 @@ export default function LeftPanel() {
           label:
                 <Flex gap={"small"} align='flex-start' justify='flex-start' vertical style={{width:"100%"}}>
                   <Flex align='center' justify='space-between' style={{width:"100%"}}>
-                    <span style={{width:"50%", fontFamily:'Canela', fontSize:"clamp(0.5rem, 1vw, 1rem)"}}>U.S. Stocks <br/>(S&P 500)</span>
+                    <span style={{width:"50%", fontFamily:'Canela', fontSize:"clamp(0.5em, 1vw, 1em)"}}>U.S. Stocks <br/>(S&P 500)</span>
                     <Input placeholder='%' name="stock" suffix="%" onChange={handleInputChange} value={input.stock} style={{backgroundColor: "#F2E5CA", width:"30%", fontFamily: "Canela",borderColor:" #BD936B" }} ></Input>
                   </Flex>
                 </Flex>
@@ -105,7 +105,7 @@ export default function LeftPanel() {
           label: 
                 <Flex vertical gap={"small"} align='flex-start' justify='space-between' style={{width:"100%"}}>
                   <Flex align='center' justify='space-between' style={{width:"100%"}}>
-                    <span style={{width:"70%",fontFamily:'Canela', fontSize:"clamp(0.5rem, 1vw, 1rem)"}}>U.S. Bonds <br/>(7-10 Year)</span>
+                    <span style={{width:"70%",fontFamily:'Canela', fontSize:"clamp(0.5em, 1vw, 1em)"}}>U.S. Bonds <br/>(7-10 Year)</span>
                     <Input placeholder='%' name="bond" suffix="%" onChange={handleInputChange} value={input.bond} style={{backgroundColor: "#F2E5CA", width:"30%", fontFamily: "Canela",borderColor:" #BD936B"}}></Input>
                   </Flex>
                 </Flex>
@@ -115,7 +115,7 @@ export default function LeftPanel() {
           key: '4',
           label: 
                 <Flex align='center' justify='space-between'>
-                  <span style={{width:"50%", fontFamily:'Canela', fontSize:"clamp(0.5rem, 1vw, 1rem)"}}>US Real Estate <br/> (Core US REIT)</span>
+                  <span style={{width:"50%", fontFamily:'Canela', fontSize:"clamp(0.5em, 1vw, 1em)"}}>US Real Estate <br/> (Core US REIT)</span>
                   <Input placeholder='%' name="real_estate" suffix="%" onChange={handleInputChange} value={input.real_estate} style={{backgroundColor: "#F2E5CA", width:"30%", fontFamily: "Canela",borderColor:" #BD936B"}} ></Input>
                 </Flex>
     
@@ -124,21 +124,21 @@ export default function LeftPanel() {
           key: '5',
           label:
                 <Flex align='center' justify='space-between'>
-                  <span style={{width:"50%", fontFamily:'Canela', whiteSpace:"initial", fontSize:"clamp(0.5rem, 1vw, 1rem)"}}>Commodities <br/> (Bloomberg Commodity Index)</span>
+                  <span style={{width:"50%", fontFamily:'Canela', whiteSpace:"initial", fontSize:"clamp(0.5em, 1vw, 1em)"}}>Commodities <br/> (Bloomberg Commodity Index)</span>
                   <Input placeholder='%' name="commodity" suffix="%" onChange={handleInputChange} value={input.commodity} style={{backgroundColor: "#F2E5CA", width:"30%", fontFamily: "Canela",borderColor:" #BD936B"}} ></Input>
                 </Flex>
         },
       ];
     
   return (
-    <Flex style={{fontFamily:'Canela', width:"20vw", height:"100vh"}} gap="1rem" justify='flex-start' flex="auto" vertical>
+    <Flex style={{fontFamily:'Canela', width:"20%", height:"100%"}} gap="1rem" justify='flex-start' flex="auto" vertical>
         <div style={{height:"10vh"}}></div>
-        <h3 style={{height:"10vh", fontSize:"clamp(0.5rem, 1.2vw, 1.2rem)", fontWeight:"bold"}}>Build your own portfolio below and see what the performance would have been over a specific time period</h3>
-        <Flex align='baseline' justify='flex-start' style={{ height:"5vh"}}>
+        <h3 style={{height:"10%", fontSize:"clamp(0.5em, 1.2vw, 1.2em)", fontWeight:"bold"}}>Build your own portfolio below and see what the performance would have been over a specific time period</h3>
+        <Flex align='baseline' justify='flex-start' style={{ height:"5%"}}>
             <h2 style={{fontWeight:"normal", width:"12.6vw", fontSize: "clamp(1.25rem, 1.5vw, 1.5rem)"}}>Your Portfolio</h2>
             <Button type="text" style={{fontFamily: "Canela",borderColor:"#BF4D20", width:"5.4vw", textAlign:"center"}} icon={<UndoOutlined style={{fontSize:".80vw", margin:"0 -0.1vw 0 -0.2vw"}} rotate={180}/>} onClick={() => resetValuesToCurrentBaseline()}>Reset</Button>
         </Flex>
-        <div style={{height:"30vh", width:"18vw", marginBottom:"1vh"}}>
+        <div style={{height:"30vh", width:"100%", marginBottom:"1vh"}}>
           <Space direction='vertical' size="small">
             {items.map((item) => {
               return (

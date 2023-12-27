@@ -491,3 +491,8 @@ h6 {
     height: 1000px;
   }
 }
+
+.ant-input-affix-wrapper input.ant-input{
+  background-color: #F2E5CA;
+  font-family: 'Canela';
+}

@@ -85,7 +85,7 @@ export default function GraphPanel() {
             <h4 style={{fontWeight:"400", marginTop:"-2px"}}>A portfolio performance comparison: with fine wine vs without fine wine</h4>
           </Flex>
           {graphPoints &&
-          <div style={{width:"100%", height:"55%"}}> 
+          <div style={{width:"100%", height:"50%"}}> 
           <ResponsiveContainer>
           <LineChart
               data={graphPoints.baseline || []}
@@ -140,43 +140,43 @@ export default function GraphPanel() {
           </ResponsiveContainer>
           </div>
           }
-          <Flex justify='flex-start' align='center' style={{width: "70%", height:"auto"}} vertical>
+          <Flex justify='flex-start' align='center' style={{width: "80%", height:"auto"}} vertical>
             <Flex justify='center' style={{marginTop:"0rem", width:"100%", fontFamily:"Canela"}} align='center' >
               <Button style={{backgroundColor: period === '5y' ? '#BD936B' : '#fff', fontFamily: 'Canela',margin:"0 0 0 0"}} onClick={() => returnPeriod('5y')}>5Y</Button>
               <Button style={{backgroundColor: period === '10y' ? '#BD936B' : '#fff',fontFamily: 'Canela', margin:"0 5px 0 5px"}} onClick={() => returnPeriod('10y')}>10Y</Button>
               <Button style={{backgroundColor: period === 'max' ? '#BD936B' : '#fff',fontFamily: 'Canela',margin:"0 5px 0 0"}} onClick={() => returnPeriod('max')}>Max</Button>
             </Flex>
             <Flex justify='space-between' style={{width: "100%", marginTop:"0rem"}}>
-              <Flex vertical justify='center' align='left' style={{width:"25%", height:"100%", fontFamily:'Canela'}}>
-                <span style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px", fontSize:"clamp(1rem, 1vw, 1rem)", whiteSpace:"nowrap"}}>Your Portfolio</span>
+              <Flex vertical justify='center' align='left' style={{width:"27.5%", height:"100%", fontFamily:'Canela'}}>
+                <span style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px", fontSize:"clamp(0.8em, 2.5vw, 1.2em)", whiteSpace:"nowrap"}}>Your Portfolio</span>
+                <div style={{border:"0.2px dashed #BF4D20", padding: "0 0 0 0.4em", width:"100%", height:"4em", display:"flex", flexDirection:"column", justifyContent:"space-around"}}>
+                  <div style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px", fontSize:"0.9em"}}>Volatility:&nbsp;
+                    <span style={{fontWeight:"600"}}>{volatilityData.portfolio.toFixed(2)}%</span>
+                    <Tooltip style={{width:"30%"}} title={volatility_tt} placement='right'> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)', fontSize: '1em' }} /></Tooltip>
+                  </div>
+                  <div style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px", fontSize:"0.9em"}}>Sharpe-Ratio:&nbsp;
+                    <span style={{fontWeight:"600"}}>{sharpeRatio.portfolio.toFixed(2)}</span>
+                    <Tooltip style={{width:"30%"}} placement='right' title={sharpe_ratio_tt}> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)', fontSize: '1em' }} /></Tooltip>
+                  </div>
+                </div>
+              </Flex>
+              <Flex justify='center' align='center' vertical style={{width:"45%", marginTop:"12px", fontFamily: 'Canela'}}>
+                <div style={{width:"1%", backgroundColor:"black", height:"40%"}}></div>
+                <div style={{width:"98%", fontSize:"1em", textAlign:"center"}}>Additional investment-related metrics</div>
+                <div style={{width:"1%", backgroundColor:"black", height:"90%"}}></div>
+              </Flex>
+              <Flex vertical justify='center' align='left' style={{width:"27.5%", height:"100%", fontFamily: 'Canela'}}>
+                <span style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px", fontSize:"clamp(1em, 1em, 1em)"}}>Baseline</span>
                 <div style={{border:"0.2px dashed #BF4D20", padding: "0 0 0 0.4rem", height:"4rem", display:"flex", flexDirection:"column", justifyContent:"space-around"}}>
-                <div style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px", fontSize:"0.9vw"}}>Volatility:&nbsp;
-                  <span style={{fontWeight:"600"}}>{volatilityData.portfolio.toFixed(2)}%</span>
-                  <Tooltip style={{width:"30%"}} title={volatility_tt} placement='right'> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)' }} /></Tooltip>
+                  <div style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px", fontSize:"0.9em"}}>Volatility:&nbsp;
+                    <span style={{fontWeight:"600"}}>{volatilityData.baseline.toFixed(2)}%</span>
+                    <Tooltip style={{width:"30%"}} placement='right' title={volatility_tt}> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)', fontSize: '1em'}} /></Tooltip>
+                  </div>
+                  <div style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px", fontSize:"0.9em"}}>Sharpe-Ratio:&nbsp;
+                    <span style={{fontWeight:"600"}}>{sharpeRatio.baseline.toFixed(2)}</span>
+                    <Tooltip style={{width:"10%"}} placement='right' title={sharpe_ratio_tt}> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)', fontSize: '1em' }} /></Tooltip>
+                  </div>
                 </div>
-                <div style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px", fontSize:"0.9vw"}}>Sharpe-Ratio:&nbsp;
-                  <span style={{fontWeight:"600"}}>{sharpeRatio.portfolio.toFixed(2)}</span>
-                  <Tooltip style={{width:"30%"}} placement='right' title={sharpe_ratio_tt}> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)' }} /></Tooltip>
-                </div>
-                </div>
-              </Flex>
-              <Flex justify='center' align='center' vertical style={{width:"50%", marginTop:"12px", fontFamily: 'Canela'}}>
-                <div style={{width:"0.5%", backgroundColor:"black", height:"40%"}}></div>
-                <div style={{width:"98%", fontSize:"1vw", textAlign:"center"}}>Additional investment-related metrics</div>
-                <div style={{width:"0.5%", backgroundColor:"black", height:"90%"}}></div>
-              </Flex>
-              <Flex vertical justify='center' align='left' style={{width:"25%", height:"100%", fontFamily: 'Canela'}}>
-              <span style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px", fontSize:"clamp(1rem, 1vw, 1rem)"}}>Baseline</span>
-              <div style={{border:"0.2px dashed #BF4D20", padding: "0 0 0 0.4rem", height:"4rem", display:"flex", flexDirection:"column", justifyContent:"space-around"}}>
-                <div style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px", fontSize:"0.9vw"}}>Volatility:&nbsp;
-                  <span style={{fontWeight:"600"}}>{volatilityData.baseline.toFixed(2)}%</span>
-                  <Tooltip style={{width:"30%"}} placement='right' title={volatility_tt}> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)' }} /></Tooltip>
-                </div>
-                <div style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px", fontSize:"0.9vw"}}>Sharpe-Ratio:&nbsp;
-                  <span style={{fontWeight:"600"}}>{sharpeRatio.baseline.toFixed(2)}</span>
-                  <Tooltip style={{width:"30%"}} placement='right' title={sharpe_ratio_tt}> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)' }} /></Tooltip>
-                </div>
-              </div>
               </Flex>
             </Flex>
           </Flex>

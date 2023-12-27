@@ -27,16 +27,17 @@ const AboutTwo = () => {
       <ModalContainer
         visible={visible}
         setVisible={setVisible}
+        modalClass="max-h-[95vh] max-w-[90vw] rounded-md pt-4 pb-4 px-12"
         isCloseBtn={false}
       >
-        <div className="md:pt-[18px] px-4 pt-[10px] pb-[18px] font-['Canela']">
-        <GraphProvider>
-          <Flex gap="small" vertical={false} >
-            <LeftPanel />
-            <GraphPanel />
-            <RightPanel />
-          </Flex>
-        </GraphProvider>
+        <div>
+          <GraphProvider>
+            <Flex gap="small" vertical={false} >
+              <LeftPanel />
+              <GraphPanel />
+              <RightPanel />
+            </Flex>
+          </GraphProvider>
         </div>
       </ModalContainer>
 
