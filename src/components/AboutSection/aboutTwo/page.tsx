@@ -18,6 +18,7 @@ import { Flex } from 'antd';
 import LeftPanel from "@/components/simulator/LeftPanel";
 import GraphPanel from "@/components/simulator/GraphPanel";
 import RightPanel from "@/components/simulator/RightPanel";
+import simulatorPreview from "@/assets/images/simulatorPreview.png";
 const AboutTwo = () => {
   const [visible, setVisible] = useState(false);
   const [step, setStep] = useState(1);
@@ -168,7 +169,8 @@ const AboutTwo = () => {
                         <LineDot storke="#CB220D" /> Portofolio performace
                       </li>
                     </ul> */}
-                    <Appactivity />
+                    {/* <Appactivity /> */}
+                    <Image src={simulatorPreview} alt="image" />
                   </div>
                 </div>
                 {/* HERE IS NUMBER DEFINED  */}
