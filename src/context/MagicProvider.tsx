@@ -185,6 +185,7 @@ export function useProvideMagic(): MagicContextType {
                 await magic?.oauth.loginWithRedirect({
                     provider: subtype,
                     redirectURI: window.location.href,
+                    loginHint: ''
                 });
                 setIsRedirecting(true)
             }

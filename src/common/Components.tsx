@@ -70,14 +70,23 @@ export function CartControls({
   setStep,
   btnOneTittle = "Back",
   btnTwoTittle = "Next",
-  nextStep = "Billing Details",
+  prevStep,
+  nextStep,
+  prevStepDesc = "Billing Details",
+  nextStepDesc = "Billing Details",
   disable,
 }: {
   step?: any;
   setStep?: any;
   btnOneTittle?: any;
   btnTwoTittle?: any;
-  nextStep?: string;
+
+  prevStep?: any
+  nextStep?: any
+
+  prevStepDesc?: string;
+  nextStepDesc?: string;
+
   disable?: any;
 }) {
   const router = useRouter();
@@ -86,12 +95,12 @@ export function CartControls({
       <div className="flex sm:justify-end justify-center pt-8">
         <span className="uppercase text-xs">
           <span className="text-[#BF4D20]">next step: </span>
-          {nextStep}
+          {nextStepDesc}
         </span>
       </div>
       <div className="sm:flex justify-between pt-4 pb-[106px] sm:gap-0 grid grid-cols-1 gap-6">
         <button
-          onClick={() => setStep(step > 1 ? step - 1 : 1)}
+          onClick={() => prevStep()}
           className="flex items-center gap-4 border border-[#BF4D2020] rounded-full text-[#BF4D20] px-8 justify-center h-14 sm:order-1 order-2 sm:w-auto w-full"
         >
           <PrevIcon />
@@ -99,10 +108,10 @@ export function CartControls({
         </button>
         <button
           disabled={disable}
-          onClick={() =>
-            step
-              ? setStep(step == 3 ? router.push("/purchase") : step + 1)
-              : router.push("/checkout")
+          onClick={() => nextStep()
+            // step
+            //   ? setStep(step == 3 ? router.push("/purchase") : step + 1)
+            //   : router.push("/checkout")
           }
           className={`  ${
             disable ? "cursor-no-drop" : "cursor-pointer"

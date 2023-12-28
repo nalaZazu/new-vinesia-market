@@ -8,10 +8,13 @@ import temp from "@/assets/icons/Temprature.svg";
 import play from "@/assets/icons/Play.svg";
 import { Arrows } from "@/assets/icons/Icons";
 import CollectionPopup2 from "../collectionPopup2/page";
+import { EditionOverview } from "@/types/editionOverview.dto";
 const MindPledge = ({
   btnTitle = "SEE ALL CERTIFICATES",
+  item
 }: {
   btnTitle?: any;
+  item?: EditionOverview
 }) => {
   const [open, setOpen] = useState(false);
   const [openModal2, setOpenModal2] = useState(false);
@@ -27,10 +30,12 @@ const MindPledge = ({
   };
   return (
     <React.Fragment>
+      {item !== undefined &&
       <CollectionPopup2
+        item={item}
         open={openModal2}
         setOpen={() => setOpenModal2(!openModal2)}
-      />
+      />}
       <div className=" bg-[#7D302E]">
         <div className="md:py-[198px] mx-auto max-w-[816px] text-white">
           <div className="">

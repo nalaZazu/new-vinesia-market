@@ -32,8 +32,9 @@
     "siwe": "^2.1.4",
     "slick-carousel": "^1.8.1",
     "swr": "^2.2.4",
-    "viem": "^1.19.13",
-    "wagmi": "^1.4.10",
+    "viem": "^1.21.1",
+    "wagmi": "^1.4.12",
+    
     "web3": "^4.0.2"
   },
   "devDependencies": {

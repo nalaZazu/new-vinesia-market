@@ -111,7 +111,7 @@ export default function BillingInfo() {
                   title="Country"
                   name="country"
                   placeholder="Select Country"
-                  data={Countries.map((x) => x.name)}
+                  data={Countries.map((x) => { return { id: x.name, name: x.name } })}
                   value={profile?.billingAddress?.country}
                   {...country_validation}
                 />

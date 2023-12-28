@@ -64,8 +64,8 @@ export default function Checkout() {
             {step == 1 && <Step1 />}
             {step == 2 && <Step2 />}
 
-            <CartControls step={step} setStep={setStep} />
-          </div>
+            <CartControls step={step} prevStep={prevStep} nextStep={nextStep} />
+          </div> 
 
           <div className="max-w-[501px] md:block hidden">
             <CartInfo />

@@ -54,7 +54,7 @@ export function InfoIcon({
   size?: any;
 }) {
   return (
-    <div className="">
+    <>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={size}
@@ -83,7 +83,7 @@ export function InfoIcon({
           strokeLinejoin="round"
         />
       </svg>
-    </div>
+    </>
   );
 }
 

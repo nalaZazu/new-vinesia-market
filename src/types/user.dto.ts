@@ -23,6 +23,8 @@ export interface Address {
     zipCode: string
 
     city: string
+
+    notificationEmail: string
 }
 
 export interface User {
