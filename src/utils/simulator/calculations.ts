@@ -182,7 +182,6 @@ export function calculateSharpeRatio(period: periodType, portfolioPerformanceDat
     
     let portfolio_sharpe_ratio = (annualised_return_portfolio - decimal_risk_free_rate) / decimal_volatility_portfolio
     let baseline_sharpe_ratio = (annualised_return_baseline - decimal_risk_free_rate) / decimal_volatility_baseline
-    console.log('Portfolio Sharpe Ratio: ', portfolio_sharpe_ratio, 'Baseline Sharpe Ratio: ', baseline_sharpe_ratio)
     return {portfolio_sharpe_ratio, baseline_sharpe_ratio}
 }
 
