@@ -8,17 +8,26 @@ export const AccordionAbout = [
   {
     id: 1,
     title: "Stable Returns",
-    text: "Fine wine, like other tangible assets, tends to have a more predictable market value compared to volatile assets like stocks or cryptocurrencies. The value of fine wines grows over time as it matures and becomes rarer, making it a relatively stable investment.",
+    text: `Fine wine, like other tangible assets, tends to have a more predictable market value compared to volatile assets like stocks, bonds or crypto. The value of fine wines grows over time as it matures and becomes rarer, making it a relatively stable investment.
+
+    This quote sums it up perfectly: "Buying shares in a company is risky: management can fail, reputations can be damaged and competitors can disrupt its entire business model. 
+    Wine on the other hand is blissfully simple. Once bottled and reviewed by critics, you already know enough to significantly minimize your risk.`,
   },
   {
     id: 2,
     title: "Resistant to inflation",
-    text: "Tangible assets like fine wine, gold, and real estate have historically served as an effective hedge against inflation. This is due to their limited supply.",
+    text: `Tangible assets like fine wine, gold, and real estate have historically served as an effective hedge during inflation periods. Fine wine in particular often retains or increases its value as it is not directly tied to the value of currency. 
+
+    In addition, the demand for high-quality wines is global, which can protect against localized economic downturns or inflation. This worldwide market can help stabilize and potentially increase the value of fine wines.`,
   },
   {
     id: 3,
-    title: "Low correlation with traditional markets",
-    text: "The performance of the wine market tends to be uncorrelated with traditional financial markets. During the 2008 financial crisis, while many asset classes experienced significant losses, the fine wine market remained relatively resilient.",
+    title: "Low correlation to traditional markets",
+    text: `The performance of the wine market tends to be uncorrelated with traditional financial markets. 
+    Consider that fine wine has historically shown a correlation of 0.12 to the S&P500, which demonstrates an almost complete de-correlation to the stock market.
+    
+    During the 2008 financial crisis and subsequent shocks like COVID-19 or at the start of the Ukraine war, while many asset classes experienced significant losses, the fine wine market remained relatively resilient.
+    Limited drawdowns and low volatility in years of crisis make it a very attractive asset class to diversify an investment portfolio.`
   },
 ];
 

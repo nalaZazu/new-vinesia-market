@@ -33,6 +33,14 @@ export default function Checkout() {
     return <Loading/>
   }
 
+  function prevStep() {
+
+  }
+function nextStep() {
+  
+}
+
+
   return (
     <div className="max-w-[1171px] mx-auto px-4 md:mb-40 mb-20">
       <div className="w-full md:justify-start justify-between items-center md:gap-8 inline-flex sm:pt-[74px] pt-4 pb-4 border-b border-[#A6836C20]">

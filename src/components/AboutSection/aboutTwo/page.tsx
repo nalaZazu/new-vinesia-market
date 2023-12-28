@@ -196,7 +196,7 @@ const AboutTwo = () => {
               <div>
                 <div className=" ">
                   <h3 className="text-white md:text-4xl font-light  md:leading-[44px]    text-[21px]  leading-[29px]">
-                    Why invest in wine?
+                    Why invest in fine wine?
                   </h3>
 
                   <div className="underline decoration-wavy md:pt-10 pt-8">

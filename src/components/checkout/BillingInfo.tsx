@@ -37,7 +37,8 @@ export default function BillingInfo() {
       addressLine1: data.address1,
       addressLine2: data.address2,
       zipCode: data.zipCode,
-      city: data.city
+      city: data.city,
+      notificationEmail: ''
     }
 
     try {

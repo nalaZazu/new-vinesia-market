@@ -1,11 +1,12 @@
 "use client"
 import { CartItem, ItemType } from "@/types/dto/checkoutCart.dto";
-import { EditionOverview, ProductOverview } from "@/types/productOverview.dto";
+import { ProductOverview } from "@/types/productOverview.dto";
 import { createContext, useContext, useState } from "react";
 import { useUser } from "./user";
 import toast from "react-hot-toast";
 import { CartIcon } from "@/assets/icons/Icons";
 import Link from "next/link";
+import { EditionOverview } from "@/types/editionOverview.dto";
 
 export interface ProvideCart {
     cartItems: CartItem[]
