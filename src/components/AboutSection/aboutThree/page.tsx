@@ -34,11 +34,13 @@ const AboutThree = () => {
           {/* here is card defined  */}
           <div className="max-w-[928px]  container pt-14 mx-auto flex  md:justify-center md:gap-8 gap-5  overflow-x-auto  md:grid md:grid-cols-3 grid-cols-1">
             {CardAbout?.map((item: any, index: any) => {
-              const { id, text, image } = item;
+              const { id, text, image, href } = item;
               return (
+                <Link href={href} 
+                key={index}
+                >
                 <div
                   className="md:min-w-full  min-w-[80%] p-4 bg-white rounded overflow-hidden"
-                  key={index}
                 >
                   <div className=" bg-white">
                     <div className=" " key="index">
@@ -49,6 +51,7 @@ const AboutThree = () => {
                     </div>
                   </div>
                 </div>
+                </Link>
               );
             })}
           </div>

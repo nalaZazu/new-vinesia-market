@@ -34,7 +34,6 @@ export default function AvailableSoon() {
         "Content-Type": "application/json",
       },
     };
-    console.log("fetch", url, payload);
     return fetch(url, options).then((res) => res.json());
   };
 

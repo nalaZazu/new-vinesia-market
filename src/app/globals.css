@@ -24,7 +24,7 @@ html {
 @font-face {
   font-family: "Canela";
   src: url("../assets/fonts/Canela Web/Canela-Regular-Web.woff") format("woff");
-  font-weight: 400; /* 400 */
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -35,13 +35,14 @@ html {
   font-style: normal;
 }
 
-/*  */
+
 @font-face {
   font-family: "Bon Vivant";
   src: url("../assets/fonts/BonVivant-Regular.ttf");
   font-weight: normal;
   font-style: normal;
 }
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -236,6 +237,16 @@ body::-webkit-scrollbar {width:10px}
   100% {
     transform: rotate(100deg);
   }
+}
+
+/* Loading icon class */
+@keyframes slide {
+  from {
+    transform: translateX(-320px);
+}
+to {
+    transform: translateX(320px);
+}
 }
 
 /* .mobile_view_slider{} */

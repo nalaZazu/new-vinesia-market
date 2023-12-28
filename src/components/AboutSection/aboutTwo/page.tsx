@@ -44,7 +44,7 @@ const AboutTwo = () => {
       </ModalContainer>
 
       {/* here is end of modal */}
-      <div className="py-16 px-4 md:py-30 md:px-24">
+      <div className="md:py-30 my-3">
         <div className="text-center">
           <h2 className="max-w-[769px] text-zinc-800 md:text-7xl font-normal md:leading-[84px] mx-auto   text-center text-4xl   leading-[42px]">
             Wine investments without the worries
@@ -65,8 +65,7 @@ const AboutTwo = () => {
         {/* here is image defined */}
         <div className="flex justify-center md:pt-[92px] pt-12">
           {/* <Image src={investment} alt="image" /> */}
-          <video className="lg:w-1/2 w-full" autoPlay loop muted>
-            
+          <video className="lg:w-3/4 w-full" autoPlay loop muted>
                 <source src='assets/video/vinesia 211223_360.mp4' media="all and (max-width: 1200px)" />
                 <source src='assets/video/vinesia 211223_960.mp4' />
                 Your browser does not support the video tag.

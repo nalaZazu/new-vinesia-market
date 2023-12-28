@@ -22,7 +22,7 @@ const AboutSlider = ({ data = VideoSlider }: { data?: any }) => {
   const slider = useRef<any>();
 
   const sliderSettings = {
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -30,23 +30,7 @@ const AboutSlider = ({ data = VideoSlider }: { data?: any }) => {
     autoplaySpeed: 3000,
     centerPadding: "20px",
     beforeChange: (current: any, next: any) => setCurrentSlide(next),
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+
   };
 
   const CarouselControls = () => {
@@ -112,6 +96,7 @@ const AboutSlider = ({ data = VideoSlider }: { data?: any }) => {
           ref={slider}
           {...sliderSettings}
           className="invest_carousel z-20"
+          
         >
           {data?.map((item: any, i: any) => {
             const { video } = item;

@@ -5,7 +5,6 @@ import React from "react";
 
 const VerticalBreadCrumb = () => {
   const pathname = usePathname();
-  console.log(pathname, "pathname");
   return (
     <React.Fragment>
       <div className="md:block hidden">

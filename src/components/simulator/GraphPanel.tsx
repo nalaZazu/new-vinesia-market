@@ -150,11 +150,11 @@ export default function GraphPanel() {
               <Flex vertical justify='center' align='left' style={{width:"27.5%", height:"100%", fontFamily:'Canela'}}>
                 <span style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px", fontSize:"clamp(0.8em, 2.5vw, 1.2em)", whiteSpace:"nowrap"}}>Your Portfolio</span>
                 <div style={{border:"0.2px dashed #BF4D20", padding: "0 0 0 0.4em", width:"100%", height:"4em", display:"flex", flexDirection:"column", justifyContent:"space-around"}}>
-                  <div style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px", fontSize:"0.9em"}}>Volatility:&nbsp;
+                  <div style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px", fontSize:"1em"}}>Volatility:&nbsp;
                     <span style={{fontWeight:"600"}}>{volatilityData.portfolio.toFixed(2)}%</span>
                     <Tooltip title={volatility_tt} placement='right'> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)', fontSize: '1em' }} /></Tooltip>
                   </div>
-                  <div style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px", fontSize:"0.9em"}}>Sharpe-Ratio:&nbsp;
+                  <div style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px", fontSize:"1em"}}>Sharpe-Ratio:&nbsp;
                     <span style={{fontWeight:"600"}}>{sharpeRatio.portfolio.toFixed(2)}</span>
                     <Tooltip placement='right' title={sharpe_ratio_tt}> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)', fontSize: '1em' }} /></Tooltip>
                   </div>
@@ -168,11 +168,11 @@ export default function GraphPanel() {
               <Flex vertical justify='center' align='left' style={{width:"27.5%", height:"100%", fontFamily: 'Canela'}}>
                 <span style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px", fontSize:"clamp(1em, 1em, 1em)"}}>Baseline</span>
                 <div style={{border:"0.2px dashed #BF4D20", padding: "0 0 0 0.4rem", height:"4rem", display:"flex", flexDirection:"column", justifyContent:"space-around"}}>
-                  <div style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px", fontSize:"0.9em"}}>Volatility:&nbsp;
+                  <div style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px", fontSize:"1em"}}>Volatility:&nbsp;
                     <span style={{fontWeight:"600"}}>{volatilityData.baseline.toFixed(2)}%</span>
                     <Tooltip placement='right' title={volatility_tt}> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)', fontSize: '1em'}} /></Tooltip>
                   </div>
-                  <div style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px", fontSize:"0.9em"}}>Sharpe-Ratio:&nbsp;
+                  <div style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px", fontSize:"1em"}}>Sharpe-Ratio:&nbsp;
                     <span style={{fontWeight:"600"}}>{sharpeRatio.baseline.toFixed(2)}</span>
                     <Tooltip placement='right' title={sharpe_ratio_tt}> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)', fontSize: '1em' }} /></Tooltip>
                   </div>
