@@ -65,55 +65,63 @@ const AboutTwo = () => {
         <div className="flex justify-center md:pt-[92px] pt-12">
           {/* <Image src={investment} alt="image" /> */}
           <video className="lg:w-3/4 w-full" autoPlay loop muted>
-                <source src='assets/video/vinesia 211223_360.mp4' media="all and (max-width: 1200px)" />
-                <source src='assets/video/vinesia 211223_960.mp4' />
-                Your browser does not support the video tag.
-              </video>
+            <source src='assets/video/vinesia 211223_360.mp4' media="all and (max-width: 1200px)" />
+            <source src='assets/video/vinesia 211223_960.mp4' />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
 
       {/* here is invest in wine section */}
+      <div className="bg-[#7D302E]">
+        <div className="flex flex-wrap mx-auto  md:h-[800px] 2xl:h-[1200px]">
+          <div className=" md:basis-5/12 md:block hidden h-full w-full">
+            <Image
+              src={wineBottle}
+              className="w-full h-full"
+              alt="winebottle"
+            />
+          </div>
+          {/* for Mobile responsive  */}
+          <div className="w-full block md:hidden">
+            <Image
+              src={wineBottles}
+              className="w-full h-full"
+              alt="winebottle"
+            />
+          </div>
 
-      <div className="flex flex-wrap  bg-[#7D302E]  md:h-[800px] ">
-        <div className=" md:basis-5/12 md:block hidden h-full w-full">
-          <Image src={wineBottle} className="w-full h-full" alt="winebottle" />
-        </div>
-        {/* for Mobile responsive  */}
-        <div className="w-full block md:hidden">
-          <Image src={wineBottles} className="w-full h-full" alt="winebottle" />
-        </div>
+          <div className="  md:basis-7/12 h-[800px] md:pt-[110px] py-20">
+            <div className="md:ps-[139px] w-full h-full px-4">
+              <div className=" flex flex-col justify-between max-w-[501px] w-full h-full">
+                <div>
+                  <div className=" ">
+                    <h3 className="text-white md:text-4xl font-light  md:leading-[44px]    text-[21px]  leading-[29px]">
+                      Why invest in fine wine?
+                    </h3>
 
-        <div className="  md:basis-7/12 h-[800px] md:pt-[110px] py-20">
-          <div className="md:ps-[139px] w-full h-full px-4">
-            <div className=" flex flex-col justify-between max-w-[501px] w-full h-full">
-              <div>
-                <div className=" ">
-                  <h3 className="text-white md:text-4xl font-light  md:leading-[44px]    text-[21px]  leading-[29px]">
-                    Why invest in fine wine?
-                  </h3>
-
-                  <div className="underline decoration-wavy md:pt-10 pt-8">
-                    <Image src={lineregion} alt="image" />
+                    <div className="underline decoration-wavy md:pt-10 pt-8">
+                      <Image src={lineregion} alt="image" />
+                    </div>
+                    <AccordionWine containerClass=" md:py-5 py-4" />
                   </div>
+                  {/* here is button  */}
+                  <Link href="/invest">
+                    <div className=" pb-[70px]">
+                      <button className="w-full  px-8 py-[22px] rounded-full border border-white border-opacity-20 justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal  uppercase leading-3 tracking-tight">
+                        START INVESTING NOW{" "}
+                        <span>
+                          <Arrows storke="#FFFFFF" />
+                        </span>
+                      </button>
+                    </div>
+                  </Link>
                 </div>
-                <AccordionWine containerClass=" md:py-5 py-4" />
               </div>
-              {/* here is button  */}
-              <Link href="/invest">
-                <div className=" pb-[70px]">
-                  <button className="w-full  px-8 py-[22px] rounded-full border border-white border-opacity-20 justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal  uppercase leading-3 tracking-tight">
-                    START INVESTING NOW{" "}
-                    <span>
-                      <Arrows storke="#FFFFFF" />
-                    </span>
-                  </button>
-                </div>
-              </Link>
             </div>
           </div>
         </div>
       </div>
-
       {/*The potential of wine investment in numbers (next section) */}
       <div className="md:py-40 md:px-0   py-20 px-4">
         <div className="container mx-auto">
@@ -156,7 +164,7 @@ const AboutTwo = () => {
                   Performance of investment portfolio with fine wine in
                   comparison to baseline
                 </h5>
-                <div className="bg-orange-100 h-64">
+                <div className="bg-[#F3E8CF] h-64">
                   <div className="pt-1">
                     {/* <ul className="flex justify-end gap-4">
                       <li className="flex items-center">

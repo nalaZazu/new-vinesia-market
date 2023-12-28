@@ -22,6 +22,8 @@ import expertise from "@/assets/images/expertise.png";
 import VinesiaProcess from "@/components/vinesia/VinesiaProcess";
 import VinesiaWines from "@/components/vinesia/VinesiaWines";
 import VinesiaSelling from "@/components/vinesia/VinesiaSelling";
+import VinesiaAnimation from "@/components/vinesia/VinesiaAnimation";
+import Testing from "@/components/vinesia/Teting";
 
 const title = "How Vinesia works";
 const descripition =
@@ -53,6 +55,10 @@ export default function Vinesia() {
               How can I invest in wine?
             </h3>
           </div>
+        </div>
+        <div className="">
+          <VinesiaAnimation />
+          {/* <Testing /> */}
         </div>
       </div>
 
