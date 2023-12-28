@@ -112,7 +112,7 @@ const AboutSlider = ({ data = VideoSlider }: { data?: any }) => {
                     <div className="">
                       {/* absolute bottom-24 -left-6 */}
                       <div className="inline-block w-[121px] h-[0px] mt-[0px] border border-orange-700"></div>
-                      <p className="text-white text-lg font-semibold  leading-relaxed">
+                      <p className="text-white text-lg leading-relaxed">
                         {item.label}
                       </p>
                     </div>
