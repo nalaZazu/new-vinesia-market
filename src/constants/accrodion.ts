@@ -34,19 +34,24 @@ Limited drawdowns and low volatility in years of crisis make it a very attractiv
 export const AccordionAboutTwo = [
   {
     id: 1,
-    title: "What is a bonded warehouse and why does Vinesia use it?",
-    text: "Please provide comprehensive answers to those questions. You will save lots of time and money by eliminating the necessity to give constant support. You also will keep your clients' time cause they will quickly find the answers to all their questions.",
+    title: "How is the value of wine investments determined and tracked over time?",
+    text: "At Vinesia, we begin by leveraging data from two of the largest market data providers as our primary sources to retrieve current market prices. This approach ensures accuracy in our valuation process. Alongside this, our team of wine experts validates these prices to ensure no outliers price-wise, especially as wine is not a highly liquid market\n\nWe understand that navigating the wine investment landscape can be challenging, especially for those new to this field. That's why our platform is designed to simplify and clarify this process. We provide actionable data and insights, making it easy for investors to understand and track the performance of their wine investments over time.\n",
   },
   {
     id: 2,
     title:
-      "Are the photos on the website actual images of the wines I can invest in?",
-    text: "Please provide comprehensive answers to those questions. You will save lots of time and money by eliminating the necessity to give constant support. You also will keep your clients' time cause they will quickly find the answers to all their questions.",
+      "Can my wine be delivered to my home?",
+    text: "Certainly, Vinesia offers the option of home delivery for your wine investment. However, it's essential to consider that storing wines at home transforms them into a largely illiquid asset, complicating a potential resale. Selling requires finding a buyer yourself, managing shipping logistics, and ensuring the new buyer knows possible customs fees. Additionally, wines stored at home come with the challenge of proving optimal storage conditions. While wines are stored with Vinesia, investors enjoy a VAT-free investment due to the bonded warehouse. Requesting delivery will set you back your country-specific VAT. Shipping fees to your home and potential customs fees will apply (should these apply in your country). Storing your beautiful wines in our warehouse presents significant financial advantages for those who do not need them for immediate consumption.",
   },
   {
     id: 3,
-    title: "What is a bonded warehouse and why does Vinesia use it?",
-    text: "Please provide comprehensive answers to those questions. You will save lots of time and money by eliminating the necessity to give constant support. You also will keep your clients' time cause they will quickly find the answers to all their questions.",
+    title: "How does Vinesia ensure the authenticity and provenance of the wines offered?",
+    text: "Vinesia takes several steps to ensure the authenticity and provenance of wines. This includes sourcing directly from the wineries and providing spot-on documentation of the wine's history using blockchain for an immutable and real-time ledger of ownership and storage conditions. We also use security measures, like NFC and Bluetooth Low Energy tags, on bottles and cases to provide additional verification and traceability for each wine investment.",
+  },
+  {
+    id: 4,
+    title: "Will Vinesia help me in selling my investment when the time is right?",
+    text: "At Vinesia, we understand that selling your wine investment is critical to your investment journey. That is why we want to build a dynamic and liquid marketplace that encourages active bidding to find the right buyer for your fine wines. It is, of course, easier to bid on a digital asset whose provenance and storage conditions you are 100% sure about. If you do not receive offers, our team will make every effort to help you increase the visibility of the assets you wish to liquidate on Vinesia’s and our partners' marketplaces. We will also leverage our extensive network with auction houses, restaurants, and hotels as and when necessary.",
   },
 ];
 

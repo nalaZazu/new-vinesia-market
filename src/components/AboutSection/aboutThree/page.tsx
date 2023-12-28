@@ -7,6 +7,7 @@ import AboutSlider from "../aboutslider/page";
 import VectorOne from "@/assets/icons/VectorOne.svg";
 import VectorTwo from "@/assets/icons/VectorTwo.svg";
 import Link from "next/link";
+import { AccordionAboutTwo } from "@/constants/accrodion";
 const AboutThree = () => {
   return (
     <React.Fragment>
@@ -110,7 +111,7 @@ const AboutThree = () => {
             </div>
             {/* here is new sextion */}
             <div className="max-w-[501px] col-span-2">
-              <AccordionWineAbout />
+              <AccordionWineAbout data={AccordionAboutTwo}/>
             </div>
           </div>
         </div>

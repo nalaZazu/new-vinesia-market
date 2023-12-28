@@ -63,8 +63,31 @@ export function AccordionWine({
 
 export function AccordionWineAbout({ data = AccordionAbout }: { data?: any }) {
   const [isActive, setIsActive] = useState<any>();
+  const panelRefs = useRef<PanelRefs>({});
   const handleToggle = (id: any) => {
-    setIsActive(id);
+    setIsActive(isActive === id ? null : id);
+    if(!isActive !== id){
+      setTimeout(() => {
+        const panelElement = panelRefs.current[id];
+      if (panelElement) {
+        const panelRect = panelElement.getBoundingClientRect();
+        const additionalOffset = 55; // Extra scroll space in pixels
+        const isElementInView = 
+          panelRect.top >= 0 &&
+          panelRect.left >= 0 &&
+          panelRect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+          panelRect.right <= (window.innerWidth || document.documentElement.clientWidth);
+
+        if (!isElementInView) {
+          const absolutePanelTop = window.scrollY + panelRect.top - additionalOffset;
+          window.scrollTo({
+            top: absolutePanelTop,
+            behavior: 'smooth'
+          });
+        }
+      }
+      }, 100)
+    }
   };
   return (
     <React.Fragment>
@@ -89,7 +112,8 @@ export function AccordionWineAbout({ data = AccordionAbout }: { data?: any }) {
                   </Disclosure.Button>
 
                   {isActive == id && (
-                    <Disclosure.Panel className="text-neutral-600 text-base font-normal pt-3 leading-snug tracking[-0.32px] whitespace-pre-line">
+                    <Disclosure.Panel className="text-neutral-600 text-base font-normal pt-3 leading-snug tracking[-0.32px] whitespace-pre-line"
+                    ref={el => panelRefs.current[id] = el}>
                       {text}
                     </Disclosure.Panel>
                   )}
