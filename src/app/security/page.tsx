@@ -11,7 +11,6 @@ import PeaceVinesia from "@/components/secruityPage/PeaceVinesia";
 import Image from "next/image";
 
 export default function Security() {
-  
   return (
     <div>
       <div className="pt-[124px] pb-40">
@@ -61,7 +60,7 @@ export default function Security() {
 
       <div className="py-40">
         <div className="container mx-auto px-4">
-          <p className="max-w-[769px] text-zinc-800 text-lg font-semibold leading-relaxed pb-16">
+          <p className="md:max-w-[769px] w-full text-zinc-800 text-lg font-semibold leading-relaxed pb-16">
             All the data about the wine is stored in the blockchain and tied to
             each unique NFT so you can see the history of each wine. Since this
             history is also public and unchangeable, it eliminates fraud, which
@@ -69,8 +68,8 @@ export default function Security() {
             wine investing. 
             <br />
           </p>
-          <div className="grid grid-cols-2 pb-16">
-            <div className="pe-[141px]">
+          <div className="grid md:grid-cols-2 grid-cols-1 pb-16">
+            <div className="md:pe-[141px] pe-0">
               <h2 className="text-zinc-800 text-4xl font-light leading-[44px]">
                 Insuring your investment
               </h2>
@@ -99,15 +98,15 @@ export default function Security() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 ">
-            <div>
+          <div className="grid md:grid-cols-2 grid-cols-1 ">
+            <div className="md:order-1 order-2">
               <Image
                 className="w-full h-auto"
                 src={investment2}
                 alt="Transistor"
               />
             </div>
-            <div className="ps-[140px] flex items-end">
+            <div className="md:ps-[140px] ps-0 flex items-end md:order-2 order-1">
               <div className="py-8">
                 <p className=" text-neutral-600 text-base font-normal leading-snug">
                   In addition to physical safeguards, Vinesia provides

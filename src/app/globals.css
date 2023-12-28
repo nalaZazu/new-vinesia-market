@@ -23,15 +23,15 @@ html {
 
 @font-face {
   font-family: "Canela";
-  src: url("../assets/fonts/Canela Web/Canela-Regular-Web.woff") format("woff");
+  src: url("../assets/fonts/Canela Web/Canela-Regular-Web.woff") format("font-woff");
   font-weight: 400; /* 400 */
   font-style: normal;
 }
 
 @font-face {
   font-family: "Canela";
-  src: url("../assets/fonts/Canela Web/Canela-Light-Web.woff") format("woff"),
-    url("../assets/fonts/Canela Web/Canela-Light-Web.woff2") format("woff");
+  src: url("../assets/fonts/Canela Web/Canela-Light-Web.woff") format("font-woff"),
+    url("../assets/fonts/Canela Web/Canela-Light-Web.woff2") format("font-woff");
   font-style: normal;
 }
 
@@ -63,18 +63,18 @@ h6 {
   font-family: "Canela";
 }
 /* webkit class */
-.dropdownstyle::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px hsl(17, 55%, 89%);
-  background-color: hsl(17, 55%, 89%);
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px hsl(0, 0%, 100%);
+  background-color: hsl(0, 0%, 100%);
   border-radius: 10px;
 }
-
-.dropdownstyle::-webkit-scrollbar {
+body::-webkit-scrollbar {width:10px}
+::-webkit-scrollbar {
   width: 6px;
-  background-color: #f2dbd2;
+  background-color: #ffffff;
 }
 
-.dropdownstyle::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background-color: #bf4d20;
   border-radius: 10px;
 }

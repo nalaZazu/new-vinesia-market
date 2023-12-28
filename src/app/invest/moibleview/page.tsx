@@ -6,7 +6,7 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
 import xDelete from "../../../assets/icons/X-delete.svg";
 import Image from "next/image";
-import { filtersList } from "@/constants/invesdropdown";
+import { filtersList, sortList } from "@/constants/invesdropdown";
 
 import Link from "next/link";
 function classNames(...classes: any) {
@@ -17,6 +17,7 @@ function MobileFilter() {
   const [firstDropdownOpen, setFirstDropdownOpen] = useState(false);
   const [activeState, setActiveState] = useState<any>({});
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
+  const [selectedSort, setSelectedSort] = useState("default");
 
   const handleChange = (e: any) => {
     let index = selectedItems?.findIndex((d: any) => d === e);
@@ -175,7 +176,7 @@ function MobileFilter() {
         <Menu as="div" className="relative inline-block text-start basis-3/4">
           <div>
             <Menu.Button className="w-full flex gap-x-1.5 pl-4 pr-3 py-4 rounded-full   px-3 text-stone-500 text-base font-normal  leading-snug text-priamry border border-stone-500 justify-between uppercase">
-              Recommended
+              {selectedSort}
               <ChevronDownIcon
                 className="-mr-1 h-5 w-5 text-stone-500"
                 aria-hidden="true"
@@ -193,52 +194,35 @@ function MobileFilter() {
           >
             <Menu.Items className="absolute left-0 z-10 mt-2 w-full origin-top-right rounded-md bg-orange-50 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none p-2">
               <div className="py-1">
-                <Menu.Item>
-                  {({ active }) => (
-                    <Link
-                      href="#"
-                      className={classNames(
-                        active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                        "block px-4 py-2 text-sm"
+                {sortList.map((d: any, i: any) => {
+                  const { name } = d;
+                  return (
+                    <Menu.Item key={i}>
+                      {({ active }) => (
+                        <div
+                          onClick={() => setSelectedSort(name)}
+                          className={classNames(
+                            active
+                              ? "bg-gray-100 text-gray-900"
+                              : "text-gray-700",
+                            "block px-4 py-2 text-sm capitalize"
+                          )}
+                        >
+                          {name}
+                        </div>
                       )}
-                    >
-                      Account settings
-                    </Link>
-                  )}
-                </Menu.Item>
-                <Menu.Item>
-                  {({ active }) => (
-                    <Link
-                      href="#"
-                      className={classNames(
-                        active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                        "block px-4 py-2 text-sm"
-                      )}
-                    >
-                      License
-                    </Link>
-                  )}
-                </Menu.Item>
-                <Menu.Item>
-                  {({ active }) => (
-                    <Link
-                      href="#"
-                      className={classNames(
-                        active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                        "block px-4 py-2 text-sm"
-                      )}
-                    >
-                      Support
-                    </Link>
-                  )}
-                </Menu.Item>
+                    </Menu.Item>
+                  );
+                })}
               </div>
             </Menu.Items>
           </Transition>
         </Menu>
       </div>
-        <hr  className="border-secondary opacity-20 mt-8
-        "/>
+      <hr
+        className="border-secondary opacity-20 mt-8
+        "
+      />
     </>
   );
 }

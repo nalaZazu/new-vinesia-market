@@ -37,7 +37,8 @@ export default function BillingInfo() {
       addressLine1: data.address1,
       addressLine2: data.address2,
       zipCode: data.zipCode,
-      city: data.city
+      city: data.city,
+      notificationEmail: ''
     }
 
     try {
@@ -111,7 +112,7 @@ export default function BillingInfo() {
                   title="Country"
                   name="country"
                   placeholder="Select Country"
-                  data={Countries.map((x) => x.name)}
+                  data={Countries.map((x) => { return { id: x.name, name: x.name } })}
                   value={profile?.billingAddress?.country}
                   {...country_validation}
                 />

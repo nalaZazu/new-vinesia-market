@@ -6,7 +6,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { NextIcon2, PrevIcon2 } from "@/assets/icons/Icons";
-export default function ProductCarousel() {
+export default function ProductCarousel({images = []}: {images?: string[]}) {
   const sliderSettings = {
     customPaging: function () {
       return (
@@ -56,7 +56,7 @@ export default function ProductCarousel() {
     nextArrow: (
       <div className="productcarousel  z-50 ">
         <div className="text-secondary h-20 w-6 text-center flex items-center absolute lg:top-[230px] lg:right-[40px] md:top-[215px] md:right-[345px] top-[0px] right-[0px]">
-          <div className="">
+          <div className="h-6 w-6">
             <NextIcon2 />
           </div>
         </div>
@@ -66,7 +66,7 @@ export default function ProductCarousel() {
   return (
     <div>
       <Slider {...sliderSettings} className="product_slider z-0">
-        {[1, 2, 3]?.map((item: any, i: any) => {
+        {images.map((item: any, i: any) => {
           return (
             <div key={i}>
               <div
@@ -75,8 +75,10 @@ export default function ProductCarousel() {
               >
                 <div className="relative">
                   <Image
-                    src={big1}
-                    alt="Picture of the author"
+                    src={`${process.env.NEXT_PUBLIC_API_ADDRESS}products/file/${item.media}`}
+                    width={200}
+                    height={200}
+                    alt="Edition carousel picture"
                     className=" z-0 px-5"
                   />
                 </div>

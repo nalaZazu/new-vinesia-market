@@ -66,24 +66,25 @@ const getMenuItem = (pathName: string) => {
 };
 
 const isDark = (pathName: string, size: any) => {
-  const width = size?.width
+  const width = size?.width;
 
-  const dark = pathName === "/marketplace" ||
-  ((width === undefined || width > 767) && pathName.startsWith("/signup")) ||
-  pathName === "/wineart" ||
-  pathName === "/wacollections" ||
-  pathName === "/wineart" ||
-  pathName === "/wineart" ||
-  pathName === "/aboutus" ||
-  pathName === "/wacollections/reso" ||
-  pathName === "/limitedcollections" ||
-  pathName === "/gifts"
-  return dark
-}
+  const dark =
+    pathName === "/marketplace" ||
+    ((width === undefined || width > 767) && pathName.startsWith("/signup")) ||
+    pathName === "/wineart" ||
+    pathName === "/wacollections" ||
+    pathName === "/wineart" ||
+    pathName === "/wineart" ||
+    pathName === "/aboutus" ||
+    pathName === "/vinesia" ||
+    pathName === "/wacollections/reso" ||
+    pathName === "/limitedcollections" ||
+    pathName === "/gifts";
+  return dark;
+};
 
 const getTheme = (pathName: string, size: any) =>
-  isDark(pathName, size) ? themes.Dark : themes.Light
-
+  isDark(pathName, size) ? themes.Dark : themes.Light;
 
 export default function Header() {
   const { cartItems } = useCart();
@@ -94,7 +95,7 @@ export default function Header() {
 
   const [topSelected, setTopSelected] = useState(getTopMenuItem(pathName));
   const [selected, setSelected] = useState(getMenuItem(pathName));
-
+  console.log(topSelected, "topselected");
   const [theme, setTheme] = useState(getTheme(pathName, size));
 
   useEffect(() => {
@@ -152,11 +153,13 @@ export default function Header() {
               </div>
             </div>
             <div className=" text-2xl lg:text-4xl font-bold lg:col-span-2 text-center py-5">
+              <Link href={topSelected?.href || "/"}>
                 <Image
                   src={logo}
                   className="mx-auto"
                   alt="Picture of the author"
                 />
+              </Link>
             </div>
 
             {/* Menu Icons, Search, User, Cart  */}
@@ -221,7 +224,9 @@ export default function Header() {
             <form>
               <div className="relative">
                 <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                  <SearchIcon fill={isDark(pathName, size) ? "white" : "#3a2824"} />
+                  <SearchIcon
+                    fill={isDark(pathName, size) ? "white" : "#3a2824"}
+                  />
                 </div>
 
                 <input
@@ -238,7 +243,9 @@ export default function Header() {
             <form>
               <div className="relative">
                 <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                  <SearchIcon fill={isDark(pathName, size) ? "white" : "#3a2824"} />
+                  <SearchIcon
+                    fill={isDark(pathName, size) ? "white" : "#3a2824"}
+                  />
                 </div>
 
                 <input

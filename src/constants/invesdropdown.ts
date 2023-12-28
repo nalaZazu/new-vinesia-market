@@ -72,3 +72,8 @@ export const filtersList = [
     options: ["Reso", "Monsieur Z"],
   },
 ];
+
+export const sortList = [
+  { id: 1, name: "price: low to high" },
+  { id: 2, name: "price:high to low" },
+];

@@ -23,6 +23,7 @@
     "magic-sdk": "^21.4.1",
     "moment": "^2.29.4",
     "next": "14.0.4",
+    "pino-pretty": "^10.3.1",
     "react": "^18",
     "react-calendar": "^4.7.0",
     "react-chartjs-2": "^5.2.0",
@@ -35,8 +36,9 @@
     "siwe": "^2.1.4",
     "slick-carousel": "^1.8.1",
     "swr": "^2.2.4",
-    "viem": "^1.19.13",
-    "wagmi": "^1.4.10",
+    "viem": "^1.21.1",
+    "wagmi": "^1.4.12",
+    
     "web3": "^4.0.2"
   },
   "devDependencies": {

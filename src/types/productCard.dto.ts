@@ -1,4 +1,4 @@
-import { BottleSize, PackageType } from "./productOverview.dto"
+import { BottleSize, PackageType, ProductOwner } from "./productOverview.dto"
 import { Currency } from "./user.dto"
 
 export interface ItemCardDto {
@@ -6,6 +6,10 @@ export interface ItemCardDto {
     name: string
     isEdition: boolean
     number?: number
+    isAvailable?: boolean
+    owner?: ProductOwner    
+
+
     description: string
 
     vintage: number

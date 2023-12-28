@@ -41,7 +41,7 @@ export default function Banner({ breadCrumbData }: { breadCrumbData?: any }) {
   return (
     <div className="z-0">
       {/* <section className="grid grid-cols-1 custom-bg-image md:pt-0 pt-40 bg-[#4e261a] object-cover md:bg-[50rem_center] bg-center h-[818px] bg-top-[5rem]')]"> */}
-      <section className="grid grid-cols-1 custom-bg-image md:pt-0 pt-40 bg-[#4e261a] object-cover bg-center h-[818px] bg-top-[5rem]')]">
+      <section className="grid grid-cols-1 custom-bg-image md:pt-0 pt-40 bg-[#4e261a] object-cover bg-center h-[818px] md:h-[900px] lg:h-[818px] bg-top-[5rem]')]">
         <div className=" container mx-auto flex flex-col md:justify-end justify-between text-white md:px-0 px-4 pt-10 md:pt-0">
           <div>
             <div>

@@ -1,10 +1,13 @@
 import { AlertCircle, CheckBox, LineDot, SensorModal } from "@/assets/icons/Icons";
-import React from "react";
+import React, { useState } from "react";
 import SwitchToggle from "../Switch";
 import Appactivity from "@/components/charts/page";
 import TempHumChart from "@/components/tempHumChart/page";
+import { EditionOverview } from "@/types/editionOverview.dto";
 
-export default function StorageConditions() {
+export default function StorageConditions({ item }: { item: EditionOverview }) {
+  const [isFahrenheit, setIsFahrenheit] = useState(false)
+
   return (
     <div>
       <div className="justify-start items-center gap-4 flex pb-8">
@@ -33,8 +36,8 @@ export default function StorageConditions() {
                 HOW WE PROVIDE IT
               </p>
               <p className="max-w-[399px] text-zinc-800 text-base font-normal leading-snug">
-              We offer you full transparency into the storage conditions over time in our warehouse. You have real-time access to data on temperature and humidity levels.
-Vinesia does its best efforts to keep all wines stored between 12°C-15°C temperature and 60%-80% humidity levels at all times.
+                We offer you full transparency into the storage conditions over time in our warehouse. You have real-time access to data on temperature and humidity levels.
+                Vinesia does its best efforts to keep all wines stored between 12°C-15°C temperature and 60%-80% humidity levels at all times.
               </p>
             </div>
           </div>
@@ -43,12 +46,12 @@ Vinesia does its best efforts to keep all wines stored between 12°C-15°C tempe
               HOW IT WORKS
             </p>
             <p className="max-w-[399px] text-zinc-800 text-base font-normal leading-snug">
-            Internet of Things (IoT) sensors are placed in our warehouse and all data is immediately sent to the Polygon blockchain, which leaves an auditable history of storage conditions.
+              Internet of Things (IoT) sensors are placed in our warehouse and all data is immediately sent to the Polygon blockchain, which leaves an auditable history of storage conditions.
             </p>
           </div>
           <div className="flex ps-16 pt-8 gap-2 items-center">
             <p className=" text-[#906447] text-right text-xs font-normal font-['Albert Sans'] uppercase leading-3 tracking-tight">
-              Date of last check 
+              Date of last check
             </p>
             <CheckBox storke="#22C55E" />
             <p className="text-right text-zinc-800 text-base font-normal font-['Albert Sans'] leading-snug">
@@ -67,7 +70,7 @@ Vinesia does its best efforts to keep all wines stored between 12°C-15°C tempe
                   °C
                 </p>
 
-                <SwitchToggle />
+                <SwitchToggle enabled={isFahrenheit} setEnabled={setIsFahrenheit} />
 
                 <p className="w-4 h-[22px] text-zinc-800 text-base font-normal leading-snug">
                   °F
@@ -89,7 +92,7 @@ Vinesia does its best efforts to keep all wines stored between 12°C-15°C tempe
               </div>
             </div>
             <div className="pt-8">
-            <TempHumChart/>
+              <TempHumChart item={item} isFahrenheit={isFahrenheit} />
             </div>
           </div>
           <div className="max-w-[433px] border border-orange-700 border-opacity-20 my-6"></div>

@@ -8,21 +8,24 @@ import Ownership from "@/common/WineModel/Ownership";
 import StorageConditions from "@/common/WineModel/StorageConditions";
 import DisclosureModals from "../disclosure/disclosure1/page";
 import AuthenticityDIsclosure from "../disclosure/AuthenticityDIsclosure/page";
+import { EditionOverview } from "@/types/editionOverview.dto";
 
 // import DisclosureModals from "../disclosure/disclosure1/page";
 export default function CollectionPopup2({
   open = false,
   setOpen,
+  item
 }: {
   open: any;
   setOpen: any;
+  item: EditionOverview
 }) {
   return (
     <>
       <Transition.Root show={open} as={Fragment}>
         <Dialog
           as="div"
-          className="relative z-10"
+          className="relative z-50"
           // initialFocus={cancelButtonRef}
           onClose={setOpen}
         >
@@ -55,10 +58,10 @@ export default function CollectionPopup2({
                     <div className=" container mx-auto md:flex items-center grid grid-cols-1 justify-between">
                       <div className="order-2 md:order-1">
                         <h1 className="text-zinc-800 md:text-4xl font-light md:leading-[44px] text-[21px] leading-[29px]">
-                          1# Chateau La Mission Haut Brion Cru Classe | 2009
+                          {item.name}
                         </h1>
                         <p className=" text-zinc-800 text-base font-normal leading-snug">
-                          With Art of Lola Designer Fun
+                          {/* With Art of Lola Designer Fun */}
                         </p>
                       </div>
                       <div className="order-1 md:order-2 text-end">
@@ -81,10 +84,10 @@ export default function CollectionPopup2({
                       </div>
                     </div>
                     <div className="md:block hidden">
-                      <AssetInfo />
+                      <AssetInfo item={item}/>
                     </div>
                     <div className="md:hidden block">
-                      <DisclosureModals />
+                      <DisclosureModals item={item} />
                     </div>
                     <div className="max-w-[1024px] h-[0px] border border-orange-700 border-opacity-20 md:my-12 my-8"></div>
 
@@ -115,27 +118,27 @@ export default function CollectionPopup2({
                           </div>
                         </div>
                       </div>
-                      <Authenticity />
+                      <Authenticity item={item}/>
                     </div>
                     <div className="md:hidden block">
-                      <AuthenticityDIsclosure />
+                      <AuthenticityDIsclosure item={item} />
                     </div>
                     {/* column three */}
                     <div className="max-w-[1024px] h-[0px] border border-orange-700 border-opacity-20 md:my-12 my-6 "></div>
                     <div className="md:block hidden">
-                      <Ownership />
+                      <Ownership item={item}/>
                     </div>
                     <div className="md:hidden block">
-                      <AuthenticityDIsclosure />
+                      <AuthenticityDIsclosure item={item}/>
                     </div>
                     {/* column four */}
 
                     <div className="max-w-[1024px] h-[0px] border border-orange-700 border-opacity-20 md:my-12 my-6"></div>
                     <div className="md:block hidden">
-                      <StorageConditions />
+                      <StorageConditions item={item}/>
                     </div>
                     <div className="md:hidden block">
-                      <AuthenticityDIsclosure />
+                      <AuthenticityDIsclosure item={item}/>
                     </div>
                     {/* column five */}
                     <div className="md:hidden block">

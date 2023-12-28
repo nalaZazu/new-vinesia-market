@@ -1,9 +1,12 @@
 "use client"
 import { CartItem, ItemType } from "@/types/dto/checkoutCart.dto";
-import { EditionOverview, ProductOverview } from "@/types/productOverview.dto";
+import { ProductOverview } from "@/types/productOverview.dto";
 import { createContext, useContext, useState } from "react";
 import { useUser } from "./user";
 import toast from "react-hot-toast";
+import { CartIcon } from "@/assets/icons/Icons";
+import Link from "next/link";
+import { EditionOverview } from "@/types/editionOverview.dto";
 
 export interface ProvideCart {
     cartItems: CartItem[]
@@ -25,13 +28,13 @@ export function useProvideCart(): ProvideCart {
                 id: item.id,
                 type: ItemType.Product,
                 price: item.buyNowPrice,
-                media: item.media,
+                media: item.wine?.media,
                 name: item.name
             }
 
             const items = [...cartItems, add]
             setCartItems(items)
-            toast.success('Product added to cart')
+            toast.success(<><Link href={'/cart'}>Product added to cart</Link></>)
         } else {
             toast.success('Product is already in cart')
         }
@@ -51,6 +54,7 @@ export function useProvideCart(): ProvideCart {
 
             const items = [...cartItems, add]
             setCartItems(items)
+            toast.success(<><Link href={'/cart'}>Edition added to cart</Link></>)
         }
     }
 

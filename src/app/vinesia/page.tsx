@@ -1,7 +1,14 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import { LinereGion } from "@/assets/icons/Icons";
+import {
+  BuyCart,
+  DecentrIcon,
+  ExculsiveIcon,
+  LinereGion,
+  LinkdeIn,
+  NextIcon,
+} from "@/assets/icons/Icons";
 import VinesiaBanner from "@/components/vinesia/VinesiaBanner";
 import AboutSlider from "@/components/AboutSection/aboutslider/page";
 import Footer from "@/components/footer/page";
@@ -9,9 +16,13 @@ import NewslettersTwo from "@/components/newslttersTwo/page";
 import WineVideoBanner from "@/components/ProductOverView/WineVideoBanner";
 import Wanttoknow from "@/components/aboutpage/Wanttoknow";
 import vinesiaccordion from "@/assets/images/vinesiadropdown.png";
-import { AccordionAbout } from "@/constants/accrodion";
-import { AccordionWineAbout } from "@/components/accordion/page";
-import { AccordionSecurity } from "@/constants/accrodion";
+import { AccordionVinesia } from "@/constants/accrodion";
+import { AccordionWine, AccordionWineAbout } from "@/components/accordion/page";
+import expertise from "@/assets/images/expertise.png";
+import VinesiaProcess from "@/components/vinesia/VinesiaProcess";
+import VinesiaWines from "@/components/vinesia/VinesiaWines";
+import VinesiaSelling from "@/components/vinesia/VinesiaSelling";
+
 const title = "How Vinesia works";
 const descripition =
   "Discover the seamless journey of wine investment with Vinesia in our 'How It Works' video.";
@@ -78,7 +89,145 @@ export default function Vinesia() {
               <Image src={vinesiaccordion} alt="" className="w-full" />
             </div>
             <div>
-              <AccordionWineAbout data={AccordionSecurity} />
+              <div className="max-w-[500px] h-[0px] border border-orange-700 border-opacity-20"></div>
+              <AccordionWine
+                data={AccordionVinesia}
+                titleClass="text-zinc-800"
+                containerClass="py-6"
+                borderClass="border-b-2 border-orange-700 max-w-[500px] border-opacity-20"
+              />
+              <div className="pt-12 p-2">
+                <button className="flex gap-3 items-center text-center text-orange-700 text-xs font-normal uppercase leading-[18px] tracking-tight">
+                  READ MORE ABOUT SECURITY
+                  <NextIcon />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* About our wine expertise + experts start */}
+      <div className="py-40 bg-[#F7EFDF]">
+        <div className="max-w-[1166px] mx-auto px-4">
+          <div className="grid grid-cols-2 gap-[139px]">
+            <div>
+              <h3 className="max-w-[501px] text-zinc-800 text-4xl font-light leading-[44px] pb-8">
+                About our wine expertise + experts
+              </h3>
+              <p className="max-w-[501px] text-zinc-800 text-lg font-semibold leading-relaxed pb-4">
+                Deep knowledge, experience and a healthy dose of challenge from
+                our expert advisors to keep us on our toes.
+              </p>
+              <p className="max-w-[501px] text-neutral-600 text-base font-normal leading-snug ">
+                Our success stems from the ability to source exceptional wines
+                for our investors, to act as respectful stewards towards the
+                magical products we store and to make sure our investors feel
+                absolutely safe when it comes to their investment guarded
+                preciously by Vinesia. Our advisors’ reputation in the business
+                is stellar and they are here to ensure we act in an ethical,
+                sustainable way with the interests of our investors at the
+                center of our business model.
+              </p>
+            </div>
+            <div className="">
+              <div className="bg-orange-50 rounded-tl rounded-tr border border-orange-700 border-opacity-20">
+                {[1, 2, 3].map((items, i) => {
+                  return (
+                    <div
+                      key={i}
+                      className="justify-between items-center flex p-6"
+                    >
+                      <div className="justify-between items-center gap-4 flex">
+                        <div className="w-16 h-16 rounded-[100px] justify-center items-center flex">
+                          <Image src={expertise} alt="" />
+                        </div>
+                        <div className="flex-col justify-start items-start gap-1 inline-flex">
+                          <p className="text-zinc-800 text-lg font-semibold leading-relaxed">
+                            Fabrice Mopin
+                          </p>
+                          <p className="text-stone-500 text-xs font-normal uppercase leading-[18px] tracking-tight">
+                            Expert
+                          </p>
+                        </div>
+                      </div>
+                      <LinkdeIn fill={"#0A66C2"} />
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* About our wine expertise + experts end */}
+
+      {/* VinesiaProcess start*/}
+      <div className="py-40">
+        <div className="container mx-auto px-4">
+          <VinesiaProcess />
+        </div>
+      </div>
+      {/* VinesiaProcess end*/}
+      {/* How to invest in wines? start*/}
+      <div className="bg-[#2F222B] py-40">
+        <div className="container mx-auto px-4">
+          <h3 className="text-white text-4xl font-light leading-[44px] pb-16">
+            How to invest in wines?
+          </h3>
+          <VinesiaWines />
+          <div className="max-w-[1248px] h-[0px] border border-white border-opacity-20 mb-16"></div>
+
+          <p className="max-w-[830px] mx-auto h-[59px] text-center text-white text-lg font-semibold leading-relaxed">
+            Once your investment is completed, we move your chosen investment to
+            your profile and transfer all rights, blockchain certificates, and,
+            if relevant, the art to you
+          </p>
+        </div>
+      </div>
+      {/* How to invest in wines? end */}
+      <div className="py-40">
+        <div className="container mx-auto px-4">
+          <VinesiaSelling />
+        </div>
+      </div>
+
+      <div className="py-12 bg-slate-700 flex-col justify-center items-center gap-10 flex">
+        <div className="flex-col justify-center items-center gap-4 flex">
+          <div className="justify-center items-center gap-6 inline-flex">
+            <h4 className="text-right text-white text-[21px] font-light leading-[29px] tracking-wide">
+              Can’t find the answer? Contact us and we will help!
+            </h4>
+          </div>
+          <div className="justify-center items-center gap-2 inline-flex">
+            <div className="justify-start items-center gap-3 flex">
+              <button className="border-b-2 border-white border-opacity-20 text-white text-base font-normal leading-snug">
+                contact@vinesia.com
+              </button>
+            </div>
+          </div>
+          <p className="text-center text-gray-400 text-base font-normal leading-snug">
+            We generally answer within 24 hours on business days
+          </p>
+        </div>
+      </div>
+
+      <div className="py-40 bg-[#F7EFDF]">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 gap-8">
+            <div className="max-w-[498px]">
+              <h3 className=" text-zinc-800 text-4xl font-light leading-[44px]">
+                You might have questions, we definitely have answers.
+              </h3>
+              <div className="flex gap-3 pt-9">
+                <button className="border-b-2 border-orange-700 border-opacity-20 text-center text-orange-700 text-xs font-normal uppercase leading-[18px] tracking-tight">
+                  SEE ALL QUESTIONS & ANSWERS
+                </button>
+                <NextIcon />
+              </div>
+            </div>
+
+            <div>
+              <AccordionWineAbout />
             </div>
           </div>
         </div>
