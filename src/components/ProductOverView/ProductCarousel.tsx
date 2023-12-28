@@ -56,7 +56,7 @@ export default function ProductCarousel({images = []}: {images?: string[]}) {
     nextArrow: (
       <div className="productcarousel  z-50 ">
         <div className="text-secondary h-20 w-6 text-center flex items-center absolute lg:top-[230px] lg:right-[40px] md:top-[215px] md:right-[345px] top-[0px] right-[0px]">
-          <div className="">
+          <div className="h-6 w-6">
             <NextIcon2 />
           </div>
         </div>

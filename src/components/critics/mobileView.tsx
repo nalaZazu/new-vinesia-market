@@ -39,7 +39,7 @@ const CriticsMobile = () => {
     nextArrow: (
       <div className="mobile_view_slider  z-50 ">
         <div className=" text-black h-full w-full flex items-center rounded-full border border-orange-700 justify-center">
-          <div>
+          <div className="h-6 w-6" >
             <NextIcon2 />
           </div>
         </div>

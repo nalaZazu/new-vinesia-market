@@ -68,6 +68,44 @@ export const AccordionSecurity = [
   },
 ];
 
+export const AccordionVinesia = [
+  {
+    id: 1,
+    title: "Wines are Sourced Directly From Wineries",
+    text: "We care for your wine with special care, providing it with ideal conditions for its value to increase Your wine is securely stored in our warehouse with several temperature and humidity sensors continuously monitored and recorded on the blockchain. You can check these data points in near-real time.",
+  },
+  {
+    id: 2,
+    title: "Real Wine Becomes A Digital Asset",
+    text: "We care for your wine with special care, providing it with ideal conditions for its value to increase Your wine is securely stored in our warehouse with several temperature and humidity sensors continuously monitored and recorded on the blockchain. You can check these data points in near-real time.",
+  },
+  {
+    id: 3,
+    title: "Enhanced Security with Blockchain",
+    text: "We care for your wine with special care, providing it with ideal conditions for its value to increase Your wine is securely stored in our warehouse with several temperature and humidity sensors continuously monitored and recorded on the blockchain. You can check these data points in near-real time.",
+  },
+  {
+    id: 4,
+    title: "Monitor Your Wine In Real-Time",
+    text: "We care for your wine with special care, providing it with ideal conditions for its value to increase Your wine is securely stored in our warehouse with several temperature and humidity sensors continuously monitored and recorded on the blockchain. You can check these data points in near-real time.",
+  },
+  {
+    id: 5,
+    title: "Buy & Sell Wine Like You Would Stocks or NFT",
+    text: "We care for your wine with special care, providing it with ideal conditions for its value to increase Your wine is securely stored in our warehouse with several temperature and humidity sensors continuously monitored and recorded on the blockchain. You can check these data points in near-real time.",
+  },
+  {
+    id: 6,
+    title: "Real Photos of Your Investment",
+    text: "We care for your wine with special care, providing it with ideal conditions for its value to increase Your wine is securely stored in our warehouse with several temperature and humidity sensors continuously monitored and recorded on the blockchain. You can check these data points in near-real time.",
+  },
+  {
+    id: 7,
+    title: "Give The Gift of Wine",
+    text: "We care for your wine with special care, providing it with ideal conditions for its value to increase Your wine is securely stored in our warehouse with several temperature and humidity sensors continuously monitored and recorded on the blockchain. You can check these data points in near-real time.",
+  },
+];
+
 export const BiddingSection = [
   { id: "1", title: "Available funds", concurrence: "70" },
   { id: "2", title: "Ask price", concurrence: " 1,200" },
@@ -138,7 +176,6 @@ export const BlogDetailsList = [
     image: details2,
   },
 ];
-
 
 export const listItemPurchase = [
   { id: 1, title: "  Assets price", amount: "5,850.00" },

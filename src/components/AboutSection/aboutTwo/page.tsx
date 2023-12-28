@@ -203,7 +203,7 @@ const AboutTwo = () => {
                     <Image src={lineregion} alt="image" />
                   </div>
                 </div>
-                <AccordionWine />
+                <AccordionWine containerClass=" md:py-5 py-4" />
               </div>
               {/* here is button  */}
               <Link href="/invest">
