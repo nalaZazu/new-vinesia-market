@@ -29,6 +29,7 @@ const AboutTwo = () => {
         visible={visible}
         setVisible={setVisible}
         modalClass="max-h-[95vh] max-w-[90vw] rounded-md pt-4 pb-4 px-12"
+        backgroundClass="bg-zinc-800 bg-opacity-95"
         isCloseBtn={true}
       >
         <div>
@@ -164,8 +165,8 @@ const AboutTwo = () => {
                   Performance of investment portfolio with fine wine in
                   comparison to baseline
                 </h5>
-                <div className="bg-[#F3E8CF] h-64">
-                  <div className="pt-1">
+                <div className="bg-orange-100 h-64">
+                  <div className="pt-1 hover:cursor-pointer">
                     {/* <ul className="flex justify-end gap-4">
                       <li className="flex items-center">
                         <LineDot storke="#28475C" />
@@ -177,7 +178,7 @@ const AboutTwo = () => {
                       </li>
                     </ul> */}
                     {/* <Appactivity /> */}
-                    <Image src={simulatorPreview} alt="image" />
+                    <Image src={simulatorPreview} alt="image" onClick={() => setVisible(true)}/>
                   </div>
                 </div>
                 {/* HERE IS NUMBER DEFINED  */}

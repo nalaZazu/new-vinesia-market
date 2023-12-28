@@ -7,6 +7,7 @@ import AboutSlider from "../aboutslider/page";
 import VectorOne from "@/assets/icons/VectorOne.svg";
 import VectorTwo from "@/assets/icons/VectorTwo.svg";
 import Link from "next/link";
+import { AccordionAboutTwo } from "@/constants/accrodion";
 const AboutThree = () => {
   return (
     <React.Fragment>
@@ -101,17 +102,19 @@ const AboutThree = () => {
                 Have some questions on how it works?
               </h2>
               <div className="flex items-center pt-9 md:pb-0 pb-12 gap-3">
+                <Link href={'/faq'}>
                 <button className="text-center  text-orange-700 text-xs font-normal justify-start items-center gap-3 inline-flex uppercase leading-3 tracking-tight">
                   SEE ALL QUESTIONS & ANSWERS
-                </button>
                 <span>
                   <Arrows storke="#BF4D20" />
                 </span>
+                </button>
+                </Link>
               </div>
             </div>
             {/* here is new sextion */}
             <div className="max-w-[501px] col-span-2">
-              <AccordionWineAbout />
+              <AccordionWineAbout data={AccordionAboutTwo}/>
             </div>
           </div>
         </div>
