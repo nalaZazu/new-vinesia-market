@@ -95,7 +95,6 @@ export default function Header() {
 
   const [topSelected, setTopSelected] = useState(getTopMenuItem(pathName));
   const [selected, setSelected] = useState(getMenuItem(pathName));
-  console.log(topSelected, "topselected");
   const [theme, setTheme] = useState(getTheme(pathName, size));
 
   useEffect(() => {
