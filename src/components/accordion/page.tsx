@@ -45,7 +45,7 @@ export function AccordionWine({
                   </Disclosure.Button>
                   {isActive == id && (
                     <Disclosure.Panel
-                      className={`text-red-300 text-base font-normal pt-6  leading-snug tracking-[0.32px] ${descClass}`}
+                      className={`text-red-300 text-base font-normal pt-6  leading-snug tracking-[0.32px] whitespace-pre-wrap ${descClass}`}
                     >
                       {text}
                     </Disclosure.Panel>
@@ -89,7 +89,7 @@ export function AccordionWineAbout({ data = AccordionAbout }: { data?: any }) {
                   </Disclosure.Button>
 
                   {isActive == id && (
-                    <Disclosure.Panel className="text-neutral-600 text-base font-normal pt-3 leading-snug tracking[-0.32px]  ">
+                    <Disclosure.Panel className="text-neutral-600 text-base font-normal pt-3 leading-snug tracking[-0.32px] whitespace-pre-line">
                       {text}
                     </Disclosure.Panel>
                   )}
