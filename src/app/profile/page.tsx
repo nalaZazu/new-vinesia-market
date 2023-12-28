@@ -29,7 +29,7 @@ import { pagePaths } from "@/constants/navigate";
 import { useMagic } from "@/context/MagicProvider";
 
 export default function Profile() {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(1);
   //   const countryName = ["ALL", "CURRENTLY SELLING", "NOT CURRENtly SELLING"];
 
   let [categories] = useState([
@@ -39,30 +39,30 @@ export default function Profile() {
       subheading: "",
       icon: <InvestmentPortfolio />,
     },
-    {
-      id: 2,
-      title: "Favourite wine",
-      subheading: "",
-      icon: <FavouriteWine />,
-    },
-    {
-      id: 3,
-      title: "Bids & offers",
-      subheading: "",
-      icon: <BidsOffer />,
-    },
-    {
-      id: 3,
-      title: "Wallet",
-      subheading: "",
-      icon: <Wallet />,
-    },
-    {
-      id: 4,
-      title: "Invoices",
-      subheading: "",
-      icon: <Invoice />,
-    },
+    // {
+    //   id: 2,
+    //   title: "Favourite wine",
+    //   subheading: "",
+    //   icon: <FavouriteWine />,
+    // },
+    // {
+    //   id: 3,
+    //   title: "Bids & offers",
+    //   subheading: "",
+    //   icon: <BidsOffer />,
+    // },
+    // {
+    //   id: 4,
+    //   title: "Wallet",
+    //   subheading: "",
+    //   icon: <Wallet />,
+    // },
+    // {
+    //   id: 5,
+    //   title: "Invoices",
+    //   subheading: "",
+    //   icon: <Invoice />,
+    // },
     // {
     //   id: 5,
     //   title: "Vinesia Circle",
@@ -88,7 +88,7 @@ export default function Profile() {
   const {push} = useRouter()
 
   useEffect(() => {
-    if (active !== 6) return
+    if (active !== 7) return
 
     async function run() {
       await magicDisconnect()
@@ -108,6 +108,10 @@ export default function Profile() {
   }, [isLoading, isLoggedIn, push])
 
   if (isLoading || !isLoggedIn) return <Loading/>
+
+  if (active === 7) {
+    return <Loading text="Logging out ..."/>
+  }
 
   return (
     <div className="container mx-auto">
@@ -131,16 +135,16 @@ export default function Profile() {
                   i
                 ) => (
                   <Tab
-                    onClick={() => setActive(i)}
+                    onClick={() => setActive(id)}
                     key={i}
                     className={`w-full py-2.5 text-sm border-b-2 border-orange-700 border-opacity-20 font-medium leading-5 ring-offset-0 focus:outline-none focus:ring-0  ${
                       i == 0 ? "rounded-t-lg" : ""
-                    } ${active == i ? "bg-secondary" : "bg-transparent"} `}
+                    } ${active == id ? "bg-secondary" : "bg-transparent"} `}
                   >
                     <div className="flex gap-4 p-6">
                       <div
                         className={`text-lg font-semibold leading-relaxed  ${
-                          active == i ? "text-white" : "text-secondary"
+                          active == id ? "text-white" : "text-secondary"
                         } `}
                       >
                         {icon}
@@ -148,14 +152,14 @@ export default function Profile() {
                       <div className="text-left">
                         <div
                           className={`text-lg font-semibold leading-relaxed  ${
-                            active == i ? "text-white" : "text-zinc-800"
+                            active == id ? "text-white" : "text-zinc-800"
                           } `}
                         >
                           {title}
                         </div>
                         <div
                           className={`text-xs font-normal leading-[18px] ${
-                            active == i ? "text-white" : "text-zinc-800"
+                            active == id ? "text-white" : "text-zinc-800"
                           } `}
                         >
                           {subheading}
@@ -192,15 +196,15 @@ export default function Profile() {
                       />
                     </li>
                   </ul> */}
-                  {active === 0 && <InvestmentTab />}
-                  {active === 0 && <InvestmentCard />}
+                  {/* {active === 0 && <InvestmentTab />} */}
+                  {active === 1 && <InvestmentCard />}
                   
                   {/* {active === 1 && <PortfolioOverview />} */}
-                  {active === 3 && <WalletOverview />}
+                  {active === 4 && <WalletOverview />}
                   {/* {active === 2 && <ReceivedBids />} */}
                   {/* {active === 4 && <Invoices />} */}
-                  {active === 5 && <Account />}
-                  {active === 6 && <Loading/>}
+                  {active === 6 && <Account />}
+                  {active === 7 && <Loading/>}
                   
 
                   {/* <InvestmentTab /> */}

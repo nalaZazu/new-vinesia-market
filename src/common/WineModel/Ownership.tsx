@@ -1,7 +1,8 @@
 import { AlertCircle, CheckBox, SensorModal } from "@/assets/icons/Icons";
+import { EditionOverview } from "@/types/editionOverview.dto";
 import React from "react";
 
-export default function Ownership() {
+export default function Ownership({ item }: { item: EditionOverview }) {
   return (
     <div>
       <div className="justify-start items-center gap-4 flex pb-8">
@@ -50,8 +51,8 @@ export default function Ownership() {
                 BLE ID
               </p>
               <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
-              <p className="text-center text-orange-700 text-xs font-normal uppercase leading-3 tracking-tight">
-                943469B5656E
+              <p className="text-center text-orange-700 text-base font-normal uppercase leading-3 tracking-tight">
+                {item.bleId ?? ''}
               </p>
               <AlertCircle storke="#BF4D20" />
             </div>
@@ -61,7 +62,7 @@ export default function Ownership() {
               </p>
               <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
               <p className="text-zinc-800 text-base font-normal leading-snug">
-                23.12.2023 | 08:00 am
+                {item.bleLastCheck?.toISOString() ?? ''}
               </p>
             </div>
             <div className="md:flex gap-4 items-center">

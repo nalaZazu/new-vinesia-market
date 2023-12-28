@@ -55,7 +55,7 @@ export function AccordionWine({
                   {isActive === index && (
                     <div
                       key={index}
-                      className={`text-red-300 text-base font-normal pt-6  leading-snug tracking-[0.32px] ease-out transform transition-transform duration-1000 ${descClass}`}
+                      className={`text-red-300 text-base font-normal pt-6  leading-snug tracking-[0.32px] whitespace-pre-wrap ease-out transform transition-transform duration-1000 ${descClass}`}
                     >
                       {text}
                     </div>
@@ -109,7 +109,7 @@ export function AccordionWineAbout({ data = AccordionAbout }: { data?: any }) {
                   </div>
 
                   {isActive == index && (
-                    <div className="text-neutral-600 text-base font-normal pt-3 leading-snug tracking[-0.32px]  ">
+                    <div className="text-neutral-600 text-base font-normal pt-3 leading-snug tracking[-0.32px] whitespace-pre-line">
                       {text}
                     </div>
                   )}

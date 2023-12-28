@@ -69,33 +69,29 @@ const SignUp = () => {
     await connectAsync(email)
   }
 
-  if (isLoading || isReconnecting) {
-    return <><Wrapper /><Loading /></>
-  }
-
   if (isRedirecting) {
-    return <><Wrapper /><Loading text="Redirecting to Social Login ..." /></>
+    return <><Wrapper /><Loading text="Redirecting ..." /></>
   }
 
 
   if (isConnecting || isReconnecting) {
-    return <><Wrapper /><Loading text="Please wait, while the magic is happening" /></>
+    return <><Wrapper /><Loading text="Please wait, while the magic ..." /></>
   }
 
   if (isConnected || isLoggedIn) {
     return (
       <><Wrapper />
-      <Loading text='Redirecting to profile ...'>
+      <Loading text='Please wait, while the magic ...'>
 
 
-        Magic Connection {isConnected ? <>true</> : <>false</>}<br />
+        {/* Magic Connection {isConnected ? <>true</> : <>false</>}<br />
         Magic Redirecting {isRedirecting ? <>true</> : <>false</>}<br />
         Magic Reconnecting {isReconnecting ? <>true</> : <>false</>}<br />
         JWT Connection {isLoggedIn ? <>true</> : <>false</>}<br />
 
         JWT Token { }<br />
 
-        <button onClick={() => push(pagePaths.profile)}>GO</button>
+        <button onClick={() => push(pagePaths.profile)}>GO</button> */}
         {/* here is disconnect button */}
         {/* <button onClick={disconnect} className="text-center w-full text-orange-700 text-xs font-normal   uppercase leading-3 tracking-tight px-8 py-[22px] rounded-[48px] border border-orange-700 border-opacity-20 justify-center items-center gap-3 inline-flex">
         DISCONNECT

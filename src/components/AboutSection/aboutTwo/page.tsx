@@ -13,6 +13,12 @@ import CalculationSetting from "@/components/Modal/Calculation/page";
 import PerformanceModel from "@/components/Modal/Performance/page";
 import Appactivity from "@/components/charts/page";
 import Link from "next/link";
+import { GraphProvider } from "@/context/GraphContextProvider";
+import { Flex } from 'antd';
+import LeftPanel from "@/components/simulator/LeftPanel";
+import GraphPanel from "@/components/simulator/GraphPanel";
+import RightPanel from "@/components/simulator/RightPanel";
+import simulatorPreview from "@/assets/images/simulatorPreview.png";
 const AboutTwo = () => {
   const [visible, setVisible] = useState(false);
   const [step, setStep] = useState(1);
@@ -22,134 +28,22 @@ const AboutTwo = () => {
       <ModalContainer
         visible={visible}
         setVisible={setVisible}
-        isCloseBtn={false}
+        modalClass="max-h-[95vh] max-w-[90vw] rounded-md pt-4 pb-4 px-12"
+        isCloseBtn={true}
       >
         <div>
-          <div className="text-center md:pt-[72px]    px-4  pt-[60px] pb-[72px]">
-            {step === 1 && (
-              <div className="md:max-w-[607px]   mx-auto text-center ">
-                <div className="md:pb-14 pb-8">
-                  <span className="text-[#A6836C]  text-xs font-normal  uppercase leading-3 tracking-tight ">
-                    Steps
-                  </span>
-                  <h3 className="text-zinc-800 text-4xl font-light  leading-[44px] tracking[-0.36px]">
-                    1/3
-                  </h3>
-                </div>
-                <div>
-                  <h3 className=" text-center text-zinc-800 md:text-4xl  pb-4 md:leading-[44px] tracking-[-0.36px]  text-[21px] font-light   leading-[29px]">
-                    Assets in your investment portfolio
-                  </h3>
-                  <p className="text-center text-zinc-800 text-base font-normal  leading-snug ">
-                    Choose assets and determine what percentage of your
-                    portfolio they represent
-                  </p>
-                </div>
-                <div className="py-8 md:px-12 ">
-                  <AboutDropDown />
-                </div>
-              </div>
-            )}
-            {step === 2 && (
-              <div className=" md:max-w-[607px]   mx-auto ">
-                <div className="md:pb-14 pb-8 text-center">
-                  <span className="text-[#A6836C]  text-xs font-normal  uppercase leading-3 tracking-tight ">
-                    Steps
-                  </span>
-                  <h3 className="text-zinc-800 text-4xl font-light  leading-[44px] tracking[-0.36px]">
-                    2/3
-                  </h3>
-                </div>
-                <div className="py-8 md:px-12">
-                  <div className="pb-8">
-                    <h3 className="  text-zinc-800 md:text-4xl  text-center pb-4 md:leading-[44px] tracking-[-0.36px]  text-[21px] font-light   leading-[29px]">
-                      Calculation settings
-                    </h3>
-                  </div>
-                  <CalculationSetting />
-                </div>
-              </div>
-            )}
-            {step === 3 && (
-              <div className=" ">
-                <div className=" text-center">
-                  <span className="text-[#A6836C]  text-xs font-normal  uppercase leading-3 tracking-tight ">
-                    Steps
-                  </span>
-                  <h3 className="text-zinc-800 text-4xl font-light  leading-[44px] tracking[-0.36px]">
-                    3/3
-                  </h3>
-                </div>{" "}
-                <div className="md:pb-[163px] pb-[150px]">
-                  <div className="pt-[146px] flex justify-center animate-rotate ">
-                    <MarksAnim fill="#2F222B" />
-                  </div>
-                  <h4 className=" md:pt-6  text-center text-zinc-800 text-[21px] font-light  leading-[29px] tracking-wide">
-                    Calculation in progress
-                  </h4>
-                </div>
-              </div>
-            )}
-
-            {step === 4 && (
-              <div className="md:max-w-[607px]  mx-auto ">
-                <div className="md:pb-14 pb-8 text-center">
-                  <span className="text-[#A6836C]  text-xs font-normal  uppercase leading-3 tracking-tight ">
-                    Steps
-                  </span>
-                  <h3 className="text-zinc-800 text-4xl font-light  leading-[44px] tracking[-0.36px]">
-                    3/3
-                  </h3>
-                </div>
-                <PerformanceModel />
-              </div>
-            )}
-            {step === 5 && (
-              <div className="container mx-auto">
-                <div className="  md:pb-[117px]  md:py-0  py-[60px] px-4 text-center">
-                  <div className="md:pb-14 pb-8 text-center">
-                    <span className="text-[#A6836C]  text-xs font-normal  uppercase leading-3 tracking-tight ">
-                      Steps
-                    </span>
-                    <h3 className="text-zinc-800 text-4xl font-light  leading-[44px] tracking[-0.36px]">
-                      3/3
-                    </h3>
-                  </div>
-                  {/* here is grid section */}
-                  <div className="grid md:grid-cols-4 gap-8 pb-8">
-                    <div className="col-span-1">
-                      <AboutDropDown />
-                    </div>
-                    <div className="col-span-2">
-                      <PerformanceModel />
-                    </div>
-                    <div className="col-span-1">
-                      <CalculationSetting />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {step == 1 || step === 2 || step === 3 || step === 4 ? (
-              <button
-                onClick={() => setStep(step + 1)}
-                className="px-8 py-[22px] rounded-full border text-center border-orange-700 text-orange-700 border-opacity-20 justify-center items-center gap-3 inline-flex"
-              >
-                NEXT <Arrows storke="#BF4D20" />
-              </button>
-            ) : (
-              <button className="px-8 py-[22px] rounded-full border text-center border-orange-700 text-orange-700 border-opacity-20 justify-center items-center gap-3 inline-flex">
-                START AGAN
-                <Arrows storke="#BF4D20" />
-              </button>
-            )}
-          </div>
+          <GraphProvider>
+            <Flex gap="small" vertical={false} >
+              <LeftPanel />
+              <GraphPanel />
+              <RightPanel />
+            </Flex>
+          </GraphProvider>
         </div>
       </ModalContainer>
 
       {/* here is end of modal */}
-      <div className="py-16 px-4 md:py-30 md:px-24">
+      <div className="md:py-30 my-3">
         <div className="text-center">
           <h2 className="max-w-[769px] text-zinc-800 md:text-7xl font-normal md:leading-[84px] mx-auto   text-center text-4xl   leading-[42px]">
             Wine investments without the worries
@@ -170,14 +64,11 @@ const AboutTwo = () => {
         {/* here is image defined */}
         <div className="flex justify-center md:pt-[92px] pt-12">
           {/* <Image src={investment} alt="image" /> */}
-          <video className="lg:w-1/2 w-full" autoPlay loop muted>
-            <source
-              src="assets/video/vinesia 211223_360.mp4"
-              media="all and (max-width: 1200px)"
-            />
-            <source src="assets/video/vinesia 211223_960.mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <video className="lg:w-3/4 w-full" autoPlay loop muted>
+                <source src='assets/video/vinesia 211223_360.mp4' media="all and (max-width: 1200px)" />
+                <source src='assets/video/vinesia 211223_960.mp4' />
+                Your browser does not support the video tag.
+              </video>
         </div>
       </div>
 
@@ -200,14 +91,14 @@ const AboutTwo = () => {
             />
           </div>
 
-          <div className="  md:basis-7/12 h-[800px] md:pt-[110px] py-20">
-            <div className="md:ps-[139px] w-full h-full px-4">
-              <div className=" flex flex-col justify-between max-w-[501px] w-full h-full">
-                <div>
-                  <div className=" ">
-                    <h3 className="text-white md:text-4xl font-light  md:leading-[44px]    text-[21px]  leading-[29px]">
-                      Why investing in wine?
-                    </h3>
+        <div className="  md:basis-7/12 h-[800px] md:pt-[110px] py-20">
+          <div className="md:ps-[139px] w-full h-full px-4">
+            <div className=" flex flex-col justify-between max-w-[501px] w-full h-full">
+              <div>
+                <div className=" ">
+                  <h3 className="text-white md:text-4xl font-light  md:leading-[44px]    text-[21px]  leading-[29px]">
+                    Why invest in fine wine?
+                  </h3>
 
                     <div className="underline decoration-wavy md:pt-10 pt-8">
                       <Image src={lineregion} alt="image" />
@@ -285,7 +176,8 @@ const AboutTwo = () => {
                         <LineDot storke="#CB220D" /> Portofolio performace
                       </li>
                     </ul> */}
-                    <Appactivity />
+                    {/* <Appactivity /> */}
+                    <Image src={simulatorPreview} alt="image" />
                   </div>
                 </div>
                 {/* HERE IS NUMBER DEFINED  */}

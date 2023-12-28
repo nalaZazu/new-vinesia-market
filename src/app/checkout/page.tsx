@@ -30,8 +30,25 @@ export default function Checkout() {
   }, [isLoading, isLoggedIn, push, cartItems])
 
   if (isLoading) {
-    return <Loading/>
+    return <Loading />
   }
+
+  function prevStep() {
+    if (step === 2) {
+      //Go back to step about billing details
+      setStep(1)
+    }
+  }
+  function nextStep() {
+    if (step === 1) {
+      //validate data from step1, go to payment amount confirmation (includes info about Vinesia Wallet)
+      setStep(2)
+    }
+    if (step === 2) {
+      //validate data and move to payment
+    }
+  }
+
 
   return (
     <div className="max-w-[1171px] mx-auto px-4 md:mb-40 mb-20">
@@ -64,7 +81,7 @@ export default function Checkout() {
             {step == 1 && <Step1 />}
             {step == 2 && <Step2 />}
 
-            <CartControls step={step} setStep={setStep} />
+            <CartControls step={step} prevStep={prevStep} nextStep={nextStep} />
           </div>
 
           <div className="max-w-[501px] md:block hidden">
@@ -75,7 +92,7 @@ export default function Checkout() {
       {step == 3 && (
         <div className="mt-12 max-w-[560px]  mx-auto">
           <CartInfo />
-          <CartControls step={step} setStep={setStep} />
+          <CartControls step={step} prevStep={prevStep} nextStep={nextStep} />
         </div>
       )}
     </div>
