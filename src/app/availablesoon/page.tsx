@@ -4,7 +4,6 @@ import xmark from "../../assets/icons/x-mark-anim.svg";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Dropdown from "@/common/DropDown/page";
-import MobileFilter from "./moibleview/page";
 import Newsletter from "@/components/newsletter/page";
 import Footer from "@/components/footer/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
