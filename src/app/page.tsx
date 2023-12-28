@@ -241,7 +241,7 @@ const About = () => {
         " ref={round2}>
               <video className="absolute left-1/2 z-0 max-w-none object-cover -translate-x-1/2" autoPlay loop muted>
                 <source src='assets/video/231215_Vinesia_Hero2_360.mp4' media="all and (max-width: 700px)" />
-                <source src='assets/video/231215_Vinesia_Hero2_720.mp4' />
+                <source src='assets/video/231215_Vinesia_Hero2_Fast.mp4' />
                 Your browser does not support the video tag.
               </video>
             </div>
