@@ -56,9 +56,9 @@ export default function Vinesia() {
             </h3>
           </div>
         </div>
-        <div className="relative">
-          {/* <VinesiaAnimation /> */}
-          <Testing />
+        <div className="">
+          <VinesiaAnimation />
+          {/* <Testing /> */}
         </div>
       </div>
 

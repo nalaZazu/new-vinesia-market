@@ -8,87 +8,101 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 export default function VinesiaAnimation() {
-  const [isVisible, setIsVisible] = useState(false);
+  // const [isVisible, setIsVisible] = useState(false);
 
-  useEffect(() => {
-    const section = document.querySelector("#section");
-    const handleScroll = () => {
-      if (section) {
-        const rect = section.getBoundingClientRect();
-        const windowHeight =
-          window.innerHeight || document.documentElement.clientHeight;
-        setIsVisible(rect.top <= windowHeight && rect.bottom >= 0);
-      }
-    };
+  // useEffect(() => {
+  //   const section = document.querySelector("#section");
+  //   const handleScroll = () => {
+  //     if (section) {
+  //       const rect = section.getBoundingClientRect();
+  //       const windowHeight =
+  //         window.innerHeight || document.documentElement.clientHeight;
+  //       setIsVisible(rect.top <= windowHeight && rect.bottom >= 0);
+  //     }
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Check visibility when the component first mounts
+  //   window.addEventListener("scroll", handleScroll);
+  //   handleScroll(); // Check visibility when the component first mounts
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
-  useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
+  // useGSAP(() => {
+  //   gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
 
-    ScrollSmoother.create({
-      smooth: 1,
-      effects: true,
-    });
-    // CustomEase.getSVGData("wiggle", {
-    //   width: 1000,
-    //   height: 200,
-    //   path: "#ease",
-    // });
-    // CustomWiggle.create("wiggle", { wiggles: 10 });
-    // TweenMax.to("#ball", 4, { x: 300, ease: "wiggle" });
-    const path = document.querySelector(".infinity") as any;
-    const circle = document.querySelector(".circle") as any;
+  //   ScrollSmoother.create({
+  //     smooth: 1,
+  //     effects: true,
+  //   });
 
-    if (path && circle) {
-      const val = { distance: 0 };
+  //   const path = document.querySelector(".infinity") as any;
+  //   const circle = document.querySelector(".circle") as any;
 
-      gsap.to(val, {
-        distance: path.getTotalLength(),
-        repeat: -1,
-        duration: 5,
-        onUpdate: () => {
-          const point = path.getPointAtLength(val.distance);
-          // Update the circle coordinates
-          circle.setAttribute("cx", point.x);
-          circle.setAttribute("cy", point.y);
-        },
-      });
-    }
-  });
+  //   if (path && circle) {
+  //     const val = { distance: 0 };
+
+  //     gsap.to(val, {
+  //       distance: path.getTotalLength(),
+  //       repeat: -1,
+  //       duration: 5,
+  //       onUpdate: () => {
+  //         const point = path.getPointAtLength(val.distance);
+
+  //         circle.setAttribute("cx", point.x);
+  //         circle.setAttribute("cy", point.y);
+  //       },
+  //     });
+  //   }
+  // });
 
   return (
     <div className="pt-24 pb-40">
-      <div className="container mx-auto">
-        <div className="flex justify-between -mb-16 relative z-50">
-          {isVisible && (
-            <>
-              <span className="circle">
-                <InfoTooltip
-                  icon={
-                    <div className="w-16 h-16 fade-in bg-slate-700 rounded-full flex justify-center items-center vinesia-icon-animation">
-                      <p className=" text-center text-white text-lg font-semibold leading-relaxed">
-                        01
-                      </p>
-                    </div>
-                  }
-                />
-              </span>
-            </>
-          )}
-        </div>
-        <div id="section" className="h-1"></div>
+      <div className="flex justify-between -mb-16 relative z-50">
+        {/* {isVisible && (
+          <> */}
+        <span>
+          <InfoTooltip
+            icon={
+              <div className="w-16 h-16 fade-in bg-slate-700 rounded-full flex justify-center items-center vinesia-icon-animation">
+                <p className=" text-center text-white text-lg font-semibold leading-relaxed">
+                  01
+                </p>
+              </div>
+            }
+          />
+        </span>
+        <span>
+          <InfoTooltip
+            icon={
+              <div className="w-16 h-16 fade-in bg-slate-700 rounded-full flex justify-center items-center vinesia-icon-animation">
+                <p className=" text-center text-white text-lg font-semibold leading-relaxed">
+                  01
+                </p>
+              </div>
+            }
+          />
+        </span>
+        <span>
+          <InfoTooltip
+            icon={
+              <div className="w-16 h-16 fade-in bg-slate-700 rounded-full flex justify-center items-center vinesia-icon-animation">
+                <p className=" text-center text-white text-lg font-semibold leading-relaxed">
+                  01
+                </p>
+              </div>
+            }
+          />
+        </span>
+        {/* </>
+        )} */}
       </div>
+      {/* <div id="section" className="h-1"></div> */}
       <div className="relative z-0">
         <div>
           <svg
-            className="line1 absolute infinity"
+            className="line1 relative infinity"
             viewBox="0 0 1440 174"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -100,10 +114,10 @@ export default function VinesiaAnimation() {
             />
           </svg>
         </div>
-        <div id="ball"></div>
-        <div>
+
+        <div className="-mt-[10%]">
           <svg
-            className="line2 absolute"
+            className="line2 relative"
             viewBox="0 0 1440 174"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
