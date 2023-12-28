@@ -7,13 +7,19 @@ import xmark from "../../../assets/icons/x-mark.svg";
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 import { ArrowLongRight, NextIcon2 } from "@/assets/icons/Icons";
+import { useRouter } from "next/navigation";
 
 const SidePannel = ({ isDark }: { isDark?: Boolean }) => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState<any>(false);
+  const { push } = useRouter();
+  const [isSidebarOpen, setSidebarOpen] = useState<any>(false);
   const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
+    setSidebarOpen(!isSidebarOpen);
   };
 
+  const handleNavigate = (href: any) => {
+    push(href);
+    toggleSidebar();
+  };
   return (
     <>
       <div className="flex bg-[rgba(47, 34, 43, 0.99)]">
@@ -42,7 +48,7 @@ const SidePannel = ({ isDark }: { isDark?: Boolean }) => {
         {isSidebarOpen && (
           <div
             id="default-sidebar"
-            className="fixed top-0 left-0 z-40 max-w-96 w-full py-12 px-4 h-full overflow-y-auto  transition-transform  sm:translate-x-0  bg-[rgba(47,34,43,0.99)]"
+            className="fixed top-0 left-0 z-40 max-w-96 w-full py-12 px-4 h-full overflow-y-auto  transition-transform transform duration-300 ease-in-out  sm:translate-x-0  bg-[rgba(47,34,43,0.99)]"
             aria-label="Sidebar"
           >
             <ul className="  font-medium">
@@ -56,13 +62,17 @@ const SidePannel = ({ isDark }: { isDark?: Boolean }) => {
                   width={25}
                   height={25}
                   onClick={toggleSidebar}
+                  className=" cursor-pointer"
                 />
               </li>
               {menuBar?.map((item: any) => {
                 const { id, name, href, items } = item;
                 return (
                   <div key={id}>
-                    <Link href={href || "/"}>
+                    <div
+                      className=" cursor-pointer"
+                      onClick={() => handleNavigate(href || "/")}
+                    >
                       <li
                         className={`${
                           name == "Start"
@@ -72,15 +82,15 @@ const SidePannel = ({ isDark }: { isDark?: Boolean }) => {
                       >
                         {name}
                       </li>
-                    </Link>
+                    </div>
 
                     <div className="flex flex-col gap-5">
                       {items?.map((item: any, i: any) => {
                         return (
-                          <Link
-                            href={item?.href}
+                          <div
+                            onClick={() => handleNavigate(item?.href || "/")}
                             key={id + "-" + i}
-                            className="w-72 h-6 justify-between items-start flex"
+                            className=" h-6 justify-between items-start flex cursor-pointer"
                           >
                             <div className="text-neutral-400 text-base font-normal leading-snug">
                               {item?.name}
@@ -91,7 +101,7 @@ const SidePannel = ({ isDark }: { isDark?: Boolean }) => {
                             {/* <div className="w-6 h-6 justify-center items-center flex">
                               <div className="w-6 h-6 relative"></div>
                             </div> */}
-                          </Link>
+                          </div>
                         );
                       })}
                       <hr className="border border-white border-opacity-20 my-8" />
@@ -104,7 +114,10 @@ const SidePannel = ({ isDark }: { isDark?: Boolean }) => {
                 const { id, name, href, items } = item;
                 return (
                   <div key={id}>
-                    <Link href={href || "/"}>
+                    <div
+                    // onClick={() => handleNavigate(href || "/")}
+                    // className=" cursor-pointer"
+                    >
                       <li
                         className={`${
                           name == "Start"
@@ -114,15 +127,15 @@ const SidePannel = ({ isDark }: { isDark?: Boolean }) => {
                       >
                         {name}
                       </li>
-                    </Link>
+                    </div>
 
                     <div className="flex flex-col gap-5">
                       {items?.map((item: any, i: any) => {
                         return (
-                          <Link
-                            href={item?.href}
+                          <div
+                            onClick={() => handleNavigate(item.href || "/")}
                             key={id + "-" + i}
-                            className="w-72 h-6 justify-between items-start flex"
+                            className=" h-6 justify-between items-start flex cursor-pointer"
                           >
                             <div className="text-neutral-400 text-base font-normal leading-snug">
                               {item?.name}
@@ -133,7 +146,7 @@ const SidePannel = ({ isDark }: { isDark?: Boolean }) => {
                             {/* <div className="w-6 h-6 justify-center items-center flex">
                               <div className="w-6 h-6 relative"></div>
                             </div> */}
-                          </Link>
+                          </div>
                         );
                       })}
                       {/* <hr className="border border-white border-opacity-20 my-8" /> */}

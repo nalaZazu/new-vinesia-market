@@ -63,18 +63,18 @@ h6 {
   font-family: "Canela";
 }
 /* webkit class */
-.dropdownstyle::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px hsl(17, 55%, 89%);
-  background-color: hsl(17, 55%, 89%);
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px hsl(0, 0%, 100%);
+  background-color: hsl(0, 0%, 100%);
   border-radius: 10px;
 }
-
-.dropdownstyle::-webkit-scrollbar {
+body::-webkit-scrollbar {width:10px}
+::-webkit-scrollbar {
   width: 6px;
-  background-color: #f2dbd2;
+  background-color: #ffffff;
 }
 
-.dropdownstyle::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background-color: #bf4d20;
   border-radius: 10px;
 }
