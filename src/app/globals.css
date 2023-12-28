@@ -157,13 +157,69 @@ h6 {
 }
 /* contact end */
 
-/* vinesia banner */
+/* vinesia start */
 .vinesia-bg-image {
   background-image: url("../assets/images/vinesiabanner.png");
   height: 818px;
   background-size: cover;
   /* background-position: center; */
 }
+.line1 path {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 0;
+  animation: animate-line 5s linear forwards;
+}
+@keyframes animate-line {
+  0% {
+    stroke-dashoffset: 2000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.line2 path {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 0;
+  animation: animate-line2 5s linear forwards;
+}
+@keyframes animate-line2 {
+  0% {
+    stroke-dashoffset: -2000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.vinesia-icon-animation path {
+  animation: icon-animation 10s linear forwards;
+}
+
+@keyframes icon-animation {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/* vinesia end */
 
 .card_bg_shape {
   background-image: url("../assets/images/shape.png");
