@@ -99,18 +99,18 @@ const AboutSlider = ({ data = VideoSlider }: { data?: any }) => {
           
         >
           {data?.map((item: any, i: any) => {
-            const { video } = item;
+            const { video, thumbnails } = item;
             return (
               <div key={i} className="md:px-8 px-4 pt-8">
                 <div className="">
                   <div
                     onClick={() => handleVideoModal(video)}
-                    className="text-center cursor-pointer relative max-w-[380px] m-auto h-[246.23px] bg-no-repeat bg-cover md:bg-[url('https://i.ibb.co/LCb3y9J/slider-Image.png')]  bg-[url('https://i.ibb.co/MnXJPpn/01-Images.png')] "
+                    className={`text-center cursor-pointer relative max-w-[380px] m-auto h-[246.23px] bg-no-repeat bg-cover ]`}
                   >
-                    {/* <Image src={sliderabout} alt="image" /> */}
+                    <Image src={thumbnails} alt="thumbnails" width={380} height={0} />
                     <div className="">
                       {/* absolute bottom-24 -left-6 */}
-                      <div className="inline-block w-[121px] h-[0px] mt-[180px] border border-orange-700"></div>
+                      <div className="inline-block w-[121px] h-[0px] mt-[0px] border border-orange-700"></div>
                       <p className="text-white text-lg font-semibold  leading-relaxed">
                         {item.label}
                       </p>
