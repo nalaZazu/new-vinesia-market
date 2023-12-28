@@ -7,7 +7,7 @@ import {
   SelectBox,
 } from "@/common/Components";
 import { Countries } from "@/constants/countries";
-import { address_validation, city_validation, country_validation, last_name_validation, name_validation } from "@/constants/formFields";
+import { address_validation, city_validation, country_validation, email_validation, last_name_validation, name_validation } from "@/constants/formFields";
 import { useUser } from "@/context/user";
 import React, { useEffect, useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
@@ -38,7 +38,7 @@ export default function BillingInfo() {
       addressLine2: data.address2,
       zipCode: data.zipCode,
       city: data.city,
-      notificationEmail: ''
+      invoiceEmail: data.email
     }
 
     try {
@@ -151,6 +151,13 @@ export default function BillingInfo() {
                   placeholder="City"
                   value={profile?.billingAddress?.city}
                   {...city_validation}
+                />
+                <BillingInput
+                  label="email"
+                  name="email"
+                  placeholder="Invoice email"
+                  value={profile?.billingAddress?.invoiceEmail}
+                  {...email_validation}
                 />
               </div>
 

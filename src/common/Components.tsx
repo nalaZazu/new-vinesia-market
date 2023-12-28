@@ -87,7 +87,6 @@ export function CartControls({
 
   disable?: any;
 }) {
-  const router = useRouter();
   return (
     <div>
       <div className="flex sm:justify-end justify-center pt-8">
@@ -106,11 +105,7 @@ export function CartControls({
         </button>
         <button
           disabled={disable}
-          onClick={() => nextStep()
-            // step
-            //   ? setStep(step == 3 ? router.push("/purchase") : step + 1)
-            //   : router.push("/checkout")
-          }
+          onClick={() => nextStep()}
           className={`  ${
             disable ? "cursor-no-drop" : "cursor-pointer"
           }  flex items-center gap-4 border   border-[#BF4D2020] rounded-full text-white px-8 justify-center h-14 bg-[#BF4D20] sm:order-2 order-1 sm:w-auto w-full
@@ -340,6 +335,8 @@ export function SelectBox({
   const inputErrors = findInputError(errors, name);
   const isInvalid = isFormInvalid(inputErrors);
 
+  const options = { value: value, ...validation };
+
   return (
     <div className=" flex-col w-full justify-start items-start gap-2 inline-flex">
       {title && (
@@ -350,7 +347,7 @@ export function SelectBox({
         </div>
       )}
       <select
-        {...register(name, validation)}
+        {...register(name, options)}
         className="self-stretch w-full text-start text-[#D99479] h-14 pl-6 pr-5 p-4 rounded-full border  border-[#BF4D20]  bg-transparent outline-red-500 placeholder-[#D99479]"
       >
         <option value="">Select {title}</option>
@@ -361,35 +358,6 @@ export function SelectBox({
         ))}
       </select>
       {isInvalid && <InputError text={inputErrors.error?.message ?? ""} />}
-      {/* <Controller
-          name={name}
-          control={control}
-          defaultValue={value}
-          render={({ field: { onChange, onBlur, value, ref } }) => (
-            <Listbox value={selectedPerson} onChange={(x) => {
-              handleChange(x)
-              onChange(x)
-            }} >
-              <Listbox.Button className="self-stretch w-full text-start text-[#D99479] h-14 pl-6 pr-5 p-4 rounded-full border  border-[#CC714D]  bg-transparent outline-red-500 placeholder-[#D99479]">
-                {value ?? placeholder}
-              </Listbox.Button>
-              <Listbox.Options className="absolute w-full border bg-[#F7EFDF] overflow-y-scroll max-h-60">
-                {data.map((d, i) => (
-                  <Listbox.Option
-                    key={i}
-                    value={d}
-                    className={({ active }) =>
-                      `cursor-pointer select-none relative py-2 pl-10 pr-4 border-b-[1px] border-[#BF4D20]/10 ${active ? "bg-[#F5EAD5] text-[#2F222B]" : "text-[#2F222B]"
-                      }`
-                    }
-                  >
-                    {d}
-                  </Listbox.Option>
-                ))}
-              </Listbox.Options>
-            </Listbox>
-          )}
-        /> */}
     </div>
   );
 }

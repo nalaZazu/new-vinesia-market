@@ -122,7 +122,7 @@ export function AccordionWineAbout({ data = AccordionAbout }: { data?: any }) {
                   </Disclosure.Button>
 
                   {isActive == id && (
-                    <Disclosure.Panel className="text-neutral-600 text-base font-normal pt-3 leading-snug tracking[-0.32px] whitespace-pre-line"
+                    <Disclosure.Panel className="text-neutral-600 text-base font-light pt-3 leading-snug tracking[-0.32px] whitespace-pre-line"
                     ref={el => panelRefs.current[id] = el}>
                       {text}
                     </Disclosure.Panel>

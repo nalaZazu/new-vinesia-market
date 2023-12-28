@@ -24,7 +24,7 @@ export interface Address {
 
     city: string
 
-    notificationEmail: string
+    invoiceEmail: string
 }
 
 export interface User {
