@@ -16,7 +16,7 @@ export default function PricingDetail({ item }: { item?: any }) {
       <div>
         {/* first box */}
         <div className=" grid gap-0 lg:grid-cols-4 md:grid-cols-1 grid-cols-1 pt-6">
-          <div className="gap-5 p-5  border-l border-b border-t md:border-r-0  border-orange-700 border-opacity-20 flex-col justify-between items-start inline-flex">
+          <div className="gap-5 p-5  border-l border-b border-t md:border-r-0 border-r border-orange-700 border-opacity-20 flex-col justify-between items-start inline-flex">
             <div className="flex items-center gap-3 text-[#906447] text-xs font-normal uppercase leading-3 tracking-tight">
               <p>Release Price </p>
               <Image
@@ -29,7 +29,7 @@ export default function PricingDetail({ item }: { item?: any }) {
               {getPriceText(item?.releaseDetails?.releasePrice)}
             </p>
           </div>
-          <div className="gap-10 p-5   border-l   border-t border-b border-orange-700 border-opacity-20 flex-col justify-between items-start inline-flex">
+          <div className="gap-10 p-5   border-l  md:border-r-0 border-r  border-t border-b border-orange-700 border-opacity-20 flex-col justify-between items-start inline-flex">
             <div className="flex items-center gap-3  text-[#906447] text-xs font-normal uppercase leading-3 tracking-tight">
               <p>Average MARKET PRICE </p>
               <Image
@@ -57,7 +57,7 @@ export default function PricingDetail({ item }: { item?: any }) {
             </p>
           </div>
 
-          <div className="gap-10 p-5 bg-slate-700 rounded-br border border-orange-700 border-opacity-20 flex-col justify-between items-start inline-flex">
+          <div className="gap-10 p-5 bg-slate-700  border border-orange-700 border-opacity-20 flex-col justify-between items-start inline-flex">
             <div>
               <p className="text-white text-xs font-normal  uppercase leading-3 tracking-tight">
                 Price Change

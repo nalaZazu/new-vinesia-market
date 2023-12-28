@@ -491,3 +491,15 @@ h6 {
     height: 1000px;
   }
 }
+
+#productById canvas {
+  height: 250px !important;
+  width: 889px !important;
+}
+
+@media screen and (max-width: 768px) {
+  #productById canvas {
+    height: 228px !important;
+    width: 326px !important;
+  }
+}
