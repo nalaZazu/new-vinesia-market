@@ -24,7 +24,7 @@ const AboutSlider = ({ data = VideoSlider }: { data?: any }) => {
   const sliderSettings = {
     infinite: false,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: false,
     autoplaySpeed: 3000,
@@ -105,23 +105,18 @@ const AboutSlider = ({ data = VideoSlider }: { data?: any }) => {
                 <div className="">
                   <div
                     onClick={() => handleVideoModal(video)}
-                    className=" cursor-pointer relative h-[246.23px]  bg-no-repeat bg-center md:bg-[url('https://i.ibb.co/LCb3y9J/slider-Image.png')]  bg-[url('https://i.ibb.co/MnXJPpn/01-Images.png')] "
+                    className="text-center cursor-pointer relative max-w-[380px] m-auto h-[246.23px] bg-no-repeat bg-cover md:bg-[url('https://i.ibb.co/LCb3y9J/slider-Image.png')]  bg-[url('https://i.ibb.co/MnXJPpn/01-Images.png')] "
                   >
                     {/* <Image src={sliderabout} alt="image" /> */}
-                    <div className="absolute md:bottom-7 md:-left-6   bottom-12 -left-0">
+                    <div className="">
                       {/* absolute bottom-24 -left-6 */}
-                      <div className="max-w-[121px] h-[0px] border border-orange-700 my-5"></div>
+                      <div className="inline-block w-[121px] h-[0px] mt-[180px] border border-orange-700"></div>
                       <p className="text-white text-lg font-semibold  leading-relaxed">
                         {item.label}
                       </p>
                     </div>
                   </div>
-                  <div className="pt-[15px] flex justify-end gap-4 items-center">
-                    <p className="text-white text-[13px] font-normal   uppercase tracking-tight">
-                      share
-                    </p>
-                    <Image src={shareIcon} alt="shareicon" />
-                  </div>
+
                 </div>
               </div>
             );

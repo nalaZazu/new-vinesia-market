@@ -12,4 +12,16 @@ export const VideoSlider = [
     video: "https://www.youtube.com/embed/2BP-yRZn6LI?si=71zVj792uXMSUche",
     label: "How does Vinesia work: transforming fine wines into a unique digital asset",
   },
+  // {
+  //   id: 3,
+  //   thembnails: "www/photo.com",
+  //   video: "https://www.youtube.com/embed/2BP-yRZn6LI?si=71zVj792uXMSUche",
+  //   label: "How does Vinesia work: transforming fine wines into a unique digital asset",
+  // },
+  // {
+  //   id: 4,
+  //   thembnails: "www/photo.com",
+  //   video: "https://www.youtube.com/embed/2BP-yRZn6LI?si=71zVj792uXMSUche",
+  //   label: "How does Vinesia work: transforming fine wines into a unique digital asset",
+  // },
 ];
