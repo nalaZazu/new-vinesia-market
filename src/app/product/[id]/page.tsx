@@ -8,7 +8,7 @@ import AllEditions from "@/components/ProductOverView/AllEditions";
 import MindPledge from "@/components/mindpledge/page";
 import WineVideoBanner from "@/components/ProductOverView/WineVideoBanner";
 import AboutWine from "@/components/ProductOverView/AboutWine";
-import AboutArtWork from "@/components/ProductOverView/AboutArtWork";
+import infologo from "@/assets/icons/info.svg";
 import AboutWinerySection from "@/components/ProductOverView/AboutWinerySection";
 import Newsletter from "@/components/newsletter/page";
 import Footer from "@/components/footer/page";
@@ -16,6 +16,8 @@ import NewsletterMobile from "@/components/newsletter/MobileView";
 import useSWR from "swr";
 import YouMayAlso from "@/components/YouMayAlso/page";
 import Loading from "@/components/loading/loading";
+import TabButton from "@/common/TabButton";
+import Image from "next/image";
 
 const fetcher = (arg: string) => fetch(arg).then((res) => res.json());
 
@@ -30,7 +32,7 @@ export default function ProductsOverview({
   );
 
   if (isLoading) {
-    return <Loading/>
+    return <Loading />;
   }
 
   if (data === undefined) {
@@ -38,12 +40,15 @@ export default function ProductsOverview({
       <div>
         <div className="md:mx-0 mx-4">
           <div className="container mx-auto pt-10 pb-7">
-            <div className="flex">An error has occured ... could not fetch data from the server</div>
+            <div className="flex">
+              An error has occured ... could not fetch data from the server
+            </div>
           </div>
         </div>
       </div>
     );
   }
+  const countryName = ["DEFAULT", "WEEKLY", "Monthly", "YEARLY"];
 
   return (
     <div>
@@ -139,17 +144,45 @@ export default function ProductsOverview({
             </p>
           </div>
         </div>
-        <div className="mt-8 md:bg-[#FAF5EA] bg-transparent md:p-6 px-4 pb-14">
-          <div className="grid gap-5 lg:grid-cols-2 md:grid-cols-2 grid-cols-1">
+        <div className="  px-4 pb-14">
+          {/* md:bg-[#FAF5EA] bg-transparent */}
+
+          <div className="grid gap-5 lg:grid-cols-1 md:grid-cols-2 grid-cols-1 py-12">
             <div>
               <PricingDetail item={data} />
             </div>
-
-            <div>
-              <p className="text-zinc-800 text-lg font-semibold leading-relaxed">
-                Pricing details
-              </p>
-              <Appactivity />
+          </div>
+          <div>
+            <p className="text-zinc-800 text-lg font-semibold  leading-relaxed pb-4">
+              Wine asset performance
+            </p>
+            <div className="w-full  border-t-2  border-orange-700 border-opacity-20 pb-8">
+              <TabButton data={countryName} />
+            </div>
+            <div className="grid  grid-cols-12 gap-8">
+              <div className="col-span-9 md:bg-[#FAF5EA] bg-transparent">
+                <Appactivity />
+              </div>
+              <div className="col-span-3">
+                <div className="gap-5 p-5 w-full border  border-orange-700 border-opacity-20 flex-col justify-between items-start inline-flex">
+                  <div className="flex items-center gap-3 text-[#906447] text-xs font-normal uppercase leading-3 tracking-tight">
+                    <p>TOTAL PERFORMANCE </p>
+                    <Image
+                      src={infologo}
+                      alt="Picture of the author"
+                      className=" w-6 h-6 text-secondary"
+                    />
+                  </div>
+                  <div className="flex gap-2 items-center">
+                    <p className="text-zinc-800 text-lg font-semibold leading-relaxed">
+                      122%
+                    </p>
+                    <p className="text-zinc-800 text-xs font-normal   uppercase leading-[18px] tracking-tight">
+                      +30€
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

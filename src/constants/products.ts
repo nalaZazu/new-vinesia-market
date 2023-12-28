@@ -109,3 +109,8 @@ export const ProductList: ItemCardDto[] = [
   //   number: 10,
   // },
 ];
+
+
+export const releaseDetails=[
+  
+]

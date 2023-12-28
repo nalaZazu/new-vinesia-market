@@ -95,7 +95,7 @@ export default function Header() {
 
   const [topSelected, setTopSelected] = useState(getTopMenuItem(pathName));
   const [selected, setSelected] = useState(getMenuItem(pathName));
-
+  console.log(topSelected, "topselected");
   const [theme, setTheme] = useState(getTheme(pathName, size));
 
   useEffect(() => {
@@ -153,11 +153,13 @@ export default function Header() {
               </div>
             </div>
             <div className=" text-2xl lg:text-4xl font-bold lg:col-span-2 text-center py-5">
-              <Image
-                src={logo}
-                className="mx-auto"
-                alt="Picture of the author"
-              />
+              <Link href={topSelected?.href || "/"}>
+                <Image
+                  src={logo}
+                  className="mx-auto"
+                  alt="Picture of the author"
+                />
+              </Link>
             </div>
 
             {/* Menu Icons, Search, User, Cart  */}
