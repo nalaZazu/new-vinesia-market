@@ -42,7 +42,7 @@ export default function VinesiaWines() {
           {datainvest.map((items: any, i: any) => {
             const { title, info, text } = items;
             return (
-              <div
+              <div key={i}
                 className={`max-w-[608px] justify-start items-start gap-6 inline-flex py-12 ${
                   i == 0 && "pt-0"
                 }`}
