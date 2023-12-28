@@ -5,9 +5,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { NextIcon, PrevIcon } from "../../assets/icons/Icons";
 import ProductCards from "../productCard/page";
-import { ProductCardDto } from "@/types/productCard.dto";
+import { ItemCardDto } from "@/types/productCard.dto";
 
-export default function HeritageCarousel({items}:{items?: ProductCardDto[]}) {
+export default function HeritageCarousel({items}:{items?: ItemCardDto[]}) {
   const [currentslide, setCurrentSlide] = useState(0);
   const sliderSettings = {
     customPaging: function () {

@@ -5,13 +5,14 @@ import DropDownButton from "@/common/DropDownButton";
 import Product from "../products/page";
 import { Checkbox } from "@/common/Components";
 import ProductCards from "../productCard/page";
+import { ItemCardDto } from "@/types/productCard.dto";
 
 export default function AllEditions({
-  products,
+  items,
   firstSale,
   setFirstSale,
 }: {
-  products?: any;
+  items?: ItemCardDto[];
   firstSale?: any;
   setFirstSale?: any;
 }) {
@@ -76,7 +77,7 @@ export default function AllEditions({
         {/* desktop */}
         <div className="hidden sm:block ">
           <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-8 px-4 container max-w-[1248px] mx-auto">
-            {products?.map((item: any, i: any) => {
+            {items?.map((item: any, i: any) => {
               return (
                 <div key={i} className=" max-w-[288px] mx-auto">
                   <ProductCards item={item} isEdition={true} />
@@ -89,7 +90,7 @@ export default function AllEditions({
         {/* mobile */}
         <div className="block sm:hidden">
           <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-1 gap-8">
-            {products?.map((item: any, i: any) => {
+            {items?.map((item: any, i: any) => {
               return (
                 <div key={i} className="pb-6">
                   <ProductCards item={item} />

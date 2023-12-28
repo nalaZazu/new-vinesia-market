@@ -170,10 +170,12 @@ const AboutTwo = () => {
         {/* here is image defined */}
         <div className="flex justify-center md:pt-[92px] pt-12">
           {/* <Image src={investment} alt="image" /> */}
-          <video className="w-1/2" autoPlay loop muted>
-            <source src="assets/video/vinesia 211223.mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <video className="lg:w-1/2 w-full" autoPlay loop muted>
+            
+                <source src='assets/video/vinesia 211223_360.mp4' media="all and (max-width: 1200px)" />
+                <source src='assets/video/vinesia 211223_960.mp4' />
+                Your browser does not support the video tag.
+              </video>
         </div>
       </div>
 

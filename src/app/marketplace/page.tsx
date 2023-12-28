@@ -1,3 +1,4 @@
+"use client";
 import Banner from "../../components/banner/pages";
 import Critics from "../../components/critics/page";
 import ProductCards from "../../components/productCard/page";
@@ -12,15 +13,33 @@ import CriticsMobile from "../../components/critics/mobileView";
 import ExploreRegionMobile from "../../components/exploreRegion/mobileview";
 import NewsletterMobile from "../../components/newsletter/MobileView";
 import Product from "@/components/products/page";
+import useSWR from "swr";
 
 export default function Home() {
   const breadCrumbData = ["italy", "spttimano", "barbaresco", "2020"];
+
+  const fetcher = async (url: string) => {
+    const options = {
+      method: "GET",
+      headers: {
+        accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    };
+    return await fetch(url, options).then((res) => res.json());
+  };
+
+  const { data, error, isLoading } = useSWR(
+    `${process.env.NEXT_PUBLIC_API_ADDRESS}`,
+    fetcher
+  );
+  console.log("Data From Marketplace  ", data);
   return (
     <>
       <div className="absolute top-0 -z-10 left-0 right-0">
         <div className="relative">
           <Banner breadCrumbData={breadCrumbData} />
-          <div className=" pt-40 container mx-auto ">
+          <div className=" md:py-40 py-20  container mx-auto ">
             <h2 className="text-center text-zinc-800 text-4xl font-normal md:leading-[80px] leading-[42px] md:pb-20 pb-16 ">
               Invest in heritage and excellence
             </h2>
@@ -28,7 +47,7 @@ export default function Home() {
               <HeritageCarousel />
             </div>
             <div className="block md:hidden">
-              <Product />
+              <Product items={data?.products} />
               {/* <ProductCards /> */}
             </div>
             <div className="pt-14 md:pt-20 pb-20 md:pb-40">

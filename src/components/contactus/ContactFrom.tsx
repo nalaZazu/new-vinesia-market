@@ -1,6 +1,7 @@
-import React from 'react'
+import React from "react";
 import { Envelope } from "@/assets/icons/Icons";
 import { BillingInput, Button, SelectBox, TextArea } from "@/common/Components";
+import { FormProvider, useForm } from "react-hook-form";
 const data = [
   { id: 1, name: "Durward Reynolds" },
   { id: 2, name: "Kenton Towne" },
@@ -9,7 +10,14 @@ const data = [
   { id: 5, name: "Katelyn Rohan" },
 ];
 
+
 export default function ContactFrom() {
+  const methods = useForm()
+
+  const onSubmit = methods.handleSubmit(async (data) => {
+
+  })
+
   return (
     <div>
       {" "}
@@ -53,36 +61,44 @@ export default function ContactFrom() {
             </div>
           </div>
         </div>
-        <div className=" bg-[#FAF5EA] p-20">
-          <div className="py-3">
-            <BillingInput title="Name" />
-          </div>
-          <div className="py-3">
-            <BillingInput title="Email Address" />
-          </div>
+        <FormProvider {...methods}>
+          <form
+            onSubmit={e => e.preventDefault()}
+            noValidate
+            autoComplete="off"
+          >
+            <div className=" bg-[#FAF5EA] p-20">
+              <div className="py-3">
+                <BillingInput name="name" label="Name" />
+              </div>
+              <div className="py-3">
+                <BillingInput name="email" label="Email Address" />
+              </div>
 
-          <div className="py-3">
-            <BillingInput title="Phone (optional)" />
-          </div>
-          <div className="flex gap-6 py-3">
-            <SelectBox data={data} title={"TOPIC"} placeholder={"Choose"} />
-            <SelectBox
-              data={data}
-              title={"How do you know about Vinesia?"}
-              placeholder={"Choose"}
-            />
-          </div>
+              <div className="py-3">
+                <BillingInput name="phone" label="Phone (optional)" />
+              </div>
+              <div className="flex gap-6 py-3">
+                <SelectBox name='topic' data={data} title={"TOPIC"} placeholder={"Choose"} />
+                <SelectBox name='source'
+                  data={data}
+                  title={"How do you know about Vinesia?"}
+                  placeholder={"Choose"}
+                />
+              </div>
 
-          <div className="py-3">
-            <TextArea title="LABEL" />
-          </div>
+              <div className="py-3">
+                <TextArea title="LABEL" />
+              </div>
 
-          <div className="flex justify-end py-4">
-            <span className="max-w-[200px]">
-              <Button label={"SEND"} />
-            </span>
-          </div>
-        </div>
+              <div className="flex justify-end py-4">
+                <span className="max-w-[200px]">
+                  <Button label={"SEND"} />
+                </span>
+              </div>
+            </div>
+          </form>
+        </FormProvider>
       </div>
     </div>
   );

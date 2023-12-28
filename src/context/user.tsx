@@ -1,152 +1,38 @@
 "use client"
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
-import { configureChains, createConfig, useAccount, useConnect, useDisconnect, useSignMessage } from "wagmi";
-import { goerli, mainnet } from "wagmi/chains";
-import { CoinbaseWalletConnector } from "wagmi/connectors/coinbaseWallet";
-import { MetaMaskConnector } from "wagmi/connectors/metaMask";
-import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
-import { publicProvider } from "wagmi/providers/public";
-import { useMagic } from "./MagicProvider";
-import { logout, saveToken } from "@/utils/common";
-import { SiweMessage } from "siwe";
-import { Address, createWalletClient, custom, getAddress } from "viem";
-import { User } from "@/types/user.dto";
-
-
+import { Address, Currency, User } from "@/types/user.dto";
 
 export interface ProvideUser {
-    status: string
-    address: string | null
-    isConnected: boolean
-    isConnecting: boolean
-    isRedirecting: boolean
-    isReconnecting: boolean
-    isDisconnected: boolean
-    isLoading: boolean
+    isLoading: boolean //true if, profile is being loaded, false if profile has been loaded, to check if user is loaded, either get the profile (which should be not null) or check flag isLoggedIn
+    isLoggedIn?: boolean //undefined if the profile is loading, true if used is logged in, false if user is not loggedin
 
-    currency: string;
+    profile: User | null
+    publicAddress: string | null
+    currency: Currency;
     language: string;
 
-    isLoggedIn: () => Promise<User | undefined>;
-
-    getText: (text: string) => string;
     getPriceText: (price: number) => string;
     getPriceDifference: (release: number, current: number) => string;
 
-    connectAsync: (emailOrPhone: string) => Promise<any>
-    connectSocialAsync: (subtype: string) => Promise<any>
-    connectWalletAsync: () => Promise<any>
+    loginAsync: (message: string, signature: string) => Promise<void>
     disconnectAsync: () => Promise<any>
+    setBillingAddress: (address: Address) => Promise<void>
 }
 
 export function useProvideUser(): ProvideUser {
-    // const { status, address, isConnected, isConnecting, isReconnecting, isDisconnected } = useAccount()
-    // const { connectAsync, connectors, data, isLoading } = useConnect()
-
-    const wagmiAccount = useAccount()
-    const wagmiConnect = useConnect()
-    const wagmiDisconnect = useDisconnect()
-    const wagmiSign = useSignMessage()
-
-
-
-
-    const [provider, setProvider] = useState<string | null>(null)
-
     const [address, setAddress] = useState<string | null>(null)
-    const [status, setStatus] = useState('')
 
-    const [isConnected, setIsConnected] = useState(false)
-    const [isConnecting, setIsConnecting] = useState(false)
-    const [isReconnecting, setIsReconnecting] = useState(false)
-    const [isRedirecting, setIsRedirecting] = useState(false)
-    const [isDisconnected, setIsDisconnected] = useState(true)
     const [isLoading, setIsLoading] = useState(true)
 
-    const [currency, setCurrency] = useState('EUR')
+    const [currency, setCurrency] = useState(Currency.EUR)
     const [language, setLanguage] = useState('en')
-    const [token, setToken] = useState('')
 
     const [jwtToken, setJwtToken] = useState('')
     const [profile, setProfile] = useState<User | null>(null)
+    const [isLoggedIn, setIsLoggedIn] = useState<boolean | undefined>(undefined)
 
-    const { magic, web3 } = useMagic()
 
-    useEffect(() => {
-        const checkLogin = async () => {
-            try {
-                if (magic) {
-                    console.log('Getting Redirect Result')
-                    const result = await magic?.oauth.getRedirectResult();
-                    //do stuff with user profile data
-                    saveToken(result.magic.idToken, setToken, 'SOCIAL');
-                    console.log('Magic token: ' + result.magic.idToken)
-                    //   setLoadingFlag('false');
-                    setProvider('MAGIC')
-                    // await backendLogin()
-
-                    setIsLoading(false)
-                }
-            } catch (e) {
-                console.log('social login error: ' + e);
-                // setLoadingFlag('false');
-                setIsLoading(false)
-            }
-        };
-
-        checkLogin();
-    }, [magic, setToken]);
-
-    useEffect(() => {
-        const token = localStorage.getItem('token') ?? ''
-        setToken(localStorage.getItem('token') ?? '');
-    }, [setToken]);
-
-    useEffect(() => {
-        if (!magic) return
-
-        async function checkAddress() {
-            const isLoggedIn = await magic?.user.isLoggedIn();
-            if (isLoggedIn) {
-                const metadata = await magic?.user.getInfo();
-                if (metadata) {
-                    localStorage.setItem('user', metadata?.publicAddress!);
-                    setProvider('MAGIC')
-                    setAddress(metadata?.publicAddress!);
-                }
-            }
-        }
-        checkAddress()
-
-        if (token.length > 0) {
-            setIsConnected(true)
-            setIsDisconnected(false)
-        } else {
-            setIsConnected(false)
-            setIsDisconnected(true)
-        }
-        // setIsLoading(false)
-        // setIsConnecting(false)
-        // setIsReconnecting(false)
-    }, [token, magic])
-
-    async function fetchProfile(jwtToken: string) {
-        const verifyRes = await fetch(process.env.NEXT_PUBLIC_API_ADDRESS + 'auth/profile', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'authorization': 'Bearer ' + jwtToken
-            }
-        })
-
-        return (await verifyRes.json()) as User
-    }
-
-    useEffect(() => {
-        const jwtToken = localStorage.getItem('jwt_token') ?? ''
-        setJwtToken(jwtToken)
-    }, [])
-
+    //Tries to get profile from backend, only executes if jwtToken is not empty, and profile is empty
     useEffect(() => {
         if (jwtToken === undefined || jwtToken.length === 0) return
 
@@ -160,33 +46,35 @@ export function useProvideUser(): ProvideUser {
                     }
                 })
 
-                console.log('Profile: ', verifyRes)
+                if (!verifyRes.ok) {
+                    //JWT Token is no longer valid, clean cache
+                    setIsLoggedIn(false)
+
+                    localStorage.removeItem('jwt_token')
+                    localStorage.removeItem('user')
+                }
+                else {
+                    const profile = (await verifyRes.json()) as User
+
+                    setProfile(profile)
+                    setIsLoggedIn(true)
+                }
+                setIsLoading(false)
             } catch (e) {
                 console.log('Error while fetching profile: ', e)
             }
         }
         fetchProfile();
-
     }, [jwtToken])
 
-    async function isLoggedIn(): Promise<User | undefined> {
-        if (profile !== null) return profile
+    //Get the JWT token and Magic token from storage, then tries to get the profile from backend
+    useEffect(() => {
+        const jwtToken = localStorage.getItem('jwt_token') ?? ''
+        setJwtToken(jwtToken)
 
-        const jwtToken = localStorage.getItem('jwt_token')
-        if (jwtToken !== null && jwtToken.length > 0) {
-            const profile = await fetchProfile(jwtToken)
-
-            setProfile(profile)
-
-            return profile
-        }
-
-        return undefined
-    }
-
-    function getText(text: string): string {
-        return "";
-    }
+        //No stored JWT token, user is not logged in
+        if (jwtToken.length === 0) setIsLoading(false)
+    }, [])
 
     function getPriceText(price: number): string {
         const priceDec = price / 100
@@ -204,202 +92,79 @@ export function useProvideUser(): ProvideUser {
         return diff.toFixed(1) + '%'
     }
 
-    const connectSocialAsync = useCallback(async (subtype: string) => {
-        if (magic) {
-            if (subtype === 'google' || subtype === 'facebook' || subtype === 'twitter' || subtype === 'apple') {
-                await magic?.oauth.loginWithRedirect({
-                    provider: subtype,
-                    redirectURI: window.location.href,
-                });
-                setIsRedirecting(true)
-            }
-        }
-    }, [magic, setIsRedirecting]);
+    const loginAsync = useCallback(async (message: string, signature: string) => {
+        const verifyRes = await fetch(process.env.NEXT_PUBLIC_API_ADDRESS + 'auth/verify', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ message: message, signature: signature }),
+        })
+        if (!verifyRes.ok) throw new Error('Error verifying message')
+        const resp = await verifyRes.json()
 
-    const connectAsync = useCallback(async (emailOrPhone: string) => {
-        if (magic) {
-            if (emailOrPhone.indexOf('@') > -1) {
-                const account = await magic?.auth.loginWithEmailOTP({ email: emailOrPhone });
-                if (account) {
-                    saveToken(account, setToken, 'EMAIL');
-                    setProvider('MAGIC')
+        console.log('JWT token', resp.access_token)
 
-                    // await backendLogin()
-                    //   setEmail('');
-                }
-            } else {
-                const account = await magic?.auth.loginWithSMS({
-                    phoneNumber: emailOrPhone,
-                });
-                if (account) {
-                    saveToken(account, setToken, 'SMS');
-                    setProvider('MAGIC')
-                    // setPhone('');
-                }
-            }
-
-            // if (subtype === 'google' || subtype === 'facebook' || subtype === 'twitter' || subtype === 'apple') {
-            //     await magic?.oauth.loginWithRedirect({
-            //         provider: subtype,
-            //         redirectURI: window.location.href,
-            //     });
-            //     setIsRedirecting(true)
-            // }
-        }
-    }, [magic, setIsRedirecting]);
-
-
-
-    //Logins to backend, using SIWE procedure
-    useEffect(() => {
-        async function signMessageAsync(message: SiweMessage) {
-            if (provider === 'WAGMI') {
-                const signature = await wagmiSign.signMessageAsync({
-                    message: message.prepareMessage(),
-                })
-            }
-
-            if (provider === 'MAGIC' && magic !== null && address !== null && address.length > 0) {
-
-                const account = getAddress(address)
-
-                const walletClient = createWalletClient({
-                    account,
-                    chain: goerli,
-                    transport: custom(magic?.rpcProvider)
-                })
-
-
-                if (walletClient === null) return
-
-                console.log('logging in to backend using magic')
-                const signedMessage = await walletClient.signMessage({
-                    message: message.prepareMessage()
-                })
-
-                console.log("signedMessage:", signedMessage);
-
-                try {
-                const verifyRes = await fetch(process.env.NEXT_PUBLIC_API_ADDRESS + 'auth/verify', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ message: message.prepareMessage(), signature: signedMessage }),
-                })
-                if (!verifyRes.ok) throw new Error('Error verifying message')
-                const resp = await verifyRes.json()
-
-                console.log('JWT token', resp.access_token)
-
-                setJwtToken(resp.access_token)
-                localStorage.setItem('jwt_token', resp.access_token)
-                } catch (e) {
-                    console.log('Failed to get JWT token', e)
-                } 
-            }
-        }
-
-        async function backendLogin() {
-            if (address === null || address.length === 0) return
-            if (provider === null) return
-
-            console.log('logging in to backend', provider)
-
-            const chainId = Number(web3?.defaultChain ?? '1')
-
-            const message = new SiweMessage({
-                domain: window.location.host,
-                address,
-                statement: 'Sign in with Ethereum to the app.',
-                uri: window.location.origin,
-                version: '1',
-                chainId: chainId,
-                nonce: ''
-            });
-
-            await signMessageAsync(message)
-        }
-        backendLogin()
-    }, [address, provider, web3, magic, wagmiSign])
-
-
-
-    const connectWalletAsync = useCallback(async () => {
-        if (magic) {
-            // if (subtype === 'google' || subtype === 'facebook' || subtype === 'twitter' || subtype === 'apple') {
-            //     await magic?.oauth.loginWithRedirect({
-            //         provider: subtype,
-            //         redirectURI: window.location.href,
-            //     });
-            //     setIsRedirecting(true)
-            // }
-        }
-    }, [magic, setIsRedirecting]);
-
+        setJwtToken(resp.access_token)
+        localStorage.setItem('jwt_token', resp.access_token)
+    }, [])
 
     const disconnectAsync = useCallback(async () => {
-        if (magic) {
-            setIsLoading(true)
-            await logout(setToken, magic);
-            setIsLoading(false)
-        }
-    }, [magic, setToken]);
+        localStorage.removeItem('jwt_token')
+        setJwtToken('')
+        setProfile(null)
+        setIsLoading(false)
+        setCurrency(Currency.EUR)
+        setLanguage('en')
 
+        //Only after other settings are clean
+        setIsLoggedIn(false)
+    }, [])
+
+    const setBillingAddress = useCallback(async (address: Address) => {
+        if (jwtToken === undefined || jwtToken.length === 0 || profile === null)
+            throw new Error('You need to be authorized to call this function')
+
+        try {
+            const verifyRes = await fetch(process.env.NEXT_PUBLIC_API_ADDRESS + 'auth/address', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'authorization': 'Bearer ' + jwtToken
+                },
+                body: JSON.stringify(address),
+            })
+            if (!verifyRes.ok) throw new Error('Error updating address')
+            const resp = await verifyRes.json()
+
+            const newProfile: User = { ...profile, billingAddress: address }
+            
+            setProfile(newProfile)
+        } catch (e) {
+            console.log('Failed to update address', e)
+            throw e
+        }
+
+    }, [jwtToken, profile])
 
     return {
+        profile,
         currency,
         language,
-
-        getText,
+        publicAddress: address,
 
         getPriceText,
         getPriceDifference,
 
-        status,
-        address,
-        isConnected,
-        isConnecting,
-        isRedirecting,
-        isReconnecting,
-        isDisconnected,
         isLoading,
-
         isLoggedIn,
 
-        connectAsync,
-        connectSocialAsync,
-        connectWalletAsync,
-        disconnectAsync
+        loginAsync,
+        disconnectAsync,
+
+        setBillingAddress
     }
 }
-
-const { chains, publicClient, webSocketPublicClient } = configureChains(
-    [mainnet, ...(process.env.NODE_ENV === "development" ? [goerli] : [])],
-    [publicProvider()]
-);
-
-export const config = createConfig({
-    autoConnect: true,
-    connectors: [
-        new MetaMaskConnector({ chains }),
-        new CoinbaseWalletConnector({
-            chains,
-            options: {
-                appName: 'wagmi',
-            },
-        }),
-        new WalletConnectConnector({
-            chains,
-            options: {
-                projectId: process.env.NEXT_PUBLIC_API_WALLET_CONNECT,
-            },
-        }),
-    ],
-    publicClient,
-    webSocketPublicClient,
-})
-
 const userContext = createContext<ProvideUser | null>(null);
 
 export function UserProvider({ children }: { children: React.ReactNode }) {
@@ -410,7 +175,7 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
     );
 }
 
-export function useUserContext(): ProvideUser {
+export function useUser(): ProvideUser {
     const context = useContext(userContext);
     if (context === null) throw new Error("User provider is not set");
     return context;

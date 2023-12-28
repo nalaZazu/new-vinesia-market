@@ -1,38 +1,39 @@
-"use client"
+"use client";
 
 import React from "react";
 import Image from "next/image";
 import winebotel from "../../assets/images/Group 10462.png";
 import Art from "../../assets/images/arat.png";
 import Link from "next/link";
-import { ProductCardDto } from "@/types/productCard.dto";
-import { useUserContext } from "@/context/user";
+import { ItemCardDto } from "@/types/productCard.dto";
+import { useUser } from "@/context/user";
 
-import bottleIcon from "../../assets/icons/bottleIcon.svg"
+import bottleIcon from "../../assets/icons/bottleIcon.svg";
 
 export default function ProductCards({
   item,
   isEdition = false,
 }: {
-  item?: ProductCardDto;
+  item: ItemCardDto;
   isEdition?: boolean;
 }) {
-  const { getPriceText } = useUserContext();
+  const { getPriceText, currency } = useUser();
 
   if (item === undefined) {
     return <></>;
   }
 
   function getCaseName(count: number) {
-    if (count === 1) return 'Case'
-    return 'Cases'
+    if (count === 1) return "Case";
+    return "Cases";
   }
   function getBottleName(count: number) {
-    if (count === 1) return 'Bottle'
-    return 'Bottles'
+    if (count === 1) return "Bottle";
+    return "Bottles";
   }
 
-  function getCount(item: ProductCardDto) {
+
+  function getCount(item: ItemCardDto) {
     return item.total + ' ' + (item.description.startsWith('Case') ? getCaseName(item.total) : getBottleName(item.total))
   }
 
@@ -42,12 +43,14 @@ export default function ProductCards({
         <div className="max-w-[288px] md:h-[674px] h-[674px] mx-auto">
           <div className="flex flex-col items-center md:gap-8 gap-5 px-5">
             <div className="relative">
-              <img
+              <Image
                 src={`${process.env.NEXT_PUBLIC_API_ADDRESS}products/file/${item.media}`}
                 alt="Product picture"
-                width={0}
+                width={200}
+                // layout="responsive"
                 height={200}
                 className=" w-auto h-[200px]"
+                objectFit="contain"
               />
               {isEdition ? (
                 <div className="w-[49.94px] h-[50px] absolute -bottom-5 left-0 right-0 mx-auto">
@@ -58,13 +61,19 @@ export default function ProductCards({
                 </div>
               ) : (
                 <>
-                <div className="w-[49.94px] h-[50px] absolute -bottom-5 left-0 right-0 mx-auto">
-                  <div className="w-[49.94px] h-[50px] left-0 top-0 absolute bg-red-700 rounded-full border-4 border-orange-100" />
-                  <div className="left-[14px] top-[13px] absolute text-center text-white text-sm font-normal  leading-none">
-                    <Image src={bottleIcon} alt="image-icon" className="inline" />
-                    {item.description.startsWith('Case') ? ' x'+item.packageSize : ' x1'} 
+                  <div className="w-[49.94px] h-[50px] absolute -bottom-5 left-0 right-0 mx-auto">
+                    <div className="w-[49.94px] h-[50px] left-0 top-0 absolute bg-red-700 rounded-full border-4 border-orange-100" />
+                    <div className="left-[14px] top-[13px] absolute text-center text-white text-sm font-normal  leading-none">
+                      <Image
+                        src={bottleIcon}
+                        alt="image-icon"
+                        className="inline"
+                      />
+                      {item.description.startsWith("Case")
+                        ? " x" + item.packageSize
+                        : " x1"}
+                    </div>
                   </div>
-                </div>
                 </>
               )}
             </div>
@@ -109,10 +118,9 @@ export default function ProductCards({
                   BUY NOW
                 </div>
                 <div className="text-zinc-800 text-center md:text-xl text-xl font-light  leading-[44px]">
-                  {getPriceText(item.buyNowPrice ?? 0)}
+                  {getPriceText(item.buyNowPrice[currency] ?? 0)}
                 </div>
               </div>
-              
             ) : (
               <>
                 <div className="flex-col justify-center items-center gap-2 inline-flex">
@@ -120,7 +128,7 @@ export default function ProductCards({
                     EST. PRICE
                   </div>
                   <div className="text-zinc-800 md:text-xl text-xl font-light  leading-[44px]">
-                    {getPriceText(item.estPrice ?? 0)}
+                    {item.estPrice && getPriceText(item.estPrice[currency] ?? 0)}
                   </div>
                 </div>
                 <div className="flex-col justify-center items-center gap-2 inline-flex">
@@ -128,7 +136,7 @@ export default function ProductCards({
                     FLOOR PRICE
                   </div>
                   <div className="text-zinc-800 md:text-xl text-xl font-light  leading-[44px]">
-                    {getPriceText(item.floorPrice ?? 0)}
+                    {item.floorPrice && getPriceText(item.floorPrice[currency] ?? 0)}
                   </div>
                 </div>
               </>

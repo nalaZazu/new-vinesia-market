@@ -205,7 +205,6 @@ export default function AssetsPerformance() {
           </div>
         </div>
       </div>
-
       <Footer />
     </div>
   );

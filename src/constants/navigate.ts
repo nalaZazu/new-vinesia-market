@@ -10,11 +10,21 @@ export interface MenuItem {
   items: ChildItems[];
 }
 
+export const pagePaths = {
+  invest: "/invest",
+  signup: "/signup",
+  marketplace: "/marketplace",
+  home: "/",
+  cart: "/cart",
+  checkout: "/checkout",
+  profile: "/profile",
+};
+
 export const menuBar: MenuItem[] = [
   {
     id: 1,
     name: "Discover Vinesia",
-    href:"/",
+    href: "/",
     items: [
       {
         id: 1,
@@ -98,6 +108,28 @@ export const menuBar: MenuItem[] = [
         name: "Wineries",
         href: "/wineries",
       },
+    ],
+  },
+];
+
+export const sidebarMenu: MenuItem[] = [
+  {
+    id: 1,
+    name: "Help",
+    href: "/",
+    items: [
+      {
+        id: 1,
+        name: "Q&A",
+        href: "/qna",
+      },
+      {
+        id: 2,
+        name: "contact us ",
+        href: "/contact",
+      },
+     
+    
     ],
   },
 ];

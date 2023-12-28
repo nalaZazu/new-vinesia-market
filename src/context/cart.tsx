@@ -1,28 +1,60 @@
 "use client"
-import { ProductOverview } from "@/types/productOverview.dto";
+import { CartItem, ItemType } from "@/types/dto/checkoutCart.dto";
+import { EditionOverview, ProductOverview } from "@/types/productOverview.dto";
 import { createContext, useContext, useState } from "react";
+import { useUser } from "./user";
+import toast from "react-hot-toast";
 
 export interface ProvideCart {
-    cartItems: ProductOverview[]
-    cartTotal: number,
-    addCartItem: (item: ProductOverview) => void
-    removeCartItem: (item: ProductOverview) => void
+    cartItems: CartItem[]
+    addProductCartItem: (item: ProductOverview) => void
+    addEditionCartItem: (item: EditionOverview) => void
+    removeCartItem: (item: CartItem) => void
     getCartTotal: () => number
 }
 
 export function useProvideCart(): ProvideCart {
-    const [cartItems, setCartItems] = useState<ProductOverview[]>([])
-    const [cartTotal, setCartTotal] = useState(0)
+    const [cartItems, setCartItems] = useState<CartItem[]>([])
+    const {currency} = useUser()
 
-    function addCartItem(item: ProductOverview) {
-        if (cartItems.indexOf(item) !== -1) 
-            return
+    function addProductCartItem(item: ProductOverview) {
+        const found = cartItems.filter((x) => x.id === item.id && x.type === ItemType.Product)
 
-        const items = [...cartItems, item]
-        setCartItems(items)
+        if (found.length === 0 && item.buyNowPrice !== undefined) {
+            const add: CartItem = {
+                id: item.id,
+                type: ItemType.Product,
+                price: item.buyNowPrice,
+                media: item.media,
+                name: item.name
+            }
+
+            const items = [...cartItems, add]
+            setCartItems(items)
+            toast.success('Product added to cart')
+        } else {
+            toast.success('Product is already in cart')
+        }
     }
 
-    function removeCartItem(item: ProductOverview) {
+    function addEditionCartItem(item: EditionOverview) {
+        const found = cartItems.filter((x) => x.id === item.id && x.type === ItemType.Edition)
+
+        if (found.length === 0 && item.buyNowPrice !== undefined) {
+            const add: CartItem = {
+                id: item.id,
+                type: ItemType.Edition,
+                price: item.buyNowPrice,
+                media: item.media,
+                name: item.name
+            }
+
+            const items = [...cartItems, add]
+            setCartItems(items)
+        }
+    }
+
+    function removeCartItem(item: CartItem) {
         const items = cartItems.filter(x=>x !== item)
         setCartItems(items)
     }
@@ -31,14 +63,14 @@ export function useProvideCart(): ProvideCart {
         if (cartItems.length === 0)
             return 0
 
-        const sum = cartItems.map((x) => x.floorPrice ?? 0).reduce((a,b) => a+b)
+        const sum = cartItems.map((x) => x.price ? x.price[currency] : 0).reduce((a,b) => a+b)
         return sum
     }
 
     return {
         cartItems,
-        cartTotal,
-        addCartItem,
+        addProductCartItem,
+        addEditionCartItem,
         removeCartItem,
         getCartTotal
     }
@@ -50,7 +82,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     return (<cartContext.Provider value={useProvideCart()}>{children}</cartContext.Provider>);
 }
 
-export function useCartContext(): ProvideCart {
+export function useCart(): ProvideCart {
     const context = useContext(cartContext);
     if (context === null) throw new Error('Cart provider is not set')
     return context

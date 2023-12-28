@@ -1,24 +1,16 @@
 "use client";
 
 import InvestBread from "@/common/InvestBread";
-import xmark from "../../assets/icons/x-mark-anim.svg";
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
-import Dropdown from "@/common/DropDown/page";
-import MobileFilter from "./moibleview/page";
 import Newsletter from "@/components/newsletter/page";
 import Footer from "@/components/footer/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
 import Product from "@/components/products/page";
 import useSWR from "swr";
 
-import { MarksAnim, Xmark } from "@/assets/icons/Icons";
-import ProductCards from "@/components/productCard/page";
-import ScrollAnimation from "@/common/ScrollAnimation/page";
 import FilterSection from "@/components/FilterSection/page";
 
 const Invest = () => {
-  const [tags, setTags] = useState<String[]>([]);
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [priceRange, setPriceRange] = useState([]);
   const fetcher = async (url: string, payload?: string) => {
@@ -48,7 +40,7 @@ const Invest = () => {
   );
   useEffect(() => {
     mutate();
-  }, [selectedFilters, priceRange]);
+  }, [selectedFilters, priceRange, mutate]);
 
   return (
     <div>
@@ -77,7 +69,7 @@ const Invest = () => {
           />
 
           {/* product list  */}
-          <div className="md:block hidden">
+          <div className="">
             <Product items={data?.data} />
           </div>
         </div>

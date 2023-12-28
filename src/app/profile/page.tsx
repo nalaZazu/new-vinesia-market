@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Tab } from "@headlessui/react";
 import {
   BidsOffer,
@@ -22,6 +22,11 @@ import WalletOverview from "@/components/profile/Wallet/WalletOverview";
 import ReceivedBids from "@/components/profile/Wallet/ReceivedBids";
 import Sales from "@/components/profile/Wallet/Sales";
 import Account from "@/components/profile/Account";
+import Loading from "@/components/loading/loading";
+import { useUser } from "@/context/user";
+import { useRouter } from "next/navigation";
+import { pagePaths } from "@/constants/navigate";
+import { useMagic } from "@/context/MagicProvider";
 
 export default function Profile() {
   const [active, setActive] = useState(0);
@@ -31,52 +36,78 @@ export default function Profile() {
     {
       id: 1,
       title: "Investment portfolio",
-      subheading: "Subtext",
+      subheading: "",
       icon: <InvestmentPortfolio />,
     },
     {
       id: 2,
       title: "Favourite wine",
-      subheading: "Subtext",
+      subheading: "",
       icon: <FavouriteWine />,
     },
     {
       id: 3,
       title: "Bids & offers",
-      subheading: "Subtext",
+      subheading: "",
       icon: <BidsOffer />,
     },
     {
       id: 3,
-      title: "wallet",
-      subheading: "Subtext",
+      title: "Wallet",
+      subheading: "",
       icon: <Wallet />,
     },
     {
       id: 4,
       title: "Invoices",
-      subheading: "Subtext",
+      subheading: "",
       icon: <Invoice />,
     },
-    {
-      id: 5,
-      title: "Vinesia Circle",
-      subheading: "Subtext",
-      icon: <VinesiaCircle />,
-    },
+    // {
+    //   id: 5,
+    //   title: "Vinesia Circle",
+    //   subheading: "",
+    //   icon: <VinesiaCircle />,
+    // },
     {
       id: 6,
       title: "My account",
-      subheading: "Subtext",
+      subheading: "",
       icon: <MyAccount />,
     },
     {
       id: 7,
       title: "Logout",
-      subheading: "Subtext",
+      subheading: "",
       icon: <Logout />,
     },
   ]);
+
+  const {disconnectAsync: magicDisconnect} = useMagic()
+  const {disconnectAsync, isLoading, isLoggedIn} = useUser()
+  const {push} = useRouter()
+
+  useEffect(() => {
+    if (active !== 6) return
+
+    async function run() {
+      await magicDisconnect()
+      await disconnectAsync()
+      push(pagePaths.signup)
+    }
+
+    run()
+  }, [active, disconnectAsync, magicDisconnect, push])
+
+  useEffect(() => {
+    if (isLoading) return
+
+    if (!isLoggedIn) {
+      push(pagePaths.signup)
+    }
+  }, [isLoading, isLoggedIn, push])
+
+  if (isLoading || !isLoggedIn) return <Loading/>
 
   return (
     <div className="container mx-auto">
@@ -161,8 +192,19 @@ export default function Profile() {
                       />
                     </li>
                   </ul> */}
+                  {active === 0 && <InvestmentTab />}
+                  {active === 0 && <InvestmentCard />}
+                  
+                  {/* {active === 1 && <PortfolioOverview />} */}
+                  {active === 3 && <WalletOverview />}
+                  {/* {active === 2 && <ReceivedBids />} */}
+                  {/* {active === 4 && <Invoices />} */}
+                  {active === 5 && <Account />}
+                  {active === 6 && <Loading/>}
+                  
+
                   {/* <InvestmentTab /> */}
-                  <PortfolioOverview />
+                  {/* <PortfolioOverview /> */}
                   {/* <WalletOverview /> */}
                   {/* <ReceivedBids /> */}
                   {/* <Sales /> */}

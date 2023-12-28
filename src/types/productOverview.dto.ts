@@ -1,44 +1,50 @@
-export interface ProductOverview {
+import { EditionCard } from "./dto/editionCard.dto"
+import { Currency } from "./user.dto"
 
+export interface ProductOverview {
+    id: number
     name: string
+    media: string
 
     subtitle: string
-
     description: string
 
 
     wine: ProductWineDto | null
-
     art: ProductArt | null
 
-    buyNowPrice?: number
-
-    floorPrice?: number
-
-    estPrice?: number
+    buyNowPrice?: Record<Currency, number>
+    floorPrice?: Record<Currency, number>
+    estPrice?: Record<Currency, number>
 
     isFavourite: boolean
-
     starred: number
 
-
     releaseDetails: ReleaseDetails
-
     editions: EditionCard[]
 }
 
-export interface EditionCard {
+export interface EditionOverview {
     id: number
     name: string
-    number: number
-    description: string
-    owner: ProductOwner
-    buyNowPrice?: number
-    estPrice?: number
-    floorPrice?: number
-    available: boolean
-    artwork: boolean
     media: string
+
+    subtitle: string
+    description: string
+
+
+    wine: ProductWineDto | null
+    art: ProductArt | null
+
+    buyNowPrice?: Record<Currency, number>
+    floorPrice?: Record<Currency, number>
+    estPrice?: Record<Currency, number>
+
+    isFavourite: boolean
+    starred: number
+
+    releaseDetails: ReleaseDetails
+    editions: EditionCard[]
 }
 
 export interface ReleaseDetails {

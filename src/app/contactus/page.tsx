@@ -78,7 +78,7 @@ export default function ContactUs() {
               </div>
               <div className="h-[0px] border border-white border-opacity-20 my-8"></div>
               <p className="text-stone-300 text-base font-normal leading-snug">
-                Let's meet on social
+                {`Let's`} meet on social
               </p>
               <div className="flex items-center gap-[10px] pt-4">
                 <Link href="#" className="p-2">
