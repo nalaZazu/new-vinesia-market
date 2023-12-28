@@ -19,7 +19,7 @@ export default function RightPanel() {
         <div style={{border:"0.2px dashed #BF4D20", padding: "0 0 0 0.4rem"}}>
         <h2 style={{fontWeight:"normal", marginTop: 0, fontSize: "clamp(1.25em, 1.5vw, 1.5em)"}}>Classic 60/40 Portfolio</h2>
           <Radio.Group onChange={changeDataSource} value={selectedBaseline} style={{marginTop: "-1.6rem"}}>
-            <Radio value={baselines[0]} style={{fontSize: "clamp(0.8rem, 1.1vw, 1.5em)", fontFamily:'Canela'}}> 60% - S&P500 <br />40% - 7-10 Year Bonds US</Radio>
+            <Radio value={baselines[0]} style={{fontSize: "clamp(0.8rem, 1.1vw, 1.5em)", fontFamily:'Canela'}}> 60% - S&P500 <br />40% - 7-10 Year US Bonds</Radio>
           </Radio.Group>
         </div>
         <br></br>
