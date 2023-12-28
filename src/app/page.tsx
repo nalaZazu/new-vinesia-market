@@ -237,10 +237,20 @@ const About = () => {
               className="block absolute overflow-hidden w-[735px] h-[735px] rounded-[1000px] m-auto
       top-[50%] translate-y-[-50%] 
       left-[50%] translate-x-[-50%] 
-        " ref={round2}>
-              <video className="absolute left-1/2 z-0 max-w-none object-cover -translate-x-1/2" autoPlay loop muted>
-                <source src='assets/video/231215_Vinesia_Hero_3_360.mp4' media="all and (max-width: 700px)" />
-                <source src='assets/video/231215_Vinesia_Hero_3.mp4' />
+        "
+              ref={round2}
+            >
+              <video
+                className="absolute left-1/2 z-0 max-w-none object-cover -translate-x-1/2"
+                autoPlay
+                loop
+                muted
+              >
+                <source
+                  src="assets/video/231215_Vinesia_Hero_3_360.mp4"
+                  media="all and (max-width: 700px)"
+                />
+                <source src="assets/video/231215_Vinesia_Hero_3.mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>

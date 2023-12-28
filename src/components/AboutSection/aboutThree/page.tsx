@@ -60,7 +60,7 @@ const AboutThree = () => {
             <Image src={VectorOne} alt="vector" />
           </div>
         </div>
-        <div className="flex justify-end md:py-40 md:px-0  px-4 py-25">
+        <div className="flex justify-end 2xl:justify-center md:py-40 md:px-0  px-4 py-25">
           <div className=" max-w-[1314px]">
             <div className="">
               <div>
