@@ -33,45 +33,45 @@ const AboutSlider = ({ data = VideoSlider }: { data?: any }) => {
 
   };
 
-  const CarouselControls = () => {
-    return (
-      <div className="flex md:justify-end justify-center gap-4 md:pe-20 pe-0">
-        <div className="  z-50">
-          <div
-            onClick={() => slider?.current?.slickPrev()}
-            className={`text-black w-16 h-12 flex items-center rounded-full border  justify-center cursor-pointer  ${
-              currentslide == 0
-                ? "border-[#BF4D2020] pointer-events-none"
-                : "border-orange-700"
-            }`}
-          >
-            <div>
-              <PrevIcon fill={currentslide == 0 ? "#BF4D2020" : "#BF4D20"} />
-            </div>
-          </div>
-        </div>
+  // const CarouselControls = () => {
+  //   return (
+  //     <div className="flex md:justify-end justify-center gap-4 md:pe-20 pe-0">
+  //       <div className="  z-50">
+  //         <div
+  //           onClick={() => slider?.current?.slickPrev()}
+  //           className={`text-black w-16 h-12 flex items-center rounded-full border  justify-center cursor-pointer  ${
+  //             currentslide == 0
+  //               ? "border-[#BF4D2020] pointer-events-none"
+  //               : "border-orange-700"
+  //           }`}
+  //         >
+  //           <div>
+  //             <PrevIcon fill={currentslide == 0 ? "#BF4D2020" : "#BF4D20"} />
+  //           </div>
+  //         </div>
+  //       </div>
 
-        <div className=" z-50">
-          <div
-            onClick={() => slider?.current?.slickNext()}
-            className={`" text-black w-16 h-12 flex items-center rounded-full border justify-center  cursor-pointer  ${
-              currentslide == data?.length - 1
-                ? "border-[#BF4D2020] pointer-events-none disabled"
-                : "border-orange-700"
-            }`}
-          >
-            <div>
-              <NextIcon
-                fill={
-                  currentslide == data?.length - 1 ? "#BF4D2020" : "#BF4D20"
-                }
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  };
+  //       <div className=" z-50">
+  //         <div
+  //           onClick={() => slider?.current?.slickNext()}
+  //           className={`" text-black w-16 h-12 flex items-center rounded-full border justify-center  cursor-pointer  ${
+  //             currentslide == data?.length - 1
+  //               ? "border-[#BF4D2020] pointer-events-none disabled"
+  //               : "border-orange-700"
+  //           }`}
+  //         >
+  //           <div>
+  //             <NextIcon
+  //               fill={
+  //                 currentslide == data?.length - 1 ? "#BF4D2020" : "#BF4D20"
+  //               }
+  //             />
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
+  // };
   const handleVideoModal = (video: any) => {
     setVideoLink(video);
     setOpen(true);
@@ -88,16 +88,17 @@ const AboutSlider = ({ data = VideoSlider }: { data?: any }) => {
             </button>
           </Link>
 
-          <div className="hidden md:block">
+          {/* <div className="hidden md:block">
             <CarouselControls />
-          </div>
+          </div> */}
         </div>
-        <Slider
+        {/* <Slider
           ref={slider}
           {...sliderSettings}
           className="invest_carousel z-20"
           
-        >
+        > */}
+        <div className="flex justify-center">
           {data?.map((item: any, i: any) => {
             const { video, thumbnails } = item;
             return (
@@ -105,9 +106,9 @@ const AboutSlider = ({ data = VideoSlider }: { data?: any }) => {
                 <div className="">
                   <div
                     onClick={() => handleVideoModal(video)}
-                    className={`text-center cursor-pointer relative max-w-[380px] m-auto h-[246.23px] bg-no-repeat bg-cover ]`}
+                    className={`text-center cursor-pointer relative max-w-[480px] m-auto h-[246.23px] bg-no-repeat bg-cover ]`}
                   >
-                    <Image src={thumbnails} alt="thumbnails" width={380} height={0} />
+                    <Image className="z-50" src={thumbnails} alt="thumbnails" width={480} height={0} />
                     <div className="">
                       {/* absolute bottom-24 -left-6 */}
                       <div className="inline-block w-[121px] h-[0px] mt-[0px] border border-orange-700"></div>
@@ -121,10 +122,11 @@ const AboutSlider = ({ data = VideoSlider }: { data?: any }) => {
               </div>
             );
           })}
-        </Slider>
-        <div className="md:hidden block">
+          </div>
+        {/* </Slider> */}
+        {/* <div className="md:hidden block">
           <CarouselControls />
-        </div>
+        </div> */}
       </div>
     </React.Fragment>
   );

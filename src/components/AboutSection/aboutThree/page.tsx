@@ -36,21 +36,21 @@ const AboutThree = () => {
             {CardAbout?.map((item: any, index: any) => {
               const { id, text, image, href } = item;
               return (
-                <Link href={href} 
-                key={index}
+                <Link href={href}
+                  key={index}
                 >
-                <div
-                  className="md:min-w-full  min-w-[80%] p-4 bg-white rounded overflow-hidden"
-                >
-                  <div className=" bg-white">
-                    <div className=" " key="index">
-                      <Image src={image} alt="image" className="" />
-                      <p className="text-zinc-800 text-lg font-semibold tracking-[-0.36px]  leading-relaxed  ">
-                        {text}
-                      </p>
+                  <div
+                    className="md:min-w-full  min-w-[80%] p-4 bg-white rounded overflow-hidden"
+                  >
+                    <div className=" bg-white">
+                      <div className=" " key="index">
+                        <Image src={image} alt="image" className="" />
+                        <p className="text-zinc-800 text-lg font-semibold tracking-[-0.36px]  leading-relaxed  ">
+                          {text}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
                 </Link>
               );
             })}
@@ -64,19 +64,21 @@ const AboutThree = () => {
             <Image src={VectorOne} alt="vector" />
           </div>
         </div>
-        <div className="flex justify-end 2xl:justify-center md:py-40 md:px-0  px-4 py-25">
-          <div className=" max-w-[1314px]">
-            <div className="">
-              <div>
-                <h3 className="text-white text-4xl font-light   leading-[44px] pb-8">
-                  The faster way to get to know us
-                </h3>
-              </div>
-            </div>
+        <div className="relative md:block hidden ">
+          <div className="absolute  right-0">
+            <Image src={VectorTwo} alt="vector" />
+          </div>
+        </div>
+
+        <div className="flex justify-end 2xl:justify-center md:py-20 md:px-0  px-4 py-25">
+          <div className="container">
+            <h3 className="text-white text-4xl font-light leading-[44px] pb-8">
+              The faster way to get to know us
+            </h3>
 
             {/* here is new slider  section */}
             <div className="">
-              <div className="grid grid-cols-1 ">
+              <div className="grid grid-cols-1">
                 <AboutSlider />
               </div>
             </div>
@@ -85,11 +87,7 @@ const AboutThree = () => {
                 <AboutSlider />
               </div>
             </div> */}
-            <div className="relative md:block hidden ">
-              <div className="absolute bottom-[-152px] right-0">
-                <Image src={VectorTwo} alt="vector" />
-              </div>
-            </div>
+
           </div>
         </div>
       </div>
@@ -103,18 +101,18 @@ const AboutThree = () => {
               </h2>
               <div className="flex items-center pt-9 md:pb-0 pb-12 gap-3">
                 <Link href={'/faq'}>
-                <button className="text-center  text-orange-700 text-xs font-normal justify-start items-center gap-3 inline-flex uppercase leading-3 tracking-tight">
-                  SEE ALL QUESTIONS & ANSWERS
-                <span>
-                  <Arrows storke="#BF4D20" />
-                </span>
-                </button>
+                  <button className="text-center  text-orange-700 text-xs font-normal justify-start items-center gap-3 inline-flex uppercase leading-3 tracking-tight">
+                    SEE ALL QUESTIONS & ANSWERS
+                    <span>
+                      <Arrows storke="#BF4D20" />
+                    </span>
+                  </button>
                 </Link>
               </div>
             </div>
             {/* here is new sextion */}
             <div className="max-w-[501px] col-span-2">
-              <AccordionWineAbout data={AccordionAboutTwo}/>
+              <AccordionWineAbout data={AccordionAboutTwo} />
             </div>
           </div>
         </div>
