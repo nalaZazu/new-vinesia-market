@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .line1 path {
+        stroke-dasharray: 1500;
+        stroke-dashoffset: 0;
+        animation: animate-line 5s linear infinite;
+      }
+      @keyframes animate-line {
+        0% {
+          stroke-dashoffset: -1500;
+        }
+        100% {
+          stroke-dashoffset: 1500;
+        }
+      }
+    </style>
+    <svg
+      class="line1"
+      width="1440"
+      height="174"
+      viewBox="0 0 1440 174"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M-71 22.0448C-22.5 47.1645 120.5 145.823 318.598 161.818C525.603 178.533 680.147 17.6219 854.467 3.03576C1112.83 -18.5829 1231.76 138.336 1512 173"
+        stroke="#A9B5BE"
+      />
+    </svg>
+  </body>
+</html>

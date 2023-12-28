@@ -2,41 +2,62 @@
 import React, { Fragment, useState } from "react";
 import { Disclosure } from "@headlessui/react";
 import { ArrowDown, RoundArrow } from "@/assets/icons/Icons";
-import { AccordionAbout} from "@/constants/accrodion";  
-export function AccordionWine() {
+import { AccordionAbout, AccordionAboutTwo } from "@/constants/accrodion";
+import { ChevronUpIcon } from "@heroicons/react/20/solid";
+import { usePathname } from "next/navigation";
+export function AccordionWine({
+  data = AccordionAbout,
+  titleClass = "text-white",
+  borderClass = "border-none",
+  descClass = "",
+  containerClass = "",
+}: {
+  data?: any;
+  titleClass?: any;
+  borderClass?: any;
+  descClass?: any;
+  containerClass?: any;
+}) {
   const [isActive, setIsActive] = useState<any>();
   const handleDisclosure = (id: any) => {
     setIsActive(id);
   };
+  const pathname = usePathname();
   return (
-    <React.Fragment>
-      {AccordionAbout?.map((item: any, index: any) => {
+    <div>
+      {data?.map((item: any, index: any) => {
         const { id, title, text } = item;
         return (
-          <div key={index} className="w-full md:pt-10 pt-8">
-            <div className="  w-full  rounded-2xl  md:px-2" key={index}>
+          <div key={index} className={`w-full `}>
+            <div
+              className={`  w-full  rounded-2xl  md:px-2 ${containerClass}`}
+              key={index}
+            >
               <Disclosure>
                 <>
                   <Disclosure.Button
-                    className="flex md:gap-0 gap-10 w-full justify-between rounded-lg text-start  md:text-lg    md:leading-relaxed  text-white text-base font-semibold  leading-snug"
+                    className={`flex md:gap-0 gap-10 w-full justify-between rounded-lg text-start md:text-lg md:leading-relaxed text-base font-semibold  leading-snug ${titleClass}`}
                     onClick={() => handleDisclosure(id)}
                   >
                     <span>{title}</span>
+
                     <RoundArrow />
                   </Disclosure.Button>
-
                   {isActive == id && (
-                    <Disclosure.Panel className="text-red-300 text-base font-normal pt-6  leading-snug tracking-[0.32px]">
+                    <Disclosure.Panel
+                      className={`text-red-300 text-base font-normal pt-6  leading-snug tracking-[0.32px] ${descClass}`}
+                    >
                       {text}
                     </Disclosure.Panel>
                   )}
                 </>
               </Disclosure>
             </div>
+            <div className={`${borderClass}`}></div>
           </div>
         );
       })}
-    </React.Fragment>
+    </div>
   );
 }
 
@@ -63,8 +84,7 @@ export function AccordionWineAbout({ data = AccordionAbout }: { data?: any }) {
                   >
                     <p className="max-w-[440px]">{title}</p>
                     <div className="md:w-0 md:h-0 w-6 h-6">
-                   <ArrowDown />  
- 
+                      <ArrowDown />
                     </div>
                   </Disclosure.Button>
 
