@@ -8,7 +8,7 @@ export default function Account() {
   const { profile } = useUser()
 
   async function changeOption(e: any) {
-    console.log(e)
+    // console.log(e)
   }
 
   if (profile === null) {

@@ -66,14 +66,12 @@ export function Button({
 }
 
 export function CartControls({
-  step,
-  setStep,
   btnOneTittle = "Back",
   btnTwoTittle = "Next",
   prevStep,
   nextStep,
-  prevStepDesc = "Billing Details",
-  nextStepDesc = "Billing Details",
+  prevStepDesc,
+  nextStepDesc,
   disable,
 }: {
   step?: any;
