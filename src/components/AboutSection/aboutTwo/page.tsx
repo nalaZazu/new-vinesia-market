@@ -29,7 +29,7 @@ const AboutTwo = () => {
         visible={visible}
         setVisible={setVisible}
         modalClass="max-h-[95vh] max-w-[90vw] rounded-md pt-4 pb-4 px-12"
-        isCloseBtn={false}
+        isCloseBtn={true}
       >
         <div>
           <GraphProvider>
