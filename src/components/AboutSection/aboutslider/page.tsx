@@ -80,18 +80,6 @@ const AboutSlider = ({ data = VideoSlider }: { data?: any }) => {
     <React.Fragment>
       <VideoPopup open={open} setOpen={() => setOpen(false)} link={videoLink} />
       <div>
-        <div className="flex justify-between">
-          <Link href="/invest" className="z-20">
-            <button className="  px-8 py-[22px]  cursor-pointer  rounded-[48px] border border-white border-opacity-20 justify-center items-center gap-3 inline-flex   text-center text-white text-xs font-normal   uppercase leading-3 tracking-tight">
-              START INVESTING NOW
-              <Arrows storke="#FFFFFF" />
-            </button>
-          </Link>
-
-          {/* <div className="hidden md:block">
-            <CarouselControls />
-          </div> */}
-        </div>
         {/* <Slider
           ref={slider}
           {...sliderSettings}
@@ -102,7 +90,7 @@ const AboutSlider = ({ data = VideoSlider }: { data?: any }) => {
           {data?.map((item: any, i: any) => {
             const { video, thumbnails } = item;
             return (
-              <div key={i} className="md:px-8 px-4 pt-8">
+              <div key={i} className="md:px-16 px-4 pt-8">
                 <div className="">
                   <div
                     onClick={() => handleVideoModal(video)}

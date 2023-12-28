@@ -70,8 +70,8 @@ const AboutThree = () => {
           </div>
         </div>
 
-        <div className="flex justify-end 2xl:justify-center md:py-20 md:px-0  px-4 py-25">
-          <div className="container">
+        <div className="flex justify-center md:py-20 md:px-0  px-4 py-25">
+          <div className="container text-center">
             <h3 className="text-white text-4xl font-light leading-[44px] pb-8">
               The faster way to get to know us
             </h3>
