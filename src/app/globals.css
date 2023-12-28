@@ -239,6 +239,16 @@ body::-webkit-scrollbar {width:10px}
   }
 }
 
+/* Loading icon class */
+@keyframes slide {
+  from {
+    transform: translateX(-320px);
+}
+to {
+    transform: translateX(320px);
+}
+}
+
 /* .mobile_view_slider{} */
 
 /* .slick-arrow {
