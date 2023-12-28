@@ -89,7 +89,7 @@ export const data = {
 };
 
 export default function Appactivity() {
-  return <Line options={options} data={data} />;
+  return <Line options={options as any} data={data} />;
 }
 
 
