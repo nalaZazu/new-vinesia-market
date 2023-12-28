@@ -188,7 +188,7 @@ const About = () => {
 
               <Image
                 src={getStartedBtn}
-                className="md:fixed md:right-12 md:m-0 m-auto mt-14"
+                className="md:relative md:mb-[-153px] md:m-0 m-auto mt-14 md:float-right"
                 alt="GetStarted"
                 onClick={() => {
                   gsap.to(window, {
@@ -200,7 +200,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="w-full relative h-[100vh] mt-[20vh] md:block hidden" ref={container}>
+          <div className="w-full relative h-[95vh] mt-[15vh] md:block hidden" ref={container}>
             <div
               className="absolute top-[-460px] md:block hidden 
         left-[20%] translate-x-[-50%]
@@ -210,7 +210,7 @@ const About = () => {
               <Image src={grapes} alt="image-icon" />
             </div>
             <div
-              className="absolute -top-[412px] right-[15vw] md:block hidden"
+              className="absolute -top-[412px] right-[13vw] md:block hidden"
               ref={bottle1Ref}
             >
               <Image src={bottleIllustration} alt="image-icon" />
@@ -240,8 +240,8 @@ const About = () => {
       hidden
         " ref={round2}>
               <video className="absolute left-1/2 z-0 max-w-none object-cover -translate-x-1/2" autoPlay loop muted>
-                <source src='assets/video/231215_Vinesia_Hero_3_360.mp4' media="all and (max-width: 700px)" />
-                <source src='assets/video/231215_Vinesia_Hero_3.mp4' />
+                <source src='assets/video/231215_Vinesia_Hero2_360.mp4' media="all and (max-width: 700px)" />
+                <source src='assets/video/231215_Vinesia_Hero2_720.mp4' />
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -250,8 +250,8 @@ const About = () => {
           <div className="md:hidden my-10">
             <div className="overflow-hidden m-auto w-full">
               <video className="object-cover" autoPlay loop muted controls>
-                <source src='assets/video/231215_Vinesia_Hero_3_360.mp4' media="all and (max-width: 700px)" />
-                <source src='assets/video/231215_Vinesia_Hero_3.mp4' />
+                <source src='assets/video/231215_Vinesia_Hero2_360.mp4' media="all and (max-width: 700px)" />
+                <source src='assets/video/231215_Vinesia_Hero2_720.mp4' />
                 Your browser does not support the video tag.
               </video>
             </div>

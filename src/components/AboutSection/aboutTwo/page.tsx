@@ -101,7 +101,7 @@ const AboutTwo = () => {
                       Why invest in fine wine?
                     </h3>
 
-                    <div className="underline decoration-wavy md:pt-10 pt-8">
+                    <div className="md:pt-10 pt-8">
                       <Image src={lineregion} alt="image" />
                     </div>
                     <AccordionWine containerClass=" md:py-5 py-4" />
