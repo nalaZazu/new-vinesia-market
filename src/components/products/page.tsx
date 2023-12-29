@@ -20,28 +20,30 @@ const Product = ({ items }: { items?: ItemCardDto[] }) => {
 
   return (
     <React.Fragment>
-      {items &&
-        splitToChunks(items).map((item, i) => {
-          return (
-            <div key={i}>
-              <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20">
-                {item === undefined ? (
-                  <></>
-                ) : (
-                  item.map((item2, i) => {
-                    return (
-                      <div key={i}>
-                        <ProductCards item={item2} />
-                      </div>
-                    );
-                  })
-                )}
+      <div className={items && items?.length > 0 ? "" : "pt-20"}>
+        {items &&
+          splitToChunks(items).map((item, i) => {
+            return (
+              <div key={i}>
+                <div className="grid xl:grid-cols-4  lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 pt-20">
+                  {item === undefined ? (
+                    <></>
+                  ) : (
+                    item.map((item2, i) => {
+                      return (
+                        <div key={i}>
+                          <ProductCards item={item2} />
+                        </div>
+                      );
+                    })
+                  )}
+                </div>
+                {/* animation  component  */}
+                <ScrollAnimation />
               </div>
-              {/* animation  component  */}
-              <ScrollAnimation />
-            </div>
-          );
-        })}
+            );
+          })}
+      </div>
     </React.Fragment>
   );
 };

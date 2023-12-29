@@ -4,6 +4,12 @@
 
 html {
   scroll-behavior: smooth;
+
+
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 /* @font-face {
@@ -24,7 +30,7 @@ html {
 @font-face {
   font-family: "Canela";
   src: url("../assets/fonts/Canela Web/Canela-Regular-Web.woff") format("woff");
-  font-weight: 400; /* 400 */
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -35,13 +41,14 @@ html {
   font-style: normal;
 }
 
-/*  */
+
 @font-face {
   font-family: "Bon Vivant";
   src: url("../assets/fonts/BonVivant-Regular.ttf");
   font-weight: normal;
   font-style: normal;
 }
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -63,18 +70,18 @@ h6 {
   font-family: "Canela";
 }
 /* webkit class */
-.dropdownstyle::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px hsl(17, 55%, 89%);
-  background-color: hsl(17, 55%, 89%);
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px hsl(0, 0%, 100%);
+  background-color: hsl(0, 0%, 100%);
   border-radius: 10px;
 }
-
-.dropdownstyle::-webkit-scrollbar {
+body::-webkit-scrollbar {width:10px}
+::-webkit-scrollbar {
   width: 6px;
-  background-color: #f2dbd2;
+  background-color: #ffffff;
 }
 
-.dropdownstyle::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background-color: #bf4d20;
   border-radius: 10px;
 }
@@ -296,6 +303,16 @@ h6 {
   100% {
     transform: rotate(100deg);
   }
+}
+
+/* Loading icon class */
+@keyframes slide {
+  from {
+    transform: translateX(-320px);
+}
+to {
+    transform: translateX(320px);
+}
 }
 
 /* .mobile_view_slider{} */
@@ -549,5 +566,45 @@ h6 {
 @media screen and (min-width: 1440px) {
   .custom-bg-image .custom-limited-bg-image .custom-collection-bg-image {
     height: 1000px;
+  }
+}
+
+#productById canvas {
+  height: 250px !important;
+  width: 889px !important;
+}
+
+@media screen and (max-width: 768px) {
+  #productById canvas {
+    height: 228px !important;
+    width: 326px !important;
+  }
+}
+
+#productById canvas {
+  height: 250px !important;
+  width: 889px !important;
+}
+
+@media screen and (max-width: 768px) {
+  #productById canvas {
+    height: 228px !important;
+    width: 326px !important;
+  }
+}
+
+.ant-input-affix-wrapper input.ant-input{
+  background-color: #F2E5CA;
+  font-family: 'Canela';
+}
+#productById canvas {
+  height: 250px !important;
+  width: 889px !important;
+}
+
+@media screen and (max-width: 768px) {
+  #productById canvas {
+    height: 228px !important;
+    width: 326px !important;
   }
 }

@@ -80,7 +80,7 @@ export default function AllEditions({
             {items?.map((item: any, i: any) => {
               return (
                 <div key={i} className=" max-w-[288px] mx-auto">
-                  <ProductCards item={item} isEdition={true} />
+                  <ProductCards item={item} />
                 </div>
               );
             })}

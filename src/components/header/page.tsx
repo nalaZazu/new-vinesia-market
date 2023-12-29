@@ -12,10 +12,10 @@ import { MenuItem, menuBar as menuItems } from "@/constants/navigate";
 import { useWindowSize } from "@/hooks/useWindowSize";
 import { useCart } from "@/context/cart";
 
-const canela = local({
-  src: "../../../public/fonts/canelatext-black.woff2",
-  variable: "--font-canela",
-});
+// const canela = local({
+//   src: "../../../public/fonts/canelatext-black.woff2",
+//   variable: "--font-canela",
+// });
 
 const themes = {
   Light: {
@@ -95,7 +95,6 @@ export default function Header() {
 
   const [topSelected, setTopSelected] = useState(getTopMenuItem(pathName));
   const [selected, setSelected] = useState(getMenuItem(pathName));
-
   const [theme, setTheme] = useState(getTheme(pathName, size));
 
   useEffect(() => {
@@ -117,11 +116,6 @@ export default function Header() {
 
   return (
     <>
-      <style jsx global>{`
-        :root {
-          --canela-font: ${canela.style.fontFamily};
-        }
-      `}</style>
       <div className=" bg-transparent z-10">
         <nav className="px-4 container mx-auto">
           <div className="grid grid-cols-3 md:grid-cols-12 justify-between items-center">
@@ -133,7 +127,6 @@ export default function Header() {
                   key={x.id}
                   onClick={() => select(x)}
                 >
-                  <Link href={x.href || "/"}>
                     <span
                       className={`hidden md:block py-7 text-base tracking-tight border-0 ${
                         theme.textClass
@@ -141,7 +134,6 @@ export default function Header() {
                     >
                       {x.name}
                     </span>
-                  </Link>
                 </div>
               ))}
             </div>
@@ -153,11 +145,13 @@ export default function Header() {
               </div>
             </div>
             <div className=" text-2xl lg:text-4xl font-bold lg:col-span-2 text-center py-5">
-              <Image
-                src={logo}
-                className="mx-auto"
-                alt="Picture of the author"
-              />
+              <Link href={topSelected?.href || "/"}>
+                <Image
+                  src={logo}
+                  className="mx-auto"
+                  alt="Picture of the author"
+                />
+              </Link>
             </div>
 
             {/* Menu Icons, Search, User, Cart  */}
@@ -217,25 +211,8 @@ export default function Header() {
           </div>
         </nav>
 
-        {pathName === "/" ? (
-          <div className="md:hidden block py-4 px-6">
-            <form>
-              <div className="relative">
-                <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                  <SearchIcon
-                    fill={isDark(pathName, size) ? "white" : "#3a2824"}
-                  />
-                </div>
+        {pathName === "/" ? (<></>
 
-                <input
-                  type="search"
-                  id="default-search"
-                  className={`block w-full p-4 ps-10 text-sm  outline-none  rounded-full border border-opacity-20 bg-transparent ${theme?.border} `}
-                  placeholder="Search"
-                />
-              </div>
-            </form>
-          </div>
         ) : (
           <div className="md:hidden block py-4 px-6">
             <form>

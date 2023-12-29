@@ -26,7 +26,7 @@ const datainvest = [
 ];
 export default function VinesiaWines() {
   return (
-    <div>
+    <div className="pb-4">
       <div className="grid grid-cols-12 gap-[140px]">
         <div className="md:col-span-5 col-span-12">
           <h3 className="text-[#261B22] text-[360px] font-normal leading-[240px]">
@@ -42,7 +42,7 @@ export default function VinesiaWines() {
           {datainvest.map((items: any, i: any) => {
             const { title, info, text } = items;
             return (
-              <div
+              <div key={i}
                 className={`max-w-[608px] justify-start items-start gap-6 inline-flex py-12 ${
                   i == 0 && "pt-0"
                 }`}

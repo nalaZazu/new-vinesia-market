@@ -233,6 +233,8 @@ export default function ShareCard({ data }: { data: ProductOverview }) {
             </h1>
           </div>
 
+          {data.editions.filter((x) => x.isAvailable).length > 0 && (
+
           <div>
             <button
               onClick={() => {
@@ -243,7 +245,8 @@ export default function ShareCard({ data }: { data: ProductOverview }) {
             >
               Invest now <CartIcon fill="#FFFF" />
             </button>
-          </div>
+          </div>)}
+
           <div className="my-8 max-w-[608px] h-[0px] border border-orange-700 border-opacity-20 md:hidden block"></div>
         </div>
       </div>
