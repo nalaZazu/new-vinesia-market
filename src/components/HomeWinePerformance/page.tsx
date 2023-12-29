@@ -15,7 +15,6 @@ export default function HomeWinePerformance() {
 Compound Annual Growth Rate (CAGR)*</h3>
 <h4 className="mt-5 text-sm">*Liv-Ex 1000 Fine Wine Index</h4>
 
-    <img src="/"
 
       </div>
     </div>

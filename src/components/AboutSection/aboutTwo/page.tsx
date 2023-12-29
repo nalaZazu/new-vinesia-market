@@ -24,7 +24,7 @@ const AboutTwo = () => {
   const [visible, setVisible] = useState(false);
   const [step, setStep] = useState(1);
   return (
-    <React.Fragment>
+    <>
       {/* here is a investment section */}
       <ModalContainer
         visible={visible}
@@ -124,9 +124,9 @@ const AboutTwo = () => {
           </div>
         </div>
       </div>
-      
+
       <HomeWinePerformance />
-      
+
       {/*The potential of wine investment in numbers (next section) */}
       <div className="md:py-40 md:px-0   py-20 px-4">
         <div className="container mx-auto">
@@ -172,9 +172,9 @@ const AboutTwo = () => {
 
                 <div className="bg-orange-100 h-64">
                   <div className="pt-1 hover:cursor-pointer">
-                <div className="bg-[#F3E8CF] h-64">
-                  <div className="pt-1">
-                    {/* <ul className="flex justify-end gap-4">
+                    <div className="bg-[#F3E8CF] h-64">
+                      <div className="pt-1">
+                        {/* <ul className="flex justify-end gap-4">
                       <li className="flex items-center">
                         <LineDot storke="#28475C" />
                         Baseline
@@ -184,24 +184,27 @@ const AboutTwo = () => {
                         <LineDot storke="#CB220D" /> Portofolio performace
                       </li>
                     </ul> */}
-                    {/* <Appactivity /> */}
-                    <Image src={simulatorPreview} alt="image" onClick={() => setVisible(true)}/>
-                  </div>
-                </div>
-                {/* HERE IS NUMBER DEFINED  */}
-                {/* <ul className="flex justify-between text-zinc-800 text-base font-normal   leading-snug">
+                        {/* <Appactivity /> */}
+                        <Image src={simulatorPreview} alt="image" onClick={() => setVisible(true)} />
+                      </div>
+                    </div>
+                    {/* HERE IS NUMBER DEFINED  */}
+                    {/* <ul className="flex justify-between text-zinc-800 text-base font-normal   leading-snug">
                   <li>2005</li>
                   <li>2010</li>
                   <li>2015</li>
                   <li>2020</li>
                   <li>2023</li>
                 </ul> */}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
-    </React.Fragment>
+    </>
   );
 };
 
