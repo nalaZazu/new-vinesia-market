@@ -4,8 +4,6 @@
 
 html {
   scroll-behavior: smooth;
-
-
 }
 
 ::-webkit-scrollbar {
@@ -41,7 +39,6 @@ html {
   font-style: normal;
 }
 
-
 @font-face {
   font-family: "Bon Vivant";
   src: url("../assets/fonts/BonVivant-Regular.ttf");
@@ -75,7 +72,9 @@ h6 {
   background-color: hsl(0, 0%, 100%);
   border-radius: 10px;
 }
-body::-webkit-scrollbar {width:10px}
+body::-webkit-scrollbar {
+  width: 10px;
+}
 ::-webkit-scrollbar {
   width: 6px;
   background-color: #ffffff;
@@ -309,10 +308,10 @@ body::-webkit-scrollbar {width:10px}
 @keyframes slide {
   from {
     transform: translateX(-320px);
-}
-to {
+  }
+  to {
     transform: translateX(320px);
-}
+  }
 }
 
 /* .mobile_view_slider{} */
@@ -593,9 +592,9 @@ to {
   }
 }
 
-.ant-input-affix-wrapper input.ant-input{
-  background-color: #F2E5CA;
-  font-family: 'Canela';
+.ant-input-affix-wrapper input.ant-input {
+  background-color: #f2e5ca;
+  font-family: "Canela";
 }
 #productById canvas {
   height: 250px !important;
