@@ -74,7 +74,7 @@ const SupportAnim = () => {
       <div className="flex flex-col w-1/4 items-center " ref={image1Ref}>
         <Image
           src={support1}
-          alt="Step 1"
+          alt="Image 1"
           width={100}
           height={100}
         />
@@ -84,7 +84,7 @@ const SupportAnim = () => {
         <Image
           
           src={support2}
-          alt="Step 2"
+          alt="Image 2"
           width={100}
           height={100}
         />
@@ -94,7 +94,7 @@ const SupportAnim = () => {
         <Image
           
           src={support3}
-          alt="Step 3"
+          alt="Image 3"
           width={100}
           height={100}
         />
@@ -104,7 +104,7 @@ const SupportAnim = () => {
         <Image
           
           src={support4}
-          alt="Step 4"
+          alt="Image 4"
           width={100}
           height={100}
         />
