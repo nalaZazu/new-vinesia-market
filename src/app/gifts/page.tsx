@@ -17,6 +17,7 @@ import BirthImage from "@/assets/images/birth_image.png";
 import GiftImg from "@/assets/images/gift_img.png";
 import Footer from "@/components/footer/page";
 import Benifits from "@/components/secruityPage/Benifits";
+import QASummary from "@/components/qasummary/page";
 const whatIsABondedWarehouseAndWhyDoesVinesiaUseItOptionsList = [
   { label: "Option1", value: "option1" },
   { label: "Option2", value: "option2" },
@@ -310,55 +311,8 @@ const VinesiaGiftsPage: React.FC = () => {
               </div>
               <Benifits />
             </div>
-            <div className=" md:px-5 relative w-full bg-[#F7EFDF] md:pt-40 md:pb-44 py-10">
-              <div className="  mx-auto pb-8 w-full">
-                <div className=" grid md:grid-cols-2 grid-cols-1 gap-[33px] items-start justify-center mx-auto top-[23%] w-[72%]">
-                  <div className="flex flex-col gap-9 items-start justify-start w-auto sm:w-full">
-                    <p className="font-light leading-[44.00px] max-w-[498px] md:max-w-full text-4xl sm:text-[32px] md:text-[34px] text-[#2F222B] tracking-[-0.36px]">
-                      You might have questions, we definitely have answers.
-                    </p>
-                    <VinesiaGiftsRowprice className="flex flex-row  gap-3 items-center justify-start w-auto" />
-                  </div>
-                  <div className="flex flex-col items-start justify-start w-auto sm:w-full">
-                    <div
-                      className="flex flex-col gap-px items-center w-full"
-                      //   orientation="vertical"
-                    >
-                      <div className="flex sm:flex-1 flex-col items-center justify-start w-[501px] sm:w-full">
-                        <div className="border-deep_orange-800_33 border-solid border-t flex flex-col items-center justify-between sm:pl-5 pl-6 pr-4 py-4 w-full">
-                          <div className="flex flex-col gap-3 items-start justify-center w-full">
-                            <div className="flex flex-col items-center justify-start w-full">
-                              <div className="flex flex-col items-center justify-start w-full">
-                                <p className="leading-[22.00px] text-base text-[#594E55] tracking-[-0.32px] w-full">
-                                  <>
-                                    Please provide comprehensive answers to
-                                    those questions. You will save lots of time
-                                    and money by eliminating the necessity to
-                                    give constant support. You also will keep
-                                    your clients&#39; time cause they will
-                                    quickly find the answers to all their
-                                    questions.
-                                  </>
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex sm:flex-1 flex-col items-center justify-start w-[501px] sm:w-full">
-                        <div className="border-deep_orange-800_33 border-solid border-t flex flex-col items-center justify-between sm:pl-5 pl-6 pr-4 py-4 w-full">
-                          <div className="flex flex-col items-start justify-center w-full"></div>
-                        </div>
-                      </div>
-                      <div className="flex sm:flex-1 flex-col items-center justify-start w-[501px] sm:w-full">
-                        <div className="border-deep_orange-800_33 border-solid border-y flex flex-col items-center justify-between sm:pl-5 pl-6 pr-4 py-4 w-full">
-                          <div className="flex flex-col items-start justify-center w-full"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="bg-[#F7EFDF] w-full">
+              <QASummary title="You might have questions, we definitely have answers." />
             </div>
           </div>
         </div>
