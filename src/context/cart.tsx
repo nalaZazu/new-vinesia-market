@@ -1,24 +1,29 @@
 "use client"
 import { CartItem, ItemType } from "@/types/dto/checkoutCart.dto";
 import { ProductOverview } from "@/types/productOverview.dto";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { useUser } from "./user";
 import toast from "react-hot-toast";
 import { CartIcon } from "@/assets/icons/Icons";
 import Link from "next/link";
 import { EditionOverview } from "@/types/editionOverview.dto";
+import { Currency } from "@/types/user.dto";
+import { CartOrderDto } from "@/types/dto/cartOrder.dto";
 
 export interface ProvideCart {
     cartItems: CartItem[]
+    cartOrder: CartOrderDto | null
     addProductCartItem: (item: ProductOverview) => void
     addEditionCartItem: (item: EditionOverview) => void
     removeCartItem: (item: CartItem) => void
     getCartTotal: () => number
+    checkout: () => Promise<void>
 }
 
 export function useProvideCart(): ProvideCart {
     const [cartItems, setCartItems] = useState<CartItem[]>([])
-    const {currency} = useUser()
+    const [cartOrder, setCartOrder] = useState<CartOrderDto | null>(null)
+    const { currency, profile, jwtToken } = useUser()
 
     function addProductCartItem(item: ProductOverview) {
         const found = cartItems.filter((x) => x.id === item.id && x.type === ItemType.Product)
@@ -59,7 +64,7 @@ export function useProvideCart(): ProvideCart {
     }
 
     function removeCartItem(item: CartItem) {
-        const items = cartItems.filter(x=>x !== item)
+        const items = cartItems.filter(x => x !== item)
         setCartItems(items)
     }
 
@@ -67,16 +72,64 @@ export function useProvideCart(): ProvideCart {
         if (cartItems.length === 0)
             return 0
 
-        const sum = cartItems.map((x) => x.price ? x.price[currency] : 0).reduce((a,b) => a+b)
+        const sum = cartItems.map((x) => x.price ? x.price[currency] : 0).reduce((a, b) => a + b)
         return sum
     }
 
+    async function checkout() {
+        if (jwtToken === undefined || jwtToken.length === 0 || profile === null)
+            throw new Error('You need to be authorized to call this function')
+
+        try {
+            const verifyRes = await fetch(process.env.NEXT_PUBLIC_API_ADDRESS + 'cart/checkout', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'authorization': 'Bearer ' + jwtToken
+                },
+                body: JSON.stringify({ items: cartItems, currency: currency }),
+            })
+            if (!verifyRes.ok) throw new Error('Error updating address')
+            const resp = await verifyRes.json()
+
+            console.log('Cart checkout', resp)
+        } catch (e) {
+            console.log('Failed to update address', e)
+            throw e
+        }
+    }
+
+    useEffect(() => {
+        if (profile === null || profile === undefined) return
+
+        if (profile.cartOrder !== undefined) {
+            const items: CartItem[] = profile.cartOrder.positions.map((x) => {
+                const rec: Record<string, number> = {}
+                rec[profile.cartOrder?.currency ?? 'EUR'] = x.price
+
+                const item: CartItem = {
+                    id: x.editionId ?? 0,
+                    type: ItemType.Edition,
+                    price: rec
+                }
+                return item
+            })
+
+            //get cart data from backend
+
+            setCartItems(items)
+            setCartOrder(profile.cartOrder)
+        }
+    }, [profile])
+
     return {
         cartItems,
+        cartOrder,
         addProductCartItem,
         addEditionCartItem,
         removeCartItem,
-        getCartTotal
+        getCartTotal,
+        checkout
     }
 }
 

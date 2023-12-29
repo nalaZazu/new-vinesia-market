@@ -14,9 +14,11 @@ import toast from "react-hot-toast";
 
 export default function Checkout() {
   const { isLoggedIn, isLoading } = useUser()
-  const { cartItems } = useCart()
+  const { cartItems, checkout } = useCart()
   const { push } = useRouter()
+  const [saving, setIsSaving] = useState(false)
   const [step, setStep] = useState(1);
+  const [nextStepDesc, setNextStepDesc] = useState('Summary')
 
   useEffect(() => {
     if (isLoading) return
@@ -29,23 +31,42 @@ export default function Checkout() {
 
   }, [isLoading, isLoggedIn, push, cartItems])
 
+  if (saving) {
+    return <Loading text="Checkout ..." />
+  }
+
   if (isLoading) {
     return <Loading />
   }
 
   function prevStep() {
+    if (step === 1) {
+      push('/cart')
+    }
     if (step === 2) {
       //Go back to step about billing details
       setStep(1)
+      setNextStepDesc('Summary')
     }
   }
-  function nextStep() {
+  async function nextStep() {
     if (step === 1) {
       //validate data from step1, go to payment amount confirmation (includes info about Vinesia Wallet)
       setStep(2)
+      setNextStepDesc('Payment')
     }
     if (step === 2) {
-      //validate data and move to payment
+
+      setIsSaving(true)
+      try {
+        //validate data and move to payment
+        await checkout()
+        push('/payment')
+
+      } catch (e) {
+        console.error(e)
+        setIsSaving(false)
+      }
     }
   }
 
@@ -81,7 +102,7 @@ export default function Checkout() {
             {step == 1 && <Step1 />}
             {step == 2 && <Step2 />}
 
-            <CartControls step={step} prevStep={prevStep} nextStep={nextStep} />
+            <CartControls step={step} prevStep={prevStep} nextStep={nextStep} nextStepDesc={nextStepDesc} />
           </div>
 
           <div className="max-w-[501px] md:block hidden">

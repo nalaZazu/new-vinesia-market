@@ -121,7 +121,7 @@ export const sidebarMenu: MenuItem[] = [
       {
         id: 1,
         name: "Q&A",
-        href: "/qna",
+        href: "/faq",
       },
       {
         id: 2,

@@ -4,6 +4,12 @@
 
 html {
   scroll-behavior: smooth;
+
+
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 /* @font-face {
@@ -168,7 +174,7 @@ body::-webkit-scrollbar {width:10px}
 .line1 path {
   stroke-dasharray: 2000;
   stroke-dashoffset: 0;
-  animation: animate-line 5s linear forwards;
+  animation: animate-line 4s linear forwards;
 }
 @keyframes animate-line {
   0% {
@@ -182,7 +188,7 @@ body::-webkit-scrollbar {width:10px}
 .line2 path {
   stroke-dasharray: 2000;
   stroke-dashoffset: 0;
-  animation: animate-line2 5s linear forwards;
+  animation: animate-line2 4s linear forwards;
 }
 @keyframes animate-line2 {
   0% {
@@ -193,25 +199,15 @@ body::-webkit-scrollbar {width:10px}
   }
 }
 
-.vinesia-icon-animation path {
-  animation: icon-animation 10s linear forwards;
-}
-
-@keyframes icon-animation {
-  0% {
-    left: 0;
-  }
-  100% {
-    left: 100;
-  }
-}
-
 .fade-in {
-  animation: fadeIn 2s ease-in-out;
+  animation: fadeIn 5s ease-in-out;
 }
 
 @keyframes fadeIn {
   0% {
+    opacity: 0;
+  }
+  75% {
     opacity: 0;
   }
   100% {
@@ -219,7 +215,21 @@ body::-webkit-scrollbar {width:10px}
   }
 }
 
+.fade-in-box {
+  animation: fadeIn 7s ease-in-out;
+}
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /* vinesia end */
 
 .card_bg_shape {
@@ -586,4 +596,15 @@ to {
 .ant-input-affix-wrapper input.ant-input{
   background-color: #F2E5CA;
   font-family: 'Canela';
+}
+#productById canvas {
+  height: 250px !important;
+  width: 889px !important;
+}
+
+@media screen and (max-width: 768px) {
+  #productById canvas {
+    height: 228px !important;
+    width: 326px !important;
+  }
 }

@@ -115,7 +115,7 @@ export default function ProductCards({ item }: { item: ItemCardDto }) {
                     BUY NOW
                   </div>
                   <div className="text-zinc-800 text-center md:text-xl text-xl font-light  ">
-                    {getPriceText(item.buyNowPrice[currency] ?? 0)}
+                    {item.estPrice && getPriceText(item.estPrice[currency] ?? 0)}
                   </div>
                 </div>
               ) : (
