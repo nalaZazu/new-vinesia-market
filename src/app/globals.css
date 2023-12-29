@@ -235,7 +235,7 @@ body::-webkit-scrollbar {width:10px}
 .card_bg_shape {
   background-image: url("../assets/images/shape.png");
   background-size: contain;
-  background-position: center;
+  background-position: bottom;
   background-repeat: no-repeat;
 }
 
