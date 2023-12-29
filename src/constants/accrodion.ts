@@ -59,17 +59,23 @@ export const AccordionSecurity = [
   {
     id: 1,
     title: "Proof of authenticity",
-    text: "The concept of Peace of Mind is paramount in alleviating the fear associated with investing in rare and exquisite wines. Investing in vintage commodities, such as old cars or watches, begins with verifying authenticity. At Vinesia, we source our wines exclusively from winemakers, allowing us to guarantee 100% authentic provenance to our investors and collectors.How does it come to life?Upon the delivery of wines from the winemakers to our Luxembourg warehouse, a tamper-proof NFC tag is applied directly over the top of the bottle or across the lid of the case. Breaking this seal indicates that the bottle has been opened or tampered with. This NFC tag transmits a unique identifier to the blockchain (Polygon), serving as the wine's certificate of authenticity. This certificate remains valid for the bottle's lifetime, whether stored in our warehouse or after delivery.",
+    text: `The concept of Peace of Mind is paramount in alleviating the fear associated with investing in rare and exquisite wines. Investing in vintage commodities, such as old cars or watches, begins with verifying authenticity. At Vinesia, we source our wines exclusively from winemakers, allowing us to guarantee 100% authentic provenance to our investors and collectors.
+
+How does it come to life?
+
+Upon the delivery of wines from the winemakers to our Luxembourg warehouse, a tamper-proof NFC tag is applied directly over the top of the bottle or across the lid of the case. Breaking this seal indicates that the bottle has been opened or tampered with. This NFC tag transmits a unique identifier to the blockchain (Polygon), serving as the wine's certificate of authenticity. This certificate remains valid for the bottle's lifetime, whether stored in our warehouse or after delivery.`,
   },
   {
     id: 2,
     title: "Proof of ownership",
-    text: "Please provide comprehensive answers to those questions. You will save lots of time and money by eliminating the necessity to give constant support. You also will keep your clients' time cause they will quickly find the answers to all their questions.",
+    text: `The second tenet of our Peace of Mind pledge is ongoing verification of ownership for our investors. This involves scans in our warehouse to confirm that the wine has not mysteriously disappeared — an issue previously seen in famous wine investment funds and other commodities like gold or nickel futures (e.g., London Metals Exchange in 2023).
+
+At Vinesia, such incidents are impossible. You will immediately notice on your NFT page if your asset goes missing. We use BLE tags on each bottle (or case), with automatic scans at least once daily. This data is transmitted to the blockchain (Polygon) and is publicly accessible.`,
   },
   {
     id: 3,
     title: "Proof of storage conditions",
-    text: "Please provide comprehensive answers to those questions. You will save lots of time and money by eliminating the necessity to give constant support. You also will keep your clients' time cause they will quickly find the answers to all their questions.",
+    text: `Knowing how wine has been stored is crucial if you ever sell it to another investor or collector. Many investors hesitate to purchase wines from others due to uncertainties about storage conditions. Vinesia addresses this concern with Internet of Things (IoT) sensors throughout our warehouse. These sensors send data on temperature and humidity to the blockchain (Polygon). This data, which is public and immutable, can be viewed on your NFT page, displaying the complete temperature and humidity history.`,
   },
 ];
 
