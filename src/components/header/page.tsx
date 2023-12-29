@@ -5,7 +5,6 @@ import Image from "next/image";
 import logo from "../../assets/icons/logo1.svg";
 import { usePathname, useRouter } from "next/navigation";
 import { CartIcon, SearchIcon } from "@/assets/icons/Icons";
-import local from "next/font/local";
 import SidePannel from "./sidepannel/page";
 import { UserIcon } from "@/assets/icons/Icons";
 import { MenuItem, menuBar as menuItems } from "@/constants/navigate";
@@ -74,8 +73,8 @@ const isDark = (pathName: string, size: any) => {
     pathName === "/wineart" ||
     pathName === "/wacollections" ||
     pathName === "/wineart" ||
-    pathName === "/wineart" ||
     pathName === "/aboutus" ||
+    pathName === "/performance" ||
     pathName === "/vinesia" ||
     pathName === "/wacollections/reso" ||
     pathName === "/limitedcollections" ||

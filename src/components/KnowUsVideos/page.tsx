@@ -3,10 +3,10 @@ import AboutSlider from "../AboutSection/aboutslider/page";
 import VectorOne from "@/assets/icons/VectorOne.svg";
 import VectorTwo from "@/assets/icons/VectorTwo.svg";
 
-export default function KnowUsVideos() {
+export default function KnowUsVideos({title="The faster way to get to know us"}:{title?:string}) {
     return (
              <>{/* The faster way to get to know us */}
-      <div className="bg-[#2F222B] h-[780px]">
+      <div className="bg-[#2F222B] md:h-[780px] pb-32 md:pb-0 pt-20 md:pt-0">
       <div className="relative">
         <div className="absolute md:block hidden">
           <Image src={VectorOne} alt="vector" />
@@ -20,8 +20,8 @@ export default function KnowUsVideos() {
 
       <div className="flex justify-center md:py-20 md:px-0  px-4 py-25">
         <div className="container text-center">
-          <h3 className="text-white text-4xl font-light leading-[44px] pb-8">
-            The faster way to get to know us
+          <h3 className="text-white text-4xl font-light leading-[44px] pb-8 mt-6">
+            {title}
           </h3>
 
           {/* here is new slider  section */}

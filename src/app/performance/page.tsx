@@ -13,6 +13,9 @@ import Footer from "@/components/footer/page";
 import { VideoSlider } from "@/constants/videoslider";
 import NewslettersTwo from "@/components/newslttersTwo/page";
 import { AccordionWineAbout } from "@/components/accordion/page";
+import performance_image140 from "@/assets/images/performance_image140.png";
+import KnowUsVideos from "@/components/KnowUsVideos/page";
+import QASummary from "@/components/qasummary/page";
 
 export default function AssetsPerformance() {
   return (
@@ -37,11 +40,11 @@ export default function AssetsPerformance() {
 
       <div className="py-40">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 max-w-[1140px] pb-40">
+          <div className="grid md:grid-cols-2 max-w-[1140px] pb-40">
             <div>
               <Image src={inflationImage} alt="" />
             </div>
-            <div className="ps-[139px]">
+            <div className="md:ps-[139px]">
               <div className="pb-20">
                 <h3 className="text-zinc-800 text-4xl font-light leading-[44px]">
                   Inflation resilience
@@ -50,7 +53,7 @@ export default function AssetsPerformance() {
                   <p className=" text-neutral-600 text-base font-normal leading-snug">
                     Historically, when inflation increases the prices of goods
                     and services, the value of wine tends to rise in tandem,
-                    thus fighting the effects of inflation. 
+                    thus fighting the effects of inflation.
                   </p>
                 </div>
               </div>
@@ -62,14 +65,14 @@ export default function AssetsPerformance() {
                   <p className=" text-neutral-600 text-base font-normal leading-snug">
                     Historically, when inflation increases the prices of goods
                     and services, the value of wine tends to rise in tandem,
-                    thus fighting the effects of inflation. 
+                    thus fighting the effects of inflation.
                   </p>
                 </div>
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-2">
-            <div className="pe-[139px] flex items-end">
+          <div className="grid md:grid-cols-2">
+            <div className="md:pe-[139px] flex items-end">
               <div>
                 <h3 className="text-zinc-800 text-4xl font-light leading-[44px]">
                   Low correlation with traditional markets
@@ -78,13 +81,13 @@ export default function AssetsPerformance() {
                   <p className=" text-neutral-600 text-base font-normal leading-snug">
                     While stock markets can be highly unpredictable and
                     unstable, fine wine as an asset maintains steady returns
-                    during market downturns and through recessions. 
+                    during market downturns and through recessions.
                   </p>
                 </div>
               </div>
             </div>
             <div className="bg-[#F9F5EB] p-8">
-              <Appactivity />
+              <Image src={performance_image140} alt="returns" />
             </div>
           </div>
         </div>
@@ -144,7 +147,7 @@ export default function AssetsPerformance() {
               Vinesia
             </p>
             <span className="text-center text-stone-400 text-base font-normal leading-snug">
-              Let us help you add this unique asset to your portfolio. 
+              Let us help you add this unique asset to your portfolio.
             </span>
           </div>
           <div className="text-center text-white text-xs font-normal uppercase leading-[18px] tracking-tight w-44 h-[68px] px-8 py-[22px] rounded-[48px] border border-white border-opacity-20 justify-center items-center gap-3 inline-flex">
@@ -153,58 +156,15 @@ export default function AssetsPerformance() {
           </div>
         </div>
       </div>
-
-      {/* The faster way to get to know us */}
-      <div className="bg-[#2F222B]">
-        <div className="flex justify-end md:py-40 md:px-0  px-4 py-20">
-          <div className=" max-w-[1314px]">
-            <div>
-              <div>
-                <h3 className="text-white text-4xl font-light   leading-[44px] pb-8">
-                  Learn more about wine & art investment
-                </h3>
-              </div>
-            </div>
-
-            {/* here is new slider  section */}
-            <div className="hidden md:block">
-              <div>
-                <AboutSlider data={VideoSlider} />
-              </div>
-            </div>
-            <div className="md:hidden block  ">
-              <div className="grid grid-cols-1 ">
-                <AboutSlider />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <KnowUsVideos title="Learn more about wine & art investment" />
       {/* desktop */}
       <div>
         <NewslettersTwo />
       </div>
-      <div className="py-40 bg-[#F7EFDF]">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 gap-8">
-            <div className="max-w-[498px]">
-              <h3 className=" text-zinc-800 text-4xl font-light leading-[44px]">
-                You might have questions, we definitely have answers.
-              </h3>
-              <div className="flex gap-3 pt-9">
-                <button className="border-b-2 border-orange-700 border-opacity-20 text-center text-orange-700 text-xs font-normal font-['Albert Sans'] uppercase leading-[18px] tracking-tight">
-                  SEE ALL QUESTIONS & ANSWERS
-                </button>
-                <NextIcon />
-              </div>
-            </div>
-
-            <div>
-              <AccordionWineAbout />
-            </div>
-          </div>
-        </div>
+      <div className="bg-[#F7EFDF]">
+        <QASummary title="You might have questions, we definitely have answers." />
       </div>
+
       <Footer />
     </div>
   );
