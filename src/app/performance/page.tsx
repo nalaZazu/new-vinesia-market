@@ -5,7 +5,7 @@ import AssetsBanner from "@/components/AssetsPerformance/AssetsBanner";
 import InvestorsLove from "@/components/AssetsPerformance/InvestorsLove";
 import ChartsSection from "@/components/AssetsPerformance/ChartsSection";
 import inflationImage from "@/assets/images/inflationimage.png";
-import Appactivity from "@/components/charts/page";
+import simulatorPreview from "@/assets/images/simulatorPreview.png";
 import { Arrows, NextIcon } from "@/assets/icons/Icons";
 import TestimonialsSection from "@/components/AssetsPerformance/TestimonialsSection";
 import AboutSlider from "@/components/AboutSection/aboutslider/page";
@@ -16,9 +16,34 @@ import { AccordionWineAbout } from "@/components/accordion/page";
 import performance_image140 from "@/assets/images/performance_image140.png";
 import KnowUsVideos from "@/components/KnowUsVideos/page";
 import QASummary from "@/components/qasummary/page";
+import ModalContainer from "@/common/ModalContainer";
+import { GraphProvider } from "@/context/GraphContextProvider";
+import { Flex } from "antd";
+import LeftPanel from "@/components/simulator/LeftPanel";
+import RightPanel from "@/components/simulator/RightPanel";
+import GraphPanel from "@/components/simulator/GraphPanel";
 
 export default function AssetsPerformance() {
+  const [visible, setVisible] = useState(false);
   return (
+    <>
+    <ModalContainer
+        visible={visible}
+        setVisible={setVisible}
+        modalClass="max-h-[95vh] max-w-[90vw] rounded-md pt-4 pb-4 px-12"
+        backgroundClass="bg-zinc-800 bg-opacity-95"
+        isCloseBtn={true}
+      >
+        <div>
+          <GraphProvider>
+            <Flex gap="small" vertical={false} >
+              <LeftPanel />
+              <GraphPanel />
+              <RightPanel />
+            </Flex>
+          </GraphProvider>
+        </div>
+      </ModalContainer>
     <div className="absolute top-0 -z-10 left-0 right-0">
       <div>
         <div className="relative">
@@ -105,7 +130,7 @@ export default function AssetsPerformance() {
               </p>
 
               <button
-                // onClick={() => setVisible(true)}
+                onClick={() => setVisible(true)}
                 className="px-8 py-4 text-white  bg-orange-700 rounded-[48px] justify-center items-center gap-3 inline-flex"
               >
                 CALCULATE{" "}
@@ -122,7 +147,8 @@ export default function AssetsPerformance() {
                 </h5>
                 <div className="bg-orange-100 h-64">
                   <div className="pt-1">
-                    <Appactivity />
+                    {/* <Appactivity /> */}
+                    <Image src={simulatorPreview} alt="image" onClick={() => setVisible(true)} />
                   </div>
                 </div>
               </div>
@@ -167,5 +193,6 @@ export default function AssetsPerformance() {
 
       <Footer />
     </div>
+    </>
   );
 }
