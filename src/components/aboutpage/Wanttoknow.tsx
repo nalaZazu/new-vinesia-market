@@ -11,11 +11,11 @@ export default function Wanttoknow() {
   return (
     <div>
       <div className="flex justify-between max-w-[1040px] items-center mx-auto">
-        <p className="w-[174px] text-right text-white text-lg font-semibold leading-relaxed">
+        <p className="max-w-[174px] text-right text-white text-lg font-semibold leading-relaxed">
           Want to know more?
         </p>
         <div className="justify-start items-center gap-6 flex">
-          <button className="w-[301px] px-8 py-[22px] rounded-[48px] text-center text-white text-xs font-normal uppercase leading-[18px] tracking-tight border border-white border-opacity-20 justify-center items-center gap-3 flex">
+          <button className="max-w-[301px] px-8 py-[22px] rounded-[48px] text-center text-white text-xs font-normal uppercase leading-[18px] tracking-tight border border-white border-opacity-20 justify-center items-center gap-3 flex">
             Subscribe to our newsletter
             <NextIcon fill={"#fff"} />
           </button>
@@ -24,7 +24,7 @@ export default function Wanttoknow() {
         <p className="text-right text-white text-lg font-semibold leading-relaxed">
           Or find us on
         </p>
-        <div className="flex gap-3">
+        <div className="flex flex-wrap gap-3">
           <Image src={facebook} alt="" />
           <Image src={Linkdin} alt="" />
           <Image src={marks} alt="" />
