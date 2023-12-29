@@ -38,7 +38,7 @@ export const FooterNavigateTwo = [
   {
     id: 5,
     title: "Q&A",
-    href: "/qna",
+    href: "/faq",
   },
   {
     id: 6,

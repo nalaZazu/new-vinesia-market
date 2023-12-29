@@ -6,7 +6,7 @@ import { DecentrIcon, DocIcon, DocVerifyIcon } from "@/assets/icons/Icons";
 export default function Benifits() {
   return (
     <div>
-      <div className="grid sm:grid-cols-3 grid-cols-1 font-albertsans gap-10 md:gap-[136px] justify-start px-5 w-auto md:w-full">
+      <div className="grid sm:grid-cols-3 grid-cols-1 gap-10 md:gap-[136px] justify-start px-5 w-auto md:w-full">
         <div className="flex flex-col gap-[22px] items-start justify-start w-auto">
           <div className="flex flex-col items-start justify-start w-16">
             <span className="flex h-16 items-center justify-center w-16 p-5 bg-[#28475C] rounded-full">
