@@ -164,17 +164,16 @@ const VinesiaGiftsPage: React.FC = () => {
                       What will you get after purchasing wine as a gift?
                     </p>
                     <div className="flex flex-col gap-4 items-start w-full">
-                      <div className="bg-orange-50 flex flex-1 sm:flex-col flex-row gap-4 items-start justify-start my-0 p-6 sm:px-5 rounded-lg w-full">
-                        <div className="flex flex-row items-center justify-start w-6">
+                      <div className="bg-orange-50 flex flex-1 sm:flex-col flex-row gap-4 md:items-start justify-start my-0 p-6 sm:px-5 rounded-lg w-full">
+                        <div className="flex flex-row items-center justify-start md:w-6">
                           <span className="h-6 w-6">
                             <BookIcon />
                           </span>
-                          <p className="font-semibold text-[#2F222B] ml-2 text-lg tracking-[-0.36px] w-auto">
+                          <p className="font-semibold text-[#2F222B] ml-2 text-lg md:tracking-[-0.36px] w-auto">
                             Booklet
                           </p>
                         </div>
                         <div className="flex sm:flex-1 flex-col gap-2 items-start justify-start w-auto sm:w-full">
-                          
                           <p className="leading-[22.00px] max-w-[485px] md:max-w-full text-base text-[#594E55] tracking-[-0.32px]">
                             <>
                               A guide to your wine&#39;s provenance, tasting
@@ -194,14 +193,14 @@ const VinesiaGiftsPage: React.FC = () => {
                         </div>
                         <div className="flex sm:flex-1 flex-col gap-2 items-start justify-start w-auto sm:w-full">
                           
-                          <p className="text-base text-[#594E55] tracking-[-0.32px] w-[370px]">
+                          <p className="text-base text-[#594E55] tracking-[-0.32px] md:w-[370px]">
                             A beautifully designed certificate of your
                             investment.
                           </p>
                         </div>
                       </div>
-                      <div className="bg-orange-50 flex flex-1 sm:flex-col flex-row gap-4 items-start justify-start my-0 p-6 sm:px-5 rounded-lg w-full">
-                        <div className="flex flex-row items-center justify-start w-6">
+                      <div className="bg-orange-50 flex flex-1 sm:flex-col flex-row gap-4 md:items-start justify-start my-0 p-6 sm:px-5 rounded-lg w-full">
+                        <div className="flex flex-row items-center justify-start md:w-6">
                           <span className="h-6 w-6">
                             <ArtworkIcon />
                           </span>
@@ -222,12 +221,12 @@ const VinesiaGiftsPage: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className=" mt-0.5 relative w-full">
+            <div className=" mt-0.5 md:relative w-full">
               <div className=" bg-orange-50 flex flex-col h-full inset-[0] items-center justify-center w-full md:py-40 py-20">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-[94px] items-center justify-center max-w-[1031px] mx-auto md:w-full">
-                  <div className="flex flex-col gap-8 items-start justify-start w-[394px] sm:w-full">
+                <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-[94px] items-center justify-center max-w-[1031px] mx-auto md:w-full">
+                  <div className="flex flex-col gap-8 items-start justify-start md:w-[394px] sm:w-full">
                     <div className="flex flex-col gap-4 items-start justify-start w-full">
-                      <p className="font-Canela font-light text-4xl sm:text-[32px] md:text-[34px] text-[#2F222B] tracking-[-0.36px] w-full">
+                      <p className="font-Canela font-light text-4xl sm:text-[32px] md:text-[34px] text-[#2F222B] md:tracking-[-0.36px] w-full">
                         Occasion selection
                       </p>
                       <p className="font-semibold text-[#2F222B] text-lg tracking-[-0.36px] w-full">
@@ -239,15 +238,15 @@ const VinesiaGiftsPage: React.FC = () => {
                         <p className="text-[#BF4D20] text-xs tracking-[0.24px] uppercase w-full">
                           Anniversary
                         </p>
-                        <p className="text-base text-[#594E55] tracking-[-0.32px] w-full">
+                        <p className="text-base text-[#594E55] md:tracking-[-0.32px] w-full">
                           Celebrate your recipients’ journey
                         </p>
                       </div>
                       <div className="flex flex-col gap-2 items-start justify-start w-full">
-                        <p className="text-[#BF4D20] text-xs tracking-[0.24px] uppercase w-full">
+                        <p className="text-[#BF4D20] text-xs md:tracking-[0.24px] uppercase w-full">
                           Weddings
                         </p>
-                        <p className="leading-[22.00px] max-w-[394px] md:max-w-full text-base text-[#594E55] tracking-[-0.32px]">
+                        <p className="md:leading-[22.00px] max-w-[394px] md:max-w-full text-base text-[#594E55] md:tracking-[-0.32px]">
                           Toast to the new life chapter with a gift that grows
                           with the couple
                         </p>
@@ -256,7 +255,7 @@ const VinesiaGiftsPage: React.FC = () => {
                         <p className="text-[#BF4D20] text-xs tracking-[0.24px] uppercase w-full">
                           Christmas
                         </p>
-                        <p className="leading-[22.00px] max-w-[394px] md:max-w-full text-base text-[#594E55] tracking-[-0.32px]">
+                        <p className="md:leading-[22.00px] max-w-[394px] md:max-w-full text-base text-[#594E55] md:tracking-[-0.32px]">
                           Share the spirit of the season with a gift that
                           embodies the holiday season
                         </p>
@@ -266,9 +265,9 @@ const VinesiaGiftsPage: React.FC = () => {
                           <p className="text-[#BF4D20] text-xs tracking-[0.24px] uppercase w-auto">
                             Birth of your child
                           </p>
-                          <div className="border border-[#BF4D20] h-px w-[64%]" />
+                          <div className="border border-[#BF4D20] h-px md:w-[64%] w-[40%]" />
                         </div>
-                        <p className="leading-[22.00px] max-w-[394px] md:max-w-full text-base text-[#594E55] tracking-[-0.32px]">
+                        <p className="md:leading-[22.00px] max-w-[394px] md:max-w-full text-base text-[#594E55] md:tracking-[-0.32px]">
                           Mark the beginning of a new life with an investment
                           that matures with them
                         </p>
@@ -276,7 +275,7 @@ const VinesiaGiftsPage: React.FC = () => {
                     </div>
                   </div>
                   <Image
-                    className="h-[543px] md:h-auto rounded-[50%] w-[543px]"
+                    className="md:h-[543px] rounded-[50%] md:w-[543px]"
                     src={BirthImage}
                     alt="ellipse3127"
                   />

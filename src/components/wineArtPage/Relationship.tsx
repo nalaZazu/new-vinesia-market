@@ -4,9 +4,9 @@ import relation from "@/assets/images/relationship.png";
 export default function Relationship() {
   return (
     <div>
-      <div className="flex">
+      <div className="md:flex">
         <div className="max-w-[813px]">
-          <h2 className=" text-zinc-800 text-7xl font-normal leading-[84px] tracking-[-1.44px]">
+          <h2 className=" text-zinc-800 md:text-7xl text-5xl font-normal md:leading-[84px] md:tracking-[-1.44px]">
             Wine and art have long held a harmonious relationship.
           </h2>
           <div className="py-8">
@@ -17,12 +17,12 @@ export default function Relationship() {
             </p>
           </div>
         </div>
-        <div className="pt-28">
-          <div className="w-[501px] h-[501px] bg-red-800 rounded-full relative flex justify-center items-center">
+        <div className="md:pt-28">
+          <div className="m-auto md:m-0 md:w-[501px] md:h-[501px] w-[300px] h-[300px] bg-red-800 rounded-full relative flex justify-center items-center">
             <h1 className="absolute top-0 left-0 right-0 text-center text-red-400 text-[144px] font-normal">
               “
             </h1>
-            <p className="max-w-[410px] mx-auto text-center text-rose-200 text-4xl font-normal collection leading-[63px]">
+            <p className="max-w-[410px] mx-auto text-center text-rose-200 text-2xl md:text-4xl font-normal collection leading-[50px] md:leading-[63px]">
               The discovery of a good wine is increasingly better for mankind
               than the discovery of a new star.
             </p>
@@ -30,13 +30,13 @@ export default function Relationship() {
         </div>
       </div>
 
-      <div className="flex">
+      <div className="md:flex">
         <div className="">
-          <div className="w-[501px] h-[501px] rounded-full">
+          <div className="md:w-[501px] md:h-[501px] w-[300px] h-[300px] m-auto md:m-0 rounded-full">
             <Image src={relation} alt="" />
           </div>
         </div>
-        <div className=" ps-36 flex items-center">
+        <div className="md:ps-36 flex items-center">
           <div className="py-8 max-w-[518px] text-zinc-800 text-base font-normal font-['Albert Sans'] leading-snug">
             <p className="pb-6">
               At Vinesia, we love the connection between wine as the muse for

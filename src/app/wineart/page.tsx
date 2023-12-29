@@ -26,7 +26,7 @@ export default function wineryArt() {
         </div>
       </div>
 
-      <div className="py-40">
+      <div className="md:py-40 py-10">
         <div className="container mx-auto px-4">
           <Relationship />
         </div>
@@ -38,9 +38,9 @@ export default function wineryArt() {
         </div>
       </div>
 
-      <div className="pt-32 pb-40">
+      <div className="md:pt-32 pt-10 md:pb-40 pb-10">
         <div className="container mx-auto px-4">
-          <h2 className="text-zinc-800 text-7xl font-normal leading-[84px] pb-12">
+          <h2 className="text-zinc-800 md:text-7xl text-5xl font-normal md:leading-[84px] pb-12">
             Artists we have partnered with 
           </h2>
           <Artists />
@@ -74,7 +74,7 @@ export default function wineryArt() {
 
       {/* The faster way to get to know us */}
       <div className="bg-[#2F222B]">
-        <div className="flex text-center justify-center md:py-40 md:px-0  px-4 py-20">
+        <div className="md:flex text-center justify-center md:py-40 md:px-0  px-4 py-20">
             <div>
               <div>
                 <h3 className="text-white text-4xl font-light   leading-[44px] pb-8">

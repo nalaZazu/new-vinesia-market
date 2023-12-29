@@ -12,8 +12,8 @@ export default function Artists() {
   return (
     <div>
       {/* Reso */}
-      <div className="grid grid-cols-2">
-        <div className="flex-col justify-start items-start gap-10 flex pe-[140px]">
+      <div className="grid md:grid-cols-2">
+        <div className="flex-col justify-start items-start gap-10 flex md:pe-[140px]">
           <div className="flex-col justify-start items-start gap-6 flex">
             <h3 className=" h-[31px] text-zinc-800 text-4xl font-light leading-[44px]">
               Reso
@@ -53,7 +53,7 @@ export default function Artists() {
         </div> */}
       </div>
       {/* monsieurZ */}
-      <div className="grid grid-cols-2 pt-40">
+      <div className="grid md:grid-cols-2 md:pt-40 pt-10">
         <div>
           <div className="grid grid-cols-2 gap-8 max-w-[608px]">
             {/* {ProductList.slice(0, 2).map((items, i) => {
@@ -65,7 +65,7 @@ export default function Artists() {
             })} */}
           </div>
         </div>
-        <div className="flex-col gap-10 flex ps-[140px]">
+        <div className="flex-col gap-10 flex md:ps-[140px]">
           <div className="flex-col gap-6 flex">
             <h3 className=" h-[31px] text-zinc-800 text-4xl font-light leading-[44px]">
               Monsieur Z

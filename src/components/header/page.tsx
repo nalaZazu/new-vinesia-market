@@ -92,7 +92,7 @@ export default function Header() {
   const size = useWindowSize();
   const pathName = usePathname();
   const router = useRouter();
-  console.log("User Provider  Profile", profile);
+  // console.log("User Provider  Profile", profile);
   const [topSelected, setTopSelected] = useState(getTopMenuItem(pathName));
   const [selected, setSelected] = useState(getMenuItem(pathName));
   const [theme, setTheme] = useState(getTheme(pathName, size));
