@@ -26,7 +26,7 @@ const datainvest = [
 ];
 export default function VinesiaWines() {
   return (
-    <div>
+    <div className="pb-4">
       <div className="grid grid-cols-12 gap-[140px]">
         <div className="col-span-5">
           <h3 className="text-[#261B22] text-[360px] font-normal leading-[240px]">
@@ -38,7 +38,7 @@ export default function VinesiaWines() {
             in wines
           </h2>
         </div>
-        <div className="col-span-7 divide-y-2 flex flex-col divide-[rgba(255,255,255,0.20)]">
+        <div className="col-span-5 divide-y-2 flex flex-col divide-[rgba(255,255,255,0.20)]">
           {datainvest.map((items: any, i: any) => {
             const { title, info, text } = items;
             return (
