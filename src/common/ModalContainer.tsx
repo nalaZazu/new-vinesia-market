@@ -60,11 +60,33 @@ export default function ModalContainer({
                 <Dialog.Panel
                   className={`relative max-w-[1244px] w-full mx-auto lg:h-auto md:h-[600px] sm:h-full transform overflow-hidden bg-[#F3E8CF] text-left shadow-xl transition-all ${modalClass} `}
                 >
-                  {isCloseBtn && (
-                    <div className=" flex justify-between p-4 ">
-                      <h3 className="text-black text-4xl font-light leading-[44px]">
-                        {title}
-                      </h3>
+                  {title ? (
+                    <div className="flex justify-between p-4">
+                    <h3 className="text-black text-4xl font-light leading-[44px]">
+                      {title}
+                    </h3>
+                    {isCloseBtn && (
+                      <button onClick={() => setVisible(false)}>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="#BF4D20"
+                        className="w-5 h-5"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M6 18L18 6M6 6l12 12"
+                        />
+                      </svg>
+                    </button>
+                    )}
+                  </div>
+                  ) : (
+                  isCloseBtn && (
+                    <div className=" absolute top-5 right-5 ">
                       <button onClick={() => setVisible(false)}>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +103,13 @@ export default function ModalContainer({
                           />
                         </svg>
                       </button>
+                      
+                      <h3 className="text-black text-4xl font-light leading-[44px]">
+                        {title}
+                      </h3>
+                      
                     </div>
+                    )
                   )}
                   {children}
                 </Dialog.Panel>

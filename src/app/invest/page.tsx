@@ -7,8 +7,11 @@ import Footer from "@/components/footer/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
 import Product from "@/components/products/page";
 import useSWR from "swr";
+import lineregion from "@/assets/icons/lineregion.svg";
 
 import FilterSection from "@/components/FilterSection/page";
+import VerticalBreadCrumb from "@/common/verticalBreadcrumb/page";
+import Image from "next/image";
 
 const Invest = () => {
   const [selectedFilters, setSelectedFilters] = useState([]);
@@ -50,8 +53,14 @@ const Invest = () => {
         {/* <Headersecond /> */}
         <div className=" pt-6 container mx-auto px-3">
           <InvestBread />
+          {/* <VerticalBreadCrumb/> */}
           <div className=" mt-9 hidden md:block">
-            <h2 className=" text-primary text-[144px] font-normal ">Invest</h2>
+            <h2 className=" text-primary text-[144px] font-normal leading-[100px]">Invest
+            
+            </h2>
+            <div className="underline decoration-wavy py-16">
+              <Image src={lineregion} alt="image" />
+            </div>
           </div>
           {/* for mobileView */}
           <div className="mt-9 md:hidden block">

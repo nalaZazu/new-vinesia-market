@@ -18,7 +18,7 @@ export default function TabButton({
   };
   return (
     <div className="">
-      <div className="flex  md:flex-nowrap  flex-wrap border-b-2 border-orange-700 border-opacity-20">
+      <div className="flex  flex-nowrap   border-b-2 border-orange-700 border-opacity-20">
         {data?.map((item: any, i: any) => {
           return (
             <div

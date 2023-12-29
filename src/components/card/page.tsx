@@ -5,7 +5,8 @@ import Link from "next/link";
 const Card = () => {
   return (
     <>
-      <div className=" flex  md:grid  gap-x-4 gap-y-4 md:grid-cols-2 lg:grid-cols-5  pt-7 pb-7 overflow-x-auto ">
+      <div className=" flex  md:grid  gap-x-4 gap-y-4 md:grid-cols-2 lg:grid-cols-5 pb-12   overflow-x-auto ">
+        {/* // pt-7 pb-7 */}
         {CaradRegion?.map((reg: any) => {
           const { id, name, image, href } = reg;
           return (

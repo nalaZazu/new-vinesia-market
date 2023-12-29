@@ -56,7 +56,7 @@ export default function Regions() {
         <h1 className="text-zinc-800 md:text-[144px] text-6xl font-normal">
           Regions
         </h1>
-        <div className="underline decoration-wavy py-8">
+        <div className="underline decoration-wavy md:py-16 py-8">
           <Image src={lineregion} alt="image" />
         </div>
         <Card />

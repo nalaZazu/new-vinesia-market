@@ -21,7 +21,7 @@ const ExploreRegionMobile = () => {
     setOpen(!open);
   };
   const [selectedTab, setSelectedTab] = useState(0);
-  const countryName = ["France", "Germany", ];
+  const countryName = ["France", "Germany", "Switzerland" ];
   return (
     <div className="bg-[#F7EFDF] block md:hidden py-20 px-4">
       <Popup open={open} setOpen={handleOpen} />
@@ -33,7 +33,7 @@ const ExploreRegionMobile = () => {
         </div>
         <TabButton data={countryName} />
 
-        <div>
+        <div  className="pt-4">
           {/* column one */}
           <div className="cursor-pointer" onClick={handleOpen}>
             <div>
@@ -44,7 +44,7 @@ const ExploreRegionMobile = () => {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               ></iframe>
             </div>
-            <div className=" flex items-end justify-between mt-4">
+            <div className=" flex items-end justify-between mt-4 ">
               <h1 className=" text-zinc-800 text-4xl font-light  leading-[44px]">
                 France
               </h1>
@@ -65,6 +65,7 @@ const ExploreRegionMobile = () => {
                 </svg>
               </div>
             </div>
+            <div className="border-b border-stone-400 pt-4"/>
           </div>
         </div>
         <p className="py-6 text-zinc-800 text-lg font-semibold  leading-relaxed">

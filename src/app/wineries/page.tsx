@@ -20,7 +20,7 @@ export default function Winary() {
       </div>
       <div className="container mx-auto pt-16 md:px-0 px-4 pb-14">
         {/* text */}
-        <div className="flex flex-wrap pb-28">
+        <div className="flex flex-wrap pb-28 justify-center">
           <div className="pb-7">
             <p className="max-w-[499px] text-zinc-800 text-base font-normal leading-snug">
               Bordeaux, a renowned wine region, is acclaimed for its bold red
@@ -48,7 +48,7 @@ export default function Winary() {
           const { title, region } = d;
           return (
             <div key={i}>
-              <div className="pt-40 flex-col justify-start items-center gap-[72px] inline-flex pb-10">
+              <div className="pt-20 flex-col justify-start items-center gap-[72px] inline-flex pb-10">
                 <h1 className="text-zinc-800 md:text-[144px] text-6xl font-normal leading-none">
                   {title}
                 </h1>
@@ -61,12 +61,24 @@ export default function Winary() {
                     <Disclosure key={i}>
                       {({ open }) => (
                         <>
-                          <div className="pt-14">
+                          <div className="pt-10">
                             <Disclosure.Button className="flex w-full justify-between ">
                               {/* 1st div */}
-                              <div className="flex flex-wrap justify-between items-center w-full">
+                              <div className="flex flex-wrap gap-16 justify-between items-center w-full">
                                 <div>
-                                  <p className="text-stone-500 text-xs font-normal uppercase leading-3 tracking-tight text-start">
+                                  <div className="flex justify-between items-center">
+                                    <p className="text-stone-500 text-xs font-normal uppercase leading-3 tracking-tight text-start block md:hidden ">
+                                      WINERY NAME
+                                    </p>
+                                    <div className="block md:hidden  ">
+                                      <ArrowUpRightIcon
+                                        className={`${
+                                          open ? "rotate-180 transform" : ""
+                                        } h-5 w-5 text-orange-700`}
+                                      />
+                                    </div>
+                                  </div>
+                                  <p className="text-stone-500 text-xs font-normal uppercase leading-3 tracking-tight text-start  md:block hidden ">
                                     WINERY NAME
                                   </p>
 
@@ -75,7 +87,7 @@ export default function Winary() {
                                   </h3>
                                 </div>
 
-                                <div>
+                                <div className="md:block hidden">
                                   <p className="h-[108.75px] origin-top-left rotate-[24deg] border border-orange-700"></p>
                                 </div>
                                 <div>
@@ -87,7 +99,10 @@ export default function Winary() {
                                   </h3>
                                 </div>
                                 <div className="max-w-[235.47px] h-14 justify-start items-center gap-[60px] inline-flex">
-                                  <Link href={`/wineries/${wineryname}`}>
+                                  <Link
+                                    href={`/wineries/${wineryname}`}
+                                    className="md:block hidden "
+                                  >
                                     <button className="text-center text-orange-700 text-xs font-normal uppercase leading-3 tracking-tight max-w-[151.47px] px-8 py-[22px] rounded-[48px] border border-orange-700 border-opacity-20 justify-center items-center gap-3 flex">
                                       EXPLORE
                                       <svg
@@ -107,7 +122,7 @@ export default function Winary() {
                                     </button>
                                   </Link>
                                 </div>
-                                <div>
+                                <div className="md:block hidden ">
                                   <ArrowUpRightIcon
                                     className={`${
                                       open ? "rotate-180 transform" : ""

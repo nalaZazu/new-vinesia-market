@@ -112,7 +112,7 @@ export default function ProductsOverview({
         <AboutWinerySection data={data?.wine?.winery} />
       </div>
       {/* you main also like section */}
-      <div className=" text-center">
+      <div className="bg-[#F7EFDF] text-center pb-40">
         <div className=" pb-12">
           <h1 className=" text-4xl font-light text-[#2F222B]">
             You may also like

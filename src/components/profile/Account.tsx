@@ -107,7 +107,7 @@ export default function Account() {
                 email address for invoices
               </p>
               <p className="text-zinc-800 text-base font-normal leading-snug">
-                {profile.billingAddress.notificationEmail}
+                {profile.billingAddress.invoiceEmail}
               </p>
             </div>
           </div>
