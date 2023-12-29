@@ -32,6 +32,7 @@ export default function WineryArt() {
         "Content-Type": "application/json",
       },
     };
+    console.log("fetch", url, payload);
     return fetch(url, options).then((res) => res.json());
   };
 

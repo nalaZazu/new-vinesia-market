@@ -10,9 +10,8 @@ import {
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 import moment from "moment";
-import { EditionOverview } from "@/types/editionOverview.dto";
 
-export default function TempHumChart({ item, isFahrenheit }: { item: EditionOverview, isFahrenheit: boolean }) {
+export default function TempHumChart({ data }: { data?: any }) {
   ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -21,6 +20,9 @@ export default function TempHumChart({ item, isFahrenheit }: { item: EditionOver
     Title,
     Tooltip
   );
+
+  const temp = [17.1, 16.8, 16.4, 16.2, 16.2, 16.4, 16.5];
+  const hum = [46.8, 45.9, 45.2, 46, 46.8, 46.8, 47.7];
 
   const options: any = {
     innerHeight: 200,
@@ -83,7 +85,7 @@ export default function TempHumChart({ item, isFahrenheit }: { item: EditionOver
         ticks: {
           beginAtZero: true,
           callback: function (value: number, index: number) {
-            return index % 2 === 0 ? value + (isFahrenheit ? `°F` : `°C`) : "";
+            return index % 2 === 0 ? value + `` : "";
           },
         },
       },
@@ -98,18 +100,16 @@ export default function TempHumChart({ item, isFahrenheit }: { item: EditionOver
         ticks: {
           beginAtZero: true,
           callback: function (value: number, index: number) {
-            return index % 2 === 0 ? value + `%` : "";
+            return index % 2 === 0 ? value + `` : "";
           },
         },
       },
     },
   };
   const labels =
-    item.temp.map((_v: number, i: any) => {
-      const date = new Date()
-      date.setDate(date.getDate() - 7 + i)
-
-      // const date = new Date(now.getFullYear(), now.getMonth(), now.getDay()+i);
+    temp &&
+    temp?.map((_v: any, i: any) => {
+      const date = new Date(2023, 11, 16+i);
       const dateM = moment(date.toISOString())
       // date.setDate(date.getDate());
       return `${dateM.format('MMM DD')}`;
@@ -120,19 +120,12 @@ export default function TempHumChart({ item, isFahrenheit }: { item: EditionOver
     datasets: [
       {
         label: "Temp",
-        data: item.temp.map((x) => {
-          if (isFahrenheit) {
-            const fahrenheit = ((x * 9 / 5) + 32)
-            return fahrenheit
-          } else {
-            return x
-          }
-        }),
+        data: temp,
         // data: data?.map((d: any) => {
         //   return d[1];
         // }),
-        borderColor: "#28475C",
-        backgroundColor: "#28475C",
+        borderColor: "#0088F5",
+        backgroundColor: "#0088F5",
         yAxisID: "y",
         borderWidth: 2,
         tension: 0.4,
@@ -140,7 +133,7 @@ export default function TempHumChart({ item, isFahrenheit }: { item: EditionOver
       },
       {
         label: "Hum",
-        data: item.humidity,
+        data: hum,
         borderColor: "#CB220D",
         backgroundColor: "#CB220D",
         yAxisID: "y2",

@@ -14,11 +14,9 @@ import toast from "react-hot-toast";
 
 export default function Checkout() {
   const { isLoggedIn, isLoading } = useUser()
-  const { cartItems, checkout } = useCart()
+  const { cartItems } = useCart()
   const { push } = useRouter()
-  const [saving, setIsSaving] = useState(false)
   const [step, setStep] = useState(1);
-  const [nextStepDesc, setNextStepDesc] = useState('Summary')
 
   useEffect(() => {
     if (isLoading) return
@@ -31,45 +29,9 @@ export default function Checkout() {
 
   }, [isLoading, isLoggedIn, push, cartItems])
 
-  if (saving) {
-    return <Loading text="Checkout ..." />
-  }
-
   if (isLoading) {
-    return <Loading />
+    return <Loading/>
   }
-
-  function prevStep() {
-    if (step === 1) {
-      push('/cart')
-    }
-    if (step === 2) {
-      //Go back to step about billing details
-      setStep(1)
-      setNextStepDesc('Summary')
-    }
-  }
-  async function nextStep() {
-    if (step === 1) {
-      //validate data from step1, go to payment amount confirmation (includes info about Vinesia Wallet)
-      setStep(2)
-      setNextStepDesc('Payment')
-    }
-    if (step === 2) {
-
-      setIsSaving(true)
-      try {
-        //validate data and move to payment
-        await checkout()
-        push('/payment')
-
-      } catch (e) {
-        console.error(e)
-        setIsSaving(false)
-      }
-    }
-  }
-
 
   return (
     <div className="max-w-[1171px] mx-auto px-4 md:mb-40 mb-20">
@@ -102,7 +64,7 @@ export default function Checkout() {
             {step == 1 && <Step1 />}
             {step == 2 && <Step2 />}
 
-            <CartControls step={step} prevStep={prevStep} nextStep={nextStep} nextStepDesc={nextStepDesc} />
+            <CartControls step={step} setStep={setStep} />
           </div>
 
           <div className="max-w-[501px] md:block hidden">
@@ -113,7 +75,7 @@ export default function Checkout() {
       {step == 3 && (
         <div className="mt-12 max-w-[560px]  mx-auto">
           <CartInfo />
-          <CartControls step={step} prevStep={prevStep} nextStep={nextStep} />
+          <CartControls step={step} setStep={setStep} />
         </div>
       )}
     </div>

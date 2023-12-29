@@ -4,12 +4,6 @@
 
 html {
   scroll-behavior: smooth;
-
-
-}
-
-::-webkit-scrollbar {
-  display: none;
 }
 
 /* @font-face {
@@ -30,7 +24,7 @@ html {
 @font-face {
   font-family: "Canela";
   src: url("../assets/fonts/Canela Web/Canela-Regular-Web.woff") format("woff");
-  font-weight: 400;
+  font-weight: 400; /* 400 */
   font-style: normal;
 }
 
@@ -41,14 +35,13 @@ html {
   font-style: normal;
 }
 
-
+/*  */
 @font-face {
   font-family: "Bon Vivant";
   src: url("../assets/fonts/BonVivant-Regular.ttf");
   font-weight: normal;
   font-style: normal;
 }
-
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -70,18 +63,18 @@ h6 {
   font-family: "Canela";
 }
 /* webkit class */
-::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px hsl(0, 0%, 100%);
-  background-color: hsl(0, 0%, 100%);
+.dropdownstyle::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px hsl(17, 55%, 89%);
+  background-color: hsl(17, 55%, 89%);
   border-radius: 10px;
 }
-body::-webkit-scrollbar {width:10px}
-::-webkit-scrollbar {
+
+.dropdownstyle::-webkit-scrollbar {
   width: 6px;
-  background-color: #ffffff;
+  background-color: #f2dbd2;
 }
 
-::-webkit-scrollbar-thumb {
+.dropdownstyle::-webkit-scrollbar-thumb {
   background-color: #bf4d20;
   border-radius: 10px;
 }
@@ -174,7 +167,7 @@ body::-webkit-scrollbar {width:10px}
 .line1 path {
   stroke-dasharray: 2000;
   stroke-dashoffset: 0;
-  animation: animate-line 5s linear forwards;
+  animation: animate-line 4s linear forwards;
 }
 @keyframes animate-line {
   0% {
@@ -188,7 +181,7 @@ body::-webkit-scrollbar {width:10px}
 .line2 path {
   stroke-dasharray: 2000;
   stroke-dashoffset: 0;
-  animation: animate-line2 5s linear forwards;
+  animation: animate-line2 4s linear forwards;
 }
 @keyframes animate-line2 {
   0% {
@@ -199,25 +192,15 @@ body::-webkit-scrollbar {width:10px}
   }
 }
 
-.vinesia-icon-animation path {
-  animation: icon-animation 10s linear forwards;
-}
-
-@keyframes icon-animation {
-  0% {
-    left: 0;
-  }
-  100% {
-    left: 100;
-  }
-}
-
 .fade-in {
-  animation: fadeIn 2s ease-in-out;
+  animation: fadeIn 5s ease-in-out;
 }
 
 @keyframes fadeIn {
   0% {
+    opacity: 0;
+  }
+  75% {
     opacity: 0;
   }
   100% {
@@ -225,7 +208,21 @@ body::-webkit-scrollbar {width:10px}
   }
 }
 
+.fade-in-box {
+  animation: fadeIn 7s ease-in-out;
+}
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /* vinesia end */
 
 .card_bg_shape {
@@ -299,16 +296,6 @@ body::-webkit-scrollbar {width:10px}
   100% {
     transform: rotate(100deg);
   }
-}
-
-/* Loading icon class */
-@keyframes slide {
-  from {
-    transform: translateX(-320px);
-}
-to {
-    transform: translateX(320px);
-}
 }
 
 /* .mobile_view_slider{} */
@@ -562,45 +549,5 @@ to {
 @media screen and (min-width: 1440px) {
   .custom-bg-image .custom-limited-bg-image .custom-collection-bg-image {
     height: 1000px;
-  }
-}
-
-#productById canvas {
-  height: 250px !important;
-  width: 889px !important;
-}
-
-@media screen and (max-width: 768px) {
-  #productById canvas {
-    height: 228px !important;
-    width: 326px !important;
-  }
-}
-
-#productById canvas {
-  height: 250px !important;
-  width: 889px !important;
-}
-
-@media screen and (max-width: 768px) {
-  #productById canvas {
-    height: 228px !important;
-    width: 326px !important;
-  }
-}
-
-.ant-input-affix-wrapper input.ant-input{
-  background-color: #F2E5CA;
-  font-family: 'Canela';
-}
-#productById canvas {
-  height: 250px !important;
-  width: 889px !important;
-}
-
-@media screen and (max-width: 768px) {
-  #productById canvas {
-    height: 228px !important;
-    width: 326px !important;
   }
 }

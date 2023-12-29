@@ -8,10 +8,8 @@ export interface ProvideUser {
 
     profile: User | null
     publicAddress: string | null
-    currency: Currency
-    language: string
-
-    jwtToken: string
+    currency: Currency;
+    language: string;
 
     getPriceText: (price: number) => string;
     getPriceDifference: (release: number, current: number) => string;
@@ -154,8 +152,7 @@ export function useProvideUser(): ProvideUser {
         currency,
         language,
         publicAddress: address,
-        jwtToken,
-        
+
         getPriceText,
         getPriceDifference,
 

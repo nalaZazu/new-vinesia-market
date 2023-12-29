@@ -1,5 +1,4 @@
 import { Magic } from '@/context/MagicProvider';
-import { CurrencyValue } from '@/types/editionOverview.dto';
 import { Dispatch, SetStateAction } from 'react';
 
 export type LoginMethod = 'EMAIL' | 'SMS' | 'SOCIAL' | 'FORM';
@@ -19,15 +18,3 @@ export const saveToken = (token: string, setToken: Dispatch<SetStateAction<strin
   localStorage.setItem('isAuthLoading', 'false');
   localStorage.setItem('loginMethod', loginMethod);
 };
-
-export const getCurrencyValueText = (priceValue?: CurrencyValue) => {
-  if (priceValue === undefined) return ''
-
-  const priceDec = priceValue.price / 100
-
-  return priceDec.toLocaleString("en-US", {
-      style: "currency",
-      currency: priceValue.currency,
-      minimumFractionDigits: 0
-  });
-}

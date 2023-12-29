@@ -4,28 +4,14 @@ import DropDownButton from "@/common/DropDownButton";
 import React from "react";
 import Filters from "@/components/Filters/page";
 
-export default function FilterSection({
-  selectedFilters,
-  setSelectedFilters,
-  priceRange,
-  setPriceRange,
-}: {
-  selectedFilters?: any;
-  setSelectedFilters?: any;
-  priceRange?: any;
-  setPriceRange?: any;
-}) {
+export default function FilterSection({selectedFilters, setSelectedFilters, priceRange, setPriceRange}:{selectedFilters?:any, setSelectedFilters?:any, priceRange?:any, setPriceRange?:any}) {
   return (
     <div>
       <div className="hidden md:block">
-        <div className="flex justify-between  gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2">
           <div>
-            <Filters
-              selectedFilters={selectedFilters}
-              setSelectedFilters={setSelectedFilters}
-              priceRange={priceRange}
-              setPriceRange={setPriceRange}
-            />
+            <Filters selectedFilters={selectedFilters} setSelectedFilters={setSelectedFilters}   priceRange={priceRange}
+            setPriceRange={setPriceRange} />
           </div>
           {/* second div */}
 
@@ -39,7 +25,7 @@ export default function FilterSection({
             </div>
           </div>
         </div>
-        {/* <div className=" border-red-700 border-[0.5px]  mt-12"></div> */}
+        <div className=" border-red-700 border-[0.5px]  mt-12"></div>
       </div>
       {/* Mobile view */}
       <div className="md:hidden block">

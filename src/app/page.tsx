@@ -174,13 +174,13 @@ const About = () => {
 
               <div className="md:text-center pt-8">
                 <div className="relative">
-                  <h3 className="font-['Canela'] text-zinc-800 md:text-4xl font-light  md:leading-[44px] tracking-[-0.36px]  md:text-center text-[21px]  leading-[29px]">
+                  <h3 className="font-['Canela'] text-zinc-800 md:text-4xl font-light  md:leading-[44px] tracking-[-0.36px]  md:text-center   text-[21px]  leading-[29px]">
                     The future of wine investing
                   </h3>
                 </div>
                 {/* here is main text-div  */}
                 <div className="relative">
-                  <h1 className=" text-zinc-800 md:text-[7.75rem] text-[3rem] font-normal tracking-tight mt-14 md:mt-0 leading-[4rem] md:leading-[7.75rem]">
+                  <h1 className=" text-zinc-800 md:text-[7.75rem] font-normal tracking-tight leading-[7.75rem]">
                     secure, transparent, <br /> easily tradable
                   </h1>
                 </div>
@@ -188,7 +188,7 @@ const About = () => {
 
               <Image
                 src={getStartedBtn}
-                className="md:relative md:mb-[-153px] md:m-0 m-auto mt-14 md:float-right"
+                className="fixed right-12"
                 alt="GetStarted"
                 onClick={() => {
                   gsap.to(window, {
@@ -200,17 +200,17 @@ const About = () => {
             </div>
           </div>
 
-          <div className="w-full relative h-[95vh] mt-[15vh] md:block hidden" ref={container}>
+          <div className="w-full relative h-[90vh] mt-[12vh]" ref={container}>
             <div
-              className="absolute top-[-460px] md:block hidden 
-        left-[20%] translate-x-[-50%]
+              className="absolute top-[-420px] md:block hidden 
+        left-[25%] translate-x-[-50%]
         "
               ref={grapeRef}
             >
               <Image src={grapes} alt="image-icon" />
             </div>
             <div
-              className="absolute -top-[412px] right-[13vw] md:block hidden"
+              className="absolute -top-[412px] right-[15vw] md:block hidden"
               ref={bottle1Ref}
             >
               <Image src={bottleIllustration} alt="image-icon" />
@@ -221,7 +221,7 @@ const About = () => {
             >
               <Image src={bottleIllustrations} alt="image-icon" />
             </div>
-            <div className="absolute -top-36 right-[18vw] md:block hidden" ref={glassRef}>
+            <div className="absolute -top-36 right-[18vw]" ref={glassRef}>
               <Image src={glass} alt="glass image" />
             </div>
 
@@ -229,36 +229,23 @@ const About = () => {
               className="absolute bg-[#ECDDC0] w-[878px] h-[878px] z-0
       top-[50%] translate-y-[-50%] 
       left-[50%] translate-x-[-50%] 
-      rounded-[1000px] md:block hidden"
+      rounded-[1000px] block"
               ref={round}
             ></div>
 
             <div
-              className="md:block absolute overflow-hidden w-[735px] h-[735px] rounded-[1000px] m-auto
+              className="block absolute overflow-hidden w-[735px] h-[735px] rounded-[1000px] m-auto
       top-[50%] translate-y-[-50%] 
       left-[50%] translate-x-[-50%] 
-      hidden
         " ref={round2}>
-              <video className="absolute left-1/2 z-0 max-w-none object-cover -translate-x-1/2 -translate-y-1/2 top-1/2" autoPlay loop muted>
-                <source src='assets/video/231215_Vinesia_Hero2_360.mp4' media="all and (max-width: 700px)" />
-                <source src='assets/video/231215_Vinesia_Hero2_Fast.mp4' />
+              <video className="absolute left-1/2 z-0 max-w-none object-cover -translate-x-1/2" autoPlay loop muted>
+                <source src='assets/video/231215_Vinesia_Hero_3_360.mp4' media="all and (max-width: 700px)" />
+                <source src='assets/video/231215_Vinesia_Hero_3.mp4' />
                 Your browser does not support the video tag.
               </video>
             </div>
           </div>
-
-          <div className="md:hidden my-10">
-            <div className="overflow-hidden m-auto w-full">
-              <video className="object-cover" autoPlay loop muted controls>
-                <source src='assets/video/231215_Vinesia_Hero2_360.mp4' media="all and (max-width: 700px)" />
-                <source src='assets/video/231215_Vinesia_Hero2_720.mp4' />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-
-          <div className="md:mt-[-80vh] md:mb-[80vh]" id="start_investing"></div>
-
+          <div className="mt-[-80vh] mb-[80vh]" id="start_investing"></div>
           <div className="text-center w-full">
             <Link href="/invest">
               <button className="px-8 py-4 bg-orange-700 rounded-[48px] justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal  uppercase leading-3 tracking-tight">

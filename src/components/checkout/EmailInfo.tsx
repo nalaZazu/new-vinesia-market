@@ -1,18 +1,10 @@
 "use client";
 import { EditIcon } from "@/assets/icons/Icons";
 import { BillingInput, Button } from "@/common/Components";
-import { useUser } from "@/context/user";
 import React, { useState } from "react";
 
 export default function EmailInfo({ onSubmit }: { onSubmit?: any }) {
   const [edit, setEdit] = useState(false);
-
-  const {profile } = useUser()
-
-  if (profile === null) {
-    return <></>
-  }
-
   return (
     <div>
       {/* Billing Address */}
@@ -44,21 +36,21 @@ export default function EmailInfo({ onSubmit }: { onSubmit?: any }) {
         </div>
       ) : (
         <div>
-          <div className="self-stretch justify-start items-center gap-3 inline-flex min-w-[300px]">
+          <div className="self-stretch justify-start items-center gap-3 inline-flex">
             <div className="grow shrink basis-0 flex-col justify-start items-start gap-2 inline-flex">
               <div className="self-stretch h-14 pl-6 pr-5 py-2 bg-orange-700 bg-opacity-10 rounded-[100px] border border-orange-700 border-opacity-20 justify-between items-center inline-flex">
                 <div className="grow shrink basis-0 h-[22px] justify-start items-center gap-2 flex">
                   <div className="text-zinc-800 text-base font-normal  leading-snug">
-                    {profile.billingAddress.invoiceEmail}
+                    john.l@email.com
                   </div>
                 </div>
               </div>
             </div>
-            {/* <div className="w-6 h-6 justify-center items-center flex">
+            <div className="w-6 h-6 justify-center items-center flex">
               <button onClick={() => setEdit(true)}>
                 <EditIcon />
               </button>
-            </div> */}
+            </div>
           </div>
         </div>
       )}

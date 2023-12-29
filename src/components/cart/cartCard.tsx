@@ -41,13 +41,13 @@ export default function CartCard({ item }: { item: CartItem }) {
           </div>
           <div className="flex justify-between">
             <div>
-              <div className="text-lg font-semibold text-[#2F222B] flex gap-1 items-center">
+              <p className="text-lg font-semibold text-[#2F222B] flex gap-1 items-center">
                 Service fee{" "}
                 <span>
                   {" "}
                   <InfoTooltip />{" "}
                 </span>
-              </div>
+              </p>
               <p className="font-normal text-xs text-[#594E55] uppercase">
                 Until 12.10.2024
               </p>

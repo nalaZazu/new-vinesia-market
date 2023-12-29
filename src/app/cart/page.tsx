@@ -5,22 +5,11 @@ import CartCard from "@/components/cart/cartCard";
 import { useCart } from "@/context/cart";
 import { useUser } from "@/context/user";
 import { CartItem } from "@/types/dto/checkoutCart.dto";
-import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React from "react";
 
 export default function Cart() {
   const { cartItems, getCartTotal } = useCart();
   const { getPriceText } = useUser();
-
-  const {push} = useRouter()
-
-  function prevStep() {
-
-  }
-  function nextStep() {
-    push('/checkout')
-  }
-
   const items = [
     {
       id: 1,
@@ -115,9 +104,7 @@ export default function Cart() {
           <CartControls
             btnOneTittle="Back"
             btnTwoTittle="Continue"
-            nextStep={nextStep}
-            prevStep={prevStep}
-            nextStepDesc="Billing Details"
+            nextStep="Billing Details"
             disable={cartItems.length == 0}
           />
 

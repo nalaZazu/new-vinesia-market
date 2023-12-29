@@ -33,6 +33,7 @@ export default function Home() {
     `${process.env.NEXT_PUBLIC_API_ADDRESS}`,
     fetcher
   );
+  console.log("Data From Marketplace  ", data);
   return (
     <>
       <div className="absolute top-0 -z-10 left-0 right-0">

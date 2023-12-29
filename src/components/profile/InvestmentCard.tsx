@@ -9,19 +9,19 @@ export default function InvestmentCard() {
   const countryName = ["ALL", "CURRENTLY SELLING", "NOT CURRENtly SELLING"];
   return (
     <div>
-      <div className="flex flex-col">
-        <p className="text-zinc-800 text-lg font-semibold leading-relaxed">
+      <div className="flex flex-col pt-20">
+        <p className="text-zinc-800 text-lg font-semiboldleading-relaxed">
           Your investments
         </p>
         <div className="pt-4">
-          <span className="text-neutral-600 text-base font-normal leading-snug">
+          <span className="text-neutral-600 text-base font-normalleading-snug">
             Below you can see the list of wine assets that you have. For each
             wine assets you can set the ask price, you will find this option
             under {"Actions"}. Once you set the {"Ask price"}, a given wine
             asset can be sold at any time. If another investor buys your wine
             asset, it will disappear from the list and appear under
           </span>
-          <span className="text-orange-700 text-base font-normal leading-snug">
+          <span className="text-orange-700 text-base font-normalleading-snug">
             Bids & Sales.
           </span>
         </div>

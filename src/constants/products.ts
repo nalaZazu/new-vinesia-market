@@ -1,10 +1,6 @@
 import { ProductCard } from "@/types/dto/productCard.dto";
 import { ItemCardDto } from "@/types/productCard.dto";
-import {
-  BottleSize,
-  PackageType,
-  ProductOwner,
-} from "@/types/productOverview.dto";
+import { BottleSize, PackageType, ProductOwner } from "@/types/productOverview.dto";
 
 export const ProductList: ItemCardDto[] = [
   {
@@ -112,10 +108,4 @@ export const ProductList: ItemCardDto[] = [
   //   estPrice: 20,
   //   number: 10,
   // },
-];
-
-export const releaseDetailsList = [
-  { id: 1, title: "TOTAL PERFORMANCE", vlaue: "122%" },
-  { id: 2, title: "TOTAL VOLATILITY", vlaue: "0.2%" },
-  { id: 3, title: "SHARPE RATIO", vlaue: "110" },
 ];

@@ -3,10 +3,9 @@ import React from "react";
 import { Disclosure } from "@headlessui/react";
 import { ArrowDown, ArrowLongRight, LinkIcon } from "@/assets/icons/Icons";
 import Authenticity from "@/common/WineModel/Authenticity";
-import { EditionOverview } from "@/types/editionOverview.dto";
 // import { ArrowBtn } from "@/assets/icons/Icons";
 // import itemsCollection from "@/assets/icon/itemscollection.png";
-const AuthenticityDIsclosure = ({ item }: { item: EditionOverview }) => {
+const AuthenticityDIsclosure = () => {
   return (
     <>
       <div>
@@ -41,7 +40,7 @@ const AuthenticityDIsclosure = ({ item }: { item: EditionOverview }) => {
               </Disclosure.Button>
 
               <Disclosure.Panel className="md:px-4 pb-2 md:pt-4 pt-8 text-sm text-gray-500">
-                <Authenticity item={item} />
+                <Authenticity />
               </Disclosure.Panel>
             </>
           )}

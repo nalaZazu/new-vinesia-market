@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Switch } from "@headlessui/react";
 
-export default function SwitchToggle({enabled, setEnabled}: {enabled: boolean, setEnabled: any}) {
+export default function SwitchToggle() {
+  const [enabled, setEnabled] = useState(false);
+
   return (
     <div className="flex">
       <Switch

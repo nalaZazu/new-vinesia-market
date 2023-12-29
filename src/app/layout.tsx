@@ -50,10 +50,10 @@ export default function RootLayout({
   src="https://app.termly.io/embed.min.js"
   data-auto-block="on"
   data-website-uuid="d3426886-01fc-43f5-adff-689f219592de"
+  async={true}
 />
       <title>Vinesia Market</title>
       <meta name="description" content="Vinesia Market" />
-      <link rel="icon" href="/logo.svg" sizes="any" />
 
       <body className={`${albert.className} bg-[#F3E8CF]`}>
         <WagmiProvider>

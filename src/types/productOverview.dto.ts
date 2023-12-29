@@ -1,5 +1,4 @@
-import { ProductWineDto } from "./dto/productWine.dto"
-import { ItemCardDto } from "./productCard.dto"
+import { EditionCard } from "./dto/editionCard.dto"
 import { Currency } from "./user.dto"
 
 export interface ProductOverview {
@@ -22,7 +21,30 @@ export interface ProductOverview {
     starred: number
 
     releaseDetails: ReleaseDetails
-    editions: ItemCardDto[]
+    editions: EditionCard[]
+}
+
+export interface EditionOverview {
+    id: number
+    name: string
+    media: string
+
+    subtitle: string
+    description: string
+
+
+    wine: ProductWineDto | null
+    art: ProductArt | null
+
+    buyNowPrice?: Record<Currency, number>
+    floorPrice?: Record<Currency, number>
+    estPrice?: Record<Currency, number>
+
+    isFavourite: boolean
+    starred: number
+
+    releaseDetails: ReleaseDetails
+    editions: EditionCard[]
 }
 
 export interface ReleaseDetails {
@@ -39,6 +61,32 @@ export interface ProductArt {
 export enum ProductOwner {
     Vinesia = 'Vinesia',
     Private = 'Private'
+}
+
+export interface ProductWineDto {
+    id: number
+    name: string
+    media: string
+    vintage: number
+
+    source: ProductSource
+
+    lwinNumber: number
+
+    description: string
+
+    size: BottleSize
+
+    packageType: PackageType
+
+    items: number
+
+    winery: Winery
+    wineryId: number
+
+    ratings: Rating[]
+
+    metadata: Record<string, string>
 }
 
 export interface Winery {

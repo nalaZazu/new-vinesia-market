@@ -12,7 +12,7 @@ const PerformanceModel = () => {
             Performance of investment portfolio with fine wine in comparison to
             baseline
           </h5>
-          <div className="bg-[#F3E8CF] h-64">
+          <div className="bg-orange-100 h-64">
             <div className="">
             <Appactivity/>
               {/* <ul className="flex md:justify-end justify-start flex-wrap gap-4">

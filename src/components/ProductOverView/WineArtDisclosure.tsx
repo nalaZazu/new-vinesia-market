@@ -25,12 +25,12 @@ export default function WineArtDisclosure() {
                 >
                   <div className="flex w-full flex-wrap justify-between items-center">
                     <div className=" text-start">
-                      <div
+                      <button
                         className="text-zinc-800 text-lg font-semibold leading-relaxed"
                         onClick={() => setSelectedTab(0)}
                       >
                         Wine
-                      </div>
+                      </button>
                       {open && (
                         <p className=" text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight">
                           LWIN: 123456
@@ -67,12 +67,12 @@ export default function WineArtDisclosure() {
                 >
                   <div className="flex w-full flex-wrap justify-between items-center">
                     <div className=" text-start">
-                      <div
+                      <button
                         className="text-zinc-800 text-lg font-semibold leading-relaxed"
                         onClick={() => setSelectedTab(1)}
                       >
                         Art
-                      </div>
+                      </button>
                       {open && (
                         <p className=" text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight">
                           Artist: Lola Designer Fun...

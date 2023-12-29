@@ -3,10 +3,9 @@ import React from "react";
 import { Disclosure } from "@headlessui/react";
 import { ArrowDown, ArrowLongRight, LinkIcon } from "@/assets/icons/Icons";
 import AssetInfo from "@/common/WineModel/AssetInfo";
-import { EditionOverview } from "@/types/editionOverview.dto";
 // import { ArrowBtn } from "@/assets/icons/Icons";
 // import itemsCollection from "@/assets/icon/itemscollection.png";
-const DisclosureModals = ({item}:{item: EditionOverview}) => {
+const DisclosureModals = () => {
   return (
     <>
       <div>
@@ -29,7 +28,7 @@ const DisclosureModals = ({item}:{item: EditionOverview}) => {
               </Disclosure.Button>
 
               <Disclosure.Panel className="px-4 pb-2 pt-4 text-sm text-gray-500">
-                <AssetInfo item={item}/>
+                <AssetInfo />
               </Disclosure.Panel>
             </>
           )}

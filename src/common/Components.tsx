@@ -54,8 +54,9 @@ export function Button({
     <button
       disabled={disabled}
       onClick={onClick}
-      className={`flex items-center gap-4 border border-[#BF4D2020] rounded-full px-8 justify-center h-14 w-full uppercase ${filled ? "bg-[#BF4D20] text-white" : "text-[#BF4D20] "
-        } ${btnStyle}`}
+      className={`flex items-center gap-4 border border-[#BF4D2020] rounded-full px-8 justify-center h-14 w-full uppercase ${
+        filled ? "bg-[#BF4D20] text-white" : "text-[#BF4D20] "
+      } ${btnStyle}`}
     >
       {beforeIcon && beforeIcon}
       {label}
@@ -65,38 +66,32 @@ export function Button({
 }
 
 export function CartControls({
+  step,
+  setStep,
   btnOneTittle = "Back",
   btnTwoTittle = "Next",
-  prevStep,
-  nextStep,
-  prevStepDesc,
-  nextStepDesc,
+  nextStep = "Billing Details",
   disable,
 }: {
   step?: any;
   setStep?: any;
   btnOneTittle?: any;
   btnTwoTittle?: any;
-
-  prevStep?: any
-  nextStep?: any
-
-  prevStepDesc?: string;
-  nextStepDesc?: string;
-
+  nextStep?: string;
   disable?: any;
 }) {
+  const router = useRouter();
   return (
     <div>
       <div className="flex sm:justify-end justify-center pt-8">
         <span className="uppercase text-xs">
           <span className="text-[#BF4D20]">next step: </span>
-          {nextStepDesc}
+          {nextStep}
         </span>
       </div>
       <div className="sm:flex justify-between pt-4 pb-[106px] sm:gap-0 grid grid-cols-1 gap-6">
         <button
-          onClick={() => prevStep()}
+          onClick={() => setStep(step > 1 ? step - 1 : 1)}
           className="flex items-center gap-4 border border-[#BF4D2020] rounded-full text-[#BF4D20] px-8 justify-center h-14 sm:order-1 order-2 sm:w-auto w-full"
         >
           <PrevIcon />
@@ -104,9 +99,14 @@ export function CartControls({
         </button>
         <button
           disabled={disable}
-          onClick={() => nextStep()}
-          className={`  ${disable ? "cursor-no-drop" : "cursor-pointer"
-            }  flex items-center gap-4 border   border-[#BF4D2020] rounded-full text-white px-8 justify-center h-14 bg-[#BF4D20] sm:order-2 order-1 sm:w-auto w-full
+          onClick={() =>
+            step
+              ? setStep(step == 3 ? router.push("/purchase") : step + 1)
+              : router.push("/checkout")
+          }
+          className={`  ${
+            disable ? "cursor-no-drop" : "cursor-pointer"
+          }  flex items-center gap-4 border   border-[#BF4D2020] rounded-full text-white px-8 justify-center h-14 bg-[#BF4D20] sm:order-2 order-1 sm:w-auto w-full
         `}
         >
           {btnTwoTittle} <NextIcon fill="white" />
@@ -333,8 +333,6 @@ export function SelectBox({
   const inputErrors = findInputError(errors, name);
   const isInvalid = isFormInvalid(inputErrors);
 
-  const options = { value: value, ...validation };
-
   return (
     <div className=" flex-col w-full justify-start items-start gap-2 inline-flex">
       {title && (
@@ -345,7 +343,7 @@ export function SelectBox({
         </div>
       )}
       <select
-        {...register(name, options)}
+        {...register(name, validation)}
         className="self-stretch w-full text-start text-[#D99479] h-14 pl-6 pr-5 p-4 rounded-full border  border-[#BF4D20]  bg-transparent outline-red-500 placeholder-[#D99479]"
       >
         <option value="">Select {title}</option>
@@ -356,49 +354,75 @@ export function SelectBox({
         ))}
       </select>
       {isInvalid && <InputError text={inputErrors.error?.message ?? ""} />}
+      {/* <Controller
+          name={name}
+          control={control}
+          defaultValue={value}
+          render={({ field: { onChange, onBlur, value, ref } }) => (
+            <Listbox value={selectedPerson} onChange={(x) => {
+              handleChange(x)
+              onChange(x)
+            }} >
+              <Listbox.Button className="self-stretch w-full text-start text-[#D99479] h-14 pl-6 pr-5 p-4 rounded-full border  border-[#CC714D]  bg-transparent outline-red-500 placeholder-[#D99479]">
+                {value ?? placeholder}
+              </Listbox.Button>
+              <Listbox.Options className="absolute w-full border bg-[#F7EFDF] overflow-y-scroll max-h-60">
+                {data.map((d, i) => (
+                  <Listbox.Option
+                    key={i}
+                    value={d}
+                    className={({ active }) =>
+                      `cursor-pointer select-none relative py-2 pl-10 pr-4 border-b-[1px] border-[#BF4D20]/10 ${active ? "bg-[#F5EAD5] text-[#2F222B]" : "text-[#2F222B]"
+                      }`
+                    }
+                  >
+                    {d}
+                  </Listbox.Option>
+                ))}
+              </Listbox.Options>
+            </Listbox>
+          )}
+        /> */}
     </div>
   );
 }
 
 export function CheckoutComponent({
-  stage = 1,
+  heading,
+  icon = true,
 }: {
-  stage: number
+  heading: String;
+  icon?: any;
 }) {
-  const selected = 'text-[#2f222b] text-[36px]'
-  const notSelected = 'text-[#A6836C] text-[21px]'
-  
-  const firstClass = stage === 1 ? selected : notSelected
-  const secondClass = stage === 2 ? selected : notSelected
-  const thirdClass = stage === 3 ? selected : notSelected
+  return (
+    <>
+      <div className="w-full md:justify-start justify-between items-center md:gap-8 inline-flex pt-[74px] pb-4 border-b border-[#A6836C20]">
+        <div className="justify-start items-center gap-2 flex">
+          {icon && (
+            <div className="w-8 h-8 justify-center items-center flex">
+              <TickCirIcon />
+            </div>
+          )}
 
-  return <>
-    <div className="w-full font-['Canela'] md:justify-start justify-between items-center md:gap-8 inline-flex pt-[74px] pb-4 border-b border-[#A6836C20]">
-      <div className={`flex justify-start items-center w-[170px] font-light leading-[29px] tracking-wide ${firstClass}`}>
-        {stage > 1 ?
-          <div className="w-8 h-8 justify-center items-center">
-            <TickCirIcon />
-          </div> : <>01 - </>}
-        Billing
+          <h1 className="text-[#2F222B] md:text-4xl text-[21px] font-light leading-[44px]">
+            {heading}
+          </h1>
+        </div>
+        <div className="grow shrink basis-0 h-[1px] border border-[#ACA7AA] border-dashed md:block hidden"></div>
+        <h2 className="text-[#A6836C] text-[21px] font-light leading-[29px] tracking-wide md:block hidden ">
+          02 — Finalized
+        </h2>
+        <div className="w-[65px] justify-start items-center gap-4 inline-flex md:hidden">
+          <h2 className="text-[#2F222B] text-[21px] font-light leading-[29px]">
+            02
+          </h2>
+          <h2 className="text-[#A6836C] text-[21px] font-light leading-[29px]">
+            03
+          </h2>
+        </div>
       </div>
-      <div className="grow shrink basis-0 h-[1px] border border-[#ACA7AA] border-dashed md:block hidden"></div>
-      <div className={`flex justify-center items-center text-center w-[210px] font-light leading-[29px] tracking-wide ${secondClass}`}>
-        {stage > 2 ?
-          <div className="w-8 h-8 justify-center items-center">
-            <TickCirIcon />
-          </div> : <>02 - </>}
-        Payment
-      </div>
-      <div className="grow shrink basis-0 h-[1px] border border-[#ACA7AA] border-dashed md:block hidden"></div>
-      <div className={`flex justify-end items-right text-right w-[170px] font-light leading-[29px] tracking-wide ${thirdClass}`}>
-      {stage > 2 ?
-          <div className="w-8 h-8 justify-right items-right">
-            <TickCirIcon />
-          </div> : <>03 - </>}
-        Finalized
-      </div>
-    </div>
-  </>
+    </>
+  );
 }
 
 const plans = ["Euro (€)", "US Dollars ($)"];
@@ -421,8 +445,9 @@ export function RadioButton() {
           {({ checked }) => (
             <p className={` p-5 w-full flex gap-4 `}>
               <span
-                className={`w-6 h-6 rounded-full border-[#6C757D]  ${checked ? " border-8" : "border-2"
-                  } `}
+                className={`w-6 h-6 rounded-full border-[#6C757D]  ${
+                  checked ? " border-8" : "border-2"
+                } `}
               ></span>
               {p}
             </p>

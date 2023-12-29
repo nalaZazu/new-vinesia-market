@@ -1,20 +1,9 @@
 import { EditIcon, Google, InfoIcon } from "@/assets/icons/Icons";
 import DropDownButton from "@/common/DropDownButton";
 import SwitchToggle from "@/common/Switch";
-import { useUser } from "@/context/user";
 import React from "react";
 
 export default function Account() {
-  const { profile } = useUser()
-
-  async function changeOption(e: any) {
-    // console.log(e)
-  }
-
-  if (profile === null) {
-    return <></>
-  }
-
   return (
     <div className="pb-[150px]">
       <p className="text-zinc-800 text-lg font-semiboldleading-relaxed">
@@ -30,7 +19,7 @@ export default function Account() {
           <div>
             <div className="flex justify-between min-w-[293px] pb-3">
               <p className="text-zinc-800 text-base font-normal leading-snug">
-                {profile.firstName}
+                John
               </p>
               <span>
                 <EditIcon />
@@ -38,7 +27,7 @@ export default function Account() {
             </div>
             <div className="flex justify-between min-w-[293px]">
               <p className="text-zinc-800 text-base font-normal leading-snug">
-                {profile.lastName}
+                John
               </p>
               <span>
                 <EditIcon />
@@ -59,7 +48,7 @@ export default function Account() {
           <div>
             <div className="flex justify-between min-w-[293px] pb-3">
               <p className="text-zinc-800 text-base font-normal leading-snug">
-                {profile?.email}
+                john.t@gmail.com
               </p>
               <span>
                 <InfoIcon fill={"#BF4D20"} size={"24"} />
@@ -90,7 +79,7 @@ export default function Account() {
           <div>
             <div className="flex justify-between min-w-[293px] pb-3">
               <p className="text-zinc-800 text-base font-normal leading-snug">
-                {profile.billingAddress.addressLine1}
+                Jangfemsteg 12
               </p>
               <span>
                 <InfoIcon fill={"#BF4D20"} size={"24"} />
@@ -98,23 +87,23 @@ export default function Account() {
             </div>
             <div>
               <p className=" text-zinc-800 text-base font-normal leading-snug pb-2">
-                {profile.billingAddress.zipCode} {profile.billingAddress.city}
+                20350 Hamburg
               </p>
               <p className="text-zinc-800 text-base font-normal leading-snug pb-2">
-                {profile.billingAddress.country}
+                Deutschland
               </p>
               <p className=" text-zinc-500 text-xs font-normal leading-[18px]">
                 email address for invoices
               </p>
               <p className="text-zinc-800 text-base font-normal leading-snug">
-                {profile.billingAddress.invoiceEmail}
+                comany@example.com
               </p>
             </div>
           </div>
         </div>
       </div>
       {/* col 4 */}
-      {/* <div className="flex justify-between">
+      <div className="flex justify-between">
         <div>
           <p className="text-[#906447] text-xs font-normaluppercase leading-[18px] tracking-tight">
             Bank account number
@@ -128,13 +117,13 @@ export default function Account() {
             <EditIcon />
           </span>
         </div>
-      </div> */}
+      </div>
       <div className=" h-[0px] border border-orange-700 border-opacity-20 my-12"></div>
       {/* col 5 Preferences */}
       <p className="text-zinc-800 text-lg font-semibold leading-relaxed">
         Preferences
       </p>
-      {/* <div className="flex justify-between pt-6 items-center">
+      <div className="flex justify-between pt-6 items-center">
         <div>
           <p className="text-[#906447] text-xs font-normaluppercase leading-[18px] tracking-tight">
             Language
@@ -145,7 +134,7 @@ export default function Account() {
             <DropDownButton title="English" />
           </div>
         </div>
-      </div> */}
+      </div>
       {/* col 6 */}
       <div className="flex justify-between pt-6 items-center">
         <div>
@@ -155,7 +144,7 @@ export default function Account() {
         </div>
         <div className="flex justify-between min-w-[293px]">
           <p className="flex gap-2 text-zinc-800 text-base font-normal leading-snug">
-            {profile.currency ?? 'EUR'}
+            $ Dollars
             <InfoIcon fill={"#BF4D20"} size={"24"} />
           </p>
         </div>
@@ -173,8 +162,8 @@ export default function Account() {
           </p>
         </div>
         <div className="flex gap-2 items-center">
-          <span>{profile.bidsNotify ? <>On</> : <>Off</>}</span>
-          <SwitchToggle enabled={profile.bidsNotify} setEnabled={changeOption} />
+          <span>On</span>
+          <SwitchToggle />
         </div>
       </div>
 
@@ -185,8 +174,8 @@ export default function Account() {
           </p>
         </div>
         <div className="flex gap-2 items-center">
-          <span>{profile.acceptNotify ? <>On</> : <>Off</>}</span>
-          <SwitchToggle enabled={profile.acceptNotify} setEnabled={changeOption} />
+          <span>Off</span>
+          <SwitchToggle />
         </div>
       </div>
 
@@ -197,8 +186,8 @@ export default function Account() {
           </p>
         </div>
         <div className="flex gap-2 items-center">
-          <span>{profile.dropsNotify ? <>On</> : <>Off</>}</span>
-          <SwitchToggle enabled={profile.dropsNotify} setEnabled={changeOption} />
+          <span>On</span>
+          <SwitchToggle />
         </div>
       </div>
 
@@ -209,8 +198,8 @@ export default function Account() {
           </p>
         </div>
         <div className="flex gap-2 items-center">
-          <span>{profile.sellNotify ? <>On</> : <>Off</>}</span>
-          <SwitchToggle enabled={profile.sellNotify} setEnabled={changeOption} />
+          <span>Off</span>
+          <SwitchToggle />
         </div>
       </div>
 
@@ -221,8 +210,8 @@ export default function Account() {
           </p>
         </div>
         <div className="flex gap-2 items-center">
-          <span>{profile.othersNotify ? <>On</> : <>Off</>}</span>
-          <SwitchToggle enabled={profile.othersNotify} setEnabled={changeOption} />
+          <span>On</span>
+          <SwitchToggle />
         </div>
       </div>
       <div className=" h-[0px] border border-orange-700 border-opacity-20 my-12"></div>

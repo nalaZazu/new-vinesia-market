@@ -1,27 +1,6 @@
-import { ProductWineDto } from "@/types/dto/productWine.dto";
-import { Rating } from "@/types/productOverview.dto";
 import React from "react";
 
-export default function WineTabe({ item, starred }: { item: ProductWineDto, starred: number }) {
-  function getSize() {
-    if (item.size === 'Standard') {
-      // return 'Standard (0,75l)'
-      return '0,75l'
-    }
-    if (item.size === 'Magnum') {
-      return '1,5l'
-    }
-
-    return item.size
-  }
-
-  function getPackageType() {
-    if (item.packageType === 'Case') {
-      return 'Case of ' + item.items
-    }
-    return item.packageType
-  }
-
+export default function WineTabe() {
   return (
     <div>
       <div className="pt-8 flex">
@@ -37,28 +16,28 @@ export default function WineTabe({ item, starred }: { item: ProductWineDto, star
             <p>Case & bottle size</p>
             <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
             <p className="text-zinc-800 text-base font-normal leading-snug">
-              {getPackageType()} x {getSize()}
+              99 bottle case, Double Magnum (1,5l)
             </p>
           </div>
           <div className="flex gap-3 items-center text-stone-500 text-base font-normal leading-snug">
-            <p>Type/Alc. </p>
+            <p>Type </p>
             <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
             <p className="text-zinc-800 text-base font-normal leading-snug">
-              {item.metadata['color']}, {item.metadata['percentage']} Alc
+              Red, 14% Alc
             </p>
           </div>
           <div className="flex gap-3 items-center text-stone-500 text-base font-normal leading-snug">
             <p>Origin </p>
             <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
-            <p className="text-zinc-800 text-base font-normal leading-snug">
-              {item.winery?.region?.name}, {item.winery?.region?.country?.name}
-            </p>
-          </div>
-          <div className="flex gap-3 items-center text-stone-500 text-base font-normal leading-snug">
-            <p>Winery </p>
-            <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
-            <p className="  text-base font-normal leading-snug text-orange-700">
-              {item.winery?.name}
+            <p className="text-zinc-800 text-base font-normal leading-snug mt-4">
+              France, Region, Appellation
+              <div className="flex gap-3 items-center text-stone-500 text-base font-normal leading-snug">
+                <p>Winery </p>
+                <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
+                <p className="  text-base font-normal leading-snug text-orange-700">
+                  Château Le Pin
+                </p>
+              </div>
             </p>
           </div>
         </div>
@@ -69,18 +48,18 @@ export default function WineTabe({ item, starred }: { item: ProductWineDto, star
       <div className="my-8 w-[395px] h-[0px] border border-orange-700 border-opacity-20"></div>
       <div>
         <div className="grid grid-cols-2">
-          {item.ratings?.map((item: Rating, index: any) => {
+          {[1, 2, 3, 4]?.map((item: any, index: any) => {
             return (
               <div key={index} className=" rounded-sm">
                 <p className="text-stone-500 text-xs font-normal uppercase leading-3 tracking-tight pb-3">
-                  {item.critic}
+                  A. Critic name
                 </p>
                 <div className="flex items-end pb-8">
                   <p className=" text-zinc-800 text-[21px] font-lightw-6 h-6 leading-[29px] tracking-wide">
-                    {item.rating}/
+                    87/
                   </p>
                   <span className=" text-stone-400 text-xs font-normal uppercase leading-3 tracking-tight">
-                    {item.max}
+                    100
                   </span>
                 </div>
               </div>
@@ -92,7 +71,7 @@ export default function WineTabe({ item, starred }: { item: ProductWineDto, star
       <div className="mb-8 w-[395px] h-[0px] border border-orange-700 border-opacity-20"></div>
 
       {/* here is icon section */}
-      <div className="flex gap-6 pe-8 mb-8">
+      <div className="flex justify-between items-center gap-6 pe-8 mb-8">
         <div className="flex gap-2 items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -133,13 +112,31 @@ export default function WineTabe({ item, starred }: { item: ProductWineDto, star
             />
           </svg>
           <p className="text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight">
-            {starred}
+            999
           </p>
         </div>
-
+        <div className="flex gap-2 items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"
+            />
+          </svg>
+          <p className="text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight">
+            999
+          </p>
+        </div>
         <button
           type="button"
-          className="text-center text-orange-700 text-xs font-normal  uppercase leading-3 tracking-tight flex gap-2 items-center focus:ring-0 focus:outline-none focus:ring-gray-100"
+          className=" text-center text-orange-700 text-xs font-normal  uppercase leading-3 tracking-tight flex gap-2 items-center focus:ring-0 focus:outline-none focus:ring-gray-100"
         >
           See More
           <svg

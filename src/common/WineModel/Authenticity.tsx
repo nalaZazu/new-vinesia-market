@@ -1,8 +1,7 @@
 import { AlertCircle, BarcodeLink, CheckBox } from "@/assets/icons/Icons";
-import { EditionOverview } from "@/types/editionOverview.dto";
 import React from "react";
 
-export default function Authenticity({ item }: { item: EditionOverview }) {
+export default function Authenticity() {
   return (
     <div>
       <div className="md:grid md:grid-cols-2">
@@ -39,8 +38,8 @@ export default function Authenticity({ item }: { item: EditionOverview }) {
               </p>
               <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20 md:block hidden"></div>
               <div className="flex items-center gap-2">
-                <p className="text-center text-orange-700 text-base font-normal uppercase leading-3 tracking-tight">
-                  {item.nfcId}
+                <p className="text-center text-orange-700 text-xs font-normal uppercase leading-3 tracking-tight">
+                04ad57c2407680
                 </p>
                 <AlertCircle storke="#BF4D20" />
               </div>
@@ -52,7 +51,7 @@ export default function Authenticity({ item }: { item: EditionOverview }) {
               </p>
               <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20 md:block hidden"></div>
               <p className="text-center text-orange-700 text-base  font-normal uppercase leading-3 tracking-tight">
-                  {item.nfcAppliedOn?.toISOString() ?? ''}
+                23.08.2023 | 12:36 pm
               </p>
             </div>
             <div className="md:flex gap-4 items-center">

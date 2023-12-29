@@ -11,22 +11,22 @@ export default function VinesiaProcess() {
       </h2>
       <div className="grid md:grid-cols-2 grid-cols-1 pb-16">
         <div className="md:pe-[141px] pe-0">
-          <p className="text-zinc-800 text-lg font-semibold leading-relaxed">
+          <h2 className="text-zinc-800 text-lg font-semibold leading-relaxed">
             Our fees and conditions
-          </p>
+          </h2>
           <div className="py-8">
             <p className=" text-neutral-600 text-base font-normal font-['Albert Sans'] leading-snug">
               At Vinesia, we pride ourselves on providing exceptional wine
               storage services, with optimal conditions and full insurance.
               While maintaining these standards involves costs, our aim is to
               maximize your wine investment returns.
-            </p><br/>
-            <p className=" text-neutral-600 text-base font-normal font-['Albert Sans'] leading-snug">
+            </p>
+            <p>
               We charge a yearly service fee of 2.3% of your Net Asset Value
               (NAV), billed semi-annually at 1.15% per installment. This fee
               structure aids in managing expenses predictably for our clients.
-            </p><br />
-            <p className=" text-neutral-600 text-base font-normal font-['Albert Sans'] leading-snug">
+            </p>
+            <p>
               Fees are collected in advance for a set period, ensuring
               uninterrupted service. In line with our flexible and fair
               approach, if you decide to sell your wine assets, we will refund
@@ -50,15 +50,15 @@ export default function VinesiaProcess() {
         </div>
         <div className="md:ps-[140px] ps-0 flex items-end md:order-2 order-1">
           <div className="py-8">
-          <p className="pb-6 text-zinc-800 text-lg font-semibold font-['Albert Sans'] leading-relaxed">
-              Our warehouse
-            </p>
             <p className=" text-neutral-600 text-base font-normal leading-snug">
-            At Vinesia, your wines are securely stored in our central warehouse located in Luxembourg.
-            This facility adheres to the highest security standards and has an advanced temperature and humidity control system.
-            We are making reasonable efforts to keep a humidity level between 60% and 80% and a temperature between 12 and 15 degrees Celsius at all times.
-            En Primeur wines will be stored in the Vinesia warehouse upon delivery.
-            For security reasons, we maintain confidentiality regarding the precise location of our warehouse.
+              In addition to physical safeguards, Vinesia provides comprehensive
+              insurance coverage for each bottle at their replacement value.
+              This policy encompasses protection against a wide range of
+              potential risks, such as theft, accidental damage, and natural
+              disasters. The combination of rigorous security protocols and
+              extensive insurance coverage offers clients peace of mind, knowing
+              their prized wine collections are in safe hands and fully insured
+              against unforeseen events.
             </p>
           </div>
         </div>

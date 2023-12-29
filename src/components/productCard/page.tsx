@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import winebotel from "../../assets/images/Group 10462.png";
 import Art from "../../assets/images/arat.png";
 import Link from "next/link";
@@ -11,9 +11,11 @@ import { useUser } from "@/context/user";
 import bottleIcon from "../../assets/icons/bottleIcon.svg";
 
 export default function ProductCards({
-  item
+  item,
+  isEdition = false,
 }: {
   item: ItemCardDto;
+  isEdition?: boolean;
 }) {
   const { getPriceText, currency } = useUser();
 
@@ -50,7 +52,7 @@ export default function ProductCards({
                 className=" w-auto h-[200px]"
                 objectFit="contain"
               />
-              {item.isEdition ? (
+              {isEdition ? (
                 <div className="w-[49.94px] h-[50px] absolute -bottom-5 left-0 right-0 mx-auto">
                   <div className="w-[49.94px] h-[50px] left-0 top-0 absolute bg-red-700 rounded-full border-4 border-orange-100" />
                   <div className="left-[12.49px] top-[20px] absolute text-center text-white text-sm font-normal  uppercase leading-none">
@@ -88,7 +90,9 @@ export default function ProductCards({
                 </div>
               )}
 
-              {(item.available > 0 || item.isAvailable) && (
+              {item.available === 0 ? (
+                <></>
+              ) : (
                 <div className="p-2 h-9 bg-green-500 rounded-[30px] border flex justify-start items-center gap-1.5">
                   <div className=" w-2 h-2 bg-white rounded-full" />
                   <p className="text-center text-white text-xs font-normal uppercase leading-3 tracking-tight">
@@ -141,13 +145,15 @@ export default function ProductCards({
 
           <div className="flex flex-col items-center gap-4">
             <Link
-              href={(item.isEdition ? `/edition/` : `/product/`) + item.id}
+              href={(isEdition ? `/edition/` : `/product/`) + item.id}
               className="mt-6 px-8 py-5 bg-orange-700 rounded-full text-center text-white text-xs font-normal uppercase leading-3 tracking-tight"
             >
               SEE OVERVIEW
             </Link>
 
-            {!item.isEdition && (
+            {isEdition ? (
+              <></>
+            ) : (
               <div className="text-center">
                 <span className="text-neutral-600 text-base font-normal leading-snug">
                   {getCount(item)}

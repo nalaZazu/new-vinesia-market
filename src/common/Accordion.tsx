@@ -14,9 +14,9 @@ export default function Accordion({ data }: { data: any }) {
               <Disclosure.Button className={`flex w-full justify-between`}>
                 <div className="flex w-full flex-wrap justify-between items-center">
                   <div className=" text-start">
-                    <div className="text-zinc-800 text-lg font-semibold leading-relaxed">
+                    <button className="text-zinc-800 text-lg font-semibold leading-relaxed">
                       {title}
-                    </div>
+                    </button>
                   </div>
                   <div>
                     <ArrowUpRightIcon
