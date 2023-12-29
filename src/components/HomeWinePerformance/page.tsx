@@ -25,7 +25,7 @@ export default function HomeWinePerformance() {
         <h4 className="mt-5 text-sm">*Liv-Ex 1000 Fine Wine Index</h4>
 
         <div className="w-full mt-10">
-          <div className="grid grid-cols-3 gap-5 border-b border-orange-700 border-opacity-20 w-full">
+          <div className="grid md:grid-cols-3 gap-5 border-b border-orange-700 border-opacity-20 w-full">
             {items.map((item, i) => {
               return (
                 <>
@@ -35,38 +35,34 @@ export default function HomeWinePerformance() {
                   >
                     <button className="text-start"
                       onClick={() => setSelectedTab(i)}>
-                      <p className=" text-zinc-800 text-lg font-semibold leading-relaxed uppercase ">
+                      <p className="text-zinc-800 text-lg font-semibold leading-relaxed uppercase ">
                         {item.name}
                       </p>
                     </button>
                   </div>
                 </>)
             })}
-
-
-
           </div>
         </div>
 
-<div className="w-full m-10 text-left">
-<h2 className="text-4xl">
-{selectedItem.name}
-</h2>
-</div>
-        <div className="w-full m-10 grid grid-cols-2">
-            <div className="w-full">
-              <img src={'/assets/images/'+selectedItem.photo} width="100%" height={0} alt="performance chart" />
-            </div>
-            <div className="w-full">
-              <div className="ml-10 w-1/3 text-left">
-                <span className="inline-block border-solid border-2 border-[#BF4D20] rounded mb-[3px] w-[40px]"></span> {selectedItem.legend} <br/>
-                <span className="inline-block border-solid border-2 border-[#BD936B] rounded mb-[3px] w-[40px]"></span> S&P 500 <br/>
-                <span className="inline-block border-solid border-2 border-[#2F222B] rounded mb-[3px] w-[40px]"></span> Gold <br/>
-                <span className="inline-block border-solid border-2 border-[#7D302E] rounded mb-[3px] w-[40px]"></span> Rolex Index
-              </div>
-            </div>
+        <div className="w-full m-10 text-left">
+          <h2 className="text-4xl hidden md:block">
+            {selectedItem.name}
+          </h2>
         </div>
-
+        <div className="w-full md:m-10 grid md:grid-cols-2 my-10 md:my-0">
+          <div className="w-full">
+            <img src={'/assets/images/' + selectedItem.photo} width="100%" height={0} alt="performance chart" />
+          </div>
+          <div className="w-full">
+            <div className="flex md:block md:ml-10 mt-4 md:mt-0 md:w-1/3 text-left justify-between">
+              <div><span className="inline-block border-solid border-2 border-[#BF4D20] rounded mb-[3px] md:w-[40px] w-[6px]"></span> {selectedItem.legend}</div>
+              <div><span className="inline-block border-solid border-2 border-[#BD936B] rounded mb-[3px] md:w-[40px] w-[6px]"></span> S&P 500</div>
+              <div><span className="inline-block border-solid border-2 border-[#2F222B] rounded mb-[3px] md:w-[40px] w-[6px]"></span> Gold</div>
+              <div><span className="inline-block border-solid border-2 border-[#7D302E] rounded mb-[3px] md:w-[40px] w-[6px]"></span> Rolex Index</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

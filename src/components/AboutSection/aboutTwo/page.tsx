@@ -99,9 +99,9 @@ const AboutTwo = () => {
             />
           </div>
 
-          <div className="  md:basis-7/12 h-[800px] md:pt-[110px] py-20">
-            <div className="md:ps-[139px] w-full h-full px-4">
-              <div className=" flex flex-col justify-between max-w-[501px] w-full h-full">
+          <div className="md:basis-7/12 md:h-[800px] md:pt-[110px] py-10 md:py-20">
+            <div className="md:ps-[139px] w-full md:h-full px-4">
+              <div className=" flex flex-col justify-between max-w-[501px] w-full md:h-full">
                 <div>
                   <div className=" ">
                     <h3 className="text-white md:text-4xl font-light  md:leading-[44px]    text-[21px]  leading-[29px]">
