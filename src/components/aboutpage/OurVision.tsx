@@ -37,9 +37,6 @@ export default function OurVision() {
                 maintained over the years.
               </p>
             </div>
-            <button className="text-center text-white text-xs font-normal uppercase leading-[18px] tracking-tight px-8 py-4 bg-orange-700 rounded-[48px]">
-              Read more
-            </button>
           </div>
         </div>
       </div>

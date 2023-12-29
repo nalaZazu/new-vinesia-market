@@ -72,7 +72,7 @@ const EditionOverview = ({
         <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 px-4 md:absolute top-0 z-10 right-0 left-0">
           <div className="mx-auto max-w-[1429px] text-center pb-6">
             <h1 className="text-zinc-800 md:text-7xl md:text-center text-left md:leading-[84px] text-4xl font-normal leading-[42px] tracking-[-1.44px] whitespace-pre-line ">
-              {data.number}# {data.name}
+               {data.name} <span className="text-2xl">#{data.number}</span>
             </h1>
             <p className="pt-2  text-zinc-800 text-base font-normal  leading-snug md:text-center text-left ">
             </p>

@@ -65,12 +65,6 @@ export default function OurValues() {
                   {text}
                 </p>
               </div>
-              <div className="flex gap-3 items-center">
-                <button className="border-b-2 text-xs text-white font-normal uppercase leading-[18px] tracking-tight">
-                  Read more
-                </button>
-                <NextIcon fill={"#fff"} />
-              </div>
             </div>
           );
         })}

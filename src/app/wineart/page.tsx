@@ -46,7 +46,7 @@ export default function wineryArt() {
         </div>
       </div>
 
-      <div className="pb-40">
+      {/* <div className="pb-40">
         <div className="container mx-auto px-4">
           <h2 className="w-[960px] mx-auto text-center text-zinc-800 text-7xl font-normal leading-[84px] tracking-[-1.44] pb-12">
             Selected wineries represented in our Collections 
@@ -61,26 +61,24 @@ export default function wineryArt() {
             })}
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="py-52 bg-[#28475C]">
+      {/* <div className="py-52 bg-[#28475C]">
         <div className="container mx-auto px-4">
           <h4 className="text-white text-center text-[21px] font-light leading-[29px] tracking-wide">
             Commercial space
           </h4>
         </div>
-      </div>
+      </div> */}
 
       {/* The faster way to get to know us */}
       <div className="bg-[#2F222B]">
-        <div className="flex justify-end md:py-40 md:px-0  px-4 py-20">
-          <div className=" max-w-[1314px]">
+        <div className="flex text-center justify-center md:py-40 md:px-0  px-4 py-20">
             <div>
               <div>
                 <h3 className="text-white text-4xl font-light   leading-[44px] pb-8">
                   Learn more about wine & art investment
                 </h3>
-              </div>
             </div>
 
             {/* here is new slider  section */}

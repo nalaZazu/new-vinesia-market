@@ -15,6 +15,24 @@ import VectorTwo from "@/assets/icons/VectorTwo.svg";
 import VectorOne from "@/assets/icons/VectorOne.svg";
 import Footer from "@/components/footer/page";
 
+const team = [
+  {name: 'Emmanuel Bueb', position: 'CEO', photo: 'aboutus_emmanuel.png', linkedin: 'https://www.linkedin.com/in/emmanuelbueb/'},
+  {name: 'Fabrice Mopin', position: 'Chief Wine Officer', photo: 'aboutus_fabrice.png', linkedin: 'https://www.linkedin.com/in/fabrice-mopin-9b283935/'},
+  {name: 'Adam Stępnik', position: 'CTO', photo: '', linkedin: 'https://www.linkedin.com/in/adam-stepnik/'},
+  {name: 'Bastian Mopin', position: 'Head of Product', photo: '', linkedin: 'https://www.linkedin.com/in/bastian-mopin-b9750821b/'},
+  {name: 'Ewa Brennan', position: 'Director of Marketing', photo: '', linkedin: 'https://www.linkedin.com/in/evabrennan/'},
+  {name: 'Laurence Zimmer', position: 'Head of Sales', photo: '', linkedin: 'https://www.linkedin.com/in/laurence-david-zimmer-366ab01a3/'},
+  {name: 'Dariusz Drozdakiewicz', position: 'Project Manager', photo: '', linkedin: 'https://www.linkedin.com/in/dariusz-drozdakiewicz-098413267/'},
+  {name: 'Anish Gupta', position: 'Developer', photo: '', linkedin: 'https://www.linkedin.com/in/gupta-anish/'},
+]
+
+const advisors = [
+  {name: 'Thomas Heymans', position: 'Sourcing, Winery relations', photo: '', linkedin: 'https://www.linkedin.com/in/heymans-thomas-24b6b079/'},
+  {name: 'Piotr Kamecki', position: 'Sourcing, Winery relations', photo: '', linkedin: 'https://www.linkedin.com/in/piotr-kamecki-sommelier/'},
+  {name: 'Erik Petersen', position: 'Investor Relations, Communications', photo: '', linkedin: 'https://www.linkedin.com/in/eriklpetersen/'},
+  {name: 'Luke Bragg', position: 'Product design', photo: '', linkedin: 'https://www.linkedin.com/in/lucasbragg/'},
+]
+
 export default function AboutUs() {
   return (
     <div className="absolute top-0 -z-10 left-0 right-0">
@@ -23,7 +41,6 @@ export default function AboutUs() {
           <AboutBanner />
         </div>
       </div>
-      <FeaturedLogos />
       <div className="py-20">
         <div className="container mx-auto px-4">
           <OurMission />
@@ -112,7 +129,7 @@ export default function AboutUs() {
             <Image src={VectorOne} alt="vector" />
           </div>
         </div>
-        <div className="flex justify-end md:py-40 md:px-0 px-4 py-20">
+        <div className="flex justify-center text-center md:py-40 md:px-0 px-4 py-20">
           <div className="max-w-[1314px]">
             <div className="">
               <div>

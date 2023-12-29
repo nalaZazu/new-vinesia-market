@@ -19,6 +19,7 @@ import LeftPanel from "@/components/simulator/LeftPanel";
 import GraphPanel from "@/components/simulator/GraphPanel";
 import RightPanel from "@/components/simulator/RightPanel";
 import simulatorPreview from "@/assets/images/simulatorPreview.png";
+import HomeWinePerformance from "@/components/HomeWinePerformance/page";
 const AboutTwo = () => {
   const [visible, setVisible] = useState(false);
   const [step, setStep] = useState(1);
@@ -123,6 +124,9 @@ const AboutTwo = () => {
           </div>
         </div>
       </div>
+      
+      <HomeWinePerformance />
+      
       {/*The potential of wine investment in numbers (next section) */}
       <div className="md:py-40 md:px-0   py-20 px-4">
         <div className="container mx-auto">
