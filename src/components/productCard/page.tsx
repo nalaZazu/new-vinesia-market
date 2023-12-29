@@ -10,11 +10,7 @@ import { useUser } from "@/context/user";
 
 import bottleIcon from "../../assets/icons/bottleIcon.svg";
 
-export default function ProductCards({
-  item
-}: {
-  item: ItemCardDto;
-}) {
+export default function ProductCards({ item }: { item: ItemCardDto }) {
   const { getPriceText, currency } = useUser();
 
   if (item === undefined) {
@@ -30,15 +26,20 @@ export default function ProductCards({
     return "Bottles";
   }
 
-
   function getCount(item: ItemCardDto) {
-    return item.total + ' ' + (item.description.startsWith('Case') ? getCaseName(item.total) : getBottleName(item.total))
+    return (
+      item.total +
+      " " +
+      (item.description.startsWith("Case")
+        ? getCaseName(item.total)
+        : getBottleName(item.total))
+    );
   }
 
   return (
     <div>
-      <div className="card_bg_shape bg-no-repeat flex justify-end mx-auto w-full relative">
-        <div className="max-w-[288px] md:h-[674px] h-[674px] mx-auto">
+      <div className="card_bg_shape bg-no-repeat flex justify-end mx-auto w-full relative h-[587px]">
+        <div className="max-w-[288px]  mx-auto flex flex-col justify-between">
           <div className="flex flex-col items-center md:gap-8 gap-5 px-5">
             <div className="relative">
               <Image
@@ -124,7 +125,8 @@ export default function ProductCards({
                     EST. PRICE
                   </div>
                   <div className="text-zinc-800 md:text-xl text-xl font-light  leading-[44px]">
-                    {item.estPrice && getPriceText(item.estPrice[currency] ?? 0)}
+                    {item.estPrice &&
+                      getPriceText(item.estPrice[currency] ?? 0)}
                   </div>
                 </div>
                 <div className="flex-col justify-center items-center gap-2 inline-flex">
@@ -132,7 +134,8 @@ export default function ProductCards({
                     FLOOR PRICE
                   </div>
                   <div className="text-zinc-800 md:text-xl text-xl font-light  leading-[44px]">
-                    {item.floorPrice && getPriceText(item.floorPrice[currency] ?? 0)}
+                    {item.floorPrice &&
+                      getPriceText(item.floorPrice[currency] ?? 0)}
                   </div>
                 </div>
               </>
@@ -146,23 +149,23 @@ export default function ProductCards({
             >
               SEE OVERVIEW
             </Link>
-
-            {!item.isEdition && (
-              <div className="text-center">
-                <span className="text-neutral-600 text-base font-normal leading-snug">
-                  {getCount(item)}
-                </span>
-                <span className="text-stone-300 text-base font-normal leading-snug">
-                  /
-                </span>
-                <span className="text-red-700 text-base font-normal leading-snug">
-                  {item.available} Remaining
-                </span>
-              </div>
-            )}
           </div>
         </div>
       </div>
+
+      {!item.isEdition && (
+        <div className="text-center">
+          <span className="text-neutral-600 text-base font-normal leading-snug">
+            {getCount(item)}
+          </span>
+          <span className="text-stone-300 text-base font-normal leading-snug">
+            /
+          </span>
+          <span className="text-red-700 text-base font-normal leading-snug">
+            {item.available} Remaining
+          </span>
+        </div>
+      )}
     </div>
   );
 }
