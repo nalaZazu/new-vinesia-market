@@ -24,6 +24,8 @@ import VinesiaWines from "@/components/vinesia/VinesiaWines";
 import VinesiaSelling from "@/components/vinesia/VinesiaSelling";
 import VinesiaAnimation from "@/components/vinesia/VinesiaAnimation";
 import Testing from "@/components/vinesia/Teting";
+import { experts } from "@/constants/experts";
+import Link from "next/link";
 
 const title = "How Vinesia works";
 const descripition =
@@ -81,10 +83,10 @@ export default function Vinesia() {
                 Our method of wine investment is layered to create a
               </span>
               <span className="text-orange-700 text-base font-normal leading-snug">
-                Peace of Mind
+                Peace of Mind&nbsp;
               </span>
               <span className="text-neutral-600 text-base font-normal leading-snug">
-                pledge. Every feature of how we do things speaks to our
+                &nbsp;pledge. Every feature of how we do things speaks to our
                 dedication to creating a system of truth you can rely on for
                 your wine portfolio.
               </span>
@@ -101,12 +103,15 @@ export default function Vinesia() {
                 titleClass="text-zinc-800"
                 containerClass="py-6"
                 borderClass="border-b-2 border-orange-700 max-w-[500px] border-opacity-20"
+                descClass={"text-zinc-800"}
               />
               <div className="pt-12 p-2">
+                  <Link href="/security">
                 <button className="flex gap-3 items-center text-center text-orange-700 text-xs font-normal uppercase leading-[18px] tracking-tight">
                   READ MORE ABOUT SECURITY
                   <NextIcon />
                 </button>
+                  </Link>
               </div>
             </div>
           </div>
@@ -137,26 +142,29 @@ export default function Vinesia() {
             </div>
             <div className="">
               <div className="bg-orange-50 rounded-tl rounded-tr border border-orange-700 border-opacity-20">
-                {[1, 2, 3].map((items, i) => {
+                {experts.map((items, i) => {
+                  const {id, name, img, linkedin} = items
                   return (
                     <div
                       key={i}
                       className="justify-between items-center flex p-6"
                     >
                       <div className="justify-between items-center gap-4 flex">
-                        <div className="w-16 h-16 rounded-[100px] justify-center items-center flex">
-                          <Image src={expertise} alt="" />
+                        <div className="w-16 h-16 justify-center items-center flex">
+                          <Image src={img} alt="" className="rounded-full" />
                         </div>
                         <div className="flex-col justify-start items-start gap-1 inline-flex">
                           <p className="text-zinc-800 text-lg font-semibold leading-relaxed">
-                            Fabrice Mopin
+                            {name}
                           </p>
                           <p className="text-stone-500 text-xs font-normal uppercase leading-[18px] tracking-tight">
                             Expert
                           </p>
                         </div>
                       </div>
-                      <LinkdeIn fill={"#0A66C2"} />
+                      <Link href={linkedin}>
+                        <LinkdeIn fill={"#0A66C2"} />
+                      </Link>
                     </div>
                   );
                 })}
