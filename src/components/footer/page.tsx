@@ -170,10 +170,10 @@ export default function Footer() {
             <div className="border-b  border-white border-opacity-20    pt-12" />
             {/* here is langugae and other icon */}
             <div className="md:pt-12 pt-8  md:pb-0 pb-8 md:px-0 px-4 flex flex-wrap md:justify-between justify-center">
-              <div className="flex flex-wrap flex-col">
+              {/* <div className="flex flex-wrap flex-col">
                 <span>Other languages</span>
                 <span className="pt-4">FR | GER | ENG | CHN </span>
-              </div>
+              </div> */}
               <div className="md:border-r-2    border-white border-opacity-20  " />
 
               <div className="md:pt-0 pt-4  md:block hidden">

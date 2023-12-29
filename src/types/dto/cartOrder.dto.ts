@@ -36,5 +36,8 @@ export interface CartOrderDto {
 
     positions: OrderPositionDto[]
 
+    serviceFees: number
+    paymentFees: number
+
     metadata?: Record<string, any> 
 }
