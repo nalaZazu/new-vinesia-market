@@ -28,7 +28,7 @@ const team = [
 ]
 
 const advisors = [
-  {name: 'Thomas Heymans', position: 'Sourcing, Winery relations', photo: '', linkedin: 'https://www.linkedin.com/in/heymans-thomas-24b6b079/'},
+  {name: 'Thomas Heymans', position: 'Sourcing, Winery relations', photo: 'aboutus_thoma.jpeg', linkedin: 'https://www.linkedin.com/in/heymans-thomas-24b6b079/'},
   {name: 'Piotr Kamecki', position: 'Sourcing, Winery relations', photo: 'aboutus_piotr.webp', linkedin: 'https://www.linkedin.com/in/piotr-kamecki-sommelier/'},
   {name: 'Erik Petersen', position: 'Investor Relations, Communications', photo: 'aboutus_erik.webp', linkedin: 'https://www.linkedin.com/in/eriklpetersen/'},
   {name: 'Luke Bragg', position: 'Product design', photo: 'aboutus_luke.jpg', linkedin: 'https://www.linkedin.com/in/lucasbragg/'},
