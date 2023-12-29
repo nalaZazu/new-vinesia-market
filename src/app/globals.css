@@ -167,7 +167,7 @@ h6 {
 .line1 path {
   stroke-dasharray: 2000;
   stroke-dashoffset: 0;
-  animation: animate-line 5s linear forwards;
+  animation: animate-line 4s linear forwards;
 }
 @keyframes animate-line {
   0% {
@@ -181,7 +181,7 @@ h6 {
 .line2 path {
   stroke-dasharray: 2000;
   stroke-dashoffset: 0;
-  animation: animate-line2 5s linear forwards;
+  animation: animate-line2 4s linear forwards;
 }
 @keyframes animate-line2 {
   0% {
@@ -192,25 +192,15 @@ h6 {
   }
 }
 
-.vinesia-icon-animation path {
-  animation: icon-animation 10s linear forwards;
-}
-
-@keyframes icon-animation {
-  0% {
-    left: 0;
-  }
-  100% {
-    left: 100;
-  }
-}
-
 .fade-in {
-  animation: fadeIn 2s ease-in-out;
+  animation: fadeIn 5s ease-in-out;
 }
 
 @keyframes fadeIn {
   0% {
+    opacity: 0;
+  }
+  75% {
     opacity: 0;
   }
   100% {
@@ -218,7 +208,21 @@ h6 {
   }
 }
 
+.fade-in-box {
+  animation: fadeIn 7s ease-in-out;
+}
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /* vinesia end */
 
 .card_bg_shape {
