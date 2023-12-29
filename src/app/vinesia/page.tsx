@@ -26,6 +26,7 @@ import VinesiaAnimation from "@/components/vinesia/VinesiaAnimation";
 import Testing from "@/components/vinesia/Teting";
 import { experts } from "@/constants/experts";
 import Link from "next/link";
+import QASummary from "@/components/qasummary/page";
 
 const title = "How Vinesia works";
 const descripition =
@@ -225,26 +226,8 @@ export default function Vinesia() {
         </div>
       </div>
 
-      <div className="py-40 bg-[#F7EFDF]">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 gap-8">
-            <div className="max-w-[498px]">
-              <h3 className=" text-zinc-800 text-4xl font-light leading-[44px]">
-                You might have questions, we definitely have answers.
-              </h3>
-              <div className="flex gap-3 pt-9">
-                <button className="border-b-2 border-orange-700 border-opacity-20 text-center text-orange-700 text-xs font-normal uppercase leading-[18px] tracking-tight">
-                  SEE ALL QUESTIONS & ANSWERS
-                </button>
-                <NextIcon />
-              </div>
-            </div>
-
-            <div>
-              <AccordionWineAbout />
-            </div>
-          </div>
-        </div>
+      <div className="bg-[#F7EFDF]">
+        <QASummary title="You might have questions, we definitely have answers." />
       </div>
       {/* The faster way to get to know us */}
       <div className="bg-[#2F222B]">

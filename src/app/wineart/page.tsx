@@ -15,6 +15,7 @@ import { NextIcon } from "@/assets/icons/Icons";
 import { AccordionWineAbout } from "@/components/accordion/page";
 import Newsletter from "@/components/newsletter/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
+import QASummary from "@/components/qasummary/page";
 
 export default function wineryArt() {
   return (
@@ -97,26 +98,8 @@ export default function wineryArt() {
       </div>
 
       <NewslettersTwo />
-      <div className="py-40 bg-[#F7EFDF]">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 gap-8">
-            <div className="max-w-[498px]">
-              <h3 className=" text-zinc-800 text-4xl font-light leading-[44px]">
-                You might have questions, we definitely have answers.
-              </h3>
-              <div className="flex gap-3 pt-9">
-                <button className="border-b-2 border-orange-700 border-opacity-20 text-center text-orange-700 text-xs font-normal font-['Albert Sans'] uppercase leading-[18px] tracking-tight">
-                  SEE ALL QUESTIONS & ANSWERS
-                </button>
-                <NextIcon />
-              </div>
-            </div>
-
-            <div>
-              <AccordionWineAbout />
-            </div>
-          </div>
-        </div>
+      <div className="bg-[#F7EFDF]">
+        <QASummary title="You might have questions, we definitely have answers." />
       </div>
 
       {/*  */}
