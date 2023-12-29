@@ -54,9 +54,8 @@ export function Button({
     <button
       disabled={disabled}
       onClick={onClick}
-      className={`flex items-center gap-4 border border-[#BF4D2020] rounded-full px-8 justify-center h-14 w-full uppercase ${
-        filled ? "bg-[#BF4D20] text-white" : "text-[#BF4D20] "
-      } ${btnStyle}`}
+      className={`flex items-center gap-4 border border-[#BF4D2020] rounded-full px-8 justify-center h-14 w-full uppercase ${filled ? "bg-[#BF4D20] text-white" : "text-[#BF4D20] "
+        } ${btnStyle}`}
     >
       {beforeIcon && beforeIcon}
       {label}
@@ -106,9 +105,8 @@ export function CartControls({
         <button
           disabled={disable}
           onClick={() => nextStep()}
-          className={`  ${
-            disable ? "cursor-no-drop" : "cursor-pointer"
-          }  flex items-center gap-4 border   border-[#BF4D2020] rounded-full text-white px-8 justify-center h-14 bg-[#BF4D20] sm:order-2 order-1 sm:w-auto w-full
+          className={`  ${disable ? "cursor-no-drop" : "cursor-pointer"
+            }  flex items-center gap-4 border   border-[#BF4D2020] rounded-full text-white px-8 justify-center h-14 bg-[#BF4D20] sm:order-2 order-1 sm:w-auto w-full
         `}
         >
           {btnTwoTittle} <NextIcon fill="white" />
@@ -363,41 +361,44 @@ export function SelectBox({
 }
 
 export function CheckoutComponent({
-  heading,
-  icon = true,
+  stage = 1,
 }: {
-  heading: String;
-  icon?: any;
+  stage: number
 }) {
-  return (
-    <>
-      <div className="w-full md:justify-start justify-between items-center md:gap-8 inline-flex pt-[74px] pb-4 border-b border-[#A6836C20]">
-        <div className="justify-start items-center gap-2 flex">
-          {icon && (
-            <div className="w-8 h-8 justify-center items-center flex">
-              <TickCirIcon />
-            </div>
-          )}
+  const selected = 'text-[#2f222b] text-[36px]'
+  const notSelected = 'text-[#A6836C] text-[21px]'
+  
+  const firstClass = stage === 1 ? selected : notSelected
+  const secondClass = stage === 2 ? selected : notSelected
+  const thirdClass = stage === 3 ? selected : notSelected
 
-          <h1 className="text-[#2F222B] md:text-4xl text-[21px] font-light leading-[44px]">
-            {heading}
-          </h1>
-        </div>
-        <div className="grow shrink basis-0 h-[1px] border border-[#ACA7AA] border-dashed md:block hidden"></div>
-        <h2 className="text-[#A6836C] text-[21px] font-light leading-[29px] tracking-wide md:block hidden ">
-          02 — Finalized
-        </h2>
-        <div className="w-[65px] justify-start items-center gap-4 inline-flex md:hidden">
-          <h2 className="text-[#2F222B] text-[21px] font-light leading-[29px]">
-            02
-          </h2>
-          <h2 className="text-[#A6836C] text-[21px] font-light leading-[29px]">
-            03
-          </h2>
-        </div>
+  return <>
+    <div className="w-full font-['Canela'] md:justify-start justify-between items-center md:gap-8 inline-flex pt-[74px] pb-4 border-b border-[#A6836C20]">
+      <div className={`flex justify-start items-center w-[170px] font-light leading-[29px] tracking-wide ${firstClass}`}>
+        {stage > 1 ?
+          <div className="w-8 h-8 justify-center items-center">
+            <TickCirIcon />
+          </div> : <>01 - </>}
+        Billing
       </div>
-    </>
-  );
+      <div className="grow shrink basis-0 h-[1px] border border-[#ACA7AA] border-dashed md:block hidden"></div>
+      <div className={`flex justify-center items-center text-center w-[210px] font-light leading-[29px] tracking-wide ${secondClass}`}>
+        {stage > 2 ?
+          <div className="w-8 h-8 justify-center items-center">
+            <TickCirIcon />
+          </div> : <>02 - </>}
+        Payment
+      </div>
+      <div className="grow shrink basis-0 h-[1px] border border-[#ACA7AA] border-dashed md:block hidden"></div>
+      <div className={`flex justify-end items-right text-right w-[170px] font-light leading-[29px] tracking-wide ${thirdClass}`}>
+      {stage > 2 ?
+          <div className="w-8 h-8 justify-right items-right">
+            <TickCirIcon />
+          </div> : <>03 - </>}
+        Finalized
+      </div>
+    </div>
+  </>
 }
 
 const plans = ["Euro (€)", "US Dollars ($)"];
@@ -420,9 +421,8 @@ export function RadioButton() {
           {({ checked }) => (
             <p className={` p-5 w-full flex gap-4 `}>
               <span
-                className={`w-6 h-6 rounded-full border-[#6C757D]  ${
-                  checked ? " border-8" : "border-2"
-                } `}
+                className={`w-6 h-6 rounded-full border-[#6C757D]  ${checked ? " border-8" : "border-2"
+                  } `}
               ></span>
               {p}
             </p>
