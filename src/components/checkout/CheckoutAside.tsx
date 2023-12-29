@@ -3,7 +3,7 @@ import { useUser } from "@/context/user";
 import React from "react";
 
 export default function CheckoutAside() {
-  const {cartItems, getCartTotal} = useCart()
+  const { cartItems, paymentFee, getCartTotal } = useCart()
   const { getPriceText, currency } = useUser()
 
   if (cartItems === undefined || cartItems.length === 0)
@@ -27,7 +27,7 @@ export default function CheckoutAside() {
         </div>
         <div className="self-stretch px-6 flex-col justify-start items-start flex ">
           {cartItems.map((d, i) => {
-            const { name, price} = d;
+            const { name, price } = d;
             return (
               <div
                 key={i}
@@ -50,6 +50,14 @@ export default function CheckoutAside() {
               € 0
             </div>
           </div>
+          {paymentFee > 0 && <div className="self-stretch py-6 border-b border-orange-700 border-opacity-20 justify-between items-start inline-flex">
+            <div className="w-[285px] text-zinc-800 text-base font-normal  leading-snug">
+              Credit card fees (2%)
+            </div>
+            <div className="text-zinc-800 text-base font-normal  leading-snug">
+              {getPriceText(paymentFee)}
+            </div>
+          </div>}
         </div>
         <div className="self-stretch p-6 justify-between items-center inline-flex">
           <div className="text-zinc-800 text-lg font-semibold  leading-relaxed">
