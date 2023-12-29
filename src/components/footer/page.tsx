@@ -110,7 +110,7 @@ export default function Footer() {
                       <p className="mb-2" key={id}>
                         <Link
                           href={href}
-                          className="text-zinc-500 text-base font-normal leading-snug  border-b border-orange-700 border-opacity-20"
+                          className="text-zinc-500 text-base font-normal leading-snug"
                         >
                           {title}
                         </Link>
@@ -129,7 +129,7 @@ export default function Footer() {
                       <p className="mb-2" key={id}>
                         <Link
                           href={href}
-                          className="text-zinc-500 text-base font-normal leading-snug  border-b border-orange-700 border-opacity-20"
+                          className="text-zinc-500 text-base font-normal leading-snug"
                         >
                           {title}
                         </Link>
