@@ -10,7 +10,7 @@ export default function VinesiaBanner() {
               <p className="text-stone-400 text-xs font-normal uppercase leading-[18px] tracking-tight">
                 appreciating your wine, guarding its emotions
               </p>
-              <h3 class="text-white text-4xl font-light leading-[44px] max-w-[638px] pt-9"></h3>
+              <h3 className="text-white text-4xl font-light leading-[44px] max-w-[638px] pt-9"></h3>
               <h1 className="flex flex-col text-white text-7xl font-normal leading-[84px]">
                 How vinesia works
               </h1>
