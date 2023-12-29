@@ -19,6 +19,7 @@ import LeftPanel from "@/components/simulator/LeftPanel";
 import GraphPanel from "@/components/simulator/GraphPanel";
 import RightPanel from "@/components/simulator/RightPanel";
 import simulatorPreview from "@/assets/images/simulatorPreview.png";
+import SupportAnim from "@/components/supportAnimation/page";
 import HomeWinePerformance from "@/components/HomeWinePerformance/page";
 const AboutTwo = () => {
   const [visible, setVisible] = useState(false);
@@ -63,8 +64,13 @@ const AboutTwo = () => {
             </button>
           </Link>
         </div>
+        {/* support video */}
+        <div className="flex justify-center md:pt-[60px] pt-2 ">
+          {/* <Image src={investment} alt="image" /> */}
+          <SupportAnim />
+        </div>
         {/* here is image defined */}
-        <div className="flex justify-center md:pt-[92px] pt-12">
+        <div className="flex justify-center md:pt-[22px] pt-12">
           {/* <Image src={investment} alt="image" /> */}
           <video className="lg:w-3/4 w-full" autoPlay loop muted>
             <source src='assets/video/vinesia 211223_360.mp4' media="all and (max-width: 1200px)" />
