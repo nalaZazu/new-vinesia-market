@@ -168,8 +168,6 @@ const AboutTwo = () => {
 
                 <div className="bg-orange-100 h-64">
                   <div className="pt-1 hover:cursor-pointer">
-                <div className="bg-[#F3E8CF] h-64">
-                  <div className="pt-1">
                     {/* <ul className="flex justify-end gap-4">
                       <li className="flex items-center">
                         <LineDot storke="#28475C" />
