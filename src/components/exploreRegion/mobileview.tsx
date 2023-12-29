@@ -21,6 +21,7 @@ const ExploreRegionMobile = () => {
     setOpen(!open);
   };
   const [selectedTab, setSelectedTab] = useState(0);
+  const countryName = ["France", "Germany", ];
   return (
     <div className="bg-[#F7EFDF] block md:hidden py-20 px-4">
       <Popup open={open} setOpen={handleOpen} />
@@ -30,7 +31,7 @@ const ExploreRegionMobile = () => {
             Explore by region
           </h1>
         </div>
-        <TabButton />
+        <TabButton data={countryName} />
 
         <div>
           {/* column one */}

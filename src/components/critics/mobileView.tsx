@@ -5,9 +5,10 @@ import Slider from "react-slick";
 import wine from "../../assets/images/critcsimage.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { NextIcon2, PrevIcon2 } from "../../assets/icons/Icons";
+import { Arrows, NextIcon2, PrevIcon2 } from "../../assets/icons/Icons";
 import signature from "../../assets/images/mobilesignature.png";
 import alert from "../../assets/icons/alert-circle.svg";
+import Link from "next/link";
 
 const CriticsMobile = () => {
   const sliderSettings = {
@@ -39,7 +40,7 @@ const CriticsMobile = () => {
     nextArrow: (
       <div className="mobile_view_slider  z-50 ">
         <div className=" text-black h-full w-full flex items-center rounded-full border border-orange-700 justify-center">
-          <div className="h-6 w-6" >
+          <div className="h-6 w-6">
             <NextIcon2 />
           </div>
         </div>
@@ -111,43 +112,23 @@ const CriticsMobile = () => {
             the drinker to embrace its delicate hue.
           </p>
         </div>
-        <button className="flex items-center pt-4 gap-3 text-orange-700 text-xs font-normal  uppercase leading-3 tracking-tight">
-          READ MORE
+        <button className="flex items-center pt-4 gap-3 text-orange-700 text-xs font-normal  uppercase leading-3 tracking-tight ">
+          <span className="border-b border-orange-700 border-opacity-20">
+            READ MORE
+          </span>
           <span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-              />
-            </svg>
+            <Arrows storke="#BF4D20" />
           </span>
         </button>
         <div className="pt-6">
-          <button className=" text-orange-700 text-xs font-normal w-full  uppercase leading-3 tracking-tight px-8 py-4 rounded-full border border-orange-700 border-opacity-20 items-center gap-3 flex justify-center">
-            INVEST NOW
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-              />
-            </svg>
-          </button>
+          <Link href="/invest">
+            <button className=" text-orange-700 text-xs font-normal w-full  uppercase leading-3 tracking-tight px-8 py-4 rounded-full border border-orange-700 border-opacity-20 items-center gap-3 flex justify-center">
+              INVEST NOW
+              <span>
+                <Arrows storke="#BF4D20" />
+              </span>
+            </button>
+          </Link>
         </div>
       </div>
     </div>
