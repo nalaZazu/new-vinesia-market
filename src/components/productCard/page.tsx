@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import winebotel from "../../assets/images/Group 10462.png";
 import Art from "../../assets/images/arat.png";
 import Link from "next/link";
@@ -10,13 +10,7 @@ import { useUser } from "@/context/user";
 
 import bottleIcon from "../../assets/icons/bottleIcon.svg";
 
-export default function ProductCards({
-  item,
-  isEdition = false,
-}: {
-  item: ItemCardDto;
-  isEdition?: boolean;
-}) {
+export default function ProductCards({ item }: { item: ItemCardDto }) {
   const { getPriceText, currency } = useUser();
 
   if (item === undefined) {
@@ -32,16 +26,21 @@ export default function ProductCards({
     return "Bottles";
   }
 
-
   function getCount(item: ItemCardDto) {
-    return item.total + ' ' + (item.description.startsWith('Case') ? getCaseName(item.total) : getBottleName(item.total))
+    return (
+      item.total +
+      " " +
+      (item.description.startsWith("Case")
+        ? getCaseName(item.total)
+        : getBottleName(item.total))
+    );
   }
 
   return (
-    <div>
+    <div className="">
       <div className="card_bg_shape bg-no-repeat flex justify-end mx-auto w-full relative">
-        <div className="max-w-[288px] md:h-[674px] h-[674px] mx-auto">
-          <div className="flex flex-col items-center md:gap-8 gap-5 px-5">
+        <div className="max-w-[288px] mx-auto">
+          <div className="flex flex-col items-center gap-5 px-5">
             <div className="relative">
               <Image
                 src={`${process.env.NEXT_PUBLIC_API_ADDRESS}products/file/${item.media}`}
@@ -52,7 +51,7 @@ export default function ProductCards({
                 className=" w-auto h-[200px]"
                 objectFit="contain"
               />
-              {isEdition ? (
+              {item.isEdition ? (
                 <div className="w-[49.94px] h-[50px] absolute -bottom-5 left-0 right-0 mx-auto">
                   <div className="w-[49.94px] h-[50px] left-0 top-0 absolute bg-red-700 rounded-full border-4 border-orange-100" />
                   <div className="left-[12.49px] top-[20px] absolute text-center text-white text-sm font-normal  uppercase leading-none">
@@ -90,9 +89,7 @@ export default function ProductCards({
                 </div>
               )}
 
-              {item.available === 0 ? (
-                <></>
-              ) : (
+              {(item.available > 0 || item.isAvailable) && (
                 <div className="p-2 h-9 bg-green-500 rounded-[30px] border flex justify-start items-center gap-1.5">
                   <div className=" w-2 h-2 bg-white rounded-full" />
                   <p className="text-center text-white text-xs font-normal uppercase leading-3 tracking-tight">
@@ -102,7 +99,7 @@ export default function ProductCards({
               )}
             </div>
             <div className="flex-col items-center gap-6 flex">
-              <h3 className="md:max-w-[371px] max-w-[243px] text-center text-zinc-800 text-xl font-light h-[84px] ">
+              <h3 className="md:max-w-[371px] max-w-[243px] text-center text-zinc-800 text-[21px  ] font-light h-[84px] ">
                 {item.name}
               </h3>
               <p className="text-neutral-600 text-base font-normal leading-snug">
@@ -128,7 +125,8 @@ export default function ProductCards({
                     EST. PRICE
                   </div>
                   <div className="text-zinc-800 md:text-xl text-xl font-light  leading-[44px]">
-                    {item.estPrice && getPriceText(item.estPrice[currency] ?? 0)}
+                    {item.estPrice &&
+                      getPriceText(item.estPrice[currency] ?? 0)}
                   </div>
                 </div>
                 <div className="flex-col justify-center items-center gap-2 inline-flex">
@@ -136,7 +134,8 @@ export default function ProductCards({
                     FLOOR PRICE
                   </div>
                   <div className="text-zinc-800 md:text-xl text-xl font-light  leading-[44px]">
-                    {item.floorPrice && getPriceText(item.floorPrice[currency] ?? 0)}
+                    {item.floorPrice &&
+                      getPriceText(item.floorPrice[currency] ?? 0)}
                   </div>
                 </div>
               </>
@@ -145,30 +144,27 @@ export default function ProductCards({
 
           <div className="flex flex-col items-center gap-4">
             <Link
-              href={(isEdition ? `/edition/` : `/product/`) + item.id}
+              href={(item.isEdition ? `/edition/` : `/product/`) + item.id}
               className="mt-6 px-8 py-5 bg-orange-700 rounded-full text-center text-white text-xs font-normal uppercase leading-3 tracking-tight"
             >
               SEE OVERVIEW
             </Link>
-
-            {isEdition ? (
-              <></>
-            ) : (
-              <div className="text-center">
-                <span className="text-neutral-600 text-base font-normal leading-snug">
-                  {getCount(item)}
-                </span>
-                <span className="text-stone-300 text-base font-normal leading-snug">
-                  /
-                </span>
-                <span className="text-red-700 text-base font-normal leading-snug">
-                  {item.available} Remaining
-                </span>
-              </div>
-            )}
           </div>
         </div>
       </div>
+      {!item.isEdition && (
+        <div className="text-center">
+          <span className="text-neutral-600 text-base font-normal leading-snug">
+            {getCount(item)}
+          </span>
+          <span className="text-stone-300 text-base font-normal leading-snug">
+            /
+          </span>
+          <span className="text-red-700 text-base font-normal leading-snug">
+            {item.available} Remaining
+          </span>
+        </div>
+      )}
     </div>
   );
 }

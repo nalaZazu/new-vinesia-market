@@ -1,3 +1,5 @@
+import { CartOrderDto } from "./dto/cartOrder.dto"
+
 export enum Currency {
     EUR = 'EUR',
     USD = 'USD',
@@ -23,6 +25,8 @@ export interface Address {
     zipCode: string
 
     city: string
+
+    invoiceEmail: string
 }
 
 export interface User {
@@ -63,4 +67,6 @@ export interface User {
     kycStatus: boolean
 
     newsletter: boolean
+
+    cartOrder?: CartOrderDto
 }
