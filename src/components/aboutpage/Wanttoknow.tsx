@@ -10,7 +10,7 @@ import youtube from "@/assets/icons/youtube.svg";
 export default function Wanttoknow() {
   return (
     <div>
-      <div className="flex justify-between max-w-[1040px] items-center mx-auto">
+      <div className="md:flex md:justify-between max-w-[1040px] items-center mx-auto">
         <p className="w-[174px] text-right text-white text-lg font-semibold leading-relaxed">
           Want to know more?
         </p>

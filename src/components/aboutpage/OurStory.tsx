@@ -46,8 +46,8 @@ export default function OurStory() {
           A rich journey already, yet so much more to write.
         </p>
       </div>
-      <div className="grid grid-cols-2">
-        <div className="pe-[139px]">
+      <div className="grid md:grid-cols-2">
+        <div className="md:pe-[139px]">
           <p className=" text-neutral-600 text-base font-normal leading-snug pb-8">
             Like all good stories, ours begins with love. A love for the craft
             of winemakers, a love for the stories, a love for this unique

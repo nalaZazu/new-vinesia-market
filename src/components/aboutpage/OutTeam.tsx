@@ -10,7 +10,7 @@ export default function OutTeam({item}:{item:any}) {
   }
   return (
     <div>
-      <div className="rounded overflow-hidden w-[352px] h-[352px]">
+      <div className="rounded overflow-hidden 2xl:w-[352px] md:w-[300px] h-[300px]">
       <img src={"assets/images/"+item.photo} width={352} height={0} alt="" className="pb-6 rounded-t-full" />
       </div>
       <div className="flex justify-between items-start">

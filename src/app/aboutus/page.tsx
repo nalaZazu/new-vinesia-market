@@ -74,7 +74,7 @@ export default function AboutUs() {
               Our team
             </h2>
           </div>
-          <div className="grid grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-4 gap-8">
             {team.map((item, i) => {
               return (
                 <div key={i} className="pb-16">
@@ -97,7 +97,7 @@ export default function AboutUs() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 gap-20 pt-6 pb-16">
+          <div className="grid md:*grid-cols-2 gap-20 pt-6 pb-16">
             <p className="grow shrink basis-0 text-zinc-800 text-base font-normal font-['Albert Sans'] leading-snug">
               Deep knowledge, experience and a healthy dose of challenge from
               our expert advisors to keep us on our toes.Our success stems from
@@ -105,7 +105,7 @@ export default function AboutUs() {
               as respectful stewards towards the magical products.
             </p>
           </div>
-          <div className="grid grid-cols-3">
+          <div className="grid md:grid-cols-3">
             {advisors.map((item, i) => {
               return (
                 <div key={i}>

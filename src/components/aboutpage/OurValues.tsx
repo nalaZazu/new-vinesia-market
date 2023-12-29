@@ -37,7 +37,7 @@ const value = [
 export default function OurValues() {
   return (
     <div>
-      <div className="grid grid-cols-2 pb-20">
+      <div className="grid md:grid-cols-2 pb-20">
         <h2 className="text-white text-7xl font-normal leading-[84px]">
           Our Values
         </h2>

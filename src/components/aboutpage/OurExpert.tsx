@@ -5,9 +5,9 @@ import Link from "next/link";
 export default function OurExpert({item}:{item: any}) {
   return (
     <div>
-      <div className="w-[395px] h-[480px] bg-center bg-cover mb-10"
+      <div className="w-[300px] h-[364px] md:w-[395px] md:h-[480px] bg-center bg-cover mb-10 m-auto mb:m-0"
       style={{backgroundImage:'url(/assets/images/'+item.photo+')'}}>
-        <div className="flex justify-between px-12 py-8 h-[480px] items-end">
+        <div className="flex justify-between px-12 py-8 h-[364px] md:h-[480px] items-end">
           <div className="flex-col justify-start items-start gap-0.5 inline-flex">
             <p className="text-white text-lg font-semibold font-['Albert Sans'] leading-relaxed">
               {item.name}

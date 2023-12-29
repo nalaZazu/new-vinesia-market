@@ -105,9 +105,12 @@ body::-webkit-scrollbar {width:10px}
 /* about banner */
 .aboutus-bg-image {
   background-image: url("../assets/images/aboutus.png");
-  height: 818px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* height: 818px; */
   background-size: cover;
-  /* background-position: center; */
+  /* background-position: left; */
+  background-position: left top;
 }
 /* winery page */
 .winery-bg-image {
