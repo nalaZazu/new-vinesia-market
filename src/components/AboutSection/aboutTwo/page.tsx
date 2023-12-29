@@ -19,16 +19,46 @@ import LeftPanel from "@/components/simulator/LeftPanel";
 import GraphPanel from "@/components/simulator/GraphPanel";
 import RightPanel from "@/components/simulator/RightPanel";
 import simulatorPreview from "@/assets/images/simulatorPreview.png";
+import { useMobileScreen } from "@/hooks/useMobileScreen";
+import ModalContainerSim from "@/common/ModalContainerSim";
 const AboutTwo = () => {
+  const isMobile = useMobileScreen();
   const [visible, setVisible] = useState(false);
   const [step, setStep] = useState(1);
+
+  const goFullScreen = () => {
+    console.log('go full screen')
+    setVisible(true)
+    if(document.querySelector(".rotation-class")){
+      document.querySelector(".rotation-class")?.requestFullscreen();
+
+      (screen.orientation as any).lock("landscape-primary").then(() => {
+        console.log('locked')
+      })
+    } 
+  }
   return (
     <React.Fragment>
       {/* here is a investment section */}
-      <ModalContainer
+      { isMobile ? (
+      <ModalContainerSim
+      visible={visible}
+      setVisible={setVisible}
+      isCloseBtn={true}>
+        <div>
+          <GraphProvider>
+            <Flex gap="small" vertical={false} >
+              <LeftPanel />
+              <GraphPanel />
+              <RightPanel />
+            </Flex>
+          </GraphProvider>
+        </div>  
+      </ModalContainerSim>) :
+        (<ModalContainer
         visible={visible}
         setVisible={setVisible}
-        modalClass="max-h-[95vh] max-w-[90vw] rounded-md pt-4 pb-4 px-12"
+        modalClass="max-h-full max-w-full sm:max-h-[95vh] sm:max-w-[90vw] rounded-md pt-4 pb-4 px-12"
         backgroundClass="bg-zinc-800 bg-opacity-95"
         isCloseBtn={true}
       >
@@ -42,6 +72,7 @@ const AboutTwo = () => {
           </GraphProvider>
         </div>
       </ModalContainer>
+      )}
 
       {/* here is end of modal */}
       <div className="md:py-30 my-3">
@@ -178,7 +209,7 @@ const AboutTwo = () => {
                       </li>
                     </ul> */}
                     {/* <Appactivity /> */}
-                    <Image src={simulatorPreview} alt="image" onClick={() => setVisible(true)}/>
+                    {isMobile ? (<Image src={simulatorPreview} alt="image" onClick={() => goFullScreen()}/>): (<Image src={simulatorPreview} alt="image" onClick={() => setVisible(true)}/>)}
                   </div>
                 </div>
                 {/* HERE IS NUMBER DEFINED  */}
