@@ -20,8 +20,8 @@ export default function Wanttoknow() {
             <NextIcon fill={"#fff"} />
           </button>
         </div>
-        <div className="h-[60px] origin-top-left rotate-12 border border-stone-500"></div>
-        <p className="text-right text-white text-lg font-semibold leading-relaxed">
+        <div className="hidden md:block h-[60px] origin-top-left rotate-12 border border-stone-500"></div>
+        <p className="md:text-right text-white text-center text-lg font-semibold leading-relaxed">
           Or find us on
         </p>
         <div className="flex gap-3">

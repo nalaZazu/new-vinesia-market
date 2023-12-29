@@ -1,4 +1,5 @@
 import Social from "@/common/Social";
+import Link from "next/link";
 import React from "react";
 
 export default function ArtCard() {
@@ -68,7 +69,7 @@ export default function ArtCard() {
                         87
                       </p>
                       <span className=" text-[#BCA291] text-xs font-normal uppercase leading-3 tracking-tight">
-                       / 100
+                        / 100
                       </span>
                     </div>
                   </div>
@@ -103,12 +104,14 @@ export default function ArtCard() {
               </h1>
             </div>
             <div>
-              <button
-                type="button"
-                className="bg-secondary text-center rounded-full text-white text-xs font-normal uppercase leading-3 tracking-tight focus:ring-0 focus:outline-none w-48 px-8 py-5 items-center"
-              >
-                Invest now
-              </button>
+              <Link href="/invest">
+                <button
+                  type="button"
+                  className="bg-secondary text-center rounded-full text-white text-xs font-normal uppercase leading-3 tracking-tight focus:ring-0 focus:outline-none w-48 px-8 py-5 items-center"
+                >
+                  Invest now
+                </button>
+              </Link>
             </div>
           </div>
         </div>

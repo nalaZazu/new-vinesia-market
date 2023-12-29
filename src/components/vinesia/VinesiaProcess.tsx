@@ -6,7 +6,7 @@ export default function VinesiaProcess() {
   return (
     <div>
       {" "}
-      <h2 className="md:max-w-[715px] w-full text-zinc-800 text-7xl font-normal leading-[84px] tracking-[-1.44px] pb-12">
+      <h2 className="md:max-w-[715px] w-full text-zinc-800 md:text-7xl text-4xl font-normal md:leading-[84px] md:tracking-[-1.44px] pb-12">
         Details about parts of the process and page
       </h2>
       <div className="grid md:grid-cols-2 grid-cols-1 pb-16">

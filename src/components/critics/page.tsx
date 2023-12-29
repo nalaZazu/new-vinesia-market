@@ -6,6 +6,7 @@ import alert from "../../assets/icons/alert-circle.svg";
 import wine from "../../assets/images/critcsimage.png";
 import signature from "../../assets/images/signature.png";
 import { Arrows, InfoIcon } from "@/assets/icons/Icons";
+import Link from "next/link";
 
 const Critics = () => {
   return (
@@ -102,12 +103,14 @@ const Critics = () => {
               <span>
                 <Image src={signature} alt="signature" />
               </span>
+              <Link href="/invest">
               <button className="w-[156px] h-10 px-4 py-2.5 rounded-[48px] border border-orange-700 justify-center items-center gap-2 inline-flex text-center text-orange-700 text-xs font-normal  uppercase leading-3 tracking-tight cursor-pointer">
                 Invest now
                 <span>
                   <Arrows storke="#BF4D20" />
                 </span>
               </button>
+              </Link>
             </div>
           </div>
         </div>

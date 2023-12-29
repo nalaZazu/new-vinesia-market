@@ -22,6 +22,7 @@ import { Flex } from "antd";
 import LeftPanel from "@/components/simulator/LeftPanel";
 import RightPanel from "@/components/simulator/RightPanel";
 import GraphPanel from "@/components/simulator/GraphPanel";
+import Link from "next/link";
 
 export default function AssetsPerformance() {
   const [visible, setVisible] = useState(false);
@@ -176,10 +177,12 @@ export default function AssetsPerformance() {
               Let us help you add this unique asset to your portfolio.
             </span>
           </div>
+          <Link href="/invest">
           <div className="text-center text-white text-xs font-normal uppercase leading-[18px] tracking-tight w-44 h-[68px] px-8 py-[22px] rounded-[48px] border border-white border-opacity-20 justify-center items-center gap-3 inline-flex">
             Invest now
             <NextIcon fill={"#fff"} />
           </div>
+          </Link>
         </div>
       </div>
       <KnowUsVideos title="Learn more about wine & art investment" />

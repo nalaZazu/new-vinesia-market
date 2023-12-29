@@ -4,9 +4,9 @@ import Link from "next/link";
 import { useState } from "react";
 
 const items = [
-  { name: 'Château cheval blanc 2019', photo: 'home_graph_cheval_blanc_bg.png', legend: 'Cheval Blanc' },
-  { name: 'cristal roederer 2014', photo: 'home_graph_cristal_bg.png', legend: 'Cristal Roederer' },
-  { name: 'château petrus 2013', photo: 'home_graph_petrus_bg.png', legend: 'Château Petrus' },
+  { name: 'Château Cheval Blanc 2019', photo: 'home_graph_cheval_blanc_bg.png', legend: 'Cheval Blanc' },
+  { name: 'Cristal Roederer 2014', photo: 'home_graph_cristal_bg.png', legend: 'Cristal Roederer' },
+  { name: 'Château Petrus 2013', photo: 'home_graph_petrus_bg.png', legend: 'Château Petrus' },
 ]
 
 export default function HomeWinePerformance() {
@@ -17,7 +17,7 @@ export default function HomeWinePerformance() {
   return (
     <div className="md:py-40 md:px-0  py-16 px-4 bg-[#F7EFDF]">
       <div className="container mx-auto text-center">
-        <h2 className="text-zinc-800 text-center md:text-7xl font-normal  md:leading-[84px] md:tracking-[-1.44px]  text-4xl  leading-[42px] md:tracking[-0.36px]">
+        <h2 className="text-zinc-800 text-center md:text-7xl font-normal md:leading-[84px] md:tracking-[-1.44px] text-4xl leading-[42px] md:tracking[-0.36px]">
           Wine performance
         </h2>
         <h3 className="mt-10">Between 2004 and 2022, fine wine grew at a 9% <br />
@@ -48,6 +48,11 @@ export default function HomeWinePerformance() {
           </div>
         </div>
 
+<div className="w-full m-10 text-left">
+<h2 className="text-4xl">
+{selectedItem.name}
+</h2>
+</div>
         <div className="w-full m-10 grid grid-cols-2">
             <div className="w-full">
               <img src={'/assets/images/'+selectedItem.photo} width="100%" height={0} alt="performance chart" />
