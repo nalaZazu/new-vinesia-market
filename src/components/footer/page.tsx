@@ -144,13 +144,13 @@ export default function Footer() {
                   </h6>
                   <p className=" pe-0 md:pe-14 md:pt-6">
                     Ask about wine investing. <br />
-                    We answer withing 24h, during business days
+                    We generally answer within 1 business day, except during week-ends
                   </p>
                   <div className="flex gap-3 mt-4 md:justify-start justify-center">
                     <span>
                       <Image src={envelope} alt="envelope@" />
                     </span>
-                    <span className="text-center text-white text-base font-normal   leading-snug   border-b border-white border-opacity-20">
+                    <span className="text-center text-white text-base font-light   leading-snug   border-b border-white border-opacity-20">
                       contact@vinesia.com
                     </span>
                   </div>
