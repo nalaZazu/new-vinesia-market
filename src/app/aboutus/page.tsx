@@ -14,23 +14,24 @@ import AboutSlider from "@/components/AboutSection/aboutslider/page";
 import VectorTwo from "@/assets/icons/VectorTwo.svg";
 import VectorOne from "@/assets/icons/VectorOne.svg";
 import Footer from "@/components/footer/page";
+import KnowUsVideos from "@/components/KnowUsVideos/page";
 
 const team = [
   {name: 'Emmanuel Bueb', position: 'CEO', photo: 'aboutus_emmanuel.png', linkedin: 'https://www.linkedin.com/in/emmanuelbueb/'},
   {name: 'Fabrice Mopin', position: 'Chief Wine Officer', photo: 'aboutus_fabrice.png', linkedin: 'https://www.linkedin.com/in/fabrice-mopin-9b283935/'},
-  {name: 'Adam Stępnik', position: 'CTO', photo: '', linkedin: 'https://www.linkedin.com/in/adam-stepnik/'},
-  {name: 'Bastian Mopin', position: 'Head of Product', photo: '', linkedin: 'https://www.linkedin.com/in/bastian-mopin-b9750821b/'},
-  {name: 'Ewa Brennan', position: 'Director of Marketing', photo: '', linkedin: 'https://www.linkedin.com/in/evabrennan/'},
-  {name: 'Laurence Zimmer', position: 'Head of Sales', photo: '', linkedin: 'https://www.linkedin.com/in/laurence-david-zimmer-366ab01a3/'},
-  {name: 'Dariusz Drozdakiewicz', position: 'Project Manager', photo: '', linkedin: 'https://www.linkedin.com/in/dariusz-drozdakiewicz-098413267/'},
-  {name: 'Anish Gupta', position: 'Developer', photo: '', linkedin: 'https://www.linkedin.com/in/gupta-anish/'},
+  {name: 'Adam Stępnik', position: 'CTO', photo: 'aboutus_adam.png', linkedin: 'https://www.linkedin.com/in/adam-stepnik/'},
+  {name: 'Bastian Mopin', position: 'Head of Product', photo: 'aboutus_basti.png', linkedin: 'https://www.linkedin.com/in/bastian-mopin-b9750821b/'},
+  {name: 'Ewa Brennan', position: 'Director of Marketing', photo: 'aboutus_ewa.webp', linkedin: 'https://www.linkedin.com/in/evabrennan/'},
+  {name: 'Laurence Zimmer', position: 'Head of Sales', photo: 'aboutus_laurence.png', linkedin: 'https://www.linkedin.com/in/laurence-david-zimmer-366ab01a3/'},
+  {name: 'Dariusz Drozdakiewicz', position: 'Project Manager', photo: 'aboutus_dariusz.png', linkedin: 'https://www.linkedin.com/in/dariusz-drozdakiewicz-098413267/'},
+  {name: 'Anish Gupta', position: 'Developer', photo: 'aboutus_anish.jpg', linkedin: 'https://www.linkedin.com/in/gupta-anish/'},
 ]
 
 const advisors = [
   {name: 'Thomas Heymans', position: 'Sourcing, Winery relations', photo: '', linkedin: 'https://www.linkedin.com/in/heymans-thomas-24b6b079/'},
-  {name: 'Piotr Kamecki', position: 'Sourcing, Winery relations', photo: '', linkedin: 'https://www.linkedin.com/in/piotr-kamecki-sommelier/'},
-  {name: 'Erik Petersen', position: 'Investor Relations, Communications', photo: '', linkedin: 'https://www.linkedin.com/in/eriklpetersen/'},
-  {name: 'Luke Bragg', position: 'Product design', photo: '', linkedin: 'https://www.linkedin.com/in/lucasbragg/'},
+  {name: 'Piotr Kamecki', position: 'Sourcing, Winery relations', photo: 'aboutus_piotr.webp', linkedin: 'https://www.linkedin.com/in/piotr-kamecki-sommelier/'},
+  {name: 'Erik Petersen', position: 'Investor Relations, Communications', photo: 'aboutus_erik.webp', linkedin: 'https://www.linkedin.com/in/eriklpetersen/'},
+  {name: 'Luke Bragg', position: 'Product design', photo: 'aboutus_luke.jpg', linkedin: 'https://www.linkedin.com/in/lucasbragg/'},
 ]
 
 export default function AboutUs() {
@@ -73,11 +74,11 @@ export default function AboutUs() {
               Our team
             </h2>
           </div>
-          <div className="grid grid-cols-4 gap-8">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((items, i) => {
+          <div className="grid md:grid-cols-4 gap-8">
+            {team.map((item, i) => {
               return (
                 <div key={i} className="pb-16">
-                  <OutTeam />
+                  <OutTeam item={item}/>
                 </div>
               );
             })}
@@ -96,13 +97,7 @@ export default function AboutUs() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 gap-20 pt-6 pb-16">
-            <p className="grow shrink basis-0 text-zinc-800 text-base font-normal font-['Albert Sans'] leading-snug">
-              Deep knowledge, experience and a healthy dose of challenge from
-              our expert advisors to keep us on our toes.Our success stems from
-              the ability to source exceptional wines for our investors, to act
-              as respectful stewards towards the magical products.
-            </p>
+          <div className="grid md:*grid-cols-2 gap-20 pt-6 pb-16">
             <p className="grow shrink basis-0 text-zinc-800 text-base font-normal font-['Albert Sans'] leading-snug">
               Deep knowledge, experience and a healthy dose of challenge from
               our expert advisors to keep us on our toes.Our success stems from
@@ -110,54 +105,20 @@ export default function AboutUs() {
               as respectful stewards towards the magical products.
             </p>
           </div>
-          <div className="grid grid-cols-3">
-            {[1, 2, 3].map((items, i) => {
+          <div className="grid md:grid-cols-3">
+            {advisors.map((item, i) => {
               return (
                 <div key={i}>
-                  <OurExpert />
+                  <OurExpert item={item}/>
                 </div>
               );
             })}
           </div>
         </div>
       </div>
-      {/* the faster way */}
-      {/* The faster way to get to know us */}
-      <div className="bg-[#2F222B]">
-        <div className="relative">
-          <div className="absolute md:block hidden">
-            <Image src={VectorOne} alt="vector" />
-          </div>
-        </div>
-        <div className="flex justify-center text-center md:py-40 md:px-0 px-4 py-20">
-          <div className="max-w-[1314px]">
-            <div className="">
-              <div>
-                <h3 className="text-white text-4xl font-light   leading-[44px] pb-8">
-                  The faster way to get to know us
-                </h3>
-              </div>
-            </div>
 
-            {/* here is new slider  section */}
-            <div className="hidden md:block">
-              <div>
-                <AboutSlider />
-              </div>
-            </div>
-            <div className="md:hidden block  ">
-              <div className="grid grid-cols-1 ">
-                <AboutSlider />
-              </div>
-            </div>
-            <div className="relative md:block hidden ">
-              <div className="absolute bottom-[-151px] right-0">
-                <Image src={VectorTwo} alt="vector" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <KnowUsVideos/>
+
       {/* footer */}
       <Footer />
     </div>

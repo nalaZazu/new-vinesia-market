@@ -5,11 +5,11 @@ import ourvision from "@/assets/images/about-our-vision.png";
 export default function OurVision() {
   return (
     <div>
-      <div className="grid grid-cols-2">
+      <div className="grid md:grid-cols-2">
         <div>
           <Image className="w-full h-auto" src={ourvision} alt="Transistor" />
         </div>
-        <div className="flex ps-[139px] items-end">
+        <div className="flex md:ps-[139px] items-end">
           <div className="max-w-[501px]">
             <p className="text-xs text-zinc-800 font-normal uppercase leading-[18px] tracking-tight">
               Our
