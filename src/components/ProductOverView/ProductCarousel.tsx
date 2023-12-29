@@ -66,7 +66,7 @@ export default function ProductCarousel({images = []}: {images?: string[]}) {
   return (
     <div>
       <Slider {...sliderSettings} className="product_slider z-0">
-        {images.map((item: any, i: any) => {
+        {images.map((item: string, i: any) => {
           return (
             <div key={i}>
               <div
@@ -74,10 +74,10 @@ export default function ProductCarousel({images = []}: {images?: string[]}) {
                 className="flex justify-center items-center md:pb-20 pb-10"
               >
                 <div className="relative">
-                  <Image
-                    src={`${process.env.NEXT_PUBLIC_API_ADDRESS}products/file/${item.media}`}
-                    width={200}
-                    height={200}
+                  <img
+                    src={`${process.env.NEXT_PUBLIC_API_ADDRESS}edition/file/${item}`}
+                    width={512}
+                    height={512}
                     alt="Edition carousel picture"
                     className=" z-0 px-5"
                   />

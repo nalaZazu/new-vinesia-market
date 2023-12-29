@@ -11,11 +11,13 @@ import { Currency } from "@/types/user.dto";
 import { CartOrderDto } from "@/types/dto/cartOrder.dto";
 
 export interface ProvideCart {
+    paymentFee: number
     cartItems: CartItem[]
     cartOrder: CartOrderDto | null
     addProductCartItem: (item: ProductOverview) => void
     addEditionCartItem: (item: EditionOverview) => void
     removeCartItem: (item: CartItem) => void
+    getOrder(id: number): Promise<CartOrderDto> 
     getCartTotal: () => number
     checkout: () => Promise<void>
 }
@@ -23,6 +25,7 @@ export interface ProvideCart {
 export function useProvideCart(): ProvideCart {
     const [cartItems, setCartItems] = useState<CartItem[]>([])
     const [cartOrder, setCartOrder] = useState<CartOrderDto | null>(null)
+    const [paymentFee, setPaymentFee] = useState(0)
     const { currency, profile, jwtToken } = useUser()
 
     function addProductCartItem(item: ProductOverview) {
@@ -76,6 +79,30 @@ export function useProvideCart(): ProvideCart {
         return sum
     }
 
+    async function getOrder(id: number): Promise<CartOrderDto> {
+        if (jwtToken === undefined || jwtToken.length === 0 || profile === null)
+            throw new Error('You need to be authorized to call this function')
+
+        try {
+            const verifyRes = await fetch(process.env.NEXT_PUBLIC_API_ADDRESS + 'cart/order/' + id, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'authorization': 'Bearer ' + jwtToken
+                }
+            })
+            if (!verifyRes.ok) throw new Error('Error fetching order')
+            const resp = await verifyRes.json() as CartOrderDto
+
+            return resp
+
+            console.log('Cart checkout', resp)
+        } catch (e) {
+            console.log('Failed to update address', e)
+            throw e
+        }
+    }
+
     async function checkout() {
         if (jwtToken === undefined || jwtToken.length === 0 || profile === null)
             throw new Error('You need to be authorized to call this function')
@@ -90,7 +117,10 @@ export function useProvideCart(): ProvideCart {
                 body: JSON.stringify({ items: cartItems, currency: currency }),
             })
             if (!verifyRes.ok) throw new Error('Error updating address')
-            const resp = await verifyRes.json()
+            const resp = await verifyRes.json() as CartOrderDto
+
+            setCartOrder(resp)
+            // profile.cartOrder = resp
 
             console.log('Cart checkout', resp)
         } catch (e) {
@@ -110,6 +140,7 @@ export function useProvideCart(): ProvideCart {
                 const item: CartItem = {
                     id: x.editionId ?? 0,
                     type: ItemType.Edition,
+                    name: x.name,
                     price: rec
                 }
                 return item
@@ -123,11 +154,13 @@ export function useProvideCart(): ProvideCart {
     }, [profile])
 
     return {
+        paymentFee,
         cartItems,
         cartOrder,
         addProductCartItem,
         addEditionCartItem,
         removeCartItem,
+        getOrder,
         getCartTotal,
         checkout
     }

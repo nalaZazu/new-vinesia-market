@@ -7,9 +7,10 @@ import CartInfo from "@/components/checkout/CheckoutAside";
 import { CartControls, CheckoutComponent } from "@/common/Components";
 import { useRouter } from "next/navigation";
 import { Elements } from "@stripe/react-stripe-js";
-import {loadStripe, Stripe} from '@stripe/stripe-js';
+import { loadStripe, Stripe } from '@stripe/stripe-js';
 import CheckoutForm from "@/components/checkout/CheckoutForm";
 import { useCart } from "@/context/cart";
+import Loading from "@/components/loading/loading";
 const PaymentMethod = () => {
   const { push } = useRouter()
 
@@ -24,8 +25,8 @@ const PaymentMethod = () => {
 
   useEffect(() => {
     if (cartOrder === null) return
-    if (cartOrder.metadata === undefined || cartOrder.metadata['stripe_secret'] === undefined )return 
-  
+    if (cartOrder.metadata === undefined || cartOrder.metadata['stripe_secret'] === undefined) return
+
     setClientSecret(cartOrder.metadata['stripe_secret'])
     // console.log('Client secret', cartOrder.metadata['stripe_secret'])
   }, [cartOrder])
@@ -45,23 +46,21 @@ const PaymentMethod = () => {
         <CheckoutComponent stage={2} />
 
         <div className="flex justify-between mt-12 ">
-
-          <div className="max-w-[501px] w-full">
-            {clientSecret !== null && stripePromise !== null && (
-              <>
-              <Elements stripe={stripePromise} options={{ clientSecret, }}>
-                <CheckoutForm />
-              </Elements>
-              </>
-            )}
+          <div className="max-w-[521px] w-full">
+            {clientSecret !== null && stripePromise !== null ? (
+              <div className="bg-white p-3">
+                <Elements stripe={stripePromise} options={{ clientSecret, }}>
+                  <CheckoutForm id={cartOrder?.id ?? -1} />
+                </Elements>
+              </div>
+            ) : <Loading />}
           </div>
-
-          <div className="max-w-[501px] md:block hidden">
+          <div className="max-w-[521px] md:block hidden">
             <CartInfo />
           </div>
         </div>
 
-        <CartControls prevStep={prevStep} />
+        {/* <CartControls prevStep={prevStep} /> */}
       </div>
     </React.Fragment>
   );

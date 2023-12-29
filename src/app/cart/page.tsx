@@ -6,10 +6,10 @@ import { useCart } from "@/context/cart";
 import { useUser } from "@/context/user";
 import { CartItem } from "@/types/dto/checkoutCart.dto";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function Cart() {
-  const { cartItems, getCartTotal } = useCart();
+  const { cartItems, cartOrder, getCartTotal } = useCart();
   const { getPriceText } = useUser();
 
   const {push} = useRouter()
@@ -20,6 +20,12 @@ export default function Cart() {
   function nextStep() {
     push('/checkout')
   }
+
+  useEffect(() => {
+    if (cartOrder !== null) {
+      push('/payment')
+    }
+  }, [push, cartOrder])
 
   const items = [
     {
