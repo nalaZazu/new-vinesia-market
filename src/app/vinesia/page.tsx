@@ -47,7 +47,7 @@ export default function Vinesia() {
         <div className="container mx-auto px-4">
           <div className="max-w-[877px] mx-auto flex-col justify-center items-center gap-12 flex">
             <div className="md:h-[236px] flex-col justify-start items-center gap-6 flex">
-              <h2 className="self-stretch text-center text-zinc-800 text-7xl font-normal leading-[84px]">
+              <h2 className="self-stretch md:text-center text-zinc-800 md:text-7xl text-4xl font-normal md:leading-[84px] mb-10 md:mb-0">
                 Pursue a profitable portfolio you are passionate about
               </h2>
               <p className="max-w-[699px] text-center text-neutral-600 text-base font-normal md:leading-snug">
@@ -97,7 +97,7 @@ export default function Vinesia() {
             </div>
           </div>
           <div className="grid md:grid-cols-2">
-            <div className=" pe-[139px]">
+            <div className="md:pe-[139px]">
               <Image src={vinesiaccordion} alt="" className="w-full" />
             </div>
             <div>
@@ -212,7 +212,7 @@ export default function Vinesia() {
       <div className="py-12 bg-slate-700 flex-col justify-center items-center gap-10 flex">
         <div className="flex-col justify-center items-center gap-4 flex">
           <div className="justify-center items-center gap-6 inline-flex">
-            <h4 className="text-right text-white text-[21px] font-light leading-[29px] tracking-wide">
+            <h4 className="md:text-right text-center text-white text-[21px] font-light leading-[29px] tracking-wide">
               Can’t find the answer? Contact us and we will help!
             </h4>
           </div>

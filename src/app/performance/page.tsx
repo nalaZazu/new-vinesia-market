@@ -119,10 +119,10 @@ export default function AssetsPerformance() {
         </div>
       </div>
 
-      <div className="py-40 bg-[#F7EFDF]">
+      <div className="md:py-40 py-20 bg-[#F7EFDF]">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 grid-cols-1">
-            <div className="pe-[139px]">
+          <div className="grid md:grid-cols-2">
+            <div className="md:pe-[139px]">
               <h2 className=" text-zinc-800 md:text-7xl font-normal  md:leading-[84px] md:tracking-[-1.44px] text-4xl leading-[42px] tracking-[-0.36px]">
                 The potential of wine investment in numbers
               </h2>
@@ -140,7 +140,7 @@ export default function AssetsPerformance() {
                 </span>
               </button>
             </div>
-            <div className="md:max-w-[608px] ">
+            <div className="md:max-w-[608px] mt-10 md:mt-0">
               <div className="bg-white p-4 h-[400px]">
                 <h5 className="text-zinc-800 text-lg font-semibold  leading-relaxed pb-3 tacking-[-0.36px]">
                   Performance of investment portfolio with fine wine in
