@@ -16,7 +16,7 @@ export default function Newsletter() {
               Be the first to know
             </h3>
             <p className="text-center text-orange-100 text-base font-normal  leading-snug pb-10">
-              Join Vinesia Newsletter and ... benefits
+            Join our newsletter and stay up to date with the latest releases and developments at Vinesia
             </p>
           </div>
           <div className="flex-col justify-start items-center gap-4 flex relative">

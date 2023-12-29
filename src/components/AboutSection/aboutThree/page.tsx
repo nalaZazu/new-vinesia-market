@@ -18,7 +18,7 @@ const AboutThree = () => {
             <h2 className="md:tracking-[-1.44px] md:text-center text-zinc-800 md:text-7xl font-normal   md:leading-[84px]    text-4xl leading-[44px] tracking-[-0.36px]">
               Start your investment journey today
             </h2>
-            <p className="mx-auto max-w-[634px] md:text-center text-neutral-600 text-base font-normal  leading-snug md:tracking-[-0.32px] py-6   tracking-[-0.32px]   ">
+            <p className="mx-auto max-w-[634px] md:text-justify text-neutral-600 text-base font-normal  leading-snug md:tracking-[-0.32px] py-6   tracking-[-0.32px]   ">
               {/* -0.32px */}
               We offer wine investment options suitable for every portfolio. We
               source exceptional wines directly from top wineries, and with
