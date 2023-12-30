@@ -89,7 +89,7 @@ const getTheme = (pathName: string, size: any) =>
 
 function initials(profile: User | null) {
   if (profile === null) {
-    return "AN"
+    return ''
   } else {
     let res = ''
     if (profile.firstName.length > 0) {
@@ -99,7 +99,7 @@ function initials(profile: User | null) {
       res += profile.lastName[0].toUpperCase()
     }
 
-    return res
+    if (res === '') return 'AN'
   }
 }
 
@@ -194,7 +194,7 @@ export default function Header() {
                   {profile && <> Hi {profile?.firstName}</>}
                 </div>
                 <div className="md:hidden">
-                  {initials(profile)}
+                  {initials(profile) === '' ? <UserIcon fill={theme.iconFill} /> : initials(profile)}
                 </div>
                 
               </div>
