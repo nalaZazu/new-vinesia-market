@@ -3,7 +3,7 @@ import { useUser } from "@/context/user";
 import React from "react";
 
 export default function CheckoutAside() {
-  const { cartItems, paymentFee, getCartTotal } = useCart()
+  const { cartItems, getCartTotal } = useCart()
   const { getPriceText, currency } = useUser()
 
   if (cartItems === undefined || cartItems.length === 0)
