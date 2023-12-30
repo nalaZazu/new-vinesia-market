@@ -31,10 +31,6 @@ import QASummary from "@/components/qasummary/page";
 import vinesia_how_works from "@/assets/images/vinesia_how_works.png"
 import KnowUsVideos from "@/components/KnowUsVideos/page";
 
-const title = "How Vinesia works";
-const descripition =
-  "Discover the seamless journey of wine investment with Vinesia in our 'How It Works' video.";
-
 export default function Vinesia() {
   return (
     <div className="absolute top-0 -z-10 left-0 right-0">

@@ -15,6 +15,7 @@ import VectorTwo from "@/assets/icons/VectorTwo.svg";
 import VectorOne from "@/assets/icons/VectorOne.svg";
 import Footer from "@/components/footer/page";
 import KnowUsVideos from "@/components/KnowUsVideos/page";
+import StaticBanner from "@/components/StaticBanner/page";
 
 const team = [
   {name: 'Emmanuel Bueb', position: 'CEO', photo: 'aboutus_emmanuel.png', linkedin: 'https://www.linkedin.com/in/emmanuelbueb/'},
@@ -39,7 +40,7 @@ export default function AboutUs() {
     <div className="absolute top-0 -z-10 left-0 right-0">
       <div>
         <div className="relative">
-          <AboutBanner />
+          <StaticBanner bgClass="aboutus-bg-image bg-[#4e261a]" small="We are" title="Wine enthusiasts" title2="by day" />
         </div>
       </div>
       <div className="py-20">

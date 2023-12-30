@@ -16,13 +16,14 @@ import { AccordionWineAbout } from "@/components/accordion/page";
 import Newsletter from "@/components/newsletter/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
 import QASummary from "@/components/qasummary/page";
+import StaticBanner from "@/components/StaticBanner/page";
 
 export default function wineryArt() {
   return (
     <div className="absolute top-0 -z-10 left-0 right-0">
       <div>
         <div className="relative">
-          <WineryBanner />
+          <StaticBanner bgClass="winery-bg-image bg-[#4e261a]" small="Wine and Art" title="Match mage" title2="in heaven" />
         </div>
       </div>
 

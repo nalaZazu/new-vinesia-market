@@ -23,6 +23,7 @@ import LeftPanel from "@/components/simulator/LeftPanel";
 import RightPanel from "@/components/simulator/RightPanel";
 import GraphPanel from "@/components/simulator/GraphPanel";
 import Link from "next/link";
+import StaticBanner from "@/components/StaticBanner/page";
 
 export default function AssetsPerformance() {
   const [visible, setVisible] = useState(false);
