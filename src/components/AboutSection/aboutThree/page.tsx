@@ -34,7 +34,7 @@ const AboutThree = () => {
             </Link>
           </div>
           {/* here is card defined  */}
-          <div className="max-w-[928px]  container pt-14 mx-auto flex  md:justify-center md:gap-8 gap-5  overflow-x-auto  md:grid md:grid-cols-3 grid-cols-1">
+          <div className="max-w-[928px]  container pt-14 mx-auto flex  md:justify-center md:gap-8 gap-5 overflow-x-auto  md:grid md:grid-cols-3 grid-cols-1">
             {CardAbout?.map((item: any, index: any) => {
               const { id, text, image, href } = item;
               return (
@@ -44,13 +44,13 @@ const AboutThree = () => {
                   <div
                     className="md:min-w-full  min-w-[80%] p-4 bg-white rounded overflow-hidden"
                   >
-                    <div className=" bg-white">
-                      <div className=" " key="index">
-                        <Image src={image} alt="image" className="" />
-                        <p className="text-zinc-800 text-lg font-semibold tracking-[-0.36px]  leading-relaxed  ">
+                    <div className="bg-white ">
+                      {/* <div className=" " key="index"> */}
+                        <Image src={image} alt="image" className="rounded" height={350}/>
+                        <p className="text-zinc-800 text-xs md:text-base font-semibold tracking-[-0.36px]  leading-relaxed ">
                           {text}
                         </p>
-                      </div>
+                      {/* </div> */}
                     </div>
                   </div>
                 </Link>

@@ -147,7 +147,7 @@ export default function AssetsPerformance() {
                   comparison to baseline
                 </h5>
                 <div className="bg-orange-100 h-64">
-                  <div className="pt-1">
+                  <div className="pt-1 cursor-pointer">
                     {/* <Appactivity /> */}
                     <Image src={simulatorPreview} alt="image" onClick={() => setVisible(true)} />
                   </div>

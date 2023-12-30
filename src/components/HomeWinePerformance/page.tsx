@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const items = [
   { name: 'Château Cheval Blanc 2019', photo: 'home_graph_cheval_blanc_bg.png', legend: 'Cheval Blanc' },
@@ -28,7 +28,7 @@ export default function HomeWinePerformance() {
           <div className="grid md:grid-cols-3 gap-5 border-b border-orange-700 border-opacity-20 w-full">
             {items.map((item, i) => {
               return (
-                <>
+                <React.Fragment key={i}>
                   <div
                     className={`${selectedTab === i ? "border-b-2" : ""
                       }  border-orange-700  pb-3  min-w-[180px]`}
@@ -40,7 +40,7 @@ export default function HomeWinePerformance() {
                       </p>
                     </button>
                   </div>
-                </>)
+                </React.Fragment>)
             })}
           </div>
         </div>
