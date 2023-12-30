@@ -14,22 +14,41 @@ import Loading from "@/components/loading/loading";
 const PaymentMethod = () => {
   const { push } = useRouter()
 
-  const { cartOrder } = useCart()
+  const { cartOrder, cancelOrder, isCartLoading } = useCart()
+  const [isCancelling, setIsCancelling] = useState(false)
 
-  function prevStep() {
+  async function prevStep() {
+    setIsCancelling(true) 
+
+    try {
+    //cancel order, wait for profile to refresh
+    await cancelOrder()
+
     push('/checkout')
+    } catch (e) {
+      setIsCancelling(false)
+    }
   }
 
   const [stripePromise, setStripePromise] = useState<Stripe | null>(null);
   const [clientSecret, setClientSecret] = useState<string | null>(null);
 
   useEffect(() => {
-    if (cartOrder === null) return
-    if (cartOrder.metadata === undefined || cartOrder.metadata['stripe_secret'] === undefined) return
+    if (isCartLoading) return
+    if (isCancelling) return
 
+    if (cartOrder === null) {
+      push('/invest')
+      return
+    }
+    if (cartOrder.metadata === undefined || cartOrder.metadata['stripe_secret'] === undefined){
+      push('/invest')
+      return
+    }
+    
     setClientSecret(cartOrder.metadata['stripe_secret'])
     // console.log('Client secret', cartOrder.metadata['stripe_secret'])
-  }, [cartOrder])
+  }, [cartOrder, isCartLoading, isCancelling, push])
 
   useEffect(() => {
     async function run() {
@@ -39,6 +58,14 @@ const PaymentMethod = () => {
     }
     run()
   }, [])
+
+  if (isCartLoading) {
+    return <Loading />
+  }
+
+  if (isCancelling) {
+    return <Loading text="Cancelling order ..." />
+  }
 
   return (
     <React.Fragment>
@@ -60,7 +87,7 @@ const PaymentMethod = () => {
           </div>
         </div>
 
-        {/* <CartControls prevStep={prevStep} /> */}
+        <CartControls prevStep={prevStep} />
       </div>
     </React.Fragment>
   );

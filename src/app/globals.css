@@ -363,7 +363,7 @@ button:disabled.stripe {
 }
 
 .newsletter_banner {
-  background-image: url("../assets/images/subscription_bg.png");
+  background-image: url("../assets/images/home_newsletter_bg.png");
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;

@@ -91,7 +91,7 @@ export default function Header() {
   const { profile } = useUser();
   const size = useWindowSize();
   const pathName = usePathname();
-  const router = useRouter();
+  const {push} = useRouter();
   // console.log("User Provider  Profile", profile);
   const [topSelected, setTopSelected] = useState(getTopMenuItem(pathName));
   const [selected, setSelected] = useState(getMenuItem(pathName));
@@ -108,9 +108,14 @@ export default function Header() {
     // setMenuItems(item.items)
   }
 
-  function navUser() {
-    router.push("/signup", { scroll: false });
-  }
+  const navUser = useCallback(() => {
+    if (profile === null || profile === undefined) {
+      push("/signup", { scroll: false });
+    } else {
+      push('/profile');
+    }
+
+  }, [profile, push])
 
   const Hr = () => <hr className={`hidden md:block ${theme.hr}`} />;
 
@@ -165,10 +170,11 @@ export default function Header() {
               </div>
               {/* user Icon */}
               <div
-                className={`cursor-pointer w-10 h-10 rounded-full border order-2 border-opacity-20 justify-center items-center gap-2.5 inline-flex ${theme.iconBorder}`}
+                className={`cursor-pointer h-10 p-[11px] rounded-full border order-2 border-opacity-20 justify-center items-center gap-2.5 inline-flex ${theme.iconBorder}`}
                 onClick={navUser}
               >
                 <UserIcon fill={theme.iconFill} />
+                {profile && <> Hi {profile?.firstName}</>}
               </div>
 
               <Link

@@ -47,8 +47,8 @@ function verify(legalAge: boolean, profile: User) {
 }
 
 export default function Checkout() {
-  const { isLoggedIn, isLoading, profile } = useUser()
-  const { cartItems, cartOrder, checkout } = useCart()
+  const { isLoggedIn, profile } = useUser()
+  const { cartItems, cartOrder, checkout, isCartLoading } = useCart()
   const { push } = useRouter()
   const [saving, setIsSaving] = useState(false)
   const [step, setStep] = useState(1);
@@ -60,7 +60,7 @@ export default function Checkout() {
   const [error, setError] = useState('')
 
   useEffect(() => {
-    if (isLoading) return
+    if (isCartLoading) return
 
     //User is not logged in, redirect to signup    
     if (!isLoggedIn) push(pagePaths.signup)
@@ -68,13 +68,19 @@ export default function Checkout() {
     //Cart is empty, redirect to invest page
     if (cartItems.length === 0) push(pagePaths.invest)
 
-  }, [isLoading, isLoggedIn, push, cartItems])
+  }, [isCartLoading, isLoggedIn, push, cartItems])
 
   useEffect(() => {
+    if (isCartLoading) return
+    if (cartItems.length > 0) return
+
     if (cartOrder !== null) {
       push('/payment')
+    } else {
+      push('/invest')
     }
-  }, [push, cartOrder])
+  }, [push, cartOrder, isCartLoading, cartItems])
+
 
   function setCheckbox(e: any) {
     if (e.target.name === 'legalAge') {
@@ -94,7 +100,7 @@ export default function Checkout() {
     return <Loading text="Checkout ..." />
   }
 
-  if (isLoading) {
+  if (isCartLoading) {
     return <Loading />
   }
 
