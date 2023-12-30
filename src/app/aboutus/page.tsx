@@ -24,7 +24,7 @@ const team = [
   {name: 'Ewa Brennan', position: 'Director of Marketing', photo: 'aboutus_ewa.webp', linkedin: 'https://www.linkedin.com/in/evabrennan/'},
   {name: 'Laurence Zimmer', position: 'Head of Sales', photo: 'aboutus_laurence.png', linkedin: 'https://www.linkedin.com/in/laurence-david-zimmer-366ab01a3/'},
   {name: 'Dariusz Drozdakiewicz', position: 'Project Manager', photo: 'aboutus_dariusz.png', linkedin: 'https://www.linkedin.com/in/dariusz-drozdakiewicz-098413267/'},
-  {name: 'Anish Gupta', position: 'Developer', photo: 'aboutus_anish.jpg', linkedin: 'https://www.linkedin.com/in/gupta-anish/'},
+  {name: 'Anish Gupta', position: 'Developer', photo: 'aboutus_anish.png', linkedin: 'https://www.linkedin.com/in/gupta-anish/'},
 ]
 
 const advisors = [

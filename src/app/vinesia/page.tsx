@@ -68,7 +68,7 @@ export default function Vinesia() {
         </div> */}
       </div>
 
-      <WineVideoBanner title={""} descripition={""} />
+      {/* <WineVideoBanner title={""} descripition={""} /> */}
       <div className="py-12 bg-red-900">
         <div className=" container mx-auto px-4">
           <Wanttoknow />

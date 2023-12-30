@@ -51,7 +51,7 @@ export default function AllEditions({
                 <div className="flex gap-2 items-center justify-between">
                   <p className="basis-1/4 text-stone-600 text-base font-normal  leading-snug">
                     Sort by
-                  </p>
+                  </p>P
                   <div className=" basis-3/4">
                     <DropDownButton />
                   </div>
