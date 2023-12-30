@@ -16,7 +16,7 @@ export default function TestimonialsSection() {
             </h1>
             <div>
               <p className="text-rose-200 text-base font-normal leading-snug">
-                “Buying shares in a company is risky: management can fail,
+                Buying shares in a company is risky: management can fail,
                 reputations can be damaged, and competitors can disrupt its
                 entire business model.
                 <br />

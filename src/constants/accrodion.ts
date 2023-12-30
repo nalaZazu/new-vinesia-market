@@ -11,7 +11,7 @@ export const AccordionAbout = [
     text: `Fine wine, like other tangible assets, tends to have a more predictable market value compared to volatile assets like stocks, bonds or crypto. The value of fine wines grows over time as it matures and becomes rarer, making it a relatively stable investment.
 
 This quote sums it up perfectly: "Buying shares in a company is risky: management can fail, reputations can be damaged and competitors can disrupt its entire business model. 
-Wine on the other hand is blissfully simple. Once bottled and reviewed by critics, you already know enough to significantly minimize your risk.`,
+Wine on the other hand is blissfully simple. Once bottled and reviewed by critics, you already know enough to significantly minimize your risk."`,
   },
   {
     id: 2,

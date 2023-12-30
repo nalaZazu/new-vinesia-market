@@ -224,7 +224,7 @@ export default function Vinesia() {
             </div>
           </div>
           <p className="text-center text-gray-400 text-base font-normal leading-snug">
-            We generally answer within 24 hours on business days
+            We generally answer within 1 business day, except during week-ends
           </p>
         </div>
       </div>
