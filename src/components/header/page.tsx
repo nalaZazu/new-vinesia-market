@@ -99,7 +99,9 @@ function initials(profile: User | null) {
       res += profile.lastName[0].toUpperCase()
     }
 
-    if (res === '') return 'AN'
+    if (res === '') res = 'AN'
+  
+    return res
   }
 }
 
