@@ -1,12 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
 const items = [
-  { name: 'Château Cheval Blanc 2019', photo: 'home_graph_cheval_blanc_bg.png', legend: 'Cheval Blanc' },
-  { name: 'Cristal Roederer 2014', photo: 'home_graph_cristal_bg.png', legend: 'Cristal Roederer' },
-  { name: 'Château Petrus 2013', photo: 'home_graph_petrus_bg.png', legend: 'Château Petrus' },
+  { name: 'Château Cheval Blanc 2019', photo: 'home_graph_cheval_blanc_bg.png', legend: 'Cheval Blanc', cover: 'home_cheval_blanc.png' },
+  { name: 'Cristal Roederer 2014', photo: 'home_graph_cristal_bg.png', legend: 'Cristal Roederer', cover: 'home_cristal.png' },
+  { name: 'Château Petrus 2013', photo: 'home_graph_petrus_bg.png', legend: 'Château Petrus', cover: 'home_petrus.png' },
 ]
 
 export default function HomeWinePerformance() {
@@ -54,12 +55,15 @@ export default function HomeWinePerformance() {
           <div className="w-full">
             <img src={'/assets/images/' + selectedItem.photo} width="100%" height={0} alt="performance chart" />
           </div>
-          <div className="w-full">
-            <div className="flex md:block md:ml-10 mt-4 md:mt-0 md:w-1/3 text-left justify-between">
+          <div className="w-full flex">
+            <div className="flex md:block mt-4 md:mt-0 md:ml-10 md:w-1/4 text-left justify-between">
               <div><span className="inline-block border-solid border-2 border-[#BF4D20] rounded mb-[3px] md:w-[40px] w-[6px]"></span> {selectedItem.legend}</div>
               <div><span className="inline-block border-solid border-2 border-[#BD936B] rounded mb-[3px] md:w-[40px] w-[6px]"></span> S&P 500</div>
               <div><span className="inline-block border-solid border-2 border-[#2F222B] rounded mb-[3px] md:w-[40px] w-[6px]"></span> Gold</div>
               <div><span className="inline-block border-solid border-2 border-[#7D302E] rounded mb-[3px] md:w-[40px] w-[6px]"></span> Rolex Index</div>
+            </div>
+            <div className="flex md:w-3/4 text-center items-center">
+              <Image src={'/assets/images/' + selectedItem.cover} className="max-h-[700px] m-auto" width={160} height={500} alt="performance chart" />
             </div>
           </div>
         </div>
