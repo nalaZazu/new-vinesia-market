@@ -68,7 +68,7 @@ const ProductTopSection = ({ data }: { data: ProductOverview }) => {
                       Art
                     </p>{" "}
                     <p className=" text-black text-xs font-normal uppercase leading-3 tracking-tight">
-                      Artist: Lola Designer Fun...
+                      Artist:
                     </p>
                   </button>
                 </div>
@@ -85,11 +85,13 @@ const ProductTopSection = ({ data }: { data: ProductOverview }) => {
                 <ArtCard />
               </>
             )}
+
+            <ShareCard data={data} />
           </div>
 
           {/* Mobile View */}
           <div className="block md:hidden">
-            <WineArtDisclosure />
+            <WineArtDisclosure wine={data.wine} art={data.art} />
           </div>
         </div>
       </section>

@@ -10,7 +10,7 @@ export default function AboutWinerySection({data}: {data?: any}) {
     <div className="py-40">
       <section className="pb-32">
         <div className="container mx-auto  max-w-[1248px]">
-          <div className="items-center grid grid-col-1  md:grid-cols-5 lg:grid-cols-5 mx-auto">
+          <div className="items-center grid grid-col-1 md:grid-cols-5 lg:grid-cols-5 mx-auto">
             <div className=" col-span-3">
               <span className=" text-stone-500 text-xs font-normal uppercase leading-3 tracking-tight">
                 About
@@ -19,7 +19,7 @@ export default function AboutWinerySection({data}: {data?: any}) {
                 {data?.name}
               </h2>
               <p>
-                <span className=" font-semibold">{data?.region.name},</span> {data?.region?.country?.name}
+                <span className="font-semibold">{data?.region.name},</span> {data?.region?.country?.name}
               </p>
               <p className="max-w-[608px] text-zinc-800 text-base font-normal leading-snug pt-2 pb-8 whitespace-pre-line">
                 {sections[0]}
@@ -32,7 +32,7 @@ export default function AboutWinerySection({data}: {data?: any}) {
               <Image
                 src={FranceMap}
                 alt="Picture of the author"
-                className="max-w-[479.87px] h-[476px] mx-auto"
+                className="w-full max-h-[476px] mx-auto"
               />
             </div>
           </div>
@@ -45,7 +45,7 @@ export default function AboutWinerySection({data}: {data?: any}) {
               <Image
                 src={Franceimage}
                 alt="Picture of the author"
-                className="max-w-[608px] h-[314px]"
+                className="w-full max-h-[314px]"
               />
             </div>
             <div className="col-span-2">

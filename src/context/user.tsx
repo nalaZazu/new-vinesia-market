@@ -89,6 +89,9 @@ export function useProvideUser(): ProvideUser {
     }
 
     function getPriceDifference(release: number, current: number) {
+        if (release === current) return 0 +'%'
+        if (current === 0) return 0+'%'
+
         const diff = (current - release) / release * 100
 
         return diff.toFixed(1) + '%'

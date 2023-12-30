@@ -20,7 +20,7 @@ export default function AllEditions({
     setIsOpen(!isOpen);
   };
   const [isOpen, setIsOpen] = useState(false);
-  const countryName = ["All", "Ask", "Bid"];
+  const filterName = ["All", "Ask", "Bid"];
 
   return (
     <>
@@ -33,21 +33,21 @@ export default function AllEditions({
               </h2>
             </div>
             {/* desktop DropDownButton*/}
-            <div className=" md:block hidden">
+            {/* <div className=" md:block hidden">
               <div className="flex gap-2 items-center">
                 <p className="basis-1/2 text-stone-600 text-base font-normal  leading-snug">
                   Sort by
                 </p>
                 <DropDownButton />
               </div>
-            </div>
+            </div> */}
           </div>
           {/* desktop DropDownButton */}
           <div className="flex justify-around mx-auto py-8">
             <div className="w-full  border-t-2  border-orange-700 border-opacity-20">
-              <TabButton data={countryName} />
+              {/* <TabButton data={filterName} /> */}
               {/* mobile DropDownButton*/}
-              <div className=" md:hidden block pt-6">
+              {/* <div className=" md:hidden block pt-6">
                 <div className="flex gap-2 items-center justify-between">
                   <p className="basis-1/4 text-stone-600 text-base font-normal  leading-snug">
                     Sort by
@@ -56,9 +56,9 @@ export default function AllEditions({
                     <DropDownButton />
                   </div>
                 </div>
-              </div>
+              </div> */}
 
-              <div className=" flex items-center md:pt-8 pt-4 gap-2 relative">
+              {/* <div className=" flex items-center md:pt-8 pt-4 gap-2 relative">
                 <input
                   checked={firstSale}
                   onChange={(e) => setFirstSale(e?.target?.checked ? 1 : 0)}
@@ -66,11 +66,10 @@ export default function AllEditions({
                   className="w-5 h-5"
                 />
 
-                {/* <Checkbox/> */}
                 <div className="text-neutral-900 text-sm font-normal tracking-tight">
                   First sale
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
