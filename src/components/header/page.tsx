@@ -11,6 +11,7 @@ import { MenuItem, menuBar as menuItems } from "@/constants/navigate";
 import { useWindowSize } from "@/hooks/useWindowSize";
 import { useCart } from "@/context/cart";
 import { useUser } from "@/context/user";
+import { User } from "@/types/user.dto";
 
 // const canela = local({
 //   src: "../../../public/fonts/canelatext-black.woff2",
@@ -86,12 +87,28 @@ const isDark = (pathName: string, size: any) => {
 const getTheme = (pathName: string, size: any) =>
   isDark(pathName, size) ? themes.Dark : themes.Light;
 
+function initials(profile: User | null) {
+  if (profile === null) {
+    return "AN"
+  } else {
+    let res = ''
+    if (profile.firstName.length > 0) {
+      res += profile.firstName[0].toUpperCase()
+    }
+    if (profile.lastName.length > 0) {
+      res += profile.lastName[0].toUpperCase()
+    }
+
+    return res
+  }
+}
+
 export default function Header() {
   const { cartItems } = useCart();
   const { profile } = useUser();
   const size = useWindowSize();
   const pathName = usePathname();
-  const {push} = useRouter();
+  const { push } = useRouter();
   // console.log("User Provider  Profile", profile);
   const [topSelected, setTopSelected] = useState(getTopMenuItem(pathName));
   const [selected, setSelected] = useState(getMenuItem(pathName));
@@ -133,9 +150,8 @@ export default function Header() {
                   onClick={() => select(x)}
                 >
                   <span
-                    className={`hidden md:block py-7 text-base tracking-tight border-0 ${
-                      theme.textClass
-                    } ${x.id === topSelected.id ? theme.selectedClass : ""}`}
+                    className={`hidden md:block py-7 text-base tracking-tight border-0 ${theme.textClass
+                      } ${x.id === topSelected.id ? theme.selectedClass : ""}`}
                   >
                     {x.name}
                   </span>
@@ -170,11 +186,17 @@ export default function Header() {
               </div>
               {/* user Icon */}
               <div
-                className={`cursor-pointer h-10 p-[11px] rounded-full border order-2 border-opacity-20 justify-center items-center gap-2.5 inline-flex ${theme.iconBorder}`}
+                className={`cursor-pointer h-10 p-[11px] min-w-[40px] rounded-full border order-2 border-opacity-20 justify-center items-center gap-2.5 inline-flex ${theme.iconBorder}`}
                 onClick={navUser}
               >
-                <UserIcon fill={theme.iconFill} />
-                {profile && <> Hi {profile?.firstName}</>}
+                <div className="hidden md:block">
+                  <UserIcon fill={theme.iconFill} />
+                  {profile && <> Hi {profile?.firstName}</>}
+                </div>
+                <div className="md:hidden">
+                  {initials(profile)}
+                </div>
+                
               </div>
 
               <Link
@@ -202,11 +224,10 @@ export default function Header() {
                 return (
                   <Link href={href || "/"} key={id}>
                     <li
-                      className={`py-4 ${
-                        selected === item
+                      className={`py-4 ${selected === item
                           ? theme.selectedClass + " " + theme.activeTextClass
                           : theme.textClass
-                      }`}
+                        }`}
                     >
                       {name}
                     </li>
