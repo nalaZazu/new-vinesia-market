@@ -26,8 +26,22 @@ export const getCurrencyValueText = (priceValue?: CurrencyValue) => {
   const priceDec = priceValue.price / 100
 
   return priceDec.toLocaleString("en-US", {
-      style: "currency",
-      currency: priceValue.currency,
-      minimumFractionDigits: 0
+    style: "currency",
+    currency: priceValue.currency,
+    minimumFractionDigits: 0
   });
 }
+
+export const fetcherWithToken = async (args: [string, string]) => {
+  const [url, token] = args
+
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return fetch(url, options).then((res) => res.json());
+};

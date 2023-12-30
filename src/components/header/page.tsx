@@ -213,25 +213,25 @@ export default function Header() {
 
         {pathName === "/" ? (
           <></>
-        ) : (
-          <div className="md:hidden block py-4 px-6">
-            <form>
-              <div className="relative">
-                <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                  <SearchIcon
-                    fill={isDark(pathName, size) ? "white" : "#3a2824"}
-                  />
-                </div>
+        ) : (<></>
+          // <div className="md:hidden block py-4 px-6">
+          //   <form>
+          //     <div className="relative">
+          //       <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+          //         <SearchIcon
+          //           fill={isDark(pathName, size) ? "white" : "#3a2824"}
+          //         />
+          //       </div>
 
-                <input
-                  type="search"
-                  id="default-search"
-                  className={`block w-full p-4 ps-10 text-sm  outline-none   focus:ring-stone-500 focus:border-stone-500   text-stone-500    rounded-full border  bg-transparent border-opacity-20 ${theme?.border} `}
-                  placeholder="Search "
-                />
-              </div>
-            </form>
-          </div>
+          //       <input
+          //         type="search"
+          //         id="default-search"
+          //         className={`block w-full p-4 ps-10 text-sm  outline-none   focus:ring-stone-500 focus:border-stone-500   text-stone-500    rounded-full border  bg-transparent border-opacity-20 ${theme?.border} `}
+          //         placeholder="Search "
+          //       />
+          //     </div>
+          //   </form>
+          // </div>
         )}
         <Hr />
         <hr className={`block md:hidden border-opacity-20 ${theme.border}`} />

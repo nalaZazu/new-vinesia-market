@@ -35,7 +35,8 @@ export default function CartCard({ item }: { item: CartItem }) {
                 className="text-orange-700  border-b border-orange-700 border-opacity-20 uppercase"
                 onClick={() => removeCartItem(item)}
               >
-                Remove
+                <span className="hidden md:block">Remove</span>
+                <span className="md:hidden">X</span>
               </button>
 
               <p>{getPriceText(item.price[currency] ?? 0)}</p>

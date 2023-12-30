@@ -16,12 +16,13 @@ import { useRouter } from "next/navigation";
 import ReactSlider from "react-slider";
 import { Controller, useFormContext } from "react-hook-form";
 import { findInputError, isFormInvalid } from "@/utils/form";
-export function Checkbox({ label, name }: { label?: any; name?: any }) {
+
+export function Checkbox({ label, name, value, setValue }: { label?: any; name?: any, value?: boolean, setValue?: any }) {
   return (
     <>
       <div className="flex gap-2">
         <label className="custom_checkbox">
-          <input type="checkbox" id="default-checkbox" />
+          <input type="checkbox" name={name} checked={value} onChange={setValue} />
           <span className="checkmark"></span>
         </label>
         {label && (
