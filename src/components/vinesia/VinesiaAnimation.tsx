@@ -35,8 +35,8 @@ export default function VinesiaAnimation() {
         <div className="flex justify-between relative z-50 px-24 ">
           {isVisible && (
             <>
-              <div className="flex justify-center flex-col items-center gap-6 -mb-[140px]">
-                <div className="max-w-[300px] fade-in-box p-6 bg-orange-50 rounded flex-col justify-start items-start gap-2 inline-flex">
+              <div className="flex justify-center flex-col items-center gap-6 -mb-[140px] fade-in1">
+                <div className="max-w-[300px] p-6 bg-orange-50 rounded flex-col justify-start items-start gap-2 inline-flex">
                   <p className="self-stretch text-zinc-800 text-lg font-semibold leading-relaxed">
                     Browse wine selection
                   </p>
@@ -45,15 +45,15 @@ export default function VinesiaAnimation() {
                     free to reach out for investment guidance.
                   </p>
                 </div>
-                <div className="w-16 h-16 fade-in bg-slate-700 rounded-full flex justify-center items-center vinesia-icon-animation">
+                <div className="w-16 h-16 bg-slate-700 rounded-full flex justify-center items-center vinesia-icon-animation">
                   <p className=" text-center text-white text-lg font-semibold leading-relaxed">
                     01
                   </p>
                 </div>
               </div>
 
-              <div className="flex justify-center flex-col items-center gap-6 -mb-[160px]">
-                <div className="max-w-[300px] fade-in-box p-6 bg-orange-50 rounded flex-col justify-start items-start gap-2 inline-flex">
+              <div className="flex justify-center flex-col items-center gap-6 -mb-[160px]  fade-in2">
+                <div className="max-w-[300px] p-6 bg-orange-50 rounded flex-col justify-start items-start gap-2 inline-flex">
                   <p className="self-stretch text-zinc-800 text-lg font-semibold leading-relaxed">
                     Invest in assets
                   </p>
@@ -64,15 +64,15 @@ export default function VinesiaAnimation() {
                     top up your wallet first.
                   </p>
                 </div>
-                <div className="w-16 h-16 fade-in bg-slate-700 rounded-full flex justify-center items-center vinesia-icon-animation">
+                <div className="w-16 h-16 bg-slate-700 rounded-full flex justify-center items-center vinesia-icon-animation">
                   <p className=" text-center text-white text-lg font-semibold leading-relaxed">
                     03
                   </p>
                 </div>
               </div>
 
-              <div className="flex justify-center flex-col items-center gap-6 -mb-[70px]">
-                <div className="max-w-[300px] fade-in-box p-6 bg-orange-50 rounded flex-col justify-start items-start gap-2 inline-flex">
+              <div className="flex justify-center flex-col items-center gap-6 -mb-[70px]  fade-in3">
+                <div className="max-w-[300px] p-6 bg-orange-50 rounded flex-col justify-start items-start gap-2 inline-flex">
                   <p className="self-stretch text-zinc-800 text-lg font-semibold leading-relaxed">
                     Sell your assets
                   </p>
@@ -83,7 +83,7 @@ export default function VinesiaAnimation() {
                     much to sell for.
                   </p>
                 </div>
-                <div className="w-16 h-16 fade-in bg-slate-700 rounded-full flex justify-center items-center vinesia-icon-animation">
+                <div className="w-16 h-16 bg-slate-700 rounded-full flex justify-center items-center vinesia-icon-animation">
                   <p className=" text-center text-white text-lg font-semibold leading-relaxed">
                     05
                   </p>
@@ -127,13 +127,13 @@ export default function VinesiaAnimation() {
         <div className="flex justify-around relative z-50 px-40">
           {isVisible && (
             <>
-              <div className="flex justify-center flex-col flex-wrap items-center gap-6 -mt-[60px]">
-                <div className="w-16 h-16 fade-in bg-slate-700 rounded-full flex justify-center items-center vinesia-icon-animation">
+              <div className="flex justify-center flex-col flex-wrap items-center gap-6 -mt-[60px]  fade-in4">
+                <div className="w-16 h-16 bg-slate-700 rounded-full flex justify-center items-center vinesia-icon-animation">
                   <p className=" text-center text-white text-lg font-semibold leading-relaxed">
                     02
                   </p>
                 </div>
-                <div className="max-w-[300px] fade-in-box p-6 bg-orange-50 rounded flex-col justify-start items-start gap-2 inline-flex">
+                <div className="max-w-[300px] p-6 bg-orange-50 rounded flex-col justify-start items-start gap-2 inline-flex">
                   <p className="self-stretch text-zinc-800 text-lg font-semibold leading-relaxed">
                     Create your profile
                   </p>
@@ -145,13 +145,13 @@ export default function VinesiaAnimation() {
                 </div>
               </div>
 
-              <div className="flex justify-center flex-col items-center gap-6 -mt-[190px]">
-                <div className="w-16 h-16 fade-in bg-slate-700 rounded-full flex justify-center items-center vinesia-icon-animation">
+              <div className="flex justify-center flex-col items-center gap-6 -mt-[190px] fade-in5">
+                <div className="w-16 h-16 bg-slate-700 rounded-full flex justify-center items-center vinesia-icon-animation">
                   <p className=" text-center text-white text-lg font-semibold leading-relaxed">
                     04
                   </p>
                 </div>
-                <div className="max-w-[300px] fade-in-box p-6 bg-orange-50 rounded flex-col justify-start items-start gap-2 inline-flex">
+                <div className="max-w-[300px] p-6 bg-orange-50 rounded flex-col justify-start items-start gap-2 inline-flex">
                   <p className="self-stretch text-zinc-800 text-lg font-semibold leading-relaxed">
                     Track your portfolio
                   </p>
