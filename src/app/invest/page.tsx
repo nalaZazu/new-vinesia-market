@@ -9,6 +9,7 @@ import Product from "@/components/products/page";
 import useSWR from "swr";
 
 import FilterSection from "@/components/FilterSection/page";
+import VerticalBreadCrumb from "@/common/verticalBreadcrumb/page";
 
 const Invest = () => {
   const [selectedFilters, setSelectedFilters] = useState([]);
@@ -40,7 +41,7 @@ const Invest = () => {
   useEffect(() => {
     mutate();
   }, [selectedFilters, priceRange, mutate]);
-
+const breadCrumbData = ['vinesia marketplace','invest']
   return (
     <div>
       {/* {`${process.env.NEXT_PUBLIC_API_ADDRESS}products/search/`} */}
@@ -49,9 +50,15 @@ const Invest = () => {
       <div>
         {/* <Headersecond /> */}
         <div className=" pt-6 container mx-auto px-3">
-          <InvestBread />
-          <div className=" mt-9 hidden md:block">
+          <span className="block md:hidden">
+            <InvestBread baseName='vinesia marketplace' />
+          </span>
+          <div className=" mt-9 hidden md:block relative">
             <h2 className=" text-primary text-[144px] font-normal ">Invest</h2>
+            <span className=" absolute -rotate-90 left-0 -translate-x-[60%] md:block hidden">
+              <InvestBread baseName='vinesia marketplace' />
+            </span>
+            {/* <VerticalBreadCrumb /> */}
           </div>
           {/* for mobileView */}
           <div className="mt-9 md:hidden block">

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Newsletter from "@/components/newsletter/page";
 import Footer from "@/components/footer/page";
 import VerticalBreadCrumb from "@/common/verticalBreadcrumb/page";
@@ -7,12 +7,15 @@ import Product from "@/components/products/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
 import useSWR from "swr";
 import FilterSection from "@/components/FilterSection/page";
+import InvestBread from "@/common/InvestBread";
+import { log } from "console";
 
 export default function WineryOwner({ params }: { params: any }) {
   const { slug } = params;
 
   const [selectedFilters, setSelectedFilters] = useState<any>([]);
   const [priceRange, setPriceRange] = useState([]);
+  const [breadSize, setBreadSize] = useState<any>({});
   const fetcher = async (url: string, payload?: string) => {
     const options = {
       method: "POST",
@@ -46,11 +49,43 @@ export default function WineryOwner({ params }: { params: any }) {
       setSelectedFilters([decodeURIComponent(slug)]);
     }
   }, [slug]);
+  const divRef = useRef<any>(null);
+
+  // Function to measure the div
+  useEffect(() => {
+    const measureDiv = () => {
+      if (divRef.current) {
+        const width = divRef.current.offsetWidth;
+        const height = divRef.current.offsetHeight;
+        console.log("Width:", width, "Height:", height);
+        // const currentTransform = divRef.current.style;
+        // console.log("Current Transform ", currentTransform);
+        console.log("Div Ref ", divRef);
+
+        divRef.current.style.transform = ` translate(-40%, ${
+          width / 2
+        }px) rotate(-90deg)`;
+        // setBreadSize({ width: width, height: height });
+      }
+    };
+    // if (divRef.current) {
+    measureDiv();
+    // }
+  }, []);
   return (
     <div>
       <div className="w-full md:h-[744px] h-[620px] bg-no-repeat bg-cover bg-center bg-[url('https://i.ibb.co/hLLYBjr/winery-bg.png')] relative">
         {/* BreadCrumb start */}
-        <VerticalBreadCrumb />
+        {/* <VerticalBreadCrumb /> */}
+        <div className="container px-4 mx-auto relative w-full">
+          <span ref={divRef} className={` absolute left-0  md:block hidden `}>
+            {/* translate-y-[${breadSize?.width / 2}px]  */}
+            <InvestBread baseName="vinesia marketplace" />
+          </span>
+        </div>
+        <span className="block md:hidden">
+          <InvestBread baseName="vinesia marketplace" />
+        </span>
         {/* BreadCrumb end */}
         <div className="flex justify-center items-center absolute left-0 right-0 -bottom-28 ">
           <div className=" bg-red-900 rounded-full w-[260px] h-[260px] flex items-center">
