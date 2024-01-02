@@ -99,7 +99,7 @@ const BlogList = () => {
             </div>
             {/* here is tabs section with slider  */}
             <div className="max-w-full  border-t-2  border-b-2  border-orange-700 border-opacity-20">
-              <TabButton data={countryName}  className = "flex-wrap" />
+              <TabButton data={countryName}  />
             </div>
             {/* here is slider section */}
             <BlogListSlider />

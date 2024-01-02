@@ -20,13 +20,13 @@ export default function TabButton({
   return (
     <div className="">
       <div
-        className={`flex   border-b-2 border-orange-700 border-opacity-20  ${className}`}
+        className={`flex   border-b-2 border-orange-700 border-opacity-20 flex-wrap md:flex-nowrap`}
       >
         {data?.map((item: any, i: any) => {
           return (
             <div
               key={i}
-              className={` border-orange-700  text-center w-full ${
+              className={` border-orange-700  text-center w-full min-w-96 md:min-w-fit ${
                 selectedTab == i && "border-b-4 "
               } `}
             >
