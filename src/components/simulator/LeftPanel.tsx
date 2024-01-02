@@ -133,9 +133,9 @@ export default function LeftPanel() {
   return (
     <Flex style={{fontFamily:'Canela', width:"20%", height:"100%"}} gap="1rem" justify='flex-start' flex="auto" vertical>
         <div style={{height:"10vh"}}></div>
-        <h3 style={{height:"10%", fontSize:"clamp(0.5em, 1.2vw, 1.2em)", fontWeight:"bold"}}>Build your own portfolio below and see what the performance would have been over a specific time period</h3>
+        <h3 style={{ width:"100%",fontSize:"clamp(0.5em, 1.2vw, 1.2em)", fontWeight:"bold"}}>Build your own portfolio below and see what the performance would have been over a specific time period</h3>
         <Flex align='baseline' justify='flex-start' style={{ height:"5%"}}>
-            <h2 style={{fontWeight:"normal", width:"12.6vw", fontSize: "clamp(1.25rem, 1.5vw, 1.5rem)"}}>Your Portfolio</h2>
+            <h2 className='text-xs md:text-xs lg:text-lg' style={{fontWeight:"normal", width:"12.6vw"}}>Your Portfolio</h2>
             <Button type="text" style={{fontFamily: "Canela",borderColor:"#BF4D20", width:"5.4vw", textAlign:"center"}} icon={<UndoOutlined style={{fontSize:".80vw", margin:"0 -0.1vw 0 -0.2vw"}} rotate={180}/>} onClick={() => resetValuesToCurrentBaseline()}>Reset</Button>
         </Flex>
         <div style={{height:"30%", width:"100%"}}>

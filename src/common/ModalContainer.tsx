@@ -58,7 +58,7 @@ export default function ModalContainer({
                 leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
               >
                 <Dialog.Panel
-                  className={`relative max-w-[1244px] w-full mx-auto lg:h-auto md:h-[600px] sm:h-full transform overflow-hidden bg-[#F3E8CF] text-left shadow-xl transition-all ${modalClass} `}
+                  className={`relative max-w-[1244px] w-full mx-auto md:h-[600px] sm:h-full transform overflow-hidden bg-[#F3E8CF] text-left shadow-xl transition-all ${modalClass} `}
                 >
                   {title ? (
                     <div className="flex justify-between p-4">

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import wineBottle from "@/assets/images/bolltewine.png";
 import wineBottles from "@/assets/images/wineImageBottle.png";
 import investment from "@/assets/images/investment.png";
@@ -21,21 +21,37 @@ import RightPanel from "@/components/simulator/RightPanel";
 import simulatorPreview from "@/assets/images/simulatorPreview.png";
 import { useMobileScreen } from "@/hooks/useMobileScreen";
 import ModalContainerSim from "@/common/ModalContainerSim";
+var orientation = require('o9n').orientation;
+
 const AboutTwo = () => {
-  const isMobile = useMobileScreen();
+  const simRef = useRef(null);
+  const isMobile = false
   const [visible, setVisible] = useState(false);
   const [step, setStep] = useState(1);
 
   const goFullScreen = () => {
     console.log('go full screen')
-    setVisible(true)
-    if(document.querySelector(".rotation-class")){
-      document.querySelector(".rotation-class")?.requestFullscreen();
-
-      (screen.orientation as any).lock("landscape-primary").then(() => {
-        console.log('locked')
-      })
-    } 
+    setVisible(true);
+    orientation.lock("portrait").then(() => {
+      console.log('locked')
+    })
+    // console.log(simRef)
+    // if(simRef.current){
+    //   console.log('element found')
+    //   // @ts-ignore
+    //   if(simRef.current.requestFullscreen){
+    //     console.log('request full screen')
+    //     // @ts-ignore
+    //     simRef.current.requestFullscreen();
+    // }
+    // (screen.orientation as any).lock("portrait").then(() => {
+    //   console.log('locked')
+    // })
+    // console.log(document.querySelector("#simulatorP"))
+    // if(document.querySelector("#simulatorP")){
+      // console.log('element found')
+      // document.querySelector("#simulatorP")?.requestFullscreen();
+    // } 
   }
   return (
     <React.Fragment>
@@ -44,31 +60,33 @@ const AboutTwo = () => {
       <ModalContainerSim
       visible={visible}
       setVisible={setVisible}
+      modalClass="max-h-[100vh] max-w-[100vw] rounded-md"
+      title="Mobile"
       isCloseBtn={true}>
-        <div>
+        <div className="md:h-full lg:h-full">
           <GraphProvider>
-            <Flex gap="small" vertical={false} >
+            <div className="flex flex-col-reverse justify-normal md:h-full lg:h-full" >
               <LeftPanel />
               <GraphPanel />
               <RightPanel />
-            </Flex>
+            </div>
           </GraphProvider>
         </div>  
       </ModalContainerSim>) :
         (<ModalContainer
         visible={visible}
         setVisible={setVisible}
-        modalClass="max-h-full max-w-full sm:max-h-[95vh] sm:max-w-[90vw] rounded-md pt-4 pb-4 px-12"
+        modalClass="max-h-full max-w-full sm:max-h-[95vh] sm:max-w-[90vw] rounded-md pt-4 pb-4 px-4 md:h-[95vh] lg:h-[95vh]"
         backgroundClass="bg-zinc-800 bg-opacity-95"
         isCloseBtn={true}
       >
-        <div>
+        <div className="md:h-full lg:h-full">
           <GraphProvider>
-            <Flex gap="small" vertical={false} >
+            <div className="flex flex-row justify-normal md:h-full lg:h-full">
               <LeftPanel />
               <GraphPanel />
               <RightPanel />
-            </Flex>
+            </div>
           </GraphProvider>
         </div>
       </ModalContainer>
