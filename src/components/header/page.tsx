@@ -11,6 +11,7 @@ import { UserIcon } from "@/assets/icons/Icons";
 import { MenuItem, menuBar as menuItems } from "@/constants/navigate";
 import { useWindowSize } from "@/hooks/useWindowSize";
 import { useCart } from "@/context/cart";
+import { useUser } from "@/context/user";
 
 // const canela = local({
 //   src: "../../../public/fonts/canelatext-black.woff2",
@@ -88,11 +89,11 @@ const getTheme = (pathName: string, size: any) =>
 
 export default function Header() {
   const { cartItems } = useCart();
-
+  const { profile } = useUser();
   const size = useWindowSize();
   const pathName = usePathname();
   const router = useRouter();
-
+  console.log("User Provider  Profile", profile);
   const [topSelected, setTopSelected] = useState(getTopMenuItem(pathName));
   const [selected, setSelected] = useState(getMenuItem(pathName));
   const [theme, setTheme] = useState(getTheme(pathName, size));
@@ -127,13 +128,13 @@ export default function Header() {
                   key={x.id}
                   onClick={() => select(x)}
                 >
-                    <span
-                      className={`hidden md:block py-7 text-base tracking-tight border-0 ${
-                        theme.textClass
-                      } ${x.id === topSelected.id ? theme.selectedClass : ""}`}
-                    >
-                      {x.name}
-                    </span>
+                  <span
+                    className={`hidden md:block py-7 text-base tracking-tight border-0 ${
+                      theme.textClass
+                    } ${x.id === topSelected.id ? theme.selectedClass : ""}`}
+                  >
+                    {x.name}
+                  </span>
                 </div>
               ))}
             </div>
@@ -211,8 +212,8 @@ export default function Header() {
           </div>
         </nav>
 
-        {pathName === "/" ? (<></>
-
+        {pathName === "/" ? (
+          <></>
         ) : (
           <div className="md:hidden block py-4 px-6">
             <form>

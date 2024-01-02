@@ -94,12 +94,12 @@ const BlogList = () => {
               </div>
             </div>
             {/* here is waving image  */}
-            <div className="underline decoration-wavy md:py-16 py-8 text-center flex justify-center">
+            <div className="underline decoration-wavy md:py-16 py-8 text-center flex justify-center ">
               <Image src={lineregion} alt="image" />
             </div>
             {/* here is tabs section with slider  */}
             <div className="max-w-full  border-t-2  border-b-2  border-orange-700 border-opacity-20">
-              <TabButton data={countryName} />
+              <TabButton data={countryName}  className = "flex-wrap" />
             </div>
             {/* here is slider section */}
             <BlogListSlider />

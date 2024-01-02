@@ -56,7 +56,7 @@ export default function Vinesia() {
             </h3>
           </div>
         </div>
-        <div className="">
+        <div>
           <VinesiaAnimation />
           {/* <Testing /> */}
         </div>
@@ -90,7 +90,7 @@ export default function Vinesia() {
               </span>
             </div>
           </div>
-          <div className="grid grid-cols-2">
+          <div className="grid md:grid-cols-2 grid-cols-1">
             <div className=" pe-[139px]">
               <Image src={vinesiaccordion} alt="" className="w-full" />
             </div>
@@ -115,7 +115,7 @@ export default function Vinesia() {
       {/* About our wine expertise + experts start */}
       <div className="py-40 bg-[#F7EFDF]">
         <div className="max-w-[1166px] mx-auto px-4">
-          <div className="grid grid-cols-2 gap-[139px]">
+          <div className="grid md:grid-cols-2 grid-cols-1 gap-[139px]">
             <div>
               <h3 className="max-w-[501px] text-zinc-800 text-4xl font-light leading-[44px] pb-8">
                 About our wine expertise + experts
@@ -219,7 +219,7 @@ export default function Vinesia() {
 
       <div className="py-40 bg-[#F7EFDF]">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 grid-cols-1 gap-8">
             <div className="max-w-[498px]">
               <h3 className=" text-zinc-800 text-4xl font-light leading-[44px]">
                 You might have questions, we definitely have answers.
