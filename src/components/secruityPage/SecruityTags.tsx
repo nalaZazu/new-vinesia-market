@@ -6,9 +6,9 @@ import ble from "@/assets/icons/ble.svg";
 export default function SecruityTags() {
   return (
     <div>
-      <div className="grid grid-cols-3 h-[1000.40px] bg-no-repeat bg-contain bg-center bg-[url('https://i.ibb.co/gyrPZn1/securitytagbanner.png')]">
+      <div className="grid md:grid-cols-3 grid-cols-1 h-[1000.40px] bg-no-repeat bg-contain bg-center md:bg-[url('https://i.ibb.co/gyrPZn1/securitytagbanner.png')]">
         <div className="pb-16 flex flex-col justify-end">
-          <div className=" p-10 bg-orange-50 rounded-lg shadow gap-5 mb-[140px]">
+          <div className=" p-10 bg-orange-50 rounded-lg shadow gap-5 md:mb-[140px] mb-14">
             <div className="flex justify-between pb-5">
               <p className="text-zinc-800 text-lg font-semibold leading-relaxed">
                 NFC tag
@@ -24,6 +24,7 @@ export default function SecruityTags() {
               tampered with.
             </p>
           </div>
+
           <div className=" p-10 bg-orange-50 rounded-lg shadow gap-5">
             <div className="flex justify-between pb-5">
               <p className="text-zinc-800 text-lg font-semibold leading-relaxed">
@@ -42,7 +43,9 @@ export default function SecruityTags() {
             </p>
           </div>
         </div>
-        <div className="relative">
+
+        {/* button */}
+        <div className="relative md:block hidden">
           <div className="absolute flex justify-center top-[240px] left-60 right-0">
             <div className="w-[99px] h-[99px] bg-red-700 rounded-full flex justify-end flex-col items-center pb-3 relative">
               <p className="text-white text-lg font-semibold leading-relaxed">
@@ -67,13 +70,15 @@ export default function SecruityTags() {
         </div>
 
         <div className="flex flex-col justify-center">
-          <div className="w-[99px] mx-auto h-[99px] bg-sky-500 rounded-full flex justify-center flex-col items-center mb-[100px]">
-            <p className="text-center text-white text-lg font-semibold leading-relaxed">
-              IOT
-            </p>
-            <p className="text-center text-white text-xs font-normal uppercase leading-[18px] tracking-tight">
-              Sensors
-            </p>
+          <div className=" hidden md:block">
+            <div className="w-[99px] mx-auto h-[99px] bg-sky-500 rounded-full flex justify-center flex-col items-center mb-[100px]">
+              <p className="text-center text-white text-lg font-semibold leading-relaxed">
+                IOT
+              </p>
+              <p className="text-center text-white text-xs font-normal uppercase leading-[18px] tracking-tight">
+                Sensors
+              </p>
+            </div>
           </div>
 
           <div className=" p-10 bg-orange-50 rounded-lg shadow gap-5">

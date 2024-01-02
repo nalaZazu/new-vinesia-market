@@ -2,7 +2,6 @@ import Image from "next/image";
 import React from "react";
 import { DecentrIcon, DocIcon, DocVerifyIcon } from "@/assets/icons/Icons";
 
-
 export default function Benifits() {
   return (
     <div>

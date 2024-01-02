@@ -6,8 +6,8 @@ import { LinkDinIcon } from "@/assets/icons/Icons";
 export default function OutTeam() {
   return (
     <div>
-      <Image src={Aboutteam} alt="" className="pb-6" />
-      <div className="flex justify-between items-start">
+      <Image src={Aboutteam} alt="" className="pb-6 w-full" />
+      <div className="flex justify-between">
         <div>
           <p className="text-zinc-800 text-lg font-semibold leading-relaxed">
             Leslie Alexander

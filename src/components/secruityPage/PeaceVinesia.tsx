@@ -11,13 +11,13 @@ export default function PeaceVinesia() {
     <div>
       {" "}
       <div className="grid grid-cols-12 gap-10">
-        <div className="col-span-5">
-          <div className="flex-col justify-start items-start gap-10 inline-flex">
-            <h3 className=" text-zinc-800 text-4xl font-light leading-[44px] tracking-[-0.35px]">
+        <div className="md:col-span-5 col-span-12">
+          <div className="flex flex-wrap flex-col gap-10">
+            <h3 className="max-w-full text-zinc-800 text-4xl font-light leading-[44px] tracking-[-0.35px]">
               You don’t need to be a blockchain expert to take advantage of the
               distinctive features it offers.
             </h3>
-            <p className="text-neutral-600 text-base font-normal leading-snug">
+            <p className="max-w-full text-neutral-600 text-base font-normal leading-snug">
               Using blockchain is how Vinesia can offer a unique shift from a
               system of trust to a system of truth.
               <br />
@@ -28,7 +28,7 @@ export default function PeaceVinesia() {
             </p>
           </div>
         </div>
-        <div className="col-span-7">
+        <div className="md:col-span-7 col-span-12">
           <div className="flex justify-center">
             <p className="px-8 py-4 text-center bg-red-900 rounded-[54px] border border-red-900 text-white text-lg font-semibold leading-relaxed">
               Peace of mind
@@ -39,7 +39,7 @@ export default function PeaceVinesia() {
             <Image src={pathshape3} alt="" className="absolute bottom-0 " />
             <Image src={pathshape2} alt="" />
           </div>
-          <div className="flex gap-6 pt-2 justify-center">
+          <div className="flex flex-wrap gap-6 pt-2 justify-center">
             <p className="px-6 py-4 rounded-[54px] text-center text-zinc-800 border border-red-900 text-base font-normal leading-snug">
               Proof of ownership
             </p>
@@ -53,8 +53,8 @@ export default function PeaceVinesia() {
         </div>
       </div>
       {/* Learn more about  */}
-      <div className="grid grid-cols-2 gap-10 pt-40">
-        <div className="w-[499px]">
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-10 pt-40">
+        <div className="max-w-[499px]">
           <div className="flex-col justify-start items-start gap-10 inline-flex">
             <h3 className=" text-zinc-800 text-4xl font-light leading-[44px] tracking-[-0.35px]">
               Learn more about Vinesia certificates - see how they provide peace
