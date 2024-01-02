@@ -73,25 +73,25 @@ export default function Footer() {
                     <div className="pt-8 ">
                       <span>Follow us</span>
                       <div className="flex justify-center   items-center gap-[10px] pt-[10px]">
-                        <Link href="https://www.facebook.com/" className="p-2">
+                        <Link href="https://www.facebook.com/profile.php?id=61553590079101" className="p-2">
                           <Facebook fill="#ACA7AA" />
                         </Link>
-                        <Link href="https://www.linkedin.com/" className="p-2">
+                        <Link href="https://www.linkedin.com/company/vinesia-winetech/" className="p-2">
                           <LinkdeIn fill="#ACA7AA " />
                         </Link>
-                        <Link href="https://twitter.com/" className="p-2">
+                        <Link href="https://twitter.com/Vinesiawinetech" className="p-2">
                           <Twitter fill="#ACA7AA" />
                         </Link>
 
-                        <Link href="https://www.instagram.com/" className="p-2">
+                        <Link href="https://www.instagram.com/vinesia.wineinvestment" className="p-2">
                           <Image
                             src={instagram}
                             alt="twitter"
                             className="w-4"
                           />
                         </Link>
-                        <Link href="https://www.youtube.com/" className="p-2">
-                          <Image src={youtube} alt="twitter" className="w-4" />
+                        <Link href="https://www.youtube.com/channel/UCEpwR4juQcMUD3qkIEioRQQ" className="p-2">
+                          <Image src={youtube} alt="youtube" className="w-4" />
                         </Link>
                       </div>
                     </div>
@@ -170,31 +170,31 @@ export default function Footer() {
             <div className="border-b  border-white border-opacity-20    pt-12" />
             {/* here is langugae and other icon */}
             <div className="md:pt-12 pt-8  md:pb-0 pb-8 md:px-0 px-4 flex flex-wrap md:justify-between justify-center">
-              <div className="flex flex-wrap flex-col">
+              {/* <div className="flex flex-wrap flex-col">
                 <span>Other languages</span>
                 <span className="pt-4">FR | GER | ENG | CHN </span>
-              </div>
+              </div> */}
               <div className="md:border-r-2    border-white border-opacity-20  " />
 
               <div className="md:pt-0 pt-4  md:block hidden">
                 <span>Follow us</span>
                 <div className="flex justify-center   items-center gap-[10px] pt-[10px]">
-                  <Link href="https://www.facebook.com/" className="p-2">
+                  <Link href="https://www.facebook.com/profile.php?id=61553590079101" className="p-2">
                     <Facebook fill="#ACA7AA" />
                   </Link>
-                  <Link href="https://www.linkedin.com/" className="p-2">
+                  <Link href="https://www.linkedin.com/company/vinesia-winetech/" className="p-2">
                     <LinkdeIn fill="#ACA7AA " />
 
                     {/* <Image src={linkdin} alt="twitter" className="w-4" /> */}
                   </Link>
-                  <Link href="https://twitter.com/" className="p-2">
+                  <Link href="https://twitter.com/Vinesiawinetech" className="p-2">
                     <Twitter fill="#ACA7AA" />
                   </Link>
 
-                    <Link href="https://www.instagram.com/" className="p-2">
+                    <Link href="https://www.instagram.com/vinesia.wineinvestment" className="p-2">
                       <Image src={instagram} alt="twitter" className="w-4" />
                     </Link>
-                    <Link href="https://www.youtube.com/" className="p-2">
+                    <Link href="https://www.youtube.com/channel/UCEpwR4juQcMUD3qkIEioRQQ" className="p-2">
                       <Image src={youtube} alt="twitter" className="w-4" />
                     </Link>
                   </div>

@@ -7,13 +7,16 @@ import ProductCarousel from "./ProductOverviewCarousel";
 import ShareCard from "@/common/ShareCard";
 import { Disclosure } from "@headlessui/react";
 import { ArrowUpRightIcon } from "@heroicons/react/20/solid";
+import { ProductWineDto } from "@/types/dto/productWine.dto";
+import { ProductArt } from "@/types/productOverview.dto";
 
-export default function WineArtDisclosure() {
+export default function WineArtDisclosure({wine, art}: {wine: ProductWineDto | null, art: ProductArt | null}) {
   const [selectedTab, setSelectedTab] = useState(0);
 
   return (
     <div>
       <>
+      {wine &&
         <Disclosure>
           {({ open }) => (
             <>
@@ -33,7 +36,7 @@ export default function WineArtDisclosure() {
                       </div>
                       {open && (
                         <p className=" text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight">
-                          LWIN: 123456
+                          LWIN: {wine.lwinNumber}
                         </p>
                       )}
                     </div>
@@ -48,14 +51,14 @@ export default function WineArtDisclosure() {
                 </Disclosure.Button>
                 <Disclosure.Panel>
                   <div className="px-4">
-                    <WineCard data={undefined} />
+                    <WineCard data={{wine: wine}} />
                   </div>
                 </Disclosure.Panel>
               </div>
             </>
           )}
-        </Disclosure>
-
+        </Disclosure>}
+                        {art &&
         <Disclosure>
           {({ open }) => (
             <>
@@ -75,7 +78,7 @@ export default function WineArtDisclosure() {
                       </div>
                       {open && (
                         <p className=" text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight">
-                          Artist: Lola Designer Fun...
+                          Artist: 
                         </p>
                       )}
                     </div>
@@ -96,7 +99,7 @@ export default function WineArtDisclosure() {
               </div>
             </>
           )}
-        </Disclosure>
+        </Disclosure>}
       </>
     </div>
   );

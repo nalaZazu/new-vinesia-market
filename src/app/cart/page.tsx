@@ -2,14 +2,15 @@
 import Accordion from "@/common/Accordion";
 import { CartControls } from "@/common/Components";
 import CartCard from "@/components/cart/cartCard";
+import Loading from "@/components/loading/loading";
 import { useCart } from "@/context/cart";
 import { useUser } from "@/context/user";
 import { CartItem } from "@/types/dto/checkoutCart.dto";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function Cart() {
-  const { cartItems, getCartTotal } = useCart();
+  const { cartItems, cartOrder, getCartTotal, isCartLoading } = useCart();
   const { getPriceText } = useUser();
 
   const {push} = useRouter()
@@ -20,6 +21,12 @@ export default function Cart() {
   function nextStep() {
     push('/checkout')
   }
+
+  useEffect(() => {
+    if (cartOrder !== null) {
+      push('/payment')
+    }
+  }, [push, cartOrder])
 
   const items = [
     {
@@ -75,6 +82,11 @@ export default function Cart() {
       ),
     },
   ];
+
+  if (isCartLoading) {
+    return <Loading/>
+  }
+
   return (
     <>
       <title>Cart</title>

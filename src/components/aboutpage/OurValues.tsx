@@ -37,7 +37,7 @@ const value = [
 export default function OurValues() {
   return (
     <div>
-      <div className="grid grid-cols-2 pb-20">
+      <div className="grid md:grid-cols-2 pb-20">
         <h2 className="text-white text-7xl font-normal leading-[84px]">
           Our Values
         </h2>
@@ -64,12 +64,6 @@ export default function OurValues() {
                 <p className="self-stretch text-neutral-400 text-base font-normal leading-snug">
                   {text}
                 </p>
-              </div>
-              <div className="flex gap-3 items-center">
-                <button className="border-b-2 text-xs text-white font-normal uppercase leading-[18px] tracking-tight">
-                  Read more
-                </button>
-                <NextIcon fill={"#fff"} />
               </div>
             </div>
           );

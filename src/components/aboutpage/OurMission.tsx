@@ -5,8 +5,8 @@ import ourmission from "@/assets/images/about-our-mission.png";
 export default function OurMission() {
   return (
     <div>
-      <div className="grid grid-cols-2">
-        <div className="pe-[139px]">
+      <div className="grid md:grid-cols-2">
+        <div className="md:pe-[139px]">
           <p className="text-zinc-800 text-xs font-normal uppercase leading-[18px] tracking-tight">
             Our
           </p>
@@ -31,10 +31,6 @@ export default function OurMission() {
               own. That is part of our transparency pledge.
             </p>
           </div>
-
-          <button className="text-center text-white text-xs font-normal uppercase leading-[18px] tracking-tight px-8 py-4 bg-orange-700 rounded-[48px]">
-            Read more
-          </button>
         </div>
         <div>
           <Image className="w-full h-auto" src={ourmission} alt="Transistor" />

@@ -17,6 +17,7 @@ import BirthImage from "@/assets/images/birth_image.png";
 import GiftImg from "@/assets/images/gift_img.png";
 import Footer from "@/components/footer/page";
 import Benifits from "@/components/secruityPage/Benifits";
+import QASummary from "@/components/qasummary/page";
 const whatIsABondedWarehouseAndWhyDoesVinesiaUseItOptionsList = [
   { label: "Option1", value: "option1" },
   { label: "Option2", value: "option2" },
@@ -41,7 +42,7 @@ const VinesiaGiftsPage: React.FC = () => {
     <div className=" absolute top-0 left-0 right-0 w-full -z-10">
       <div className=" flex flex-col items-center justify-start mx-auto w-full">
         <VinesiaGiftsHero className="flex flex-col items-center justify-start w-full" />
-        <div className="flex flex-col font-albertsans gap-10 md:gap-[175px] items-center justify-start w-full">
+        <div className="flex flex-col gap-10 md:gap-[175px] items-center justify-start w-full">
           <div className="gap-10 lg:gap-20 grid sm:grid-cols-2 md:grid-cols-3 grid-cols-1 items-start justify-center max-w-[1073px] mx-auto px-4 w-full md:pt-40 pt-20">
             <div className="flex flex-1 flex-col gap-12 h-full items-start justify-start w-full">
               <div className="flex flex-col items-start justify-start w-16">
@@ -50,11 +51,11 @@ const VinesiaGiftsPage: React.FC = () => {
                 </span>
               </div>
               <div className="flex flex-col gap-6 items-start justify-start w-full">
-                <p className="font-semibold text-[#2F222B] text-lg tracking-[-0.36px] w-auto">
+                <p className=" font-semibold text-[#2F222B] text-lg tracking-[-0.36px] w-auto">
                   Vintage specific
                 </p>
                 <div className="flex flex-col gap-2 items-start justify-start w-full">
-                  <p className="leading-[18.00px] max-w-[293px] md:max-w-full text-[#906447] text-xs tracking-[0.24px] uppercase">
+                  <p className=" leading-[18.00px] max-w-[293px] md:max-w-full text-[#906447] text-xs tracking-[0.24px] uppercase">
                     Curate memories with vintage collections
                   </p>
                   <p className="leading-[22.00px] max-w-[293px] md:max-w-full text-base text-[#594E55] tracking-[-0.32px]">
@@ -74,7 +75,7 @@ const VinesiaGiftsPage: React.FC = () => {
                   Gifts for the next generation
                 </p>
                 <div className="flex flex-col gap-2 items-start justify-start w-full">
-                  <p className="text-[#906447] text-xs tracking-[0.24px] uppercase w-auto">
+                  <p className=" text-[#906447] text-xs tracking-[0.24px] uppercase w-auto">
                     Heritage in a bottle
                   </p>
                   <p className="leading-[22.00px] max-w-[293px] md:max-w-full text-base text-[#594E55] tracking-[-0.32px]">
@@ -96,7 +97,7 @@ const VinesiaGiftsPage: React.FC = () => {
                   Offer an exclusive experience
                 </p>
                 <div className="flex flex-col gap-2 items-start justify-start w-full">
-                  <p className="text-[#906447] text-xs tracking-[0.24px] uppercase w-auto">
+                  <p className=" text-[#906447] text-xs tracking-[0.24px] uppercase w-auto">
                     Unwrap the moment with Vinesia
                   </p>
                   <p className="leading-[22.00px] max-w-[293px] md:max-w-full text-base text-[#594E55] tracking-[-0.32px]">
@@ -113,26 +114,26 @@ const VinesiaGiftsPage: React.FC = () => {
               <div className="flex flex-col gap-8 items-center justify-center w-auto sm:w-full max-w-[472px] px-4 md:px-0">
                 <div className="flex flex-col gap-2 items-center justify-center w-auto sm:w-full">
                   <div className="flex flex-col  items-center justify-center w-auto">
-                    <p className="font-light sm:text-[17px] md:text-[19px] text-[21px] text-right text-white tracking-[0.42px] w-auto">
+                    <p className="font-Canela font-light sm:text-[17px] md:text-[19px] text-[21px] text-right text-white tracking-[0.42px] w-auto">
                       Contact us today for gifting inquiries
                     </p>
                   </div>
-                  <p className="font-jost  md:max-w-full text-base text-center text-[#CBACAB] tracking-[0.16px]">
+                  <p className="font-['Jost'] md:max-w-full text-base text-center text-[#CBACAB] tracking-[0.16px]">
                     Our experts are ready to help you with selecting the perfect
                     wine investment as a fitting and appreciating gift.
                   </p>
                 </div>
-                <button className="cursor-pointer text-[#BF4D20] text-center text-xs tracking-[0.24px] uppercase font-albertsans bg-white rounded-full py-4 px-16">
+                <button className="cursor-pointer text-[#BF4D20] text-center text-xs tracking-[0.24px] uppercase bg-white rounded-full py-4 px-16">
                   CONTACT US TODAY
                 </button>
               </div>
             </div>
             <div className="container flex flex-col md:gap-10 gap-20 items-start justify-start mt-1.5 px-4 py-40 w-auto md:w-full">
               <div className="flex flex-col gap-4 items-center justify-start max-w-[1248px] mx-auto w-full">
-                <p className=" md:text-5xl text-7xl text-center text-[#2F222B] tracking-[-1.44px] w-auto">
+                <p className="font-Canela md:text-7xl text-7xl text-center text-[#2F222B] tracking-[-1.44px] w-auto">
                   Wine investments as a gift
                 </p>
-                <p className="font-albertsans text-base text-[#594E55] tracking-[-0.32px] w-auto">
+                <p className=" text-base text-[#594E55] tracking-[-0.32px] w-auto">
                   Learn how our offering is perfectly suited for a very unique
                   present
                 </p>
@@ -163,16 +164,16 @@ const VinesiaGiftsPage: React.FC = () => {
                       What will you get after purchasing wine as a gift?
                     </p>
                     <div className="flex flex-col gap-4 items-start w-full">
-                      <div className="bg-orange-50 flex flex-1 sm:flex-col flex-row gap-4 items-start justify-start my-0 p-6 sm:px-5 rounded-lg w-full">
-                        <div className="flex flex-col items-end justify-start w-6">
-                          <span>
+                      <div className="bg-orange-50 flex flex-1 sm:flex-col flex-row gap-4 md:items-start justify-start my-0 p-6 sm:px-5 rounded-lg w-full">
+                        <div className="flex flex-row items-center justify-start md:w-6">
+                          <span className="h-6 w-6">
                             <BookIcon />
                           </span>
-                        </div>
-                        <div className="flex sm:flex-1 flex-col gap-2 items-start justify-start w-auto sm:w-full">
-                          <p className="font-semibold text-[#2F222B] text-lg tracking-[-0.36px] w-auto">
+                          <p className="font-semibold text-[#2F222B] ml-2 text-lg md:tracking-[-0.36px] w-auto">
                             Booklet
                           </p>
+                        </div>
+                        <div className="flex sm:flex-1 flex-col gap-2 items-start justify-start w-auto sm:w-full">
                           <p className="leading-[22.00px] max-w-[485px] md:max-w-full text-base text-[#594E55] tracking-[-0.32px]">
                             <>
                               A guide to your wine&#39;s provenance, tasting
@@ -182,31 +183,32 @@ const VinesiaGiftsPage: React.FC = () => {
                         </div>
                       </div>
                       <div className="bg-orange-50 flex flex-1 sm:flex-col flex-row gap-4 items-start justify-start my-0 p-6 sm:px-5 rounded-lg w-full">
-                        <div className="flex flex-col items-end justify-start w-6">
+                        <div className="flex flex-row items-center justify-start">
                           <span className="h-6 w-6">
                             <Certif_Icon />
                           </span>
-                        </div>
-                        <div className="flex sm:flex-1 flex-col gap-2 items-start justify-start w-auto sm:w-full">
-                          <p className="font-semibold text-[#2F222B] text-lg tracking-[-0.36px] w-auto">
+                          <p className="font-semibold text-[#2F222B] text-lg ml-2 tracking-[-0.36px] w-auto">
                             Certificate of ownership
                           </p>
-                          <p className="text-base text-[#594E55] tracking-[-0.32px] w-[370px]">
+                        </div>
+                        <div className="flex sm:flex-1 flex-col gap-2 items-start justify-start w-auto sm:w-full">
+                          
+                          <p className="text-base text-[#594E55] tracking-[-0.32px] md:w-[370px]">
                             A beautifully designed certificate of your
                             investment.
                           </p>
                         </div>
                       </div>
-                      <div className="bg-orange-50 flex flex-1 sm:flex-col flex-row gap-4 items-start justify-start my-0 p-6 sm:px-5 rounded-lg w-full">
-                        <div className="flex flex-col items-end justify-start w-6">
+                      <div className="bg-orange-50 flex flex-1 sm:flex-col flex-row gap-4 md:items-start justify-start my-0 p-6 sm:px-5 rounded-lg w-full">
+                        <div className="flex flex-row items-center justify-start md:w-6">
                           <span className="h-6 w-6">
                             <ArtworkIcon />
                           </span>
-                        </div>
-                        <div className="flex sm:flex-1 flex-col gap-2 items-start justify-start w-auto sm:w-full">
-                          <p className="font-semibold text-[#2F222B] text-lg tracking-[-0.36px] w-auto">
+                          <p className="font-semibold text-[#2F222B] ml-2 text-lg tracking-[-0.36px] w-auto">
                             Artwork
                           </p>
+                        </div>
+                        <div className="flex sm:flex-1 flex-col gap-2 items-start justify-start w-auto sm:w-full">
                           <p className="leading-[22.00px] max-w-[485px] md:max-w-full text-base text-[#594E55] tracking-[-0.32px]">
                             The wines can optionally come with a piece of art
                             from some renowned artists like Reso or Monsieur Z,
@@ -219,15 +221,15 @@ const VinesiaGiftsPage: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className=" mt-0.5 relative w-full">
+            <div className=" mt-0.5 md:relative w-full">
               <div className=" bg-orange-50 flex flex-col h-full inset-[0] items-center justify-center w-full md:py-40 py-20">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-[94px] items-center justify-center max-w-[1031px] mx-auto md:w-full">
-                  <div className="flex flex-col gap-8 items-start justify-start w-[394px] sm:w-full">
+                <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-[94px] items-center justify-center max-w-[1031px] mx-auto md:w-full">
+                  <div className="flex flex-col gap-8 items-start justify-start md:w-[394px] sm:w-full">
                     <div className="flex flex-col gap-4 items-start justify-start w-full">
-                      <p className=" font-light text-4xl sm:text-[32px] md:text-[34px] text-[#2F222B] tracking-[-0.36px] w-full">
+                      <p className="font-Canela font-light text-4xl sm:text-[32px] md:text-[34px] text-[#2F222B] md:tracking-[-0.36px] w-full">
                         Occasion selection
                       </p>
-                      <p className="font-albertsans font-semibold text-[#2F222B] text-lg tracking-[-0.36px] w-full">
+                      <p className="font-semibold text-[#2F222B] text-lg tracking-[-0.36px] w-full">
                         Choose a wine investment for
                       </p>
                     </div>
@@ -236,15 +238,15 @@ const VinesiaGiftsPage: React.FC = () => {
                         <p className="text-[#BF4D20] text-xs tracking-[0.24px] uppercase w-full">
                           Anniversary
                         </p>
-                        <p className="text-base text-[#594E55] tracking-[-0.32px] w-full">
+                        <p className="text-base text-[#594E55] md:tracking-[-0.32px] w-full">
                           Celebrate your recipients’ journey
                         </p>
                       </div>
                       <div className="flex flex-col gap-2 items-start justify-start w-full">
-                        <p className="text-[#BF4D20] text-xs tracking-[0.24px] uppercase w-full">
+                        <p className="text-[#BF4D20] text-xs md:tracking-[0.24px] uppercase w-full">
                           Weddings
                         </p>
-                        <p className="leading-[22.00px] max-w-[394px] md:max-w-full text-base text-[#594E55] tracking-[-0.32px]">
+                        <p className="md:leading-[22.00px] max-w-[394px] md:max-w-full text-base text-[#594E55] md:tracking-[-0.32px]">
                           Toast to the new life chapter with a gift that grows
                           with the couple
                         </p>
@@ -253,7 +255,7 @@ const VinesiaGiftsPage: React.FC = () => {
                         <p className="text-[#BF4D20] text-xs tracking-[0.24px] uppercase w-full">
                           Christmas
                         </p>
-                        <p className="leading-[22.00px] max-w-[394px] md:max-w-full text-base text-[#594E55] tracking-[-0.32px]">
+                        <p className="md:leading-[22.00px] max-w-[394px] md:max-w-full text-base text-[#594E55] md:tracking-[-0.32px]">
                           Share the spirit of the season with a gift that
                           embodies the holiday season
                         </p>
@@ -263,9 +265,9 @@ const VinesiaGiftsPage: React.FC = () => {
                           <p className="text-[#BF4D20] text-xs tracking-[0.24px] uppercase w-auto">
                             Birth of your child
                           </p>
-                          <div className="border border-[#BF4D20] h-px w-[64%]" />
+                          <div className="border border-[#BF4D20] h-px md:w-[64%] w-[40%]" />
                         </div>
-                        <p className="leading-[22.00px] max-w-[394px] md:max-w-full text-base text-[#594E55] tracking-[-0.32px]">
+                        <p className="md:leading-[22.00px] max-w-[394px] md:max-w-full text-base text-[#594E55] md:tracking-[-0.32px]">
                           Mark the beginning of a new life with an investment
                           that matures with them
                         </p>
@@ -273,7 +275,7 @@ const VinesiaGiftsPage: React.FC = () => {
                     </div>
                   </div>
                   <Image
-                    className="h-[543px] md:h-auto rounded-[50%] w-[543px]"
+                    className="md:h-[543px] rounded-[50%] md:w-[543px]"
                     src={BirthImage}
                     alt="ellipse3127"
                   />
@@ -285,16 +287,16 @@ const VinesiaGiftsPage: React.FC = () => {
               <div className="flex flex-col gap-8 items-center justify-center w-auto sm:w-full max-w-[472px] px-4 md:px-0">
                 <div className="flex flex-col gap-2 items-center justify-center w-auto sm:w-full">
                   <div className="flex flex-col  items-center justify-center w-auto">
-                    <p className="font-light sm:text-[17px] md:text-[19px] text-[21px] text-right text-white tracking-[0.42px] w-auto">
+                    <p className="font-Canela font-light sm:text-[17px] md:text-[19px] text-[21px] text-right text-white tracking-[0.42px] w-auto">
                       Contact us today for gifting inquiries
                     </p>
                   </div>
-                  <p className="font-jost  md:max-w-full text-base text-center text-[#CBACAB] tracking-[0.16px]">
+                  <p className="font-['Jost'] md:max-w-full text-base text-center text-[#CBACAB] tracking-[0.16px]">
                     Our experts are ready to help you with selecting the perfect
                     wine investment as a fitting and appreciating gift.
                   </p>
                 </div>
-                <button className="cursor-pointer text-[#BF4D20] text-center text-xs tracking-[0.24px] uppercase font-albertsans bg-white rounded-full py-4 px-16">
+                <button className="cursor-pointer text-[#BF4D20] text-center text-xs tracking-[0.24px] uppercase bg-white rounded-full py-4 px-16">
                   CONTACT US TODAY
                 </button>
               </div>
@@ -302,61 +304,14 @@ const VinesiaGiftsPage: React.FC = () => {
 
             <div className="flex flex-col  md:gap-10 gap-16 items-center justify-start max-w-[821px] mt-1.5 py-40 w-full">
               <div className="flex flex-col items-center justify-start md:px-5 w-auto sm:w-full">
-                <p className="font-light text-4xl sm:text-[32px] md:text-[34px] text-center text-[#2F222B] tracking-[-0.36px] w-auto">
+                <p className="font-Canela font-light text-4xl sm:text-[32px] md:text-[34px] text-center text-[#2F222B] tracking-[-0.36px] w-auto">
                   3 easy step to give loved ones a unique gift
                 </p>
               </div>
               <Benifits />
             </div>
-            <div className=" md:px-5 relative w-full bg-[#F7EFDF] md:pt-40 md:pb-44 py-10">
-              <div className="  mx-auto pb-8 w-full">
-                <div className=" grid md:grid-cols-2 grid-cols-1 gap-[33px] items-start justify-center mx-auto top-[23%] w-[72%]">
-                  <div className="flex flex-col gap-9 items-start justify-start w-auto sm:w-full">
-                    <p className="font-light leading-[44.00px] max-w-[498px] md:max-w-full text-4xl sm:text-[32px] md:text-[34px] text-[#2F222B] tracking-[-0.36px]">
-                      You might have questions, we definitely have answers.
-                    </p>
-                    <VinesiaGiftsRowprice className="flex flex-row font-albertsans gap-3 items-center justify-start w-auto" />
-                  </div>
-                  <div className="flex flex-col font-albertsans items-start justify-start w-auto sm:w-full">
-                    <div
-                      className="flex flex-col gap-px items-center w-full"
-                      //   orientation="vertical"
-                    >
-                      <div className="flex sm:flex-1 flex-col items-center justify-start w-[501px] sm:w-full">
-                        <div className="border-deep_orange-800_33 border-solid border-t flex flex-col items-center justify-between sm:pl-5 pl-6 pr-4 py-4 w-full">
-                          <div className="flex flex-col gap-3 items-start justify-center w-full">
-                            <div className="flex flex-col items-center justify-start w-full">
-                              <div className="flex flex-col items-center justify-start w-full">
-                                <p className="leading-[22.00px] text-base text-[#594E55] tracking-[-0.32px] w-full">
-                                  <>
-                                    Please provide comprehensive answers to
-                                    those questions. You will save lots of time
-                                    and money by eliminating the necessity to
-                                    give constant support. You also will keep
-                                    your clients&#39; time cause they will
-                                    quickly find the answers to all their
-                                    questions.
-                                  </>
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex sm:flex-1 flex-col items-center justify-start w-[501px] sm:w-full">
-                        <div className="border-deep_orange-800_33 border-solid border-t flex flex-col items-center justify-between sm:pl-5 pl-6 pr-4 py-4 w-full">
-                          <div className="flex flex-col items-start justify-center w-full"></div>
-                        </div>
-                      </div>
-                      <div className="flex sm:flex-1 flex-col items-center justify-start w-[501px] sm:w-full">
-                        <div className="border-deep_orange-800_33 border-solid border-y flex flex-col items-center justify-between sm:pl-5 pl-6 pr-4 py-4 w-full">
-                          <div className="flex flex-col items-start justify-center w-full"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="bg-[#F7EFDF] w-full">
+              <QASummary title="You might have questions, we definitely have answers." />
             </div>
           </div>
         </div>

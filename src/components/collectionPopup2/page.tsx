@@ -61,7 +61,7 @@ export default function CollectionPopup2({
                           {item.name}
                         </h1>
                         <p className=" text-zinc-800 text-base font-normal leading-snug">
-                          {/* With Art of Lola Designer Fun */}
+                          {/* With Art of  */}
                         </p>
                       </div>
                       <div className="order-1 md:order-2 text-end">

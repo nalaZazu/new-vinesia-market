@@ -3,7 +3,7 @@ import { useUser } from "@/context/user";
 import React from "react";
 
 export default function CheckoutAside() {
-  const {cartItems, getCartTotal} = useCart()
+  const { cartItems, getCartTotal } = useCart()
   const { getPriceText, currency } = useUser()
 
   if (cartItems === undefined || cartItems.length === 0)
@@ -27,7 +27,7 @@ export default function CheckoutAside() {
         </div>
         <div className="self-stretch px-6 flex-col justify-start items-start flex ">
           {cartItems.map((d, i) => {
-            const { name, price} = d;
+            const { name, price } = d;
             return (
               <div
                 key={i}

@@ -23,6 +23,8 @@ import { useMobileScreen } from "@/hooks/useMobileScreen";
 import ModalContainerSim from "@/common/ModalContainerSim";
 var orientation = require('o9n').orientation;
 
+import SupportAnim from "@/components/supportAnimation/page";
+import HomeWinePerformance from "@/components/HomeWinePerformance/page";
 const AboutTwo = () => {
   const simRef = useRef(null);
   const isMobile = false
@@ -54,7 +56,7 @@ const AboutTwo = () => {
     // } 
   }
   return (
-    <React.Fragment>
+    <>
       {/* here is a investment section */}
       { isMobile ? (
       <ModalContainerSim
@@ -111,8 +113,13 @@ const AboutTwo = () => {
             </button>
           </Link>
         </div>
+        {/* support video */}
+        <div className="flex justify-center md:pt-[60px] pt-2 ">
+          {/* <Image src={investment} alt="image" /> */}
+          <SupportAnim />
+        </div>
         {/* here is image defined */}
-        <div className="flex justify-center md:pt-[92px] pt-12">
+        <div className="flex justify-center md:pt-[22px] pt-12">
           {/* <Image src={investment} alt="image" /> */}
           <video className="lg:w-3/4 w-full" autoPlay loop muted>
             <source src='assets/video/vinesia 211223_360.mp4' media="all and (max-width: 1200px)" />
@@ -141,9 +148,9 @@ const AboutTwo = () => {
             />
           </div>
 
-          <div className="  md:basis-7/12 h-[800px] md:pt-[110px] py-20">
-            <div className="md:ps-[139px] w-full h-full px-4">
-              <div className=" flex flex-col justify-between max-w-[501px] w-full h-full">
+          <div className="md:basis-7/12 md:h-[800px] md:pt-[110px] py-10 md:py-20">
+            <div className="md:ps-[139px] w-full md:h-full px-4">
+              <div className=" flex flex-col justify-between max-w-[501px] w-full md:h-full">
                 <div>
                   <div className=" ">
                     <h3 className="text-white md:text-4xl font-light  md:leading-[44px]    text-[21px]  leading-[29px]">
@@ -172,6 +179,9 @@ const AboutTwo = () => {
           </div>
         </div>
       </div>
+
+      <HomeWinePerformance />
+
       {/*The potential of wine investment in numbers (next section) */}
       <div className="md:py-40 md:px-0   py-20 px-4">
         <div className="container mx-auto">
@@ -214,9 +224,12 @@ const AboutTwo = () => {
                   Performance of investment portfolio with fine wine in
                   comparison to baseline
                 </h5>
+
                 <div className="bg-orange-100 h-64">
                   <div className="pt-1 hover:cursor-pointer">
-                    {/* <ul className="flex justify-end gap-4">
+                    <div className="bg-[#F3E8CF] h-64">
+                      <div className="pt-1">
+                        {/* <ul className="flex justify-end gap-4">
                       <li className="flex items-center">
                         <LineDot storke="#28475C" />
                         Baseline
@@ -238,12 +251,15 @@ const AboutTwo = () => {
                   <li>2020</li>
                   <li>2023</li>
                 </ul> */}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
-    </React.Fragment>
+    </>
   );
 };
 

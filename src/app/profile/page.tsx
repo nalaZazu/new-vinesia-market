@@ -120,7 +120,7 @@ export default function Profile() {
           My profile
         </h3>
       </div>
-      <div className="grid grid-cols-4 gap-8">
+      <div className="md:grid md:grid-cols-4 md:gap-8">
         <Tab.Group>
           <div className="col-span-1">
             <Tab.List className="flex flex-col rounded-lg border-t-2 border-s-2 border-r-2 border-orange-700 border-opacity-20">

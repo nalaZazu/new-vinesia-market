@@ -19,7 +19,7 @@ export default function Security() {
         </div>
       </div>
       <div>
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 hidden md:block">
           <h3 className="text-center text-zinc-800 text-4xl font-light leading-[44px] pb-6">
             What are the tags, and how are they used?
           </h3>
@@ -44,7 +44,7 @@ export default function Security() {
       <div className="py-40">
         <div className="container mx-auto max-w-[821px]">
           <div className="pb-24">
-            <h3 className="w-[793px] mx-auto text-center text-zinc-800 text-4xl font-light leading-[44px]">
+            <h3 className="md:w-[793px] mx-auto text-center text-zinc-800 text-4xl font-light leading-[44px]">
               Why we use Blockchain tech to offer customers Peace of Mind in
               their transactions
             </h3>
@@ -125,7 +125,7 @@ export default function Security() {
       </div>
       {/* The faster way to get to know us */}
       <div className="bg-[#2F222B]">
-        <div className="flex justify-end md:py-40 md:px-0  px-4 py-20">
+        <div className="flex justify-center text-center md:py-40 md:px-0  px-4 py-20">
           <div className=" max-w-[1314px]">
             <div>
               <div>
@@ -134,18 +134,7 @@ export default function Security() {
                 </h3>
               </div>
             </div>
-
-            {/* here is new slider  section */}
-            <div className="hidden md:block">
-              <div>
-                <AboutSlider data={VideoSlider} />
-              </div>
-            </div>
-            <div className="md:hidden block  ">
-              <div className="grid grid-cols-1 ">
-                <AboutSlider />
-              </div>
-            </div>
+            <AboutSlider data={VideoSlider} />
           </div>
         </div>
       </div>

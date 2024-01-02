@@ -5,8 +5,8 @@ import videoplay from "@/assets/images/winevideobutton.svg";
 const text =
   " Château Le Pin is a mini chateau in the Pomerol appellation on the right bank of the Bordeaux region.";
 export default function WineVideoBanner({
-  title = "How to invest in wine",
-  descripition = text,
+  title = "",
+  descripition = '',
 }: {
   title?: any;
   descripition?: any;
@@ -18,9 +18,7 @@ export default function WineVideoBanner({
           <h3 className="text-white md:text-4xl text-2xl font-light leading-[44px]">
             {title}
           </h3>
-          <div className="md:max-w-[174.04px] max-w-[90px] md:h-[174.12px] relative">
-            <Image src={videoplay} alt="" />
-          </div>
+
           <div className="gap-[17px]">
             <p className="max-w-[303px] text-white md:text-start text-center text-base font-normal leading-snug">
               {descripition}

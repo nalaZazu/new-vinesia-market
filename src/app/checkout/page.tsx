@@ -1,5 +1,5 @@
 "use client";
-import { TickCirIcon } from "@/assets/icons/Icons";
+import { ErrorIcon, TickCirIcon } from "@/assets/icons/Icons";
 import { CartControls } from "@/common/Components";
 import CartInfo from "@/components/checkout/CheckoutAside";
 import Step1 from "@/components/checkout/Steps/Step1";
@@ -8,20 +8,59 @@ import Loading from "@/components/loading/loading";
 import { pagePaths } from "@/constants/navigate";
 import { useCart } from "@/context/cart";
 import { useUser } from "@/context/user";
+import { Address, User } from "@/types/user.dto";
 import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
+function check(item: string): boolean {
+  return (item !== undefined && item !== null && item.length > 0)
+}
+
+function isComplete(addr: Address) {
+  let res = true
+
+  res = res && check(addr.addressLine1)
+  res = res && check(addr.firstName)
+  res = res && check(addr.lastName)
+  res = res && check(addr.country)
+  res = res && check(addr.zipCode)
+  res = res && check(addr.city)
+  res = res && check(addr.invoiceEmail)
+
+  return res
+}
+
+function verify(legalAge: boolean, profile: User) {
+  let error = ''
+
+  //validate data from step1, go to payment amount confirmation (includes info about Vinesia Wallet)
+  if (!legalAge) {
+    error += "You need to be of legal drinking age to purchase wines\n"
+  }
+
+  if (!isComplete(profile.billingAddress)) {
+    error += "You need to fill your Billing Information"
+  }
+
+  return error
+}
+
 export default function Checkout() {
-  const { isLoggedIn, isLoading } = useUser()
-  const { cartItems, checkout } = useCart()
+  const { isLoggedIn, profile } = useUser()
+  const { cartItems, cartOrder, checkout, isCartLoading } = useCart()
   const { push } = useRouter()
   const [saving, setIsSaving] = useState(false)
   const [step, setStep] = useState(1);
   const [nextStepDesc, setNextStepDesc] = useState('Summary')
 
+  const [legalAge, setLegalAge] = useState(false)
+  const [newsletter, setNewsletter] = useState(false)
+
+  const [error, setError] = useState('')
+
   useEffect(() => {
-    if (isLoading) return
+    if (isCartLoading) return
 
     //User is not logged in, redirect to signup    
     if (!isLoggedIn) push(pagePaths.signup)
@@ -29,13 +68,39 @@ export default function Checkout() {
     //Cart is empty, redirect to invest page
     if (cartItems.length === 0) push(pagePaths.invest)
 
-  }, [isLoading, isLoggedIn, push, cartItems])
+  }, [isCartLoading, isLoggedIn, push, cartItems])
+
+  useEffect(() => {
+    if (isCartLoading) return
+    if (cartItems.length > 0) return
+
+    if (cartOrder !== null) {
+      push('/payment')
+    } else {
+      push('/invest')
+    }
+  }, [push, cartOrder, isCartLoading, cartItems])
+
+
+  function setCheckbox(e: any) {
+    if (e.target.name === 'legalAge') {
+      setLegalAge(e.target.checked)
+
+      if (profile === undefined || profile === null) return
+      const error = verify(e.target.checked, profile)
+      setError(error)
+    }
+
+    if (e.target.name === 'newsletter')
+      setNewsletter(e.target.checked)
+  }
+
 
   if (saving) {
     return <Loading text="Checkout ..." />
   }
 
-  if (isLoading) {
+  if (isCartLoading) {
     return <Loading />
   }
 
@@ -51,9 +116,15 @@ export default function Checkout() {
   }
   async function nextStep() {
     if (step === 1) {
-      //validate data from step1, go to payment amount confirmation (includes info about Vinesia Wallet)
-      setStep(2)
-      setNextStepDesc('Payment')
+      if (profile === undefined || profile === null) return
+
+      const error = verify(legalAge, profile)
+      setError(error)
+
+      if (error.length === 0) {
+        setStep(2)
+        setNextStepDesc('Payment')
+      }
     }
     if (step === 2) {
 
@@ -69,7 +140,6 @@ export default function Checkout() {
       }
     }
   }
-
 
   return (
     <div className="max-w-[1171px] mx-auto px-4 md:mb-40 mb-20">
@@ -99,8 +169,10 @@ export default function Checkout() {
       {step != 3 && (
         <div className="flex justify-between mt-12 ">
           <div className="max-w-[501px] w-full">
-            {step == 1 && <Step1 />}
+            {step == 1 && <Step1 legalAge={legalAge} setLegalAge={setCheckbox} newsletter={newsletter} setNewsletter={setCheckbox} />}
             {step == 2 && <Step2 />}
+
+            {error.length > 0 && <div className="bg-[#FEEDED] text-[#DC2626] rounded-[8px] mt-10 p-4 align-middle flex"><ErrorIcon /> <div className="mx-2 flex justify-center">{error}</div></div>}
 
             <CartControls step={step} prevStep={prevStep} nextStep={nextStep} nextStepDesc={nextStepDesc} />
           </div>

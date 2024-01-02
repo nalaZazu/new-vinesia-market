@@ -3,7 +3,9 @@ import BillingInfo from "../BillingInfo";
 import EmailInfo from "../EmailInfo";
 import { Checkbox } from "@/common/Components";
 
-export default function Step1() {
+export default function Step1(
+  {legalAge, setLegalAge, newsletter, setNewsletter}: {legalAge: boolean, setLegalAge: any, newsletter: boolean, setNewsletter:any}
+) {
   return (
     <div>
       <div>
@@ -13,7 +15,7 @@ export default function Step1() {
             <BillingInfo />
           </div>
           {/* Email Address */}
-          <div className=" mt-12 flex flex-col gap-8">
+          <div className="mt-6 flex flex-col gap-8">
             <div className=" flex-col justify-start items-start gap-3 inline-flex">
               <div className="self-stretch text-neutral-900 text-base font-normal  leading-snug">
                 E-mail address to which the electronic invoice will be sent
@@ -39,7 +41,7 @@ export default function Step1() {
             <div className="self-stretch flex-col justify-start items-start gap-6 flex">
               <div className="self-stretch justify-start items-start gap-2 inline-flex">
                 <div className="w-6 h-6 relative">
-                  <Checkbox />
+                  <Checkbox name="legalAge" value={legalAge} setValue={setLegalAge} />
                 </div>
                 <div className="grow shrink basis-0 gap-1">
                   <span className="text-red-500 text-xs font-normal leading-[18px]">
@@ -53,7 +55,7 @@ export default function Step1() {
               </div>
               <div className="self-stretch justify-start items-start gap-2 inline-flex">
                 <div className="w-6 h-6 relative">
-                  <Checkbox />{" "}
+                  <Checkbox name="newsletter" value={newsletter} setValue={setNewsletter} />{" "}
                 </div>
                 <div className=" text-neutral-900 text-xs font-normal leading-[18px]">
                   Subscribe to the Vinesia newsletter

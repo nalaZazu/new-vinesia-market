@@ -24,10 +24,12 @@ import VinesiaWines from "@/components/vinesia/VinesiaWines";
 import VinesiaSelling from "@/components/vinesia/VinesiaSelling";
 import VinesiaAnimation from "@/components/vinesia/VinesiaAnimation";
 import Testing from "@/components/vinesia/Teting";
+import { experts } from "@/constants/experts";
+import Link from "next/link";
+import QASummary from "@/components/qasummary/page";
 
-const title = "How Vinesia works";
-const descripition =
-  "Discover the seamless journey of wine investment with Vinesia in our 'How It Works' video.";
+import vinesia_how_works from "@/assets/images/vinesia_how_works.png"
+import KnowUsVideos from "@/components/KnowUsVideos/page";
 
 export default function Vinesia() {
   return (
@@ -40,11 +42,11 @@ export default function Vinesia() {
       <div className="py-40">
         <div className="container mx-auto px-4">
           <div className="max-w-[877px] mx-auto flex-col justify-center items-center gap-12 flex">
-            <div className="h-[236px] flex-col justify-start items-center gap-6 flex">
-              <h2 className="self-stretch text-center text-zinc-800 text-7xl font-normal leading-[84px]">
+            <div className="md:h-[236px] flex-col justify-start items-center gap-6 flex">
+              <h2 className="self-stretch md:text-center text-zinc-800 md:text-7xl text-4xl font-normal md:leading-[84px] mb-10 md:mb-0">
                 Pursue a profitable portfolio you are passionate about
               </h2>
-              <p className="max-w-[699px] text-center text-neutral-600 text-base font-normal leading-snug">
+              <p className="max-w-[699px] text-center text-neutral-600 text-base font-normal md:leading-snug">
                 We have simplified wine investing and brought it into the modern
                 era. Our deep knowledge and unique marketplace offer you peace
                 of mind as you invest in something you love. 
@@ -56,13 +58,13 @@ export default function Vinesia() {
             </h3>
           </div>
         </div>
-        <div className="">
+        <Image src={vinesia_how_works} alt="invest steps" />
+        {/* <div className="">
           <VinesiaAnimation />
-          {/* <Testing /> */}
-        </div>
+        </div> */}
       </div>
 
-      <WineVideoBanner title={title} descripition={descripition} />
+      {/* <WineVideoBanner title={""} descripition={""} /> */}
       <div className="py-12 bg-red-900">
         <div className=" container mx-auto px-4">
           <Wanttoknow />
@@ -72,7 +74,7 @@ export default function Vinesia() {
       <div className="py-40">
         <div className=" container mx-auto px-4">
           <div className="pb-20">
-            <h2 className="self-stretch text-center text-zinc-800 text-7xl font-normal leading-[84px]">
+            <h2 className="self-stretch text-center text-zinc-800 md:text-7xl text-4xl font-normal leading-[60px] md:leading-[84px]">
               How Vinesia makes wine investing transparent, safe, and easy to
               trade
             </h2>
@@ -81,17 +83,17 @@ export default function Vinesia() {
                 Our method of wine investment is layered to create a
               </span>
               <span className="text-orange-700 text-base font-normal leading-snug">
-                Peace of Mind
+              &nbsp;Peace of Mind&nbsp;
               </span>
               <span className="text-neutral-600 text-base font-normal leading-snug">
-                pledge. Every feature of how we do things speaks to our
+                &nbsp;pledge. Every feature of how we do things speaks to our
                 dedication to creating a system of truth you can rely on for
                 your wine portfolio.
               </span>
             </div>
           </div>
-          <div className="grid grid-cols-2">
-            <div className=" pe-[139px]">
+          <div className="grid md:grid-cols-2">
+            <div className="md:pe-[139px]">
               <Image src={vinesiaccordion} alt="" className="w-full" />
             </div>
             <div>
@@ -101,12 +103,15 @@ export default function Vinesia() {
                 titleClass="text-zinc-800"
                 containerClass="py-6"
                 borderClass="border-b-2 border-orange-700 max-w-[500px] border-opacity-20"
+                descClass={"text-zinc-800"}
               />
               <div className="pt-12 p-2">
+                  <Link href="/security">
                 <button className="flex gap-3 items-center text-center text-orange-700 text-xs font-normal uppercase leading-[18px] tracking-tight">
                   READ MORE ABOUT SECURITY
                   <NextIcon />
                 </button>
+                  </Link>
               </div>
             </div>
           </div>
@@ -115,7 +120,7 @@ export default function Vinesia() {
       {/* About our wine expertise + experts start */}
       <div className="py-40 bg-[#F7EFDF]">
         <div className="max-w-[1166px] mx-auto px-4">
-          <div className="grid grid-cols-2 gap-[139px]">
+          <div className="grid md:grid-cols-2 gap-[139px]">
             <div>
               <h3 className="max-w-[501px] text-zinc-800 text-4xl font-light leading-[44px] pb-8">
                 About our wine expertise + experts
@@ -137,26 +142,29 @@ export default function Vinesia() {
             </div>
             <div className="">
               <div className="bg-orange-50 rounded-tl rounded-tr border border-orange-700 border-opacity-20">
-                {[1, 2, 3].map((items, i) => {
+                {experts.map((items, i) => {
+                  const {id, name, img, linkedin} = items
                   return (
                     <div
                       key={i}
                       className="justify-between items-center flex p-6"
                     >
                       <div className="justify-between items-center gap-4 flex">
-                        <div className="w-16 h-16 rounded-[100px] justify-center items-center flex">
-                          <Image src={expertise} alt="" />
+                        <div className="w-16 h-16 justify-center items-center flex">
+                          <Image src={img} alt="" className="rounded-full" />
                         </div>
                         <div className="flex-col justify-start items-start gap-1 inline-flex">
                           <p className="text-zinc-800 text-lg font-semibold leading-relaxed">
-                            Fabrice Mopin
+                            {name}
                           </p>
                           <p className="text-stone-500 text-xs font-normal uppercase leading-[18px] tracking-tight">
                             Expert
                           </p>
                         </div>
                       </div>
-                      <LinkdeIn fill={"#0A66C2"} />
+                      <Link href={linkedin}>
+                        <LinkdeIn fill={"#0A66C2"} />
+                      </Link>
                     </div>
                   );
                 })}
@@ -200,7 +208,7 @@ export default function Vinesia() {
       <div className="py-12 bg-slate-700 flex-col justify-center items-center gap-10 flex">
         <div className="flex-col justify-center items-center gap-4 flex">
           <div className="justify-center items-center gap-6 inline-flex">
-            <h4 className="text-right text-white text-[21px] font-light leading-[29px] tracking-wide">
+            <h4 className="md:text-right text-center text-white text-[21px] font-light leading-[29px] tracking-wide">
               Can’t find the answer? Contact us and we will help!
             </h4>
           </div>
@@ -212,58 +220,18 @@ export default function Vinesia() {
             </div>
           </div>
           <p className="text-center text-gray-400 text-base font-normal leading-snug">
-            We generally answer within 24 hours on business days
+            We generally answer within 1 business day, except during week-ends
           </p>
         </div>
       </div>
 
-      <div className="py-40 bg-[#F7EFDF]">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 gap-8">
-            <div className="max-w-[498px]">
-              <h3 className=" text-zinc-800 text-4xl font-light leading-[44px]">
-                You might have questions, we definitely have answers.
-              </h3>
-              <div className="flex gap-3 pt-9">
-                <button className="border-b-2 border-orange-700 border-opacity-20 text-center text-orange-700 text-xs font-normal uppercase leading-[18px] tracking-tight">
-                  SEE ALL QUESTIONS & ANSWERS
-                </button>
-                <NextIcon />
-              </div>
-            </div>
-
-            <div>
-              <AccordionWineAbout />
-            </div>
-          </div>
-        </div>
+      <div className="bg-[#F7EFDF]">
+        <QASummary title="You might have questions, we definitely have answers." />
       </div>
+
+      <KnowUsVideos />
       {/* The faster way to get to know us */}
-      <div className="bg-[#2F222B]">
-        <div className="flex justify-end md:py-40 md:px-0 px-4 py-20">
-          <div className="max-w-[1314px]">
-            <div className="">
-              <div>
-                <h3 className="text-white text-4xl font-light   leading-[44px] pb-8">
-                  The faster way to get to know us
-                </h3>
-              </div>
-            </div>
-
-            {/* here is new slider  section */}
-            <div className="hidden md:block">
-              <div>
-                <AboutSlider />
-              </div>
-            </div>
-            <div className="md:hidden block  ">
-              <div className="grid grid-cols-1 ">
-                <AboutSlider />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+     
       <NewslettersTwo />
       {/* footer */}
       <Footer />

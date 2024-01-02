@@ -57,7 +57,7 @@ export default function ProductsOverview({
               </h1>
               {data?.art?.name !== undefined ? (
                 <p className="text-zinc-800 text-base font-normal leading-snug pt-2 ">
-                  With Art of Lola Designer Fun
+                  With Art of
                 </p>
               ) : (
                 <></>
@@ -73,7 +73,7 @@ export default function ProductsOverview({
               </div>
             </div>
             <div className="md:basis-11/12 basis-full ">
-              <div className="bg-[#F7EFDF] pt-10 pb-20 ">
+              <div className="bg-[#F7EFDF] pt-10 md:pb-20 ">
                 <div className="md:max-w-[1350px] mx-auto">
                   <ProductTopSection data={data} />
                 </div>
@@ -113,11 +113,7 @@ export default function ProductsOverview({
       </div>
       {/* you main also like section */}
       <div className=" text-center">
-        <div className=" pb-12">
-          <h1 className=" text-4xl font-light text-[#2F222B]">
-            You may also like
-          </h1>
-        </div>
+
         <YouMayAlso />
       </div>
       {/* About Winery Château Le Pin end */}

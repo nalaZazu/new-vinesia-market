@@ -44,14 +44,14 @@ const VinesiaGiftsHero: React.FC<VinesiaGiftsHeroProps> = (props) => {
             src={heroBg}
             alt="image137"
           />
-          <div className="absolute bottom-[15%] flex flex-col items-center justify-start left-[6%] w-auto">
+          <div className="absolute md:bottom-[15%] bottom-[30%] flex flex-col items-center justify-start left-[6%] w-auto">
             <div className="flex flex-col items-start justify-start w-auto md:w-full">
               <div className="flex flex-col items-start justify-start w-auto md:w-full">
                 <div className="flex flex-col gap-4 items-start justify-start w-auto md:w-full">
-                  <p className="font-canela font-light text-4xl sm:text-[32px] md:text-[36px] text-center text-white tracking-[-0.36px] w-auto">
+                  <p className="font-Canela font-light text-2xl md:text-3xl sm:text-[32px] md:text-[36px] text-center text-white tracking-[-0.36px] w-auto">
                     {props?.collections}
                   </p>
-                  <p className="font-canela max-w-[815px] md:max-w-full text-5xl md:text-[144px] text-white tracking-[-2.88px]">
+                  <p className="font-Canela max-w-[1100px] flex flex-col text-white text-7xl md:text-[144px] font-normal md:leading-[144px] md:tracking-[-2.88px]">
                     {props?.wineart}
                   </p>
                 </div>

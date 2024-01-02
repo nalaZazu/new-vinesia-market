@@ -13,7 +13,7 @@ export default function WineryBanner() {
               <h3 className="text-white text-4xl font-light leading-[44px] max-w-[638px] pt-9">
                 Wine and Art
               </h3>
-              <h1 className="max-w-[1100px] flex flex-col text-white text-[144px] font-normal leading-[144px] tracking-[-2.88px]">
+              <h1 className="max-w-[1100px] leading-[84px] flex flex-col text-white text-[80px] md:text-[144px] font-normal md:leading-[144px] md:tracking-[-2.88px]">
                 Match made
                 <span>in heaven</span>
               </h1>
