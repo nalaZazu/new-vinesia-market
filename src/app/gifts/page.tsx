@@ -11,12 +11,16 @@ import {
   Certif_Icon,
   ExculsiveIcon,
   GiftIcon,
+  NextIcon,
   VintageIcon,
 } from "@/assets/icons/Icons";
 import BirthImage from "@/assets/images/birth_image.png";
-import GiftImg from "@/assets/images/gift_img.png";
+
 import Footer from "@/components/footer/page";
 import Benifits from "@/components/secruityPage/Benifits";
+import GiftSlider from "@/components/gifts/GiftSlider";
+import { AccordionWineAbout } from "@/components/accordion/page";
+import { AccordionFAQ } from "@/constants/accrodion";
 const whatIsABondedWarehouseAndWhyDoesVinesiaUseItOptionsList = [
   { label: "Option1", value: "option1" },
   { label: "Option2", value: "option2" },
@@ -127,6 +131,7 @@ const VinesiaGiftsPage: React.FC = () => {
                 </button>
               </div>
             </div>
+
             <div className="container flex flex-col md:gap-10 gap-20 items-start justify-start mt-1.5 px-4 py-40 w-auto md:w-full">
               <div className="flex flex-col gap-4 items-center justify-start max-w-[1248px] mx-auto w-full">
                 <p className=" md:text-5xl text-7xl text-center text-[#2F222B] tracking-[-1.44px] w-auto">
@@ -139,12 +144,8 @@ const VinesiaGiftsPage: React.FC = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 md:gap-0 gap-10 items-center justify-between w-full">
-                <div className="flex flex-col md:min-h-[614px] md:h-auto items-center justify-start max-w-[501px]">
-                  <Image
-                    className=" sm:h-auto h-full object-cover w-[501px] md:w-full"
-                    src={GiftImg}
-                    alt="rectangle8589"
-                  />
+                <div className=" md:min-h-[614px] md:h-auto max-w-[501px]">
+                  <GiftSlider />
                 </div>
                 <div className="flex md:flex-1 flex-col gap-12 items-start justify-start md:w-full">
                   <div className="flex flex-col gap-4 items-start justify-start w-full">
@@ -219,6 +220,7 @@ const VinesiaGiftsPage: React.FC = () => {
                 </div>
               </div>
             </div>
+
             <div className=" mt-0.5 relative w-full">
               <div className=" bg-orange-50 flex flex-col h-full inset-[0] items-center justify-center w-full md:py-40 py-20">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-[94px] items-center justify-center max-w-[1031px] mx-auto md:w-full">
@@ -308,55 +310,26 @@ const VinesiaGiftsPage: React.FC = () => {
               </div>
               <Benifits />
             </div>
-            <div className=" md:px-5 relative w-full bg-[#F7EFDF] md:pt-40 md:pb-44 py-10">
-              <div className="  mx-auto pb-8 w-full">
-                <div className=" grid md:grid-cols-2 grid-cols-1 gap-[33px] items-start justify-center mx-auto top-[23%] w-[72%]">
-                  <div className="flex flex-col gap-9 items-start justify-start w-auto sm:w-full">
-                    <p className="font-light leading-[44.00px] max-w-[498px] md:max-w-full text-4xl sm:text-[32px] md:text-[34px] text-[#2F222B] tracking-[-0.36px]">
-                      You might have questions, we definitely have answers.
-                    </p>
-                    <VinesiaGiftsRowprice className="flex flex-row font-albertsans gap-3 items-center justify-start w-auto" />
-                  </div>
-                  <div className="flex flex-col font-albertsans items-start justify-start w-auto sm:w-full">
-                    <div
-                      className="flex flex-col gap-px items-center w-full"
-                      //   orientation="vertical"
-                    >
-                      <div className="flex sm:flex-1 flex-col items-center justify-start w-[501px] sm:w-full">
-                        <div className="border-deep_orange-800_33 border-solid border-t flex flex-col items-center justify-between sm:pl-5 pl-6 pr-4 py-4 w-full">
-                          <div className="flex flex-col gap-3 items-start justify-center w-full">
-                            <div className="flex flex-col items-center justify-start w-full">
-                              <div className="flex flex-col items-center justify-start w-full">
-                                <p className="leading-[22.00px] text-base text-[#594E55] tracking-[-0.32px] w-full">
-                                  <>
-                                    Please provide comprehensive answers to
-                                    those questions. You will save lots of time
-                                    and money by eliminating the necessity to
-                                    give constant support. You also will keep
-                                    your clients&#39; time cause they will
-                                    quickly find the answers to all their
-                                    questions.
-                                  </>
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex sm:flex-1 flex-col items-center justify-start w-[501px] sm:w-full">
-                        <div className="border-deep_orange-800_33 border-solid border-t flex flex-col items-center justify-between sm:pl-5 pl-6 pr-4 py-4 w-full">
-                          <div className="flex flex-col items-start justify-center w-full"></div>
-                        </div>
-                      </div>
-                      <div className="flex sm:flex-1 flex-col items-center justify-start w-[501px] sm:w-full">
-                        <div className="border-deep_orange-800_33 border-solid border-y flex flex-col items-center justify-between sm:pl-5 pl-6 pr-4 py-4 w-full">
-                          <div className="flex flex-col items-start justify-center w-full"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+          </div>
+        </div>
+      </div>
+      <div className="py-40 bg-[#F7EFDF]">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 gap-8">
+            <div className="max-w-[498px]">
+              <h3 className=" text-zinc-800 text-4xl font-light leading-[44px]">
+                You might have questions, we definitely have answers.
+              </h3>
+              <div className="flex items-center gap-3 pt-9">
+                <button className="border-b-2 border-orange-700 border-opacity-20 text-center text-orange-700 text-xs font-normal font-['Albert Sans'] uppercase leading-[18px] tracking-tight">
+                  SEE ALL QUESTIONS & ANSWERS
+                </button>
+                <NextIcon />
               </div>
+            </div>
+
+            <div>
+              <AccordionWineAbout data={AccordionFAQ.gift_accordion} />
             </div>
           </div>
         </div>

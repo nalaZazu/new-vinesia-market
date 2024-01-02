@@ -15,6 +15,7 @@ import { NextIcon } from "@/assets/icons/Icons";
 import { AccordionWineAbout } from "@/components/accordion/page";
 import Newsletter from "@/components/newsletter/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
+import { AccordionFAQ } from "@/constants/accrodion";
 
 export default function wineryArt() {
   return (
@@ -115,7 +116,7 @@ export default function wineryArt() {
             </div>
 
             <div>
-              <AccordionWineAbout />
+              <AccordionWineAbout data={AccordionFAQ.gift_accordion} />
             </div>
           </div>
         </div>
