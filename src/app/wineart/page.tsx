@@ -23,7 +23,7 @@ export default function wineryArt() {
     <div className="absolute top-0 -z-10 left-0 right-0">
       <div>
         <div className="relative">
-          <StaticBanner bgClass="winery-bg-image bg-[#4e261a]" small="Wine and Art" title="Match mage" title2="in heaven" />
+          <StaticBanner bgClass="winery-bg-image bg-[#4e261a]" small="Wine and Art" title="Match made" title2="in heaven" />
         </div>
       </div>
 

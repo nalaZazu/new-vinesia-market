@@ -52,13 +52,13 @@ export default function AvailableSoon() {
         <InvestBread />
         <div className=" mt-9 hidden md:block">
           <h2 className=" text-primary text-[144px] font-normal ">
-            AvailableSoon
+            Available Soon
           </h2>
         </div>
         {/* for mobileView */}
         <div className="mt-9 md:hidden block">
           <h2 className=" text-zinc-800 text-6xl font-normal   leading-[68px]">
-            AvailableSoon
+            Available Soon
           </h2>
         </div>
         {/* dropdown */}

@@ -173,6 +173,7 @@ export function useProvideCart(): ProvideCart {
                 const item: CartItem = {
                     id: x.editionId ?? 0,
                     type: ItemType.Edition,
+                    media: x.media,
                     name: x.name,
                     price: rec
                 }
