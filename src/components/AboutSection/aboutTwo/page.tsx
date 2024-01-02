@@ -27,7 +27,7 @@ import SupportAnim from "@/components/supportAnimation/page";
 import HomeWinePerformance from "@/components/HomeWinePerformance/page";
 const AboutTwo = () => {
   const simRef = useRef(null);
-  const isMobile = false
+  const isMobile = useMobileScreen();
   const [visible, setVisible] = useState(false);
   const [step, setStep] = useState(1);
 
@@ -58,24 +58,8 @@ const AboutTwo = () => {
   return (
     <>
       {/* here is a investment section */}
-      { isMobile ? (
-      <ModalContainerSim
-      visible={visible}
-      setVisible={setVisible}
-      modalClass="max-h-[100vh] max-w-[100vw] rounded-md"
-      title="Mobile"
-      isCloseBtn={true}>
-        <div className="md:h-full lg:h-full">
-          <GraphProvider>
-            <div className="flex flex-col-reverse justify-normal md:h-full lg:h-full" >
-              <LeftPanel />
-              <GraphPanel />
-              <RightPanel />
-            </div>
-          </GraphProvider>
-        </div>  
-      </ModalContainerSim>) :
-        (<ModalContainer
+
+        <ModalContainer
         visible={visible}
         setVisible={setVisible}
         modalClass="max-h-full max-w-full sm:max-h-[95vh] sm:max-w-[90vw] rounded-md pt-4 pb-4 px-4 md:h-[95vh] lg:h-[95vh]"
@@ -92,7 +76,6 @@ const AboutTwo = () => {
           </GraphProvider>
         </div>
       </ModalContainer>
-      )}
 
       {/* here is end of modal */}
       <div className="md:py-30 my-3">
@@ -240,7 +223,7 @@ const AboutTwo = () => {
                       </li>
                     </ul> */}
                     {/* <Appactivity /> */}
-                    {isMobile ? (<Image src={simulatorPreview} alt="image" onClick={() => goFullScreen()}/>): (<Image src={simulatorPreview} alt="image" onClick={() => setVisible(true)}/>)}
+                    <Image src={simulatorPreview} alt="image" onClick={() => setVisible(true)}/>
                   </div>
                 </div>
                 {/* HERE IS NUMBER DEFINED  */}

@@ -78,7 +78,7 @@ export default function GraphPanel() {
       }
       
   return (
-    <Flex vertical style={{fontFamily:'Canela', width:"60%", height:"100%"}} gap="small" align='center'>
+    <Flex vertical style={{fontFamily:'Canela', width:"60%"}} gap="small" align='center'>
           <Flex vertical gap="small" align='left'>
             <span className='text-sm md:text-sm lg:text-4xl' style={{fontWeight:"600", fontFamily:'Canela'}}>Portfolio comparison:
             <br/>Wine-inclusive vs Classic 60/40</span>
@@ -106,7 +106,7 @@ export default function GraphPanel() {
                 <Label value="Performance" position="insideLeft" angle={-90} offset={20} style={{marginRight:"30px"}}></Label>
               </YAxis>
               <ChartToolTip offset={0} content={<CustomTooltip/>}/>
-              <Legend content={GraphLegend} iconType='plainline'/>
+              <Legend content={GraphLegend} />
               
               {graphPoints.portfolio && <Line
                 key="portfolioPerformance"
@@ -141,22 +141,22 @@ export default function GraphPanel() {
           </div>
           }
           {/* Period Buttons */}
-          <Flex justify='flex-start' align='center' style={{width: "80%", height:"auto"}} vertical>
+          <Flex justify='flex-start' align='center' className="w-4/5 h-auto" vertical>
             <Flex justify='center' style={{marginTop:"0rem", width:"100%", fontFamily:"Canela"}} align='center' >
-              <Button style={{backgroundColor: period === '5y' ? '#BD936B' : '#fff', fontFamily: 'Canela',margin:"0 0 0 0"}} onClick={() => returnPeriod('5y')}>5Y</Button>
-              <Button style={{backgroundColor: period === '10y' ? '#BD936B' : '#fff',fontFamily: 'Canela', margin:"0 5px 0 5px"}} onClick={() => returnPeriod('10y')}>10Y</Button>
-              <Button style={{backgroundColor: period === 'max' ? '#BD936B' : '#fff',fontFamily: 'Canela',margin:"0 5px 0 0"}} onClick={() => returnPeriod('max')}>Max</Button>
+              <Button className={`text-xs md:text:xs lg:text:sm p-1 md:p-1 lg:p-4 bg-${period === '5y' ? 'orange-700' : 'white'} font-Canela m-0`} onClick={() => returnPeriod('5y')}>5Y</Button>
+              <Button className={`text-xs md:text:xs lg:text:sm p-1 md:p-1 lg:p-4 bg-${period === '10y' ? 'orange-700' : 'white'} font-Canela mx-1`} onClick={() => returnPeriod('10y')}>10Y</Button>
+              <Button className={`text-xs md:text:xs lg:text:sm p-1 md:p-1 lg:p-4 bg-${period === 'max' ? 'orange-700' : 'white'} font-Canela ml-1`} onClick={() => returnPeriod('max')}>Max</Button>
           </Flex>
             {/* Left Data */}
             <Flex justify='space-between' style={{width: "100%", marginTop:"0rem"}}>
               <Flex vertical justify='center' align='left' style={{width:"27.5%", height:"100%", fontFamily:'Canela'}}>
                 <span className='text-xs md:text-xs lg:text-lg' style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px", whiteSpace:"nowrap"}}>Your Portfolio</span>
-                <div style={{border:"0.2px dashed #BF4D20", padding: "0 0 0 0.4em", width:"100%", height:"4em", display:"flex", flexDirection:"column", justifyContent:"space-around"}}>
-                  <div className='text-[0.5rem] md:text-[0.5rem] lg:text-md' style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px"}}>Volatility:&nbsp;
+                <div className="h-8 lg:h-16" style={{border:"0.2px dashed #BF4D20", padding: "0 0 0 0.4em", width:"100%", display:"flex", flexDirection:"column", justifyContent:"space-around"}}>
+                  <div className='text-[0.5rem] md:text-[0.5rem] lg:text-sm' style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px"}}>Volatility:&nbsp;
                     <span style={{fontWeight:"600"}}>{volatilityData.portfolio.toFixed(2)}%</span>
                     <Tooltip title={volatility_tt} placement='right'> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)', fontSize: '1em' }} /></Tooltip>
                   </div>
-                  <div className='text-[0.5rem] md:text-[0.5rem] lg:text-md' style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px"}}>Sharpe-Ratio:&nbsp;
+                  <div className='text-[0.5rem] md:text-[0.5rem] lg:text-sm' style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px"}}>Sharpe-Ratio:&nbsp;
                     <span style={{fontWeight:"600"}}>{sharpeRatio.portfolio.toFixed(2)}</span>
                     <Tooltip placement='right' title={sharpe_ratio_tt}> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)', fontSize: '1em' }} /></Tooltip>
                   </div>
@@ -165,18 +165,18 @@ export default function GraphPanel() {
               {/* Center Line */}
               <Flex justify='center' align='center' vertical style={{width:"45%", marginTop:"12px", fontFamily: 'Canela'}}>
                 <div style={{width:"1%", backgroundColor:"black", height:"40%"}}></div>
-                <div className='text-[0.5rem] md:text-[0.5rem] lg:text-md' style={{width:"98%", textAlign:"center"}}>Additional investment-related metrics</div>
+                <div className='text-[0.5rem] md:text-[0.5rem] lg:text-sm' style={{width:"98%", textAlign:"center"}}>Additional investment-related metrics</div>
                 <div style={{width:"1%", backgroundColor:"black", height:"90%"}}></div>
               </Flex>
               {/* Right Data */}
               <Flex vertical justify='center' align='left' style={{width:"27.5%", height:"100%", fontFamily: 'Canela'}}>
                 <span className='text-xs md:text-xs lg:text-lg' style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px"}}>Baseline</span>
-                <div style={{border:"0.2px dashed #BF4D20", padding: "0 0 0 0.4rem", height:"4rem", display:"flex", flexDirection:"column", justifyContent:"space-around"}}>
-                  <div className='text-[0.5rem] md:text-[0.5rem] lg:text-md' style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px"}}>Volatility:&nbsp;
+                <div className="h-8 lg:h-16" style={{border:"0.2px dashed #BF4D20", padding: "0 0 0 0.4rem", display:"flex", flexDirection:"column", justifyContent:"space-around"}}>
+                  <div className='text-[0.5rem] md:text-[0.5rem] lg:text-sm' style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px"}}>Volatility:&nbsp;
                     <span style={{fontWeight:"600"}}>{volatilityData.baseline.toFixed(2)}%</span>
                     <Tooltip placement='right' title={volatility_tt}> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)', fontSize: '1em'}} /></Tooltip>
                   </div>
-                  <div className='text-[0.5rem] md:text-[0.5rem] lg:text-md' style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px"}}>Sharpe-Ratio:&nbsp;
+                  <div className='text-[0.5rem] md:text-[0.5rem] lg:text-sm' style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px"}}>Sharpe-Ratio:&nbsp;
                     <span style={{fontWeight:"600"}}>{sharpeRatio.baseline.toFixed(2)}</span>
                     <Tooltip placement='right' title={sharpe_ratio_tt}> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)', fontSize: '1em' }} /></Tooltip>
                   </div>
