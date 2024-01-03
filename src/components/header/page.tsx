@@ -148,10 +148,10 @@ export default function Header() {
               {menuItems.map((x, i) => (
                 <Link key={i} href={x?.href || "/"}>
                   <div
-                    className="cursor-pointer"
-                    key={x.id}
-                    onClick={() => select(x)}
-                  >
+                                      className="cursor-pointer"
+                                      key={x.id}
+                                      onClick={() => select(x)}
+                                    >
                     <span
                       className={`hidden md:block py-7 text-base tracking-tight border-0 ${theme.textClass
                         } ${x.id === topSelected.id ? theme.selectedClass : ""}`}
@@ -170,8 +170,8 @@ export default function Header() {
               </div>
             </div>
             <div className=" text-2xl lg:text-4xl font-bold lg:col-span-2 text-center py-5">
-              <Link href={topSelected?.href || "/"}>
-                <Image
+              <Link href={topSelected?.href || "/"}>                <Image
+
                   src={logo}
                   className="mx-auto"
                   alt="Picture of the author"
@@ -193,9 +193,9 @@ export default function Header() {
                 className={`cursor-pointer h-10 p-[11px] min-w-[40px] rounded-full border order-2 border-opacity-20 justify-center items-center gap-2.5 inline-flex ${theme.iconBorder}`}
                 onClick={navUser}
               >
-                <div className="hidden md:block">
-                  <UserIcon fill={theme.iconFill} />
-                  {profile && <> Hi {profile?.firstName}</>}
+                <div className="hidden md:flex">
+                  <UserIcon fill={theme.iconFill}/>
+                  {profile && <span className={`ml-2 ${theme.textClass}`}> Hi {profile?.firstName}</span>}
                 </div>
                 <div className="md:hidden">
                   {initials(profile) === '' ? <UserIcon fill={theme.iconFill} /> : initials(profile)}

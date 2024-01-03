@@ -35,8 +35,8 @@ export default function HomeWinePerformance() {
         <h2 className="text-zinc-800 text-center md:text-7xl font-normal md:leading-[84px] md:tracking-[-1.44px] text-4xl leading-[42px] md:tracking[-0.36px]">
           Wine performance
         </h2>
-        <h3 className="mt-10 text-xl">Between 2004 and 2022, fine wine grew at a 9% Compound Annual Growth Rate (CAGR)*</h3>
-        <h4 className="mt-5 text-sm">*Liv-Ex 1000 Fine Wine Index</h4>
+        <h3 className="mt-10 text-xl">Between 2004 and 2022, fine wine* grew at a 9% Compound Annual Growth Rate (CAGR)</h3>
+        <h4 className="mt-5 text-xs">*Liv-Ex 1000 Fine Wine Index</h4>
 
         <div className="w-full mt-10">
           <div className="grid md:grid-cols-3 gap-5 border-b border-orange-700 border-opacity-20 w-full">
@@ -63,7 +63,7 @@ export default function HomeWinePerformance() {
         </div>
         <div className="w-full md:m-10 md:grid md:grid-cols-2 my-10 md:my-0">
           <div className="w-full">
-            <img src={'/assets/images/' + selectedItem.photo} width="100%" height={0} alt="performance chart" />
+            <img className="h-[350px]`" src={'/assets/images/' + selectedItem.photo} width="100%" height={'350px'} alt="performance chart" />
           </div>
           <div className="w-full flex">
             <div className="flex md:block mt-4 md:mt-0 md:ml-10 md:w-1/4 md:text-left justify-between w-full">
@@ -73,7 +73,7 @@ export default function HomeWinePerformance() {
               <div><span className="inline-block border-solid border-2 border-[#7D302E] rounded mb-[3px] md:w-[40px] w-[6px]"></span> Rolex Index</div>
             </div>
             <div className="hidden md:flex md:w-3/4 text-center items-center">
-              <Image src={'/assets/images/' + selectedItem.cover} className="max-h-[700px] m-auto" width={120} height={300} alt="performance chart" />
+              <Image src={'/assets/images/' + selectedItem.cover} className="max-h-[500px] m-auto" width={100} height={300} alt="performance chart" />
             </div>
           </div>
         </div>

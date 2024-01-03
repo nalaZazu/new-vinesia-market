@@ -16,7 +16,7 @@ import Product from "@/components/products/page";
 import useSWR from "swr";
 
 export default function Home() {
-  const breadCrumbData = ["italy", "spttimano", "barbaresco", "2020"];
+  const breadCrumbData = ["italy", "sottimano", "barbaresco", "2020"];
 
   const fetcher = async (url: string) => {
     const options = {

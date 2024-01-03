@@ -12,7 +12,7 @@ export default function VinesiaBanner() {
               </p>
               <h3 className="text-white text-4xl font-light leading-[44px] max-w-[638px] pt-9"></h3>
               <h1 className="flex flex-col text-white text-7xl font-normal leading-[84px]">
-                How vinesia works
+                How Vinesia works
               </h1>
               {/* <h1 className="flex flex-col text-white text-7xl font-normal leading-[84px]">
                 Lorem ipsum dolor sit

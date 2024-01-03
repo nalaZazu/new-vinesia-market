@@ -22,8 +22,8 @@ export const FooterNavigateTwo = [
   },
   {
     id: 2,
-    title: "Wine as Investment",
-    href: "/invest",
+    title: "Asset performance",
+    href: "/performance",
   },
   {
     id: 3,
@@ -44,10 +44,5 @@ export const FooterNavigateTwo = [
     id: 6,
     title: "My Profile",
     href: "/profile",
-  },
-  {
-    id: 7,
-    title: "About us",
-    href: "/aboutus",
-  },
+  }
 ];
