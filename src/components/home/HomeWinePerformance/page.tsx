@@ -30,7 +30,7 @@ export default function HomeWinePerformance() {
   }, [selectedTab, setSelectedTab])
 
   return (
-    <div className="md:py-40 md:px-0  py-16 px-4 bg-[#F7EFDF]">
+    <div className="md:py-10 md:px-0 py-16 px-4 bg-[#F7EFDF] h-[100vh] flex justify-center items-center">
       <div className="container mx-auto text-center">
         <h2 className="text-zinc-800 text-center md:text-7xl font-normal md:leading-[84px] md:tracking-[-1.44px] text-4xl leading-[42px] md:tracking[-0.36px]">
           Wine performance
@@ -63,17 +63,17 @@ export default function HomeWinePerformance() {
         </div>
         <div className="w-full md:m-10 md:grid md:grid-cols-2 my-10 md:my-0">
           <div className="w-full">
-            <img className="h-[350px]`" src={'/assets/images/' + selectedItem.photo} width="100%" height={'350px'} alt="performance chart" />
+            <img className="h-[350px] w-full" src={'/assets/images/' + selectedItem.photo} alt="performance chart" />
           </div>
           <div className="w-full flex">
-            <div className="flex md:block mt-4 md:mt-0 md:ml-10 md:w-1/4 md:text-left justify-between w-full">
+            <div className="flex md:block mt-4 md:mt-0 md:ml-5 md:w-1/3 md:text-left justify-between w-full">
               <div><span className="inline-block border-solid border-2 border-[#BF4D20] rounded mb-[3px] md:w-[40px] w-[6px]"></span> {selectedItem.legend}</div>
               <div><span className="inline-block border-solid border-2 border-[#BD936B] rounded mb-[3px] md:w-[40px] w-[6px]"></span> S&P 500</div>
               <div><span className="inline-block border-solid border-2 border-[#2F222B] rounded mb-[3px] md:w-[40px] w-[6px]"></span> Gold</div>
               <div><span className="inline-block border-solid border-2 border-[#7D302E] rounded mb-[3px] md:w-[40px] w-[6px]"></span> Rolex Index</div>
             </div>
-            <div className="hidden md:flex md:w-3/4 text-center items-center">
-              <Image src={'/assets/images/' + selectedItem.cover} className="max-h-[500px] m-auto" width={100} height={300} alt="performance chart" />
+            <div className="hidden md:flex md:w-2/3 text-center items-center">
+              <img src={'/assets/images/' + selectedItem.cover} className="h-[350px] mx-auto" alt="performance chart" />
             </div>
           </div>
         </div>
