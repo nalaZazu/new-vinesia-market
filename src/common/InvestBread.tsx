@@ -16,7 +16,7 @@ const InvestBread = () => {
                 href="#"
                 className="text-[#975958] text-base font-normal  leading-snug "
               >
-                vinesia marketplace
+                marketplace
               </Link>
             </li>
             <li className="hidden md:block lg:block  text-orange-700 text-opacity-20 text-base font-normal leading-snug      ">

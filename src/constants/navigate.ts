@@ -70,7 +70,7 @@ export const menuBar: MenuItem[] = [
   },
   {
     id: 2,
-    name: "Vinesia Marketplace",
+    name: "Marketplace",
     href: "/marketplace",
     items: [
       {

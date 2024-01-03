@@ -184,7 +184,7 @@ VinesiaGiftsHero.defaultProps = {
   collections: "An investment for today",
   wineart: "A legacy for tomorrow",
   active: "Vinesia Story",
-  default: "Vinesia Marketplace",
+  default: "Marketplace",
   activeOne: "Start",
   defaultOne: "How Vinesia works",
   defaultTwo: "Wine and art",
