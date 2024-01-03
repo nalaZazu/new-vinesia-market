@@ -45,3 +45,32 @@ export const fetcherWithToken = async (args: [string, string]) => {
   };
   return fetch(url, options).then((res) => res.json());
 };
+
+export function formatUTCDate(date: Date) {
+  const pad = (num: number): string => num.toString().padStart(2, '0');
+
+  const day = pad(date.getUTCDate());
+  const month = pad(date.getUTCMonth() + 1); // getUTCMonth() returns 0-11
+  const year = date.getUTCFullYear();
+
+  let hours = date.getUTCHours();
+  const minutes = pad(date.getUTCMinutes());
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+
+  hours = hours % 12;
+  const hoursStr = hours ? pad(hours) : '12'; // the hour '0' should be '12'
+
+  return `${day}.${month}.${year}, ${hoursStr}:${minutes} ${ampm}`;
+}
+
+export function setUTCDateTime(date: Date, h: number, m: number, s: number): Date {
+  return new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate(), h, m ,s))
+}
+
+export function getDateWithoutTime(date: Date): Date {
+  return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+}
+
+export function dateAddDays(date: Date, days: number): Date {
+  return new Date(date.setDate(date.getDate() + days));
+}
