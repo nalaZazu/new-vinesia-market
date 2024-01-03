@@ -30,7 +30,7 @@ export default function HomeWinePerformance() {
   }, [selectedTab, setSelectedTab])
 
   return (
-    <div className="md:py-10 md:px-0 py-16 px-4 bg-[#F7EFDF] h-[100vh] flex justify-center items-center">
+    <div className="md:py-10 md:px-0 py-16 px-4 bg-[#F7EFDF] h-[110vh] flex justify-center items-center">
       <div className="container mx-auto text-center">
         <h2 className="text-zinc-800 text-center md:text-7xl font-normal md:leading-[84px] md:tracking-[-1.44px] text-4xl leading-[42px] md:tracking[-0.36px]">
           Wine performance

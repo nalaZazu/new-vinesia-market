@@ -6,7 +6,7 @@ import { AccordionWineAbout } from "../accordion/page";
 export default function QASummary({ title = "Have some questions on how it works?" }: { title?: string }) {
     return (
         <>{/* The faster way to get to know us */}
-            <div className="md:py-40 md:px-0  py-16 px-4">
+            <div className="md:py-40 md:px-0 px-4 h-[110vh] flex items-center justify-center">
                 <div className="container mx-auto">
                     <div className="grid md:grid-cols-5 grid-cols-1 ">
                         <div className="max-w-[698px] col-span-3">

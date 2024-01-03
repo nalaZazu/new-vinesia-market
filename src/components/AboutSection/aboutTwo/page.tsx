@@ -56,7 +56,7 @@ const AboutTwo = () => {
       <WineInvestmentWithoutWorries />
 
       {/* here is invest in wine section */}
-      <div className="bg-[#7D302E] h-[100vh]">
+      <div className="bg-[#7D302E] h-[110vh]">
         <div className="flex flex-wrap mx-auto">
           <div className="md:basis-5/12 md:block hidden w-full bg-center bg-cover bg-[url('/assets/images/home_invest_bg.png')]">
             {/* <Image
@@ -73,7 +73,7 @@ const AboutTwo = () => {
             />
           </div> */}
 
-          <div className="md:basis-7/12  py-20 h-[100vh]">
+          <div className="md:basis-7/12  py-20 h-[110vh]">
             <div className="md:ps-[139px] w-full px-4">
               <div className=" flex flex-col justify-between max-w-[501px] w-full ">
                 <div>
@@ -106,7 +106,7 @@ const AboutTwo = () => {
       <HomeWinePerformance />
 
       {/*The potential of wine investment in numbers (next section) */}
-      <div className="md:py-40 md:px-0   py-20 px-4">
+      <div className="flex h-[110vh] items-center justify-center">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 grid-cols-1">
             <div className="max-w-[512px]">

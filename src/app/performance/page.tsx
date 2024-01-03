@@ -130,7 +130,7 @@ export default function AssetsPerformance() {
         </div>
       </div>
 
-      <div className="md:py-40 py-20 bg-[#F7EFDF]">
+      <div className="md:py-40 bg-[#F7EFDF] flex h-[110vh] items-center justify-center">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2">
             <div className="md:pe-[139px]">
