@@ -90,7 +90,7 @@ body::-webkit-scrollbar {width:10px}
   font-family: "Bon Vivant";
 }
 .custom-bg-image {
-  background-image: url("../assets/images/herobanner.png");
+  background-image: url("../assets/images/marketplace_bg.png");
   height: 818px;
   background-size: cover;
   /* background-position: center; */

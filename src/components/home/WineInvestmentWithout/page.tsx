@@ -94,7 +94,7 @@ const WineInvestmentWithoutWorries = () => {
             <div className="md:py-30 my-3 bg-[#F7EFDF] py-10">
                 <div className="text-center">
                     <h2 className="text-zinc-800 md:text-7xl font-normal md:leading-[84px] mx-auto   text-center text-4xl   leading-[42px]">
-                        Wine investment, no worries
+                        Wine investing, worry free
                     </h2>
                     <p className=" py-8 text-neutral-600 text-base font-normal leading-snug">
                         Learn how our process brings our investor “Peace of Mind” pledge to

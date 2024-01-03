@@ -46,7 +46,7 @@ export default function Subscription() {
     ],
   };
   return (
-    <div className="bg-zinc-800 max-w-[1400px] mx-auto ">
+    <div className="bg-zinc-800 w-full">
       <div className=" grid grid-cols-1 md:grid-cols-2">
         <div className=" col-span-1 bg-zinc-800 md:h-auto h-[457px] flex justify-center items-center order-2 md:order-1">
           <div className="px-4 md:px-0">
@@ -56,7 +56,7 @@ export default function Subscription() {
               </h3>
               <p className="max-w-[411px] mx-auto text-center text-zinc-500 text-base font-normal  leading-snug">
                 Soon you will be able to invest in new wines. Sign up for the
-                waiting list to get notified.
+                newsletter to get notified
               </p>
             </div>
             <div className="flex-col gap-2 flex pb-7">
@@ -85,15 +85,6 @@ export default function Subscription() {
                   />
                 </svg>
               </button>
-            </div>
-
-            <div className="max-w-[283px] mx-auto text-center">
-              <span className="text-zinc-500 text-base font-normal ">
-                By submitting your email address you agree to our{" "}
-              </span>
-              <span className="text-white text-base font-normal ">
-                terms & conditions
-              </span>
             </div>
           </div>
         </div>
