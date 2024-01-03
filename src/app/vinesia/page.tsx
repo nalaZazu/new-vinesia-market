@@ -39,7 +39,7 @@ export default function Vinesia() {
           <VinesiaBanner />
         </div>
       </div>
-      <div className="py-40">
+      <div className="py-40 ">
         <div className="container mx-auto px-4">
           <div className="max-w-[877px] mx-auto flex-col justify-center items-center gap-12 flex">
             <div className="md:h-[236px] flex-col justify-start items-center gap-6 flex">
@@ -58,10 +58,12 @@ export default function Vinesia() {
             </h3>
           </div>
         </div>
-        {/* <Image src={vinesia_how_works} alt="invest steps" /> */}
-        <div>
-          <VinesiaAnimation />
+        <div >
+        <Image src={vinesia_how_works} alt="invest steps" />
         </div>
+        {/* <div className="hidden md:block">
+          <VinesiaAnimation />
+        </div> */}
       </div>
 
       {/* <WineVideoBanner title={""} descripition={""} /> */}

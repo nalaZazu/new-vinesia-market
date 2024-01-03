@@ -45,7 +45,7 @@ const VinesiaGiftsPage: React.FC = () => {
   return (
     <div className=" absolute top-0 left-0 right-0 w-full -z-10">
       <div className=" flex flex-col items-center justify-start mx-auto w-full">
-        <VinesiaGiftsHero className="flex flex-col items-center justify-start w-full" />
+        <VinesiaGiftsHero />
         <div className="flex flex-col gap-10 md:gap-[175px] items-center justify-start w-full">
           <div className="gap-10 lg:gap-20 grid sm:grid-cols-2 md:grid-cols-3 grid-cols-1 items-start justify-center max-w-[1073px] mx-auto px-4 w-full md:pt-40 pt-20">
             <div className="flex flex-1 flex-col gap-12 h-full items-start justify-start w-full">
@@ -313,10 +313,6 @@ const VinesiaGiftsPage: React.FC = () => {
             </div>
             <div className="bg-[#F7EFDF] w-full">
               <QASummary title="You might have questions, we definitely have answers." />
-            </div>
-
-            <div>
-              <AccordionWineAbout data={gift_accordion} />
             </div>
           </div>
         </div>
