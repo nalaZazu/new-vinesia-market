@@ -36,7 +36,6 @@ export default function AllEditions({
             {/* <div className=" md:block hidden">
               <div className="flex gap-2 items-center">
                 <p className=" text-stone-600 text-base font-normal  leading-snug basis-44">
-                  {/* basis-1/2 */}
                   Sort by
                 </p>
                 <DropDownButton />

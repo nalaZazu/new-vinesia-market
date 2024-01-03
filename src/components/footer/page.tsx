@@ -205,7 +205,6 @@ export default function Footer() {
               </div>
             </div>
             {/* <!--Copyright section--> */}
-          </div>
           <div className="flex  items-center sm:justify-center bg-[#1C141A] text-white p-2 lg:justify-between">
             <div className=" container mx-auto flex-wrap  flex md:justify-between justify-center items-center">
               <div className="md:mr-12 ">
