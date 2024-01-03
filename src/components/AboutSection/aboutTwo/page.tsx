@@ -8,10 +8,6 @@ import { AccordionWine } from "@/components/accordion/page";
 import { Arrows, LineDot, MarksAnim } from "@/assets/icons/Icons";
 import Image from "next/image";
 import ModalContainer from "@/common/ModalContainer";
-import AboutDropDown from "@/components/Modal/AboutModalDropdown/page";
-import CalculationSetting from "@/components/Modal/Calculation/page";
-import PerformanceModel from "@/components/Modal/Performance/page";
-import Appactivity from "@/components/charts/page";
 import Link from "next/link";
 import { GraphProvider } from "@/context/GraphContextProvider";
 import { Flex } from 'antd';
@@ -19,8 +15,8 @@ import LeftPanel from "@/components/simulator/LeftPanel";
 import GraphPanel from "@/components/simulator/GraphPanel";
 import RightPanel from "@/components/simulator/RightPanel";
 import simulatorPreview from "@/assets/images/simulatorPreview.png";
-import SupportAnim from "@/components/supportAnimation/page";
 import HomeWinePerformance from "@/components/HomeWinePerformance/page";
+import WineInvestmentWithoutWorries from "@/components/home/WineInvestmentWithout/page";
 const AboutTwo = () => {
   const [visible, setVisible] = useState(false);
   const [step, setStep] = useState(1);
@@ -45,40 +41,7 @@ const AboutTwo = () => {
         </div>
       </ModalContainer>
 
-      {/* here is end of modal */}
-      <div className="md:py-30 my-3">
-        <div className="text-center">
-          <h2 className="max-w-[769px] text-zinc-800 md:text-7xl font-normal md:leading-[84px] mx-auto   text-center text-4xl   leading-[42px]">
-            Wine investments without the worries
-          </h2>
-          <p className=" py-8 text-neutral-600 text-base font-normal leading-snug">
-            Learn how our process brings our investor “Peace of Mind” pledge to
-            life.
-          </p>
-          <Link href="/invest">
-            <button className="px-8 py-4 bg-orange-700 rounded-[48px] justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal  uppercase leading-3 tracking-tight">
-              START INVESTING NOW
-              <span>
-                <Arrows storke="#FFFFFF" />
-              </span>
-            </button>
-          </Link>
-        </div>
-        {/* support video */}
-        <div className="flex justify-center md:pt-[60px] pt-2 ">
-          {/* <Image src={investment} alt="image" /> */}
-          <SupportAnim />
-        </div>
-        {/* here is image defined */}
-        <div className="flex justify-center md:pt-[22px] pt-12">
-          {/* <Image src={investment} alt="image" /> */}
-          <video className="lg:w-3/4 w-full" autoPlay loop muted>
-            <source src='assets/video/vinesia 211223_360.mp4' media="all and (max-width: 1200px)" />
-            <source src='assets/video/vinesia 211223_960.mp4' />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </div>
+      <WineInvestmentWithoutWorries/>
 
       {/* here is invest in wine section */}
       <div className="bg-[#7D302E]">
