@@ -1,10 +1,8 @@
 "use client";
-import React, { Fragment, useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Disclosure } from "@headlessui/react";
 import { ArrowDown, RoundArrow } from "@/assets/icons/Icons";
 import { AccordionAbout, AccordionAboutTwo, AccordionFAQ } from "@/constants/accrodion";
-import { ChevronUpIcon } from "@heroicons/react/20/solid";
-import { usePathname } from "next/navigation";
 export function AccordionWine({
   data = AccordionAbout,
   titleClass = "text-white",
@@ -18,7 +16,12 @@ export function AccordionWine({
   descClass?: any;
   containerClass?: any;
 }) {
-  const [isActive, setIsActive] = useState<any>();
+  const [isActive, setIsActive] = useState<number | undefined>(undefined);
+
+  useEffect(() => {
+    setIsActive(Math.floor(Math.random() * 3))
+  }, []);
+
   const handleDisclosure = (id: any) => {
     if (isActive === id) {
       setIsActive(undefined);
@@ -26,10 +29,9 @@ export function AccordionWine({
       setIsActive(id);
     }
   };
-  const pathname = usePathname();
   return (
     <div>
-      {data?.map((item: any, index: any) => {
+      {data?.map((item: any, index: number) => {
         const { id, title, text } = item;
         return (
           <div key={index} className={`w-full `}>
@@ -43,11 +45,10 @@ export function AccordionWine({
                   >
                     <span>{title}</span>
                     <span
-                      className={` h-[25px] w-[25px] ${
-                        isActive === index
+                      className={` h-[25px] w-[25px] ${isActive === index
                           ? " transition transform duration-500 rotate-0"
                           : "rotate-90 transition transform duration-500"
-                      }`}
+                        }`}
                     >
                       <RoundArrow />
                     </span>
@@ -76,26 +77,26 @@ export function AccordionWineAbout({ data = AccordionAbout }: { data?: any }) {
   const panelRefs = useRef<PanelRefs>({});
   const handleToggle = (id: any) => {
     setIsActive(isActive === id ? null : id);
-    if(!isActive !== id){
+    if (!isActive !== id) {
       setTimeout(() => {
         const panelElement = panelRefs.current[id];
-      if (panelElement) {
-        const panelRect = panelElement.getBoundingClientRect();
-        const additionalOffset = 55; // Extra scroll space in pixels
-        const isElementInView = 
-          panelRect.top >= 0 &&
-          panelRect.left >= 0 &&
-          panelRect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-          panelRect.right <= (window.innerWidth || document.documentElement.clientWidth);
+        if (panelElement) {
+          const panelRect = panelElement.getBoundingClientRect();
+          const additionalOffset = 55; // Extra scroll space in pixels
+          const isElementInView =
+            panelRect.top >= 0 &&
+            panelRect.left >= 0 &&
+            panelRect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            panelRect.right <= (window.innerWidth || document.documentElement.clientWidth);
 
-        if (!isElementInView) {
-          const absolutePanelTop = window.scrollY + panelRect.top - additionalOffset;
-          window.scrollTo({
-            top: absolutePanelTop,
-            behavior: 'smooth'
-          });
+          if (!isElementInView) {
+            const absolutePanelTop = window.scrollY + panelRect.top - additionalOffset;
+            window.scrollTo({
+              top: absolutePanelTop,
+              behavior: 'smooth'
+            });
+          }
         }
-      }
       }, 100)
     }
   };
@@ -119,17 +120,16 @@ export function AccordionWineAbout({ data = AccordionAbout }: { data?: any }) {
                   >
                     <p className="max-w-[440px] font-light">{title}</p>
                     <span
-                      className={`w-[25px] h-[25px] ${
-                        isActive === index
+                      className={`w-[25px] h-[25px] ${isActive === index
                           ? " transition transform duration-500 rotate-0"
                           : "rotate-180 transition transform duration-500"
-                      }`}
+                        }`}
                     >
                       <ArrowDown />
                     </span>
                   </div>
                   {isActive == index && (
-                    <div className="text-neutral-600 text-base font-normal pt-3 leading-snug tracking[-0.32px] whitespace-pre-line"  ref={el => panelRefs.current[index] = el}>
+                    <div className="text-neutral-600 text-base font-normal pt-3 leading-snug tracking[-0.32px] whitespace-pre-line" ref={el => panelRefs.current[index] = el}>
                       {text}
                     </div>
                   )}
@@ -145,7 +145,7 @@ export function AccordionWineAbout({ data = AccordionAbout }: { data?: any }) {
 
 
 type TAccordionWineFaq = {
-  [key: string]: {id: number, question: string, answer: string}[]
+  [key: string]: { id: number, question: string, answer: string }[]
 }
 
 type PanelRefs = {
@@ -157,7 +157,7 @@ export function AccordionWineFaq({ data = AccordionFAQ }: { data?: TAccordionWin
   const panelRefs = useRef<PanelRefs>({});
   const handleToggle = (id: any) => {
     setIsActive(isActive === id ? null : id);
-    if(!isActive !== id){
+    if (!isActive !== id) {
       setTimeout(() => {
         panelRefs.current[id]?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }, 100)
@@ -190,7 +190,7 @@ export function AccordionWineFaq({ data = AccordionFAQ }: { data?: TAccordionWin
 
                       {isActive === id && (
                         <Disclosure.Panel className="text-neutral-600 text-base font-normal pt-3 leading-snug tracking[-0.32px] whitespace-pre-line"
-                        ref={el => panelRefs.current[id] = el}>
+                          ref={el => panelRefs.current[id] = el}>
                           {answer}
                         </Disclosure.Panel>
                       )}
