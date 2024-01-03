@@ -41,7 +41,7 @@ export default function Artists() {
         </div>
 
         {/* <div>
-          <div className="grid grid-cols-2 gap-8 max-w-[608px]">
+          <div className="grid md:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-8 max-w-[608px]">
             {ProductList.slice(0, 2).map((items, i) => {
               return (
                 <div key={i}>
@@ -55,7 +55,7 @@ export default function Artists() {
       {/* monsieurZ */}
       <div className="grid md:grid-cols-2 md:pt-40 pt-10">
         <div>
-          <div className="grid grid-cols-2 gap-8 max-w-[608px]">
+          <div className="grid md:grid-cols-2 grid-cols-1 gap-8 max-w-[608px]">
             {/* {ProductList.slice(0, 2).map((items, i) => {
               return (
                 <div key={i}>

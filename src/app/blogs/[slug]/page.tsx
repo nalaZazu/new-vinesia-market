@@ -16,13 +16,13 @@ const BlogDetails = () => {
           className="object-cover bg-center w-full"
         />
         <div className="container px-4 mx-auto pt-8">
-          <div className="grid md:grid-cols-8  pb-20 lg:gap-32 md:gap-12 border-b border-orange-700 border-opacity-20 ">
+          <div className="grid md:grid-cols-8    pb-20 lg:gap-32 md:gap-12 border-b border-orange-700 border-opacity-20 ">
             <div className="col-span-5   flex-col justify-start items-start gap-6 inline-flex">
               <div>
                 <span className="text-[#906447] pb-3 text-xs font-normal   uppercase leading-[18px] tracking-tight">
                   WINE INVESTMENT
                 </span>
-                <h3 className="   text-zinc-800 text-4xl font-light  leading-[44px] tracking-[ -0.36px]">
+                <h3 className=" max-w-[724.04px]  text-zinc-800 text-4xl font-light  leading-[44px] tracking-[ -0.36px]">
                   Wine scoring system – how does it work? A pros/cons analysis
                 </h3>
                 <div className="flex items-center gap-4 pt-6 pb-12  border-b border-orange-700 border-opacity-20">
@@ -43,7 +43,7 @@ const BlogDetails = () => {
                 {/* here is paraghrap section */}
                 <div>
                   {/* here is section  */}
-                  <div className="py-12">
+                  <div className=" md:px-0 px-4 py-12">
                     <p className="text-zinc-800 text-lg font-semibold   leading-relaxed">
                       Have you ever come across a bottle of wine with a score of
                       90 or higher on a store shelf and wondered what that
@@ -56,7 +56,7 @@ const BlogDetails = () => {
                     </p>
                   </div>
                   {/* here is   section */}
-                  <div>
+                  <div className="md:px-0 px-4">
                     <h4 className=" text-zinc-800 text-[21px] font-light  leading-[29px] tracking-wide">
                       How did the Wine Scoring System come about?
                     </h4>
@@ -87,7 +87,7 @@ const BlogDetails = () => {
                     <Image src={blogimages} alt="image" className="w-full" />
                   </div>
                   {/* here is   section */}
-                  <div>
+                  <div className="md:px-0 px-4">
                     <h4 className=" text-zinc-800 text-[21px] font-light  leading-[29px] tracking-wide">
                       How Does the Wine Scoring System Work?
                     </h4>
@@ -106,7 +106,7 @@ const BlogDetails = () => {
                     </p>
                   </div>
                   {/* here is   section */}
-                  <div className="py-12">
+                  <div className="md:px-0 px-4 py-12">
                     <h4 className=" text-zinc-800 text-[21px] font-light  leading-[29px] tracking-wide">
                       The 100-Point Scoring Scale
                     </h4>
@@ -158,8 +158,6 @@ const BlogDetails = () => {
                   </div>
                   {/* here is section  image*/}
                   <div className=" w-[715px] h-[281px] bg-no-repeat bg-cover bg-center bg-[url('https://i.ibb.co/S3nDYyp/blogimage.png')]">
-                    {/* <Image src={imagebanner} alt="image"/> */}
-                    {/* <Image src={imagebanner} alt="image" className="w-full" /> */}
                     {/**/}
                     <div className="py-12 px-12">
                       <h4 className="text-[#FFFFFF] text-[21px] font-light font-['Canela'] leading-[29px] tracking-wide">
@@ -176,7 +174,7 @@ const BlogDetails = () => {
                     </div>
                   </div>
                   {/* here is section  */}
-                  <div className=" pt-12">
+                  <div className="md:px-0 px-4 pt-12">
                     <h4 className=" text-zinc-800 text-[21px] font-light  leading-[29px] tracking-wide">
                       3 Tips for Using Wine Scores Wisely
                     </h4>
@@ -187,7 +185,7 @@ const BlogDetails = () => {
                     </p>
                   </div>
                   {/* here is section  */}
-                  <div className=" py-12">
+                  <div className="md:px-0 px-4 py-12">
                     <h4 className=" text-zinc-800 text-[21px] font-light  leading-[29px] tracking-wide">
                       Know the Source
                     </h4>
@@ -199,7 +197,7 @@ const BlogDetails = () => {
                     </p>
                   </div>
                   {/* here is section  */}
-                  <div className=" pb-12">
+                  <div className="md:px-0 px-4 pb-12">
                     <h4 className=" text-zinc-800 text-[21px] font-light  leading-[29px] tracking-wide">
                       Consider the Region
                     </h4>
@@ -211,7 +209,7 @@ const BlogDetails = () => {
                     </p>
                   </div>
                   {/* here is section  */}
-                  <div className="">
+                  <div className="md:px-0 px-4">
                     <h4 className=" text-zinc-800 text-[21px] font-light  leading-[29px] tracking-wide">
                       Develop Your Own Palate
                     </h4>

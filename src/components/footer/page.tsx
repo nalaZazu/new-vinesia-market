@@ -70,6 +70,9 @@ export default function Footer() {
                     <p className="mb-4 flex justify-center    text-neutral-300 text-base font-normal  leading-snug tracking-[0.32px]">
                       Share info on your investment, make connections
                     </p>
+                    <button className="px-8 py-4 bg-orange-700  rounded-[48px] justify-center items-center gap-3 inline-flex text-[#F2DBD2] text-xs">
+                      JOIN OUR COMMUNITY
+                    </button>
                     <div className="pt-8 ">
                       <span>Follow us</span>
                       <div className="flex justify-center   items-center gap-[10px] pt-[10px]">
@@ -200,26 +203,27 @@ export default function Footer() {
                   </div>
                 </div>
               </div>
-              {/* <!--Copyright section--> */}
             </div>
-            <div className="flex  items-center sm:justify-center bg-[#1C141A] text-white p-2 lg:justify-between">
-              <div className=" container mx-auto flex-wrap  flex md:justify-between justify-center items-center">
-                <div className="md:mr-12 ">
-                  <span className="text-neutral-400 text-xs font-normal  leading-[18px]">
-                    Copyright © 2023 Vinesia. All Rights Reserved
-                  </span>
-                </div>
-                <div className=" ">
-                  <div className="flex justify-center items-center gap-[10px] pt-[10px]">
-                    <Link href="#" className="p-2">
-                      <Image src={strip} alt="strip" />
-                    </Link>
-                    <Link href="#" className="p-2">
-                      <Image src={Gpay} alt="Gpay" />
-                    </Link>
-                    <Link href="#" className="p-2">
-                      <Image src={applePay} alt="applePay" />
-                    </Link>
+            {/* <!--Copyright section--> */}
+          </div>
+          <div className="flex  items-center sm:justify-center bg-[#1C141A] text-white p-2 lg:justify-between">
+            <div className=" container mx-auto flex-wrap  flex md:justify-between justify-center items-center">
+              <div className="md:mr-12 ">
+                <span className="text-neutral-400 text-xs font-normal  leading-[18px]">
+                  Copyright © 2023 Vinesia. All Rights Reserved
+                </span>
+              </div>
+              <div className=" ">
+                <div className="flex justify-center items-center gap-[10px] pt-[10px]">
+                  <Link href="#" className="p-2">
+                    <Image src={strip} alt="strip" />
+                  </Link>
+                  <Link href="#" className="p-2">
+                    <Image src={Gpay} alt="Gpay" />
+                  </Link>
+                  <Link href="#" className="p-2">
+                    <Image src={applePay} alt="applePay" />
+                  </Link>
 
                   <Link href="#" className="p-2">
                     <Image src={visa} alt="visa" />

@@ -11,13 +11,17 @@ import {
   Certif_Icon,
   ExculsiveIcon,
   GiftIcon,
+  NextIcon,
   VintageIcon,
 } from "@/assets/icons/Icons";
 import BirthImage from "@/assets/images/birth_image.png";
-import GiftImg from "@/assets/images/gift_img.png";
+
 import Footer from "@/components/footer/page";
 import Benifits from "@/components/secruityPage/Benifits";
 import QASummary from "@/components/qasummary/page";
+import GiftSlider from "@/components/gifts/GiftSlider";
+import { AccordionWineAbout } from "@/components/accordion/page";
+import { AccordionFAQ, gift_accordion } from "@/constants/accrodion";
 const whatIsABondedWarehouseAndWhyDoesVinesiaUseItOptionsList = [
   { label: "Option1", value: "option1" },
   { label: "Option2", value: "option2" },
@@ -128,6 +132,7 @@ const VinesiaGiftsPage: React.FC = () => {
                 </button>
               </div>
             </div>
+
             <div className="container flex flex-col md:gap-10 gap-20 items-start justify-start mt-1.5 px-4 py-40 w-auto md:w-full">
               <div className="flex flex-col gap-4 items-center justify-start max-w-[1248px] mx-auto w-full">
                 <p className="font-Canela md:text-7xl text-7xl text-center text-[#2F222B] tracking-[-1.44px] w-auto">
@@ -140,12 +145,8 @@ const VinesiaGiftsPage: React.FC = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 md:gap-0 gap-10 items-center justify-between w-full">
-                <div className="flex flex-col md:min-h-[614px] md:h-auto items-center justify-start max-w-[501px]">
-                  <Image
-                    className=" sm:h-auto h-full object-cover w-[501px] md:w-full"
-                    src={GiftImg}
-                    alt="rectangle8589"
-                  />
+                <div className=" md:min-h-[614px] md:h-auto max-w-[501px]">
+                  <GiftSlider />
                 </div>
                 <div className="flex md:flex-1 flex-col gap-12 items-start justify-start md:w-full">
                   <div className="flex flex-col gap-4 items-start justify-start w-full">
@@ -312,6 +313,10 @@ const VinesiaGiftsPage: React.FC = () => {
             </div>
             <div className="bg-[#F7EFDF] w-full">
               <QASummary title="You might have questions, we definitely have answers." />
+            </div>
+
+            <div>
+              <AccordionWineAbout data={gift_accordion} />
             </div>
           </div>
         </div>

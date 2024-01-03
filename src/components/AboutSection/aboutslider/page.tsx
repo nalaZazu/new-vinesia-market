@@ -19,8 +19,7 @@ const AboutSlider = ({ data = VideoSlider }: { data?: any }) => {
   const [currentslide, setCurrentSlide] = useState(0);
   const [open, setOpen] = useState(false);
   const [videoLink, setVideoLink] = useState(null);
-  const slider = useRef<any>();
-
+ 
   const sliderSettings = {
     infinite: false,
     speed: 500,

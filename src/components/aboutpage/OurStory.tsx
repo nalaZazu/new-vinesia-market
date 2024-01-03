@@ -46,8 +46,8 @@ export default function OurStory() {
           A rich journey already, yet so much more to write.
         </p>
       </div>
-      <div className="grid md:grid-cols-2">
-        <div className="md:pe-[139px]">
+      <div className="grid md:grid-cols-2 grid-cols-1">
+        <div className="md:pe-[139px] md:pb-0 pb-8">
           <p className=" text-neutral-600 text-base font-normal leading-snug pb-8">
             Like all good stories, ours begins with love. A love for the craft
             of winemakers, a love for the stories, a love for this unique
@@ -81,11 +81,11 @@ export default function OurStory() {
           </p>
         </div>
         <div>
-          <div className="grid grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 grid-cols-1 gap-8">
             {datavalue.map((items: any, i: any) => {
               const { subtext, title, text } = items;
               return (
-                <div key={i} className="flex gap-4 pb-12">
+                <div key={i} className="flex flex-col md:flex-row gap-4 pb-12">
                   <Image src={Lock} alt="" />
                   <div>
                     <p className="text-[#906447] text-xs font-normal uppercase leading-[18px] tracking-tight pb-2">

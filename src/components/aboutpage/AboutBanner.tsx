@@ -3,7 +3,7 @@ import React from "react";
 export default function AboutBanner() {
   return (
     <div>
-      <section className="grid grid-cols-1 aboutus-bg-image md:pt-0 pt-40 bg-[#4e261a] object-cover bg-center h-[818px] bg-top-[5rem]')]">
+      <section className="grid grid-cols-1 aboutus-bg-image md:pt-0 pt-40 bg-[#4e261a] object-cover bg-center h-[818px] md:h-[900px] lg:h-[818px] bg-top-[5rem]')]">
         <div className=" container mx-auto flex flex-col md:justify-center justify-between text-white md:px-0 px-4 pt-10 md:pt-24">
           <div>
             <div>

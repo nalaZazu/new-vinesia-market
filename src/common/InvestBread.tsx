@@ -1,84 +1,106 @@
-
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
+const temp = ["vinesia marketplace", "invest"];
 
-const InvestBread = () => {
+const InvestBread = ({ baseName }: { baseName?: any }) => {
   const pathname = usePathname();
   return (
     <>
-      <div className="conatiner mx-auto hidden md:block">
-        <nav className="flex" aria-label="Breadcrumb">
-          <ol className="container mx-auto flex flex-wrap gap-2 px-2 items-center">
-            <li className="inline-flex items-center">
+      <span className="conatiner mx-auto">
+        <span className="flex" aria-label="Breadcrumb">
+          <span className="container mx-auto flex flex-wrap gap-2 px-2 items-center">
+            <span className="inline-flex items-center">
               <Link
                 href="#"
-                className="text-[#975958] text-base font-normal  leading-snug "
+                className={` text-[#975958] text-base font-normal  leading-snug `}
               >
-                marketplace
+                {baseName}
               </Link>
-            </li>
-            <li className="hidden md:block lg:block  text-orange-700 text-opacity-20 text-base font-normal leading-snug      ">
-              /
-            </li>
-            <li>
-              <div className="flex items-center">
-                <Link
-                  href="#"
-                  className=" text-[#975958] text-base font-normal  leading-snug"
-                >
-                  home
-                </Link>
-              </div>
-            </li>
-            <li className="hidden md:block lg:block  text-base font-normal     text-orange-700 text-opacity-20  leading-snug">
-              /
-            </li>
-            <li aria-current="page">
-              <div className="flex items-center">
-                <span className=" text-zinc-800 text-base font-normal  leading-snug">
-                  {pathname.split("/")}
-                </span>
-              </div>
-            </li>
-          </ol>
-        </nav>
-      </div>
+            </span>
+            {/* <span
+                    key={"/" + i}
+                    className="hidden md:block lg:block  text-orange-700 text-opacity-20 text-base font-normal leading-snug      "
+                  >
+                    /
+                  </span> */}
 
-      {/* for mobileView */}
-      <div className="conatiner mx-auto md:hidden block">
-        <nav className="flex" aria-label="Breadcrumb">
-          <ol className="container mx-auto flex flex-wrap gap-3 px-4 items-center">
-            <li>
+            {decodeURIComponent(pathname)
+              ?.split("/")
+              .slice(1)
+              ?.map((d: any, i: any) => {
+                return (
+                  <>
+                    <span
+                      key={"_" + i}
+                      className="hidden md:block lg:block  text-orange-700 text-opacity-20 text-base font-normal leading-snug      "
+                    >
+                      /
+                    </span>
+                    <span key={i} className="inline-flex items-center">
+                      <Link
+                        href="#"
+                        className={`text-zinc-800 text-base font-normal  leading-snug `}
+                      >
+                        {d}
+                      </Link>
+                    </span>
+                  </>
+                );
+              })}
+            {/* <span aria-current="page">
               <div className="flex items-center">
-                <Link
-                  href="#"
-                  className={`   text-base font-normal  leading-snug    ${
-                    pathname === "/invest"
-                      ? "text-[#975958]"
-                      : "text-stone-500 "
-                  }`}
-                >
-                  home
-                </Link>
-              </div>
-            </li>
-            <li className="text-opacity-20  leading-snug text-orange-700  text-base font-normal  ">
-              /
-            </li>
-            <li aria-current="page">
-              <div className="flex items-center">
-                <span className=" text-zinc-800 text-base font-normal  leading-snug   ">
+                <span className="  text-base font-normal  leading-snug">
                   {pathname.split("/")}
                 </span>
               </div>
-            </li>
-          </ol>
-        </nav>
-      </div>
+            </span> */}
+          </span>
+        </span>
+      </span>
     </>
   );
 };
 
 export default InvestBread;
+
+// This Code Can be Used if Array Passed From Parrent Component
+
+{
+  /* <span className="conatiner mx-auto">
+        <span className="flex" aria-label="Breadcrumb">
+          <span className="container mx-auto flex flex-wrap gap-2 px-2 items-center">
+            {data?.map((d: any, i: any) => {
+              return (
+                <>
+                  <span key={i} className="inline-flex items-center">
+                    <Link
+                      href="#"
+                      className={`${
+                        i == 0 ? "text-[#975958]" : "text-zinc-800"
+                      }  text-base font-normal  leading-snug `}
+                    >
+                      {d}
+                    </Link>
+                  </span>
+                  <span
+                    key={"/" + i}
+                    className="hidden md:block lg:block  text-orange-700 text-opacity-20 text-base font-normal leading-snug      "
+                  >
+                    /
+                  </span>
+                </>
+              );
+            })}
+            <span aria-current="page">
+              <div className="flex items-center">
+                <span className="  text-base font-normal  leading-snug">
+                  {pathname.split("/")}
+                </span>
+              </div>
+            </span>
+          </span>
+        </span>
+      </span> */
+}

@@ -10,8 +10,8 @@ import youtube from "@/assets/icons/youtube.svg";
 export default function Wanttoknow() {
   return (
     <div>
-      <div className="md:flex md:justify-between max-w-[1040px] items-center mx-auto">
-        <p className="w-[174px] text-right text-white text-lg font-semibold leading-relaxed">
+      <div className="md:flex flex-col md:flex-row md:justify-between max-w-[1040px] items-center mx-auto md:space-y-0 space-y-5">
+        <p className="md:max-w-[174px] md:text-right text-white md:text-lg text-xl font-semibold leading-relaxed">
           Want to know more?
         </p>
         <div className="justify-start items-center gap-6 flex">
@@ -20,7 +20,7 @@ export default function Wanttoknow() {
             <NextIcon fill={"#fff"} />
           </button>
         </div>
-        <div className="hidden md:block h-[60px] origin-top-left rotate-12 border border-stone-500"></div>
+        <div className="hidden md:block md:h-[60px] md:origin-top-left md:rotate-12 border border-stone-500"></div>
         <p className="md:text-right text-white text-center text-lg font-semibold leading-relaxed">
           Or find us on
         </p>

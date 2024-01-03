@@ -5,8 +5,8 @@ import ourmission from "@/assets/images/about-our-mission.png";
 export default function OurMission() {
   return (
     <div>
-      <div className="grid md:grid-cols-2">
-        <div className="md:pe-[139px]">
+      <div className="grid md:grid-cols-2 grid-cols-1">
+        <div className="md:pe-[139px] ">
           <p className="text-zinc-800 text-xs font-normal uppercase leading-[18px] tracking-tight">
             Our
           </p>
@@ -32,7 +32,7 @@ export default function OurMission() {
             </p>
           </div>
         </div>
-        <div>
+        <div className="md:pt-0 pt-8">
           <Image className="w-full h-auto" src={ourmission} alt="Transistor" />
         </div>
       </div>

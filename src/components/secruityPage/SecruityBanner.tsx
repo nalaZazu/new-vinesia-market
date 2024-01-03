@@ -19,7 +19,7 @@ export default function SecruityBanner() {
             investing and security with our Peace of Mind pledge.
           </p>
         </div>
-        <div className="col-span-7">
+        <div className="md:col-span-7 col-span-12">
           <div className="w-full md:h-[460px] h-[480px] bg-no-repeat bg-cover bg-center bg-[url('https://i.ibb.co/1z06641/security.png')] relative">
 
           </div>

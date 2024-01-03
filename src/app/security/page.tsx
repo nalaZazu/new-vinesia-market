@@ -23,7 +23,7 @@ export default function Security() {
           <h3 className="text-center text-zinc-800 text-4xl font-light leading-[44px] pb-6">
             What are the tags, and how are they used?
           </h3>
-          <p className="max-w-[596px] mx-auto text-center text-zinc-800 text-base font-normal leading-snug">
+          <p className="max-w-[596px] mx-auto text-center text-zinc-800 text-base font-normal leading-snug md:pb-0 pb-14">
             When our hand-selected wines arrive at our warehouse, we assign the
             cases and/or bottles two specific tags that service different
             purposes.
@@ -32,7 +32,7 @@ export default function Security() {
           <SecruityTags />
         </div>
       </div>
-      <div className="p-6 bg-red-900 justify-center items-center gap-2 flex">
+      <div className="p-6 bg-red-900 justify-center items-center gap-2 flex md:mt-0 mt-14">
         <p className="w-[998px] text-center text-white text-base font-normal leading-snug">
           With a combination of NFC and Bluetooth Low Energy (BLE) tags that
           send data in real-time to the blockchain, you do not have to just take

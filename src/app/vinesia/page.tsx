@@ -58,10 +58,10 @@ export default function Vinesia() {
             </h3>
           </div>
         </div>
-        <Image src={vinesia_how_works} alt="invest steps" />
-        {/* <div className="">
+        {/* <Image src={vinesia_how_works} alt="invest steps" /> */}
+        <div>
           <VinesiaAnimation />
-        </div> */}
+        </div>
       </div>
 
       {/* <WineVideoBanner title={""} descripition={""} /> */}

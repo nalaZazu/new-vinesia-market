@@ -48,7 +48,7 @@ export default function AboutUs() {
           <OurMission />
         </div>
       </div>
-      <div className="pt-20 pb-40">
+      <div className="md:pt-20 md:pb-40 pb-20">
         <div className="container mx-auto px-4">
           <OurVision />
         </div>
@@ -63,19 +63,19 @@ export default function AboutUs() {
           <Wanttoknow />
         </div>
       </div>
-      <div className="container mx-auto px-4 py-40">
+      <div className="container mx-auto px-4 md:py-40 py-20">
         <OurStory />
       </div>
       <VideoStoryBanner />
       {/* our team */}
       <div className="bg-[#F7EFDF]">
-        <div className=" container mx-auto px-4 pt-40 pb-24">
+        <div className=" container mx-auto px-4 md:pt-40 pt-20 md:pb-24 pb-20">
           <div className="pb-12">
-            <h2 className="text-zinc-800 text-7xl font-normal font-['Canela'] leading-[84px]">
+            <h2 className="text-zinc-800 text-7xl font-normal leading-[84px]">
               Our team
             </h2>
           </div>
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-8">
             {team.map((item, i) => {
               return (
                 <div key={i} className="pb-16">
@@ -98,7 +98,7 @@ export default function AboutUs() {
             </h2>
           </div>
 
-          <div className="grid md:*grid-cols-2 gap-20 pt-6 pb-16">
+          <div className="grid md:*grid-cols-2 grid-cols-1 gap-20 pt-6 pb-16">
             <p className="grow shrink basis-0 text-zinc-800 text-base font-normal font-['Albert Sans'] leading-snug">
               Deep knowledge, experience and a healthy dose of challenge from
               our expert advisors to keep us on our toes.Our success stems from
@@ -106,7 +106,7 @@ export default function AboutUs() {
               as respectful stewards towards the magical products.
             </p>
           </div>
-          <div className="grid md:grid-cols-3">
+          <div className="grid md:grid-cols-3 grid-cols-1">
             {advisors.map((item, i) => {
               return (
                 <div key={i}>

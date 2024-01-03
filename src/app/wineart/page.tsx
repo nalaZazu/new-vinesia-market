@@ -50,10 +50,10 @@ export default function wineryArt() {
 
       {/* <div className="pb-40">
         <div className="container mx-auto px-4">
-          <h2 className="w-[960px] mx-auto text-center text-zinc-800 text-7xl font-normal leading-[84px] tracking-[-1.44] pb-12">
+          <h2 className="max-w-[960px] mx-auto text-center text-zinc-800 md:text-7xl text-5xl font-normal md:leading-[84px] leading-[58px] tracking-[-1.44] pb-12">
             Selected wineries represented in our Collections 
           </h2>
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 grid-cols-1 gap-8">
             {[1, 2, 3].map((items, i) => {
               return (
                 <div key={i}>

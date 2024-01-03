@@ -33,6 +33,7 @@ export default function Home() {
     `${process.env.NEXT_PUBLIC_API_ADDRESS}`,
     fetcher
   );
+  console.log("data", data);
   return (
     <>
       <div className="absolute top-0 -z-10 left-0 right-0">
@@ -58,11 +59,11 @@ export default function Home() {
             </h1>
             {/* Desktop View */}
             <div className="hidden lg:block">
-              <Critics />
+              <Critics data={data?.selection} />
             </div>
             {/* Mobile vIew */}
             <div className="block lg:hidden">
-              <CriticsMobile />
+              <CriticsMobile data={data?.selection}/>
             </div>
           </div>
         </div>

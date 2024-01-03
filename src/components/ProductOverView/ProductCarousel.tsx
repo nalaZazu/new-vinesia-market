@@ -74,7 +74,7 @@ export default function ProductCarousel({images = []}: {images?: string[]}) {
                 className="flex justify-center items-center md:pb-20 pb-10"
               >
                 <div className="relative">
-                  <img
+                  <Image
                     src={`${process.env.NEXT_PUBLIC_API_ADDRESS}edition/file/${item}`}
                     width={512}
                     height={512}

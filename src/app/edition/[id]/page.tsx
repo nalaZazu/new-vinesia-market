@@ -94,21 +94,21 @@ const EditionOverview = ({
                       <p>First release date</p>
                       <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
                       <p className="text-zinc-800 text-base font-normal leading-snug">
-                        {data.releaseDetails.releaseDate?.toISOString()} Sep 29, 2023
+                        {data?.releaseDetails?.releaseDate?.toISOString()} Sep 29, 2023
                       </p>
                     </div>
                     <div className="  flex gap-3 items-center text-stone-500 text-base font-normal leading-snug">
                       <p>Owner</p>
                       <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
                       <p className="text-zinc-800 text-base font-normal leading-snug">
-                        {data.owner === '0x1' ? 'Vinesia' : data.owner}
+                        {data?.owner === '0x1' ? 'Vinesia' : data.owner}
                       </p>
                     </div>
                     <div className=" flex gap-3 items-center text-stone-500 text-base font-normal leading-snug">
                       <p>Edition</p>
                       <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20"></div>
                       <p className="text-zinc-800 text-base font-normal leading-snug">
-                        #{data.number} from {data.editions.length}
+                        #{data?.number} from {data?.editions?.length}
                       </p>
                     </div>
                     <div className=" flex gap-3 items-center text-stone-500 text-base font-normal leading-snug">
@@ -139,7 +139,7 @@ const EditionOverview = ({
                         <AlertIcons />
                       </div>
 
-                      {data.isAvailable &&
+                      {data?.isAvailable &&
                         <div className="p-2 h-9 bg-green-500 rounded-[30px]   flex justify-start items-center gap-1.5">
                           <div className=" w-2 h-2 bg-white rounded-full" />
                           <p className="text-center text-white text-xs font-normal uppercase leading-3 tracking-tight">
@@ -154,7 +154,7 @@ const EditionOverview = ({
                         {getPriceText(data.buyNowPrice === undefined ? 0 : data.buyNowPrice[currency])}
                       </h6>
                       <div className="h-[25px]">
-                        {data.lastSale &&
+                        {data?.lastSale &&
                           <div className="gap-4 pt-2">
                             <p className="text-gray-300 text-base font-normal  leading-snug">
                               Last sale: {getCurrencyValueText(data.lastSale)}
@@ -191,7 +191,7 @@ const EditionOverview = ({
                       </button> */}
                     </div>
 
-                    {data.isAvailable &&
+                    {data?.isAvailable &&
                       <button
                         type="submit"
                         className="text-center   px-8 py-[22px]  rounded-[48px]  w-full mt-4  uppercase leading-3 tracking-tight justify-center items-center gap-3 inline-flex  text-white text-xs font-normal   border border-white border-opacity-40 "

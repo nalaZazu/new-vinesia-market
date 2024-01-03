@@ -17,7 +17,7 @@ export default function PeaceVinesia() {
               You don’t need to be a blockchain expert to take advantage of the
               distinctive features it offers.
             </h3>
-            <p className="text-neutral-600 text-base font-normal leading-snug">
+            <p className="max-w-full text-neutral-600 text-base font-normal leading-snug">
               Using blockchain is how Vinesia can offer a unique shift from a
               system of trust to a system of truth.
               <br />
@@ -28,7 +28,7 @@ export default function PeaceVinesia() {
             </p>
           </div>
         </div>
-        <div className="col-span-7">
+        <div className="md:col-span-7 col-span-12">
           <div className="flex justify-center">
             <p className="px-8 py-4 text-center bg-red-900 rounded-[54px] border border-red-900 text-white text-lg font-semibold leading-relaxed">
               Peace of mind

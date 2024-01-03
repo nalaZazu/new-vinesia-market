@@ -10,7 +10,7 @@ export default function Relationship() {
             Wine and art have long held a harmonious relationship.
           </h2>
           <div className="py-8">
-            <p className="max-w-[518px] text-zinc-800 text-base font-normal font-['Albert Sans'] leading-snug">
+            <p className="max-w-[518px] text-zinc-800 text-base font-normal leading-snug">
               You will often find master artists such as DaVinci, Michelangelo,
               Van Gogh, and more who made wine center points of some of their
               most famous artwork. In fact, Da Vinci is quoted as saying:

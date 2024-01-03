@@ -221,7 +221,10 @@ const About = () => {
             >
               <Image src={bottleIllustrations} alt="image-icon" />
             </div>
-            <div className="absolute -top-36 right-[18vw] md:block hidden" ref={glassRef}>
+            <div
+              className="absolute -top-36 right-[18vw] md:block hidden"
+              ref={glassRef}
+            >
               <Image src={glass} alt="glass image" />
             </div>
 
@@ -257,7 +260,10 @@ const About = () => {
             </div>
           </div>
 
-          <div className="md:mt-[-80vh] md:mb-[80vh]" id="start_investing"></div>
+          <div
+            className="md:mt-[-80vh] md:mb-[80vh]"
+            id="start_investing"
+          ></div>
 
           <div className="text-center w-full">
             <Link href="/invest">

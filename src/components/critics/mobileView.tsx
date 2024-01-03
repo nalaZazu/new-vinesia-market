@@ -1,15 +1,26 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useRef, useState } from "react";
 import Slider from "react-slick";
 import wine from "../../assets/images/critcsimage.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { NextIcon2, PrevIcon2 } from "../../assets/icons/Icons";
+import {
+  Arrows,
+  NextIcon,
+  NextIcon2,
+  PrevIcon,
+  PrevIcon2,
+} from "../../assets/icons/Icons";
+import { InfoIcon } from "@/assets/icons/Icons";
+
 import signature from "../../assets/images/mobilesignature.png";
 import alert from "../../assets/icons/alert-circle.svg";
+import Link from "next/link";
 
-const CriticsMobile = () => {
+const CriticsMobile = ({ data }: { data: any }) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   const sliderSettings = {
     customPaging: function () {
       return (
@@ -27,33 +38,61 @@ const CriticsMobile = () => {
     autoplay: false,
     autoplaySpeed: 3000,
     centerPadding: "100px",
-    prevArrow: (
-      <div className="mobile_view_slider z-50">
-        <div className="text-black h-full w-full flex items-center justify-center rounded-full border border-orange-700">
+    beforeChange: (current: any, next: any) => setCurrentSlide(next),
+    nextArrow: (
+      <div className="mobile_view_slider  z-50 ">
+        <div
+          className={`text-black w-full h-full flex items-center rounded-full border justify-center   ${
+            currentSlide == data?.length
+              ? "border-[#BF4D2020]"
+              : "border-orange-700"
+          }`}
+        >
           <div>
-            <PrevIcon2 />
+            <NextIcon
+              fill={
+                currentSlide == data?.length ?? 0 - 2 ? "#BF4D2020" : "#BF4D20"
+              }
+            />
           </div>
         </div>
       </div>
     ),
-    nextArrow: (
-      <div className="mobile_view_slider  z-50 ">
-        <div className=" text-black h-full w-full flex items-center rounded-full border border-orange-700 justify-center">
-          <div className="h-6 w-6" >
-            <NextIcon2 />
+    prevArrow: (
+      <div className="mobile_view_slider z-50">
+        <div
+          className={` text-black h-full w-full flex items-center rounded-full border justify-center   ${
+            currentSlide == data?.length
+              ? "border-[#BF4D2020]"
+              : "border-orange-700"
+          }`}
+        >
+          {/*    */}
+          {/* className="text-black h-full w-full flex items-center justify-center rounded-full border border-orange-700" */}
+          <div>
+            <PrevIcon fill={currentSlide == 0 ? "#BF4D2020" : "#BF4D20"} />
           </div>
         </div>
       </div>
     ),
   };
+
   return (
     <div className="">
+      {/* {data?.map((item: any, index: any) => {
+        const { winery, name, vintage } = item;
+        return ( */}
       <h2 className="text-critcstext first-letter text-[21px] font-light  leading-[29px] py-8">
-        Chateau La Mission Haut Brion Cru Classe 2009
+        {/* Chateau La Mission Haut Brion Cru Classe 2009 */}
+        {data && data[currentSlide].winery} {data && data[currentSlide].name}{" "}
+        {data && data[currentSlide].vintage}
       </h2>
+      {/* );
+      })} */}
+
       <div className=" container mx-auto max-w-[928px]">
         <Slider {...sliderSettings} className="critics_carousel z-0">
-          {[1, 2, 3, 4, 5]?.map((item: any, i: any) => {
+          {data?.map((item: any, i: any) => {
             return (
               <div key={i}>
                 <div className="">
@@ -75,18 +114,11 @@ const CriticsMobile = () => {
         <div className=" flex justify-between items-center py-6 border-y-2 border-stone-400">
           <h2 className=" flex items-center gap-2 text-stone-500 text-xs font-normal  uppercase leading-3 tracking-tight">
             Vinesia Score
-            <span>
-              <Image
-                src={alert}
-                alt="Picture of the author"
-                quality={75}
-                style={{ objectFit: "contain" }}
-                className="w-5 h-5"
-              />
-            </span>
+            <InfoIcon fill="#BF4D20" />
           </h2>
           <span className="text-zinc-800 text-4xl font-normal  leading-[42px] ">
-            5/5
+            {data && data[currentSlide].maxRating} /
+            {data && data[currentSlide].rating}
           </span>
         </div>
 
@@ -96,7 +128,7 @@ const CriticsMobile = () => {
               Critiqued By
             </p>
             <p className="self-stretch text-zinc-800 text-base font-semibold  leading-snug">
-              Robert Parker
+              {data && data[currentSlide].ratingBy}
             </p>
           </div>
           <div>
@@ -106,48 +138,25 @@ const CriticsMobile = () => {
           </div>
         </div>
         <div className="w-[273px] text-neutral-600 text-base font-normal  leading-snug pt-6">
-          <p>
-            “This wine blushes in the glass like a tender, rosy dawn, inviting
-            the drinker to embrace its delicate hue.
-          </p>
+          <p>{data && data[currentSlide].description}</p>
         </div>
-        <button className="flex items-center pt-4 gap-3 text-orange-700 text-xs font-normal  uppercase leading-3 tracking-tight">
-          READ MORE
+        <button className="flex items-center pt-4 gap-3 text-orange-700 text-xs font-normal  uppercase leading-3 tracking-tight ">
+          <span className="border-b border-orange-700 border-opacity-20">
+            READ MORE
+          </span>
           <span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-              />
-            </svg>
+            <Arrows storke="#BF4D20" />
           </span>
         </button>
         <div className="pt-6">
-          <button className=" text-orange-700 text-xs font-normal w-full  uppercase leading-3 tracking-tight px-8 py-4 rounded-full border border-orange-700 border-opacity-20 items-center gap-3 flex justify-center">
-            INVEST NOW
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-              />
-            </svg>
-          </button>
+          <Link href="/invest">
+            <button className=" text-orange-700 text-xs font-normal w-full  uppercase leading-3 tracking-tight px-8 py-4 rounded-full border border-orange-700 border-opacity-20 items-center gap-3 flex justify-center">
+              INVEST NOW
+              <span>
+                <Arrows storke="#BF4D20" />
+              </span>
+            </button>
+          </Link>
         </div>
       </div>
     </div>
