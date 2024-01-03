@@ -16,11 +16,12 @@ const WineInvestmentWithoutWorries = () => {
     const image4Ref = useRef(null);
     const videoRef = useRef<any>(null)
 
-    const [tl,] = useState(gsap.timeline({ paused: true }))
+    const [tl, setTl] = useState<gsap.core.Timeline | null>(null)
 
-    useEffect(() => {
+    useGSAP(() => {
         // const tl = gsap.timeline({ repeat: -1, paused: true });
-        if (tl === undefined || tl === null) return
+
+        const tl = gsap.timeline({ paused: true })
 
         tl
             .fromTo(
@@ -68,15 +69,16 @@ const WineInvestmentWithoutWorries = () => {
                 delay: 5
             });
 
-        if (videoRef.current !== null)
-            tl.progress(videoRef.current.currentTime / videoRef.current.duration)
-    }, [tl]);
+        setTl(tl)
+    });
 
     useEffect(() => {
         if (videoRef.current === null || tl === undefined || tl === null) return
 
         function animUpdate() {
-            const progress = videoRef.current.currentTime / videoRef.current.duration / 2
+            if (videoRef.current === null || tl === undefined || tl === null) return
+            
+            const progress = videoRef.current.currentTime / videoRef.current.duration
             tl.progress(progress)
         }
 
