@@ -27,7 +27,7 @@ export default function ShareCard({ data }: { data: ProductOverview }) {
         setVisible={setVisible}
         isCloseBtn={true}
         backgroundClass="bg-zinc-800 bg-opacity-95"
-        modalClass="max-w-[614px] rounded-md pt-12 pb-12  px-12"
+        modalClass="max-w-[614px] lg:h-auto rounded-md pt-12 pb-12  px-12"
         title="Place a bid"
       >
         <div className="pt-6 pb-8">

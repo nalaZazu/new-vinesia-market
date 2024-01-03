@@ -24,28 +24,38 @@ import RightPanel from "@/components/simulator/RightPanel";
 import GraphPanel from "@/components/simulator/GraphPanel";
 import Link from "next/link";
 import StaticBanner from "@/components/StaticBanner/page";
+import useIsMobile from "@/hooks/useMobileScreen";
 
 export default function AssetsPerformance() {
+  const isMobile = useIsMobile();
   const [visible, setVisible] = useState(false);
   return (
     <>
     <ModalContainer
         visible={visible}
         setVisible={setVisible}
-        modalClass="max-h-[95vh] max-w-[90vw] rounded-md pt-4 pb-4 px-12"
+        modalClass="max-h-full max-w-full w-full sm:max-h-[95vh] sm:max-w-[95vw] rounded-md pt-4 pb-4 px-4 md:h-[95vh] lg:h-[95vh] "
         backgroundClass="bg-zinc-800 bg-opacity-95"
         isCloseBtn={true}
       >
-        <div>
+        <div className="landscape:hidden">
+          <div className="h-4"></div>
+          <p>
+            This experience is designed to be viewed in landscape. Please rotate your
+            device to view the simulator.
+          </p>
+        </div>
+        <div className="portrait:hidden md:h-full lg:h-full ">
           <GraphProvider>
-            <Flex gap="small" vertical={false} >
+            <div className="flex flex-row justify-normal md:h-full lg:h-full">
               <LeftPanel />
-              <GraphPanel />
+              <GraphPanel isMobile={isMobile}/>
               <RightPanel />
-            </Flex>
+            </div>
           </GraphProvider>
         </div>
       </ModalContainer>
+
     <div className="absolute top-0 -z-10 left-0 right-0">
       <div>
         <div className="relative">

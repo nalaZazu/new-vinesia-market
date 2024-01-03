@@ -5,7 +5,7 @@ import { Fragment } from "react";
 // import Appactivity from "@/components/charts/page";
 import { Dialog, Transition } from "@headlessui/react";
 
-export default function ModalContainer({
+export default function ModalContainerSim({
   children,
   visible = false,
   setVisible,
@@ -47,7 +47,7 @@ export default function ModalContainer({
           </Transition.Child>
 
           <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-            <div className="flex min-h-full items-end justify-end p-4 text-center sm:items-center sm:p-0">
+            <div id="simulatorP" className="flex min-h-full items-end justify-end p-4 text-center sm:items-center sm:p-0">
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
@@ -58,7 +58,7 @@ export default function ModalContainer({
                 leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
               >
                 <Dialog.Panel
-                  className={`relative max-w-[1244px] w-full mx-auto md:h-[600px] sm:h-full transform overflow-hidden bg-[#F3E8CF] text-left shadow-xl transition-all ${modalClass} `}
+                  className={`max-w-[1244px] mx-auto h-[100vh] w-[100vw] transform overflow-hidden bg-[#F3E8CF] text-left shadow-xl transition-all relative z-50 ${modalClass} `}
                 >
                   {title ? (
                     <div className="flex justify-between p-4">

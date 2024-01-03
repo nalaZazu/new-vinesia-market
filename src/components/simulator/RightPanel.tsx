@@ -12,14 +12,14 @@ export default function RightPanel() {
         setSelectedBaseline(selectedValue)
     }
   return (
-    <Flex style={{fontFamily:'Canela', width:"20%", height:"100vh"}} gap="1rem" vertical>
+    <Flex style={{fontFamily:'Canela', width:"20%", height:"100%"}} gap="small" justify='flex-start' flex="auto" vertical>
         <div style={{height:"10vh"}}></div>
-        <h3 style={{height:"10%", fontWeight: "bold",fontSize:"clamp(0.5em, 1.2vw, 1.2em)"}}>Choose the baseline you want to compare the performance of your portfolio against</h3>
-        <h2 style={{fontWeight:"normal", marginTop: 0, fontSize: "clamp(1.25rem, 1.5vw, 1.5rem)"}}>Baseline</h2>
+        <h3 style={{fontWeight: "bold",fontSize:"clamp(0.5em, 1.2vw, 1.2em)"}}>Choose the baseline you want to compare the performance of your portfolio against</h3>
+        <h2 className='text-xs md:text-xs lg:text-lg' style={{fontWeight:"normal", marginTop: 0 }}>Baseline</h2>
         <div style={{border:"0.2px dashed #BF4D20", padding: "0 0 0 0.4rem"}}>
-        <h2 style={{fontWeight:"normal", marginTop: 0, fontSize: "clamp(1.25em, 1.5vw, 1.5em)"}}>Classic 60/40 Portfolio</h2>
+        <h2 className='text-xs md:text-xs lg:text-lg' style={{fontWeight:"normal", marginTop: 0}}>Classic 60/40 Portfolio</h2>
           <Radio.Group onChange={changeDataSource} value={selectedBaseline} style={{marginTop: "-1.6rem"}}>
-            <Radio value={baselines[0]} style={{fontSize: "clamp(0.8rem, 1.1vw, 1.5em)", fontFamily:'Canela'}}> 60% - S&P500 <br />40% - 7-10 Year US Bonds</Radio>
+            <Radio className='text-xs md:text-xs lg:text-lg' value={baselines[0]} style={{fontFamily:'Canela'}}> 60% - S&P500 <br />40% - 7-10 Year US Bonds</Radio>
           </Radio.Group>
         </div>
         <br></br>
@@ -27,8 +27,8 @@ export default function RightPanel() {
         <Radio.Group onChange={changeDataSource} value={selectedBaseline} >
           <Space direction='vertical'>
             {/* <Radio value={baselines[1]} style={{fontSize:"14px", fontFamily:'Canela'}}>S&P500</Radio> */}
-            <Radio value={baselines[2]} style={{fontSize: "clamp(0.8rem, 1.1vw, 1.5em)", fontFamily:'Canela'}}>EURO STOXX 50</Radio>
-            <Radio value={baselines[3]} style={{fontSize: "clamp(0.8rem, 1.1vw, 1.5em)", fontFamily:'Canela'}}>7-10 Year US Bonds</Radio>
+            <Radio className='text-xs md:text-xs lg:text-lg' value={baselines[2]} style={{fontFamily:'Canela'}}>EURO STOXX 50</Radio>
+            <Radio className='text-xs md:text-xs lg:text-lg' value={baselines[3]} style={{fontFamily:'Canela'}}>7-10 Year US Bonds</Radio>
           </Space>
         </Radio.Group>
         </div>

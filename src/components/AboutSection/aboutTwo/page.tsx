@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import wineBottle from "@/assets/images/bolltewine.png";
 import wineBottles from "@/assets/images/wineImageBottle.png";
 import investment from "@/assets/images/investment.png";
@@ -15,28 +15,40 @@ import LeftPanel from "@/components/simulator/LeftPanel";
 import GraphPanel from "@/components/simulator/GraphPanel";
 import RightPanel from "@/components/simulator/RightPanel";
 import simulatorPreview from "@/assets/images/simulatorPreview.png";
+import useIsMobile from "@/hooks/useMobileScreen";
+
 import WineInvestmentWithoutWorries from "@/components/home/WineInvestmentWithout/page";
 import HomeWinePerformance from "@/components/home/HomeWinePerformance/page";
 const AboutTwo = () => {
+  const isMobile = useIsMobile();
   const [visible, setVisible] = useState(false);
-  const [step, setStep] = useState(1);
+
+
   return (
     <>
       {/* here is a investment section */}
-      <ModalContainer
+
+        <ModalContainer
         visible={visible}
         setVisible={setVisible}
-        modalClass="max-h-[95vh] max-w-[90vw] rounded-md pt-4 pb-4 px-12"
+        modalClass="max-h-full max-w-full w-full sm:max-h-[95vh] sm:max-w-[95vw] rounded-md pt-4 pb-4 px-4 md:h-[95vh] lg:h-[95vh] "
         backgroundClass="bg-zinc-800 bg-opacity-95"
         isCloseBtn={true}
       >
-        <div>
+        <div className="landscape:hidden">
+          <div className="h-4"></div>
+          <p>
+            This experience is designed to be viewed in landscape. Please rotate your
+            device to view the simulator.
+          </p>
+        </div>
+        <div className="portrait:hidden md:h-full lg:h-full ">
           <GraphProvider>
-            <Flex gap="small" vertical={false} >
+            <div className="flex flex-row justify-normal md:h-full lg:h-full">
               <LeftPanel />
-              <GraphPanel />
+              <GraphPanel isMobile={isMobile}/>
               <RightPanel />
-            </Flex>
+            </div>
           </GraphProvider>
         </div>
       </ModalContainer>
@@ -150,12 +162,12 @@ const AboutTwo = () => {
                         <LineDot storke="#CB220D" /> Portofolio performace
                       </li>
                     </ul> */}
-                        {/* <Appactivity /> */}
-                        <Image src={simulatorPreview} alt="image" onClick={() => setVisible(true)} />
-                      </div>
-                    </div>
-                    {/* HERE IS NUMBER DEFINED  */}
-                    {/* <ul className="flex justify-between text-zinc-800 text-base font-normal   leading-snug">
+                    {/* <Appactivity /> */}
+                    <Image src={simulatorPreview} alt="image" onClick={() => setVisible(true)}/>
+                  </div>
+                </div>
+                {/* HERE IS NUMBER DEFINED  */}
+                {/* <ul className="flex justify-between text-zinc-800 text-base font-normal   leading-snug">
                   <li>2005</li>
                   <li>2010</li>
                   <li>2015</li>
