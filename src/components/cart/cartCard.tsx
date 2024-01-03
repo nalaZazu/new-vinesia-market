@@ -2,7 +2,7 @@ import React from "react";
 import InfoTooltip from "@/common/InfoTooltip";
 import { useUser } from "@/context/user";
 import { useCart } from "@/context/cart";
-import { CartItem } from "@/types/dto/checkoutCart.dto";
+import { CartItem, ItemType } from "@/types/dto/checkoutCart.dto";
 
 
 export default function CartCard({ item }: { item: CartItem }) {
@@ -11,11 +11,13 @@ export default function CartCard({ item }: { item: CartItem }) {
 
   if (item === undefined) return <></>;
 
+  const imgUrl = process.env.NEXT_PUBLIC_API_ADDRESS + (item.type === ItemType.Product ? 'products/file/' : 'edition/file/')+item.media
+
   return (
     <div className=" p-8 border-b-2 border-[rgba(191, 77, 32, 0.20)] bg-[#FAF5EA]">
       <div className="flex gap-6 w-full">
         <img 
-        src={`${process.env.NEXT_PUBLIC_API_ADDRESS}products/file/${item.media}`} 
+        src={imgUrl} 
         height={150} width={0} 
         alt="Product Image" 
         className="w-auto h-[150px]"

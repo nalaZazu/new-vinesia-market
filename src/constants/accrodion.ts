@@ -61,17 +61,23 @@ export const AccordionSecurity = [
   {
     id: 1,
     title: "Proof of authenticity",
-    text: "The concept of Peace of Mind is paramount in alleviating the fear associated with investing in rare and exquisite wines. Investing in vintage commodities, such as old cars or watches, begins with verifying authenticity. At Vinesia, we source our wines exclusively from winemakers, allowing us to guarantee 100% authentic provenance to our investors and collectors.How does it come to life?Upon the delivery of wines from the winemakers to our Luxembourg warehouse, a tamper-proof NFC tag is applied directly over the top of the bottle or across the lid of the case. Breaking this seal indicates that the bottle has been opened or tampered with. This NFC tag transmits a unique identifier to the blockchain (Polygon), serving as the wine's certificate of authenticity. This certificate remains valid for the bottle's lifetime, whether stored in our warehouse or after delivery.",
+    text: `The concept of Peace of Mind is paramount in alleviating the fear associated with investing in rare and exquisite wines. Investing in vintage commodities, such as old cars or watches, begins with verifying authenticity. At Vinesia, we source our wines exclusively from winemakers, allowing us to guarantee 100% authentic provenance to our investors and collectors.
+
+How does it come to life?
+
+Upon the delivery of wines from the winemakers to our Luxembourg warehouse, a tamper-proof NFC tag is applied directly over the top of the bottle or across the lid of the case. Breaking this seal indicates that the bottle has been opened or tampered with. This NFC tag transmits a unique identifier to the blockchain (Polygon), serving as the wine's certificate of authenticity. This certificate remains valid for the bottle's lifetime, whether stored in our warehouse or after delivery.`,
   },
   {
     id: 2,
     title: "Proof of ownership",
-    text: "Please provide comprehensive answers to those questions. You will save lots of time and money by eliminating the necessity to give constant support. You also will keep your clients' time cause they will quickly find the answers to all their questions.",
+    text: `The second tenet of our Peace of Mind pledge is ongoing verification of ownership for our investors. This involves scans in our warehouse to confirm that the wine has not mysteriously disappeared — an issue previously seen in famous wine investment funds and other commodities like gold or nickel futures (e.g., London Metals Exchange in 2023).
+
+At Vinesia, such incidents are impossible. You will immediately notice on your NFT page if your asset goes missing. We use BLE tags on each bottle (or case), with automatic scans at least once daily. This data is transmitted to the blockchain (Polygon) and is publicly accessible.`,
   },
   {
     id: 3,
     title: "Proof of storage conditions",
-    text: "Please provide comprehensive answers to those questions. You will save lots of time and money by eliminating the necessity to give constant support. You also will keep your clients' time cause they will quickly find the answers to all their questions.",
+    text: `Knowing how wine has been stored is crucial if you ever sell it to another investor or collector. Many investors hesitate to purchase wines from others due to uncertainties about storage conditions. Vinesia addresses this concern with Internet of Things (IoT) sensors throughout our warehouse. These sensors send data on temperature and humidity to the blockchain (Polygon). This data, which is public and immutable, can be viewed on your NFT page, displaying the complete temperature and humidity history.`,
   },
 ];
 
@@ -79,37 +85,37 @@ export const AccordionVinesia = [
   {
     id: 1,
     title: "Wines are Sourced Directly From Wineries",
-    text: "We care for your wine with special care, providing it with ideal conditions for its value to increase Your wine is securely stored in our warehouse with several temperature and humidity sensors continuously monitored and recorded on the blockchain. You can check these data points in near-real time.",
+    text: "There are no third parties involved here. Our expert sommeliers go to every vineyard to source your wines. This allows us to quality-check the wines we want to offer you as an investment.",
   },
   {
     id: 2,
     title: "Real Wine Becomes A Digital Asset",
-    text: "We care for your wine with special care, providing it with ideal conditions for its value to increase Your wine is securely stored in our warehouse with several temperature and humidity sensors continuously monitored and recorded on the blockchain. You can check these data points in near-real time.",
+    text: "We utilize blockchain technology to make it easier to buy and sell your physical wine. Every bottle or case of wine is converted into a secure digital certificate on the blockchain for advanced security and transparency of your investment",
   },
   {
     id: 3,
     title: "Enhanced Security with Blockchain",
-    text: "We care for your wine with special care, providing it with ideal conditions for its value to increase Your wine is securely stored in our warehouse with several temperature and humidity sensors continuously monitored and recorded on the blockchain. You can check these data points in near-real time.",
+    text: "The second wine bottles or cases reach our Luxembourg warehouse, they receive a tamper-proof label with an NFC chip put across each bottle or case. That chip stores a unique ID to a blockchain, unlocking provenance tracking and auditable data trails to verify authenticity."
   },
   {
     id: 4,
     title: "Monitor Your Wine In Real-Time",
-    text: "We care for your wine with special care, providing it with ideal conditions for its value to increase Your wine is securely stored in our warehouse with several temperature and humidity sensors continuously monitored and recorded on the blockchain. You can check these data points in near-real time.",
+    text: "Your wine is securely stored in our warehouse with several temperature and humidity sensors continuously monitored and recorded on the blockchain. You can check these data points in near-real time."
   },
   {
     id: 5,
     title: "Buy & Sell Wine Like You Would Stocks or NFT",
-    text: "We care for your wine with special care, providing it with ideal conditions for its value to increase Your wine is securely stored in our warehouse with several temperature and humidity sensors continuously monitored and recorded on the blockchain. You can check these data points in near-real time.",
+    text: "Generally, selling wine requires long, tedious in-person auctioning, making the bar to entry hard. But our method makes buying and selling wine as simple as purchasing a stock for your portfolio.",
   },
   {
     id: 6,
     title: "Real Photos of Your Investment",
-    text: "We care for your wine with special care, providing it with ideal conditions for its value to increase Your wine is securely stored in our warehouse with several temperature and humidity sensors continuously monitored and recorded on the blockchain. You can check these data points in near-real time.",
+    text: "There are no stock photos here. Every photo on our website that you see is an actual photo of the wine we have available for you to purchase.",
   },
   {
     id: 7,
     title: "Give The Gift of Wine",
-    text: "We care for your wine with special care, providing it with ideal conditions for its value to increase Your wine is securely stored in our warehouse with several temperature and humidity sensors continuously monitored and recorded on the blockchain. You can check these data points in near-real time.",
+    text: "Anyone can gift a nice bottle of wine, but why not gift wine as an asset? Perhaps a wedding, anniversary or baby with a gift like this that keeps on giving.",
   },
 ];
 

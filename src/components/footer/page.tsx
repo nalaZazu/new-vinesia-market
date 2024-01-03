@@ -113,7 +113,7 @@ export default function Footer() {
                       <p className="mb-2" key={id}>
                         <Link
                           href={href}
-                          className="text-zinc-500 text-base font-normal leading-snug  border-b border-orange-700 border-opacity-20"
+                          className="text-zinc-500 text-base font-normal leading-snug"
                         >
                           {title}
                         </Link>
@@ -132,7 +132,7 @@ export default function Footer() {
                       <p className="mb-2" key={id}>
                         <Link
                           href={href}
-                          className="text-zinc-500 text-base font-normal leading-snug  border-b border-orange-700 border-opacity-20"
+                          className="text-zinc-500 text-base font-normal leading-snug"
                         >
                           {title}
                         </Link>
@@ -147,13 +147,13 @@ export default function Footer() {
                   </h6>
                   <p className=" pe-0 md:pe-14 md:pt-6">
                     Ask about wine investing. <br />
-                    We answer withing 24h, during business days
+                    We generally answer within 1 business day, except during week-ends
                   </p>
                   <div className="flex gap-3 mt-4 md:justify-start justify-center">
                     <span>
                       <Image src={envelope} alt="envelope@" />
                     </span>
-                    <span className="text-center text-white text-base font-normal   leading-snug   border-b border-white border-opacity-20">
+                    <span className="text-center text-white text-base font-light   leading-snug   border-b border-white border-opacity-20">
                       contact@vinesia.com
                     </span>
                   </div>
@@ -173,10 +173,10 @@ export default function Footer() {
             <div className="border-b  border-white border-opacity-20    pt-12" />
             {/* here is langugae and other icon */}
             <div className="md:pt-12 pt-8  md:pb-0 pb-8 md:px-0 px-4 flex flex-wrap md:justify-between justify-center">
-              <div className="flex flex-wrap flex-col">
+              {/* <div className="flex flex-wrap flex-col">
                 <span>Other languages</span>
                 <span className="pt-4">FR | GER | ENG | CHN </span>
-              </div>
+              </div> */}
               <div className="md:border-r-2    border-white border-opacity-20  " />
 
               <div className="md:pt-0 pt-4  md:block hidden">

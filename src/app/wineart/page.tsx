@@ -15,6 +15,7 @@ import { NextIcon } from "@/assets/icons/Icons";
 import { AccordionWineAbout } from "@/components/accordion/page";
 import Newsletter from "@/components/newsletter/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
+import QASummary from "@/components/qasummary/page";
 import { AccordionFAQ } from "@/constants/accrodion";
 
 export default function wineryArt() {
@@ -47,7 +48,7 @@ export default function wineryArt() {
         </div>
       </div>
 
-      <div className="pb-40">
+      {/* <div className="pb-40">
         <div className="container mx-auto px-4">
           <h2 className="max-w-[960px] mx-auto text-center text-zinc-800 md:text-7xl text-5xl font-normal md:leading-[84px] leading-[58px] tracking-[-1.44] pb-12">
             Selected wineries represented in our Collections 
@@ -62,26 +63,24 @@ export default function wineryArt() {
             })}
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="py-52 bg-[#28475C]">
+      {/* <div className="py-52 bg-[#28475C]">
         <div className="container mx-auto px-4">
           <h4 className="text-white text-center text-[21px] font-light leading-[29px] tracking-wide">
             Commercial space
           </h4>
         </div>
-      </div>
+      </div> */}
 
       {/* The faster way to get to know us */}
       <div className="bg-[#2F222B]">
-        <div className="flex justify-end md:py-40 md:px-0  px-4 py-20">
-          <div className=" max-w-[1314px]">
+        <div className="flex text-center justify-center md:py-40 md:px-0  px-4 py-20">
             <div>
               <div>
                 <h3 className="text-white text-4xl font-light   leading-[44px] pb-8">
                   Learn more about wine & art investment
                 </h3>
-              </div>
             </div>
 
             {/* here is new slider  section */}
@@ -100,26 +99,8 @@ export default function wineryArt() {
       </div>
 
       <NewslettersTwo />
-      <div className="py-40 bg-[#F7EFDF]">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 grid-cols-1 gap-8">
-            <div className="max-w-[498px]">
-              <h3 className=" text-zinc-800 text-4xl font-light leading-[44px]">
-                You might have questions, we definitely have answers.
-              </h3>
-              <div className="flex gap-3 pt-9">
-                <button className="border-b-2 border-orange-700 border-opacity-20 text-center text-orange-700 text-xs font-normal font-['Albert Sans'] uppercase leading-[18px] tracking-tight">
-                  SEE ALL QUESTIONS & ANSWERS
-                </button>
-                <NextIcon />
-              </div>
-            </div>
-
-            <div>
-              <AccordionWineAbout data={AccordionFAQ.gift_accordion} />
-            </div>
-          </div>
-        </div>
+      <div className="bg-[#F7EFDF]">
+        <QASummary title="You might have questions, we definitely have answers." />
       </div>
 
       {/*  */}

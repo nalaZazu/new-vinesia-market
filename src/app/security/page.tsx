@@ -125,7 +125,7 @@ export default function Security() {
       </div>
       {/* The faster way to get to know us */}
       <div className="bg-[#2F222B]">
-        <div className="flex justify-end md:py-40 md:px-0  px-4 py-20">
+        <div className="flex justify-center text-center md:py-40 md:px-0  px-4 py-20">
           <div className=" max-w-[1314px]">
             <div>
               <div>
@@ -134,18 +134,7 @@ export default function Security() {
                 </h3>
               </div>
             </div>
-
-            {/* here is new slider  section */}
-            <div className="hidden md:block">
-              <div>
-                <AboutSlider data={VideoSlider} />
-              </div>
-            </div>
-            <div className="md:hidden block  ">
-              <div className="grid grid-cols-1 ">
-                <AboutSlider />
-              </div>
-            </div>
+            <AboutSlider data={VideoSlider} />
           </div>
         </div>
       </div>

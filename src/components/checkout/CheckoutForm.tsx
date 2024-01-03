@@ -4,8 +4,9 @@ import {
   } from '@stripe/react-stripe-js'
   import {useState} from 'react'
   import {useStripe, useElements} from '@stripe/react-stripe-js';
+import Loading from '../loading/loading';
   
-  export default function CheckoutForm() {
+  export default function CheckoutForm({id}: {id: number}) {
     const stripe = useStripe();
     const elements = useElements();
     const [message, setMessage] = useState('');
@@ -26,7 +27,7 @@ import {
         elements,
         confirmParams: {
           // Make sure to change this to your payment completion page
-          return_url: `${window.location.origin}/completion`,
+          return_url: `${window.location.origin}/purchase/${id}`,
         },
       });
   
@@ -43,11 +44,15 @@ import {
   
       setIsLoading(false);
     }
-  
+
+    if (!stripe || !elements) {
+      return <Loading/>
+    }
+
     return (
       <form id="payment-form" onSubmit={handleSubmit}>
         <PaymentElement id="payment-element" />
-        <button disabled={isLoading || !stripe || !elements} id="submit">
+        <button className="stripe" disabled={isLoading || !stripe || !elements} id="submit">
           <span id="button-text">
             {isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}
           </span>

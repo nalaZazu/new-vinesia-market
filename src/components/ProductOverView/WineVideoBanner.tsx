@@ -18,9 +18,7 @@ export default function WineVideoBanner({
           <h3 className="text-white md:text-4xl text-2xl font-light leading-[44px]">
             {title}
           </h3>
-          <div className="md:max-w-[174.04px] max-w-[90px] md:h-[174.12px] relative">
-            <Image src={videoplay} alt="" />
-          </div>
+
           <div className="gap-[17px]">
             <p className="max-w-[303px] text-white md:text-start text-center text-base font-normal leading-snug">
               {descripition}

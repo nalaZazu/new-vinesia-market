@@ -14,7 +14,7 @@ import toast from "react-hot-toast";
 
 export default function Checkout() {
   const { isLoggedIn, isLoading } = useUser()
-  const { cartItems, checkout } = useCart()
+  const { cartItems, cartOrder, checkout } = useCart()
   const { push } = useRouter()
   const [saving, setIsSaving] = useState(false)
   const [step, setStep] = useState(1);
@@ -30,6 +30,13 @@ export default function Checkout() {
     if (cartItems.length === 0) push(pagePaths.invest)
 
   }, [isLoading, isLoggedIn, push, cartItems])
+
+  useEffect(() => {
+    if (cartOrder !== null) {
+      push('/payment')
+    }
+  }, [push, cartOrder])
+
 
   if (saving) {
     return <Loading text="Checkout ..." />

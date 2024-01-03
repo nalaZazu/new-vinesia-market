@@ -31,7 +31,7 @@ export default function NewslettersTwo() {
           </div>
         </div>
       </div>
-      <div className="w-[534px] h-[534px] bg-[#28475C]  md:rounded-full rounded-none  flex justify-center items-center ">
+      {/* <div className="w-[534px] h-[534px] bg-[#28475C]  md:rounded-full rounded-none  flex justify-center items-center">
         <div className="text-center">
           <div className="flex-col justify-start items-center gap-3 flex pb-6">
             <h3 className="text-center text-[#D4DADE] text-4xl font-light max-w-[360px]  leading-[44px]">
@@ -49,7 +49,7 @@ export default function NewslettersTwo() {
             </span>
           </button>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

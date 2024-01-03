@@ -8,6 +8,8 @@ import VectorOne from "@/assets/icons/VectorOne.svg";
 import VectorTwo from "@/assets/icons/VectorTwo.svg";
 import Link from "next/link";
 import { AccordionAboutTwo } from "@/constants/accrodion";
+import KnowUsVideos from "@/components/KnowUsVideos/page";
+import QASummary from "@/components/qasummary/page";
 const AboutThree = () => {
   return (
     <React.Fragment>
@@ -18,7 +20,7 @@ const AboutThree = () => {
             <h2 className="md:tracking-[-1.44px] md:text-center text-zinc-800 md:text-7xl font-normal   md:leading-[84px]    text-4xl leading-[44px] tracking-[-0.36px]">
               Start your investment journey today
             </h2>
-            <p className="mx-auto max-w-[634px] md:text-center text-neutral-600 text-base font-normal  leading-snug md:tracking-[-0.32px] py-6   tracking-[-0.32px]   ">
+            <p className="mx-auto max-w-[634px] md:text-justify text-neutral-600 text-base font-normal  leading-snug md:tracking-[-0.32px] py-6   tracking-[-0.32px]   ">
               {/* -0.32px */}
               We offer wine investment options suitable for every portfolio. We
               source exceptional wines directly from top wineries, and with
@@ -57,66 +59,12 @@ const AboutThree = () => {
           </div>
         </div>
       </div>
-      {/* The faster way to get to know us */}
-      <div className="bg-[#2F222B] h-[780px]">
-        <div className="relative">
-          <div className="absolute md:block hidden">
-            <Image src={VectorOne} alt="vector" />
-          </div>
-        </div>
-        <div className="relative md:block hidden ">
-          <div className="absolute  right-0">
-            <Image src={VectorTwo} alt="vector" />
-          </div>
-        </div>
 
-        <div className="flex justify-center md:py-20 md:px-0  px-4 py-25">
-          <div className="container text-center">
-            <h3 className="text-white text-4xl font-light leading-[44px] pb-8">
-              The faster way to get to know us
-            </h3>
 
-            {/* here is new slider  section */}
-            <div className="">
-              <div className="grid grid-cols-1">
-                <AboutSlider />
-              </div>
-            </div>
-            {/* <div className="md:hidden block  ">
-              <div className="grid grid-cols-1 ">
-                <AboutSlider />
-              </div>
-            </div> */}
 
-          </div>
-        </div>
-      </div>
+      <KnowUsVideos />
+      <QASummary />
 
-      <div className="md:py-40 md:px-0  py-16 px-4">
-        <div className="container mx-auto">
-          <div className="grid md:grid-cols-5 grid-cols-1 ">
-            <div className="max-w-[698px] col-span-3">
-              <h2 className="text-zinc-800 md:text-7xl font-normal  md:leading-[84px] md:tracking-[-1.44px]  text-4xl  leading-[42px] md:tracking[-0.36px]">
-                Have some questions on how it works?
-              </h2>
-              <div className="flex items-center pt-9 md:pb-0 pb-12 gap-3">
-                <Link href={'/faq'}>
-                  <button className="text-center  text-orange-700 text-xs font-normal justify-start items-center gap-3 inline-flex uppercase leading-3 tracking-tight">
-                    SEE ALL QUESTIONS & ANSWERS
-                    <span>
-                      <Arrows storke="#BF4D20" />
-                    </span>
-                  </button>
-                </Link>
-              </div>
-            </div>
-            {/* here is new sextion */}
-            <div className="max-w-[501px] col-span-2">
-              <AccordionWineAbout data={AccordionAboutTwo} />
-            </div>
-          </div>
-        </div>
-      </div>
     </React.Fragment>
   );
 };

@@ -13,7 +13,7 @@ export default function AboutBanner() {
               <h3 className="text-white text-4xl font-light leading-[44px] max-w-[638px] pt-9">
                 We are
               </h3>
-              <h1 className="max-w-[1100px] flex flex-col text-white md:text-[144px] text-7xl font-normal md:leading-[144px] leading-[80px] tracking-[-2.88px]">
+              <h1 className="max-w-[1100px] flex flex-col text-white text-[60px] leading-[60px] md:text-[144px] font-normal md:leading-[144px] md:tracking-[-2.88px]">
                 Wine enthusiasts
                 <span>by day</span>
               </h1>
