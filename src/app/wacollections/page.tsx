@@ -100,7 +100,7 @@ export default function WineryArt() {
       <div>
         <Link href="/wacollections/reso">
           <div className="relative md:block hidden container mx-auto">
-            <div className="absolute flex justify-between w-full">
+            <div className="absolute bottom-0 flex justify-between w-full">
               <h1 className="text-[600px] opacity-20 text-stone-400 font-normal leading-[600px] md:ms-[-450px] -z-10">
                 reso
               </h1>

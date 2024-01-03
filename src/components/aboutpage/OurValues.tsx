@@ -37,7 +37,7 @@ const value = [
 export default function OurValues() {
   return (
     <div>
-      <div className="grid grid-cols-2 pb-20">
+      <div className="grid md:grid-cols-2 grid-cols-1 pb-20">
         <h2 className="text-white text-7xl font-normal leading-[84px]">
           Our Values
         </h2>
@@ -47,7 +47,7 @@ export default function OurValues() {
           should be as minimal as possible is our core driver.
         </p>
       </div>
-      <div className="grid grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-8">
         {value.map((items: any, i: any) => {
           const { title, info, text } = items;
           return (

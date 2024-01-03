@@ -6,11 +6,11 @@ export default function OurExpert() {
     <div>
       <div className="w-[395px] h-[680px] bg-[url('https://i.ibb.co/X3gZqdn/henry.png')] ">
         <div className="flex justify-between px-12 py-8 h-[680px] items-end">
-          <div className="flex-col justify-start items-start gap-0.5 inline-flex">
-            <p className="text-white text-lg font-semibold font-['Albert Sans'] leading-relaxed">
+          <div className="flex-col justify-start items-start gap-0.5 flex">
+            <p className="text-white text-lg font-semibold leading-relaxed">
               Henry, Arthur
             </p>
-            <p className="text-white text-xs font-normal font-['Albert Sans'] leading-[18px]">
+            <p className="text-white text-xs font-normal leading-[18px]">
               Chief Executive Officer
             </p>
           </div>
