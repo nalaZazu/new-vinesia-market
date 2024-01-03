@@ -100,7 +100,7 @@ function initials(profile: User | null) {
     }
 
     if (res === '') res = 'AN'
-  
+
     return res
   }
 }
@@ -145,19 +145,21 @@ export default function Header() {
           <div className="grid grid-cols-3 md:grid-cols-12 justify-between items-center">
             {/* topbar start */}
             <div className="md:flex  hidden items-center space-x-4 lg:space-x-8 md:col-span-5">
-              {menuItems.map((x) => (
-                <div
-                  className="cursor-pointer"
-                  key={x.id}
-                  onClick={() => select(x)}
-                >
-                  <span
-                    className={`hidden md:block py-7 text-base tracking-tight border-0 ${theme.textClass
-                      } ${x.id === topSelected.id ? theme.selectedClass : ""}`}
+              {menuItems.map((x, i) => (
+                <Link key={i} href={x?.href || "/"}>
+                  <div
+                    className="cursor-pointer"
+                    key={x.id}
+                    onClick={() => select(x)}
                   >
-                    {x.name}
-                  </span>
-                </div>
+                    <span
+                      className={`hidden md:block py-7 text-base tracking-tight border-0 ${theme.textClass
+                        } ${x.id === topSelected.id ? theme.selectedClass : ""}`}
+                    >
+                      {x.name}
+                    </span>
+                  </div>
+                </Link>
               ))}
             </div>
             {/* Mobile Navbar (Hidden on Desktop)  */}
@@ -198,7 +200,7 @@ export default function Header() {
                 <div className="md:hidden">
                   {initials(profile) === '' ? <UserIcon fill={theme.iconFill} /> : initials(profile)}
                 </div>
-                
+
               </div>
 
               <Link
@@ -227,8 +229,8 @@ export default function Header() {
                   <Link href={href || "/"} key={id}>
                     <li
                       className={`py-4 ${selected === item
-                          ? theme.selectedClass + " " + theme.activeTextClass
-                          : theme.textClass
+                        ? theme.selectedClass + " " + theme.activeTextClass
+                        : theme.textClass
                         }`}
                     >
                       {name}
