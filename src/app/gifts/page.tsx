@@ -165,7 +165,7 @@ const VinesiaGiftsPage: React.FC = () => {
                       What will you get after purchasing wine as a gift?
                     </p>
                     <div className="flex flex-col gap-4 items-start w-full">
-                      <div className="bg-orange-50 flex flex-1 sm:flex-col flex-row gap-4 items-start justify-start my-0 p-6 sm:px-5 rounded-lg w-full">
+                      <div className="bg-orange-50 flex flex-1 md:flex-col flex-col gap-4 items-start justify-start my-0 p-6 sm:px-5 rounded-lg w-full">
                         <div className="flex flex-row items-center justify-start w-6">
                           <span className="h-6 w-6">
                             <BookIcon />
@@ -176,14 +176,12 @@ const VinesiaGiftsPage: React.FC = () => {
                         </div>
                         <div className="flex sm:flex-1 flex-col gap-2 items-start justify-start w-auto sm:w-full">
                           <p className="leading-[22.00px] max-w-[485px] md:max-w-full text-base text-[#594E55] tracking-[-0.32px]">
-                            <>
-                              A guide to your wine&#39;s provenance, tasting
-                              notes, and investment potential.
-                            </>
+                            A guide to your wine&#39;s provenance, tasting
+                            notes, and investment potential.
                           </p>
                         </div>
                       </div>
-                      <div className="bg-orange-50 flex flex-1 sm:flex-col flex-row gap-4 items-start justify-start my-0 p-6 sm:px-5 rounded-lg w-full">
+                      <div className="bg-orange-50 flex flex-1 md:flex-col flex-col gap-4 items-start justify-start my-0 p-6 sm:px-5 rounded-lg w-full">
                         <div className="flex flex-row items-center justify-start">
                           <span className="h-6 w-6">
                             <Certif_Icon />
@@ -192,14 +190,14 @@ const VinesiaGiftsPage: React.FC = () => {
                             Certificate of ownership
                           </p>
                         </div>
-                        <div className="flex sm:flex-1 flex-col gap-2 items-start justify-start w-auto sm:w-full">
+                        <div className="flex sm:flex-1 flex-col md:pt-5 pt-3 items-start justify-start w-auto sm:w-full">
                           <p className="text-base text-[#594E55] tracking-[-0.32px] w-[370px]">
                             A beautifully designed certificate of your
                             investment.
                           </p>
                         </div>
                       </div>
-                      <div className="bg-orange-50 flex flex-1 sm:flex-col flex-row gap-4 items-start justify-start my-0 p-6 sm:px-5 rounded-lg w-full">
+                      <div className="bg-orange-50 flex flex-1 md:flex-col flex-col gap-4 items-start justify-start my-0 p-6 sm:px-5 rounded-lg w-full">
                         <div className="flex flex-row items-center justify-start w-6">
                           <span className="h-6 w-6">
                             <ArtworkIcon />
@@ -223,7 +221,7 @@ const VinesiaGiftsPage: React.FC = () => {
             </div>
 
             <div className=" mt-0.5 relative w-full">
-              <div className=" bg-orange-50 flex flex-col h-full inset-[0] items-center justify-center w-full md:py-40 py-20">
+              <div className=" bg-orange-50 flex flex-col h-full inset-[0] items-center justify-center w-full md:py-40 py-20  px-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-[94px] items-center justify-center max-w-[1031px] mx-auto md:w-full">
                   <div className="flex flex-col gap-8 items-start justify-start w-[394px] sm:w-full">
                     <div className="flex flex-col gap-4 items-start justify-start w-full">
@@ -276,7 +274,7 @@ const VinesiaGiftsPage: React.FC = () => {
                     </div>
                   </div>
                   <Image
-                    className="h-[543px] md:h-auto rounded-[50%] w-[543px]"
+                    className="md:h-[543px] h-auto rounded-[50%] md:max-w-[543px]"
                     src={BirthImage}
                     alt="ellipse3127"
                   />

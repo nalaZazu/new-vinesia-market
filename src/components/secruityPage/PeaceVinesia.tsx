@@ -10,7 +10,7 @@ export default function PeaceVinesia() {
   return (
     <div>
       {" "}
-      <div className="grid grid-cols-12 gap-10">
+      <div className="grid grid-cols-12 md:gap-10">
         <div className="md:col-span-5 col-span-12">
           <div className="flex flex-wrap flex-col gap-10">
             <h3 className="max-w-full text-zinc-800 text-4xl font-light leading-[44px] tracking-[-0.35px]">
@@ -34,12 +34,14 @@ export default function PeaceVinesia() {
               Peace of mind
             </p>
           </div>
-          <div className="pb-5 flex justify-center relative items-center">
-            <Image src={pathshape1} alt="" />
-            <Image src={pathshape3} alt="" className="absolute bottom-0 " />
-            <Image src={pathshape2} alt="" />
+          <div className="hidden md:block">
+            <div className="pb-5 flex justify-center relative items-center">
+              <Image src={pathshape1} alt="" />
+              <Image src={pathshape3} alt="" className="absolute bottom-0 " />
+              <Image src={pathshape2} alt="" />
+            </div>
           </div>
-          <div className="flex flex-wrap gap-6 pt-2 justify-center">
+          <div className="flex flex-col md:flex-row gap-6 pt-2 justify-center">
             <p className="px-6 py-4 rounded-[54px] text-center text-zinc-800 border border-red-900 text-base font-normal leading-snug">
               Proof of ownership
             </p>
