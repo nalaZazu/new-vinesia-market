@@ -15,16 +15,13 @@ import LeftPanel from "@/components/simulator/LeftPanel";
 import GraphPanel from "@/components/simulator/GraphPanel";
 import RightPanel from "@/components/simulator/RightPanel";
 import simulatorPreview from "@/assets/images/simulatorPreview.png";
-import ModalContainerSim from "@/common/ModalContainerSim";
 import useIsMobile from "@/hooks/useMobileScreen";
 
 import WineInvestmentWithoutWorries from "@/components/home/WineInvestmentWithout/page";
 import HomeWinePerformance from "@/components/home/HomeWinePerformance/page";
 const AboutTwo = () => {
-  const simRef = useRef(null);
   const isMobile = useIsMobile();
   const [visible, setVisible] = useState(false);
-  const [step, setStep] = useState(1);
 
 
   return (

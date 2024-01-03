@@ -9,7 +9,8 @@ import GraphLegend from './GraphLegend'
 import CustomTooltip from './CustomTooltip'
 import { InfoCircleOutlined } from '@ant-design/icons'
 import { sharpe_ratio_tt, volatility_tt } from '@/utils/simulator/constants'
-
+import { CustomYAxisTick } from './CustomYAxisTick';
+import { CustomXAxisTick } from './CustomXAxisTick';
 
 export default function GraphPanel({isMobile}: {isMobile: boolean}) {
     const [graphMax, setGraphMax] = useState(0);
@@ -18,13 +19,18 @@ export default function GraphPanel({isMobile}: {isMobile: boolean}) {
     // const [period, setPeriod] = useState('5y')
     const {graphPoints, period, setPeriod, volatilityData, sharpeRatio, percentages} = useGraphContext()
     console.log('graph is in mobile mode', isMobile)
+    
     const returnPeriod = (period: periodType) => {
         setPeriod(period)
         // setYTicks()
         if(percentages.stock >= 80){
           setYTicks([60,100,140,180,220,260,300,340, 380])
         }else{
-          setYTicks([60,80,100,120,140,160,180,200,220, 240, 260])
+          if(!isMobile){
+            setYTicks([60,80,100,120,140,160,180,200,220, 240, 260])
+          } else {
+            setYTicks([60,100,140,180,220,260])
+          }
         }
     }
 
@@ -33,9 +39,13 @@ export default function GraphPanel({isMobile}: {isMobile: boolean}) {
         if(percentages.stock >= 80){
           setYTicks([60,100,140,180,220,260,300,340, 380])
         }else{
-          setYTicks([60,80,100,120,140,160,180,200,220, 240, 260])
+          if(!isMobile){
+            setYTicks([60,80,100,120,140,160,180,200,220, 240, 260])
+          } else {
+            setYTicks([60,100,140,180,220,260])
+          }
         }
-    }, [graphPoints, percentages.stock])
+    }, [graphPoints, percentages.stock, isMobile])
 
 
       const updateGraphMinMax = (baseLine?: graphObj[], indices?: graphObj[]) => {
@@ -100,13 +110,16 @@ export default function GraphPanel({isMobile}: {isMobile: boolean}) {
                 /* horizontalCoordinatesGenerator={horizontalCoordinatesGenerator}
                 verticalCoordinatesGenerator={verticalCoordinatesGenerator} */
               />
-              <XAxis dataKey="date" tickFormatter={(tick) => formatDate(tick, 'axis', isMobile)} interval={11} />
+              {isMobile ? (<XAxis dataKey="date" tick={<CustomXAxisTick />} interval={11} />) : (<XAxis dataKey="date" tickFormatter={(tick) => formatDate(tick, 'axis', isMobile)} interval={11} />)}
               {/* <XAxis dataKey="date" ticks={ticks} tickFormatter={formatYear} interval="preserveStartEnd"  label={{ value: 'Dates', angle: 0, position: 'bottom' }}/> */}
-              <YAxis type="number" allowDecimals={true} allowDataOverflow={false} domain={[graphMin - 5, graphMax + 5]} ticks={yTicks} tickCount={yTicks.length} interval={0} tickSize={4}>
+              {isMobile ? (<YAxis type="number" allowDecimals={true} tick={<CustomYAxisTick/>} allowDataOverflow={false} domain={[graphMin - 5, graphMax + 5]} ticks={yTicks} tickCount={yTicks.length} interval={0} tickSize={4}>
                 <Label value="Performance" position="insideLeft" angle={-90} offset={20} style={{marginRight:"30px"}}></Label>
-              </YAxis>
+              </YAxis>) 
+              : (<YAxis type="number" allowDecimals={true} allowDataOverflow={false} domain={[graphMin - 5, graphMax + 5]} ticks={yTicks} tickCount={yTicks.length} interval={0} tickSize={4}>
+                <Label value="Performance" position="insideLeft" angle={-90} offset={20} style={{marginRight:"30px"}}></Label>
+              </YAxis>)}
               <ChartToolTip offset={0} content={<CustomTooltip/>}/>
-              <Legend content={GraphLegend} />
+              {isMobile ? <Legend verticalAlign='bottom' wrapperStyle={{fontSize: "8px", height:"1px"}}  iconType='line' iconSize={8} /> :  <Legend content={GraphLegend} />}
               
               {graphPoints.portfolio && <Line
                 key="portfolioPerformance"
@@ -143,9 +156,9 @@ export default function GraphPanel({isMobile}: {isMobile: boolean}) {
           {/* Period Buttons */}
           <Flex justify='flex-start' align='center' className="w-4/5 h-auto" vertical>
             <Flex justify='center' style={{marginTop:"0rem", width:"100%", fontFamily:"Canela"}} align='center' >
-              <Button className={`text-xs md:text:xs lg:text:sm p-1 md:p-1 lg:p-4 bg-${period === '5y' ? 'orange-700' : 'white'} font-Canela m-0`} onClick={() => returnPeriod('5y')}>5Y</Button>
-              <Button className={`text-xs md:text:xs lg:text:sm p-1 md:p-1 lg:p-4 bg-${period === '10y' ? 'orange-700' : 'white'} font-Canela mx-1`} onClick={() => returnPeriod('10y')}>10Y</Button>
-              <Button className={`text-xs md:text:xs lg:text:sm p-1 md:p-1 lg:p-4 bg-${period === 'max' ? 'orange-700' : 'white'} font-Canela ml-1`} onClick={() => returnPeriod('max')}>Max</Button>
+              <button className={`text-[0.5rem] md:text-xs lg:text-xs p-[2px] rounded border border-orange-700 md:p-1 lg:p-2 text-${period === '5y'? 'white' : 'black'} bg-${period === '5y' ? 'orange-700' : 'white'} font-Canela m-0`} onClick={() => returnPeriod('5y')}>5Y</button>
+              <button className={`text-[0.5rem] md:text-xs lg:text-xs p-[2px] rounded border border-orange-700 md:p-1 lg:p-2 text-${period === '10y'? 'white' : 'black'} bg-${period === '10y' ? 'orange-700' : 'white'} font-Canela mx-1`} onClick={() => returnPeriod('10y')}>10Y</button>
+              <button className={`text-[0.5rem] md:text-xs lg:text-xs p-[2px] rounded border border-orange-700 md:p-1 lg:p-2 text-${period === 'max'? 'white' : 'black'} bg-${period === 'max' ? 'orange-700' : 'white'} font-Canela ml-1`} onClick={() => returnPeriod('max')}>Max</button>
           </Flex>
             {/* Left Data */}
             <Flex justify='space-between' style={{width: "100%", marginTop:"0rem"}}>
