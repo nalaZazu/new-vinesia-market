@@ -47,18 +47,18 @@ export default function HomeWinePerformance() {
 
         <div className="w-full m-10 text-left">
         </div>
-        <div className="w-full md:m-10 grid md:grid-cols-2 my-10 md:my-0">
+        <div className="w-full md:m-10 md:grid md:grid-cols-2 my-10 md:my-0">
           <div className="w-full">
             <img src={'/assets/images/' + selectedItem.photo} width="100%" height={0} alt="performance chart" />
           </div>
           <div className="w-full flex">
-            <div className="flex md:block mt-4 md:mt-0 md:ml-10 md:w-1/4 text-left justify-between">
+            <div className="flex md:block mt-4 md:mt-0 md:ml-10 md:w-1/4 md:text-left justify-between w-full">
               <div><span className="inline-block border-solid border-2 border-[#BF4D20] rounded mb-[3px] md:w-[40px] w-[6px]"></span> {selectedItem.legend}</div>
               <div><span className="inline-block border-solid border-2 border-[#BD936B] rounded mb-[3px] md:w-[40px] w-[6px]"></span> S&P 500</div>
               <div><span className="inline-block border-solid border-2 border-[#2F222B] rounded mb-[3px] md:w-[40px] w-[6px]"></span> Gold</div>
               <div><span className="inline-block border-solid border-2 border-[#7D302E] rounded mb-[3px] md:w-[40px] w-[6px]"></span> Rolex Index</div>
             </div>
-            <div className="flex md:w-3/4 text-center items-center">
+            <div className="hidden md:flex md:w-3/4 text-center items-center">
               <Image src={'/assets/images/' + selectedItem.cover} className="max-h-[700px] m-auto" width={120} height={300} alt="performance chart" />
             </div>
           </div>

@@ -15,8 +15,8 @@ import LeftPanel from "@/components/simulator/LeftPanel";
 import GraphPanel from "@/components/simulator/GraphPanel";
 import RightPanel from "@/components/simulator/RightPanel";
 import simulatorPreview from "@/assets/images/simulatorPreview.png";
-import HomeWinePerformance from "@/components/HomeWinePerformance/page";
 import WineInvestmentWithoutWorries from "@/components/home/WineInvestmentWithout/page";
+import HomeWinePerformance from "@/components/home/HomeWinePerformance/page";
 const AboutTwo = () => {
   const [visible, setVisible] = useState(false);
   const [step, setStep] = useState(1);
@@ -41,30 +41,29 @@ const AboutTwo = () => {
         </div>
       </ModalContainer>
 
-      <WineInvestmentWithoutWorries/>
+      <WineInvestmentWithoutWorries />
 
       {/* here is invest in wine section */}
-      <div className="bg-[#7D302E]">
-        <div className="flex flex-wrap mx-auto  md:h-[800px] 2xl:h-[1200px]">
-          <div className=" md:basis-5/12 md:block hidden h-full w-full">
+      <div className="bg-[#7D302E] h-[100vh]">
+        <div className="flex flex-wrap mx-auto">
+          <div className="md:basis-5/12 md:block hidden w-full bg-center bg-cover bg-[url('/assets/images/home_invest_bg.png')]">
+            {/* <Image
+              src={wineBottle}
+              className="w-full h-full"
+              alt="winebottle"
+            /> */}
+          </div>
+          {/* <div className="w-full block md:hidden">
             <Image
               src={wineBottle}
               className="w-full h-full"
               alt="winebottle"
             />
-          </div>
-          {/* for Mobile responsive  */}
-          <div className="w-full block md:hidden">
-            <Image
-              src={wineBottles}
-              className="w-full h-full"
-              alt="winebottle"
-            />
-          </div>
+          </div> */}
 
-          <div className="md:basis-7/12 md:h-[800px] md:pt-[110px] py-10 md:py-20">
-            <div className="md:ps-[139px] w-full md:h-full px-4">
-              <div className=" flex flex-col justify-between max-w-[501px] w-full md:h-full">
+          <div className="md:basis-7/12  py-20 h-[100vh]">
+            <div className="md:ps-[139px] w-full px-4">
+              <div className=" flex flex-col justify-between max-w-[501px] w-full ">
                 <div>
                   <div className=" ">
                     <h3 className="text-white md:text-4xl font-light  md:leading-[44px]    text-[21px]  leading-[29px]">
@@ -76,16 +75,14 @@ const AboutTwo = () => {
                     </div>
                     <AccordionWine containerClass=" md:py-5 py-4" />
                   </div>
-                  {/* here is button  */}
+
                   <Link href="/invest">
-                    <div className=" pb-[70px]">
-                      <button className="w-full  px-8 py-[22px] rounded-full border border-white border-opacity-20 justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal  uppercase leading-3 tracking-tight">
-                        START INVESTING NOW{" "}
-                        <span>
-                          <Arrows storke="#FFFFFF" />
-                        </span>
-                      </button>
-                    </div>
+                    <button className="w-full  px-8 py-[22px] rounded-full border border-white border-opacity-20 justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal  uppercase leading-3 tracking-tight">
+                      START INVESTING NOW{" "}
+                      <span>
+                        <Arrows storke="#FFFFFF" />
+                      </span>
+                    </button>
                   </Link>
                 </div>
               </div>
