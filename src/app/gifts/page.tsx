@@ -21,7 +21,7 @@ import Benifits from "@/components/secruityPage/Benifits";
 import QASummary from "@/components/qasummary/page";
 import GiftSlider from "@/components/gifts/GiftSlider";
 import { AccordionWineAbout } from "@/components/accordion/page";
-import { AccordionFAQ } from "@/constants/accrodion";
+import { AccordionFAQ, gift_accordion } from "@/constants/accrodion";
 const whatIsABondedWarehouseAndWhyDoesVinesiaUseItOptionsList = [
   { label: "Option1", value: "option1" },
   { label: "Option2", value: "option2" },
@@ -175,7 +175,6 @@ const VinesiaGiftsPage: React.FC = () => {
                           </p>
                         </div>
                         <div className="flex sm:flex-1 flex-col gap-2 items-start justify-start w-auto sm:w-full">
-                          
                           <p className="leading-[22.00px] max-w-[485px] md:max-w-full text-base text-[#594E55] tracking-[-0.32px]">
                             <>
                               A guide to your wine&#39;s provenance, tasting
@@ -194,7 +193,6 @@ const VinesiaGiftsPage: React.FC = () => {
                           </p>
                         </div>
                         <div className="flex sm:flex-1 flex-col gap-2 items-start justify-start w-auto sm:w-full">
-                          
                           <p className="text-base text-[#594E55] tracking-[-0.32px] w-[370px]">
                             A beautifully designed certificate of your
                             investment.
@@ -318,7 +316,7 @@ const VinesiaGiftsPage: React.FC = () => {
             </div>
 
             <div>
-              <AccordionWineAbout data={AccordionFAQ.gift_accordion} />
+              <AccordionWineAbout data={gift_accordion} />
             </div>
           </div>
         </div>

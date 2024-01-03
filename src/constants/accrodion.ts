@@ -297,7 +297,10 @@ export const AccordionFAQ = {
       `,
     },
   ],
-  gift_accordion: [
+ 
+}; 
+
+export const gift_accordion= [
     {
       id: 9,
       title:
@@ -314,5 +317,4 @@ export const AccordionFAQ = {
       title: "Where is the Vinesia warehouse located, and can I visit it?",
       text: "The Vinesia warehouse is located in Luxembourg. For safety and security reasons, we do not allow unsolicited visits. However, we provide photos and videos from inside our warehouse to show you where and how your wine is stored. Rest assured, your investment is kept under optimal conditions in our secure facility. We will provide additional footage (both videos and photos) of the inside of the warehouse over the coming months.",
     },
-  ],
-};
+  ]
