@@ -113,7 +113,7 @@ export default function GraphPanel({isMobile}: {isMobile: boolean}) {
               {isMobile ? (<XAxis dataKey="date" tick={<CustomXAxisTick />} interval={11} />) : (<XAxis dataKey="date" tickFormatter={(tick) => formatDate(tick, 'axis', isMobile)} interval={11} />)}
               {/* <XAxis dataKey="date" ticks={ticks} tickFormatter={formatYear} interval="preserveStartEnd"  label={{ value: 'Dates', angle: 0, position: 'bottom' }}/> */}
               {isMobile ? (<YAxis type="number" allowDecimals={true} tick={<CustomYAxisTick/>} allowDataOverflow={false} domain={[graphMin - 5, graphMax + 5]} ticks={yTicks} tickCount={yTicks.length} interval={0} tickSize={4}>
-                <Label value="Performance" position="insideLeft" angle={-90} offset={20} style={{marginRight:"30px"}}></Label>
+                <Label value="Performance" position="insideLeft" angle={-90} offset={20} style={{marginRight:"30px", fontSize:"0.5rem"}}></Label>
               </YAxis>) 
               : (<YAxis type="number" allowDecimals={true} allowDataOverflow={false} domain={[graphMin - 5, graphMax + 5]} ticks={yTicks} tickCount={yTicks.length} interval={0} tickSize={4}>
                 <Label value="Performance" position="insideLeft" angle={-90} offset={20} style={{marginRight:"30px"}}></Label>
