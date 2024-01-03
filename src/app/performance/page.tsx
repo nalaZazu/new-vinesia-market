@@ -168,13 +168,14 @@ export default function AssetsPerformance() {
       <div className="py-28 bg-[#7D302E]">
         <div className="container mx-auto px-4 flex flex-col items-center">
           <div className="text-center pb-10">
-            <span className="text-orange-100 text-4xl font-light leading-[44px]">
+            <h2 className="text-[#F3E8CF] text-4xl font-light leading-[44px] pb-6">
               Start your wine investing journey with{" "}
-            </span>
-            <p className="text-red-900 text-4xl font-light leading-[44px]">
-              Vinesia
-            </p>
-            <span className="text-center text-stone-400 text-base font-normal leading-snug">
+            </h2>
+            <h2 className="text-[#F3E8CF] text-4xl font-light leading-[44px] pb-6">
+            Vinesia
+
+            </h2>
+            <span className="text-center text-[#CBACAB] text-base font-normal leading-snug">
               Let us help you add this unique asset to your portfolio.
             </span>
           </div>

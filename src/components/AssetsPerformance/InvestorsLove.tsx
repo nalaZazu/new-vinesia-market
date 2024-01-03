@@ -4,7 +4,7 @@ export default function InvestorsLove() {
   return (
     <div>
       <h2 className="max-w-[793px] text-zinc-800 text-4xl md:text-7xl font-normal md:tracking-[-1.44px] md:leading-[84px] pb-20">
-        Wine as an asset comes with benefits that investors love.
+        Wine as an asset comes with benefits that investors love
       </h2>
       <div className="grid md:grid-cols-2 ">
         <div className="mb-5">
