@@ -75,7 +75,7 @@ export default function ProductCarousel({images = []}: {images?: string[]}) {
               >
                 <div className="relative">
                   <Image
-                    src={`${process.env.NEXT_PUBLIC_API_ADDRESS}products/file/${item.media}`}
+                    src={`${process.env.NEXT_PUBLIC_API_ADDRESS}products/file/${item?.media}`}
                     width={200}
                     height={200}
                     alt="Edition carousel picture"

@@ -1,15 +1,16 @@
-"use client";
-import Image from "next/image";
+"use client"; 
 import React, { useState } from "react";
 
 export default function TabButton({
   data,
   activeTab,
   setActiveTab,
+  className,
 }: {
   data?: any;
   activeTab?: any;
   setActiveTab?: any;
+  className?:"flex-nowrap";
 }) {
   const [selectedTab, setSelectedTab] = useState(activeTab || 0);
   const handleTab = (i: any) => {
@@ -18,20 +19,20 @@ export default function TabButton({
   };
   return (
     <div className="">
-      <div className="flex  md:flex-nowrap  flex-wrap border-b-2 border-orange-700 border-opacity-20">
+      <div
+        className={`flex   border-b-2 border-orange-700 border-opacity-20 flex-wrap md:flex-nowrap`}
+      >
         {data?.map((item: any, i: any) => {
           return (
             <div
               key={i}
-              className={` border-orange-700  text-center w-full ${
+              className={` border-orange-700  text-center w-full min-w-96 md:min-w-fit ${
                 selectedTab == i && "border-b-4 "
               } `}
             >
               <button
                 className={`${
-                  selectedTab == i
-                    ? " text-orange-700 "
-                    : " "
+                  selectedTab == i ? " text-orange-700 " : " "
                 }    py-4 font-normal uppercase tracking-tight text-xs `}
                 onClick={() => handleTab(i)}
               >

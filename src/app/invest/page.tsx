@@ -7,6 +7,7 @@ import Footer from "@/components/footer/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
 import Product from "@/components/products/page";
 import useSWR from "swr";
+import lineregion from "@/assets/icons/lineregion.svg";
 
 import FilterSection from "@/components/FilterSection/page";
 import VerticalBreadCrumb from "@/common/verticalBreadcrumb/page";

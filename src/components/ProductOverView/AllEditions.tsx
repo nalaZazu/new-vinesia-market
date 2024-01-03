@@ -35,7 +35,8 @@ export default function AllEditions({
             {/* desktop DropDownButton*/}
             <div className=" md:block hidden">
               <div className="flex gap-2 items-center">
-                <p className="basis-1/2 text-stone-600 text-base font-normal  leading-snug">
+                <p className=" text-stone-600 text-base font-normal  leading-snug basis-44">
+                  {/* basis-1/2 */}
                   Sort by
                 </p>
                 <DropDownButton />
