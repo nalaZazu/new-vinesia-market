@@ -43,7 +43,10 @@ export default function FilterSection({
       </div>
       {/* Mobile view */}
       <div className="md:hidden block">
-        <MobileFilter />
+        <MobileFilter 
+        priceRange={priceRange}
+        setPriceRange={setPriceRange}
+        />
       </div>
     </div>
   );

@@ -9,15 +9,25 @@ import Image from "next/image";
 import { filtersList, sortList } from "@/constants/invesdropdown";
 
 import Link from "next/link";
+import { RangeSlider } from "@/common/Components";
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 
-function MobileFilter() {
+function MobileFilter({
+  priceRange,
+  setPriceRange,
+}: {
+  priceRange?: any;
+  setPriceRange?: any;
+}) {
+  const [selectedItems, setSelectedItems] = useState<string[]>([]);
+  // const [tempRange, setTempRange] = useState([0, 500]);
   const [firstDropdownOpen, setFirstDropdownOpen] = useState(false);
   const [activeState, setActiveState] = useState<any>({});
-  const [selectedItems, setSelectedItems] = useState<string[]>([]);
   const [selectedSort, setSelectedSort] = useState("default");
+  const [isSelected, setIsSelected] = useState([]);
+  const [inputRange, setInputRange] = useState([1, 1500]);
 
   const handleChange = (e: any) => {
     let index = selectedItems?.findIndex((d: any) => d === e);
@@ -31,8 +41,6 @@ function MobileFilter() {
   };
   const handleApply = (close: any) => {
     // setSelectedFilters(tempSelected);
-    console.log("selectedItems", selectedItems);
-
     // close();
   };
   // const handleClear = (close: any) => {
@@ -40,6 +48,32 @@ function MobileFilter() {
   //   // setSelectedFilters([]);
   //   close();
   // };
+
+  const handleSelected = (itemId: any) => {
+  
+ 
+ const isSelectedItem = isSelected.includes(itemId);
+ if (isSelectedItem) {
+    const updatedIds = isSelected.filter((selectedId) => selectedId !== itemId);
+   setIsSelected(updatedIds);
+ } else {
+    const updatedIds = [...isSelected, itemId];
+   setIsSelected(updatedIds);
+ }
+  };
+
+  const handleRangeApply = (close: any) => {
+    setPriceRange(inputRange);
+  };
+
+  const handleClear = (close: any) => {
+    setSelectedItems([]);
+  };
+
+  const handleRangeMove = (e: []) => {
+    setInputRange(e);
+  };
+
   return (
     <>
       <div className=" pt-6  pb-4">
@@ -68,13 +102,28 @@ function MobileFilter() {
             leaveTo="transform opacity-0 scale-95"
           >
             {/* here is defined the new dropdown */}
+            <div className="flex justify-end gap-5 w-full mt-3">
+              <button
+                onClick={() => handleClear(close)}
+                className="text-center text-black text-xs font-normal tracking-wide   px-8 py-3 border border-orange-700  rounded-full"
+              >
+                Clear
+              </button>
+              <button
+                onClick={handleRangeApply}
+                className="text-center text-white text-xs font-normal tracking-wide   px-8 py-3 bg-secondary rounded-full"
+              >
+                Apply
+              </button>
+            </div>
             <div className="pt-7">
               {filtersList?.map((filterItem: any, filterItemId: any) => {
                 const { name, options, type } = filterItem;
+
                 return (
                   <Menu
                     as="div"
-                    className="relative inline-block text-start w-full py-4 "
+                    className="relative inline-block text-start w-full py-3 pb-4 "
                     key={filterItemId}
                   >
                     <div>
@@ -105,56 +154,111 @@ function MobileFilter() {
                         {name === "Color" ? (
                           <Menu.Item>
                             {({ active }) => (
-                              <div className="p-2 cursor-pointer hover:bg-secondary-dark   text-secondary text-xxs font-normal  tracking-wide flex gap-2 items-center">
-                                <p className="p-2 cursor-pointer hover:bg-secondary-dark text-secondary text-sm font-normal  tracking-wide">
+                              <div className="p-2 cursor-pointer hover:bg-secondary-dark text-secondary text-xxs font-normal tracking-wide flex gap-2 items-center">
+                                <p className="p-2 cursor-pointer hover:bg-secondary-dark text-secondary text-sm font-normal tracking-wide">
                                   {options?.map(
-                                    (itemName: any, itemNameId: any) => {
-                                      return (
-                                        <div key={itemNameId}>
-                                          <input
-                                            id={`${itemName}-${itemNameId}`}
-                                            name="checkbox"
-                                            type="checkbox"
-                                            className="h-3 w-3 form-checkbox rounded-full"
-                                            onChange={(e) =>
-                                              handleChange(
-                                                itemName?.toLowerCase()
-                                              )
-                                            }
-                                          />
-                                          <label
-                                            htmlFor={`${itemName}-${itemNameId}`}
-                                            className={classNames(
-                                              active
-                                                ? " text-primary"
-                                                : "text-primary-dark ",
-                                              " pl-3 text-zinc-800 text-base font-normal leading-snug tracking-tight capitalize"
-                                            )}
-                                          >
-                                            {itemName}
-                                          </label>
-                                        </div>
-                                      );
-                                    }
+                                    (itemName: any, itemNameId: any) => (
+                                      <div key={itemNameId}>
+                                        <input
+                                          id={`${itemName}-${itemNameId}`}
+                                          name="checkbox"
+                                          type="checkbox"
+                                          className="h-3 w-3 form-checkbox rounded-full"
+                                          onChange={(e) =>
+                                            handleChange(
+                                              itemName?.toLowerCase()
+                                            )
+                                          }
+                                        />
+                                        <label
+                                          htmlFor={`${itemName}-${itemNameId}`}
+                                          className={classNames(
+                                            active
+                                              ? "text-primary"
+                                              : "text-primary-dark",
+                                            "pl-3 text-zinc-800 text-base font-normal leading-snug tracking-tight capitalize"
+                                          )}
+                                        >
+                                          {itemName}
+                                        </label>
+                                      </div>
+                                    )
                                   )}
                                 </p>
                               </div>
                             )}
                           </Menu.Item>
-                        ) : (
-                          options.map((item: any, itemId: any) => {
-                            return (
-                              <div className="pt-4 " key={itemId}>
-                                <div>
-                                  <span className=" px-3 py-2 bg-orange-700 bg-opacity-10 rounded-[100px]  justify-center items-center gap-1 inline-flex">
-                                    <p className="text-primary text-sm font-normal tracking-wide capitalize">
-                                      {item}
-                                    </p>
-                                  </span>
-                                </div>
+                        ) : name === "Price" ? (
+                          <div className="p-2 cursor-pointer hover:bg-secondary-dark text-secondary text-xxs font-normal tracking-wide mt-3 pl-3">
+                            <p className="text-sm font-medium text-black  ">
+                              Price range
+                            </p>
+                            <p className="text-sm  text-neutral-600 mt-2 mb-4  ">
+                              User slider or enter min and max price
+                            </p>
+                            <div className="flex gap-4">
+                              <div className="flex items-center  gap-1">
+                                <p className="font-medium text-sm text-black">
+                                  Min
+                                </p>
+                                <input
+                                  name="min"
+                                  type="number"
+                                  value={inputRange[0]}
+                                  onChange={(e) =>
+                                    setInputRange([
+                                      parseInt(e.target.value),
+                                      inputRange[0],
+                                    ])
+                                  }
+                                  className="h-8 w-20 p-2 text-black  rounded-[70px] border border-orange-700"
+                                />
                               </div>
-                            );
-                          })
+                              <span className="text-black font-semibold">
+                                -
+                              </span>
+                              <div className="flex items-center gap-1">
+                                <p className="font-medium text-sm text-black">
+                                  Max
+                                </p>
+                                <input
+                                  name="max"
+                                  type="number"
+                                  className="h-8 w-20 p-2 text-black  rounded-[70px] border border-orange-700"
+                                  value={inputRange[1]}
+                                  onChange={(e) =>
+                                    setInputRange([
+                                      parseInt(e.target.value),
+                                      inputRange[1],
+                                    ])
+                                  }
+                                />
+                              </div>
+                            </div>
+                            <RangeSlider
+                              range={options}
+                              onChange={handleRangeMove}
+                              value={inputRange}
+                            />
+                          </div>
+                        ) : (
+                          options.map((item: any, itemId: any) => (
+                            <div className="pt-4" key={itemId}>
+                              <div onClick={() => handleSelected(itemId)}>
+                                <span
+                                  className={`px-3 py-2 bg-orange-700  rounded-[100px] justify-center items-center gap-1 inline-flex ${
+                                  isSelected.includes(itemId) 
+                                      ? "text-center text-white rounded-full"
+                                      : "bg-opacity-10 text-primary"
+                                  }`}
+                                >
+                                  <p className=" text-sm font-normal tracking-wide capitalize">
+                                    {item}
+                                  </p>
+                                </span>
+                              </div>
+                            </div>
+                          ))
                         )}
                       </div>
                     </Transition>
