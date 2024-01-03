@@ -19,42 +19,18 @@ import LeftPanel from "@/components/simulator/LeftPanel";
 import GraphPanel from "@/components/simulator/GraphPanel";
 import RightPanel from "@/components/simulator/RightPanel";
 import simulatorPreview from "@/assets/images/simulatorPreview.png";
-import { useMobileScreen } from "@/hooks/useMobileScreen";
 import ModalContainerSim from "@/common/ModalContainerSim";
-var orientation = require('o9n').orientation;
+import useIsMobile from "@/hooks/useMobileScreen";
 
 import SupportAnim from "@/components/supportAnimation/page";
 import HomeWinePerformance from "@/components/HomeWinePerformance/page";
 const AboutTwo = () => {
   const simRef = useRef(null);
-  const isMobile = useMobileScreen();
+  const isMobile = useIsMobile();
   const [visible, setVisible] = useState(false);
   const [step, setStep] = useState(1);
 
-  const goFullScreen = () => {
-    console.log('go full screen')
-    setVisible(true);
-    orientation.lock("portrait").then(() => {
-      console.log('locked')
-    })
-    // console.log(simRef)
-    // if(simRef.current){
-    //   console.log('element found')
-    //   // @ts-ignore
-    //   if(simRef.current.requestFullscreen){
-    //     console.log('request full screen')
-    //     // @ts-ignore
-    //     simRef.current.requestFullscreen();
-    // }
-    // (screen.orientation as any).lock("portrait").then(() => {
-    //   console.log('locked')
-    // })
-    // console.log(document.querySelector("#simulatorP"))
-    // if(document.querySelector("#simulatorP")){
-      // console.log('element found')
-      // document.querySelector("#simulatorP")?.requestFullscreen();
-    // } 
-  }
+
   return (
     <>
       {/* here is a investment section */}
@@ -62,15 +38,22 @@ const AboutTwo = () => {
         <ModalContainer
         visible={visible}
         setVisible={setVisible}
-        modalClass="max-h-full max-w-full sm:max-h-[95vh] sm:max-w-[90vw] rounded-md pt-4 pb-4 px-4 md:h-[95vh] lg:h-[95vh]"
+        modalClass="max-h-full max-w-full w-full sm:max-h-[95vh] sm:max-w-[95vw] rounded-md pt-4 pb-4 px-4 md:h-[95vh] lg:h-[95vh] "
         backgroundClass="bg-zinc-800 bg-opacity-95"
         isCloseBtn={true}
       >
-        <div className="md:h-full lg:h-full">
+        <div className="landscape:hidden">
+          <div className="h-4"></div>
+          <p>
+            This experience is designed to be viewed in landscape. Please rotate your
+            device to view the simulator.
+          </p>
+        </div>
+        <div className="portrait:hidden md:h-full lg:h-full ">
           <GraphProvider>
             <div className="flex flex-row justify-normal md:h-full lg:h-full">
               <LeftPanel />
-              <GraphPanel />
+              <GraphPanel isMobile={isMobile}/>
               <RightPanel />
             </div>
           </GraphProvider>

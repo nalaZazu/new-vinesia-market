@@ -11,13 +11,13 @@ import { InfoCircleOutlined } from '@ant-design/icons'
 import { sharpe_ratio_tt, volatility_tt } from '@/utils/simulator/constants'
 
 
-export default function GraphPanel() {
+export default function GraphPanel({isMobile}: {isMobile: boolean}) {
     const [graphMax, setGraphMax] = useState(0);
     const [graphMin, setGraphMin] = useState(0);
     const [yTicks, setYTicks] = useState<number[]>([60,80,100,120,140,160,180,200,220, 240, 260]);
     // const [period, setPeriod] = useState('5y')
     const {graphPoints, period, setPeriod, volatilityData, sharpeRatio, percentages} = useGraphContext()
-
+    console.log('graph is in mobile mode', isMobile)
     const returnPeriod = (period: periodType) => {
         setPeriod(period)
         // setYTicks()
@@ -80,9 +80,9 @@ export default function GraphPanel() {
   return (
     <Flex vertical style={{fontFamily:'Canela', width:"60%"}} gap="small" align='center'>
           <Flex vertical gap="small" align='left'>
-            <span className='text-sm md:text-sm lg:text-4xl' style={{fontWeight:"600", fontFamily:'Canela'}}>Portfolio comparison:
-            <br/>Wine-inclusive vs Classic 60/40</span>
-            <h4 style={{fontWeight:"400", marginTop:"-2px"}}>A portfolio performance comparison: with fine wine vs without fine wine</h4>
+            <span className='text-sm md:text-sm lg:text-4xl' style={{fontWeight:"600", fontFamily:'Canela'}}>Portfolio comparison: &nbsp;
+            <br className='hidden lg:block'/>Wine-inclusive vs Classic 60/40</span>
+            <h4 className='text-xs lg:text-base -mt-2 mb-2 lg:-m-[2px]' style={{fontWeight:"400"}}>A portfolio performance comparison: with fine wine vs without fine wine</h4>
           </Flex>
           {graphPoints &&
           <div style={{width:"100%", height:"60%"}}> 
@@ -100,7 +100,7 @@ export default function GraphPanel() {
                 /* horizontalCoordinatesGenerator={horizontalCoordinatesGenerator}
                 verticalCoordinatesGenerator={verticalCoordinatesGenerator} */
               />
-              <XAxis dataKey="date" tickFormatter={(tick) => formatDate(tick, 'axis')} interval={11} />
+              <XAxis dataKey="date" tickFormatter={(tick) => formatDate(tick, 'axis', isMobile)} interval={11} />
               {/* <XAxis dataKey="date" ticks={ticks} tickFormatter={formatYear} interval="preserveStartEnd"  label={{ value: 'Dates', angle: 0, position: 'bottom' }}/> */}
               <YAxis type="number" allowDecimals={true} allowDataOverflow={false} domain={[graphMin - 5, graphMax + 5]} ticks={yTicks} tickCount={yTicks.length} interval={0} tickSize={4}>
                 <Label value="Performance" position="insideLeft" angle={-90} offset={20} style={{marginRight:"30px"}}></Label>
@@ -154,11 +154,11 @@ export default function GraphPanel() {
                 <div className="h-8 lg:h-16" style={{border:"0.2px dashed #BF4D20", padding: "0 0 0 0.4em", width:"100%", display:"flex", flexDirection:"column", justifyContent:"space-around"}}>
                   <div className='text-[0.5rem] md:text-[0.5rem] lg:text-sm' style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px"}}>Volatility:&nbsp;
                     <span style={{fontWeight:"600"}}>{volatilityData.portfolio.toFixed(2)}%</span>
-                    <Tooltip title={volatility_tt} placement='right'> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)', fontSize: '1em' }} /></Tooltip>
+                    <Tooltip className="hidden lg:inline" title={volatility_tt} placement='right'> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)', fontSize: '1em' }} /></Tooltip>
                   </div>
                   <div className='text-[0.5rem] md:text-[0.5rem] lg:text-sm' style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px"}}>Sharpe-Ratio:&nbsp;
                     <span style={{fontWeight:"600"}}>{sharpeRatio.portfolio.toFixed(2)}</span>
-                    <Tooltip placement='right' title={sharpe_ratio_tt}> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)', fontSize: '1em' }} /></Tooltip>
+                    <Tooltip className="hidden lg:inline" placement='right' title={sharpe_ratio_tt}> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)', fontSize: '1em' }} /></Tooltip>
                   </div>
                 </div>
               </Flex>
@@ -174,11 +174,11 @@ export default function GraphPanel() {
                 <div className="h-8 lg:h-16" style={{border:"0.2px dashed #BF4D20", padding: "0 0 0 0.4rem", display:"flex", flexDirection:"column", justifyContent:"space-around"}}>
                   <div className='text-[0.5rem] md:text-[0.5rem] lg:text-sm' style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px"}}>Volatility:&nbsp;
                     <span style={{fontWeight:"600"}}>{volatilityData.baseline.toFixed(2)}%</span>
-                    <Tooltip placement='right' title={volatility_tt}> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)', fontSize: '1em'}} /></Tooltip>
+                    <Tooltip className="hidden lg:inline" placement='right' title={volatility_tt}> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)', fontSize: '1em'}} /></Tooltip>
                   </div>
                   <div className='text-[0.5rem] md:text-[0.5rem] lg:text-sm' style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px"}}>Sharpe-Ratio:&nbsp;
                     <span style={{fontWeight:"600"}}>{sharpeRatio.baseline.toFixed(2)}</span>
-                    <Tooltip placement='right' title={sharpe_ratio_tt}> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)', fontSize: '1em' }} /></Tooltip>
+                    <Tooltip className="hidden lg:inline" placement='right' title={sharpe_ratio_tt}> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)', fontSize: '1em' }} /></Tooltip>
                   </div>
                 </div>
               </Flex>

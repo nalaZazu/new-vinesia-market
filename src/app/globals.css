@@ -727,17 +727,21 @@ to {
 
 @media screen and (orientation: portrait) {
   .force-landscape {
-    width: 100vh;
-    height: 100vw;
+    width: 95vh;
+    /* height: 80vw; */
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(-90deg);
     transform-origin: center center;
+    /* padding: 20px; */
+    /* padding-bottom: 25px; */
   }
 }
 
-.rotation-class:fullscreen{
-  width: 100%;
-	height: 100%;
+@media screen and (orientation: portrait) {
+  .rotated-div {
+      transform: rotate(-90deg);
+      transform-origin: top left;
+  }
 }

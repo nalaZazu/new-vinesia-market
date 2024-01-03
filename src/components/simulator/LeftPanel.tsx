@@ -131,15 +131,15 @@ export default function LeftPanel() {
       ];
     
   return (
-    <Flex style={{fontFamily:'Canela', width:"20%", height:"100%"}} gap="1rem" justify='flex-start' flex="auto" vertical>
-        <div style={{height:"10vh"}}></div>
-        <h3 style={{ width:"100%",fontSize:"clamp(0.5em, 1.2vw, 1.2em)", fontWeight:"bold"}}>Build your own portfolio below and see what the performance would have been over a specific time period</h3>
-        <Flex align='baseline' justify='space-between' style={{ height:"5%"}}>
+    <Flex style={{fontFamily:'Canela', width:"20%", height:"100%"}} gap="small" justify='flex-start' flex="auto" vertical>
+        <div style={{height:"10%"}}></div>
+        <h3 style={{height:"15%", width:"100%",fontSize:"clamp(0.5em, 1.2vw, 1.2em)", fontWeight:"bold"}}>Build your own portfolio below and see what the performance would have been over a specific time period</h3>
+        <Flex style={{height:"5%"}} align='baseline' justify='space-between'>
             <h2 className='text-xs md:text-xs lg:text-lg' style={{fontWeight:"normal"}}>Your Portfolio</h2>
             <button type="button" className='w-2/5 lg:w-1/3 h-4 lg:h-8 text-[0.5rem] md:text-[0.5rem] lg:text-sm text-center lg:text-center border rounded' style={{fontFamily: "Canela", borderColor:"#BF4D20", }} /* icon={<UndoOutlined className='text-[0.5rem] ml-0 mr-0 hidden lg:block text-center' rotate={180}/>} */ onClick={() => resetValuesToCurrentBaseline()}><UndoOutlined className='text-[0.5rem] ml-0 mr-0 hidden lg:inline align-middle lg:mx-2' rotate={180}/>Reset</button>
             {/* <button type="button" className='h-6' style={{fontFamily: "Canela",borderColor:"#BF4D20" }} icon={<UndoOutlined className='text-[0.5rem] ml-0 mr-0 hidden lg:block text-center' rotate={180}/>}onClick={() => resetValuesToCurrentBaseline()}>Reset</button> */}
         </Flex>
-        <div style={{height:"30%", width:"100%"}}>
+        <div style={{height: "45%",width:"100%"}}>
           <Space direction='vertical' size="small">
             {items.map((item) => {
               return (
@@ -149,7 +149,9 @@ export default function LeftPanel() {
             })}
           </Space>
         </div>
-        { error ? <span style={{color: "#f00", fontWeight:"300"}}>Please adjust the values so that their total equals 100%. <br/>Current total: <span style={{fontWeight: "600"}}>[{sum}]%</span></span>   : null   }
+        {/* <div> */}
+          { error ? <span className='text-[0.5rem] md:text-[0.5rem] lg:text-base' style={{color: "#f00", fontWeight:"300"}}>Please adjust the values so that their total equals 100%.<br/>Current total: <span className='text-[0.5rem] md:text-[0.5rem] lg:text-base' style={{fontWeight: "600"}}>[{sum}]%</span></span>   : null}
+        {/* </div> */}
       </Flex>
   )
 }

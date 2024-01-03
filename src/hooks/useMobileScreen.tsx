@@ -1,18 +1,32 @@
-"use client"
 import { useState, useEffect } from 'react';
 
-export const useMobileScreen = (threshold = 768) => {
-  const [isMobile, setIsMobile] = useState(false);
+const useIsMobile = (maxMobileWidth = 844) => {
+  const checkIfMobile = () => {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    console.log('Width', width, "Height", height);
+    console.log('is mobile?', width <= maxMobileWidth || width < height);
+    return width <= maxMobileWidth || width < height;
+  };
+
+  const [isMobile, setIsMobile] = useState(checkIfMobile());
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < threshold);
+      console.log('is mobile?',checkIfMobile());
+      setIsMobile(checkIfMobile());
     };
 
     window.addEventListener('resize', handleResize);
+
     handleResize();
-    return () => window.removeEventListener('resize', handleResize);
-  }, [threshold]);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [maxMobileWidth]);
 
   return isMobile;
 };
+
+export default useIsMobile;

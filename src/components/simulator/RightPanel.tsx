@@ -12,7 +12,7 @@ export default function RightPanel() {
         setSelectedBaseline(selectedValue)
     }
   return (
-    <Flex style={{fontFamily:'Canela', width:"20%", height:"100%"}} gap="1rem" justify='flex-start' flex="auto" vertical>
+    <Flex style={{fontFamily:'Canela', width:"20%", height:"100%"}} gap="small" justify='flex-start' flex="auto" vertical>
         <div style={{height:"10vh"}}></div>
         <h3 style={{fontWeight: "bold",fontSize:"clamp(0.5em, 1.2vw, 1.2em)"}}>Choose the baseline you want to compare the performance of your portfolio against</h3>
         <h2 className='text-xs md:text-xs lg:text-lg' style={{fontWeight:"normal", marginTop: 0 }}>Baseline</h2>
