@@ -6,10 +6,10 @@ export default function WineTabe({ item, starred }: { item: ProductWineDto, star
   function getSize() {
     if (item.size === 'Standard') {
       // return 'Standard (0,75l)'
-      return '0,75l'
+      return '75cl'
     }
     if (item.size === 'Magnum') {
-      return '1,5l'
+      return '150cl'
     }
 
     return item.size

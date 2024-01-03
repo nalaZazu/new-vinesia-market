@@ -120,16 +120,16 @@ export default function Vinesia() {
       {/* About our wine expertise + experts start */}
       <div className="py-40 bg-[#F7EFDF]">
         <div className="max-w-[1166px] mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-[139px]">
+          <div className="grid md:grid-cols-2 gap-[120px]">
             <div>
-              <h3 className="max-w-[501px] text-zinc-800 text-4xl font-light leading-[44px] pb-8">
-                About our wine expertise + experts
+              <h3 className="max-w-[510px] text-zinc-800 text-4xl font-light leading-[44px] pb-8">
+                About our wine expertise & experts
               </h3>
-              <p className="max-w-[501px] text-zinc-800 text-lg font-semibold leading-relaxed pb-4">
+              <p className="max-w-[510px] text-zinc-800 text-lg font-semibold leading-relaxed pb-4">
                 Deep knowledge, experience and a healthy dose of challenge from
                 our expert advisors to keep us on our toes.
               </p>
-              <p className="max-w-[501px] text-neutral-600 text-base font-normal leading-snug ">
+              <p className="max-w-[510px] text-neutral-600 text-base font-normal leading-snug ">
                 Our success stems from the ability to source exceptional wines
                 for our investors, to act as respectful stewards towards the
                 magical products we store and to make sure our investors feel

@@ -80,40 +80,7 @@ export default function ArtCard() {
           <div className="my-8 max-w-[608px] h-[0px] border border-orange-700 border-opacity-20"></div>
           <Social />
           <div className="my-8 max-w-[608px] h-[0px] border border-orange-700 border-opacity-20"></div>
-          <div className="flex justify-between items-center">
-            <div className=" uppercase items-center flex gap-3">
-              <p className="text-right text-[#906447] text-xs font-normal  uppercase leading-3 tracking-tight">
-                Floor PRICE
-              </p>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="w-6 h-6 text-secondary"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
-                />
-              </svg>
-              <h1 className=" text-zinc-800 text-4xl font-light leading-[44px]">
-                €68,888
-              </h1>
-            </div>
-            <div>
-              <Link href="/invest">
-                <button
-                  type="button"
-                  className="bg-secondary text-center rounded-full text-white text-xs font-normal uppercase leading-3 tracking-tight focus:ring-0 focus:outline-none w-48 px-8 py-5 items-center"
-                >
-                  Invest now
-                </button>
-              </Link>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>

@@ -1,5 +1,7 @@
 import { Magic } from '@/context/MagicProvider';
+import { ProductWineDto } from '@/types/dto/productWine.dto';
 import { CurrencyValue } from '@/types/editionOverview.dto';
+import { BottleSize, PackageType, ProductOverview } from '@/types/productOverview.dto';
 import { Dispatch, SetStateAction } from 'react';
 
 export type LoginMethod = 'EMAIL' | 'SMS' | 'SOCIAL' | 'FORM';
@@ -73,4 +75,29 @@ export function getDateWithoutTime(date: Date): Date {
 
 export function dateAddDays(date: Date, days: number): Date {
   return new Date(date.setDate(date.getDate() + days));
+}
+
+export function getPricePerLiter(price: number ,item: ProductWineDto | null) {
+  if (item === null) return 0
+  
+  let bottleSize = bottleSizeCl[item.size]
+
+  let totalSize = bottleSize
+  if (item.packageType === PackageType.Case) {
+    totalSize = bottleSize * item.items
+  }
+
+  let pricePerLiter = price*100/totalSize
+
+  return pricePerLiter
+}
+
+export const bottleSizeCl: Record<BottleSize, number> = {
+  [BottleSize.HalfQuarter]: 0,
+  [BottleSize.QuarterBottle]: 0,
+  [BottleSize.HalfBottle]: 0,
+  [BottleSize.Standard]: 75,
+  [BottleSize.Magnum]: 150,
+  [BottleSize.Jeroboam]: 0,
+  [BottleSize.Rehoboam]: 0
 }

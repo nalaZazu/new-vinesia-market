@@ -239,9 +239,9 @@ const About = () => {
       left-[50%] translate-x-[-50%] 
       hidden
         " ref={round2}>
-              <video className="absolute left-1/2 z-0 max-w-none object-cover -translate-x-1/2 -translate-y-1/2 top-1/2" autoPlay loop muted>
-                <source src='assets/video/231215_Vinesia_Hero2_360.mp4' media="all and (max-width: 700px)" />
-                <source src='assets/video/231215_Vinesia_Hero2_Fast.mp4' />
+              <video className="w-[100vw] absolute left-1/2 z-0 max-w-none object-cover -translate-x-1/2 -translate-y-1/2 top-1/2" autoPlay loop muted>
+                <source src='assets/video/Vinesia_Hero3_360.mp4#t=1' media="all and (max-width: 700px)" />
+                <source src='assets/video/Vinesia_Hero3_540.mp4#t=1' />
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -250,8 +250,8 @@ const About = () => {
           <div className="md:hidden my-10">
             <div className="overflow-hidden m-auto w-full">
               <video className="object-cover"loop muted controls>
-                <source src='assets/video/231215_Vinesia_Hero2_360.mp4#t=7' media="all and (max-width: 700px)" />
-                <source src='assets/video/231215_Vinesia_Hero2_720.mp4#t=7' />
+                <source src='assets/video/Vinesia_Hero3_360.mp4#t=1' media="all and (max-width: 700px)" />
+                <source src='assets/video/Vinesia_Hero3_540.mp4#t=1' />
                 Your browser does not support the video tag.
               </video>
             </div>

@@ -111,7 +111,7 @@ const AboutTwo = () => {
           <div className="grid md:grid-cols-2 grid-cols-1">
             <div className="max-w-[512px]">
               <h2 className=" text-zinc-800 md:text-7xl font-normal  md:leading-[84px] md:tracking-[-1.44px]      text-4xl  leading-[42px] tracking-[-0.36px]">
-                The potential of wine investment in numbers
+                The potential of wine investment<br/> in numbers
               </h2>
               <p className="max-w-[329px] text-zinc-800 text-lg font-semibold  md:pt-[72px] pt-6 pb-6 leading-relaxed   tracking-[-0.36px]">
                 See what your investment could have returned with wine

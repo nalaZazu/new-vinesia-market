@@ -163,56 +163,12 @@ export default function ShareCard({ data }: { data: ProductOverview }) {
               {data.starred}
             </p>
           </div>
-          {/* <div className="md:hidden">
-            <div className="md:flex gap-2 items-center md:space-y-0 space-y-4  ">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="w-6 h-6 mx-auto"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"
-                />
-              </svg>
-              <p className="text-zinc-800 text-xs font-normal uppercase leading-3 tracking-tight">
-                999
-              </p>
-            </div>
-          </div> */}
-
-          {/* <div className="hidden md:block">
-            <button
-              type="button"
-              className="flex text-end text-orange-700 text-xs font-normal  uppercase leading-3 tracking-tight  gap-2 items-center focus:ring-0 focus:outline-none focus:ring-gray-100"
-            >
-              See More
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="w-4 h-4 mx-auto"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                />
-              </svg>
-            </button>
-          </div> */}
         </div>
         <div className="my-8 max-w-[608px] h-[0px] border border-orange-700 border-opacity-20"></div>
         <div className="md:flex md:justify-between md:items-center">
           <div className=" uppercase items-center flex gap-3 md:pb-0 pb-4">
             <p className="text-right text-[#906447] text-xs font-normal  uppercase leading-3 tracking-tight">
-              Floor PRICE
+              Buy NOW
             </p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -229,7 +185,7 @@ export default function ShareCard({ data }: { data: ProductOverview }) {
               />
             </svg>
             <h1 className="text-zinc-800 text-4xl font-light leading-[44px]">
-              {data.floorPrice && getPriceText(data.floorPrice[currency])}
+              {data.floorPrice && getPriceText(data.buyNowPrice[currency])}
             </h1>
           </div>
 
