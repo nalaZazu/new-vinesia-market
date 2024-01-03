@@ -185,7 +185,7 @@ export default function ShareCard({ data }: { data: ProductOverview }) {
               />
             </svg>
             <h1 className="text-zinc-800 text-4xl font-light leading-[44px]">
-              {data.floorPrice && getPriceText(data.buyNowPrice[currency])}
+              {data.buyNowPrice && getPriceText(data.buyNowPrice[currency])}
             </h1>
           </div>
 
