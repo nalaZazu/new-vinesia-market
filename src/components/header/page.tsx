@@ -89,19 +89,19 @@ const getTheme = (pathName: string, size: any) =>
 
 function initials(profile: User | null) {
   if (profile === null) {
-    return ''
+    return "";
   } else {
-    let res = ''
-    if (profile.firstName.length > 0) {
-      res += profile.firstName[0].toUpperCase()
+    let res = "";
+    if (profile?.firstName?.length > 0) {
+      res += profile.firstName[0].toUpperCase();
     }
-    if (profile.lastName.length > 0) {
-      res += profile.lastName[0].toUpperCase()
+    if (profile?.lastName?.length > 0) {
+      res += profile.lastName[0].toUpperCase();
     }
 
-    if (res === '') res = 'AN'
+    if (res === "") res = "AN";
 
-    return res
+    return res;
   }
 }
 
@@ -131,10 +131,9 @@ export default function Header() {
     if (profile === null || profile === undefined) {
       push("/signup", { scroll: false });
     } else {
-      push('/profile');
+      push("/profile");
     }
-
-  }, [profile, push])
+  }, [profile, push]);
 
   const Hr = () => <hr className={`hidden md:block ${theme.hr}`} />;
 
@@ -148,13 +147,14 @@ export default function Header() {
               {menuItems.map((x, i) => (
                 <Link key={i} href={x?.href || "/"}>
                   <div
-                                      className="cursor-pointer"
-                                      key={x.id}
-                                      onClick={() => select(x)}
-                                    >
+                    className="cursor-pointer"
+                    key={x.id}
+                    onClick={() => select(x)}
+                  >
                     <span
-                      className={`hidden md:block py-7 text-base tracking-tight border-0 ${theme.textClass
-                        } ${x.id === topSelected.id ? theme.selectedClass : ""}`}
+                      className={`hidden md:block py-7 text-base tracking-tight border-0 ${
+                        theme.textClass
+                      } ${x.id === topSelected.id ? theme.selectedClass : ""}`}
                     >
                       {x.name}
                     </span>
@@ -170,8 +170,9 @@ export default function Header() {
               </div>
             </div>
             <div className=" text-2xl lg:text-4xl font-bold lg:col-span-2 text-center py-5">
-              <Link href={topSelected?.href || "/"}>                <Image
-
+              <Link href={topSelected?.href || "/"}>
+                {" "}
+                <Image
                   src={logo}
                   className="mx-auto"
                   alt="Picture of the author"
@@ -194,13 +195,21 @@ export default function Header() {
                 onClick={navUser}
               >
                 <div className="hidden md:flex">
-                  <UserIcon fill={theme.iconFill}/>
-                  {profile && <span className={`ml-2 ${theme.textClass}`}> Hi {profile?.firstName}</span>}
+                  <UserIcon fill={theme.iconFill} />
+                  {profile && (
+                    <span className={`ml-2 ${theme.textClass}`}>
+                      {" "}
+                      Hi {profile?.firstName}
+                    </span>
+                  )}
                 </div>
                 <div className="md:hidden">
-                  {initials(profile) === '' ? <UserIcon fill={theme.iconFill} /> : initials(profile)}
+                  {initials(profile) === "" ? (
+                    <UserIcon fill={theme.iconFill} />
+                  ) : (
+                    initials(profile)
+                  )}
                 </div>
-
               </div>
 
               <Link
@@ -228,10 +237,11 @@ export default function Header() {
                 return (
                   <Link href={href || "/"} key={id}>
                     <li
-                      className={`py-4 ${selected === item
-                        ? theme.selectedClass + " " + theme.activeTextClass
-                        : theme.textClass
-                        }`}
+                      className={`py-4 ${
+                        selected === item
+                          ? theme.selectedClass + " " + theme.activeTextClass
+                          : theme.textClass
+                      }`}
                     >
                       {name}
                     </li>
@@ -244,7 +254,8 @@ export default function Header() {
 
         {pathName === "/" ? (
           <></>
-        ) : (<></>
+        ) : (
+          <></>
           // <div className="md:hidden block py-4 px-6">
           //   <form>
           //     <div className="relative">
