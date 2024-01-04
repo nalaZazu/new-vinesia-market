@@ -15,13 +15,17 @@ function classNames(...classes: any) {
 }
 
 function MobileFilter({
+  selectedFilters,
+  setSelectedFilters,
   priceRange,
   setPriceRange,
 }: {
+  selectedFilters?: any;
+  setSelectedFilters?: any;
   priceRange?: any;
   setPriceRange?: any;
 }) {
-  const [selectedItems, setSelectedItems] = useState<string[]>([]);
+  const [selectedItems, setSelectedItems] = useState<string[]>(selectedFilters|| []);
   // const [tempRange, setTempRange] = useState([0, 500]);
   const [firstDropdownOpen, setFirstDropdownOpen] = useState(false);
   const [activeState, setActiveState] = useState<any>({});
@@ -58,11 +62,13 @@ function MobileFilter({
     } else {
       const updatedIds = [...isSelected, item];
       setIsSelected(updatedIds);
+      
     }
   };
 
   const handleRangeApply = (close: any) => {
     setPriceRange(inputRange);
+    setSelectedFilters(isSelected)
     setFirstDropdownOpen(false)
     
   };
