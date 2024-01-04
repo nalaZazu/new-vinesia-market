@@ -26,7 +26,7 @@ function MobileFilter({
   const [firstDropdownOpen, setFirstDropdownOpen] = useState(false);
   const [activeState, setActiveState] = useState<any>({});
   const [selectedSort, setSelectedSort] = useState("default");
-  const [isSelected, setIsSelected] = useState([]);
+  const [isSelected, setIsSelected] = useState<any>([]);
   const [inputRange, setInputRange] = useState([1, 1500]);
 
   const handleChange = (e: any) => {
@@ -43,23 +43,22 @@ function MobileFilter({
     // setSelectedFilters(tempSelected);
     // close();
   };
+
   // const handleClear = (close: any) => {
   //   setSearchTerm("");
   //   // setSelectedFilters([]);
   //   close();
   // };
 
-  const handleSelected = (itemId: any) => {
-  
- 
- const isSelectedItem = isSelected.includes(itemId);
- if (isSelectedItem) {
-    const updatedIds = isSelected.filter((selectedId) => selectedId !== itemId);
-   setIsSelected(updatedIds);
- } else {
-    const updatedIds = [...isSelected, itemId];
-   setIsSelected(updatedIds);
- }
+  const handleSelected = (item: any) => {
+    const isSelectedItem = isSelected.includes(item);
+    if (isSelectedItem) {
+      const updatedIds = isSelected.filter((selectedId:any) => selectedId !== item);
+      setIsSelected(updatedIds);
+    } else {
+      const updatedIds = [...isSelected, item];
+      setIsSelected(updatedIds);
+    }
   };
 
   const handleRangeApply = (close: any) => {
@@ -119,7 +118,6 @@ function MobileFilter({
             <div className="pt-7">
               {filtersList?.map((filterItem: any, filterItemId: any) => {
                 const { name, options, type } = filterItem;
-
                 return (
                   <Menu
                     as="div"
@@ -244,10 +242,10 @@ function MobileFilter({
                         ) : (
                           options.map((item: any, itemId: any) => (
                             <div className="pt-4" key={itemId}>
-                              <div onClick={() => handleSelected(itemId)}>
+                              <div onClick={() => handleSelected(item)}>
                                 <span
-                                  className={`px-3 py-2 bg-orange-700  rounded-[100px] justify-center items-center gap-1 inline-flex ${
-                                  isSelected.includes(itemId) 
+                                  className={`cursor-pointer px-3 py-2 bg-orange-700  rounded-[100px] justify-center items-center gap-1 inline-flex  ${
+                                    isSelected.includes(item)
                                       ? "text-center text-white rounded-full"
                                       : "bg-opacity-10 text-primary"
                                   }`}
