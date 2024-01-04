@@ -15,12 +15,12 @@ export default function CalendarSection() {
   return (
     <div>
       {" "}
-      <h2 className="w-[683px] text-zinc-800 text-7xl font-normal font-['Canela'] leading-[84px] pb-12">
+      <h2 className="max-w-[683px] text-zinc-800 md:text-7xl font-normal text-6xl   md:leading-[84px] leading-[72px] pb-12">
         Are you ready to invest? Let’s chat
       </h2>
-      <div className="grid grid-cols-12 gap-8">
+      <div className="grid md:grid-cols-12 grid-cols-8 gap-8">
         <div className="col-span-8 bg-[#F7EFDF]">
-          <div className="grid grid-cols-12">
+          <div className="grid md:grid-cols-12">
             <div className="max-w-[217px] p-8 col-span-4">
               <p className="text-[#906447] text-xs font-normal uppercase leading-[18px] tracking-tight pb-2">
                 Laurence Zimmer
@@ -55,7 +55,7 @@ export default function CalendarSection() {
             </div>
           </div>
         </div>
-        <div className="col-span-4">
+        <div className="md:col-span-4 col-span-8">
           <Image src={contactinvest} alt="" className="w-full h-auto" />
         </div>
       </div>
