@@ -63,10 +63,14 @@ function MobileFilter({
 
   const handleRangeApply = (close: any) => {
     setPriceRange(inputRange);
+    setFirstDropdownOpen(false)
+    
   };
 
   const handleClear = (close: any) => {
     setSelectedItems([]);
+    setIsSelected([])
+    setFirstDropdownOpen(false)
   };
 
   const handleRangeMove = (e: []) => {
