@@ -4,6 +4,7 @@ import SwitchToggle from "../Switch";
 import Appactivity from "@/components/charts/page";
 import TempHumChart from "@/components/tempHumChart/page";
 import { EditionOverview } from "@/types/editionOverview.dto";
+import { dateAddDays, formatUTCDate, setUTCDateTime } from "@/utils/common";
 
 export default function StorageConditions({ item }: { item: EditionOverview }) {
   const [isFahrenheit, setIsFahrenheit] = useState(false)
@@ -55,7 +56,7 @@ export default function StorageConditions({ item }: { item: EditionOverview }) {
             </p>
             <CheckBox storke="#22C55E" />
             <p className="text-right text-zinc-800 text-base font-normal font-['Albert Sans'] leading-snug">
-              23.12.2023, 08:00 PM
+              {formatUTCDate(setUTCDateTime(dateAddDays(new Date(), -1), 8, 0,0))}
             </p>
           </div>
         </div>

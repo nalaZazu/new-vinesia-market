@@ -11,19 +11,19 @@ const AboutOne = () => {
     <React.Fragment>
       {/* here is next section */}
       <div className="md:px-0 container mx-auto py-14 px-4">
-        <div className="grid md:grid-cols-3 grid-cols-1">
-          <div className="col-span-1">
+        <div className="grid md:grid-cols-2 grid-cols-1">
+          {/* <div className="col-span-1">
             <p className="md:max-w-[214px] text-zinc-800 text-base font-normal  leading-snug">
-              Sourced exclusively from winemakers
+              
             </p>
-          </div>
+          </div> */}
           <div className="col-span-2">
             <h3 className=" text-zinc-800 md:text-4xl md:leading-[44px]  md:py-0 py-6  text-[21px] font-light  leading-[29px]">
               We are the first marketplace that protects your investment in a
               secure and transparent way to offer you complete Peace of Mind.
             </h3>
-            <p className="md:pt-8 pt-0 text-zinc-800 text-base font-normal leading-snug">
-              As stewards of your wine, sourced exclusively from winemakers,
+            <p className="md:pt-8 pt-0 text-zinc-800 font-normal leading-snug text-lg">
+              As stewards of your wine, <span className="text-[#BF4D20] font-bold">sourced exclusively from winemakers</span>,
               Vinesia is the best place to appreciate it while guarding its
               future emotions.
             </p>

@@ -67,34 +67,28 @@ export default function Footer() {
               <div className="grid md:gap-28  gap-[19px] grid-cols-2 sm:flex">
                 <div className="block md:hidden col-span-2">
                   <div className="py-8  text-center">
-                    <p className="mb-4 flex justify-center    text-neutral-300 text-base font-normal  leading-snug tracking-[0.32px]">
-                      Share info on your investment, make connections
-                    </p>
-                    <button className="px-8 py-4 bg-orange-700  rounded-[48px] justify-center items-center gap-3 inline-flex text-[#F2DBD2] text-xs">
-                      JOIN OUR COMMUNITY
-                    </button>
-                    <div className="pt-8 ">
+                    <div className="">
                       <span>Follow us</span>
                       <div className="flex justify-center   items-center gap-[10px] pt-[10px]">
-                        <Link href="https://www.facebook.com/" className="p-2">
+                        <Link href="https://www.facebook.com/profile.php?id=61553590079101" className="p-2">
                           <Facebook fill="#ACA7AA" />
                         </Link>
-                        <Link href="https://www.linkedin.com/" className="p-2">
+                        <Link href="https://www.linkedin.com/company/vinesia-winetech/" className="p-2">
                           <LinkdeIn fill="#ACA7AA " />
                         </Link>
-                        <Link href="https://twitter.com/" className="p-2">
+                        <Link href="https://twitter.com/Vinesiawinetech" className="p-2">
                           <Twitter fill="#ACA7AA" />
                         </Link>
 
-                        <Link href="https://www.instagram.com/" className="p-2">
+                        <Link href="https://www.instagram.com/vinesia.wineinvestment" className="p-2">
                           <Image
                             src={instagram}
                             alt="twitter"
                             className="w-4"
                           />
                         </Link>
-                        <Link href="https://www.youtube.com/" className="p-2">
-                          <Image src={youtube} alt="twitter" className="w-4" />
+                        <Link href="https://www.youtube.com/channel/UCEpwR4juQcMUD3qkIEioRQQ" className="p-2">
+                          <Image src={youtube} alt="youtube" className="w-4" />
                         </Link>
                       </div>
                     </div>
@@ -182,29 +176,29 @@ export default function Footer() {
               <div className="md:pt-0 pt-4  md:block hidden">
                 <span>Follow us</span>
                 <div className="flex justify-center   items-center gap-[10px] pt-[10px]">
-                  <Link href="https://www.facebook.com/" className="p-2">
+                  <Link href="https://www.facebook.com/profile.php?id=61553590079101" className="p-2">
                     <Facebook fill="#ACA7AA" />
                   </Link>
-                  <Link href="https://www.linkedin.com/" className="p-2">
+                  <Link href="https://www.linkedin.com/company/vinesia-winetech/" className="p-2">
                     <LinkdeIn fill="#ACA7AA " />
 
                     {/* <Image src={linkdin} alt="twitter" className="w-4" /> */}
                   </Link>
-                  <Link href="https://twitter.com/" className="p-2">
+                  <Link href="https://twitter.com/Vinesiawinetech" className="p-2">
                     <Twitter fill="#ACA7AA" />
                   </Link>
 
-                  <Link href="https://www.instagram.com/" className="p-2">
-                    <Image src={instagram} alt="twitter" className="w-4" />
-                  </Link>
-                  <Link href="https://www.youtube.com/" className="p-2">
-                    <Image src={youtube} alt="twitter" className="w-4" />
-                  </Link>
+                    <Link href="https://www.instagram.com/vinesia.wineinvestment" className="p-2">
+                      <Image src={instagram} alt="twitter" className="w-4" />
+                    </Link>
+                    <Link href="https://www.youtube.com/channel/UCEpwR4juQcMUD3qkIEioRQQ" className="p-2">
+                      <Image src={youtube} alt="twitter" className="w-4" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
             {/* <!--Copyright section--> */}
-          </div>
           <div className="flex  items-center sm:justify-center bg-[#1C141A] text-white p-2 lg:justify-between">
             <div className=" container mx-auto flex-wrap  flex md:justify-between justify-center items-center">
               <div className="md:mr-12 ">

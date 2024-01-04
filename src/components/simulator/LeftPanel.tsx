@@ -86,7 +86,7 @@ export default function LeftPanel() {
           label:
                 <Flex align='center' justify='space-between' style={{width:"100%"}}>
                   <span style={{width:"50%", fontFamily:'Canela', fontSize:"clamp(0.5em, 1vw, 1em)"}}>Wine Index <br/> (Liv-ex 1000)</span>
-                  <Input id="highlight-input" placeholder='%' name="wine" suffix="%" onChange={handleInputChange} value={input.wine} style={{backgroundColor: "#F2E5CA", width:"30%", fontFamily: "Canela",borderColor:" #BD936B"}} ></Input>
+                  <Input className='w-2/5 lg:w-1/3 text-[0.65rem] lg:text-sm h-6 lg:h-8' placeholder='%' name="wine" suffix="%" onChange={handleInputChange} value={input.wine} style={{backgroundColor: "#F2E5CA", fontFamily: "Canela",borderColor:" #BD936B"}} ></Input>
                 </Flex>
         },
         {
@@ -95,7 +95,7 @@ export default function LeftPanel() {
                 <Flex gap={"small"} align='flex-start' justify='flex-start' vertical style={{width:"100%"}}>
                   <Flex align='center' justify='space-between' style={{width:"100%"}}>
                     <span style={{width:"50%", fontFamily:'Canela', fontSize:"clamp(0.5em, 1vw, 1em)"}}>U.S. Stocks <br/>(S&P 500)</span>
-                    <Input placeholder='%' name="stock" suffix="%" onChange={handleInputChange} value={input.stock} style={{backgroundColor: "#F2E5CA", width:"30%", fontFamily: "Canela",borderColor:" #BD936B" }} ></Input>
+                    <Input className='w-2/5 lg:w-1/3 text-[0.65rem] lg:text-sm h-6 lg:h-8' placeholder='%' name="stock" suffix="%" onChange={handleInputChange} value={input.stock} style={{backgroundColor: "#F2E5CA", fontFamily: "Canela",borderColor:" #BD936B" }} ></Input>
                   </Flex>
                 </Flex>
     
@@ -105,8 +105,8 @@ export default function LeftPanel() {
           label: 
                 <Flex vertical gap={"small"} align='flex-start' justify='space-between' style={{width:"100%"}}>
                   <Flex align='center' justify='space-between' style={{width:"100%"}}>
-                    <span style={{width:"70%",fontFamily:'Canela', fontSize:"clamp(0.5em, 1vw, 1em)"}}>U.S. Bonds <br/>(7-10 Year)</span>
-                    <Input placeholder='%' name="bond" suffix="%" onChange={handleInputChange} value={input.bond} style={{backgroundColor: "#F2E5CA", width:"30%", fontFamily: "Canela",borderColor:" #BD936B"}}></Input>
+                    <span style={{width:"50%",fontFamily:'Canela', fontSize:"clamp(0.5em, 1vw, 1em)"}}>U.S. Bonds <br/>(7-10 Year)</span>
+                    <Input className='w-2/5 lg:w-1/3 text-[0.65rem] lg:text-sm h-6 lg:h-8' placeholder='%' name="bond" suffix="%" onChange={handleInputChange} value={input.bond} style={{backgroundColor: "#F2E5CA", fontFamily: "Canela",borderColor:" #BD936B"}}></Input>
                   </Flex>
                 </Flex>
     
@@ -116,7 +116,7 @@ export default function LeftPanel() {
           label: 
                 <Flex align='center' justify='space-between'>
                   <span style={{width:"50%", fontFamily:'Canela', fontSize:"clamp(0.5em, 1vw, 1em)"}}>US Real Estate <br/> (Core US REIT)</span>
-                  <Input placeholder='%' name="real_estate" suffix="%" onChange={handleInputChange} value={input.real_estate} style={{backgroundColor: "#F2E5CA", width:"30%", fontFamily: "Canela",borderColor:" #BD936B"}} ></Input>
+                  <Input className='w-2/5 lg:w-1/3 text-[0.65rem] lg:text-sm h-6 lg:h-8' placeholder='%' name="real_estate" suffix="%" onChange={handleInputChange} value={input.real_estate} style={{backgroundColor: "#F2E5CA", fontFamily: "Canela",borderColor:" #BD936B"}} ></Input>
                 </Flex>
     
         },
@@ -125,20 +125,21 @@ export default function LeftPanel() {
           label:
                 <Flex align='center' justify='space-between'>
                   <span style={{width:"50%", fontFamily:'Canela', whiteSpace:"initial", fontSize:"clamp(0.5em, 1vw, 1em)"}}>Commodities <br/> (Bloomberg Commodity Index)</span>
-                  <Input placeholder='%' name="commodity" suffix="%" onChange={handleInputChange} value={input.commodity} style={{backgroundColor: "#F2E5CA", width:"30%", fontFamily: "Canela",borderColor:" #BD936B"}} ></Input>
+                  <Input className='w-2/5 lg:w-1/3 text-[0.65rem] lg:text-sm h-6 lg:h-8' placeholder='%' name="commodity" suffix="%" onChange={handleInputChange} value={input.commodity} style={{backgroundColor: "#F2E5CA", fontFamily: "Canela",borderColor:" #BD936B"}} ></Input>
                 </Flex>
         },
       ];
     
   return (
-    <Flex style={{fontFamily:'Canela', width:"20%", height:"100%"}} gap="1rem" justify='flex-start' flex="auto" vertical>
-        <div style={{height:"10vh"}}></div>
-        <h3 style={{height:"10%", fontSize:"clamp(0.5em, 1.2vw, 1.2em)", fontWeight:"bold"}}>Build your own portfolio below and see what the performance would have been over a specific time period</h3>
-        <Flex align='baseline' justify='flex-start' style={{ height:"5%"}}>
-            <h2 style={{fontWeight:"normal", width:"12.6vw", fontSize: "clamp(1.25rem, 1.5vw, 1.5rem)"}}>Your Portfolio</h2>
-            <Button type="text" style={{fontFamily: "Canela",borderColor:"#BF4D20", width:"5.4vw", textAlign:"center"}} icon={<UndoOutlined style={{fontSize:".80vw", margin:"0 -0.1vw 0 -0.2vw"}} rotate={180}/>} onClick={() => resetValuesToCurrentBaseline()}>Reset</Button>
+    <Flex style={{fontFamily:'Canela', width:"20%", height:"100%"}} gap="small" justify='flex-start' flex="auto" vertical>
+        <div style={{height:"10%"}}></div>
+        <h3 style={{height:"15%", width:"100%",fontSize:"clamp(0.5em, 1.2vw, 1.2em)", fontWeight:"bold"}}>Build your own portfolio below and see what the performance would have been over a specific time period</h3>
+        <Flex style={{height:"5%"}} align='baseline' justify='space-between'>
+            <h2 className='text-xs md:text-xs lg:text-lg' style={{fontWeight:"normal"}}>Your Portfolio</h2>
+            <button type="button" className='w-2/5 lg:w-1/3 h-4 lg:h-8 text-[0.5rem] md:text-[0.5rem] lg:text-sm text-center lg:text-center border rounded' style={{fontFamily: "Canela", borderColor:"#BF4D20", }} /* icon={<UndoOutlined className='text-[0.5rem] ml-0 mr-0 hidden lg:block text-center' rotate={180}/>} */ onClick={() => resetValuesToCurrentBaseline()}><UndoOutlined className='text-[0.5rem] ml-0 mr-0 hidden lg:inline align-middle lg:mx-2' rotate={180}/>Reset</button>
+            {/* <button type="button" className='h-6' style={{fontFamily: "Canela",borderColor:"#BF4D20" }} icon={<UndoOutlined className='text-[0.5rem] ml-0 mr-0 hidden lg:block text-center' rotate={180}/>}onClick={() => resetValuesToCurrentBaseline()}>Reset</button> */}
         </Flex>
-        <div style={{height:"30%", width:"100%"}}>
+        <div style={{height: "45%",width:"100%"}}>
           <Space direction='vertical' size="small">
             {items.map((item) => {
               return (
@@ -148,7 +149,9 @@ export default function LeftPanel() {
             })}
           </Space>
         </div>
-        { error ? <span style={{color: "#f00", fontWeight:"300"}}>Please adjust the values so that their total equals 100%. <br/>Current total: <span style={{fontWeight: "600"}}>[{sum}]%</span></span>   : null   }
+        {/* <div> */}
+          { error ? <span className='text-[0.5rem] md:text-[0.5rem] lg:text-base' style={{color: "#f00", fontWeight:"300"}}>Please adjust the values so that their total equals 100%.<br/>Current total: <span className='text-[0.5rem] md:text-[0.5rem] lg:text-base' style={{fontWeight: "600"}}>[{sum}]%</span></span>   : null}
+        {/* </div> */}
       </Flex>
   )
 }

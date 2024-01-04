@@ -9,22 +9,28 @@ import GraphLegend from './GraphLegend'
 import CustomTooltip from './CustomTooltip'
 import { InfoCircleOutlined } from '@ant-design/icons'
 import { sharpe_ratio_tt, volatility_tt } from '@/utils/simulator/constants'
+import { CustomYAxisTick } from './CustomYAxisTick';
+import { CustomXAxisTick } from './CustomXAxisTick';
 
-
-export default function GraphPanel() {
+export default function GraphPanel({isMobile}: {isMobile: boolean}) {
     const [graphMax, setGraphMax] = useState(0);
     const [graphMin, setGraphMin] = useState(0);
     const [yTicks, setYTicks] = useState<number[]>([60,80,100,120,140,160,180,200,220, 240, 260]);
     // const [period, setPeriod] = useState('5y')
     const {graphPoints, period, setPeriod, volatilityData, sharpeRatio, percentages} = useGraphContext()
-
+    console.log('graph is in mobile mode', isMobile)
+    
     const returnPeriod = (period: periodType) => {
         setPeriod(period)
         // setYTicks()
         if(percentages.stock >= 80){
           setYTicks([60,100,140,180,220,260,300,340, 380])
         }else{
-          setYTicks([60,80,100,120,140,160,180,200,220, 240, 260])
+          if(!isMobile){
+            setYTicks([60,80,100,120,140,160,180,200,220, 240, 260])
+          } else {
+            setYTicks([60,100,140,180,220,260])
+          }
         }
     }
 
@@ -33,9 +39,13 @@ export default function GraphPanel() {
         if(percentages.stock >= 80){
           setYTicks([60,100,140,180,220,260,300,340, 380])
         }else{
-          setYTicks([60,80,100,120,140,160,180,200,220, 240, 260])
+          if(!isMobile){
+            setYTicks([60,80,100,120,140,160,180,200,220, 240, 260])
+          } else {
+            setYTicks([60,100,140,180,220,260])
+          }
         }
-    }, [graphPoints, percentages.stock])
+    }, [graphPoints, percentages.stock, isMobile])
 
 
       const updateGraphMinMax = (baseLine?: graphObj[], indices?: graphObj[]) => {
@@ -80,12 +90,12 @@ export default function GraphPanel() {
   return (
     <Flex vertical style={{fontFamily:'Canela', width:"60%"}} gap="small" align='center'>
           <Flex vertical gap="small" align='left'>
-            <span style={{fontSize:'clamp(1rem, 2.5vw, 2.5rem)', fontWeight:"600", fontFamily:'Canela'}}>Portfolio comparison:
-            <br/>Wine-inclusive vs Classic 60/40</span>
-            <h4 style={{fontWeight:"400", marginTop:"-2px"}}>A portfolio performance comparison: with fine wine vs without fine wine</h4>
+            <span className='text-sm md:text-sm lg:text-4xl' style={{fontWeight:"600", fontFamily:'Canela'}}>Portfolio comparison: &nbsp;
+            <br className='hidden lg:block'/>Wine-inclusive vs Classic 60/40</span>
+            <h4 className='text-xs lg:text-base -mt-2 mb-2 lg:-m-[2px]' style={{fontWeight:"400"}}>A portfolio performance comparison: with fine wine vs without fine wine</h4>
           </Flex>
           {graphPoints &&
-          <div style={{width:"100%", height:"50%"}}> 
+          <div style={{width:"100%", height:"60%"}}> 
           <ResponsiveContainer>
           <LineChart
               data={graphPoints.baseline || []}
@@ -100,13 +110,16 @@ export default function GraphPanel() {
                 /* horizontalCoordinatesGenerator={horizontalCoordinatesGenerator}
                 verticalCoordinatesGenerator={verticalCoordinatesGenerator} */
               />
-              <XAxis dataKey="date" tickFormatter={(tick) => formatDate(tick, 'axis')} interval={11} />
+              {isMobile ? (<XAxis dataKey="date" tick={<CustomXAxisTick />} interval={11} />) : (<XAxis dataKey="date" tickFormatter={(tick) => formatDate(tick, 'axis', isMobile)} interval={11} />)}
               {/* <XAxis dataKey="date" ticks={ticks} tickFormatter={formatYear} interval="preserveStartEnd"  label={{ value: 'Dates', angle: 0, position: 'bottom' }}/> */}
-              <YAxis type="number" allowDecimals={true} allowDataOverflow={false} domain={[graphMin - 5, graphMax + 5]} ticks={yTicks} tickCount={yTicks.length} interval={0} tickSize={4}>
+              {isMobile ? (<YAxis type="number" allowDecimals={true} tick={<CustomYAxisTick/>} allowDataOverflow={false} domain={[graphMin - 5, graphMax + 5]} ticks={yTicks} tickCount={yTicks.length} interval={0} tickSize={4}>
+                <Label value="Performance" position="insideLeft" angle={-90} offset={20} style={{marginRight:"30px", fontSize:"0.5rem"}}></Label>
+              </YAxis>) 
+              : (<YAxis type="number" allowDecimals={true} allowDataOverflow={false} domain={[graphMin - 5, graphMax + 5]} ticks={yTicks} tickCount={yTicks.length} interval={0} tickSize={4}>
                 <Label value="Performance" position="insideLeft" angle={-90} offset={20} style={{marginRight:"30px"}}></Label>
-              </YAxis>
+              </YAxis>)}
               <ChartToolTip offset={0} content={<CustomTooltip/>}/>
-              <Legend content={GraphLegend} iconType='plainline'/>
+              {isMobile ? <Legend verticalAlign='bottom' wrapperStyle={{fontSize: "8px", height:"1px"}}  iconType='line' iconSize={8} /> :  <Legend content={GraphLegend} />}
               
               {graphPoints.portfolio && <Line
                 key="portfolioPerformance"
@@ -140,41 +153,45 @@ export default function GraphPanel() {
           </ResponsiveContainer>
           </div>
           }
-          <Flex justify='flex-start' align='center' style={{width: "80%", height:"auto"}} vertical>
+          {/* Period Buttons */}
+          <Flex justify='flex-start' align='center' className="w-4/5 h-auto" vertical>
             <Flex justify='center' style={{marginTop:"0rem", width:"100%", fontFamily:"Canela"}} align='center' >
-              <Button style={{backgroundColor: period === '5y' ? '#BD936B' : '#fff', fontFamily: 'Canela',margin:"0 0 0 0"}} onClick={() => returnPeriod('5y')}>5Y</Button>
-              <Button style={{backgroundColor: period === '10y' ? '#BD936B' : '#fff',fontFamily: 'Canela', margin:"0 5px 0 5px"}} onClick={() => returnPeriod('10y')}>10Y</Button>
-              <Button style={{backgroundColor: period === 'max' ? '#BD936B' : '#fff',fontFamily: 'Canela',margin:"0 5px 0 0"}} onClick={() => returnPeriod('max')}>Max</Button>
-            </Flex>
+              <button className={`text-[0.5rem] md:text-xs lg:text-xs p-[2px] rounded border border-orange-700 md:p-1 lg:p-2 text-${period === '5y'? 'white' : 'black'} bg-${period === '5y' ? 'orange-700' : 'white'} font-Canela m-0`} onClick={() => returnPeriod('5y')}>5Y</button>
+              <button className={`text-[0.5rem] md:text-xs lg:text-xs p-[2px] rounded border border-orange-700 md:p-1 lg:p-2 text-${period === '10y'? 'white' : 'black'} bg-${period === '10y' ? 'orange-700' : 'white'} font-Canela mx-1`} onClick={() => returnPeriod('10y')}>10Y</button>
+              <button className={`text-[0.5rem] md:text-xs lg:text-xs p-[2px] rounded border border-orange-700 md:p-1 lg:p-2 text-${period === 'max'? 'white' : 'black'} bg-${period === 'max' ? 'orange-700' : 'white'} font-Canela ml-1`} onClick={() => returnPeriod('max')}>Max</button>
+          </Flex>
+            {/* Left Data */}
             <Flex justify='space-between' style={{width: "100%", marginTop:"0rem"}}>
               <Flex vertical justify='center' align='left' style={{width:"27.5%", height:"100%", fontFamily:'Canela'}}>
-                <span style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px", fontSize:"clamp(0.8em, 2.5vw, 1.2em)", whiteSpace:"nowrap"}}>Your Portfolio</span>
-                <div style={{border:"0.2px dashed #BF4D20", padding: "0 0 0 0.4em", width:"100%", height:"4em", display:"flex", flexDirection:"column", justifyContent:"space-around"}}>
-                  <div style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px", fontSize:"1em"}}>Volatility:&nbsp;
+                <span className='text-xs md:text-xs lg:text-lg' style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px", whiteSpace:"nowrap"}}>Your Portfolio</span>
+                <div className="h-8 lg:h-16" style={{border:"0.2px dashed #BF4D20", padding: "0 0 0 0.4em", width:"100%", display:"flex", flexDirection:"column", justifyContent:"space-around"}}>
+                  <div className='text-[0.5rem] md:text-[0.5rem] lg:text-sm' style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px"}}>Volatility:&nbsp;
                     <span style={{fontWeight:"600"}}>{volatilityData.portfolio.toFixed(2)}%</span>
-                    <Tooltip title={volatility_tt} placement='right'> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)', fontSize: '1em' }} /></Tooltip>
+                    <Tooltip className="hidden lg:inline" title={volatility_tt} placement='right'> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)', fontSize: '1em' }} /></Tooltip>
                   </div>
-                  <div style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px", fontSize:"1em"}}>Sharpe-Ratio:&nbsp;
+                  <div className='text-[0.5rem] md:text-[0.5rem] lg:text-sm' style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px"}}>Sharpe-Ratio:&nbsp;
                     <span style={{fontWeight:"600"}}>{sharpeRatio.portfolio.toFixed(2)}</span>
-                    <Tooltip placement='right' title={sharpe_ratio_tt}> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)', fontSize: '1em' }} /></Tooltip>
+                    <Tooltip className="hidden lg:inline" placement='right' title={sharpe_ratio_tt}> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)', fontSize: '1em' }} /></Tooltip>
                   </div>
                 </div>
               </Flex>
+              {/* Center Line */}
               <Flex justify='center' align='center' vertical style={{width:"45%", marginTop:"12px", fontFamily: 'Canela'}}>
                 <div style={{width:"1%", backgroundColor:"black", height:"40%"}}></div>
-                <div style={{width:"98%", fontSize:"1em", textAlign:"center"}}>Additional investment-related metrics</div>
+                <div className='text-[0.5rem] md:text-[0.5rem] lg:text-sm' style={{width:"98%", textAlign:"center"}}>Additional investment-related metrics</div>
                 <div style={{width:"1%", backgroundColor:"black", height:"90%"}}></div>
               </Flex>
+              {/* Right Data */}
               <Flex vertical justify='center' align='left' style={{width:"27.5%", height:"100%", fontFamily: 'Canela'}}>
-                <span style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px", fontSize:"clamp(1em, 1em, 1em)"}}>Baseline</span>
-                <div style={{border:"0.2px dashed #BF4D20", padding: "0 0 0 0.4rem", height:"4rem", display:"flex", flexDirection:"column", justifyContent:"space-around"}}>
-                  <div style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px", fontSize:"1em"}}>Volatility:&nbsp;
+                <span className='text-xs md:text-xs lg:text-lg' style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px"}}>Baseline</span>
+                <div className="h-8 lg:h-16" style={{border:"0.2px dashed #BF4D20", padding: "0 0 0 0.4rem", display:"flex", flexDirection:"column", justifyContent:"space-around"}}>
+                  <div className='text-[0.5rem] md:text-[0.5rem] lg:text-sm' style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px"}}>Volatility:&nbsp;
                     <span style={{fontWeight:"600"}}>{volatilityData.baseline.toFixed(2)}%</span>
-                    <Tooltip placement='right' title={volatility_tt}> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)', fontSize: '1em'}} /></Tooltip>
+                    <Tooltip className="hidden lg:inline" placement='right' title={volatility_tt}> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)', fontSize: '1em'}} /></Tooltip>
                   </div>
-                  <div style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px", fontSize:"1em"}}>Sharpe-Ratio:&nbsp;
+                  <div className='text-[0.5rem] md:text-[0.5rem] lg:text-sm' style={{textShadow:"0 0 0 #000, 0 0 1px transparent", letterSpacing:"0.8px"}}>Sharpe-Ratio:&nbsp;
                     <span style={{fontWeight:"600"}}>{sharpeRatio.baseline.toFixed(2)}</span>
-                    <Tooltip placement='right' title={sharpe_ratio_tt}> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)', fontSize: '1em' }} /></Tooltip>
+                    <Tooltip className="hidden lg:inline" placement='right' title={sharpe_ratio_tt}> <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)', fontSize: '1em' }} /></Tooltip>
                   </div>
                 </div>
               </Flex>

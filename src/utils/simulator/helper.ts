@@ -6,23 +6,24 @@ export function parseDate(dateString: string): Date{
   }
   
 
-export const formatDate = (dateString: string, component: string) => {
+  export const formatDate = (dateString: string, component: string, isMobile: boolean) => {
     // Parse the date
-    if(dateString !== undefined){
+    if (dateString !== undefined) {
       //eslint-disable-next-line
-      const [year,month, thendate] = dateString.split('-');
+      const [year, month, thendate] = dateString.split('-');
       const date = new Date(+`${year}`, parseInt(month, 10) - 1);
     
       // Format the date
       const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-      if(component === 'axis'){
-        return `${date.getFullYear().toString()}`
-      }else{
-      return `${monthNames[date.getMonth()]} '${date.getFullYear().toString().slice(2)}`}
+      if (component === 'axis') {
+        return isMobile ? `'${date.getFullYear().toString().slice(2)}` : date.getFullYear().toString();
+      } else {
+        return `${monthNames[date.getMonth()]} '${date.getFullYear().toString().slice(2)}`;
+      }
     } else {
-      return ''
+      return '';
     }
-  };
+};
 
 
 export const horizontalCoordinatesGenerator = ({ height }: GridProps): number[] => {

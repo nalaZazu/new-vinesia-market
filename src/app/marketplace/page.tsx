@@ -16,14 +16,14 @@ import Product from "@/components/products/page";
 import useSWR from "swr";
 
 export default function Home() {
-  const breadCrumbData = ["italy", "spttimano", "barbaresco", "2020"];
+  const breadCrumbData = ["france", "cos d'estournel", "Bordeaux"];
 
   const fetcher = async (url: string) => {
     const options = {
       method: "GET",
       headers: {
         accept: "application/json",
-        "Content-Type": "application/json",
+        "Content-Type": "application/json", 
       },
     };
     return await fetch(url, options).then((res) => res.json());
@@ -50,9 +50,7 @@ export default function Home() {
               <Product items={data?.products} />
               {/* <ProductCards /> */}
             </div>
-            <div className="pt-14 md:pt-20 pb-20 md:pb-40">
-              <VideoBanner />
-            </div>
+
           </div>
           <Subscription />
           <div className="py-16 md:py-40  container mx-auto px-4 md:px-2">
@@ -73,14 +71,7 @@ export default function Home() {
           <WineArtSection />
         </div>
 
-        <div className="md:py-40 py-20 relative">
-          <div className="pb-14">
-            <h1 className="text-zinc-800 text-4xl font-normal  text-center">
-              Invest in heritage
-            </h1>
-          </div>
-          <HeritageCarousel />
-        </div>
+
         {/* desktop view */}
         <ExploreRegion />
         {/* mobileView */}

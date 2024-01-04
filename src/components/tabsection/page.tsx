@@ -46,7 +46,7 @@ const TabSection = ({ data }: { data?: EditionOverview }) => {
                     Art
                   </button>
                   <p className=" text-black text-xs font-normal uppercase leading-3 tracking-tight">
-                    Artist: Lola Designer Fun...
+                    Artist: 
                   </p>
                 </div>}
             </div>

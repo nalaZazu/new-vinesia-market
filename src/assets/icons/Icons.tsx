@@ -1202,14 +1202,14 @@ export function ArrowLongUP() {
       <path
         d="M16.9488 7.04971L7.04883 16.9497"
         stroke="#BF4D20"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M9.875 7.04958L16.948 7.04958L16.947 14.1216"
         stroke="#BF4D20"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -1230,15 +1230,15 @@ export function ArrowLongDown() {
             id="Path"
             d="M16.9498 16.9508L7.0498 7.05078"
             stroke="#35844B"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             id="Path_2"
             d="M9.87695 16.9509L16.95 16.9509L16.949 9.87891"
             stroke="#35844B"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </g>
       </g>
@@ -1261,15 +1261,15 @@ export function ArrowTable() {
               id="Path"
               d="M16 10L12 6L8 10"
               stroke="#BF4D20"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Path_2"
               d="M8 14L12 18L16 14"
               stroke="#BF4D20"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </g>
         </g>
@@ -1294,24 +1294,24 @@ export function MenuDots() {
             d="M11.9972 17.5039C11.7221 17.5039 11.497 17.729 11.5 18.0041C11.5 18.2792 11.7251 18.5043 12.0002 18.5043C12.2754 18.5043 12.5004 18.2792 12.5004 18.0041C12.5004 17.729 12.2754 17.5039 11.9972 17.5039"
             stroke="#2F222B"
             stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             id="Path_2"
             d="M11.9972 11.5039C11.7221 11.5039 11.497 11.729 11.5 12.0041C11.5 12.2792 11.7251 12.5043 12.0002 12.5043C12.2754 12.5043 12.5004 12.2792 12.5004 12.0041C12.5004 11.729 12.2754 11.5039 11.9972 11.5039"
             stroke="#2F222B"
             stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             id="Path_3"
             d="M11.9972 5.5C11.7221 5.5 11.497 5.72509 11.5 6.00021C11.5 6.27532 11.7251 6.50042 12.0002 6.50042C12.2754 6.50042 12.5004 6.27532 12.5004 6.00021C12.5004 5.72509 12.2754 5.5 11.9972 5.5"
             stroke="#2F222B"
             stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </g>
       </g>
@@ -1560,8 +1560,8 @@ export function DocVerifyIcon({ color = "white" }: { color?: any }) {
 export function BookIcon({ color = "#BF4D20" }: { color?: any }) {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M3.00003 5.86142V19.1263C3.00319 19.4761 3.1883 19.799 3.48856 19.9784C3.78883 20.1579 4.16088 20.168 4.47044 20.0051C6.95213 18.7937 9.9179 19.1853 12 20.9995C14.0822 19.1853 17.0479 18.7937 19.5296 20.0051C19.8392 20.168 20.2112 20.1579 20.5115 19.9784C20.8118 19.799 20.9969 19.4761 21 19.1263V5.86142C21.0034 5.24165 20.7191 4.65539 20.2303 4.27423C17.7215 2.33794 14.1491 2.63918 12 4.96826C9.85091 2.63918 6.27851 2.33795 3.76972 4.27426C3.28101 4.65541 2.99671 5.24167 3.00003 5.86142Z" stroke="#BF4D20" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M12 21V4.96875" stroke="#BF4D20" stroke-linecap="round" stroke-linejoin="round"/>
+<path fillRule="evenodd" clipRule="evenodd" d="M3.00003 5.86142V19.1263C3.00319 19.4761 3.1883 19.799 3.48856 19.9784C3.78883 20.1579 4.16088 20.168 4.47044 20.0051C6.95213 18.7937 9.9179 19.1853 12 20.9995C14.0822 19.1853 17.0479 18.7937 19.5296 20.0051C19.8392 20.168 20.2112 20.1579 20.5115 19.9784C20.8118 19.799 20.9969 19.4761 21 19.1263V5.86142C21.0034 5.24165 20.7191 4.65539 20.2303 4.27423C17.7215 2.33794 14.1491 2.63918 12 4.96826C9.85091 2.63918 6.27851 2.33795 3.76972 4.27426C3.28101 4.65541 2.99671 5.24167 3.00003 5.86142Z" stroke="#BF4D20" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M12 21V4.96875" stroke="#BF4D20" strokeLinecap="round" strokeLinejoin="round"/>
 </svg>
 
   );
@@ -1695,15 +1695,15 @@ export function SharePin({ fill }: { fill: any }) {
             id="Path"
             d="M15.9636 6.87169C17.3446 5.49069 19.5826 5.49069 20.9636 6.87169V6.87169C22.3446 8.25269 22.3446 10.4907 20.9636 11.8717L15.0846 17.7507C13.7036 19.1317 11.4656 19.1317 10.0846 17.7507V17.7507C8.70358 16.3697 8.70358 14.1317 10.0846 12.7507L10.9636 11.8717"
             stroke={fill}
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             id="Path_2"
             d="M8.03575 19.7995C6.65475 21.1805 4.41675 21.1805 3.03575 19.7995V19.7995C1.65475 18.4185 1.65475 16.1805 3.03575 14.7995L8.91475 8.92052C10.2958 7.53952 12.5338 7.53952 13.9148 8.92052V8.92052C15.2958 10.3015 15.2958 12.5395 13.9148 13.9205L12.9998 14.8355"
             stroke={fill}
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </g>
       </g>
@@ -1755,15 +1755,15 @@ export function Time() {
             id="Path"
             d="M8.55691 3.72639C13.1479 1.82439 18.4109 4.00539 20.3129 8.59639C22.2149 13.1874 20.0339 18.4504 15.4429 20.3524C10.8519 22.2544 5.58891 20.0734 3.68691 15.4824C1.78591 10.8914 3.96591 5.62839 8.55691 3.72639"
             stroke="#BF4D20"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             id="Path_2"
             d="M11.7178 8.02344V12.6744L15.3738 14.9034"
             stroke="#BF4D20"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </g>
       </g>
@@ -1785,8 +1785,8 @@ export function Envelope() {
           id="Path"
           d="M21 9.53906L13.5736 12.7166C12.5686 13.1466 11.4314 13.1466 10.4264 12.7166L3 9.53906"
           stroke="#BF4D20"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <rect
           id="Rectangle"
@@ -1796,8 +1796,8 @@ export function Envelope() {
           height="15"
           rx="4"
           stroke="#BF4D20"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
     </svg>
@@ -1836,15 +1836,15 @@ export function BuyCart() {
           id="Path"
           d="M6 14.5625L3 0.5625H1"
           stroke="white"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Path_2"
           d="M6.25 14.5625H16.25"
           stroke="white"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <circle
           id="Oval"
@@ -1852,8 +1852,8 @@ export function BuyCart() {
           cy="16.3125"
           r="1.75"
           stroke="white"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <circle
           id="Oval_2"
@@ -1861,15 +1861,15 @@ export function BuyCart() {
           cy="16.3125"
           r="1.75"
           stroke="white"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Path_3"
           d="M3.64307 3.5625H17.9996C18.3103 3.5625 18.6033 3.70688 18.7926 3.95323C18.9819 4.19958 19.0459 4.51991 18.9659 4.82009L17.3664 10.8201C17.2497 11.2579 16.8533 11.5625 16.4002 11.5625H5.35737"
           stroke="white"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
     </svg>

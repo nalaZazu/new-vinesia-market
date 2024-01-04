@@ -1,16 +1,19 @@
 import ShareCard from "@/common/ShareCard";
+import { useUser } from "@/context/user";
+import { bottleSizeCl, getPricePerLiter } from "@/utils/common";
 import { Share } from "next/font/google";
 import React from "react";
 
-export default function WineCard({ data }: { data: any }) {
+export default function WineCard({ data, perLiterPrice }: { data: any, perLiterPrice?: number }) {
+  const {getPriceText} = useUser()
 
   function getSize() {
     if (data.wine.size === 'Standard') {
       // return 'Standard (0,75l)'
-      return '0,75l'
+      return '75cl'
     }
     if (data.wine.size === 'Magnum') {
-      return '1,5l'
+      return '150cl'
     }
 
     return data.wine.size
@@ -43,14 +46,18 @@ export default function WineCard({ data }: { data: any }) {
               <p>Case & bottle size</p>
               <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20 md:block hidden"></div>
               <p className="text-zinc-800 text-base font-normal leading-snug">
-                {getPackageType()} x {getSize()}
+                {getPackageType()} x {getSize()} 
+                
+                {(perLiterPrice && perLiterPrice > 0) &&
+                <span className="text-xs text-stone-400"> ({getPriceText(perLiterPrice)}/l)</span>
+                }
               </p>
             </div>
             <div className="md:flex gap-4 items-center text-[#906447] text-base font-normal leading-snug">
               <p>Type, Alc. </p>
               <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20 md:block hidden"></div>
               <p className="text-zinc-800 text-base font-normal leading-snug">
-                {data.wine?.metadata?.color}, {data.wine?.metadata?.percentage}
+                {data.wine?.metadata?.color}, {data.wine?.metadata?.percentage} <span className="text-xs text-stone-400">(contains sulfites)</span>
               </p>
             </div>
             <div className="md:flex gap-4 items-center text-[#906447] text-base font-normal leading-snug space-y-1">
@@ -89,9 +96,7 @@ export default function WineCard({ data }: { data: any }) {
           </div>
         </div>
         <div className="my-8 max-w-[608px] h-[0px] border border-orange-700 border-opacity-20"></div>
-        <div className="hidden md:block">
-          <ShareCard data={data} />
-        </div>
+
       </div>
     </div>
   );

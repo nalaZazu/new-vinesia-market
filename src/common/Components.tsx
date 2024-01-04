@@ -16,12 +16,13 @@ import { useRouter } from "next/navigation";
 import ReactSlider from "react-slider";
 import { Controller, useFormContext } from "react-hook-form";
 import { findInputError, isFormInvalid } from "@/utils/form";
-export function Checkbox({ label, name }: { label?: any; name?: any }) {
+
+export function Checkbox({ label, name, value, setValue }: { label?: any; name?: any, value?: boolean, setValue?: any }) {
   return (
     <>
       <div className="flex gap-2">
         <label className="custom_checkbox">
-          <input type="checkbox" id="default-checkbox" />
+          <input type="checkbox" name={name} checked={value} onChange={setValue} />
           <span className="checkmark"></span>
         </label>
         {label && (
@@ -88,20 +89,23 @@ export function CartControls({
 }) {
   return (
     <div>
+      {nextStep &&
       <div className="flex sm:justify-end justify-center pt-8">
         <span className="uppercase text-xs">
           <span className="text-[#BF4D20]">next step: </span>
           {nextStepDesc}
         </span>
-      </div>
+      </div>}
       <div className="sm:flex justify-between pt-4 pb-[106px] sm:gap-0 grid grid-cols-1 gap-6">
+        { prevStep &&
         <button
           onClick={() => prevStep()}
           className="flex items-center gap-4 border border-[#BF4D2020] rounded-full text-[#BF4D20] px-8 justify-center h-14 sm:order-1 order-2 sm:w-auto w-full"
         >
           <PrevIcon />
           {btnOneTittle}
-        </button>
+        </button>}
+        {nextStep &&
         <button
           disabled={disable}
           onClick={() => nextStep()}
@@ -110,7 +114,7 @@ export function CartControls({
         `}
         >
           {btnTwoTittle} <NextIcon fill="white" />
-        </button>
+        </button>}
       </div>
     </div>
   );

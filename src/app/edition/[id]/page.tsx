@@ -72,7 +72,7 @@ const EditionOverview = ({
         <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 px-4 md:absolute top-0 z-10 right-0 left-0">
           <div className="mx-auto max-w-[1429px] text-center pb-6">
             <h1 className="text-zinc-800 md:text-7xl md:text-center text-left md:leading-[84px] text-4xl font-normal leading-[42px] tracking-[-1.44px] whitespace-pre-line ">
-               {data?.name} <span className="text-2xl">#{data?.number}</span>
+              {data.name} <span className="text-2xl">#{data.number}</span>
             </h1>
             <p className="pt-2  text-zinc-800 text-base font-normal  leading-snug md:text-center text-left ">
             </p>
@@ -229,7 +229,7 @@ const EditionOverview = ({
 
               {/* Mobile View */}
               <div className="block md:hidden order-3">
-                <WineArtDisclosure />
+                <WineArtDisclosure wine={data.wine} art={data.art} />
               </div>
             </div>
           </div>
@@ -237,17 +237,19 @@ const EditionOverview = ({
           <div className="md:basis-24 hidden"></div>
         </div>
 
-        {/* here is mind pledge section */}
-        <div className="w-full -z-10">
-          <MindPledge item={data} />
-        </div>
-        <div className="md:hidden block">
-          <InvestDisclosure />
-        </div>
+
       </div>
 
+      {/* here is mind pledge section */}
+      <div className="w-full -z-10">
+        <MindPledge item={data} />
+      </div>
+      {/* <div className="md:hidden block">
+        <InvestDisclosure />
+      </div> */}
+
       {/* wines about section */}
-      <div className="md:block hidden ">
+      <div className="md:block hidden">
         <div className=" flex  pt-40 ">
           <div className="basis-1/12 hidden md:block"></div>
 
@@ -281,16 +283,18 @@ const EditionOverview = ({
       </div>
 
       {/* here is carsoul section */}
-      {otherEditions?.length > 0 &&
-      <div className="md:py-40 py-20 md:block hidden">
-        <div className="pb-14">
-          <h1 className="text-zinc-800 text-4xl font-light  text-center  leading-[44px]">
-            Other editions{" "}
-          </h1>
-        </div>
-        <HeritageCarousel items={otherEditions} />
+      {otherEditions.length > 0 &&
+        <div className="md:py-40 py-20">
+          <div className="pb-14">
+            <h1 className="text-zinc-800 text-4xl font-light  text-center  leading-[44px]">
+              Other editions{" "}
+            </h1>
+          </div>
+          <HeritageCarousel items={otherEditions} />
 
-      </div>}
+        </div>}
+
+
       {/* here is video banner */}
       <div className="md:block hidden">
         <WineVideoBanner />
@@ -310,15 +314,14 @@ const EditionOverview = ({
       </div>
 
       {/* here is mobile view of like might section */}
-      <div className="py-20 md:hidden block">
+      {/* <div className="py-20 md:hidden block">
         <div>
           <h3 className="text-center text-zinc-800 text-[21px] font-light   leading-[29px] pb-12">
             You may also like
           </h3>
-          {/* here is video silder */}
-          <HeritageCarousel />
+            <YouMayAlso />
         </div>
-      </div>
+      </div> */}
 
       {/* desktop Newsletter*/}
       <div className="hidden sm:block">

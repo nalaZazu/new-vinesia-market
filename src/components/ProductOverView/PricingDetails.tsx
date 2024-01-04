@@ -19,11 +19,11 @@ export default function PricingDetail({ item }: { item?: any }) {
           <div className="gap-5 p-5  border-l border-b border-t md:border-r-0 border-r border-orange-700 border-opacity-20 flex-col justify-between items-start inline-flex">
             <div className="flex items-center gap-3 text-[#906447] text-xs font-normal uppercase leading-3 tracking-tight">
               <p>Release Price </p>
-              <Image
+              {/* <Image
                 src={infologo}
                 alt="Picture of the author"
                 className=" w-6 h-6 text-secondary"
-              />
+              /> */}
             </div>
             <p className="text-zinc-800 text-lg font-semibold leading-relaxed">
               {getPriceText(item?.releaseDetails?.releasePrice)}
@@ -32,11 +32,11 @@ export default function PricingDetail({ item }: { item?: any }) {
           <div className="gap-10 p-5   border-l  md:border-r-0 border-r  border-t border-b border-orange-700 border-opacity-20 flex-col justify-between items-start inline-flex">
             <div className="flex items-center gap-3  text-[#906447] text-xs font-normal uppercase leading-3 tracking-tight">
               <p>Average MARKET PRICE </p>
-              <Image
+              {/* <Image
                 src={infologo}
                 alt="Picture of the author"
                 className=" w-6 h-6 text-secondary"
-              />
+              /> */}
             </div>
             <p className=" text-lg font-semibold text-zinc-800 tracking-tight">
               {getPriceText(item?.releaseDetails?.averagePrice)}
@@ -68,8 +68,9 @@ export default function PricingDetail({ item }: { item?: any }) {
             </div>
             <p className=" text-lg font-semibold text-white  tracking-tight">
               {getPriceDifference(
-                item?.releaseDetails?.releasePrice,
-                item?.floorPrice
+                item?.releaseDetails?.releasePrice ?? 0,
+                item?.releaseDetails?.releasePrice ?? 0
+                // item?.floorPrice ?? 0
               )}
             </p>
           </div>

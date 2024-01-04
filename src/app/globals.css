@@ -89,7 +89,7 @@ body::-webkit-scrollbar {
   font-family: "Bon Vivant";
 }
 .custom-bg-image {
-  background-image: url("../assets/images/herobanner.png");
+  background-image: url("../assets/images/marketplace_bg.png");
   height: 818px;
   background-size: cover;
   /* background-position: center; */
@@ -433,7 +433,7 @@ button:disabled.stripe {
 }
 
 .newsletter_banner {
-  background-image: url("../assets/images/subscription_bg.png");
+  background-image: url("../assets/images/home_newsletter_bg.png");
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -792,5 +792,26 @@ button:disabled.stripe {
   #productById canvas {
     height: 228px !important;
     width: 326px !important;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .force-landscape {
+    width: 95vh;
+    /* height: 80vw; */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    transform-origin: center center;
+    /* padding: 20px; */
+    /* padding-bottom: 25px; */
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .rotated-div {
+      transform: rotate(-90deg);
+      transform-origin: top left;
   }
 }

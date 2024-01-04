@@ -5,8 +5,8 @@ import videoplay from "@/assets/images/winevideobutton.svg";
 const text =
   " Château Le Pin is a mini chateau in the Pomerol appellation on the right bank of the Bordeaux region.";
 export default function WineVideoBanner({
-  title = "How to invest in wine",
-  descripition = text,
+  title = "",
+  descripition = '',
 }: {
   title?: any;
   descripition?: any;

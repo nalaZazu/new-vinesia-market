@@ -11,6 +11,7 @@ import { MenuItem, menuBar as menuItems } from "@/constants/navigate";
 import { useWindowSize } from "@/hooks/useWindowSize";
 import { useCart } from "@/context/cart";
 import { useUser } from "@/context/user";
+import { User } from "@/types/user.dto";
 
 // const canela = local({
 //   src: "../../../public/fonts/canelatext-black.woff2",
@@ -86,13 +87,31 @@ const isDark = (pathName: string, size: any) => {
 const getTheme = (pathName: string, size: any) =>
   isDark(pathName, size) ? themes.Dark : themes.Light;
 
+function initials(profile: User | null) {
+  if (profile === null) {
+    return ''
+  } else {
+    let res = ''
+    if (profile.firstName.length > 0) {
+      res += profile.firstName[0].toUpperCase()
+    }
+    if (profile.lastName.length > 0) {
+      res += profile.lastName[0].toUpperCase()
+    }
+
+    if (res === '') res = 'AN'
+
+    return res
+  }
+}
+
 export default function Header() {
   const { cartItems } = useCart();
   const { profile } = useUser();
   const size = useWindowSize();
   const pathName = usePathname();
-  const router = useRouter();
-  console.log("User Provider  Profile", profile);
+  const { push } = useRouter();
+  // console.log("User Provider  Profile", profile);
   const [topSelected, setTopSelected] = useState(getTopMenuItem(pathName));
   const [selected, setSelected] = useState(getMenuItem(pathName));
   const [theme, setTheme] = useState(getTheme(pathName, size));
@@ -108,9 +127,14 @@ export default function Header() {
     // setMenuItems(item.items)
   }
 
-  function navUser() {
-    router.push("/signup", { scroll: false });
-  }
+  const navUser = useCallback(() => {
+    if (profile === null || profile === undefined) {
+      push("/signup", { scroll: false });
+    } else {
+      push('/profile');
+    }
+
+  }, [profile, push])
 
   const Hr = () => <hr className={`hidden md:block ${theme.hr}`} />;
 
@@ -121,20 +145,21 @@ export default function Header() {
           <div className="grid grid-cols-3 md:grid-cols-12 justify-between items-center">
             {/* topbar start */}
             <div className="md:flex  hidden items-center space-x-4 lg:space-x-8 md:col-span-5">
-              {menuItems.map((x) => (
-                <div
-                  className="cursor-pointer"
-                  key={x.id}
-                  onClick={() => select(x)}
-                >
-                  <span
-                    className={`hidden md:block py-7 text-base tracking-tight border-0 ${
-                      theme.textClass
-                    } ${x.id === topSelected.id ? theme.selectedClass : ""}`}
-                  >
-                    {x.name}
-                  </span>
-                </div>
+              {menuItems.map((x, i) => (
+                <Link key={i} href={x?.href || "/"}>
+                  <div
+                                      className="cursor-pointer"
+                                      key={x.id}
+                                      onClick={() => select(x)}
+                                    >
+                    <span
+                      className={`hidden md:block py-7 text-base tracking-tight border-0 ${theme.textClass
+                        } ${x.id === topSelected.id ? theme.selectedClass : ""}`}
+                    >
+                      {x.name}
+                    </span>
+                  </div>
+                </Link>
               ))}
             </div>
             {/* Mobile Navbar (Hidden on Desktop)  */}
@@ -145,8 +170,8 @@ export default function Header() {
               </div>
             </div>
             <div className=" text-2xl lg:text-4xl font-bold lg:col-span-2 text-center py-5">
-              <Link href={topSelected?.href || "/"}>
-                <Image
+              <Link href={topSelected?.href || "/"}>                <Image
+
                   src={logo}
                   className="mx-auto"
                   alt="Picture of the author"
@@ -165,10 +190,17 @@ export default function Header() {
               </div>
               {/* user Icon */}
               <div
-                className={`cursor-pointer w-10 h-10 rounded-full border order-2 border-opacity-20 justify-center items-center gap-2.5 inline-flex ${theme.iconBorder}`}
+                className={`cursor-pointer h-10 p-[11px] min-w-[40px] rounded-full border order-2 border-opacity-20 justify-center items-center gap-2.5 inline-flex ${theme.iconBorder}`}
                 onClick={navUser}
               >
-                <UserIcon fill={theme.iconFill} />
+                <div className="hidden md:flex">
+                  <UserIcon fill={theme.iconFill}/>
+                  {profile && <span className={`ml-2 ${theme.textClass}`}> Hi {profile?.firstName}</span>}
+                </div>
+                <div className="md:hidden">
+                  {initials(profile) === '' ? <UserIcon fill={theme.iconFill} /> : initials(profile)}
+                </div>
+
               </div>
 
               <Link
@@ -196,11 +228,10 @@ export default function Header() {
                 return (
                   <Link href={href || "/"} key={id}>
                     <li
-                      className={`py-4 ${
-                        selected === item
-                          ? theme.selectedClass + " " + theme.activeTextClass
-                          : theme.textClass
-                      }`}
+                      className={`py-4 ${selected === item
+                        ? theme.selectedClass + " " + theme.activeTextClass
+                        : theme.textClass
+                        }`}
                     >
                       {name}
                     </li>
@@ -213,25 +244,25 @@ export default function Header() {
 
         {pathName === "/" ? (
           <></>
-        ) : (
-          <div className="md:hidden block py-4 px-6">
-            <form>
-              <div className="relative">
-                <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                  <SearchIcon
-                    fill={isDark(pathName, size) ? "white" : "#3a2824"}
-                  />
-                </div>
+        ) : (<></>
+          // <div className="md:hidden block py-4 px-6">
+          //   <form>
+          //     <div className="relative">
+          //       <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+          //         <SearchIcon
+          //           fill={isDark(pathName, size) ? "white" : "#3a2824"}
+          //         />
+          //       </div>
 
-                <input
-                  type="search"
-                  id="default-search"
-                  className={`block w-full p-4 ps-10 text-sm  outline-none   focus:ring-stone-500 focus:border-stone-500   text-stone-500    rounded-full border  bg-transparent border-opacity-20 ${theme?.border} `}
-                  placeholder="Search "
-                />
-              </div>
-            </form>
-          </div>
+          //       <input
+          //         type="search"
+          //         id="default-search"
+          //         className={`block w-full p-4 ps-10 text-sm  outline-none   focus:ring-stone-500 focus:border-stone-500   text-stone-500    rounded-full border  bg-transparent border-opacity-20 ${theme?.border} `}
+          //         placeholder="Search "
+          //       />
+          //     </div>
+          //   </form>
+          // </div>
         )}
         <Hr />
         <hr className={`block md:hidden border-opacity-20 ${theme.border}`} />

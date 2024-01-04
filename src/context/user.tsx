@@ -40,7 +40,7 @@ export function useProvideUser(): ProvideUser {
 
         async function fetchProfile() {
             try {
-                const verifyRes = await fetch(process.env.NEXT_PUBLIC_API_ADDRESS + 'auth/profile', {
+                const verifyRes = await fetch(process.env.NEXT_PUBLIC_API_ADDRESS + 'profile', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -89,6 +89,9 @@ export function useProvideUser(): ProvideUser {
     }
 
     function getPriceDifference(release: number, current: number) {
+        if (release === current) return 0 +'%'
+        if (current === 0) return 0+'%'
+
         const diff = (current - release) / release * 100
 
         return diff.toFixed(1) + '%'
@@ -128,7 +131,7 @@ export function useProvideUser(): ProvideUser {
             throw new Error('You need to be authorized to call this function')
 
         try {
-            const verifyRes = await fetch(process.env.NEXT_PUBLIC_API_ADDRESS + 'auth/address', {
+            const verifyRes = await fetch(process.env.NEXT_PUBLIC_API_ADDRESS + 'profile/address', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -11,24 +11,31 @@ import { Currency } from "@/types/user.dto";
 import { CartOrderDto } from "@/types/dto/cartOrder.dto";
 
 export interface ProvideCart {
-    paymentFee: number
+    isCartLoading: boolean
     cartItems: CartItem[]
     cartOrder: CartOrderDto | null
     addProductCartItem: (item: ProductOverview) => void
     addEditionCartItem: (item: EditionOverview) => void
     removeCartItem: (item: CartItem) => void
-    getOrder(id: number): Promise<CartOrderDto> 
+    getOrder(id: number): Promise<CartOrderDto>
     getCartTotal: () => number
     checkout: () => Promise<void>
+    cancelOrder: () => Promise<void>
 }
 
 export function useProvideCart(): ProvideCart {
     const [cartItems, setCartItems] = useState<CartItem[]>([])
     const [cartOrder, setCartOrder] = useState<CartOrderDto | null>(null)
-    const [paymentFee, setPaymentFee] = useState(0)
+    const [isCartLoading, setIsCartLoading] = useState(true)
+
     const { currency, profile, jwtToken } = useUser()
 
     function addProductCartItem(item: ProductOverview) {
+        if (cartOrder !== null) {
+            toast.error('Cannot add product to cart, first finish your order')
+            return
+        } 
+
         const found = cartItems.filter((x) => x.id === item.id && x.type === ItemType.Product)
 
         if (found.length === 0 && item.buyNowPrice !== undefined) {
@@ -49,6 +56,11 @@ export function useProvideCart(): ProvideCart {
     }
 
     function addEditionCartItem(item: EditionOverview) {
+        if (cartOrder !== null) {
+            toast.error('Cannot add product to cart, first finish your order')
+            return
+        } 
+
         const found = cartItems.filter((x) => x.id === item.id && x.type === ItemType.Edition)
 
         if (found.length === 0 && item.buyNowPrice !== undefined) {
@@ -95,8 +107,6 @@ export function useProvideCart(): ProvideCart {
             const resp = await verifyRes.json() as CartOrderDto
 
             return resp
-
-            console.log('Cart checkout', resp)
         } catch (e) {
             console.log('Failed to update address', e)
             throw e
@@ -129,6 +139,29 @@ export function useProvideCart(): ProvideCart {
         }
     }
 
+    async function cancelOrder() {
+        if (jwtToken === undefined || jwtToken.length === 0 || profile === null)
+            throw new Error('You need to be authorized to call this function')
+
+        try {
+            const verifyRes = await fetch(process.env.NEXT_PUBLIC_API_ADDRESS + 'cart/cancel', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'authorization': 'Bearer ' + jwtToken
+                }
+            })
+            if (!verifyRes.ok) throw new Error('Error cancelling order')
+
+            setCartOrder(null)
+            
+            console.log('Cart Order cancelled')
+        } catch (e) {
+            console.log('Failed to cancel cart order', e)
+            throw e
+        }
+    }
+
     useEffect(() => {
         if (profile === null || profile === undefined) return
 
@@ -140,6 +173,7 @@ export function useProvideCart(): ProvideCart {
                 const item: CartItem = {
                     id: x.editionId ?? 0,
                     type: ItemType.Edition,
+                    media: x.media,
                     name: x.name,
                     price: rec
                 }
@@ -151,10 +185,12 @@ export function useProvideCart(): ProvideCart {
             setCartItems(items)
             setCartOrder(profile.cartOrder)
         }
+
+        setIsCartLoading(false)
     }, [profile])
 
     return {
-        paymentFee,
+        isCartLoading,
         cartItems,
         cartOrder,
         addProductCartItem,
@@ -162,7 +198,8 @@ export function useProvideCart(): ProvideCart {
         removeCartItem,
         getOrder,
         getCartTotal,
-        checkout
+        checkout,
+        cancelOrder
     }
 }
 

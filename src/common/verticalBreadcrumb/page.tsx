@@ -19,7 +19,7 @@ const VerticalBreadCrumb = () => {
                     : "text-stone-600"
                 }`}
               >
-                vinesia marketplace
+                marketplace
               </Link>
             </span>
             <span

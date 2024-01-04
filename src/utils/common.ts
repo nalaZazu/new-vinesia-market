@@ -1,5 +1,7 @@
 import { Magic } from '@/context/MagicProvider';
+import { ProductWineDto } from '@/types/dto/productWine.dto';
 import { CurrencyValue } from '@/types/editionOverview.dto';
+import { BottleSize, PackageType, ProductOverview } from '@/types/productOverview.dto';
 import { Dispatch, SetStateAction } from 'react';
 
 export type LoginMethod = 'EMAIL' | 'SMS' | 'SOCIAL' | 'FORM';
@@ -26,8 +28,76 @@ export const getCurrencyValueText = (priceValue?: CurrencyValue) => {
   const priceDec = priceValue.price / 100
 
   return priceDec.toLocaleString("en-US", {
-      style: "currency",
-      currency: priceValue.currency,
-      minimumFractionDigits: 0
+    style: "currency",
+    currency: priceValue.currency,
+    minimumFractionDigits: 0
   });
+}
+
+export const fetcherWithToken = async (args: [string, string]) => {
+  const [url, token] = args
+
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return fetch(url, options).then((res) => res.json());
+};
+
+export function formatUTCDate(date: Date) {
+  const pad = (num: number): string => num.toString().padStart(2, '0');
+
+  const day = pad(date.getUTCDate());
+  const month = pad(date.getUTCMonth() + 1); // getUTCMonth() returns 0-11
+  const year = date.getUTCFullYear();
+
+  let hours = date.getUTCHours();
+  const minutes = pad(date.getUTCMinutes());
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+
+  hours = hours % 12;
+  const hoursStr = hours ? pad(hours) : '12'; // the hour '0' should be '12'
+
+  return `${day}.${month}.${year}, ${hoursStr}:${minutes} ${ampm}`;
+}
+
+export function setUTCDateTime(date: Date, h: number, m: number, s: number): Date {
+  return new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate(), h, m ,s))
+}
+
+export function getDateWithoutTime(date: Date): Date {
+  return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+}
+
+export function dateAddDays(date: Date, days: number): Date {
+  return new Date(date.setDate(date.getDate() + days));
+}
+
+export function getPricePerLiter(price: number ,item: ProductWineDto | null) {
+  if (item === null) return 0
+  
+  let bottleSize = bottleSizeCl[item.size]
+
+  let totalSize = bottleSize
+  if (item.packageType === PackageType.Case) {
+    totalSize = bottleSize * item.items
+  }
+
+  let pricePerLiter = price*100/totalSize
+
+  return pricePerLiter
+}
+
+export const bottleSizeCl: Record<BottleSize, number> = {
+  [BottleSize.HalfQuarter]: 0,
+  [BottleSize.QuarterBottle]: 0,
+  [BottleSize.HalfBottle]: 0,
+  [BottleSize.Standard]: 75,
+  [BottleSize.Magnum]: 150,
+  [BottleSize.Jeroboam]: 0,
+  [BottleSize.Rehoboam]: 0
 }

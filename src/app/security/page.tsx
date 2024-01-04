@@ -19,7 +19,7 @@ export default function Security() {
         </div>
       </div>
       <div>
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 hidden md:block">
           <h3 className="text-center text-zinc-800 text-4xl font-light leading-[44px] pb-6">
             What are the tags, and how are they used?
           </h3>
@@ -44,7 +44,7 @@ export default function Security() {
       <div className="py-40">
         <div className="container mx-auto max-w-[821px]">
           <div className="pb-24">
-            <h3 className="max-w-[793px] mx-auto text-center text-zinc-800 text-4xl font-light leading-[44px]">
+            <h3 className="md:w-[793px] mx-auto text-center text-zinc-800 text-4xl font-light leading-[44px]">
               Why we use Blockchain tech to offer customers Peace of Mind in
               their transactions
             </h3>

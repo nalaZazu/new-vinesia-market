@@ -7,13 +7,21 @@ import ProductCarousel from "./ProductOverviewCarousel";
 import ShareCard from "@/common/ShareCard";
 import WineArtDisclosure from "./WineArtDisclosure";
 import { ProductOverview } from "@/types/productOverview.dto";
+import { useUser } from "@/context/user";
+import { getPricePerLiter } from "@/utils/common";
 
 const ProductTopSection = ({ data }: { data: ProductOverview }) => {
   const [selectedTab, setSelectedTab] = useState(0);
+  const { currency } = useUser()
 
   if (data === undefined || data === null) {
     return <></>;
   }
+
+  const perLiterPrice =
+    (data.buyNowPrice !== undefined && data.buyNowPrice[currency] !== undefined) ? 
+    getPricePerLiter(data.buyNowPrice[currency], data.wine) : 
+    0
 
   return (
     <div>
@@ -21,7 +29,7 @@ const ProductTopSection = ({ data }: { data: ProductOverview }) => {
         <div className="grid pb-16 lg:grid-cols-2 md:grid-cols-2 grid-cols-1">
           {/* slider start */}
           <div className="">
-            <ProductCarousel data={[data?.wine?.media ?? '']}/>
+            <ProductCarousel data={[data?.wine?.media ?? '']} />
           </div>
           <div className="md:hidden block">
             <ShareCard data={data} />
@@ -68,7 +76,7 @@ const ProductTopSection = ({ data }: { data: ProductOverview }) => {
                       Art
                     </p>{" "}
                     <p className=" text-black text-xs font-normal uppercase leading-3 tracking-tight">
-                      Artist: Lola Designer Fun...
+                      Artist:
                     </p>
                   </button>
                 </div>
@@ -78,18 +86,20 @@ const ProductTopSection = ({ data }: { data: ProductOverview }) => {
 
             {selectedTab == 0 ? (
               <>
-                <WineCard data={data} />
+                <WineCard data={data} perLiterPrice={perLiterPrice} />
               </>
             ) : (
               <>
                 <ArtCard />
               </>
             )}
+
+            <ShareCard data={data} />
           </div>
 
           {/* Mobile View */}
           <div className="block md:hidden">
-            <WineArtDisclosure />
+            <WineArtDisclosure wine={data.wine} art={data.art} />
           </div>
         </div>
       </section>

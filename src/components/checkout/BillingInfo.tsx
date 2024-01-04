@@ -172,10 +172,7 @@ export default function BillingInfo() {
           {profile === null ? <></> :
             <div>
               <p className="w-44 text-zinc-800 text-base font-normal leading-snug">
-                {profile.billingAddress.firstName}
-              </p>
-              <p className="w-44 text-zinc-800 text-base font-normal leading-snug">
-                {profile.billingAddress.lastName}
+                {profile.billingAddress.firstName} {profile.billingAddress.lastName}
               </p>
               <p className="w-44 text-zinc-800 text-base font-normal leading-snug">
                 {profile.billingAddress.addressLine1}

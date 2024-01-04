@@ -34,6 +34,7 @@ export default function AskPrice({
         title=" Set up ask price"
         visible={open}
         setVisible={setOpen}
+        modalClass="lg:h-auto"
       >
         <div className="p-12">
           {/* <h4 className="text-zinc-800 text-[21px] font-light font-['Canela'] leading-[29px] tracking-wide">

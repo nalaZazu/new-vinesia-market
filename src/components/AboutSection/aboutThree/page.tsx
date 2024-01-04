@@ -14,9 +14,9 @@ const AboutThree = () => {
   return (
     <React.Fragment>
       {/* Start your investment journey today  */}
-      <div className="md:py-25 md:px-0 px-4 py-20 bg-[#F7EFDF]">
+      <div className="md:py-25 md:px-0 px-4 bg-[#F7EFDF] h-[110vh] flex items-center justify-center">
         <div className="container mx-auto">
-          <div className="max-w-[820px] mx-auto">
+          <div className="mx-auto">
             <h2 className="md:tracking-[-1.44px] md:text-center text-zinc-800 md:text-7xl font-normal   md:leading-[84px]    text-4xl leading-[44px] tracking-[-0.36px]">
               Start your investment journey today
             </h2>
@@ -34,7 +34,7 @@ const AboutThree = () => {
             </Link>
           </div>
           {/* here is card defined  */}
-          <div className="max-w-[928px]  container pt-14 mx-auto flex  md:justify-center md:gap-8 gap-5  overflow-x-auto  md:grid md:grid-cols-3 grid-cols-1">
+          <div className="max-w-[928px]  container pt-14 mx-auto flex  md:justify-center md:gap-8 gap-5 overflow-x-auto  md:grid md:grid-cols-3 grid-cols-1">
             {CardAbout?.map((item: any, index: any) => {
               const { id, text, image, href } = item;
               return (
@@ -44,13 +44,13 @@ const AboutThree = () => {
                   <div
                     className="md:min-w-full  min-w-[80%] p-4 bg-white rounded overflow-hidden"
                   >
-                    <div className=" bg-white">
-                      <div className=" " key="index">
-                        <Image src={image} alt="image" className="" />
-                        <p className="text-zinc-800 text-lg font-semibold tracking-[-0.36px]  leading-relaxed  ">
+                    <div className="bg-white ">
+                      {/* <div className=" " key="index"> */}
+                        <Image src={image} alt="image" className="rounded" height={350}/>
+                        <p className="text-zinc-800 text-xs md:text-base font-semibold tracking-[-0.36px]  leading-relaxed ">
                           {text}
                         </p>
-                      </div>
+                      {/* </div> */}
                     </div>
                   </div>
                 </Link>

@@ -5,18 +5,18 @@ import videoplay from "@/assets/images/winevideobutton.svg";
 export default function TestimonialsSection() {
   return (
     <div>
-      <div className="grid md:grid-cols-12 gap-8">
+      <div className="md:grid md:grid-cols-12 md:gap-8">
         <div className="col-span-5 flex flex-col justify-end items-end ">
           <h3 className="max-w-[499px] text-center text-zinc-800 text-4xl font-light leading-[44px] pb-12">
             Why fine wine is a unique investment asset class
           </h3>
-          <div className="max-w-[501px] h-[299px] bg-red-800 pt-14 pl-12 md:pe-11 pb-10 relative">
+          <div className="max-w-[501px] h-[299px] bg-red-800 pt-14 pl-12 md:pe-11 pb-10 relative mb-10 md:mb-0">
             <h1 className="text-center text-red-400 text-[144px] font-normal absolute top-0 leading-[90px]">
               “
             </h1>
             <div>
               <p className="text-rose-200 text-base font-normal leading-snug">
-                “Buying shares in a company is risky: management can fail,
+                Buying shares in a company is risky: management can fail,
                 reputations can be damaged, and competitors can disrupt its
                 entire business model.
                 <br />

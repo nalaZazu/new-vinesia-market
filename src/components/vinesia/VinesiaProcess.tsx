@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from "next/image";
 import feescondition from "@/assets/images/fees-and-conditions.png";
-import warehouse from "@/assets/images/our-warehouse.png";
+import warehouse from "@/assets/images/our-warehouse.jpg";
 export default function VinesiaProcess() {
   return (
     <div>

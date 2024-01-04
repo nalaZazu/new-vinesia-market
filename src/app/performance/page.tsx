@@ -23,28 +23,39 @@ import LeftPanel from "@/components/simulator/LeftPanel";
 import RightPanel from "@/components/simulator/RightPanel";
 import GraphPanel from "@/components/simulator/GraphPanel";
 import Link from "next/link";
+import StaticBanner from "@/components/StaticBanner/page";
+import useIsMobile from "@/hooks/useMobileScreen";
 
 export default function AssetsPerformance() {
+  const isMobile = useIsMobile();
   const [visible, setVisible] = useState(false);
   return (
     <>
     <ModalContainer
         visible={visible}
         setVisible={setVisible}
-        modalClass="max-h-[95vh] max-w-[90vw] rounded-md pt-4 pb-4 px-12"
+        modalClass="max-h-full max-w-full w-full sm:max-h-[95vh] sm:max-w-[95vw] rounded-md pt-4 pb-4 px-4 md:h-[95vh] lg:h-[95vh] "
         backgroundClass="bg-zinc-800 bg-opacity-95"
         isCloseBtn={true}
       >
-        <div>
+        <div className="landscape:hidden">
+          <div className="h-4"></div>
+          <p>
+            This experience is designed to be viewed in landscape. Please rotate your
+            device to view the simulator.
+          </p>
+        </div>
+        <div className="portrait:hidden md:h-full lg:h-full ">
           <GraphProvider>
-            <Flex gap="small" vertical={false} >
+            <div className="flex flex-row justify-normal md:h-full lg:h-full">
               <LeftPanel />
-              <GraphPanel />
+              <GraphPanel isMobile={isMobile}/>
               <RightPanel />
-            </Flex>
+            </div>
           </GraphProvider>
         </div>
       </ModalContainer>
+
     <div className="absolute top-0 -z-10 left-0 right-0">
       <div>
         <div className="relative">
@@ -119,10 +130,10 @@ export default function AssetsPerformance() {
         </div>
       </div>
 
-      <div className="py-40 bg-[#F7EFDF]">
+      <div className="md:py-40 bg-[#F7EFDF] flex h-[110vh] items-center justify-center">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 grid-cols-1">
-            <div className="pe-[139px]">
+          <div className="grid md:grid-cols-2">
+            <div className="md:pe-[139px]">
               <h2 className=" text-zinc-800 md:text-7xl font-normal  md:leading-[84px] md:tracking-[-1.44px] text-4xl leading-[42px] tracking-[-0.36px]">
                 The potential of wine investment in numbers
               </h2>
@@ -140,14 +151,14 @@ export default function AssetsPerformance() {
                 </span>
               </button>
             </div>
-            <div className="md:max-w-[608px] ">
+            <div className="md:max-w-[608px] mt-10 md:mt-0">
               <div className="bg-white p-4 h-[400px]">
                 <h5 className="text-zinc-800 text-lg font-semibold  leading-relaxed pb-3 tacking-[-0.36px]">
                   Performance of investment portfolio with fine wine in
                   comparison to baseline
                 </h5>
                 <div className="bg-orange-100 h-64">
-                  <div className="pt-1">
+                  <div className="pt-1 cursor-pointer">
                     {/* <Appactivity /> */}
                     <Image src={simulatorPreview} alt="image" onClick={() => setVisible(true)} />
                   </div>
@@ -167,13 +178,11 @@ export default function AssetsPerformance() {
       <div className="py-28 bg-[#7D302E]">
         <div className="container mx-auto px-4 flex flex-col items-center">
           <div className="text-center pb-10">
-            <span className="text-orange-100 text-4xl font-light leading-[44px]">
-              Start your wine investing journey with{" "}
-            </span>
-            <p className="text-red-900 text-4xl font-light leading-[44px]">
-              Vinesia
-            </p>
-            <span className="text-center text-stone-400 text-base font-normal leading-snug">
+            <h2 className="text-[#F3E8CF] text-4xl font-light leading-[44px] pb-6">
+              Start your wine investing journey with Vinesia
+            </h2>
+
+            <span className="text-center text-[#CBACAB] text-base font-normal leading-snug">
               Let us help you add this unique asset to your portfolio.
             </span>
           </div>

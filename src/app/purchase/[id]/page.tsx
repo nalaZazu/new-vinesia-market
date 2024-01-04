@@ -106,14 +106,6 @@ const Purchase = ({
                       {getPriceText(0)}
                     </p>
                   </div>
-                  <div className="flex justify-between mb-2">
-                    <p className="text-left text-[#2F222B] text-base font-normal  leading-snug mr-10">
-                      Credit Card Fee
-                    </p>
-                    <p className="text-right text-[#2F222B] text-base font-normal  leading-snug  ">
-                      {getPriceText(0)}
-                    </p>
-                  </div>
                 </div>
                 <div className="border-b  pt-6 border-orange-700 border-opacity-20" />
                 <div className="flex justify-between pt-6">

@@ -27,8 +27,8 @@ const datainvest = [
 export default function VinesiaWines() {
   return (
     <div className="pb-4">
-      <div className="grid grid-cols-12 gap-[140px]">
-        <div className="md:col-span-5 col-span-12">
+      <div className="md:grid md:grid-cols-12 gap-[140px]">
+        <div className="md:col-span-5 col-span-12 hidden md:block">
           <h3 className="text-[#261B22] text-[360px] font-normal leading-[240px]">
             3
           </h3>

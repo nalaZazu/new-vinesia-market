@@ -22,23 +22,23 @@ export default function CartCard({ item }: { item: CartItem }) {
         alt="Product Image" 
         className="w-auto h-[150px]"
         />
-        <div className="flex flex-col justify-between w-full">
-          <div className="flex gap-4 items-start  justify-between">
+        <div className="md:flex md:flex-col justify-between w-full">
+          <div className="md:flex md:gap-4 items-start text-right md:text-left  justify-between">
             <div>
               <h6 className=" text-[21px] text-[#2F222B] font-light">
                 {item.name}
               </h6>
               <p className=" text-base font-normal">{item.description}</p>
             </div>
-            <div className="flex gap-4 ">
+            <div className="flex gap-4 md:my-0 my-6 justify-between">
               <button
                 className="text-orange-700  border-b border-orange-700 border-opacity-20 uppercase"
                 onClick={() => removeCartItem(item)}
               >
-                Remove
+                <span className="hidden md:block">Remove</span>
+                <span className="md:hidden">Remove</span>
               </button>
-
-              <p>{getPriceText(item.price[currency] ?? 0)}</p>
+              <p className="text-right">{getPriceText(item.price[currency] ?? 0)}</p>
             </div>
           </div>
           <div className="flex justify-between">

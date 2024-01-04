@@ -6,12 +6,12 @@ export default function SecruityBanner() {
   return (
     <div>
       {" "}
-      <div className="grid grid-cols-12 gap-8">
-        <div className="md:col-span-5 col-span-12">
+      <div className="grid md:grid-cols-12 md:gap-8">
+        <div className="col-span-5">
           <p className="text-orange-700 text-xs font-normal uppercase leading-[18px] tracking-tight pb-7">
             Security
           </p>
-          <h2 className="text-zinc-800 md:text-7xl text-6xl font-normal md:leading-[84px] leading-[58px] tracking-[-1.44px] pb-6">
+          <h2 className="text-zinc-800 md:text-7xl text-5xl font-normal md:leading-[84px] md:tracking-[-1.44px] pb-6 md:mb-0 mb-20">
             Shifting from a system of trust to a system of truth
           </h2>
           <p className="max-w-[373px] text-neutral-600 text-base font-normal font-['Albert Sans'] leading-snug">

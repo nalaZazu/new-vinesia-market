@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import wineBottle from "@/assets/images/bolltewine.png";
 import wineBottles from "@/assets/images/wineImageBottle.png";
 import investment from "@/assets/images/investment.png";
@@ -8,10 +8,6 @@ import { AccordionWine } from "@/components/accordion/page";
 import { Arrows, LineDot, MarksAnim } from "@/assets/icons/Icons";
 import Image from "next/image";
 import ModalContainer from "@/common/ModalContainer";
-import AboutDropDown from "@/components/Modal/AboutModalDropdown/page";
-import CalculationSetting from "@/components/Modal/Calculation/page";
-import PerformanceModel from "@/components/Modal/Performance/page";
-import Appactivity from "@/components/charts/page";
 import Link from "next/link";
 import { GraphProvider } from "@/context/GraphContextProvider";
 import { Flex } from 'antd';
@@ -19,89 +15,67 @@ import LeftPanel from "@/components/simulator/LeftPanel";
 import GraphPanel from "@/components/simulator/GraphPanel";
 import RightPanel from "@/components/simulator/RightPanel";
 import simulatorPreview from "@/assets/images/simulatorPreview.png";
-import SupportAnim from "@/components/supportAnimation/page";
-import HomeWinePerformance from "@/components/HomeWinePerformance/page";
+import useIsMobile from "@/hooks/useMobileScreen";
+
+import WineInvestmentWithoutWorries from "@/components/home/WineInvestmentWithout/page";
+import HomeWinePerformance from "@/components/home/HomeWinePerformance/page";
 const AboutTwo = () => {
+  const isMobile = useIsMobile();
   const [visible, setVisible] = useState(false);
-  const [step, setStep] = useState(1);
+
+
   return (
     <>
       {/* here is a investment section */}
-      <ModalContainer
+
+        <ModalContainer
         visible={visible}
         setVisible={setVisible}
-        modalClass="max-h-[95vh] max-w-[90vw] rounded-md pt-4 pb-4 px-12"
+        modalClass="max-h-full max-w-full w-full sm:max-h-[95vh] sm:max-w-[95vw] rounded-md pt-4 pb-4 px-4 md:h-[95vh] lg:h-[95vh] "
         backgroundClass="bg-zinc-800 bg-opacity-95"
         isCloseBtn={true}
       >
-        <div>
+        <div className="landscape:hidden">
+          <div className="h-4"></div>
+          <p>
+            This experience is designed to be viewed in landscape. Please rotate your
+            device to view the simulator.
+          </p>
+        </div>
+        <div className="portrait:hidden md:h-full lg:h-full ">
           <GraphProvider>
-            <Flex gap="small" vertical={false} >
+            <div className="flex flex-row justify-normal md:h-full lg:h-full">
               <LeftPanel />
-              <GraphPanel />
+              <GraphPanel isMobile={isMobile}/>
               <RightPanel />
-            </Flex>
+            </div>
           </GraphProvider>
         </div>
       </ModalContainer>
 
-      {/* here is end of modal */}
-      <div className="md:py-30 my-3">
-        <div className="text-center">
-          <h2 className="max-w-[769px] text-zinc-800 md:text-7xl font-normal md:leading-[84px] mx-auto   text-center text-4xl   leading-[42px]">
-            Wine investments without the worries
-          </h2>
-          <p className=" py-8 text-neutral-600 text-base font-normal leading-snug">
-            Learn how our process brings our investor “Peace of Mind” pledge to
-            life.
-          </p>
-          <Link href="/invest">
-            <button className="px-8 py-4 bg-orange-700 rounded-[48px] justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal  uppercase leading-3 tracking-tight">
-              START INVESTING NOW
-              <span>
-                <Arrows storke="#FFFFFF" />
-              </span>
-            </button>
-          </Link>
-        </div>
-        {/* support video */}
-        <div className="flex justify-center md:pt-[60px] pt-2 ">
-          {/* <Image src={investment} alt="image" /> */}
-          <SupportAnim />
-        </div>
-        {/* here is image defined */}
-        <div className="flex justify-center md:pt-[22px] pt-12">
-          {/* <Image src={investment} alt="image" /> */}
-          <video className="lg:w-3/4 w-full" autoPlay loop muted>
-            <source src='assets/video/vinesia 211223_360.mp4' media="all and (max-width: 1200px)" />
-            <source src='assets/video/vinesia 211223_960.mp4' />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </div>
+      <WineInvestmentWithoutWorries />
 
       {/* here is invest in wine section */}
-      <div className="bg-[#7D302E]">
-        <div className="flex flex-wrap mx-auto  md:h-[800px] 2xl:h-[1200px]">
-          <div className=" md:basis-5/12 md:block hidden h-full w-full">
+      <div className="bg-[#7D302E] h-[110vh]">
+        <div className="flex flex-wrap mx-auto">
+          <div className="md:basis-5/12 md:block hidden w-full bg-center bg-cover bg-[url('/assets/images/home_invest_bg.png')]">
+            {/* <Image
+              src={wineBottle}
+              className="w-full h-full"
+              alt="winebottle"
+            /> */}
+          </div>
+          {/* <div className="w-full block md:hidden">
             <Image
               src={wineBottle}
               className="w-full h-full"
               alt="winebottle"
             />
-          </div>
-          {/* for Mobile responsive  */}
-          <div className="w-full block md:hidden">
-            <Image
-              src={wineBottles}
-              className="w-full h-full"
-              alt="winebottle"
-            />
-          </div>
+          </div> */}
 
-          <div className="  md:basis-7/12 h-[800px] md:pt-[110px] py-20">
-            <div className="md:ps-[139px] w-full h-full px-4">
-              <div className=" flex flex-col justify-between max-w-[501px] w-full h-full">
+          <div className="md:basis-7/12  py-20 h-[110vh]">
+            <div className="md:ps-[139px] w-full px-4">
+              <div className=" flex flex-col justify-between max-w-[501px] w-full ">
                 <div>
                   <div className=" ">
                     <h3 className="text-white md:text-4xl font-light  md:leading-[44px]    text-[21px]  leading-[29px]">
@@ -113,16 +87,14 @@ const AboutTwo = () => {
                     </div>
                     <AccordionWine containerClass=" md:py-5 py-4" />
                   </div>
-                  {/* here is button  */}
+
                   <Link href="/invest">
-                    <div className=" pb-[70px]">
-                      <button className="w-full  px-8 py-[22px] rounded-full border border-white border-opacity-20 justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal  uppercase leading-3 tracking-tight">
-                        START INVESTING NOW{" "}
-                        <span>
-                          <Arrows storke="#FFFFFF" />
-                        </span>
-                      </button>
-                    </div>
+                    <button className="w-full  px-8 py-[22px] rounded-full border border-white border-opacity-20 justify-center items-center gap-3 inline-flex text-center text-white text-xs font-normal  uppercase leading-3 tracking-tight">
+                      START INVESTING NOW{" "}
+                      <span>
+                        <Arrows storke="#FFFFFF" />
+                      </span>
+                    </button>
                   </Link>
                 </div>
               </div>
@@ -134,12 +106,12 @@ const AboutTwo = () => {
       <HomeWinePerformance />
 
       {/*The potential of wine investment in numbers (next section) */}
-      <div className="md:py-40 md:px-0   py-20 px-4">
+      <div className="flex h-[110vh] items-center justify-center">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 grid-cols-1">
             <div className="max-w-[512px]">
               <h2 className=" text-zinc-800 md:text-7xl font-normal  md:leading-[84px] md:tracking-[-1.44px]      text-4xl  leading-[42px] tracking-[-0.36px]">
-                The potential of wine investment in numbers
+                The potential of wine investment<br/> in numbers
               </h2>
               <p className="max-w-[329px] text-zinc-800 text-lg font-semibold  md:pt-[72px] pt-6 pb-6 leading-relaxed   tracking-[-0.36px]">
                 See what your investment could have returned with wine
@@ -190,12 +162,12 @@ const AboutTwo = () => {
                         <LineDot storke="#CB220D" /> Portofolio performace
                       </li>
                     </ul> */}
-                        {/* <Appactivity /> */}
-                        <Image src={simulatorPreview} alt="image" onClick={() => setVisible(true)} />
-                      </div>
-                    </div>
-                    {/* HERE IS NUMBER DEFINED  */}
-                    {/* <ul className="flex justify-between text-zinc-800 text-base font-normal   leading-snug">
+                    {/* <Appactivity /> */}
+                    <Image src={simulatorPreview} alt="image" onClick={() => setVisible(true)}/>
+                  </div>
+                </div>
+                {/* HERE IS NUMBER DEFINED  */}
+                {/* <ul className="flex justify-between text-zinc-800 text-base font-normal   leading-snug">
                   <li>2005</li>
                   <li>2010</li>
                   <li>2015</li>

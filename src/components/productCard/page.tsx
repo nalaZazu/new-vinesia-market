@@ -109,15 +109,16 @@ export default function ProductCards({ item }: { item: ItemCardDto }) {
           </div>
           <div>
             <div className="max-w-[437px] mx-auto flex justify-between items-center px-5 mb-[15px]">
-              {item.buyNowPrice ? (
+              {item.buyNowPrice ? (<>
+                {(item.available > 0 || item.isAvailable) &&
                 <div className="flex-auto justify-center items-center gap-2 ">
                   <div className="text-center text-[#A6836C] text-xs font-normal uppercase tracking-tight">
                     BUY NOW
                   </div>
                   <div className="text-zinc-800 text-center md:text-xl text-xl font-light  ">
-                    {item.estPrice && getPriceText(item.estPrice[currency] ?? 0)}
+                    {item.buyNowPrice && getPriceText(item.buyNowPrice[currency] ?? 0)}
                   </div>
-                </div>
+                </div>}</>
               ) : (
                 <>
                   <div className="flex-col justify-center items-center gap-2 inline-flex">

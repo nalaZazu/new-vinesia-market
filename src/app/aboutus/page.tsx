@@ -15,6 +15,7 @@ import VectorTwo from "@/assets/icons/VectorTwo.svg";
 import VectorOne from "@/assets/icons/VectorOne.svg";
 import Footer from "@/components/footer/page";
 import KnowUsVideos from "@/components/KnowUsVideos/page";
+import StaticBanner from "@/components/StaticBanner/page";
 
 const team = [
   {name: 'Emmanuel Bueb', position: 'CEO', photo: 'aboutus_emmanuel.png', linkedin: 'https://www.linkedin.com/in/emmanuelbueb/'},
@@ -24,7 +25,7 @@ const team = [
   {name: 'Ewa Brennan', position: 'Director of Marketing', photo: 'aboutus_ewa.webp', linkedin: 'https://www.linkedin.com/in/evabrennan/'},
   {name: 'Laurence Zimmer', position: 'Head of Sales', photo: 'aboutus_laurence.png', linkedin: 'https://www.linkedin.com/in/laurence-david-zimmer-366ab01a3/'},
   {name: 'Dariusz Drozdakiewicz', position: 'Project Manager', photo: 'aboutus_dariusz.png', linkedin: 'https://www.linkedin.com/in/dariusz-drozdakiewicz-098413267/'},
-  {name: 'Anish Gupta', position: 'Developer', photo: 'aboutus_anish.jpg', linkedin: 'https://www.linkedin.com/in/gupta-anish/'},
+  {name: 'Anish Gupta', position: 'Developer', photo: 'aboutus_anish.png', linkedin: 'https://www.linkedin.com/in/gupta-anish/'},
 ]
 
 const advisors = [
@@ -39,7 +40,7 @@ export default function AboutUs() {
     <div className="absolute top-0 -z-10 left-0 right-0">
       <div>
         <div className="relative">
-          <AboutBanner />
+          <StaticBanner bgClass="aboutus-bg-image bg-[#4e261a]" small="We are" title="Wine enthusiasts" title2="by day" />
         </div>
       </div>
       <div className="py-20">

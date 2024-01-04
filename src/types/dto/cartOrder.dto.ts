@@ -3,8 +3,10 @@ import { Address, Currency, User } from "../user.dto"
 export interface OrderPositionDto {
     id: number
     editionId?: number
+    productId?: number
     name?: string
     price: number
+    media?: string
 }
 
 export enum CartStatus {

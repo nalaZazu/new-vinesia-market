@@ -93,7 +93,7 @@ const AboutSlider = ({ data = VideoSlider }: { data?: any }) => {
                 <div className="">
                   <div
                     onClick={() => handleVideoModal(video)}
-                    className={`text-center cursor-pointer relative max-w-[480px] m-auto h-[246.23px] bg-no-repeat bg-cover ]`}
+                    className={`text-center cursor-pointer relative max-w-[480px] m-auto bg-no-repeat bg-cover ]`}
                   >
                     <Image className="z-50" src={thumbnails} alt="thumbnails" width={480} height={0} />
                     <div className="">
