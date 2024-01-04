@@ -16,20 +16,20 @@ const BlogDetails = () => {
           className="object-cover bg-center w-full"
         />
         <div className="container px-4 mx-auto pt-8">
-          <div className="grid md:grid-cols-8    pb-20 lg:gap-32 md:gap-12 border-b border-orange-700 border-opacity-20 ">
-            <div className="col-span-5   flex-col justify-start items-start gap-6 inline-flex">
+          <div className="grid grid-cols-12 pb-20 lg:gap-32 md:gap-12 border-b border-orange-700 border-opacity-20 ">
+            <div className="md:col-span-7 col-span-12">
               <div>
-                <span className="text-[#906447] pb-3 text-xs font-normal   uppercase leading-[18px] tracking-tight">
+                <span className="text-[#906447] pb-3 text-xs font-normal uppercase leading-[18px] tracking-tight">
                   WINE INVESTMENT
                 </span>
-                <h3 className=" max-w-[724.04px]  text-zinc-800 text-4xl font-light  leading-[44px] tracking-[ -0.36px]">
+                <h3 className=" text-zinc-800 text-4xl font-light leading-[44px] tracking-[ -0.36px]">
                   Wine scoring system – how does it work? A pros/cons analysis
                 </h3>
-                <div className="flex items-center gap-4 pt-6 pb-12  border-b border-orange-700 border-opacity-20">
+                <div className="flex items-center gap-4 pt-6 pb-12 border-b border-orange-700 border-opacity-20">
                   <span className="text-[#827A80] text-xs font-normal  uppercase leading-[18px] tracking-tight">
                     12/11/2023
                   </span>
-                  <div className="w-[30px] h-[0px] border   border-orange-700 border-opacity-20 md:block hidden" />
+                  <div className="w-[30px] h-[0px] border border-orange-700 border-opacity-20 md:block hidden" />
                   <p className="text-base font-normal text-[#827A80]  leading-snug">
                     Share this article
                   </p>
@@ -229,7 +229,7 @@ const BlogDetails = () => {
               </div>
             </div>
             {/* here is second col */}
-            <div className="md:col-span-3 col-span-12">
+            <div className="md:col-span-5 col-span-12">
               <div className="pb-4 md:pt-0 pt-8">
                 {" "}
                 <span className="text-zinc-800 text-lg font-semibold   leading-relaxed ">
