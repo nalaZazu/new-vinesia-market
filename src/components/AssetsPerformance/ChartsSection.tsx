@@ -8,7 +8,7 @@ export default function ChartsSection() {
       <h3 className="text-white text-4xl font-light leading-[44px] pb-6">
         10 years. 120% increase.
       </h3>
-      <div className="grid grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-8">
         <p className="max-w-[608px] text-[#eaa79e] text-base font-normal leading-snug tracking-[-0.32px]">
           That’s been the history of fine wine as an asset. While investing in
           wine carries risks, just like other investments,  history proves it
@@ -21,13 +21,13 @@ export default function ChartsSection() {
           performance of fine wine as an asset class (2010-2020).
         </p>
       </div>
-      <div className="grid grid-cols-2 gap-8 pt-10">
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-8 pt-10">
         <div className="bg-[#F9F5EB]">
-          <Image src={performance_image140} alt="returns"/>
+          <Image src={performance_image140} alt="returns" />
         </div>
 
         <div className="bg-[#F9F5EB]">
-          <Image src={performance_image141} className="w-full" alt="returns"/>
+          <Image src={performance_image141} className="w-full" alt="returns" />
         </div>
       </div>
     </div>

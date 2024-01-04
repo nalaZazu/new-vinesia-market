@@ -5,8 +5,8 @@ import videoplay from "@/assets/images/winevideobutton.svg";
 export default function TestimonialsSection() {
   return (
     <div>
-      <div className="grid md:grid-cols-12 gap-8">
-        <div className="col-span-5 flex flex-col justify-end items-end ">
+      <div className="grid grid-cols-12 gap-8">
+        <div className="md:col-span-5 col-span-12 flex flex-col justify-end items-end ">
           <h3 className="max-w-[499px] text-center text-zinc-800 text-4xl font-light leading-[44px] pb-12">
             Why fine wine is a unique investment asset class
           </h3>
@@ -36,10 +36,8 @@ export default function TestimonialsSection() {
           </div>
         </div>
 
-        <div className="col-span-7 w-full md:h-[480px]  h-[480px] bg-no-repeat bg-cover bg-center bg-[url('/assets/images/security.png')] relative">
-          <div className="h-[480px] justify-center mx-auto items-center gap-8 flex flex-wrap md:px-0 px-4">
-
-          </div>
+        <div className="md:col-span-7 col-span-12 w-full md:h-[480px]  h-[480px] bg-no-repeat bg-cover bg-center bg-[url('/assets/images/security.png')] relative">
+          <div className="h-[480px] justify-center mx-auto items-center gap-8 flex flex-wrap md:px-0 px-4"></div>
         </div>
       </div>
     </div>

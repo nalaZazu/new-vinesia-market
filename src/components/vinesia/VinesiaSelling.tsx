@@ -30,7 +30,7 @@ export default function VinesiaSelling() {
         </div>
         <div className=" text-end">
           <Image
-            className="max-w-[548px] h-auto"
+            className="md:max-w-[548px] h-auto"
             src={vinesiasell1}
             alt="Transistor"
           />

@@ -28,7 +28,7 @@ import { experts } from "@/constants/experts";
 import Link from "next/link";
 import QASummary from "@/components/qasummary/page";
 
-import vinesia_how_works from "@/assets/images/vinesia_how_works.png"
+import vinesia_how_works from "@/assets/images/vinesia_how_works.png";
 import KnowUsVideos from "@/components/KnowUsVideos/page";
 
 const title = "How Vinesia works";
@@ -47,7 +47,7 @@ export default function Vinesia() {
         <div className="container mx-auto px-4">
           <div className="max-w-[877px] mx-auto flex-col justify-center items-center gap-12 flex">
             <div className="md:h-[236px] flex-col justify-start items-center gap-6 flex">
-              <h2 className="self-stretch text-center text-zinc-800 text-7xl font-normal leading-[84px]">
+              <h2 className="self-stretch text-center text-zinc-800 md:text-7xl md:leading-[84px] text-5xl leading-[58px] font-normal ">
                 Pursue a profitable portfolio you are passionate about
               </h2>
               <p className="max-w-[699px] text-center text-neutral-600 text-base font-normal md:leading-snug">
@@ -63,12 +63,17 @@ export default function Vinesia() {
           </div>
         </div>
         {/* <Image src={vinesia_how_works} alt="invest steps" /> */}
-        <div>
+        <div className="hidden md:block">
           <VinesiaAnimation />
         </div>
       </div>
 
-      <WineVideoBanner title={""} descripition={""} />
+      <WineVideoBanner
+        title={"How Vinesia works"}
+        descripition={
+          "Discover the seamless journey of wine investment with Vinesia in our How It Works video."
+        }
+      />
       <div className="py-12 bg-red-900">
         <div className=" container mx-auto px-4">
           <Wanttoknow />
@@ -87,7 +92,7 @@ export default function Vinesia() {
                 Our method of wine investment is layered to create a
               </span>
               <span className="text-orange-700 text-base font-normal leading-snug">
-              &nbsp;Peace of Mind&nbsp;
+                &nbsp;Peace of Mind&nbsp;
               </span>
               <span className="text-neutral-600 text-base font-normal leading-snug">
                 &nbsp;pledge. Every feature of how we do things speaks to our
@@ -97,10 +102,10 @@ export default function Vinesia() {
             </div>
           </div>
           <div className="grid md:grid-cols-2 grid-cols-1">
-            <div className=" pe-[139px]">
+            <div className="md:pe-[139px]">
               <Image src={vinesiaccordion} alt="" className="w-full" />
             </div>
-            <div>
+            <div className="md:-pt-0 pt-14">
               <div className="max-w-[500px] h-[0px] border border-orange-700 border-opacity-20"></div>
               <AccordionWine
                 data={AccordionVinesia}
@@ -110,12 +115,12 @@ export default function Vinesia() {
                 descClass={"text-zinc-800"}
               />
               <div className="pt-12 p-2">
-                  <Link href="/security">
-                <button className="flex gap-3 items-center text-center text-orange-700 text-xs font-normal uppercase leading-[18px] tracking-tight">
-                  READ MORE ABOUT SECURITY
-                  <NextIcon />
-                </button>
-                  </Link>
+                <Link href="/security">
+                  <button className="flex gap-3 items-center text-center text-orange-700 text-xs font-normal uppercase leading-[18px] tracking-tight">
+                    READ MORE ABOUT SECURITY
+                    <NextIcon />
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -147,7 +152,7 @@ export default function Vinesia() {
             <div className="">
               <div className="bg-orange-50 rounded-tl rounded-tr border border-orange-700 border-opacity-20">
                 {experts.map((items, i) => {
-                  const {id, name, img, linkedin} = items
+                  const { id, name, img, linkedin } = items;
                   return (
                     <div
                       key={i}
@@ -211,8 +216,8 @@ export default function Vinesia() {
 
       <div className="py-12 bg-slate-700 flex-col justify-center items-center gap-10 flex">
         <div className="flex-col justify-center items-center gap-4 flex">
-          <div className="justify-center items-center gap-6 inline-flex">
-            <h4 className="text-right text-white text-[21px] font-light leading-[29px] tracking-wide">
+          <div className="justify-center items-center gap-6 flex">
+            <h4 className="text-center md:text-right text-white text-[21px] font-light leading-[29px] tracking-wide">
               Can’t find the answer? Contact us and we will help!
             </h4>
           </div>
@@ -235,7 +240,7 @@ export default function Vinesia() {
 
       <KnowUsVideos />
       {/* The faster way to get to know us */}
-     
+
       <NewslettersTwo />
       {/* footer */}
       <Footer />
