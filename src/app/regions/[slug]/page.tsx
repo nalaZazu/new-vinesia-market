@@ -8,7 +8,7 @@ import Footer from "@/components/footer/page";
 import xmark from "../../../assets/icons/x-mark-anim.svg";
 import Image from "next/image";
 import NewsletterMobile from "@/components/newsletter/MobileView";
-import MobileFilter from "@/app/invest/moibleview/page";
+import MobileFilter from "@/components/FilterSection/moibleview/page";
 import ProductCards from "@/components/productCard/page";
 import { MarksAnim } from "@/assets/icons/Icons";
 import ScrollAnimation from "@/common/ScrollAnimation/page";

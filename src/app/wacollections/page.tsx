@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Newsletter from "@/components/newsletter/page";
 import Footer from "@/components/footer/page";
 import Dropdown from "@/common/DropDown/page";
-import MobileFilter from "../invest/moibleview/page";
+import MobileFilter from "../../components/FilterSection/moibleview/page";
 import Product from "@/components/products/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
 import Link from "next/link";

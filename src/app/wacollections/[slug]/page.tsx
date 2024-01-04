@@ -2,7 +2,7 @@
 import Dropdown from "@/common/DropDown/page";
 // import VerticalBreadCrumb from "@/common/verticalBreadcrumb/page";
 import React, { useEffect, useState } from "react";
-import MobileFilter from "../../invest/moibleview/page";
+import MobileFilter from "../../../components/FilterSection/moibleview/page";
 import Product from "@/components/products/page";
 import Newsletter from "@/components/newsletter/page";
 import Footer from "@/components/footer/page";

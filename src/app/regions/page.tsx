@@ -5,7 +5,7 @@ import Newsletter from "@/components/newsletter/page";
 import Footer from "@/components/footer/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
 import Product from "@/components/products/page";
-import MobileFilter from "../invest/moibleview/page";
+import MobileFilter from "../../components/FilterSection/moibleview/page";
 // import xmark from "../../assets/icons/x-mark-anim.svg";
 import Image from "next/image";
 import Card from "@/components/card/page";
@@ -71,7 +71,6 @@ export default function Regions() {
         />
         {/* product list  */}
         <Product items={data?.data} />
-
       </div>
 
       {/* desktop Newsletter*/}

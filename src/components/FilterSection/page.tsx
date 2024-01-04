@@ -1,4 +1,4 @@
-import MobileFilter from "@/app/invest/moibleview/page";
+import MobileFilter from "@/components/FilterSection/moibleview/page";
 import Dropdown from "@/common/DropDown/page";
 import DropDownButton from "@/common/DropDownButton";
 import React from "react";
@@ -43,11 +43,11 @@ export default function FilterSection({
       </div>
       {/* Mobile view */}
       <div className="md:hidden block">
-        <MobileFilter 
-         selectedFilters={selectedFilters}
-         setSelectedFilters={setSelectedFilters}
-        priceRange={priceRange}
-        setPriceRange={setPriceRange}
+        <MobileFilter
+          selectedFilters={selectedFilters}
+          setSelectedFilters={setSelectedFilters}
+          priceRange={priceRange}
+          setPriceRange={setPriceRange}
         />
       </div>
     </div>

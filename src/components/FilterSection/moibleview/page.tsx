@@ -14,7 +14,14 @@ function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 
-function MobileFilter({
+interface data {
+  selectedFilters?: any;
+  setSelectedFilters?: any;
+  priceRange?: any;
+  setPriceRange?: any;
+}
+
+export default function MobileFilter({
   selectedFilters,
   setSelectedFilters,
   priceRange,
@@ -25,7 +32,9 @@ function MobileFilter({
   priceRange?: any;
   setPriceRange?: any;
 }) {
-  const [selectedItems, setSelectedItems] = useState<string[]>(selectedFilters|| []);
+  const [selectedItems, setSelectedItems] = useState<string[]>(
+    selectedFilters || []
+  );
   // const [tempRange, setTempRange] = useState([0, 500]);
   const [firstDropdownOpen, setFirstDropdownOpen] = useState(false);
   const [activeState, setActiveState] = useState<any>({});
@@ -57,26 +66,26 @@ function MobileFilter({
   const handleSelected = (item: any) => {
     const isSelectedItem = isSelected.includes(item);
     if (isSelectedItem) {
-      const updatedIds = isSelected.filter((selectedId:any) => selectedId !== item);
+      const updatedIds = isSelected.filter(
+        (selectedId: any) => selectedId !== item
+      );
       setIsSelected(updatedIds);
     } else {
       const updatedIds = [...isSelected, item];
       setIsSelected(updatedIds);
-      
     }
   };
 
   const handleRangeApply = (close: any) => {
     setPriceRange(inputRange);
-    setSelectedFilters(isSelected)
-    setFirstDropdownOpen(false)
-    
+    setSelectedFilters(isSelected);
+    setFirstDropdownOpen(false);
   };
 
   const handleClear = (close: any) => {
     setSelectedItems([]);
-    setIsSelected([])
-    setFirstDropdownOpen(false)
+    setIsSelected([]);
+    setFirstDropdownOpen(false);
   };
 
   const handleRangeMove = (e: []) => {
@@ -338,5 +347,3 @@ function MobileFilter({
     </>
   );
 }
-
-export default MobileFilter;
