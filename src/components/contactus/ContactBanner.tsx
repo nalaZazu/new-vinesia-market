@@ -7,7 +7,7 @@ export default function ContactBanner() {
         <div className=" container mx-auto flex flex-col md:justify-center justify-between text-white md:px-0 px-4 pt-10 md:pt-24">
           <div>
             <div>
-              <h1 className="max-w-[1100px] flex flex-col text-white text-[144px] font-normal leading-[144px] tracking-[-2.88px]">
+              <h1 className="max-w-[1100px] flex flex-col text-white md:text-[144px]  text-6xl font-normal leading-[144px] tracking-[-2.88px]">
                 Contact us
               </h1>
             </div>

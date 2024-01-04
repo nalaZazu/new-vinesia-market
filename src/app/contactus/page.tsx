@@ -30,15 +30,15 @@ export default function ContactUs() {
       </div>
 
       <div className="pb-40">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto md:px-4 px-0">
           <ContactFrom />
         </div>
       </div>
 
       <div className="bg-red-900">
-        <div className="container mx-auto px-4 py-20">
-          <div className="grid grid-cols-3 max-w-[992px] mx-auto">
-            <div className="flex gap-[43px] items-start">
+        <div className="container mx-auto px-4 py-20 ">
+          <div className="grid md:grid-cols-3 max-w-[992px] mx-auto">
+            <div className="flex  gap-[43px] items-start md:justify-between justify-center">
               <Image src={logo} alt="" />
               <p className="text-white text-lg font-semibold leading-relaxed">
                 Vinesia SARL
@@ -51,10 +51,10 @@ export default function ContactUs() {
               </p>
             </div>
             <div className="flex items-center">
-              <div className="w-[204px] h-[0px] rotate-[104.17deg] border border-white border-opacity-20"></div>
+              <div className="md:block hidden w-[204px] h-[0px] rotate-[104.17deg] border border-white border-opacity-20"></div>
             </div>
             <div>
-              <div className="justify-start items-center gap-5 inline-flex">
+              <div className="md:justify-start justify-center items-center gap-5 flex">
                 <p className="text-right text-stone-400 text-base font-normal leading-snug">
                   E-mail
                 </p>
@@ -65,7 +65,7 @@ export default function ContactUs() {
                   </p>
                 </div>
               </div>
-              <div className="justify-start items-center gap-5 inline-flex pt-4">
+              <div className="md:justify-start justify-center items-center gap-5 flex pt-4">
                 <p className="text-right text-stone-400 text-base font-normal leading-snug">
                   Phone
                 </p>
@@ -77,10 +77,10 @@ export default function ContactUs() {
                 </div>
               </div>
               <div className="h-[0px] border border-white border-opacity-20 my-8"></div>
-              <p className="text-stone-300 text-base font-normal leading-snug">
+              <p className="text-stone-300 text-base font-normal leading-snug md:text-start text-center">
                 {`Let's`} meet on social
               </p>
-              <div className="flex items-center gap-[10px] pt-4">
+              <div className="flex items-center gap-[10px] pt-4 md:justify-start justify-center">
                 <Link href="#" className="p-2">
                   <Facebook fill="#ACA7AA" />
                 </Link>

@@ -21,9 +21,9 @@ export default function ContactFrom() {
   return (
     <div>
       {" "}
-      <div className="grid grid-cols-2">
-        <div className="bg-[#F7EFDF]">
-          <div className="pt-20 pb-8 ps-20">
+      <div className="grid md:grid-cols-2">
+        <div className="bg-[#F7EFDF] md:px-0 px-4">
+          <div className="pt-20 pb-8 md:ps-20  ps-0">
             <h3 className="max-w-72 text-zinc-800 text-4xl font-light font-['Canela'] leading-[44px] pb-12">
               Get in touch, we are here to help
             </h3>
@@ -67,7 +67,7 @@ export default function ContactFrom() {
             noValidate
             autoComplete="off"
           >
-            <div className=" bg-[#FAF5EA] p-20">
+            <div className=" bg-[#FAF5EA] md:p-20 p-4">
               <div className="py-3">
                 <BillingInput name="name" label="Name" />
               </div>
