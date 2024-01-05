@@ -49,7 +49,7 @@ export default function ProductsOverview({
     // if (divRef.current) {
     measureDiv();
     // }
-  }, []);
+  }, [divRef]);
 
   if (isLoading) {
     return <Loading />;
