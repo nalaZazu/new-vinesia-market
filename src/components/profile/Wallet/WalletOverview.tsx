@@ -12,8 +12,8 @@ export default function WalletOverview() {
             Wallet Overview
           </p>
         </div>
-        <div className="grid grid-cols-3 gap-[11px] ">
-          <div className="col-span-2 flex grow p-6 bg-orange-50 rounded justify-between items-start ">
+        <div className="grid md:grid-cols-3 gap-[11px] ">
+          <div className="col-span-2 flex grow p-6 bg-orange-50 rounded justify-between items-start md:flex-nowrap flex-wrap">
             <div className="flex flex-col justify-start items-start gap-1 ">
               <p className="text-[#906447] text-xs font-normal uppercase leading-[18px] tracking-tight">
                 Current amount
@@ -35,9 +35,9 @@ export default function WalletOverview() {
               </button>
             </div>
           </div>
-          <div className="bg-orange-50 p-6">
+          <div className="bg-orange-50 p-6 md:col-span-1 col-span-2 rounded">
             <div className="pb-1">
-              <div className="flex gap-2 pb-2">
+              <div className="flex gap-2 pb-2 items-center">
                 <p className="text-stone-500 text-xs font-normal uppercase leading-[18px] tracking-tight">
                   Blocked amount
                 </p>
@@ -62,24 +62,24 @@ export default function WalletOverview() {
         </div>
 
         <div>
-          <table className="w-full text-left">
+          <table className="md:text-left text-center">
             <thead className="text-xs text-gray-700 uppercase bg-[#EED9BD] ">
               <tr>
                 <th
                   scope="col"
-                  className="px-6 py-y text-stone-500 text-xs font-normal uppercase leading-[18px] tracking-tight"
+                  className="md:px-6 px-2 py-y text-stone-500 text-xs font-normal uppercase leading-[18px] tracking-tight"
                 >
                   DATE
                 </th>
                 <th
                   scope="col"
-                  className="px-6 w-3/4 py-4 text-stone-500 text-xs font-normal uppercase leading-[18px] tracking-tight"
+                  className="md:px-6 px-2 w-3/4 py-4 text-stone-500 text-xs font-normal uppercase leading-[18px] tracking-tight"
                 >
                   Action
                 </th>
                 <th
                   scope="col"
-                  className="px-6 py-4 text-stone-500 text-xs font-normal uppercase leading-[18px] tracking-tight"
+                  className="md:px-6  px-2 py-4 text-stone-500 text-xs font-normal uppercase leading-[18px] tracking-tight"
                 >
                   Amount
                 </th>
@@ -89,30 +89,30 @@ export default function WalletOverview() {
               <tr>
                 <td
                   scope="row"
-                  className="px-6 py-4 text-zinc-800 text-base font-normal leading-snug"
+                  className="md:px-6 py-4 px-2 text-zinc-800 text-base font-normal leading-snug"
                 >
                   10/10/2023
                 </td>
-                <td className="flex gap-2 px-6 py-4 text-red-600 text-base font-normal leading-snug">
+                <td className="flex gap-2 md:px-6 py-4 text-red-600 text-base font-normal leading-snug">
                   <ArrowLongUP />
                   Withdraw funds
                 </td>
-                <th className="px-6 py-4 text-zinc-800 text-lg font-semibold leading-relaxed">
+                <th className="md:px-6 px-2 py-4 text-zinc-800 text-lg font-semibold leading-relaxed">
                   €2,200
                 </th>
               </tr>
               <tr>
                 <td
                   scope="row"
-                  className="px-6 py-4 text-zinc-800 text-base font-normal leading-snug"
+                  className="md:px-6 py-4 px-2 text-zinc-800 text-base font-normal leading-snug"
                 >
                   10/10/2023
                 </td>
-                <td className="flex gap-2 px-6 py-4 text-green-700 text-base font-normal leading-snug">
+                <td className="flex gap-2 md:px-6 py-4 px-2 text-green-700 text-base font-normal leading-snug">
                   <ArrowLongDown />
                   Withdraw funds
                 </td>
-                <th className="px-6 py-4 text-zinc-800 text-lg font-semibold leading-relaxed">
+                <th className="md:px-6 py-4 px-2 text-zinc-800 text-lg font-semibold leading-relaxed">
                   €2,200
                 </th>
               </tr>

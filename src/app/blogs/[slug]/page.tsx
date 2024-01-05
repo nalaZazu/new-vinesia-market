@@ -16,7 +16,7 @@ const BlogDetails = () => {
           className="object-cover bg-center w-full"
         />
         <div className="container px-4 mx-auto pt-8">
-          <div className="grid md:grid-cols-8    pb-20 lg:gap-32 md:gap-12 border-b border-orange-700 border-opacity-20 ">
+          <div className="grid md:grid-cols-8  pb-20 lg:gap-32 md:gap-12 border-b border-orange-700 border-opacity-20 ">
             <div className="col-span-5   flex-col justify-start items-start gap-6 inline-flex">
               <div>
                 <span className="text-[#906447] pb-3 text-xs font-normal   uppercase leading-[18px] tracking-tight">
