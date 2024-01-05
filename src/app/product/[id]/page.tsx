@@ -91,7 +91,9 @@ export default function ProductsOverview({
         </div>
         <div className="2xl:container mx-auto">
           <div className="flex relative">
-            <div className="basis-1/12 hidden md:block relative">
+            <div className="basis-1/12 hidden md:block relative"></div>
+            <div className="md:basis-11/12 basis-full relative">
+              {" "}
               <span
                 ref={divRef}
                 className={` absolute left-0  md:block hidden translate-x-[-40%] rotate-[-90deg] `}
@@ -99,8 +101,6 @@ export default function ProductsOverview({
                 {/* translate-y-[${breadSize?.width / 2}px]  */}
                 <InvestBread baseName="vinesia marketplace" />
               </span>
-            </div>
-            <div className="md:basis-11/12 basis-full ">
               <div className="bg-[#F7EFDF] pt-10 md:pb-20 ">
                 <div className="md:max-w-[1350px] mx-auto">
                   <ProductTopSection data={data} />
