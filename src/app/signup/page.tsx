@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
@@ -13,14 +13,18 @@ import { useUser } from "@/context/user";
 import { useMagic } from "@/context/MagicProvider";
 import { useRouter } from "next/navigation";
 import { pagePaths } from "@/constants/navigate";
-import { useWalletClient } from "wagmi";
+import {
+  useAccount,
+  useConnect,
+  useDisconnect,
+  useEnsAvatar,
+  useEnsName,
+  useWalletClient,
+} from "wagmi";
 import Loading from "@/components/loading/loading";
 
-const Wrapper = ({
-  children,
-}: {
-  children?: React.ReactNode;
-}) => <>
+const Wrapper = ({ children }: { children?: React.ReactNode }) => (
+  <>
     <div className=" md:absolute top-0 -z-10 left-0 right-0 px-4 md:px-0">
       <div className="relative">
         <div className="customsign-bg-image md:pt-0  object-cover bg-center md:h-[1158px] bg-top-[5rem]')]">
@@ -31,60 +35,73 @@ const Wrapper = ({
       </div>
     </div>
   </>
+);
 
 const SignUp = () => {
+  const { isLoading, isLoggedIn, publicAddress } = useUser();
   const {
-    isLoading,
-    isLoggedIn,
-    publicAddress,
-  } = useUser()
+    isConnected,
+    isConnecting,
+    isRedirecting,
+    isReconnecting,
+    connectAsync,
+    connectSocialAsync,
+  } = useMagic();
 
-  const { isConnected, isConnecting, isRedirecting, isReconnecting, connectAsync, connectSocialAsync } = useMagic()
+  const { address, connector, isConnected: connectedIs } = useAccount();
+  const { connect, connectors, error, pendingConnector } = useConnect();
+  const { disconnect } = useDisconnect();
 
-  const { push } = useRouter()
+  const { push } = useRouter();
 
-  const [terms, setTerms] = useState(false)
-  const [email, setEmail] = useState('')
+  const [terms, setTerms] = useState(false);
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
     if (isLoggedIn) {
-      push(pagePaths.profile)
+      push(pagePaths.profile);
     }
-  }, [isConnected, isLoggedIn, push])
+  }, [isConnected, isLoggedIn, push]);
 
   async function change(e: any) {
-    if (e.target.name === 'terms')
-      setTerms(e.target.checked)
+    if (e.target.name === "terms") setTerms(e.target.checked);
 
-    if (e.target.name === 'email')
-      setEmail(e.target.value)
+    if (e.target.name === "email") setEmail(e.target.value);
   }
 
-  async function connect(subtype: string) {
-    await connectSocialAsync(subtype)
+  async function connectFn(subtype: string) {
+    await connectSocialAsync(subtype);
   }
 
   async function connectEmail() {
-    if (email.length === 0) return
-    await connectAsync(email)
+    if (email.length === 0) return;
+    await connectAsync(email);
   }
 
   if (isRedirecting) {
-    return <><Wrapper /><Loading text="Redirecting ..." /></>
+    return (
+      <>
+        <Wrapper />
+        <Loading text="Redirecting ..." />
+      </>
+    );
   }
 
-
   if (isConnecting || isReconnecting) {
-    return <><Wrapper /><Loading text="Please wait, while the magic ..." /></>
+    return (
+      <>
+        <Wrapper />
+        <Loading text="Please wait, while the magic ..." />
+      </>
+    );
   }
 
   if (isConnected || isLoggedIn) {
     return (
-      <><Wrapper />
-      <Loading text='Please wait, while the magic ...'>
-
-
-        {/* Magic Connection {isConnected ? <>true</> : <>false</>}<br />
+      <>
+        <Wrapper />
+        <Loading text="Please wait, while the magic ...">
+          {/* Magic Connection {isConnected ? <>true</> : <>false</>}<br />
         Magic Redirecting {isRedirecting ? <>true</> : <>false</>}<br />
         Magic Reconnecting {isReconnecting ? <>true</> : <>false</>}<br />
         JWT Connection {isLoggedIn ? <>true</> : <>false</>}<br />
@@ -92,12 +109,13 @@ const SignUp = () => {
         JWT Token { }<br />
 
         <button onClick={() => push(pagePaths.profile)}>GO</button> */}
-        {/* here is disconnect button */}
-        {/* <button onClick={disconnect} className="text-center w-full text-orange-700 text-xs font-normal   uppercase leading-3 tracking-tight px-8 py-[22px] rounded-[48px] border border-orange-700 border-opacity-20 justify-center items-center gap-3 inline-flex">
+          {/* here is disconnect button */}
+          {/* <button onClick={disconnect} className="text-center w-full text-orange-700 text-xs font-normal   uppercase leading-3 tracking-tight px-8 py-[22px] rounded-[48px] border border-orange-700 border-opacity-20 justify-center items-center gap-3 inline-flex">
         DISCONNECT
       </button> */}
-
-      </Loading></>)
+        </Loading>
+      </>
+    );
   }
 
   return (
@@ -111,28 +129,36 @@ const SignUp = () => {
           <h6>Sign in with social media </h6>
           <div className="justify-center items-center gap-6 flex py-4 cursor-pointer">
             {" "}
-            <span onClick={() => connect('google')} className="p-3.5 bg-white rounded-xl border border-white justify-center items-center gap-6 flex">
+            <span
+              onClick={() => connectFn("google")}
+              className="p-3.5 bg-white rounded-xl border border-white justify-center items-center gap-6 flex"
+            >
               <Image src={google} alt="google" />
             </span>
-            <span onClick={() => connect('facebook')} className="p-3.5 bg-blue-500 rounded-xl justify-start items-center gap-6 inline-flex">
+            <span
+              onClick={() => connectFn("facebook")}
+              className="p-3.5 bg-blue-500 rounded-xl justify-start items-center gap-6 inline-flex"
+            >
               {" "}
               <Image src={facebook} alt="facebook" />
             </span>
-            <span onClick={() => connect('twitter')} className="p-3.5 bg-black rounded-xl justify-start items-center gap-6 inline-flex">
+            <span
+              onClick={() => connectFn("twitter")}
+              className="p-3.5 bg-black rounded-xl justify-start items-center gap-6 inline-flex"
+            >
               {" "}
               <Image src={xsoical} alt="xsoical" />
             </span>
-            <span onClick={() => connect('apple')} className="p-3.5 bg-black rounded-xl justify-start items-center gap-6 inline-flex">
-              {" "}
+            <span
+              onClick={() => connectFn("apple")}
+              className="p-3.5 bg-black rounded-xl justify-start items-center gap-6 inline-flex"
+            >
               <Image src={apple} alt="apple" />
             </span>
           </div>
           {/* here is next line */}
           <div className=" text-center text-neutral-600 text-xs font-normal   leading-3">
-            <h6>
-              {" "}
-              We do not store any data related to your social logins
-            </h6>
+            <h6> We do not store any data related to your social logins</h6>
           </div>
           <div className="text-stone-400 text-base font-normal  md:my-6 my-8 leading-snug">
             or
@@ -178,12 +204,37 @@ const SignUp = () => {
           <h6>or external wallet</h6>
         </div>
         {/* here is other wallet button */}
-        <button className="text-center w-full text-orange-700 text-xs font-normal   uppercase leading-3 tracking-tight px-8 py-[22px] rounded-[48px] border border-orange-700 border-opacity-20 justify-center items-center gap-3 inline-flex">
+        {/* <button className="text-center w-full text-orange-700 text-xs font-normal   uppercase leading-3 tracking-tight px-8 py-[22px] rounded-[48px] border border-orange-700 border-opacity-20 justify-center items-center gap-3 inline-flex">
           <span>
             <Image src={wallet} alt="wallet" />
           </span>
           CONNECT WITH WALLET
-        </button>
+        </button> */}
+
+        {connectors.map((connector) => {
+          console.log(connector, "connector");
+
+          return (
+            <button
+              disabled={!connector.ready}
+              key={connector.id}
+              onClick={() => connect({ connector })}
+              className="text-center w-full text-orange-700 text-xs font-normal   uppercase leading-3 tracking-tight px-8 py-[22px] rounded-[48px] border border-orange-700 border-opacity-20 justify-center items-center gap-3 inline-flex"
+            >
+              <span>
+                <Image src={wallet} alt="wallet" />
+              </span>
+              {address
+                ? address.slice(0, 4) + "..." + address.slice(-4)
+                : connector.name}
+              {!connector.ready && " (unsupported)"}
+              {isLoading &&
+                connector.id === pendingConnector?.id &&
+                " (connecting)"}
+            </button>
+          );
+        })}
+        {error && <div>{error.message}</div>}
 
         {/* here is agree term condition */}
         <div className="relative flex gap-x-3 mt-8">
