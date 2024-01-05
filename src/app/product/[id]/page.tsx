@@ -30,32 +30,32 @@ export default function ProductsOverview({
 
   const divRef = useRef<any>(null);
 
+  useEffect(() => {
+    const measureDiv = () => {
+      if (divRef?.current) {
+        const width = divRef?.current.offsetWidth;
+        const height = divRef?.current.offsetHeight;
+        console.log("Width:", width, "Height:", height);
+        // const currentTransform = divRef.current.style;
+        // console.log("Current Transform ", currentTransform);
+        console.log("Div Ref ", divRef);
+
+        divRef.current.style.transform = ` translate(-40%, ${
+          width / 2
+        }px) rotate(-90deg)`;
+        // setBreadSize({ width: width, height: height });
+      }
+    };
+    // if (divRef.current) {
+    measureDiv();
+    // }
+  }, [divRef, data]);
+
   if (isLoading) {
     return <Loading />;
   }
 
   if (data === undefined) {
-    useEffect(() => {
-      const measureDiv = () => {
-        if (divRef?.current) {
-          const width = divRef?.current.offsetWidth;
-          const height = divRef?.current.offsetHeight;
-          console.log("Width:", width, "Height:", height);
-          // const currentTransform = divRef.current.style;
-          // console.log("Current Transform ", currentTransform);
-          console.log("Div Ref ", divRef);
-
-          divRef.current.style.transform = ` translate(-40%, ${
-            width / 2
-          }px) rotate(-90deg)`;
-          // setBreadSize({ width: width, height: height });
-        }
-      };
-      // if (divRef.current) {
-      measureDiv();
-      // }
-    }, [divRef]);
-
     return (
       <div>
         <div className="md:mx-0 mx-4">
