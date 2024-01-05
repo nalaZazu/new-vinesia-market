@@ -34,21 +34,12 @@ export default function ProductsOverview({
     const measureDiv = () => {
       if (divRef?.current) {
         const width = divRef?.current.offsetWidth;
-        const height = divRef?.current.offsetHeight;
-        console.log("Width:", width, "Height:", height);
-        // const currentTransform = divRef.current.style;
-        // console.log("Current Transform ", currentTransform);
-        console.log("Div Ref ", divRef);
-
         divRef.current.style.transform = ` translate(-60%, ${
           width / 2
         }px) rotate(-90deg)`;
-        // setBreadSize({ width: width, height: height });
       }
     };
-    // if (divRef.current) {
     measureDiv();
-    // }
   }, [divRef, data]);
 
   if (isLoading) {
@@ -91,23 +82,15 @@ export default function ProductsOverview({
         </div>
         <div className="2xl:container mx-auto">
           <div className="flex relative">
-            <div className="basis-1/12 hidden md:block relative">
+            <div className="basis-1/12 hidden md:block relative"></div>
+            <div className="md:basis-11/12 basis-full relative">
+              {" "}
               <span
                 ref={divRef}
                 className={` absolute left-0  md:block hidden translate-x-[-60%] rotate-[-90deg] `}
               >
-                {/* translate-y-[${breadSize?.width / 2}px]  */}
                 <InvestBread baseName="vinesia marketplace" />
               </span>
-            </div>
-            <div className="md:basis-11/12 basis-full relative">
-              {" "}
-              {/* <span
-                ref={divRef}
-                className={` absolute left-0  md:block hidden translate-x-[-60%] rotate-[-90deg] `}
-              >
-                <InvestBread baseName="vinesia marketplace" />
-              </span> */}
               <div className="bg-[#F7EFDF] pt-10 md:pb-20 ">
                 <div className="md:max-w-[1350px] mx-auto">
                   <ProductTopSection data={data} />
