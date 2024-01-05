@@ -1,20 +1,19 @@
-'use client'
+"use client";
 import InvestBread from "@/common/InvestBread";
 import xmark from "../../assets/icons/x-mark-anim.svg";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Dropdown from "@/common/DropDown/page";
 import Newsletter from "@/components/newsletter/page";
 import Footer from "@/components/footer/page";
 import NewsletterMobile from "@/components/newsletter/MobileView";
 import Product from "@/components/products/page";
-import { MarksAnim } from "@/assets/icons/Icons";
-import { ItemCardDto } from "@/types/productCard.dto";
-import ScrollAnimation from "@/common/ScrollAnimation/page";
 import useSWR from "swr";
 import FilterSection from "@/components/FilterSection/page";
 
 export default function AvailableSoon() {
+  const divRef = useRef<any>(null);
+
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [priceRange, setPriceRange] = useState([]);
   const fetcher = async (url: string, payload?: string) => {
@@ -42,6 +41,17 @@ export default function AvailableSoon() {
     fetcher
   );
   useEffect(() => {
+    const measureDiv = () => {
+      if (divRef.current) {
+        const width = divRef.current.offsetWidth;
+        const height = divRef.current.offsetHeight;
+        console.log("Width:", width, "Height:", height);
+        divRef.current.style.transform = ` translate(-76%,-45px) rotate(-90deg)`;
+        //  ${ width / 2  }
+        // translate(-76%, -45px) rotate(-90deg);
+      }
+    };
+    measureDiv();
     mutate();
   }, [selectedFilters, priceRange, mutate]);
 
@@ -49,35 +59,47 @@ export default function AvailableSoon() {
     <div>
       {/* <Headersecond /> */}
       <div className=" pt-6 container mx-auto px-3">
-        <InvestBread />
+        {/* <InvestBread />
         <div className=" mt-9 hidden md:block">
           <h2 className=" text-primary text-[144px] font-normal ">
             Available Soon
           </h2>
+        </div> */}
+        {/* <VerticalBreadCrumb /> */}
+        <div className="container px-4 mx-auto relative w-full md:block hidden">
+          <h2 className=" text-primary text-[144px] font-normal ">Available Soon</h2>
+          <span ref={divRef} className={` absolute left-0   `}>
+            {/* translate-y-[${breadSize?.width / 2}px]  */}
+
+            <InvestBread baseName="vinesia marketplace" />
+          </span>
         </div>
+        <span className="block md:hidden">
+          <InvestBread baseName="vinesia marketplace" />
+        </span>
+        {/* BreadCrumb end */}
         {/* for mobileView */}
         <div className="mt-9 md:hidden block">
-          <h2 className=" text-zinc-800 text-6xl font-normal   leading-[68px]">
+          <h2 className=" text-zinc-800 text-4xl font-normal   leading-[68px]">
             Available Soon
           </h2>
         </div>
         {/* dropdown */}
         <div className="">
-        <FilterSection
+          <FilterSection
             selectedFilters={selectedFilters}
             setSelectedFilters={setSelectedFilters}
             priceRange={priceRange}
             setPriceRange={setPriceRange}
           />
         </div>
-        
+
         {/* product list  */}
         <div className="">
-            <Product items={data?.data} />
-          </div>
-       
+          <Product items={data?.data} />
+        </div>
       </div>
-     
+
       {/* desktop Newsletter*/}
       <div className="hidden sm:block">
         <Newsletter />
@@ -89,4 +111,4 @@ export default function AvailableSoon() {
       <Footer />
     </div>
   );
-};
+}

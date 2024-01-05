@@ -39,44 +39,48 @@ export default function Profile() {
       subheading: "",
       icon: <InvestmentPortfolio />,
     },
-    // {
-    //   id: 2,
-    //   title: "Favourite wine",
-    //   subheading: "",
-    //   icon: <FavouriteWine />,
-    // },
-    // {
-    //   id: 3,
-    //   title: "Bids & offers",
-    //   subheading: "",
-    //   icon: <BidsOffer />,
-    // },
-    // {
-    //   id: 4,
-    //   title: "Wallet",
-    //   subheading: "",
-    //   icon: <Wallet />,
-    // },
-    // {
-    //   id: 5,
-    //   title: "Invoices",
-    //   subheading: "",
-    //   icon: <Invoice />,
-    // },
-    // {
-    //   id: 5,
-    //   title: "Vinesia Circle",
-    //   subheading: "",
-    //   icon: <VinesiaCircle />,
-    // },
+    {
+      id: 2,
+      title: "Favourite wine",
+      subheading: "",
+      icon: <FavouriteWine />,
+    },
+    {
+      id: 3,
+      title: "Bids & offers",
+      subheading: "",
+      icon: <BidsOffer />,
+    },
+    {
+      id: 4,
+      title: "Wallet",
+      subheading: "",
+      icon: <Wallet />,
+      // subMenu:[
+      //   {id:1 , title:"Recive"} , 
+      //   {id:2 , title:"sale"}
+      // ]
+    },
+    {
+      id: 5,
+      title: "Invoices",
+      subheading: "",
+      icon: <Invoice />,
+    },
     {
       id: 6,
+      title: "Vinesia Circle",
+      subheading: "",
+      icon: <VinesiaCircle />,
+    },
+    {
+      id: 7,
       title: "My account",
       subheading: "",
       icon: <MyAccount />,
     },
     {
-      id: 7,
+      id: 8,
       title: "Logout",
       subheading: "",
       icon: <Logout />,
@@ -88,7 +92,7 @@ export default function Profile() {
   const {push} = useRouter()
 
   useEffect(() => {
-    if (active !== 7) return
+    if (active !== 8) return
 
     async function run() {
       await magicDisconnect()
@@ -109,20 +113,20 @@ export default function Profile() {
 
   if (isLoading || !isLoggedIn) return <Loading/>
 
-  if (active === 7) {
+  if (active === 8) {
     return <Loading text="Logging out ..."/>
   }
 
   return (
     <div className="container mx-auto">
-      <div className=" pt-12 pb-7">
+      <div className=" pt-12 pb-7 md:px-0 px-4">
         <h3 className="text-zinc-800 text-4xl font-light leading-[44px]">
           My profile
         </h3>
       </div>
       <div className="md:grid md:grid-cols-4 md:gap-8">
         <Tab.Group>
-          <div className="col-span-1">
+          <div className="col-span-1 md:px-0 px-4">
             <Tab.List className="flex flex-col rounded-lg border-t-2 border-s-2 border-r-2 border-orange-700 border-opacity-20">
               {categories.map(
                 (
@@ -171,7 +175,7 @@ export default function Profile() {
               )}
             </Tab.List>
           </div>
-          <div className="col-span-3">
+          <div className="col-span-3 md:px-0 px-4">
             <Tab.Panels className="mt-2">
               {Object.values(categories).map((post, idx) => (
                 <Tab.Panel
@@ -203,8 +207,8 @@ export default function Profile() {
                   {active === 4 && <WalletOverview />}
                   {/* {active === 2 && <ReceivedBids />} */}
                   {/* {active === 4 && <Invoices />} */}
-                  {active === 6 && <Account />}
-                  {active === 7 && <Loading/>}
+                  {active === 7 && <Account />}
+                  {active === 8 && <Loading/>}
                   
 
                   {/* <InvestmentTab /> */}
