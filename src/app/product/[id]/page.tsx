@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import VerticalBreadCrumb from "@/common/verticalBreadcrumb/page";
 import ProductTopSection from "@/components/ProductOverView/ProductTopSection";
 import AllEditions from "@/components/ProductOverView/AllEditions";
@@ -14,6 +14,7 @@ import useSWR from "swr";
 import YouMayAlso from "@/components/YouMayAlso/page";
 import Loading from "@/components/loading/loading";
 import ReleaseDetails from "@/components/Releasedetails/page";
+import InvestBread from "@/common/InvestBread";
 
 const fetcher = (arg: string) => fetch(arg).then((res) => res.json());
 
@@ -26,6 +27,29 @@ export default function ProductsOverview({
     `${process.env.NEXT_PUBLIC_API_ADDRESS}products/overview/${params.id}`,
     fetcher
   );
+
+  const divRef = useRef<any>(null);
+
+  useEffect(() => {
+    const measureDiv = () => {
+      if (divRef?.current) {
+        const width = divRef?.current.offsetWidth;
+        const height = divRef?.current.offsetHeight;
+        console.log("Width:", width, "Height:", height);
+        // const currentTransform = divRef.current.style;
+        // console.log("Current Transform ", currentTransform);
+        console.log("Div Ref ", divRef);
+
+        divRef.current.style.transform = ` translate(-40%, ${
+          width / 2
+        }px) rotate(-90deg)`;
+        // setBreadSize({ width: width, height: height });
+      }
+    };
+    // if (divRef.current) {
+    measureDiv();
+    // }
+  }, []);
 
   if (isLoading) {
     return <Loading />;
@@ -52,7 +76,7 @@ export default function ProductsOverview({
           <div className="flex">
             <div className="basis-1/12 hidden md:block"></div>
             <div className="md:basis-11/12 basis-full">
-              <h1 className="whitespace-pre-line text-zinc-800 md:text-7xl md:leading-[84px] text-4xl font-normal leading-[42px] tracking-[-1.44px]">
+              <h1 className="whitespace-pre-line text-zinc-800 md:text-7xl md:leading-[84px] text-4xl font-normal leading-[42px] tracking-[-1.44px] md:max-w-[1350px] mx-auto">
                 {data?.name}
               </h1>
               {data?.art?.name !== undefined ? (
@@ -67,10 +91,14 @@ export default function ProductsOverview({
         </div>
         <div className="2xl:container mx-auto">
           <div className="flex relative">
-            <div className="basis-1/12 hidden md:block">
-              <div>
-                <VerticalBreadCrumb />
-              </div>
+            <div className="basis-1/12 hidden md:block relative">
+              <span
+                ref={divRef}
+                className={` absolute left-0  md:block hidden `}
+              >
+                {/* translate-y-[${breadSize?.width / 2}px]  */}
+                <InvestBread baseName="vinesia marketplace" />
+              </span>
             </div>
             <div className="md:basis-11/12 basis-full ">
               <div className="bg-[#F7EFDF] pt-10 md:pb-20 ">
@@ -113,7 +141,6 @@ export default function ProductsOverview({
       </div>
       {/* you main also like section */}
       <div className=" text-center">
-
         <YouMayAlso />
       </div>
       {/* About Winery Château Le Pin end */}
