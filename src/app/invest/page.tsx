@@ -9,8 +9,6 @@ import Product from "@/components/products/page";
 import useSWR from "swr";
 import FilterSection from "@/components/FilterSection/page";
 const Invest = () => {
-  const divRef = useRef<any>(null);
-
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [priceRange, setPriceRange] = useState([]);
   const fetcher = async (url: string, payload?: string) => {
@@ -39,17 +37,6 @@ const Invest = () => {
   );
   useEffect(() => {
     mutate();
-    const measureDiv = () => {
-      if (divRef.current) {
-        const width = divRef.current.offsetWidth;
-        const height = divRef.current.offsetHeight;
-        console.log("Width:", width, "Height:", height);
-        divRef.current.style.transform = ` translate(-76%,-45px) rotate(-90deg)`;
-        //  ${ width / 2  }
-        // translate(-76%, -45px) rotate(-90deg);
-      }
-    };
-    measureDiv();
   }, [selectedFilters, priceRange, mutate]);
   const breadCrumbData = ["vinesia marketplace", "invest"];
   return (
@@ -60,20 +47,11 @@ const Invest = () => {
       <div>
         {/* <Headersecond /> */}
         <div className=" pt-6 container mx-auto px-3">
-          {/* <span className="block md:hidden">
-            <InvestBread baseName="vinesia marketplace" />
-          </span>
-          <div className=" mt-9 hidden md:block relative">
+          <div className="container mx-auto relative w-full md:block hidden">
             <h2 className=" text-primary text-[144px] font-normal ">Invest</h2>
-            <span className=" absolute -rotate-90 left-0 -translate-x-[60%] md:block hidden">
-              <InvestBread baseName="vinesia marketplace" />
-            </span>
-          </div> */}
-          {/* BreadCrumb start */}
-          {/* <VerticalBreadCrumb /> */}
-          <div className="container px-4 mx-auto relative w-full md:block hidden">
-            <h2 className=" text-primary text-[144px] font-normal ">Invest</h2>
-            <span ref={divRef} className={` absolute left-0   `}>
+            <span
+              className={` absolute left-0 rotate-[-90deg] translate-x-[-65%] translate-y-[-60px] `}
+            >
               {/* translate-y-[${breadSize?.width / 2}px]  */}
 
               <InvestBread baseName="vinesia marketplace" />

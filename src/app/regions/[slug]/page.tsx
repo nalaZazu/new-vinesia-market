@@ -1,7 +1,7 @@
 "use client";
 import Dropdown from "@/common/DropDown/page";
 import VerticalBreadCrumb from "@/common/verticalBreadcrumb/page";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Product from "@/components/products/page";
 import Newsletter from "@/components/newsletter/page";
 import Footer from "@/components/footer/page";
@@ -14,9 +14,11 @@ import { MarksAnim } from "@/assets/icons/Icons";
 import ScrollAnimation from "@/common/ScrollAnimation/page";
 import useSWR from "swr";
 import FilterSection from "@/components/FilterSection/page";
+import InvestBread from "@/common/InvestBread";
 
 function France({ params }: { params: any }) {
   const { slug } = params;
+  const divRef = useRef<any>(null);
 
   const [selectedFilters, setSelectedFilters] = useState<any>([]);
   const [priceRange, setPriceRange] = useState([]);
@@ -45,6 +47,20 @@ function France({ params }: { params: any }) {
     fetcher
   );
   useEffect(() => {
+    const measureDiv = () => {
+      if (divRef.current) {
+        const width = divRef.current.offsetWidth;
+        const height = divRef.current.offsetHeight;
+        console.log("Width:", width, "Height:", height);
+        divRef.current.style.transform = ` translate(-40%, ${
+          width / 2
+        }px) rotate(-90deg)`;
+      }
+    };
+    measureDiv();
+    // }
+  }, [data, slug]);
+  useEffect(() => {
     mutate();
   }, [selectedFilters, priceRange, mutate]);
 
@@ -56,9 +72,15 @@ function France({ params }: { params: any }) {
   return (
     <div className=" absolute top-0 right-0 left-0 -z-10">
       <div className="w-full md:h-[744px] h-[620px] pt-40 bg-no-repeat bg-cover bg-center bg-[url('https://i.ibb.co/hLLYBjr/winery-bg.png')] relative">
-        {/* BreadCrumb start */}
-        <VerticalBreadCrumb />
-        {/* BreadCrumb end */}
+        <div className="container px-4 mx-auto relative w-full">
+          <span ref={divRef} className={` absolute left-0  md:block hidden `}>
+            {/* translate-y-[${breadSize?.width / 2}px]  */}
+            <InvestBread baseName="vinesia marketplace" />
+          </span>
+        </div>
+        <span className="block md:hidden">
+          <InvestBread baseName="vinesia marketplace" />
+        </span>
         <div className="flex justify-center  items-center md:h-[600px] h-[400px]">
           <h1 className="text-center text-zinc-800 md:text-[144px] text-6xl font-normal capitalize">
             {slug}

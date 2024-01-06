@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Dropdown from "@/common/DropDown/page";
 import Newsletter from "@/components/newsletter/page";
 import Footer from "@/components/footer/page";
@@ -10,11 +10,9 @@ import MobileFilter from "../../components/FilterSection/moibleview/page";
 import Image from "next/image";
 import Card from "@/components/card/page";
 import lineregion from "@/assets/icons/lineregion.svg";
-import { MarksAnim } from "@/assets/icons/Icons";
-import ScrollAnimation from "@/common/ScrollAnimation/page";
-import VerticalBreadCrumb from "@/common/verticalBreadcrumb/page";
 import FilterSection from "@/components/FilterSection/page";
 import useSWR from "swr";
+import InvestBread from "@/common/InvestBread";
 
 export default function Regions() {
   const [selectedFilters, setSelectedFilters] = useState([]);
@@ -53,11 +51,21 @@ export default function Regions() {
         {/* BreadCrumb start */}
         {/* <VerticalBreadCrumb/> */}
         {/* BreadCrumb end */}
-        <h1 className="text-zinc-800 md:text-[144px] text-6xl font-normal">
-          Regions
-        </h1>
-        <div className="underline decoration-wavy md:py-16 py-8">
-          <Image src={lineregion} alt="image" />
+        <div className="relative">
+          <span className="block md:hidden">
+            <InvestBread baseName="vinesia marketplace" />
+          </span>
+          <h1 className="text-zinc-800 md:text-[144px] text-6xl font-normal">
+            Regions
+          </h1>
+          <span
+            className={`absolute left-0 rotate-[-90deg] translate-x-[-65%] translate-y-[-25px] `}
+          >
+            <InvestBread baseName="vinesia marketplace" />
+          </span>
+          <div className="underline decoration-wavy md:py-16 py-8">
+            <Image src={lineregion} alt="image" />
+          </div>
         </div>
         <Card />
         {/* here is next list */}
