@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useRef } from "react";
 import Image from "next/image";
 import { Arrows } from "@/assets/icons/Icons";
@@ -200,7 +199,10 @@ const About = () => {
             </div>
           </div>
 
-          <div className="w-full relative h-[95vh] mt-[15vh] md:block hidden" ref={container}>
+          <div
+            className="w-full relative h-[95vh] mt-[15vh] md:block hidden"
+            ref={container}
+          >
             <div
               className="absolute top-[-460px] md:block hidden 
         left-[20%] translate-x-[-50%]
@@ -241,10 +243,20 @@ const About = () => {
       top-[50%] translate-y-[-50%] 
       left-[50%] translate-x-[-50%] 
       hidden
-        " ref={round2}>
-              <video className="w-[100vw] absolute left-1/2 z-0 max-w-none object-cover -translate-x-1/2 -translate-y-1/2 top-1/2" autoPlay loop muted>
-                <source src='assets/video/Vinesia_Hero3_360.mp4#t=1' media="all and (max-width: 700px)" />
-                <source src='assets/video/Vinesia_Hero3_540.mp4#t=1' />
+        "
+              ref={round2}
+            >
+              <video
+                className="w-[100vw] absolute left-1/2 z-0 max-w-none object-cover -translate-x-1/2 -translate-y-1/2 top-1/2"
+                autoPlay
+                loop
+                muted
+              >
+                <source
+                  src="assets/video/Vinesia_Hero3_360.mp4#t=1"
+                  media="all and (max-width: 700px)"
+                />
+                <source src="assets/video/Vinesia_Hero3_540.mp4#t=1" />
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -252,9 +264,12 @@ const About = () => {
 
           <div className="md:hidden my-10">
             <div className="overflow-hidden m-auto w-full">
-              <video className="object-cover"loop muted controls>
-                <source src='assets/video/Vinesia_Hero3_360.mp4#t=1' media="all and (max-width: 700px)" />
-                <source src='assets/video/Vinesia_Hero3_540.mp4#t=1' />
+              <video className="object-cover" loop muted controls>
+                <source
+                  src="assets/video/Vinesia_Hero3_360.mp4#t=1"
+                  media="all and (max-width: 700px)"
+                />
+                <source src="assets/video/Vinesia_Hero3_540.mp4#t=1" />
                 Your browser does not support the video tag.
               </video>
             </div>

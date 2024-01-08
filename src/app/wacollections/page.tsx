@@ -11,6 +11,7 @@ import ScrollAnimation from "@/common/ScrollAnimation/page";
 import VerticalBreadCrumb from "@/common/verticalBreadcrumb/page";
 import useSWR from "swr";
 import FilterSection from "@/components/FilterSection/page";
+import InvestBread from "@/common/InvestBread";
 
 export default function WineryArt() {
   const [selectedFilters, setSelectedFilters] = useState([]);
@@ -45,10 +46,13 @@ export default function WineryArt() {
 
   return (
     <div className="absolute top-0 left-0 right-0 -z-10">
-      <div className="w-full md:h-[742px] custom-collection-bg-image md:pt-0 pt-40 h-[620px] bg-no-repeat bg-cover bg-center bg-[url('https://i.ibb.co/pRfQnBG/image-137.png')]">
+      <div className="w-full md:h-[742px] custom-collection-bg-image md:pt-0 pt-28 h-[620px] bg-no-repeat bg-cover bg-center bg-[url('https://i.ibb.co/pRfQnBG/image-137.png')]">
         {/* BreadCrumb start */}
         {/* <VerticalBreadCrumb /> */}
         {/* BreadCrumb end */}
+        <span className="block md:hidden">
+          <InvestBread baseName="vinesia marketplace" />
+        </span>
         <div className="flex md:items-end  items-center container mx-auto h-[628px] md:px-0 px-4 ">
           <div className="md:block hidden">
             <div className="">
@@ -62,7 +66,9 @@ export default function WineryArt() {
               </h1>
             </div>
           </div>
+
           {/* mobile view */}
+
           <div>
             <div className="block md:hidden   container mx-auto   md:px-0 px-4">
               <div className="">
@@ -77,6 +83,11 @@ export default function WineryArt() {
               </div>
             </div>
           </div>
+          <span
+              className={`absolute left-0 rotate-[-90deg] translate-x-[-42%] translate-y-[-60px]  md:block hidden`}
+            >
+              <InvestBread baseName="vinesia marketplace" />
+            </span>
         </div>
       </div>
       {/* text */}

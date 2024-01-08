@@ -10,6 +10,7 @@ import NewsletterMobile from "@/components/newsletter/MobileView";
 import ScrollAnimation from "@/common/ScrollAnimation/page";
 import useSWR from "swr";
 import FilterSection from "@/components/FilterSection/page";
+import InvestBread from "@/common/InvestBread";
 
 function Reso({ params }: { params: any }) {
   const { slug } = params;
@@ -60,7 +61,11 @@ function Reso({ params }: { params: any }) {
             {/* <VerticalBreadCrumb /> */}
 
             {/* BreadCrumb end */}
-            <div className="flex md:items-end items-start container mx-auto md:h-[644px] md:ps-40 ps-0 pt-48">
+            <span className="block md:hidden pt-28">
+              <InvestBread baseName="vinesia marketplace" />
+            </span>
+            <div className="flex md:items-end items-start md:justify-start justify-center container mx-auto md:h-[644px] pt-11">
+           
               <div>
                 <div className="pb-3">
                   <p className="  text-white text-xs font-normal  uppercase leading-3 tracking-tight">
@@ -75,6 +80,11 @@ function Reso({ params }: { params: any }) {
               </div>
             </div>
           </div>
+          <span
+            className={`absolute left-0 rotate-[-90deg] translate-x-[-42%] translate-y-[-200px]  md:block hidden`}
+          >
+            <InvestBread baseName="vinesia marketplace" />
+          </span>
         </div>
 
         {/* text */}

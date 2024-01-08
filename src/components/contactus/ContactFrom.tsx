@@ -78,7 +78,7 @@ export default function ContactFrom() {
               <div className="py-3">
                 <BillingInput name="phone" label="Phone (optional)" />
               </div>
-              <div className="flex gap-6 py-3">
+              <div className="flex gap-6 md:flex-nowrap flex-wrap py-3">
                 <SelectBox name='topic' data={data} title={"TOPIC"} placeholder={"Choose"} />
                 <SelectBox name='source'
                   data={data}

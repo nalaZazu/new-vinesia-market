@@ -10,7 +10,11 @@ const InvestBread = ({ baseName }: { baseName?: any }) => {
     <>
       <span className="conatiner mx-auto">
         <span className="flex" aria-label="Breadcrumb">
-          <span className="container mx-auto flex flex-wrap gap-2 px-2 items-center">
+          <span
+            className={`${
+              pathname === "/wacollections/reso" ? "px-0" : "px-2"
+            } container mx-auto flex flex-wrap gap-2  items-center`}
+          >
             <span className="inline-flex items-center">
               <Link
                 href="#"
@@ -34,15 +38,26 @@ const InvestBread = ({ baseName }: { baseName?: any }) => {
                   <>
                     <span
                       key={"_" + i}
-                      className="hidden md:block lg:block  text-orange-700 text-opacity-20 text-base font-normal leading-snug      "
+                      className="  text-orange-700 text-opacity-20 text-base font-normal leading-snug      "
                     >
-                      /
+                      {/* // hidden md:block lg:block */}/
                     </span>
                     <span key={i} className="inline-flex items-center">
                       <Link
                         href="#"
-                        className={`text-zinc-800 text-base font-normal  leading-snug `}
+                        className={`${
+                          // pathname === "wacollections"
+                          //   ? "text-[#E5D6D5]"
+                          //   : 'text-zinic-800'
+
+                          pathname === "/wacollections" ||
+                          pathname === "/wacollections/reso" ||
+                          pathname === "/limitedcollections"
+                            ? "text-[#E5D6D5]"
+                            : "text-zinic-800"
+                        } text-base font-normal  leading-snug `}
                       >
+                        {/* # */}
                         {d}
                       </Link>
                     </span>
