@@ -31,7 +31,7 @@ export default function AssetsPerformance() {
   const [visible, setVisible] = useState(false);
   return (
     <>
-    <ModalContainer
+      <ModalContainer
         visible={visible}
         setVisible={setVisible}
         modalClass="max-h-full max-w-full w-full sm:max-h-[95vh] sm:max-w-[95vw] rounded-md pt-4 pb-4 px-4 md:h-[95vh] lg:h-[95vh] "
@@ -63,83 +63,83 @@ export default function AssetsPerformance() {
         </div>
       </div>
 
-      <div className="py-40">
-        <div className="container mx-auto px-4">
-          <InvestorsLove />
+        <div className="py-40">
+          <div className="container mx-auto px-4">
+            <InvestorsLove />
+          </div>
         </div>
-      </div>
 
-      <div className="py-28 bg-[#7D302E]">
-        <div className="container mx-auto px-4">
-          <ChartsSection />
+        <div className="py-28 bg-[#7D302E]">
+          <div className="container mx-auto px-4">
+            <ChartsSection />
+          </div>
         </div>
-      </div>
 
-      <div className="py-40">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 max-w-[1140px] pb-40">
-            <div>
-              <Image src={inflationImage} alt="" />
-            </div>
-            <div className="md:ps-[139px]">
-              <div className="pb-20">
-                <h3 className="text-zinc-800 text-4xl font-light leading-[44px]">
-                  Inflation resilience
-                </h3>
-                <div className="py-8">
-                  <p className=" text-neutral-600 text-base font-normal leading-snug">
-                    Historically, when inflation increases the prices of goods
-                    and services, the value of wine tends to rise in tandem,
-                    thus fighting the effects of inflation.
-                  </p>
+        <div className="md:py-40 py-20">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 max-w-[1140px] pb-40">
+              <div>
+                <Image src={inflationImage} alt="" />
+              </div>
+              <div className="md:ps-[139px] pt-12">
+                <div className="md:pb-20">
+                  <h3 className="text-zinc-800 text-4xl font-light leading-[44px]">
+                    Inflation resilience
+                  </h3>
+                  <div className="py-8">
+                    <p className=" text-neutral-600 text-base font-normal leading-snug">
+                      Historically, when inflation increases the prices of goods
+                      and services, the value of wine tends to rise in tandem,
+                      thus fighting the effects of inflation.
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-zinc-800 text-4xl font-light leading-[44px]">
+                    Sustained global demand, scarce supply
+                  </h3>
+                  <div className="py-8">
+                    <p className=" text-neutral-600 text-base font-normal leading-snug">
+                      Historically, when inflation increases the prices of goods
+                      and services, the value of wine tends to rise in tandem,
+                      thus fighting the effects of inflation.
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div>
-                <h3 className="text-zinc-800 text-4xl font-light leading-[44px]">
-                  Sustained global demand, scarce supply
-                </h3>
-                <div className="py-8">
-                  <p className=" text-neutral-600 text-base font-normal leading-snug">
-                    Historically, when inflation increases the prices of goods
-                    and services, the value of wine tends to rise in tandem,
-                    thus fighting the effects of inflation.
-                  </p>
+            </div>
+            <div className="grid md:grid-cols-2">
+              <div className="md:pe-[139px] flex items-end">
+                <div>
+                  <h3 className="text-zinc-800 text-4xl font-light leading-[44px]">
+                    Low correlation with traditional markets
+                  </h3>
+                  <div className="py-8">
+                    <p className=" text-neutral-600 text-base font-normal leading-snug">
+                      While stock markets can be highly unpredictable and
+                      unstable, fine wine as an asset maintains steady returns
+                      during market downturns and through recessions.
+                    </p>
+                  </div>
                 </div>
+              </div>
+              <div className="bg-[#F9F5EB] p-8">
+                <Image src={performance_image140} alt="returns" />
               </div>
             </div>
           </div>
-          <div className="grid md:grid-cols-2">
-            <div className="md:pe-[139px] flex items-end">
-              <div>
-                <h3 className="text-zinc-800 text-4xl font-light leading-[44px]">
-                  Low correlation with traditional markets
-                </h3>
-                <div className="py-8">
-                  <p className=" text-neutral-600 text-base font-normal leading-snug">
-                    While stock markets can be highly unpredictable and
-                    unstable, fine wine as an asset maintains steady returns
-                    during market downturns and through recessions.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="bg-[#F9F5EB] p-8">
-              <Image src={performance_image140} alt="returns" />
-            </div>
-          </div>
         </div>
-      </div>
 
-      <div className="md:py-40 bg-[#F7EFDF] flex h-[110vh] items-center justify-center">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2">
-            <div className="md:pe-[139px]">
-              <h2 className=" text-zinc-800 md:text-7xl font-normal  md:leading-[84px] md:tracking-[-1.44px] text-4xl leading-[42px] tracking-[-0.36px]">
-                The potential of wine investment in numbers
-              </h2>
-              <p className="max-w-[329px] text-zinc-800 text-lg font-semibold  md:pt-[72px] pt-6 pb-6 leading-relaxed   tracking-[-0.36px]">
-                See what your portfolio could have returned with wine
-              </p>
+        <div className="md:py-40 py-20 bg-[#F7EFDF] flex h-[110vh] items-center justify-center">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2">
+              <div className="md:pe-[139px] md:pb-0 pb-12">
+                <h2 className=" text-zinc-800 md:text-7xl font-normal  md:leading-[84px] md:tracking-[-1.44px] text-4xl leading-[42px] tracking-[-0.36px]">
+                  The potential of wine investment in numbers
+                </h2>
+                <p className="max-w-[329px] text-zinc-800 text-lg font-semibold  md:pt-[72px] pt-6 pb-6 leading-relaxed   tracking-[-0.36px]">
+                  See what your portfolio could have returned with wine
+                </p>
 
               <button
                 onClick={() => setVisible(true)}
@@ -169,11 +169,11 @@ export default function AssetsPerformance() {
         </div>
       </div>
 
-      <div className="py-40">
-        <div className="container mx-auto px-4">
-          <TestimonialsSection />
+        <div className="md:py-40 py-20">
+          <div className="container mx-auto px-4">
+            <TestimonialsSection />
+          </div>
         </div>
-      </div>
 
       <div className="py-28 bg-[#7D302E]">
         <div className="container mx-auto px-4 flex flex-col items-center">
@@ -203,8 +203,8 @@ export default function AssetsPerformance() {
         <QASummary title="You might have questions, we definitely have answers." />
       </div>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
     </>
   );
 }

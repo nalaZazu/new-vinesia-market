@@ -17,12 +17,12 @@ const VinesiaGiftsHero = () => {
             <div className="flex flex-col items-start justify-start w-auto md:w-full">
               <div className="flex flex-col items-start justify-start w-auto md:w-full">
                 <div className="flex flex-col gap-4 items-start justify-start w-auto md:w-full">
-                  <p className="font-Canela font-light text-2xl md:text-3xl sm:text-[32px] md:text-[36px] text-center text-white tracking-[-0.36px] w-auto">
+                  <h3 className="font-Canela font-light text-2xl md:text-3xl sm:text-[32px] md:text-[36px] text-center text-white tracking-[-0.36px] w-auto">
                     An investment for today
-                  </p>
-                  <p className="font-Canela max-w-[1100px] flex flex-col text-white text-7xl md:text-[144px] font-normal md:leading-[144px] md:tracking-[-2.88px]">
+                  </h3>
+                  <h3 className="font-Canela max-w-[1100px] flex flex-col text-white text-7xl md:text-[144px] font-normal md:leading-[144px] leading-[80px] md:tracking-[-2.88px]">
                     A legacy for tomorrow
-                  </p>
+                  </h3>
                 </div>
               </div>
             </div>

@@ -34,12 +34,14 @@ export default function PeaceVinesia() {
               Peace of mind
             </p>
           </div>
-          <div className="pb-5 flex justify-center relative items-center">
-            <Image src={pathshape1} alt="" className="md:mr-0 mr-[-180px]"/>
-            <Image src={pathshape3} alt="" className="absolute bottom-0 " />
-            <Image src={pathshape2} alt="" />
+          <div className="hidden md:block">
+            <div className="pb-5 flex justify-center relative items-center">
+              <Image src={pathshape1} alt="" className="md:mr-0 mr-[-180px]" />
+              <Image src={pathshape3} alt="" className="absolute bottom-0 " />
+              <Image src={pathshape2} alt="" />
+            </div>
           </div>
-          <div className="flex gap-6 pt-2 justify-center">
+          <div className="flex flex-col md:flex-row gap-6 pt-2 justify-center">
             <p className="md:px-6 py-4 rounded-[54px] text-center text-zinc-800 border border-red-900 text-base font-normal leading-snug">
               Proof of ownership
             </p>

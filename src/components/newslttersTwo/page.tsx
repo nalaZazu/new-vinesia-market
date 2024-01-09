@@ -4,7 +4,7 @@ import React from "react";
 
 export default function NewslettersTwo() {
   return (
-    <div className=" md:py-40  py-20 flex md:justify-around   flex-wrap ">
+    <div className=" md:py-40 py-0 flex md:justify-around flex-wrap">
       <div className="w-[534px] h-[534px] bg-[#7D302E]  md:rounded-full  rounded-none flex justify-center items-center">
         <div>
           <div className="flex-col justify-start items-center gap-3 flex">
@@ -25,9 +25,7 @@ export default function NewslettersTwo() {
                 SUBSCRIBE
               </button>
             </div>
-            <div className="w-[289px] text-center text-red-400 text-base font-normal  leading-snug">
-
-            </div>
+            <div className="w-[289px] text-center text-red-400 text-base font-normal  leading-snug"></div>
           </div>
         </div>
       </div>

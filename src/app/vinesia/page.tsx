@@ -28,7 +28,7 @@ import { experts } from "@/constants/experts";
 import Link from "next/link";
 import QASummary from "@/components/qasummary/page";
 
-import vinesia_how_works from "@/assets/images/vinesia_how_works.png"
+import vinesia_how_works from "@/assets/images/vinesia_how_works.png";
 import KnowUsVideos from "@/components/KnowUsVideos/page";
 
 export default function Vinesia() {
@@ -58,15 +58,18 @@ export default function Vinesia() {
             </h3>
           </div>
         </div>
-        <div >
-        <Image src={vinesia_how_works} alt="invest steps" />
-        </div>
-        {/* <div className="hidden md:block">
+        {/* <Image src={vinesia_how_works} alt="invest steps" /> */}
+        <div className="hidden md:block">
           <VinesiaAnimation />
         </div> */}
       </div>
 
-      {/* <WineVideoBanner title={""} descripition={""} /> */}
+      <WineVideoBanner
+        title={"How Vinesia works"}
+        descripition={
+          "Discover the seamless journey of wine investment with Vinesia in our How It Works video."
+        }
+      />
       <div className="py-12 bg-red-900">
         <div className=" container mx-auto px-4">
           <Wanttoknow />
@@ -85,7 +88,7 @@ export default function Vinesia() {
                 Our method of wine investment is layered to create a
               </span>
               <span className="text-orange-700 text-base font-normal leading-snug">
-              &nbsp;Peace of Mind&nbsp;
+                &nbsp;Peace of Mind&nbsp;
               </span>
               <span className="text-neutral-600 text-base font-normal leading-snug">
                 &nbsp;pledge. Every feature of how we do things speaks to our
@@ -98,7 +101,7 @@ export default function Vinesia() {
             <div className="md:pe-[139px]">
               <Image src={vinesiaccordion} alt="" className="w-full" />
             </div>
-            <div>
+            <div className="md:-pt-0 pt-14">
               <div className="max-w-[500px] h-[0px] border border-orange-700 border-opacity-20"></div>
               <AccordionWine
                 data={AccordionVinesia}
@@ -108,12 +111,12 @@ export default function Vinesia() {
                 descClass={"text-zinc-800"}
               />
               <div className="pt-12 p-2">
-                  <Link href="/security">
-                <button className="flex gap-3 items-center text-center text-orange-700 text-xs font-normal uppercase leading-[18px] tracking-tight">
-                  READ MORE ABOUT SECURITY
-                  <NextIcon />
-                </button>
-                  </Link>
+                <Link href="/security">
+                  <button className="flex gap-3 items-center text-center text-orange-700 text-xs font-normal uppercase leading-[18px] tracking-tight">
+                    READ MORE ABOUT SECURITY
+                    <NextIcon />
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -145,7 +148,7 @@ export default function Vinesia() {
             <div className="">
               <div className="bg-orange-50 rounded-tl rounded-tr border border-orange-700 border-opacity-20">
                 {experts.map((items, i) => {
-                  const {id, name, img, linkedin} = items
+                  const { id, name, img, linkedin } = items;
                   return (
                     <div
                       key={i}
@@ -233,7 +236,7 @@ export default function Vinesia() {
 
       <KnowUsVideos />
       {/* The faster way to get to know us */}
-     
+
       <NewslettersTwo />
       {/* footer */}
       <Footer />
