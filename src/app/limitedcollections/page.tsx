@@ -10,6 +10,7 @@ import NewsletterMobile from "@/components/newsletter/MobileView";
 import Footer from "@/components/footer/page";
 import useSWR from "swr";
 import FilterSection from "@/components/FilterSection/page";
+import InvestBread from "@/common/InvestBread";
 
 const LimitedCollection = () => {
   const [selectedFilters, setSelectedFilters] = useState([]);
@@ -46,12 +47,14 @@ const LimitedCollection = () => {
     <React.Fragment>
       <div className=" absolute top-0 right-0 left-0 -z-10">
         <div className="z-0">
-          <section className="md:grid md:grid-cols-1 custom-limited-bg-image md:pt-0 pt-40  bg-[#4e261a] object-cover bg-center h-[818px] bg-top-[5rem]')] relative">
+        
+          <section className="md:grid md:grid-cols-1 custom-limited-bg-image   bg-[#4e261a] object-cover bg-center h-[818px] bg-top-[5rem]')] relative">
             {/* BreadCrumb start */}
-            <VerticalBreadCrumb />
-            {/* BreadCrumb end */}
-
-            <div className=" container max-w-[1030px] mx-auto flex flex-col  md:justify-center justify-between text-white md:px-0 px-4 pt-10  md:pt-0">
+            <span className="block md:hidden pt-28">
+              <InvestBread baseName="vinesia marketplace" />
+            </span>
+            <div className=" container max-w-[1030px] mx-auto flex flex-col  md:justify-center justify-between text-white md:px-0 px-4  md:pt-0 pt-40 ">
+              {/* pt-10  md:pt-0 */}
               <div>
                 <h1 className="text-white font-normal md:text-[144px]  md:tracking-[-2.88px] md:leading-[160px]   text-6xl   leading-[68px]">
                   Limited Collections
@@ -59,6 +62,11 @@ const LimitedCollection = () => {
               </div>
             </div>
           </section>
+          <span
+            className={`absolute left-0 rotate-[-90deg] translate-x-[-42%] translate-y-[-400px]  md:block hidden`}
+          >
+            <InvestBread baseName="vinesia marketplace" />
+          </span>
         </div>
 
         <div className="flex flex-wrap py-20 max-w-[1030px] mx-auto gap-8 md:px-0 px-4">

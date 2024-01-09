@@ -8,7 +8,6 @@ import NewsletterMobile from "@/components/newsletter/MobileView";
 import useSWR from "swr";
 import FilterSection from "@/components/FilterSection/page";
 import InvestBread from "@/common/InvestBread";
-import { log } from "console";
 
 export default function WineryOwner({ params }: { params: any }) {
   const { slug } = params;
@@ -58,7 +57,7 @@ export default function WineryOwner({ params }: { params: any }) {
         const width = divRef.current.offsetWidth;
         const height = divRef.current.offsetHeight;
         console.log("Width:", width, "Height:", height);
-        divRef.current.style.transform = ` translate(-40%, ${
+        divRef.current.style.transform = ` translate(-60%, ${
           width / 2
         }px) rotate(-90deg)`;
       }

@@ -165,7 +165,7 @@ export function AccordionWineFaq({ data = AccordionFAQ }: { data?: TAccordionWin
   };
 
   return (
-    <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
+    <div className="grid md:grid-cols-2 grid-cols-1 gap-4 px-4">
       {
         Object.keys(data).map((category, categoryIndex) => (
           <div key={categoryIndex}>

@@ -12,8 +12,6 @@ import useSWR from "swr";
 import FilterSection from "@/components/FilterSection/page";
 
 export default function AvailableSoon() {
-  const divRef = useRef<any>(null);
-
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [priceRange, setPriceRange] = useState([]);
   const fetcher = async (url: string, payload?: string) => {
@@ -35,23 +33,11 @@ export default function AvailableSoon() {
     };
     return fetch(url, options).then((res) => res.json());
   };
-
   const { data, error, isLoading, mutate } = useSWR(
     `${process.env.NEXT_PUBLIC_API_ADDRESS}products/search`,
     fetcher
   );
   useEffect(() => {
-    const measureDiv = () => {
-      if (divRef.current) {
-        const width = divRef.current.offsetWidth;
-        const height = divRef.current.offsetHeight;
-        console.log("Width:", width, "Height:", height);
-        divRef.current.style.transform = ` translate(-76%,-45px) rotate(-90deg)`;
-        //  ${ width / 2  }
-        // translate(-76%, -45px) rotate(-90deg);
-      }
-    };
-    measureDiv();
     mutate();
   }, [selectedFilters, priceRange, mutate]);
 
@@ -67,8 +53,12 @@ export default function AvailableSoon() {
         </div> */}
         {/* <VerticalBreadCrumb /> */}
         <div className="container px-4 mx-auto relative w-full md:block hidden">
-          <h2 className=" text-primary text-[144px] font-normal ">Available Soon</h2>
-          <span ref={divRef} className={` absolute left-0   `}>
+          <h2 className=" text-primary text-[144px] font-normal ">
+            Available Soon
+          </h2>
+          <span
+            className={` absolute left-0 rotate-[-90deg] translate-x-[-65%] translate-y-[-60px]  `}
+          >
             {/* translate-y-[${breadSize?.width / 2}px]  */}
 
             <InvestBread baseName="vinesia marketplace" />
