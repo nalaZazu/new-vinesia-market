@@ -61,7 +61,7 @@ export default function Vinesia() {
         {/* <Image src={vinesia_how_works} alt="invest steps" /> */}
         <div className="hidden md:block">
           <VinesiaAnimation />
-        </div> */}
+        </div> 
       </div>
 
       <WineVideoBanner
