@@ -93,7 +93,7 @@ export default function Footer() {
                       </div>
                     </div>
                   </div>
-                  <div className="border-b  border-white border-opacity-20  " />
+                  <div className="border-b  border-white border-opacity-20 " />
                 </div>
 
                 {/* <!-- Useful links section --> */}
@@ -151,7 +151,7 @@ export default function Footer() {
                       contact@vinesia.com
                     </span>
                   </div>
-                  <div className="border-b  w-[345px] border-white border-opacity-20 block md:hidden pt-8" />
+                  <div className="border-b md:w-[345px] w-full border-white border-opacity-20 block md:hidden pt-8" />
                 </div>
                 {/* <!-- Products section --> */}
                 {/* <div className=" sm:col-span-2 col-span-1 max-w-[303px]">
@@ -164,7 +164,7 @@ export default function Footer() {
                 </div> */}
               </div>
             </div>
-            <div className="border-b  border-white border-opacity-20    pt-12" />
+            <div className="border-b  border-white border-opacity-20  w-full   pt-12" />
             {/* here is langugae and other icon */}
             <div className="md:pt-12 pt-8  md:pb-0 pb-8 md:px-0 px-4 flex flex-wrap md:justify-between justify-center">
               {/* <div className="flex flex-wrap flex-col">
