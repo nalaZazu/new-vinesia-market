@@ -13,7 +13,7 @@ export default function StaticBanner({small, title, title2, bgClass}: {small: st
               <h3 className="text-white text-4xl font-light leading-[44px] max-w-[638px] pt-9">
                 {small}
               </h3>
-              <h1 className="max-w-[1400px] flex flex-col text-white text-[80px] leading-[84px] md:text-[130px] font-normal md:leading-[130px] md:tracking-[-2.88px]">
+              <h1 className=" flex flex-col text-white text-[66px] leading-[84px] md:text-[130px] font-normal md:leading-[130px] md:tracking-[-2.88px]">
                 {title}
                 <span>{title2}</span>
               </h1>

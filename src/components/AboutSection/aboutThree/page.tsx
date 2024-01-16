@@ -14,7 +14,7 @@ const AboutThree = () => {
   return (
     <React.Fragment>
       {/* Start your investment journey today  */}
-      <div className="md:py-25 md:px-0 px-4 bg-[#F7EFDF] h-[110vh] flex items-center justify-center">
+      <div className="md:py-25 md:px-0 px-4 bg-[#F7EFDF] md:h-[110vh] h-full  flex items-center justify-center">
         <div className="container mx-auto">
           <div className="mx-auto">
             <h2 className="md:tracking-[-1.44px] md:text-center text-zinc-800 md:text-7xl font-normal   md:leading-[84px]    text-4xl leading-[44px] tracking-[-0.36px]">

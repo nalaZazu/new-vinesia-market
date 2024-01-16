@@ -5,8 +5,8 @@ import React from "react";
 export default function NewslettersTwo() {
   return (
     <div className=" md:py-40 py-0 flex md:justify-around flex-wrap">
-      <div className="w-[534px] h-[534px] bg-[#7D302E]  md:rounded-full  rounded-none flex justify-center items-center">
-        <div>
+      <div className="md:w-[534px] w-full h-[534px] bg-[#7D302E]  md:rounded-full  rounded-none flex justify-center items-center">
+        <div className="w-full">
           <div className="flex-col justify-start items-center gap-3 flex">
             <h3 className="text-center text-orange-100 text-4xl font-light  leading-[44px]">
               Be the first to know
@@ -16,12 +16,12 @@ export default function NewslettersTwo() {
             </p>
           </div>
           <div className="flex-col justify-start items-center gap-4 flex relative">
-            <div className="w-[370px] h-16 relative bg-orange-50 rounded-[57px] border border-white">
+            <div className="md:w-[370px] w-full h-16 relative bg-orange-50 rounded-[57px] border border-white">
               <input
                 placeholder="Enter your email"
                 className="left-0 w-2/3 outline-slate-200 p-3 border-0 top-0 rounded-s-full h-full absolute text-stone-400 text-base font-normal  leading-snug bg-transparent"
               ></input>
-              <button className="text-center text-white text-xs font-normal  uppercase leading-3 tracking-tight w-[131px] h-14 px-8 py-[22px] left-[233px] top-[4.09px] absolute bg-orange-700 rounded-[48px] justify-center items-center gap-3 inline-flex">
+              <button className="text-center text-white text-xs font-normal  uppercase leading-3 tracking-tight w-[131px] h-14 px-8 py-[22px] md:left-[233px] right-2 top-[4.09px] absolute bg-orange-700 rounded-[48px] justify-center items-center gap-3 inline-flex">
                 SUBSCRIBE
               </button>
             </div>

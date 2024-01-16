@@ -106,7 +106,7 @@ const AboutTwo = () => {
       <HomeWinePerformance />
 
       {/*The potential of wine investment in numbers (next section) */}
-      <div className="flex h-[110vh] items-center justify-center">
+      <div className="flex md:h-[110vh] h-full md:p-0 p-5  items-center justify-center">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 grid-cols-1">
             <div className="max-w-[512px]">

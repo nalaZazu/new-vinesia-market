@@ -6,7 +6,7 @@ import VectorTwo from "@/assets/icons/VectorTwo.svg";
 export default function KnowUsVideos({title="The faster way to get to know us"}:{title?:string}) {
     return (
              <>{/* The faster way to get to know us */}
-      <div className="bg-[#2F222B] md:h-[780px] h-[110vh]  pb-32 md:pb-0 pt-20 md:pt-0">
+      <div className="bg-[#2F222B] md:h-[780px] h-full  pb-0 md:pb-0 pt-0 md:pt-0 ">
       <div className="relative">
         <div className="absolute md:block hidden">
           <Image src={VectorOne} alt="vector" />
